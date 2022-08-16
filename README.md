@@ -1,6 +1,8 @@
 # Open FoodByte
 FoodByte开源计划，本计划是对Ho3在2020年进行的Open Hanabi计划进行致敬。
 
+## 苏辰抄了哪些代码？
+[治军今天抄什么](WHATDIDZHIJUNPASTETODAY.md)
 ## 什么是FoodByte？
 FoodByte是由苏辰编写的垃圾我的世界外挂，大部分代码均为白治军从其他外挂中抄袭而来。在此项目中你会见到大量的抄袭的垃圾代码。
 
