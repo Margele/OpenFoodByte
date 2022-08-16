@@ -25,8 +25,8 @@ import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.reflection.ReflectionsHelper;
 import trash.foodbyte.reflections.ObfuscatedField;
+import trash.foodbyte.reflections.ReflectionsHelper;
 import trash.foodbyte.value.ModeValue;
 
 public class NoFall

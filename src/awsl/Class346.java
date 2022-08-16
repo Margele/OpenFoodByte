@@ -20,7 +20,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.util.ResourceLocation;
-import trash.foodbyte.reflection.ReflectionsHelper;
+import trash.foodbyte.reflections.ReflectionsHelper;
 
 public class Class346 {
     private static MethodHandle Field1660 = ReflectionsHelper.Method332(AbstractClientPlayer.class, new String[]{"getPlayerInfo", "func_175155_b"}, new Class[0]);

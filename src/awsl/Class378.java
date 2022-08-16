@@ -22,7 +22,6 @@
  *  net.minecraft.util.ResourceLocation
  *  net.minecraftforge.fml.relauncher.ReflectionHelper
  *  org.lwjgl.input.Mouse
- *  trash.foodbyte.utils.RenderUtils
  */
 package awsl;
 
@@ -93,9 +92,9 @@ extends Class379 {
         String string = Class492.Method2239();
         GlStateManager.disableDepth();
         this.Method450();
-        RenderUtils.Method1103((float)this.Field1806, (float)this.Field1807, (float)this.Field1814, (float)this.Field1812, (int)GlobalModule.Field3143.Method2442());
+        RenderUtils.Method1103(this.Field1806, this.Field1807, this.Field1814, this.Field1812, GlobalModule.Field3143.Method2442());
         String a2 = string;
-        RenderUtils.Method1103((float)this.Field1806, (float)(this.Field1807 + this.Field1812), (float)this.Field1814, (float)this.Field1815, (int)Field1833.getRGB());
+        RenderUtils.Method1103(this.Field1806, this.Field1807 + this.Field1812, this.Field1814, this.Field1815, Field1833.getRGB());
         boolean a3 = !this.Field1823.isEmpty();
         Class565.Field2638.Method1217(this.Field1823, this.Field1806 + this.Field1824, this.Field1807 + this.Field1825, Class681.WHITE.Field2962);
         Class565.Field2636.Method1217(this.Field1816, this.Field1806 + 3.0f + (float)8, this.Field1807 + this.Field1812 / 2.0f - Class565.Field2636.Field2625 / 2.0f, Class681.WHITE.Field2962);
@@ -122,7 +121,7 @@ extends Class379 {
                 int a12 = (int)(this.Field1807 + (float)a4 + (float)(a9 * (a10 % this.Field1798 / this.Field1796)));
                 ItemStack a13 = (ItemStack)this.Field1797.keySet().toArray()[a10];
                 if (UHCFastCraft.Method2118(this.Field1802) > a11 && UHCFastCraft.Method2118(this.Field1802) < a11 + 16 && UHCFastCraft.Method2119(this.Field1802) > a12 && UHCFastCraft.Method2119(this.Field1802) < a12 + a9) {
-                    RenderUtils.Method1103((float)a11, (float)a12, (float)a9, (float)a9, (int)new Color(150, 150, 150, 150).getRGB());
+                    RenderUtils.Method1103(a11, a12, a9, a9, new Color(150, 150, 150, 150).getRGB());
                     this.Field1794 = a13;
                 }
                 this.Field1808.getRenderItem().renderItemAndEffectIntoGUI(a13, a11, a12);
@@ -135,23 +134,23 @@ extends Class379 {
         float a14 = this.Field1801.Method1295() + this.Field1801.Method1297() / 2.0f - 2.0f;
         float a15 = this.Field1801.Method1296() + this.Field1801.Method1298() / 2.0f;
         this.Field1801 = new Class391(this.Field1806 + 2.0f, this.Field1807 + this.Field1815 - 2.0f, 12.0f, 12.0f);
-        RenderUtils.Method1103((float)this.Field1801.Method1295(), (float)this.Field1801.Method1296(), (float)this.Field1801.Method1297(), (float)this.Field1801.Method1298(), (int)(this.Field1791 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442()));
+        RenderUtils.Method1103(this.Field1801.Method1295(), this.Field1801.Method1296(), this.Field1801.Method1297(), this.Field1801.Method1298(), this.Field1791 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442());
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)a14, (float)a15, (float)0.0f);
         GlStateManager.rotate((float)180.0f, (float)0.0f, (float)0.0f, (float)1.0f);
-        RenderUtils.Method1085((double)-3.0, (double)-3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
-        RenderUtils.Method1085((double)-3.0, (double)3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
+        RenderUtils.Method1085(-3.0, -3.0, 1.0, 0.0, 1.0f, -1);
+        RenderUtils.Method1085(-3.0, 3.0, 1.0, 0.0, 1.0f, -1);
         GlStateManager.translate((float)(-a14), (float)(-a15), (float)0.0f);
         GlStateManager.popMatrix();
         this.Field1805 = new Class391(this.Field1806 + this.Field1814 - 14.0f, this.Field1807 + this.Field1815 - 2.0f, 12.0f, 12.0f);
-        RenderUtils.Method1103((float)this.Field1805.Method1295(), (float)this.Field1805.Method1296(), (float)this.Field1805.Method1297(), (float)this.Field1805.Method1298(), (int)(this.Field1803 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442()));
+        RenderUtils.Method1103(this.Field1805.Method1295(), this.Field1805.Method1296(), this.Field1805.Method1297(), this.Field1805.Method1298(), this.Field1803 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442());
         a14 = this.Field1805.Method1295() + this.Field1805.Method1297() / 2.0f + 2.0f;
         a15 = this.Field1805.Method1296() + this.Field1805.Method1298() / 2.0f;
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)a14, (float)a15, (float)0.0f);
         GlStateManager.rotate((float)0.0f, (float)0.0f, (float)0.0f, (float)1.0f);
-        RenderUtils.Method1085((double)-3.0, (double)-3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
-        RenderUtils.Method1085((double)-3.0, (double)3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
+        RenderUtils.Method1085(-3.0, -3.0, 1.0, 0.0, 1.0f, -1);
+        RenderUtils.Method1085(-3.0, 3.0, 1.0, 0.0, 1.0f, -1);
         GlStateManager.translate((float)(-a14), (float)(-a15), (float)0.0f);
         GlStateManager.popMatrix();
         String a16 = a6 + 1 + "/" + ((this.Field1797.size() - 1) / this.Field1798 + 1);
@@ -220,8 +219,8 @@ extends Class379 {
             if (!this.Field1793) {
                 a5 = true;
             }
-            boolean a7 = RenderUtils.Method1096((float)a2, (float)a3, (float)this.Field1806, (float)this.Field1807, (float)(this.Field1806 + this.Field1814), (float)(this.Field1807 + this.Field1812));
-            boolean a8 = RenderUtils.Method1096((float)a2, (float)a3, (float)(this.Field1806 + this.Field1814 - 8.0f), (float)(this.Field1807 + this.Field1812 + this.Field1815 - 8.0f), (float)(this.Field1806 + this.Field1814), (float)(this.Field1807 + this.Field1812 + this.Field1815));
+            boolean a7 = RenderUtils.Method1096(a2, a3, this.Field1806, this.Field1807, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812);
+            boolean a8 = RenderUtils.Method1096(a2, a3, this.Field1806 + this.Field1814 - 8.0f, this.Field1807 + this.Field1812 + this.Field1815 - 8.0f, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812 + this.Field1815);
             if (!this.Field1793) {
                 this.Field1811 = true;
                 this.Field1827 = System.currentTimeMillis();

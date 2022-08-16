@@ -25,8 +25,8 @@ import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.reflection.ReflectionsHelper;
 import trash.foodbyte.reflections.ObfuscatedField;
+import trash.foodbyte.reflections.ReflectionsHelper;
 import trash.foodbyte.value.ModeValue;
 
 public class ChatFilter
