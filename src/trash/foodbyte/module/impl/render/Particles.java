@@ -20,7 +20,6 @@ import awsl.Class216;
 import awsl.Class280;
 import awsl.Class285;
 import awsl.Class492;
-import awsl.Class653;
 import awsl.Class694;
 import eventapi.EventTarget;
 import java.util.List;
@@ -29,6 +28,7 @@ import net.minecraft.network.play.client.C02PacketUseEntity;
 import net.minecraft.world.World;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.event.EventRender3D;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.value.BooleanValue;
@@ -60,11 +60,11 @@ extends Module {
     }
 
     @EventTarget
-    public void Method755(Class653 a) {
+    public void Method755(EventTick a) {
         String a2 = Class492.Method2239();
         if (this.Field2208 != null && this.Field2208.hurtTime >= 9 && Particles.mc.thePlayer.getDistance(this.Field2208.posX, this.Field2208.posY, this.Field2208.posZ) < 10.0) {
             int a3 = 0;
-            if ((float)a3 < this.Field2205.Method2744().floatValue()) {
+            if ((float)a3 < this.Field2205.getFloatValue().floatValue()) {
                 this.Field2206.Method2530((Object)new Class285(new Class216(this.Field2208.posX + (Math.random() - 0.5) * 0.5, this.Field2208.posY + Math.random() * 1.0 + 0.5, this.Field2208.posZ + (Math.random() - 0.5) * 0.5)));
                 ++a3;
             }
@@ -81,7 +81,7 @@ extends Module {
         int a3 = 0;
         int a4 = 3000 / mc.getDebugFPS();
         if (a3 <= a4) {
-            if (this.Field2204.Method2509().booleanValue()) {
+            if (this.Field2204.getBooleanValue().booleanValue()) {
                 this.Field2206.forEach(Class285::Method3096);
             }
             this.Field2206.forEach(Class285::Method3097);

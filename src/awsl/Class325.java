@@ -9,7 +9,7 @@ package awsl;
 
 import awsl.Class326;
 import awsl.Class330;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class325
 extends Class326 {
@@ -36,29 +36,29 @@ extends Class326 {
     /*
      * WARNING - void declaration
      */
-    public static final double Method1014(double a, double a2, double a3, double a4) {
-        void a5;
+    public static final double Method1014(double a2, double a3, double a4, double a5) {
+        void a6;
         double d;
         double d2 = 1.70158f;
-        boolean a6 = Class330.Method1059();
-        a /= a4 / 2.0;
+        boolean a7 = Class330.Method1059();
+        a2 /= a5 / 2.0;
         if (d < 1.0) {
-            return a3 / 2.0 * (a * a * (((a5 *= (double)1.525f) + 1.0) * a - a5)) + a2;
+            return a4 / 2.0 * (a2 * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 - a6)) + a3;
         }
-        double d3 = a3 / 2.0 * ((a -= 2.0) * a * (((a5 *= (double)1.525f) + 1.0) * a + a5) + 2.0) + a2;
-        Class91.Method3647(new String[1]);
+        double d3 = a4 / 2.0 * ((a2 -= 2.0) * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 + a6) + 2.0) + a3;
+        a.trash(new String[1]);
         return d3;
     }
 
-    public static final double Method1256(double a, double a2, double a3, double a4, double a5) {
+    public static final double Method1256(double a2, double a3, double a4, double a5, double a6) {
         double d;
         boolean bl = Class330.Method1059();
-        a /= a4 / 2.0;
+        a2 /= a5 / 2.0;
         if (d < 1.0) {
-            return a3 / 2.0 * (a * a * (((a5 *= (double)1.525f) + 1.0) * a - a5)) + a2;
+            return a4 / 2.0 * (a2 * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 - a6)) + a3;
         }
-        double d2 = a3 / 2.0 * ((a -= 2.0) * a * (((a5 *= (double)1.525f) + 1.0) * a + a5) + 2.0) + a2;
-        if (Class91.Method3648() == null) {
+        double d2 = a4 / 2.0 * ((a2 -= 2.0) * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 + a6) + 2.0) + a3;
+        if (a.trash() == null) {
             Class330.Method1058(false);
         }
         return d2;

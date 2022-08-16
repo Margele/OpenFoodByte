@@ -22,7 +22,6 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class654;
 import eventapi.EventTarget;
 import java.util.Objects;
 import net.minecraft.block.Block;
@@ -34,10 +33,11 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.network.play.client.C07PacketPlayerDigging;
 import net.minecraft.util.BlockPos;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.player.AntiObbyTrap;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.value.BooleanValue;
 
 public class AutoTool
@@ -57,7 +57,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method801(Class654 a) {
+    public void Method801(EventTickUpdate a2) {
         int n = Class148.Method1445();
         if (Objects.isNull((Object)AutoTool.mc.theWorld)) {
             return;
@@ -69,83 +69,83 @@ extends Module {
             this.Field2691 = true;
         }
         this.Field2691 = false;
-        if (ReflectionUtils.Method2603() > 0.0f && AutoTool.mc.thePlayer.getHeldItem().getItem() instanceof ItemFood) {
+        if (ReflectionUtils.getItemInUseCount() > 0.0f && AutoTool.mc.thePlayer.getHeldItem().getItem() instanceof ItemFood) {
             this.Field2692 = true;
         }
         this.Field2692 = false;
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
-        if (a.isRecieve()) {
+    public void Method273(EventPacket a2) {
+        if (a2.isRecieve()) {
             return;
         }
-        if (!(a.getPacket() instanceof C07PacketPlayerDigging)) {
+        if (!(a2.getPacket() instanceof C07PacketPlayerDigging)) {
             return;
         }
-        C07PacketPlayerDigging a2 = (C07PacketPlayerDigging)a.getPacket();
-        if (a2.getStatus() == C07PacketPlayerDigging.Action.START_DESTROY_BLOCK) {
+        C07PacketPlayerDigging a3 = (C07PacketPlayerDigging)a2.getPacket();
+        if (a3.getStatus() == C07PacketPlayerDigging.Action.START_DESTROY_BLOCK) {
             if (this.Field2693.getValue() && this.Field2691 && !AntiObbyTrap.Field2468) {
                 return;
             }
             if (this.Field2694.getValue() && this.Field2692) {
                 return;
             }
-            AutoTool.Method1178(a2.getPosition());
+            AutoTool.Method1178(a3.getPosition());
         }
     }
 
-    private static void Method1178(BlockPos a) {
-        Block a2 = AutoTool.mc.theWorld.getBlockState(a).getBlock();
-        int a3 = AutoTool.Method1179(a2);
+    private static void Method1178(BlockPos a2) {
+        Block a3 = AutoTool.mc.theWorld.getBlockState(a2).getBlock();
+        int a4 = AutoTool.Method1179(a3);
     }
 
     public static void Method258() {
-        ItemSword a = null;
-        int a2 = 0;
-        int a3 = Class148.Method1445();
-        if (a2 < 9) {
-            ItemStack a4 = AutoTool.mc.thePlayer.inventory.mainInventory[a2];
-            if (a4.getItem() == null) {
+        ItemSword a2 = null;
+        int a3 = 0;
+        int a4 = Class148.Method1445();
+        if (a3 < 9) {
+            ItemStack a5 = AutoTool.mc.thePlayer.inventory.mainInventory[a3];
+            if (a5.getItem() == null) {
             }
-            if (a4.getItem() instanceof ItemSword) {
-                ItemSword a5 = (ItemSword)a4.getItem();
-                a = a5;
-                AutoTool.mc.thePlayer.inventory.currentItem = a2;
-                if (a.getDamageVsEntity() > a5.getDamageVsEntity()) {
+            if (a5.getItem() instanceof ItemSword) {
+                ItemSword a6 = (ItemSword)a5.getItem();
+                a2 = a6;
+                AutoTool.mc.thePlayer.inventory.currentItem = a3;
+                if (a2.getDamageVsEntity() > a6.getDamageVsEntity()) {
                 }
-                a = a5;
-                AutoTool.mc.thePlayer.inventory.currentItem = a2;
+                a2 = a6;
+                AutoTool.mc.thePlayer.inventory.currentItem = a3;
             }
-            ++a2;
+            ++a3;
         }
     }
 
-    private static int Method1179(Block a) {
-        float a2 = Float.NEGATIVE_INFINITY;
-        int a3 = -1;
-        for (int a4 = 0; a4 < 9; ++a4) {
+    private static int Method1179(Block a2) {
+        float a3 = Float.NEGATIVE_INFINITY;
+        int a4 = -1;
+        for (int a5 = 0; a5 < 9; ++a5) {
             float f;
-            ItemStack a5 = AutoTool.mc.thePlayer.inventory.mainInventory[a4];
-            if (a5.getItem() == null) continue;
-            float a6 = AutoTool.Method1180(a, a5);
-            if (!(f > a2) || a6 == 1.0f) continue;
-            a3 = a4;
-            a2 = a6;
+            ItemStack a6 = AutoTool.mc.thePlayer.inventory.mainInventory[a5];
+            if (a6.getItem() == null) continue;
+            float a7 = AutoTool.Method1180(a2, a6);
+            if (!(f > a3) || a7 == 1.0f) continue;
+            a4 = a5;
+            a3 = a7;
         }
-        return a3;
+        return a4;
     }
 
-    public static float Method1180(Block a, ItemStack a2) {
-        float a3 = a2.getStrVsBlock(a);
-        int a4 = Block.getIdFromBlock((Block)a);
-        if (a2.getUnlocalizedName().contains((CharSequence)"Stone") && (a4 == 14 || a4 == 129 || a4 == 56 || a4 == 74 || a4 == 73)) {
+    public static float Method1180(Block a2, ItemStack a3) {
+        float a4 = a3.getStrVsBlock(a2);
+        int a5 = Block.getIdFromBlock((Block)a2);
+        if (a3.getUnlocalizedName().contains((CharSequence)"Stone") && (a5 == 14 || a5 == 129 || a5 == 56 || a5 == 74 || a5 == 73)) {
             return 5.0f;
         }
-        if (!EnchantmentHelper.getEnchantments((ItemStack)a2).containsKey((Object)Enchantment.efficiency.effectId) || a3 == 1.0f) {
-            return a3;
+        if (!EnchantmentHelper.getEnchantments((ItemStack)a3).containsKey((Object)Enchantment.efficiency.effectId) || a4 == 1.0f) {
+            return a4;
         }
-        int a5 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.efficiency.effectId, (ItemStack)a2);
-        return a3 + (float)(a5 * a5 + 1);
+        int a6 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.efficiency.effectId, (ItemStack)a3);
+        return a4 + (float)(a6 * a6 + 1);
     }
 }

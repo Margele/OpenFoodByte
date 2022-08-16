@@ -28,8 +28,8 @@ extends Class390 {
     }
 
     @Override
-    public void Method412(int a, int a2) {
-        int a3 = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
+    public void Method412(int a2, int a3) {
+        int a4 = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
         if (this.Field1915) {
             RenderUtils.Method1103(this.Field1907, this.Field1908, this.Method1310(), this.Field1910, Class681.Method2699(Class707.Method1829(), -250));
         }
@@ -37,17 +37,17 @@ extends Class390 {
     }
 
     @Override
-    public void Method411(int a, int a2) {
-        super.Method411(a, a2);
+    public void Method411(int a2, int a3) {
+        super.Method411(a2, a3);
     }
 
     @Override
-    public void Method413(int a, int a2, boolean a3) {
-        this.Field1915 = this.Method1311(a, a2) && this.Field1919.Method1392(a, a2);
+    public void Method413(int a2, int a3, boolean a4) {
+        this.Field1915 = this.Method1311(a2, a3) && this.Field1919.Method1392(a2, a3);
         if (!this.Field1918 && this.Field1915) {
             this.Method425();
         }
-        this.Field1918 = a3;
+        this.Field1918 = a4;
     }
 
     protected abstract void Method425();

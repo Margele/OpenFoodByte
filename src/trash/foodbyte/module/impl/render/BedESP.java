@@ -27,7 +27,6 @@ package trash.foodbyte.module.impl.render;
 
 import awsl.Class492;
 import awsl.Class649;
-import awsl.Class654;
 import eventapi.EventTarget;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -45,6 +44,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 import trash.foodbyte.event.EventRender3D;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.value.BooleanValue;
@@ -78,7 +78,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1626(Class654 a) {
+    public void Method1626(EventTickUpdate a) {
         int a2 = 0;
         String a3 = Class492.Method2239();
         if (a2 < this.Field2384.Method1799()) {
@@ -119,17 +119,17 @@ extends Module {
             GlStateManager.enableBlend();
             GlStateManager.tryBlendFuncSeparate((int)770, (int)771, (int)1, (int)0);
             GlStateManager.color((float)((float)this.Method242() / 255.0f), (float)((float)this.Method243() / 255.0f), (float)((float)this.Method244() / 255.0f), (float)((float)this.Method245() / 255.0f));
-            GL11.glLineWidth((float)this.Field2386.Method2744().floatValue());
+            GL11.glLineWidth((float)this.Field2386.getFloatValue().floatValue());
             GlStateManager.disableTexture2D();
             GlStateManager.depthMask((boolean)false);
             GL11.glDisable((int)2929);
-            if (this.Field2387.Method2509().booleanValue()) {
+            if (this.Field2387.getBooleanValue().booleanValue()) {
                 GL11.glEnable((int)2848);
             }
             GlStateManager.color((float)((float)this.Method242() / 255.0f), (float)((float)this.Method243() / 255.0f), (float)((float)this.Method244() / 255.0f), (float)((float)this.Method245() / 255.0f));
             BedESP.Method1629(a9.expand((double)0.002f, (double)0.002f, (double)0.002f).offset(-a6, -a7, -a8));
             GL11.glEnable((int)2929);
-            if (this.Field2387.Method2509().booleanValue()) {
+            if (this.Field2387.getBooleanValue().booleanValue()) {
                 GL11.glDisable((int)2848);
             }
             GlStateManager.depthMask((boolean)true);

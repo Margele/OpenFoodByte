@@ -11,12 +11,12 @@
  */
 package trash.foodbyte.command.impl;
 
-import awsl.Class749;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import trash.foodbyte.command.Command;
 import trash.foodbyte.utils.ChatUtils;
+import trash.foodbyte.utils.PlayerUtils;
 
 public class GetDmgCommand
 extends Command {
@@ -32,8 +32,8 @@ extends Command {
         int a = GetDmgCommand.Method3599();
         if (this.mc.thePlayer.getCurrentEquippedItem() != null) {
             ItemStack a2 = this.mc.thePlayer.getCurrentEquippedItem();
-            float a3 = Class749.Method1590(a2);
-            ChatUtils.addChatMessage("this Item Base Damage = \u00a7c" + Class749.Method1590(a2) + " \u00a77- \u00a7fAttack Damage = \u00a7c" + (a3 += (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a2) * 1.25f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a2) * 0.25f));
+            float a3 = PlayerUtils.Method1590(a2);
+            ChatUtils.addChatMessage("this Item Base Damage = \u00a7c" + PlayerUtils.Method1590(a2) + " \u00a77- \u00a7fAttack Damage = \u00a7c" + (a3 += (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a2) * 1.25f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a2) * 0.25f));
         }
         ChatUtils.addChatMessage("No items on hand");
     }

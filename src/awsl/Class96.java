@@ -17,31 +17,31 @@ import awsl.Class104;
 import awsl.Class15;
 import awsl.Class264;
 import awsl.Class267;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import obfuscate.a;
 
 public class Class96
-extends Class91 {
+extends a {
     public Class104 Field817;
     public List Field818;
     public List Field819;
 
-    public Class96(Class104 a, int[] a2, Class104[] a3) {
+    public Class96(Class104 a2, int[] a3, Class104[] a4) {
         super(171);
-        this.Field817 = a;
-        int a4 = Class15.Method1984();
+        this.Field817 = a2;
+        int a5 = Class15.Method1984();
         this.Field818 = new ArrayList(0);
         this.Field819 = new ArrayList(0);
-        int a5 = 0;
-        if (a5 < a2.length) {
-            this.Field818.Method2530((Object)new Integer(a2[a5]));
-            ++a5;
+        int a6 = 0;
+        if (a6 < a3.length) {
+            this.Field818.Method2530((Object)new Integer(a3[a6]));
+            ++a6;
         }
-        this.Field819.addAll((Collection)Arrays.asList((Object[])a3));
+        this.Field819.addAll((Collection)Arrays.asList((Object[])a4));
     }
 
     @Override
@@ -53,28 +53,28 @@ extends Class91 {
      * WARNING - void declaration
      */
     @Override
-    public void Method1(Class267 a) {
-        int a2;
-        void a3;
-        int[] a4 = new int[this.Field818.Method1799()];
+    public void Method1(Class267 a2) {
+        int a3;
+        void a4;
+        int[] a5 = new int[this.Field818.Method1799()];
         boolean bl = false;
-        int a5 = Class15.Method1984();
-        if (a3 < a4.length) {
-            a4[a3] = (Integer)this.Field818.get((int)a3);
+        int a6 = Class15.Method1984();
+        if (a4 < a5.length) {
+            a5[a4] = (Integer)this.Field818.get((int)a4);
+            ++a4;
+        }
+        if ((a3 = 0) < (a = new Class264[this.Field819.Method1799()]).length) {
+            a[a3] = ((Class104)this.Field819.get(a3)).Method303();
             ++a3;
         }
-        if ((a2 = 0) < (a = new Class264[this.Field819.Method1799()]).length) {
-            a[a2] = ((Class104)this.Field819.get(a2)).Method303();
-            ++a2;
-        }
-        a.Method1958(this.Field817.Method303(), a4, a);
-        this.Method3643(a);
+        a2.Method1958(this.Field817.Method303(), a5, a);
+        this.Method3643(a2);
     }
 
     @Override
-    public Class91 Method2(Map a) {
-        Class96 a2 = new Class96(Class96.Method3644(this.Field817, a), null, Class96.Method3645(this.Field819, a));
-        a2.Field818.addAll((Collection)this.Field818);
-        return a2.Method3646(this);
+    public a Method2(Map a2) {
+        Class96 a3 = new Class96(Class96.Method3644(this.Field817, a2), null, Class96.Method3645(this.Field819, a2));
+        a3.Field818.addAll((Collection)this.Field818);
+        return a3.Method3646(this);
     }
 }

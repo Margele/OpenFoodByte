@@ -11,10 +11,10 @@
 package awsl;
 
 import awsl.Class416;
-import awsl.Class91;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.StringUtils;
+import obfuscate.a;
 
 public class Class415 {
     private static FontRenderer Field2010;
@@ -51,11 +51,11 @@ public class Class415 {
         Class415.Method2363(a, a2 - (double)(Field2010.getStringWidth(a) / 2), a3 - (double)(Class415.Field2010.FONT_HEIGHT / 2), a4);
     }
 
-    public static void Method2368(String a, double a2, double a3, int a4) {
+    public static void Method2368(String a2, double a3, double a4, int a5) {
         int n = Class416.Method2355();
-        Class415.Method2364(a, a2 - (double)(Field2010.getStringWidth(a) / 2), a3 - (double)((float)Class415.Field2010.FONT_HEIGHT / 2.0f), a4);
+        Class415.Method2364(a2, a3 - (double)(Field2010.getStringWidth(a2) / 2), a4 - (double)((float)Class415.Field2010.FONT_HEIGHT / 2.0f), a5);
         int n2 = n;
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class416.Method2354(++n2);
         }
     }

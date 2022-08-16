@@ -9,9 +9,9 @@
  */
 package awsl;
 
-import awsl.Class91;
 import java.util.Collection;
 import java.util.LinkedList;
+import obfuscate.a;
 
 public class Class694
 extends LinkedList {
@@ -27,20 +27,20 @@ extends LinkedList {
         this.Field2989 = a2;
     }
 
-    public boolean Method2530(Object a) {
+    public boolean Method2530(Object a2) {
         boolean bl = Class694.Method1270();
         if (this.Method1799() >= this.Method10()) {
             this.removeFirst();
         }
-        boolean bl2 = super.Method2530(a);
-        Class91.Method3647(new String[2]);
+        boolean bl2 = super.Method2530(a2);
+        a.trash(new String[2]);
         return bl2;
     }
 
     public boolean Method1269() {
         boolean bl = Class694.Method1270();
         boolean bl2 = this.Method1799() >= this.Method10();
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class694.Method1268(false);
         }
         return bl2;

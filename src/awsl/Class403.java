@@ -1091,7 +1091,7 @@ Class45 {
     }
 
     public static void Method3604(float a) {
-        EventManager.Method2686(new EventRender2D(a));
+        EventManager.call(new EventRender2D(a));
     }
 
     @Override

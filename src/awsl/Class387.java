@@ -54,18 +54,18 @@ extends Class390 {
     }
 
     @Override
-    public void Method412(int a, int a2) {
+    public void Method412(int a2, int a3) {
         int n = Class390.Method1318();
         RenderUtils.Method1103(this.Field1907 + 5, this.Field1908 + 9, this.Method1310() - 10, 10.0f, new Color(150, 150, 150, 77).getRGB());
         Class565.Field2636.Method1217(this.Field1913, this.Field1907 + 5, (float)this.Field1908 + 1.0f, 0xFFFFFF);
-        int a3 = n;
+        int a4 = n;
         Class565.Field2636.Method1222(this.Field1895.getMode(), this.Field1907 + this.Method1310() / 2, this.Field1908 + 10, 0xFFFFFF);
-        float a4 = (float)this.Field1897.Method292() * 2.0f - 1.0f;
-        float a5 = (float)(this.Field1908 + 14) + a4 * 1.0f;
-        float a6 = (float)(this.Field1908 + 14) - a4 * 1.0f;
-        float a7 = (float)(this.Field1908 + 14) + a4 * 1.0f;
-        RenderUtils.Method1085(this.Field1907 + this.Method1310() - 12, a5, (float)(this.Field1907 + this.Method1310()) - 10.0f, a6, 1.0f, 0xFFFFFF);
-        RenderUtils.Method1085((float)(this.Field1907 + this.Method1310()) - 10.0f, a6, this.Field1907 + this.Method1310() - 8, a7, 1.0f, 0xFFFFFF);
+        float a5 = (float)this.Field1897.Method292() * 2.0f - 1.0f;
+        float a6 = (float)(this.Field1908 + 14) + a5 * 1.0f;
+        float a7 = (float)(this.Field1908 + 14) - a5 * 1.0f;
+        float a8 = (float)(this.Field1908 + 14) + a5 * 1.0f;
+        RenderUtils.Method1085(this.Field1907 + this.Method1310() - 12, a6, (float)(this.Field1907 + this.Method1310()) - 10.0f, a7, 1.0f, 0xFFFFFF);
+        RenderUtils.Method1085((float)(this.Field1907 + this.Method1310()) - 10.0f, a7, this.Field1907 + this.Method1310() - 8, a8, 1.0f, 0xFFFFFF);
         if (!this.Field1893) {
             return;
         }
@@ -73,26 +73,26 @@ extends Class390 {
         if (this.Field1895.Method2728().length > 1) {
             RenderUtils.Method1106(this.Field1907 + 5, this.Field1908 + 19, this.Field1907 + this.Method1310() - 5, this.Field1908 + 25, new Color(0, 0, 0, 30).getRGB(), 0);
         }
-        double a8 = (double)this.Field1908 + 21.0;
-        int a9 = 0;
-        if (a9 < this.Field1895.Method2728().length) {
-            String a10 = this.Field1895.Method2728()[a9];
-            int a11 = new Color(163, 162, 162, 255).getRGB();
-            if (this.Field1895.isCurrentMode(a10)) {
+        double a9 = (double)this.Field1908 + 21.0;
+        int a10 = 0;
+        if (a10 < this.Field1895.Method2728().length) {
+            String a11 = this.Field1895.Method2728()[a10];
+            int a12 = new Color(163, 162, 162, 255).getRGB();
+            if (this.Field1895.isCurrentMode(a11)) {
             }
-            if (a >= this.Field1907 + 5 && a <= this.Field1907 + this.Method1310() - 5 && (double)a2 >= a8 && (double)a2 < a8 + (double)Class565.Field2636.Field2625 - 1.0) {
-                a11 = new Color(0, 153, 255, 150).getRGB();
+            if (a2 >= this.Field1907 + 5 && a2 <= this.Field1907 + this.Method1310() - 5 && (double)a3 >= a9 && (double)a3 < a9 + (double)Class565.Field2636.Field2625 - 1.0) {
+                a12 = new Color(0, 153, 255, 150).getRGB();
             }
-            Class565.Field2636.Method1222(a10, this.Field1907 + this.Method1310() / 2, (float)(a8 - 1.0), a11);
-            a8 += (double)Class565.Field2636.Field2625;
-            ++a9;
+            Class565.Field2636.Method1222(a11, this.Field1907 + this.Method1310() / 2, (float)(a9 - 1.0), a12);
+            a9 += (double)Class565.Field2636.Field2625;
+            ++a10;
         }
     }
 
     @Override
-    public void Method413(int a, int a2, boolean a3) {
-        int a4 = Class390.Method1318();
-        this.Field1915 = this.Method1314(a, a2) && this.Field1919.Method1392(a, a2);
+    public void Method413(int a2, int a3, boolean a4) {
+        int a5 = Class390.Method1318();
+        this.Field1915 = this.Method1314(a2, a3) && this.Field1919.Method1392(a2, a3);
         if (!this.Field1918 && this.Field1915 && !Mouse.isButtonDown((int)2)) {
             boolean bl = this.Field1893 = !this.Field1893;
             if (this.Field1893) {
@@ -102,25 +102,25 @@ extends Class390 {
         }
         if (this.Field1893) {
             if (!this.Field1918 && !Mouse.isButtonDown((int)2)) {
-                double a5 = (double)this.Field1908 + 21.0;
-                int a6 = 0;
-                if (a6 < this.Field1895.Method2728().length) {
-                    String a7 = this.Field1895.Method2728()[a6];
-                    int a8 = new Color(163, 162, 162, 255).getRGB();
-                    if (this.Field1895.isCurrentMode(a7)) {
+                double a6 = (double)this.Field1908 + 21.0;
+                int a7 = 0;
+                if (a7 < this.Field1895.Method2728().length) {
+                    String a8 = this.Field1895.Method2728()[a7];
+                    int a9 = new Color(163, 162, 162, 255).getRGB();
+                    if (this.Field1895.isCurrentMode(a8)) {
                     }
-                    if (a >= this.Field1907 + 5 && a <= this.Field1907 + this.Method1310() - 5 && (double)a2 >= a5 && (double)a2 < a5 + (double)Class565.Field2636.Field2625 - 1.0) {
-                        this.Field1895.Method2725(this.Field1895.Method2728()[a6]);
+                    if (a2 >= this.Field1907 + 5 && a2 <= this.Field1907 + this.Method1310() - 5 && (double)a3 >= a6 && (double)a3 < a6 + (double)Class565.Field2636.Field2625 - 1.0) {
+                        this.Field1895.Method2725(this.Field1895.Method2728()[a7]);
                         GlobalModule.INSTANCE.fileManager.saveValues();
                         this.Field1893 = false;
                         this.Field1910 = 21;
                     }
-                    a5 += (double)Class565.Field2636.Field2625;
-                    ++a6;
+                    a6 += (double)Class565.Field2636.Field2625;
+                    ++a7;
                 }
             }
         }
-        this.Field1918 = a3;
+        this.Field1918 = a4;
     }
 
     @Override

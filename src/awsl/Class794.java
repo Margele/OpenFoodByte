@@ -46,21 +46,21 @@ public class Class794 {
         }
     }
 
-    public void Method796(Class267 a) {
-        Class126 a2;
-        int a3 = Class15.Method1984();
-        a.Method1960(this.Field3559.Method303(), this.Field3560.Method303(), this.Field3561 == null ? null : this.Field3561.Method303(), this.Field3562);
-        int a4 = this.Field3563 == null ? 0 : this.Field3563.Method1799();
-        int a5 = 0;
-        if (a5 < a4) {
-            a2 = (Class126)this.Field3563.get(a5);
-            a2.Method646(a.Method1974(a2.Field975, a2.Field976, a2.Field973, true));
-            ++a5;
+    public void Method796(Class267 a2) {
+        Class126 a3;
+        int a4 = Class15.Method1984();
+        a2.Method1960(this.Field3559.Method303(), this.Field3560.Method303(), this.Field3561 == null ? null : this.Field3561.Method303(), this.Field3562);
+        int a5 = this.Field3563 == null ? 0 : this.Field3563.Method1799();
+        int a6 = 0;
+        if (a6 < a5) {
+            a3 = (Class126)this.Field3563.get(a6);
+            a3.Method646(a2.Method1974(a3.Field975, a3.Field976, a3.Field973, true));
+            ++a6;
         }
-        if ((a5 = 0) < (a4 = this.Field3564 == null ? 0 : this.Field3564.Method1799())) {
-            a2 = (Class126)this.Field3564.get(a5);
-            a2.Method646(a.Method1974(a2.Field975, a2.Field976, a2.Field973, false));
-            ++a5;
+        if ((a6 = 0) < (a5 = this.Field3564 == null ? 0 : this.Field3564.Method1799())) {
+            a3 = (Class126)this.Field3564.get(a6);
+            a3.Method646(a2.Method1974(a3.Field975, a3.Field976, a3.Field973, false));
+            ++a6;
         }
     }
 }

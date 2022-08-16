@@ -19,12 +19,12 @@ import awsl.Class422;
 import awsl.Class45;
 import awsl.Class628;
 import awsl.Class673;
-import awsl.Class91;
 import native0.Class614;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import obfuscate.a;
 
 public class Class399
 implements Class422,
@@ -1080,39 +1080,39 @@ Class45 {
         return Field1965[n3];
     }
 
-    public static void Method1358(int a, int a2, int a3, int a4, int a5) {
-        int a6;
-        int[] a7 = Class405.Method917();
-        if (a < a3) {
-            a6 = a;
-            a = a3;
-            a3 = a6;
-        }
+    public static void Method1358(int a2, int a3, int a4, int a5, int a6) {
+        int a7;
+        int[] a8 = Class405.Method917();
         if (a2 < a4) {
-            a6 = a2;
+            a7 = a2;
             a2 = a4;
-            a4 = a6;
+            a4 = a7;
         }
-        float a8 = (float)(a5 >> 24 & 0xFF) / 255.0f;
-        float a9 = (float)(a5 >> 16 & 0xFF) / 255.0f;
-        float a10 = (float)(a5 >> 8 & 0xFF) / 255.0f;
-        float a11 = (float)(a5 & 0xFF) / 255.0f;
-        Tessellator a12 = Tessellator.getInstance();
-        WorldRenderer a13 = a12.getWorldRenderer();
+        if (a3 < a5) {
+            a7 = a3;
+            a3 = a5;
+            a5 = a7;
+        }
+        float a9 = (float)(a6 >> 24 & 0xFF) / 255.0f;
+        float a10 = (float)(a6 >> 16 & 0xFF) / 255.0f;
+        float a11 = (float)(a6 >> 8 & 0xFF) / 255.0f;
+        float a12 = (float)(a6 & 0xFF) / 255.0f;
+        Tessellator a13 = Tessellator.getInstance();
+        WorldRenderer a14 = a13.getWorldRenderer();
         GlStateManager.enableBlend();
         GlStateManager.disableTexture2D();
         GlStateManager.tryBlendFuncSeparate((int)770, (int)771, (int)1, (int)0);
-        GlStateManager.color((float)a9, (float)a10, (float)a11, (float)a8);
-        a13.begin(7, DefaultVertexFormats.POSITION);
-        a13.pos((double)a, (double)a4, 0.0).endVertex();
-        a13.pos((double)a3, (double)a4, 0.0).endVertex();
-        a13.pos((double)a3, (double)a2, 0.0).endVertex();
-        a13.pos((double)a, (double)a2, 0.0).endVertex();
-        a12.draw();
+        GlStateManager.color((float)a10, (float)a11, (float)a12, (float)a9);
+        a14.begin(7, DefaultVertexFormats.POSITION);
+        a14.pos((double)a2, (double)a5, 0.0).endVertex();
+        a14.pos((double)a4, (double)a5, 0.0).endVertex();
+        a14.pos((double)a4, (double)a3, 0.0).endVertex();
+        a14.pos((double)a2, (double)a3, 0.0).endVertex();
+        a13.draw();
         GlStateManager.enableTexture2D();
         GlStateManager.disableBlend();
         GlStateManager.color((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
-        Class91.Method3647(new String[4]);
+        a.trash(new String[4]);
     }
 
     static {
@@ -1121,8 +1121,8 @@ Class45 {
     }
 
     @Override
-    public void Method1359(Class15 a, String a2) {
-        this.Method1362(a, a2);
+    public void Method1359(Class15 a2, String a3) {
+        this.Method1362(a2, a3);
     }
 
     @Override
@@ -1131,7 +1131,7 @@ Class45 {
     }
 
     @Override
-    public void Method1361(Class224 a, String a2) {
+    public void Method1361(Class224 a2, String a3) {
     }
 
     @Class628

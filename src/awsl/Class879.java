@@ -24,7 +24,6 @@ package awsl;
 
 import awsl.Class187;
 import awsl.Class193;
-import awsl.Class91;
 import java.awt.AlphaComposite;
 import java.awt.Composite;
 import java.awt.Graphics2D;
@@ -37,6 +36,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.Raster;
 import java.awt.image.RenderedImage;
+import obfuscate.a;
 
 public class Class879
 extends Class193 {
@@ -144,43 +144,43 @@ extends Class193 {
     /*
      * WARNING - void declaration
      */
-    public BufferedImage Method62(BufferedImage a, BufferedImage a2) {
-        void a3;
-        int a4 = a.getWidth();
-        int n = a.getHeight();
-        boolean a5 = Class193.Method1270();
-        float a6 = this.Field3834 * (float)Math.cos((double)this.Field3833);
-        float a7 = -this.Field3834 * (float)Math.sin((double)this.Field3833);
+    public BufferedImage Method62(BufferedImage a2, BufferedImage a3) {
+        void a4;
+        int a5 = a2.getWidth();
+        int n = a2.getHeight();
+        boolean a6 = Class193.Method1270();
+        float a7 = this.Field3834 * (float)Math.cos((double)this.Field3833);
+        float a8 = -this.Field3834 * (float)Math.sin((double)this.Field3833);
         if (this.Field3836) {
-            ColorModel a8 = a.getColorModel();
-            a2 = new BufferedImage(a8, a8.createCompatibleWritableRaster(a.getWidth() + (int)(Math.abs((float)a6) + this.Field3832), a.getHeight() + (int)(Math.abs((float)a7) + this.Field3832)), a8.isAlphaPremultiplied(), null);
+            ColorModel a9 = a2.getColorModel();
+            a3 = new BufferedImage(a9, a9.createCompatibleWritableRaster(a2.getWidth() + (int)(Math.abs((float)a7) + this.Field3832), a2.getHeight() + (int)(Math.abs((float)a8) + this.Field3832)), a9.isAlphaPremultiplied(), null);
         }
-        a2 = this.Method1263(a, null);
-        float a9 = (float)(this.Field3838 >> 16 & 0xFF) / 255.0f;
-        float a10 = (float)(this.Field3838 >> 8 & 0xFF) / 255.0f;
-        float a11 = (float)(this.Field3838 & 0xFF) / 255.0f;
-        float[][] a12 = new float[][]{{0.0f, 0.0f, 0.0f, a9}, {0.0f, 0.0f, 0.0f, a10}, {0.0f, 0.0f, 0.0f, a11}, {0.0f, 0.0f, 0.0f, this.Field3835}};
-        BufferedImage a13 = new BufferedImage(a4, (int)a3, 2);
-        new BandCombineOp((float[][])a12, null).filter((Raster)a.getRaster(), a13.getRaster());
-        a13 = new Class187(this.Field3832).Method62(a13, null);
-        Graphics2D a14 = a2.createGraphics();
-        a14.setComposite((Composite)AlphaComposite.getInstance((int)3, (float)this.Field3835));
+        a3 = this.Method1263(a2, null);
+        float a10 = (float)(this.Field3838 >> 16 & 0xFF) / 255.0f;
+        float a11 = (float)(this.Field3838 >> 8 & 0xFF) / 255.0f;
+        float a12 = (float)(this.Field3838 & 0xFF) / 255.0f;
+        float[][] a13 = new float[][]{{0.0f, 0.0f, 0.0f, a10}, {0.0f, 0.0f, 0.0f, a11}, {0.0f, 0.0f, 0.0f, a12}, {0.0f, 0.0f, 0.0f, this.Field3835}};
+        BufferedImage a14 = new BufferedImage(a5, (int)a4, 2);
+        new BandCombineOp((float[][])a13, null).filter((Raster)a2.getRaster(), a14.getRaster());
+        a14 = new Class187(this.Field3832).Method62(a14, null);
+        Graphics2D a15 = a3.createGraphics();
+        a15.setComposite((Composite)AlphaComposite.getInstance((int)3, (float)this.Field3835));
         if (this.Field3836) {
-            float a15 = this.Field3832 / 2.0f;
-            float a16 = Math.max((float)0.0f, (float)(this.Field3832 - a7));
-            float a17 = Math.max((float)0.0f, (float)(this.Field3832 - a6));
-            a14.translate((double)a17, (double)a16);
+            float a16 = this.Field3832 / 2.0f;
+            float a17 = Math.max((float)0.0f, (float)(this.Field3832 - a8));
+            float a18 = Math.max((float)0.0f, (float)(this.Field3832 - a7));
+            a15.translate((double)a18, (double)a17);
         }
-        a14.drawRenderedImage((RenderedImage)a13, AffineTransform.getTranslateInstance((double)a6, (double)a7));
+        a15.drawRenderedImage((RenderedImage)a14, AffineTransform.getTranslateInstance((double)a7, (double)a8));
         if (!this.Field3837) {
-            a14.setComposite((Composite)AlphaComposite.SrcOver);
-            a14.drawRenderedImage((RenderedImage)a, null);
+            a15.setComposite((Composite)AlphaComposite.SrcOver);
+            a15.drawRenderedImage((RenderedImage)a2, null);
         }
-        a14.dispose();
-        if (Class91.Method3648() == null) {
+        a15.dispose();
+        if (a.trash() == null) {
             Class193.Method1268(false);
         }
-        return a2;
+        return a3;
     }
 
     public String toString() {

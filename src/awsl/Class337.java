@@ -14,8 +14,8 @@ package awsl;
 import awsl.Class262;
 import awsl.Class263;
 import awsl.Class328;
-import awsl.Class91;
 import java.util.Random;
+import obfuscate.a;
 
 public class Class337 {
     private float Field1625;
@@ -44,32 +44,32 @@ public class Class337 {
     /*
      * WARNING - void declaration
      */
-    public Class263 Method1182(Class262 a, Class262 a2) {
-        void a3;
+    public Class263 Method1182(Class262 a2, Class262 a3) {
         void a4;
+        void a5;
         Class263 class263 = new Class263(Float.valueOf((float)0.0f), Float.valueOf((float)0.0f));
         int n = Class328.Method995();
-        this.Field1629.Method2808((Number)Float.valueOf((float)(a.Method2811().floatValue() - a2.Method2811().floatValue()))).Method2809((Number)Float.valueOf((float)(a.Method2812().floatValue() + this.Field1632 - (a2.Method2812().floatValue() + this.Field1632)))).Method2810((Number)Float.valueOf((float)(a.Method2813().floatValue() - a2.Method2813().floatValue())));
-        double a5 = Math.hypot((double)this.Field1629.Method2811().doubleValue(), (double)this.Field1629.Method2813().doubleValue());
+        this.Field1629.Method2808((Number)Float.valueOf((float)(a2.Method2811().floatValue() - a3.Method2811().floatValue()))).Method2809((Number)Float.valueOf((float)(a2.Method2812().floatValue() + this.Field1632 - (a3.Method2812().floatValue() + this.Field1632)))).Method2810((Number)Float.valueOf((float)(a2.Method2813().floatValue() - a3.Method2813().floatValue())));
+        double a6 = Math.hypot((double)this.Field1629.Method2811().doubleValue(), (double)this.Field1629.Method2813().doubleValue());
         float f = (float)Math.atan2((double)this.Field1629.Method2813().floatValue(), (double)this.Field1629.Method2811().floatValue());
-        int a6 = n;
-        float a7 = (float)Math.atan2((double)this.Field1629.Method2812().floatValue(), (double)a5);
-        float a8 = 57.29578f;
-        void a9 = a4 * a8 - 90.0f;
-        float a10 = -(a7 * a8);
-        Class263 class2632 = a3.Method2844(Float.valueOf((float)a9)).Method2845(Float.valueOf((float)a10)).Method2848();
-        Class91.Method3647(new String[1]);
+        int a7 = n;
+        float a8 = (float)Math.atan2((double)this.Field1629.Method2812().floatValue(), (double)a6);
+        float a9 = 57.29578f;
+        void a10 = a5 * a9 - 90.0f;
+        float a11 = -(a8 * a9);
+        Class263 class2632 = a4.Method2844(Float.valueOf((float)a10)).Method2845(Float.valueOf((float)a11)).Method2848();
+        a.trash(new String[1]);
         return class2632;
     }
 
-    public void Method1183(float a) {
-        this.Field1632 = a;
+    public void Method1183(float a2) {
+        this.Field1632 = a2;
     }
 
-    public Class263 Method1184(Class263 a, Class263 a2, float a3, float a4) {
+    public Class263 Method1184(Class263 a2, Class263 a3, float a4, float a5) {
         int n = Class328.Method994();
-        Class263 class263 = this.Field1630.Method2844(Float.valueOf((float)(a2.Method2846().floatValue() - a.Method2846().floatValue() - (Math.abs((float)(a2.Method2846().floatValue() - a.Method2846().floatValue())) > 5.0f ? Math.abs((float)(a2.Method2846().floatValue() - a.Method2846().floatValue())) / Math.abs((float)(a2.Method2846().floatValue() - a.Method2846().floatValue())) * 2.0f / 2.0f : 0.0f)))).Method2845(Float.valueOf((float)(a2.Method2847().floatValue() - a.Method2847().floatValue()))).Method2848().Method2844(Float.valueOf((float)(a2.Method2846().floatValue() - this.Field1630.Method2846().floatValue() / a4 * this.Method1181(this.Field1625, this.Field1626)))).Method2848().Method2845(Float.valueOf((float)(a2.Method2847().floatValue() - this.Field1630.Method2847().floatValue() / a3 * this.Method1181(this.Field1627, this.Field1628)))).Method2848();
-        if (Class91.Method3648() == null) {
+        Class263 class263 = this.Field1630.Method2844(Float.valueOf((float)(a3.Method2846().floatValue() - a2.Method2846().floatValue() - (Math.abs((float)(a3.Method2846().floatValue() - a2.Method2846().floatValue())) > 5.0f ? Math.abs((float)(a3.Method2846().floatValue() - a2.Method2846().floatValue())) / Math.abs((float)(a3.Method2846().floatValue() - a2.Method2846().floatValue())) * 2.0f / 2.0f : 0.0f)))).Method2845(Float.valueOf((float)(a3.Method2847().floatValue() - a2.Method2847().floatValue()))).Method2848().Method2844(Float.valueOf((float)(a3.Method2846().floatValue() - this.Field1630.Method2846().floatValue() / a5 * this.Method1181(this.Field1625, this.Field1626)))).Method2848().Method2845(Float.valueOf((float)(a3.Method2847().floatValue() - this.Field1630.Method2847().floatValue() / a4 * this.Method1181(this.Field1627, this.Field1628)))).Method2848();
+        if (a.trash() == null) {
             Class328.Method993(++n);
         }
         return class263;

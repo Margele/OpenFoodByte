@@ -20,9 +20,6 @@
  */
 package trash.foodbyte.module.impl.combat;
 
-import awsl.Class281;
-import awsl.Class46;
-import awsl.Class91;
 import eventapi.EventTarget;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -35,11 +32,14 @@ import net.minecraft.network.play.client.C09PacketHeldItemChange;
 import net.minecraft.network.play.client.C0DPacketCloseWindow;
 import net.minecraft.network.play.client.C16PacketClientStatus;
 import net.minecraft.potion.Potion;
+import obfuscate.a;
+import obfuscate.b;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.Wrapper;
+import trash.foodbyte.utils.ServerUtils;
 import trash.foodbyte.utils.TimeHelper;
-import trash.foodbyte.utils.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 
@@ -60,90 +60,90 @@ extends Module {
     }
 
     @EventTarget
-    public void Method712(EventMotion a) {
-        if (a.isPost()) {
+    public void Method712(EventMotion a2) {
+        if (a2.isPost()) {
             return;
         }
-        if (Class281.Method3051() || Class281.Method3050()) {
+        if (ServerUtils.isPlayingSkywars() || ServerUtils.isPlayingSkyblock()) {
             return;
         }
         if (this.Field2619.getValue()) {
             this.setDisplayTag("Head");
         }
-        int a2 = this.Field2617.Method2744().intValue() - 1;
+        int a3 = this.Field2617.getFloatValue().intValue() - 1;
         this.Field2622 = this.Method243();
         this.Field2621 = this.Method242();
-        if (AutoHeal.mc.thePlayer.hurtTime <= 0 && this.Field2618.Method2509().booleanValue()) {
+        if (AutoHeal.mc.thePlayer.hurtTime <= 0 && this.Field2618.getBooleanValue().booleanValue()) {
             return;
         }
-        float a3 = AutoHeal.mc.thePlayer.getHealth() / AutoHeal.mc.thePlayer.getMaxHealth() * 100.0f;
-        if (this.Method713() && a3 <= this.Field2615.Method2744().floatValue() + 5.0f) {
+        float a4 = AutoHeal.mc.thePlayer.getHealth() / AutoHeal.mc.thePlayer.getMaxHealth() * 100.0f;
+        if (this.Method713() && a4 <= this.Field2615.getFloatValue().floatValue() + 5.0f) {
             Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C16PacketClientStatus(C16PacketClientStatus.EnumState.OPEN_INVENTORY_ACHIEVEMENT));
-            this.Method235(this.Field2622, a2);
+            this.Method235(this.Field2622, a3);
             Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C0DPacketCloseWindow(0));
         }
-        if (this.Field2621 != -1 && a3 <= this.Field2615.Method2744().floatValue() && this.Field2620.Method219(this.Field2616.Method2744().floatValue())) {
-            Wrapper.INSTANCE.Method2874((Packet)new C09PacketHeldItemChange(this.Field2621));
-            Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(AutoHeal.mc.thePlayer.inventory.getCurrentItem()));
-            Wrapper.INSTANCE.Method2874((Packet)new C09PacketHeldItemChange(AutoHeal.mc.thePlayer.inventory.currentItem));
-            this.Field2620.Method214();
+        if (this.Field2621 != -1 && a4 <= this.Field2615.getFloatValue().floatValue() && this.Field2620.isDelayComplete(this.Field2616.getFloatValue().floatValue())) {
+            Wrapper.INSTANCE.sendPacket((Packet)new C09PacketHeldItemChange(this.Field2621));
+            Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(AutoHeal.mc.thePlayer.inventory.getCurrentItem()));
+            Wrapper.INSTANCE.sendPacket((Packet)new C09PacketHeldItemChange(AutoHeal.mc.thePlayer.inventory.currentItem));
+            this.Field2620.reset();
         }
     }
 
     private int Method242() {
-        int a = -1;
-        Class91[] a2 = Class46.Method3239();
-        int a3 = 36;
-        if (a3 < 45) {
-            if (AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack()) {
-                ItemStack a4 = AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a3).getStack();
-                Item a5 = a4.getItem();
-                if (a4.getItemDamage() == 3) {
-                    boolean a6;
-                    if (a4.getDisplayName().contains((CharSequence)"Backpack")) {
+        int a2 = -1;
+        a[] a3 = b.trash();
+        int a4 = 36;
+        if (a4 < 45) {
+            if (AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack()) {
+                ItemStack a5 = AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a4).getStack();
+                Item a6 = a5.getItem();
+                if (a5.getItemDamage() == 3) {
+                    boolean a7;
+                    if (a5.getDisplayName().contains((CharSequence)"Backpack")) {
                     }
-                    boolean bl = a6 = this.Field2619.Method2509() != false && (Item.getIdFromItem((Item)a5) == Item.getIdFromItem((Item)Items.skull) || Item.getIdFromItem((Item)a5) == Item.getIdFromItem((Item)Items.baked_potato)) && (!AutoHeal.mc.thePlayer.isPotionActive(Potion.regeneration) || AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getAmplifier() < 2 && AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getDuration() <= 1 || AutoHeal.mc.thePlayer.getAbsorptionAmount() <= 0.0f && a4.stackSize >= 1);
-                    if (Item.getIdFromItem((Item)a5) != 282) {
+                    boolean bl = a7 = this.Field2619.getBooleanValue() != false && (Item.getIdFromItem((Item)a6) == Item.getIdFromItem((Item)Items.skull) || Item.getIdFromItem((Item)a6) == Item.getIdFromItem((Item)Items.baked_potato)) && (!AutoHeal.mc.thePlayer.isPotionActive(Potion.regeneration) || AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getAmplifier() < 2 && AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getDuration() <= 1 || AutoHeal.mc.thePlayer.getAbsorptionAmount() <= 0.0f && a5.stackSize >= 1);
+                    if (Item.getIdFromItem((Item)a6) != 282) {
                     }
-                    a = a3 - 36;
+                    a2 = a4 - 36;
                 }
             }
-            ++a3;
+            ++a4;
         }
-        return a;
+        return a2;
     }
 
     private boolean Method713() {
-        for (int a = 36; a < 45; ++a) {
-            ItemStack a2 = AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (!AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a).getHasStack() || !(a2.getItem() instanceof ItemSkull) || a2.getItemDamage() != 3 || a2.getDisplayName().contains((CharSequence)"Backpack")) continue;
+        for (int a2 = 36; a2 < 45; ++a2) {
+            ItemStack a3 = AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a2).getStack();
+            if (!AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !(a3.getItem() instanceof ItemSkull) || a3.getItemDamage() != 3 || a3.getDisplayName().contains((CharSequence)"Backpack")) continue;
             return false;
         }
         return true;
     }
 
-    protected void Method235(int a, int a2) {
-        AutoHeal.mc.playerController.windowClick(AutoHeal.mc.thePlayer.inventoryContainer.windowId, a, a2, 2, (EntityPlayer)AutoHeal.mc.thePlayer);
+    protected void Method235(int a2, int a3) {
+        AutoHeal.mc.playerController.windowClick(AutoHeal.mc.thePlayer.inventoryContainer.windowId, a2, a3, 2, (EntityPlayer)AutoHeal.mc.thePlayer);
     }
 
     private int Method243() {
-        int a = -1;
-        int a2 = 9;
-        Class91[] a3 = Class46.Method3239();
-        if (a2 < 36) {
-            if (AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack()) {
-                ItemStack a4 = AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a2).getStack();
-                Item a5 = a4.getItem();
-                if (a4.getItemDamage() == 3 && !a4.getDisplayName().contains((CharSequence)"Backpack")) {
-                    boolean a6;
-                    boolean bl = a6 = this.Field2619.Method2509() != false && (Item.getIdFromItem((Item)a5) == Item.getIdFromItem((Item)Items.skull) || Item.getIdFromItem((Item)a5) == Item.getIdFromItem((Item)Items.baked_potato)) && (!AutoHeal.mc.thePlayer.isPotionActive(Potion.regeneration) || AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getAmplifier() < 2 && AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getDuration() <= 1 || AutoHeal.mc.thePlayer.getAbsorptionAmount() <= 0.0f && a4.stackSize >= 1);
-                    if (Item.getIdFromItem((Item)a5) != 282) {
+        int a2 = -1;
+        int a3 = 9;
+        a[] a4 = b.trash();
+        if (a3 < 36) {
+            if (AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack()) {
+                ItemStack a5 = AutoHeal.mc.thePlayer.inventoryContainer.getSlot(a3).getStack();
+                Item a6 = a5.getItem();
+                if (a5.getItemDamage() == 3 && !a5.getDisplayName().contains((CharSequence)"Backpack")) {
+                    boolean a7;
+                    boolean bl = a7 = this.Field2619.getBooleanValue() != false && (Item.getIdFromItem((Item)a6) == Item.getIdFromItem((Item)Items.skull) || Item.getIdFromItem((Item)a6) == Item.getIdFromItem((Item)Items.baked_potato)) && (!AutoHeal.mc.thePlayer.isPotionActive(Potion.regeneration) || AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getAmplifier() < 2 && AutoHeal.mc.thePlayer.getActivePotionEffect(Potion.regeneration).getDuration() <= 1 || AutoHeal.mc.thePlayer.getAbsorptionAmount() <= 0.0f && a5.stackSize >= 1);
+                    if (Item.getIdFromItem((Item)a6) != 282) {
                     }
-                    a = a2;
+                    a2 = a3;
                 }
             }
-            ++a2;
+            ++a3;
         }
-        return a;
+        return a2;
     }
 }

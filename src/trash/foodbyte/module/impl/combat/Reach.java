@@ -20,9 +20,6 @@
  */
 package trash.foodbyte.module.impl.combat;
 
-import awsl.Class46;
-import awsl.Class635;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.util.List;
 import java.util.Random;
@@ -33,6 +30,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
+import obfuscate.a;
+import obfuscate.b;
+import trash.foodbyte.event.EventEntityTick;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
@@ -61,8 +61,8 @@ extends Module {
     }
 
     public float Method276() {
-        float a = this.Field2487.Method2744().floatValue();
-        float a2 = this.Field2486.Method2744().floatValue();
+        float a = this.Field2487.getFloatValue().floatValue();
+        float a2 = this.Field2486.getFloatValue().floatValue();
         float a3 = a;
         float a4 = a2;
         return (float)((double)a4 + this.Field2490.nextDouble() * (double)(a3 - a4));
@@ -70,26 +70,26 @@ extends Module {
 
     public float Method798() {
         float a = this.Method276();
-        float a2 = this.Field2488.Method2744().floatValue();
+        float a2 = this.Field2488.getFloatValue().floatValue();
         return Math.max((float)a, (float)a2);
     }
 
     @EventTarget
     public void Method712(EventMotion a) {
-        this.setDisplayTag(this.Field2487.Method2744().doubleValue() == this.Field2486.Method2744().doubleValue() ? this.Method276() + "" : this.Field2487.Method2744() + "-" + this.Field2486.Method2744());
+        this.setDisplayTag(this.Field2487.getFloatValue().doubleValue() == this.Field2486.getFloatValue().doubleValue() ? this.Method276() + "" : this.Field2487.getFloatValue() + "-" + this.Field2486.getFloatValue());
     }
 
     @EventTarget
-    private void Method747(Class635 a) {
-        if (a.Method3587().equals((Object)Reach.mc.thePlayer) && this.Field2489.Method2509().booleanValue()) {
+    private void Method747(EventEntityTick a) {
+        if (a.getEntity().equals((Object)Reach.mc.thePlayer) && this.Field2489.getBooleanValue().booleanValue()) {
             double a2 = 3.4;
             Object[] a3 = this.Method926(a2, 0.0, 0.0f);
-            if (Reach.mc.gameSettings.keyBindAttack.isKeyDown() && this.Field2491.Method219(100.0) && Reach.mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
+            if (Reach.mc.gameSettings.keyBindAttack.isKeyDown() && this.Field2491.isDelayComplete(100.0) && Reach.mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
                 Reach.mc.objectMouseOver = new MovingObjectPosition((Entity)a3[0], (Vec3)a3[1]);
                 Reach.mc.pointedEntity = (Entity)a3[0];
                 Reach.mc.thePlayer.swingItem();
                 Reach.mc.playerController.attackEntity((EntityPlayer)Reach.mc.thePlayer, Reach.mc.objectMouseOver.entityHit);
-                this.Field2491.Method214();
+                this.Field2491.reset();
             }
         }
     }
@@ -97,63 +97,63 @@ extends Module {
     /*
      * WARNING - void declaration
      */
-    public Object[] Method926(double a, double a2, float a3) {
-        Entity a4;
-        double a5;
+    public Object[] Method926(double a2, double a3, float a4) {
+        Entity a5;
+        double a6;
         block5: {
-            int a6;
+            int a7;
             block6: {
-                double a7;
-                MovingObjectPosition a8;
-                Entity a9;
-                Vec3 a10;
+                double a8;
+                MovingObjectPosition a9;
+                Entity a10;
+                Vec3 a11;
                 block8: {
-                    Vec3 a11;
-                    void a12;
+                    Vec3 a12;
+                    void a13;
                     block7: {
                         Entity entity = mc.getRenderViewEntity();
                         Object var8_5 = null;
-                        Class91[] a13 = Class46.Method3239();
+                        a[] a14 = b.trash();
                         if (Reach.mc.theWorld == null) {
                             return null;
                         }
                         Reach.mc.mcProfiler.startSection("pick");
-                        a11 = a12.getPositionEyes(0.0f);
-                        Vec3 a14 = a12.getLook(0.0f);
-                        Vec3 a15 = a11.addVector(a14.xCoord * a, a14.yCoord * a, a14.zCoord * a);
-                        a10 = null;
-                        float a16 = 1.0f;
-                        List a17 = Reach.mc.theWorld.getEntitiesWithinAABBExcludingEntity((Entity)a12, a12.getEntityBoundingBox().addCoord(a14.xCoord * a, a14.yCoord * a, a14.zCoord * a).expand(1.0, 1.0, 1.0));
-                        a5 = a;
-                        a6 = 0;
-                        if (a6 >= a17.Method1799()) break block5;
-                        a9 = (Entity)a17.get(a6);
-                        if (!a9.canBeCollidedWith()) break block6;
-                        HitBox a18 = (HitBox)ModuleManager.getModule(HitBox.class);
-                        float a19 = a18.Method1187(a9) ? a18.Field2607.Method2744().floatValue() : a9.getCollisionBorderSize();
-                        AxisAlignedBB a20 = a9.getEntityBoundingBox().expand((double)a19, (double)a19, (double)a19);
-                        a20 = a20.expand(a2, a2, a2);
-                        a8 = a20.calculateIntercept(a11, a15);
-                        if (!a20.isVecInside(a11)) break block7;
-                        if (!(0.0 < a5) && a5 != 0.0) break block6;
-                        a4 = a9;
-                        a10 = a11;
-                        a5 = 0.0;
+                        a12 = a13.getPositionEyes(0.0f);
+                        Vec3 a15 = a13.getLook(0.0f);
+                        Vec3 a16 = a12.addVector(a15.xCoord * a2, a15.yCoord * a2, a15.zCoord * a2);
+                        a11 = null;
+                        float a17 = 1.0f;
+                        List a18 = Reach.mc.theWorld.getEntitiesWithinAABBExcludingEntity((Entity)a13, a13.getEntityBoundingBox().addCoord(a15.xCoord * a2, a15.yCoord * a2, a15.zCoord * a2).expand(1.0, 1.0, 1.0));
+                        a6 = a2;
+                        a7 = 0;
+                        if (a7 >= a18.Method1799()) break block5;
+                        a10 = (Entity)a18.get(a7);
+                        if (!a10.canBeCollidedWith()) break block6;
+                        HitBox a19 = (HitBox)ModuleManager.getModule(HitBox.class);
+                        float a20 = a19.Method1187(a10) ? a19.Field2607.getFloatValue().floatValue() : a10.getCollisionBorderSize();
+                        AxisAlignedBB a21 = a10.getEntityBoundingBox().expand((double)a20, (double)a20, (double)a20);
+                        a21 = a21.expand(a3, a3, a3);
+                        a9 = a21.calculateIntercept(a12, a16);
+                        if (!a21.isVecInside(a12)) break block7;
+                        if (!(0.0 < a6) && a6 != 0.0) break block6;
+                        a5 = a10;
+                        a11 = a12;
+                        a6 = 0.0;
                     }
-                    if (!((a7 = a11.distanceTo(a8.hitVec)) < a5) && a5 != 0.0) break block6;
-                    if (a9 != a12.ridingEntity) break block8;
-                    if (a5 != 0.0) break block6;
-                    a4 = a9;
-                    a10 = a8.hitVec;
+                    if (!((a8 = a12.distanceTo(a9.hitVec)) < a6) && a6 != 0.0) break block6;
+                    if (a10 != a13.ridingEntity) break block8;
+                    if (a6 != 0.0) break block6;
+                    a5 = a10;
+                    a11 = a9.hitVec;
                 }
-                a4 = a9;
-                a10 = a8.hitVec;
-                a5 = a7;
+                a5 = a10;
+                a11 = a9.hitVec;
+                a6 = a8;
             }
-            ++a6;
+            ++a7;
         }
-        if (a5 < a && !(a4 instanceof EntityLivingBase) && !(a4 instanceof EntityItemFrame)) {
-            a4 = null;
+        if (a6 < a2 && !(a5 instanceof EntityLivingBase) && !(a5 instanceof EntityItemFrame)) {
+            a5 = null;
         }
         Reach.mc.mcProfiler.endSection();
         return null;
@@ -165,7 +165,7 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
-        super.Method279();
+    public void onDisable() {
+        super.onDisable();
     }
 }

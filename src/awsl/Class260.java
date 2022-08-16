@@ -15,11 +15,11 @@
 package awsl;
 
 import awsl.Class259;
-import awsl.Class91;
 import com.google.gson.JsonObject;
 import java.awt.Color;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
+import obfuscate.a;
 import trash.foodbyte.utils.RenderUtils;
 
 public class Class260 {
@@ -67,36 +67,36 @@ public class Class260 {
     }
 
     public JsonObject Method2841() {
-        JsonObject a = new JsonObject();
-        int a2 = Class259.Method2273();
-        a.addProperty("label", this.Field1420);
-        a.addProperty("server", this.Field1421);
-        a.addProperty("x", (Number)Double.valueOf((double)this.Field1422));
-        a.addProperty("y", (Number)Double.valueOf((double)this.Field1423));
-        a.addProperty("z", (Number)Double.valueOf((double)this.Field1424));
-        a.addProperty("dimension", (Number)Integer.valueOf((int)this.Field1425));
-        if (Class91.Method3648() == null) {
-            Class259.Method2271(++a2);
+        JsonObject a2 = new JsonObject();
+        int a3 = Class259.Method2273();
+        a2.addProperty("label", this.Field1420);
+        a2.addProperty("server", this.Field1421);
+        a2.addProperty("x", (Number)Double.valueOf((double)this.Field1422));
+        a2.addProperty("y", (Number)Double.valueOf((double)this.Field1423));
+        a2.addProperty("z", (Number)Double.valueOf((double)this.Field1424));
+        a2.addProperty("dimension", (Number)Integer.valueOf((int)this.Field1425));
+        if (a.trash() == null) {
+            Class259.Method2271(++a3);
         }
-        return a;
+        return a2;
     }
 
-    public void Method2842(JsonObject a) {
-        this.Field1420 = a.get("label").getAsString();
-        this.Field1421 = a.get("server").getAsString();
-        this.Field1422 = a.get("x").getAsInt();
-        this.Field1423 = a.get("y").getAsInt();
-        this.Field1424 = a.get("z").getAsInt();
-        this.Field1425 = a.get("dimension").getAsInt();
+    public void Method2842(JsonObject a2) {
+        this.Field1420 = a2.get("label").getAsString();
+        this.Field1421 = a2.get("server").getAsString();
+        this.Field1422 = a2.get("x").getAsInt();
+        this.Field1423 = a2.get("y").getAsInt();
+        this.Field1424 = a2.get("z").getAsInt();
+        this.Field1425 = a2.get("dimension").getAsInt();
     }
 
-    public void Method2843(FontRenderer a, String a2, String a3, float a4, boolean a5) {
+    public void Method2843(FontRenderer a2, String a3, String a4, float a5, boolean a6) {
         GlStateManager.scale((float)1.0f, (float)1.0f, (float)1.0f);
-        int a6 = a.getStringWidth(a2 + a3) / 2;
-        RenderUtils.Method1103((float)(-a6) - 1.0f, 0.0f, a.getStringWidth(a2 + a3) + 1, -a.FONT_HEIGHT, new Color(0, 0, 0, 80).getRGB());
+        int a7 = a2.getStringWidth(a3 + a4) / 2;
+        RenderUtils.Method1103((float)(-a7) - 1.0f, 0.0f, a2.getStringWidth(a3 + a4) + 1, -a2.FONT_HEIGHT, new Color(0, 0, 0, 80).getRGB());
         int n = Class259.Method2272();
-        a.drawStringWithShadow(a2 + a3, (float)(-a6), -8.0f, -1);
-        int a7 = n;
-        Class91.Method3647(new String[1]);
+        a2.drawStringWithShadow(a3 + a4, (float)(-a7), -8.0f, -1);
+        int a8 = n;
+        a.trash(new String[1]);
     }
 }

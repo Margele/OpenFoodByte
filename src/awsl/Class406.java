@@ -11,13 +11,13 @@ package awsl;
 
 import awsl.Class15;
 import awsl.Class224;
-import awsl.Class281;
 import awsl.Class422;
 import awsl.Class45;
 import awsl.Class628;
 import awsl.Class673;
 import native0.Class614;
 import net.minecraft.client.multiplayer.ServerData;
+import trash.foodbyte.utils.ServerUtils;
 
 public class Class406
 implements Class422,
@@ -47,8 +47,8 @@ Class45 {
     @Class628
     public native void Method1362(Class15 var1, String var2);
 
-    public static void Method3545(String a, int a2) {
-        Class281.Field1526 = new ServerData("", a + ":" + a2, false);
+    public static void Method3545(String a2, int a3) {
+        ServerUtils.serverData = new ServerData("", a2 + ":" + a3, false);
     }
 
     private static String Method1357(int n, int n2) {

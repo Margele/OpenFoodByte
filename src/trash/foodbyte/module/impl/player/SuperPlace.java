@@ -23,10 +23,7 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class362;
 import awsl.Class642;
-import awsl.Class653;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.util.Objects;
 import net.minecraft.block.Block;
@@ -39,14 +36,17 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import obfuscate.a;
 import org.lwjgl.input.Mouse;
 import trash.foodbyte.event.EventMotion;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.ModuleManager;
 import trash.foodbyte.module.impl.player.FastPlace;
+import trash.foodbyte.reflections.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils2;
 import trash.foodbyte.utils.MathUtils;
-import trash.foodbyte.utils.ReflectionUtils;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 
@@ -79,26 +79,26 @@ extends Module {
         int n2 = n;
         this.Field2415 = null;
         this.Field2416 = null;
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class148.Method1443(++n2);
         }
     }
 
     @EventTarget
-    public void Method712(EventMotion a) {
-        int a2 = Class148.Method1444();
-        if (a.isPre() && this.Field2409.getValue()) {
-            MovingObjectPosition a3 = SuperPlace.mc.objectMouseOver;
+    public void Method712(EventMotion a2) {
+        int a3 = Class148.Method1444();
+        if (a2.isPre() && this.Field2409.getValue()) {
+            MovingObjectPosition a4 = SuperPlace.mc.objectMouseOver;
             if (Mouse.isButtonDown((int)1)) {
-                if (a3.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK && a3.sideHit != EnumFacing.DOWN) {
-                    ItemStack a4 = SuperPlace.mc.thePlayer.getHeldItem();
-                    if (a4.getItem() instanceof ItemBlock) {
+                if (a4.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK && a4.sideHit != EnumFacing.DOWN) {
+                    ItemStack a5 = SuperPlace.mc.thePlayer.getHeldItem();
+                    if (a5.getItem() instanceof ItemBlock) {
                         if (this.Field2417) {
                             this.Field2417 = false;
-                            a.setYaw(SuperPlace.mc.thePlayer.rotationYaw + (float)MathUtils.Method572(0.0, 1.0) / 10.0f);
+                            a2.setYaw(SuperPlace.mc.thePlayer.rotationYaw + (float)MathUtils.getRandomDouble2(0.0, 1.0) / 10.0f);
                         }
                         this.Field2417 = true;
-                        a.setYaw(SuperPlace.mc.thePlayer.rotationYaw - (float)MathUtils.Method572(0.0, 1.0) / 10.0f);
+                        a2.setYaw(SuperPlace.mc.thePlayer.rotationYaw - (float)MathUtils.getRandomDouble2(0.0, 1.0) / 10.0f);
                     }
                 }
             }
@@ -106,66 +106,66 @@ extends Module {
     }
 
     @EventTarget
-    public void Method755(Class653 a) {
+    public void Method755(EventTick a2) {
         if (Mouse.isButtonDown((int)1) && !SuperPlace.mc.thePlayer.capabilities.isFlying && !ModuleManager.getModule(FastPlace.class).getState()) {
-            ItemStack a2 = SuperPlace.mc.thePlayer.getHeldItem();
-            if (!(a2.getItem() instanceof ItemBlock)) {
-                if (ReflectionUtils.Method2594() > 4) {
-                    ReflectionUtils.Method2595(0);
+            ItemStack a3 = SuperPlace.mc.thePlayer.getHeldItem();
+            if (!(a3.getItem() instanceof ItemBlock)) {
+                if (ReflectionUtils.getRightClickDelayTimer() > 4) {
+                    ReflectionUtils.setRightClickDelayTimer(0);
                 }
                 return;
             }
-            ReflectionUtils.Method2595(SuperPlace.mc.thePlayer.motionY > 0.0 ? 1 : 1000);
+            ReflectionUtils.setRightClickDelayTimer(SuperPlace.mc.thePlayer.motionY > 0.0 ? 1 : 1000);
         }
     }
 
     @EventTarget
-    public void Method1743(Class642 a) {
+    public void Method1743(Class642 a2) {
         if (Objects.nonNull((Object)SuperPlace.mc.thePlayer) && Objects.nonNull((Object)SuperPlace.mc.theWorld)) {
-            ItemBlock a2;
+            ItemBlock a3;
             if (SuperPlace.mc.currentScreen != null || SuperPlace.mc.thePlayer.capabilities.isFlying) {
                 return;
             }
-            ItemStack a3 = SuperPlace.mc.thePlayer.getHeldItem();
-            if (!(a3.getItem() instanceof ItemBlock)) {
+            ItemStack a4 = SuperPlace.mc.thePlayer.getHeldItem();
+            if (!(a4.getItem() instanceof ItemBlock)) {
                 return;
             }
-            MovingObjectPosition a4 = SuperPlace.mc.objectMouseOver;
-            if (a4.typeOfHit != MovingObjectPosition.MovingObjectType.BLOCK || a4.sideHit == EnumFacing.UP || a4.sideHit == EnumFacing.DOWN) {
+            MovingObjectPosition a5 = SuperPlace.mc.objectMouseOver;
+            if (a5.typeOfHit != MovingObjectPosition.MovingObjectType.BLOCK || a5.sideHit == EnumFacing.UP || a5.sideHit == EnumFacing.DOWN) {
                 return;
             }
-            if (this.Field2415 != null && (float)this.Field2414 < this.Field2407.Method2746()) {
+            if (this.Field2415 != null && (float)this.Field2414 < this.Field2407.getFloatValueCast()) {
                 ++this.Field2414;
                 return;
             }
-            this.Field2415 = a4;
-            BlockPos a5 = a4.getBlockPos();
-            if (this.Field2416 != null && a5.getX() == this.Field2416.getX() && a5.getY() == this.Field2416.getY() && a5.getZ() == this.Field2416.getZ()) {
+            this.Field2415 = a5;
+            BlockPos a6 = a5.getBlockPos();
+            if (this.Field2416 != null && a6.getX() == this.Field2416.getX() && a6.getY() == this.Field2416.getY() && a6.getZ() == this.Field2416.getZ()) {
                 return;
             }
-            Block a6 = SuperPlace.mc.theWorld.getBlockState(a5).getBlock();
-            if (a6 == Blocks.air || a6 instanceof BlockLiquid) {
+            Block a7 = SuperPlace.mc.theWorld.getBlockState(a6).getBlock();
+            if (a7 == Blocks.air || a7 instanceof BlockLiquid) {
                 return;
             }
-            if (this.Field2412.Method2509().booleanValue() && !Mouse.isButtonDown((int)1)) {
+            if (this.Field2412.getBooleanValue().booleanValue() && !Mouse.isButtonDown((int)1)) {
                 return;
             }
-            long a7 = System.currentTimeMillis();
-            if (a7 - this.Field2413 < 25L) {
+            long a8 = System.currentTimeMillis();
+            if (a8 - this.Field2413 < 25L) {
                 return;
             }
-            this.Field2413 = a7;
-            if (this.Field2410.Method2509().booleanValue() && (a2 = (ItemBlock)a3.getItem()).canPlaceBlockOnSide((World)SuperPlace.mc.theWorld, a5, a4.sideHit, (EntityPlayer)SuperPlace.mc.thePlayer, a3)) {
+            this.Field2413 = a8;
+            if (this.Field2410.getBooleanValue().booleanValue() && (a3 = (ItemBlock)a4.getItem()).canPlaceBlockOnSide((World)SuperPlace.mc.theWorld, a6, a5.sideHit, (EntityPlayer)SuperPlace.mc.thePlayer, a4)) {
                 if (SuperPlace.mc.thePlayer.inventory.mainInventory[SuperPlace.mc.thePlayer.inventory.currentItem].stackSize > 1) {
                     --SuperPlace.mc.thePlayer.inventory.mainInventory[SuperPlace.mc.thePlayer.inventory.currentItem].stackSize;
                 }
             }
-            if (SuperPlace.mc.playerController.onPlayerRightClick(SuperPlace.mc.thePlayer, SuperPlace.mc.theWorld, a3, a5, a4.sideHit, a4.hitVec)) {
-                Class362.Method541(1, true);
+            if (SuperPlace.mc.playerController.onPlayerRightClick(SuperPlace.mc.thePlayer, SuperPlace.mc.theWorld, a4, a6, a5.sideHit, a5.hitVec)) {
+                ReflectionUtils2.pollMouseInputEvent(1, true);
                 SuperPlace.mc.thePlayer.swingItem();
                 mc.getItemRenderer().resetEquippedProgress();
-                Class362.Method541(1, false);
-                this.Field2416 = a5;
+                ReflectionUtils2.pollMouseInputEvent(1, false);
+                this.Field2416 = a6;
                 this.Field2414 = 0;
             }
         }
@@ -176,9 +176,9 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         if (this.Field2412.getValue()) {
-            ReflectionUtils.Method2595(4);
+            ReflectionUtils.setRightClickDelayTimer(4);
         }
         this.Method258();
     }

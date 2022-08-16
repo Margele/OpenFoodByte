@@ -25,10 +25,7 @@ package trash.foodbyte.module.impl.world;
 
 import awsl.Class378;
 import awsl.Class492;
-import awsl.Class567;
 import awsl.Class643;
-import awsl.Class654;
-import awsl.Class667;
 import awsl.Class681;
 import awsl.Class707;
 import eventapi.EventTarget;
@@ -44,11 +41,14 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.ObfuscatedField;
 import trash.foodbyte.utils.MathUtils;
-import trash.foodbyte.utils.ObfuscatedClasses;
 import trash.foodbyte.utils.RenderUtils;
+import trash.foodbyte.utils.ServerPacketHandler;
+import trash.foodbyte.utils.Servers;
 import trash.foodbyte.value.BooleanValue;
 
 public class UHCFastCraft
@@ -70,41 +70,41 @@ extends Module {
 
     @EventTarget
     public void Method2116(Class643 a) {
-        if (Class567.Field2643 == Class667.UHC) {
+        if (ServerPacketHandler.currentServer == Servers.UHC) {
             this.Method258();
         }
     }
 
     @EventTarget
-    public void Method801(Class654 a) {
-        if (Class567.Field2643 == Class667.UHC && this.Field2189 != null && UHCFastCraft.mc.thePlayer != null && (UHCFastCraft.mc.currentScreen instanceof GuiInventory || UHCFastCraft.mc.currentScreen instanceof GuiChest)) {
+    public void Method801(EventTickUpdate a2) {
+        if (ServerPacketHandler.currentServer == Servers.UHC && this.Field2189 != null && UHCFastCraft.mc.thePlayer != null && (UHCFastCraft.mc.currentScreen instanceof GuiInventory || UHCFastCraft.mc.currentScreen instanceof GuiChest)) {
             this.Field2189.Method479(this.Field2190, this.Field2191, Mouse.isButtonDown((int)0));
         }
     }
 
     public void Method258() {
-        int a;
-        GuiContainer a2;
-        String a3 = Class492.Method2239();
+        int a2;
+        GuiContainer a3;
+        String a4 = Class492.Method2239();
         if (UHCFastCraft.mc.currentScreen instanceof GuiInventory || UHCFastCraft.mc.currentScreen instanceof GuiChest) {
-            a2 = (GuiContainer)UHCFastCraft.mc.currentScreen;
-            int a4 = 0;
-            a = 0;
+            a3 = (GuiContainer)UHCFastCraft.mc.currentScreen;
             int a5 = 0;
+            a2 = 0;
             int a6 = 0;
+            int a7 = 0;
             try {
-                a5 = ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedClasses.guiLeft.getObfuscatedName()}).getInt((Object)a2);
-                a6 = ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedClasses.guiTop.getObfuscatedName()}).getInt((Object)a2);
+                a6 = ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedField.guiLeft.getObfuscatedName()}).getInt((Object)a3);
+                a7 = ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedField.guiTop.getObfuscatedName()}).getInt((Object)a3);
             }
             catch (Exception exception) {
                 // empty catch block
             }
-            int a7 = 0;
+            int a8 = 0;
             if (UHCFastCraft.mc.currentScreen instanceof GuiInventory) {
                 try {
-                    InventoryEffectRenderer a8 = (InventoryEffectRenderer)UHCFastCraft.mc.currentScreen;
-                    if (a5 == ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedClasses.guiLeft.getObfuscatedName()}).getInt((Object)a8)) {
-                        a7 = 120;
+                    InventoryEffectRenderer a9 = (InventoryEffectRenderer)UHCFastCraft.mc.currentScreen;
+                    if (a6 == ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedField.guiLeft.getObfuscatedName()}).getInt((Object)a9)) {
+                        a8 = 120;
                     }
                 }
                 catch (Exception exception) {
@@ -112,33 +112,33 @@ extends Module {
                 }
             }
             if (UHCFastCraft.mc.thePlayer.getActivePotionEffects().isEmpty() || UHCFastCraft.mc.currentScreen instanceof GuiChest) {
-                a4 = a2.width - a5;
-                a = a6;
+                a5 = a3.width - a6;
+                a2 = a7;
             }
-            a4 = a5 + 176;
-            a = a6;
+            a5 = a6 + 176;
+            a2 = a7;
             if (this.Field2189 == null) {
-                this.Field2189 = new Class378(this, a2.width - a5, a6 + 3, 100.0f, 100.0f, 12.0f, 1.0f, 0.5f);
+                this.Field2189 = new Class378(this, a3.width - a6, a7 + 3, 100.0f, 100.0f, 12.0f, 1.0f, 0.5f);
             }
-            if (this.Field2188.Method2509().booleanValue()) {
-                this.Field2189.Field1806 = a4;
-                this.Field2189.Field1807 = a + 3;
+            if (this.Field2188.getBooleanValue().booleanValue()) {
+                this.Field2189.Field1806 = a5;
+                this.Field2189.Field1807 = a2 + 3;
             }
         }
         if (this.Field2189 != null && UHCFastCraft.mc.thePlayer != null && (UHCFastCraft.mc.currentScreen instanceof GuiInventory || UHCFastCraft.mc.currentScreen instanceof GuiChest)) {
             this.Method814();
             this.Method815();
             if (this.Field2189.Field1794 != null) {
-                a2 = this.Field2189.Field1794;
-                a = 0;
-                List a9 = a2.getTooltip((EntityPlayer)UHCFastCraft.mc.thePlayer, UHCFastCraft.mc.gameSettings.advancedItemTooltips);
-                if (a < a9.Method1799()) {
-                    a9.set(a, (Object)(a2.getRarity().rarityColor + (String)a9.get(a)));
-                    a9.set(a, (Object)(EnumChatFormatting.GRAY + (String)a9.get(a)));
-                    ++a;
+                a3 = this.Field2189.Field1794;
+                a2 = 0;
+                List a10 = a3.getTooltip((EntityPlayer)UHCFastCraft.mc.thePlayer, UHCFastCraft.mc.gameSettings.advancedItemTooltips);
+                if (a2 < a10.Method1799()) {
+                    a10.set(a2, (Object)(a3.getRarity().rarityColor + (String)a10.get(a2)));
+                    a10.set(a2, (Object)(EnumChatFormatting.GRAY + (String)a10.get(a2)));
+                    ++a2;
                 }
                 GlStateManager.disableDepth();
-                this.Method2117(a9, this.Field2190, this.Field2191);
+                this.Method2117(a10, this.Field2190, this.Field2191);
                 GlStateManager.enableDepth();
             }
         }
@@ -155,46 +155,46 @@ extends Module {
         this.Field2189.Method63();
     }
 
-    public void Method2117(List a, int a2, int a3) {
-        if (!a.isEmpty()) {
-            int a4;
-            int a5 = 0;
-            Iterator iterator = a.Method1383();
+    public void Method2117(List a2, int a3, int a4) {
+        if (!a2.isEmpty()) {
+            int a5;
+            int a6 = 0;
+            Iterator iterator = a2.Method1383();
             while (iterator.Method932()) {
-                String a6 = (String)iterator.Method933();
-                a4 = UHCFastCraft.mc.fontRendererObj.getStringWidth(a6);
-                if (a4 <= a5) continue;
-                a5 = a4;
+                String a7 = (String)iterator.Method933();
+                a5 = UHCFastCraft.mc.fontRendererObj.getStringWidth(a7);
+                if (a5 <= a6) continue;
+                a6 = a5;
             }
-            int a7 = a2 + 12;
-            int a8 = a3 - 12;
-            a4 = 8;
-            if (a.Method1799() > 1) {
-                a4 += 2 + (a.Method1799() - 1) * 10;
+            int a8 = a3 + 12;
+            int a9 = a4 - 12;
+            a5 = 8;
+            if (a2.Method1799() > 1) {
+                a5 += 2 + (a2.Method1799() - 1) * 10;
             }
-            if (a7 + a5 > RenderUtils.Method1076()) {
-                a7 -= 28 + a5;
+            if (a8 + a6 > RenderUtils.Method1076()) {
+                a8 -= 28 + a6;
             }
-            if (a8 + a4 + 6 > RenderUtils.Method1077()) {
-                a8 = RenderUtils.Method1077() - a4 - 6;
+            if (a9 + a5 + 6 > RenderUtils.Method1077()) {
+                a9 = RenderUtils.Method1077() - a5 - 6;
             }
-            RenderUtils.Method1104(a7 - 4, a8 - 4, a7 + a5 + 4, a8 + a4 + 4, Class681.Method2699(Class707.Method1828(), 50));
-            RenderUtils.Method1104(a7 - 3, a8 - 3, a7 + a5 + 3, a8 + a4 + 3, Integer.MIN_VALUE);
-            for (int a9 = 0; a9 < a.Method1799(); ++a9) {
-                String a10 = (String)a.get(a9);
-                UHCFastCraft.mc.fontRendererObj.drawStringWithShadow(a10, (float)a7, (float)a8, -1);
-                a8 += 2;
-                a8 += 10;
+            RenderUtils.Method1104(a8 - 4, a9 - 4, a8 + a6 + 4, a9 + a5 + 4, Class681.Method2699(Class707.Method1828(), 50));
+            RenderUtils.Method1104(a8 - 3, a9 - 3, a8 + a6 + 3, a9 + a5 + 3, Integer.MIN_VALUE);
+            for (int a10 = 0; a10 < a2.Method1799(); ++a10) {
+                String a11 = (String)a2.get(a10);
+                UHCFastCraft.mc.fontRendererObj.drawStringWithShadow(a11, (float)a8, (float)a9, -1);
+                a9 += 2;
+                a9 += 10;
             }
         }
     }
 
-    static int Method2118(UHCFastCraft a) {
-        return a.Field2190;
+    static int Method2118(UHCFastCraft a2) {
+        return a2.Field2190;
     }
 
-    static int Method2119(UHCFastCraft a) {
-        return a.Field2191;
+    static int Method2119(UHCFastCraft a2) {
+        return a2.Field2191;
     }
 
     private static Exception Method263(Exception exception) {

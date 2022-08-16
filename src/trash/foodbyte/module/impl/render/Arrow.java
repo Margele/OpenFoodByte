@@ -109,7 +109,7 @@ extends Module {
                 this.Field2396 = (int)((float)this.Field2396 + a3);
             }
             this.Field2396 = (int)((float)this.Field2396 - a3);
-            this.Field2396 = (int)MathUtils.Method574(this.Field2396, 255.0f, 60.0f);
+            this.Field2396 = (int)MathUtils.clamp(this.Field2396, 255.0f, 60.0f);
         }
         this.Field2396 = 255;
         ScaledResolution a4 = new ScaledResolution(mc);
@@ -141,17 +141,17 @@ extends Module {
     public boolean Method965(EntityLivingBase a) {
         block10: {
             block9: {
-                boolean a2 = this.Field2391.Method2509();
-                boolean a3 = this.Field2394.Method2509();
-                boolean a4 = this.Field2392.Method2509();
-                boolean a5 = this.Field2393.Method2509();
+                boolean a2 = this.Field2391.getBooleanValue();
+                boolean a3 = this.Field2394.getBooleanValue();
+                boolean a4 = this.Field2392.getBooleanValue();
+                boolean a5 = this.Field2393.getBooleanValue();
                 if (a.isInvisible()) {
                     return false;
                 }
                 if (a == Arrow.mc.thePlayer) {
                     return false;
                 }
-                if (AntiBot.Field2577.contains((Object)a)) {
+                if (AntiBot.botList.contains((Object)a)) {
                     return false;
                 }
                 if (Class305.Method704((Entity)a) && GlobalModule.Field3142.getValue()) {
@@ -200,7 +200,7 @@ extends Module {
                 GL11.glRotatef((float)a7, (float)0.0f, (float)0.0f, (float)1.0f);
                 GL11.glTranslatef((float)(-a5), (float)(-a6), (float)0.0f);
                 GL11.glLineWidth((float)1.0f);
-                RenderUtils.Method1137(a5, (float)a6 - this.Field2389.Method2744().floatValue(), this.Field2388.Method2744().floatValue(), 2.0f, 1.0f, this.Method1736(a3, this.Field2396).getRGB());
+                RenderUtils.Method1137(a5, (float)a6 - this.Field2389.getFloatValue().floatValue(), this.Field2388.getFloatValue().floatValue(), 2.0f, 1.0f, this.Method1736(a3, this.Field2396).getRGB());
                 GL11.glTranslatef((float)a5, (float)a6, (float)0.0f);
                 GL11.glRotatef((float)(-a7), (float)0.0f, (float)0.0f, (float)1.0f);
                 GL11.glTranslatef((float)(-a5), (float)(-a6), (float)0.0f);

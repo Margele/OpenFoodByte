@@ -25,29 +25,29 @@ extends Class148 {
     }
 
     @Override
-    public void Method397(String a, Object a2) {
-        this.Field982.Method3255(a, a2);
-        super.Method397(a, a2);
+    public void Method397(String a2, Object a3) {
+        this.Field982.Method3255(a2, a3);
+        super.Method397(a2, a3);
     }
 
     @Override
-    public void Method398(String a, String a2, String a3) {
-        this.Field982.Method3256(a, a2, a3);
-        super.Method398(a, a2, a3);
+    public void Method398(String a2, String a3, String a4) {
+        this.Field982.Method3256(a2, a3, a4);
+        super.Method398(a2, a3, a4);
     }
 
     @Override
-    public Class148 Method399(String a, String a2) {
-        Class801 a3 = this.Field982.Method3257(a, a2);
-        Class148 a4 = this.Field1006 == null ? null : this.Field1006.Method399(a, a2);
+    public Class148 Method399(String a2, String a3) {
+        Class801 a4 = this.Field982.Method3257(a2, a3);
+        Class148 a5 = this.Field1006 == null ? null : this.Field1006.Method399(a2, a3);
+        return new Class132(a5, a4);
+    }
+
+    @Override
+    public Class148 Method400(String a2) {
+        Class801 a3 = this.Field982.Method3258(a2);
+        Class148 a4 = this.Field1006 == null ? null : this.Field1006.Method400(a2);
         return new Class132(a4, a3);
-    }
-
-    @Override
-    public Class148 Method400(String a) {
-        Class801 a2 = this.Field982.Method3258(a);
-        Class148 a3 = this.Field1006 == null ? null : this.Field1006.Method400(a);
-        return new Class132(a3, a2);
     }
 
     @Override

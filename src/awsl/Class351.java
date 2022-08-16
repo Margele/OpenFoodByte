@@ -14,14 +14,14 @@
 package awsl;
 
 import awsl.Class348;
-import awsl.Class91;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.shader.Shader;
 import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.util.ResourceLocation;
-import trash.foodbyte.utils.ReflectionUtils;
+import obfuscate.a;
+import trash.foodbyte.reflections.ReflectionUtils;
 
 public class Class351 {
     private static ShaderGroup Field1683;
@@ -44,35 +44,35 @@ public class Class351 {
         }
     }
 
-    private static void Method27(float a, float a2, float a3) {
-        ((Shader)ReflectionUtils.Method2607(Field1683).get(0)).getShaderManager().getShaderUniform("Radius").set(a);
-        ((Shader)ReflectionUtils.Method2607(Field1683).get(1)).getShaderManager().getShaderUniform("Radius").set(a);
-        ((Shader)ReflectionUtils.Method2607(Field1683).get(0)).getShaderManager().getShaderUniform("BlurDir").set(a2, a3);
-        ((Shader)ReflectionUtils.Method2607(Field1683).get(1)).getShaderManager().getShaderUniform("BlurDir").set(a3, a2);
+    private static void Method27(float a2, float a3, float a4) {
+        ((Shader)ReflectionUtils.getListShaders(Field1683).get(0)).getShaderManager().getShaderUniform("Radius").set(a2);
+        ((Shader)ReflectionUtils.getListShaders(Field1683).get(1)).getShaderManager().getShaderUniform("Radius").set(a2);
+        ((Shader)ReflectionUtils.getListShaders(Field1683).get(0)).getShaderManager().getShaderUniform("BlurDir").set(a3, a4);
+        ((Shader)ReflectionUtils.getListShaders(Field1683).get(1)).getShaderManager().getShaderUniform("BlurDir").set(a4, a3);
     }
 
     /*
      * WARNING - void declaration
      */
-    public static void Method28(float a) {
-        void a2;
+    public static void Method28(float a2) {
         void a3;
-        ScaledResolution a4 = new ScaledResolution(Field1684);
-        int n = a4.getScaleFactor();
-        int a5 = a4.getScaledWidth();
-        int n2 = a4.getScaledHeight();
-        boolean a6 = Class348.Method371();
-        if (Field1686 != a3 || Field1687 != a5 || Field1688 != a2 || Field1685 == null || Field1683 == null) {
+        void a4;
+        ScaledResolution a5 = new ScaledResolution(Field1684);
+        int n = a5.getScaleFactor();
+        int a6 = a5.getScaledWidth();
+        int n2 = a5.getScaledHeight();
+        boolean a7 = Class348.Method371();
+        if (Field1686 != a4 || Field1687 != a6 || Field1688 != a3 || Field1685 == null || Field1683 == null) {
             Class351.Method26();
         }
-        Field1686 = a3;
-        Field1687 = a5;
-        Field1688 = a2;
-        Class351.Method27(a, 0.0f, 1.0f);
+        Field1686 = a4;
+        Field1687 = a6;
+        Field1688 = a3;
+        Class351.Method27(a2, 0.0f, 1.0f);
         Field1685.bindFramebuffer(true);
-        Field1683.loadShaderGroup(ReflectionUtils.Method2587());
+        Field1683.loadShaderGroup(ReflectionUtils.getRenderPartialTicks());
         Field1684.getFramebuffer().bindFramebuffer(true);
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class348.Method370(false);
         }
     }

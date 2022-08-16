@@ -29,23 +29,23 @@ extends Class253 {
     }
 
     @Override
-    public Class148 Method2114(String a, boolean a2) {
-        Class801 a3 = this.Field1466.Method3260(a, a2);
-        Class148 a4 = this.Field1390 == null ? null : this.Field1390.Method2114(a, a2);
-        return new Class132(a4, a3);
+    public Class148 Method2114(String a2, boolean a3) {
+        Class801 a4 = this.Field1466.Method3260(a2, a3);
+        Class148 a5 = this.Field1390 == null ? null : this.Field1390.Method2114(a2, a3);
+        return new Class132(a5, a4);
     }
 
     @Override
-    public Class148 Method2115(int a, Class31 a2, String a3, boolean a4) {
-        Class801 a5 = this.Field1466.Method3261(a, a2, a3, a4);
-        Class148 a6 = this.Field1390 == null ? null : this.Field1390.Method2115(a, a2, a3, a4);
-        return new Class132(a6, a5);
+    public Class148 Method2115(int a2, Class31 a3, String a4, boolean a5) {
+        Class801 a6 = this.Field1466.Method3261(a2, a3, a4, a5);
+        Class148 a7 = this.Field1390 == null ? null : this.Field1390.Method2115(a2, a3, a4, a5);
+        return new Class132(a7, a6);
     }
 
     @Override
-    public void Method2120(Class136 a) {
-        this.Field1466.Method3262(a);
-        super.Method2120(a);
+    public void Method2120(Class136 a2) {
+        this.Field1466.Method3262(a2);
+        super.Method2120(a2);
     }
 
     @Override

@@ -11,13 +11,13 @@ package awsl;
 
 import awsl.Class15;
 import awsl.Class224;
-import awsl.Class362;
 import awsl.Class422;
 import awsl.Class45;
 import awsl.Class628;
 import awsl.Class673;
 import native0.Class614;
 import net.minecraft.client.gui.GuiButton;
+import trash.foodbyte.reflections.ReflectionUtils2;
 
 public class Class402
 implements Class422,
@@ -27,7 +27,7 @@ Class45 {
 
     public static void Method3606(GuiButton a, Object a2) {
         if (a.id == 55) {
-            Class362.Method539(a2);
+            ReflectionUtils2.displayGuiAltLogin(a2);
         }
     }
 

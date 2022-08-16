@@ -17,8 +17,8 @@ import awsl.Class267;
 import awsl.Class31;
 import awsl.Class37;
 import awsl.Class45;
-import awsl.Class46;
 import awsl.Class7;
+import obfuscate.b;
 
 public class Class23
 extends Class7
@@ -71,20 +71,20 @@ implements Class45 {
     }
 
     @Override
-    public void Method1950(Object a) {
-        Object a2;
-        if (!(a instanceof Class46)) {
-            super.Method1950(a);
+    public void Method1950(Object a2) {
+        Object a3;
+        if (!(a2 instanceof b)) {
+            super.Method1950(a2);
             return;
         }
-        String a3 = ((Class46)a).Method3221();
-        String a4 = "class$" + a3.replace('/', '$');
-        if (!this.Field235.Field1126.contains((Object)a3)) {
-            this.Field235.Field1126.Method2530((Object)a3);
-            a2 = this.Field235.Method1457(4104, a4, "Ljava/lang/Class;");
-            ((Class253)a2).Method2121();
+        String a4 = ((b)a2).Method3221();
+        String a5 = "class$" + a4.replace('/', '$');
+        if (!this.Field235.Field1126.contains((Object)a4)) {
+            this.Field235.Field1126.Method2530((Object)a4);
+            a3 = this.Field235.Method1457(4104, a5, "Ljava/lang/Class;");
+            ((Class253)a3).Method2121();
         }
-        a2 = this.Field235.Field1123;
-        this.Field1460.Method1949(178, (String)a2, a4, "Ljava/lang/Class;");
+        a3 = this.Field235.Field1123;
+        this.Field1460.Method1949(178, (String)a3, a5, "Ljava/lang/Class;");
     }
 }

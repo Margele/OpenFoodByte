@@ -14,7 +14,7 @@ import awsl.Class169;
 import awsl.Class261;
 import awsl.Class264;
 import awsl.Class267;
-import awsl.Class46;
+import obfuscate.b;
 
 final class Class276 {
     static final int Field1479 = -268435456;
@@ -194,76 +194,76 @@ final class Class276 {
         }
     }
 
-    private void Method2797(String a) {
-        char a2 = a.charAt(0);
-        if (a2 == '(') {
-            this.Method2796((Class46.Method3215(a) >> 2) - 1);
-        } else if (a2 == 'J' || a2 == 'D') {
+    private void Method2797(String a2) {
+        char a3 = a2.charAt(0);
+        if (a3 == '(') {
+            this.Method2796((b.Method3215(a2) >> 2) - 1);
+        } else if (a3 == 'J' || a3 == 'D') {
             this.Method2796(2);
         } else {
             this.Method2796(1);
         }
     }
 
-    private void Method2798(int a) {
-        int a2;
+    private void Method2798(int a2) {
+        int a3;
         if (this.Field1511 == null) {
             this.Field1511 = new int[2];
         }
-        if (this.Field1510 >= (a2 = this.Field1511.length)) {
-            int[] a3 = new int[Math.max((int)(this.Field1510 + 1), (int)(2 * a2))];
-            System.arraycopy((Object)this.Field1511, (int)0, (Object)a3, (int)0, (int)a2);
-            this.Field1511 = a3;
+        if (this.Field1510 >= (a3 = this.Field1511.length)) {
+            int[] a4 = new int[Math.max((int)(this.Field1510 + 1), (int)(2 * a3))];
+            System.arraycopy((Object)this.Field1511, (int)0, (Object)a4, (int)0, (int)a3);
+            this.Field1511 = a4;
         }
-        this.Field1511[this.Field1510++] = a;
+        this.Field1511[this.Field1510++] = a2;
     }
 
-    private int Method2799(Class169 a, int a2) {
-        int a3;
-        if (a2 == 0x1000006) {
-            a3 = 0x1700000 | a.Method1526(a.Field1093);
-        } else if ((a2 & 0xFFF00000) == 0x1800000) {
-            String a4 = a.Field1089[a2 & 0xFFFFF].Field1430;
-            a3 = 0x1700000 | a.Method1526(a4);
+    private int Method2799(Class169 a2, int a3) {
+        int a4;
+        if (a3 == 0x1000006) {
+            a4 = 0x1700000 | a2.Method1526(a2.Field1093);
+        } else if ((a3 & 0xFFF00000) == 0x1800000) {
+            String a5 = a2.Field1089[a3 & 0xFFFFF].Field1430;
+            a4 = 0x1700000 | a2.Method1526(a5);
         } else {
-            return a2;
-        }
-        for (int a5 = 0; a5 < this.Field1510; ++a5) {
-            int a6 = this.Field1511[a5];
-            int a7 = a6 & 0xF0000000;
-            int a8 = a6 & 0xF000000;
-            if (a8 == 0x2000000) {
-                a6 = a7 + this.Field1505[a6 & 0x7FFFFF];
-            } else if (a8 == 0x3000000) {
-                a6 = a7 + this.Field1506[this.Field1506.length - (a6 & 0x7FFFFF)];
-            }
-            if (a2 != a6) continue;
             return a3;
         }
-        return a2;
+        for (int a6 = 0; a6 < this.Field1510; ++a6) {
+            int a7 = this.Field1511[a6];
+            int a8 = a7 & 0xF0000000;
+            int a9 = a7 & 0xF000000;
+            if (a9 == 0x2000000) {
+                a7 = a8 + this.Field1505[a7 & 0x7FFFFF];
+            } else if (a9 == 0x3000000) {
+                a7 = a8 + this.Field1506[this.Field1506.length - (a7 & 0x7FFFFF)];
+            }
+            if (a3 != a7) continue;
+            return a4;
+        }
+        return a3;
     }
 
-    void Method2800(Class169 a, int a2, Class46[] a3, int a4) {
-        this.Field1505 = new int[a4];
+    void Method2800(Class169 a2, int a3, b[] a4, int a5) {
+        this.Field1505 = new int[a5];
         this.Field1506 = new int[0];
-        int a5 = 0;
-        if ((a2 & 8) == 0) {
-            this.Field1505[a5++] = (a2 & 0x80000) == 0 ? 0x1700000 | a.Method1526(a.Field1093) : 0x1000006;
+        int a6 = 0;
+        if ((a3 & 8) == 0) {
+            this.Field1505[a6++] = (a3 & 0x80000) == 0 ? 0x1700000 | a2.Method1526(a2.Field1093) : 0x1000006;
         }
-        for (int a6 = 0; a6 < a3.length; ++a6) {
-            int a7 = Class276.Method2794(a, a3[a6].Method3225());
-            this.Field1505[a5++] = a7;
-            if (a7 != 0x1000004 && a7 != 0x1000003) continue;
-            this.Field1505[a5++] = 0x1000000;
+        for (int a7 = 0; a7 < a4.length; ++a7) {
+            int a8 = Class276.Method2794(a2, a4[a7].Method3225());
+            this.Field1505[a6++] = a8;
+            if (a8 != 0x1000004 && a8 != 0x1000003) continue;
+            this.Field1505[a6++] = 0x1000000;
         }
-        while (a5 < a4) {
-            this.Field1505[a5++] = 0x1000000;
+        while (a6 < a5) {
+            this.Field1505[a6++] = 0x1000000;
         }
     }
 
-    void Method2801(int a, int a2, Class169 a3, Class261 a4) {
-        String[] a5 = Class267.Method2862();
-        switch (a) {
+    void Method2801(int a2, int a3, Class169 a4, Class261 a5) {
+        String[] a6 = Class267.Method2862();
+        switch (a2) {
             case 0: 
             case 116: 
             case 117: 
@@ -309,7 +309,7 @@ final class Class276 {
                 this.Method2792(0x1000000);
             }
             case 18: {
-                switch (a4.Field1427) {
+                switch (a5.Field1427) {
                     case 3: {
                         this.Method2792(0x1000001);
                     }
@@ -325,20 +325,20 @@ final class Class276 {
                         this.Method2792(0x1000000);
                     }
                     case 7: {
-                        this.Method2792(0x1700000 | a3.Method1526(Class276.Method2805(-20524, -8081)));
+                        this.Method2792(0x1700000 | a4.Method1526(Class276.Method2805(-20524, -8081)));
                     }
                     case 8: {
-                        this.Method2792(0x1700000 | a3.Method1526(Class276.Method2805(-20522, -2904)));
+                        this.Method2792(0x1700000 | a4.Method1526(Class276.Method2805(-20522, -2904)));
                     }
                     case 16: {
-                        this.Method2792(0x1700000 | a3.Method1526(Class276.Method2805(-20528, -18832)));
+                        this.Method2792(0x1700000 | a4.Method1526(Class276.Method2805(-20528, -18832)));
                         break;
                     }
                 }
-                this.Method2792(0x1700000 | a3.Method1526(Class276.Method2805(-20526, -1378)));
+                this.Method2792(0x1700000 | a4.Method1526(Class276.Method2805(-20526, -1378)));
             }
             case 25: {
-                this.Method2792(this.Method2790(a2));
+                this.Method2792(this.Method2790(a3));
             }
             case 46: 
             case 51: 
@@ -365,33 +365,33 @@ final class Class276 {
             }
             case 50: {
                 this.Method2796(1);
-                int a6 = this.Method2795();
-                this.Method2792(-268435456 + a6);
+                int a7 = this.Method2795();
+                this.Method2792(-268435456 + a7);
             }
             case 54: 
             case 56: 
             case 58: {
-                int a6 = this.Method2795();
-                this.Method2791(a2, a6);
-                int a7 = this.Method2790(a2 - 1);
-                if (a7 == 0x1000004 || a7 == 0x1000003) {
-                    this.Method2791(a2 - 1, 0x1000000);
+                int a7 = this.Method2795();
+                this.Method2791(a3, a7);
+                int a8 = this.Method2790(a3 - 1);
+                if (a8 == 0x1000004 || a8 == 0x1000003) {
+                    this.Method2791(a3 - 1, 0x1000000);
                 }
-                if ((a7 & 0xF000000) == 0x1000000) break;
-                this.Method2791(a2 - 1, a7 | 0x800000);
+                if ((a8 & 0xF000000) == 0x1000000) break;
+                this.Method2791(a3 - 1, a8 | 0x800000);
             }
             case 55: 
             case 57: {
                 this.Method2796(1);
-                int a6 = this.Method2795();
-                this.Method2791(a2, a6);
-                this.Method2791(a2 + 1, 0x1000000);
-                int a7 = this.Method2790(a2 - 1);
-                if (a7 == 0x1000004 || a7 == 0x1000003) {
-                    this.Method2791(a2 - 1, 0x1000000);
+                int a7 = this.Method2795();
+                this.Method2791(a3, a7);
+                this.Method2791(a3 + 1, 0x1000000);
+                int a8 = this.Method2790(a3 - 1);
+                if (a8 == 0x1000004 || a8 == 0x1000003) {
+                    this.Method2791(a3 - 1, 0x1000000);
                 }
-                if ((a7 & 0xF000000) == 0x1000000) break;
-                this.Method2791(a2 - 1, a7 | 0x800000);
+                if ((a8 & 0xF000000) == 0x1000000) break;
+                this.Method2791(a3 - 1, a8 | 0x800000);
             }
             case 79: 
             case 81: 
@@ -438,61 +438,61 @@ final class Class276 {
                 this.Method2796(2);
             }
             case 89: {
-                int a6 = this.Method2795();
-                this.Method2792(a6);
-                this.Method2792(a6);
+                int a7 = this.Method2795();
+                this.Method2792(a7);
+                this.Method2792(a7);
             }
             case 90: {
-                int a6 = this.Method2795();
                 int a7 = this.Method2795();
-                this.Method2792(a6);
+                int a8 = this.Method2795();
                 this.Method2792(a7);
-                this.Method2792(a6);
+                this.Method2792(a8);
+                this.Method2792(a7);
             }
             case 91: {
-                int a6 = this.Method2795();
-                int a7 = this.Method2795();
-                int a8 = this.Method2795();
-                this.Method2792(a6);
-                this.Method2792(a8);
-                this.Method2792(a7);
-                this.Method2792(a6);
-            }
-            case 92: {
-                int a6 = this.Method2795();
-                int a7 = this.Method2795();
-                this.Method2792(a7);
-                this.Method2792(a6);
-                this.Method2792(a7);
-                this.Method2792(a6);
-            }
-            case 93: {
-                int a6 = this.Method2795();
-                int a7 = this.Method2795();
-                int a8 = this.Method2795();
-                this.Method2792(a7);
-                this.Method2792(a6);
-                this.Method2792(a8);
-                this.Method2792(a7);
-                this.Method2792(a6);
-            }
-            case 94: {
-                int a6 = this.Method2795();
                 int a7 = this.Method2795();
                 int a8 = this.Method2795();
                 int a9 = this.Method2795();
                 this.Method2792(a7);
-                this.Method2792(a6);
                 this.Method2792(a9);
                 this.Method2792(a8);
                 this.Method2792(a7);
-                this.Method2792(a6);
+            }
+            case 92: {
+                int a7 = this.Method2795();
+                int a8 = this.Method2795();
+                this.Method2792(a8);
+                this.Method2792(a7);
+                this.Method2792(a8);
+                this.Method2792(a7);
+            }
+            case 93: {
+                int a7 = this.Method2795();
+                int a8 = this.Method2795();
+                int a9 = this.Method2795();
+                this.Method2792(a8);
+                this.Method2792(a7);
+                this.Method2792(a9);
+                this.Method2792(a8);
+                this.Method2792(a7);
+            }
+            case 94: {
+                int a7 = this.Method2795();
+                int a8 = this.Method2795();
+                int a9 = this.Method2795();
+                int a10 = this.Method2795();
+                this.Method2792(a8);
+                this.Method2792(a7);
+                this.Method2792(a10);
+                this.Method2792(a9);
+                this.Method2792(a8);
+                this.Method2792(a7);
             }
             case 95: {
-                int a6 = this.Method2795();
                 int a7 = this.Method2795();
-                this.Method2792(a6);
+                int a8 = this.Method2795();
                 this.Method2792(a7);
+                this.Method2792(a8);
             }
             case 96: 
             case 100: 
@@ -551,7 +551,7 @@ final class Class276 {
                 this.Method2792(0x1000000);
             }
             case 132: {
-                this.Method2791(a2, 0x1000001);
+                this.Method2791(a3, 0x1000001);
             }
             case 133: 
             case 140: {
@@ -586,42 +586,42 @@ final class Class276 {
                 throw new RuntimeException(Class276.Method2805(-20523, 13035));
             }
             case 178: {
-                this.Method2793(a3, a4.Field1432);
+                this.Method2793(a4, a5.Field1432);
             }
             case 179: {
-                this.Method2797(a4.Field1432);
+                this.Method2797(a5.Field1432);
             }
             case 180: {
                 this.Method2796(1);
-                this.Method2793(a3, a4.Field1432);
+                this.Method2793(a4, a5.Field1432);
             }
             case 181: {
-                this.Method2797(a4.Field1432);
+                this.Method2797(a5.Field1432);
                 this.Method2795();
             }
             case 182: 
             case 183: 
             case 184: 
             case 185: {
-                this.Method2797(a4.Field1432);
-                if (a != 184) {
-                    int a10 = this.Method2795();
-                    if (a == 183 && a4.Field1431.charAt(0) == '<') {
-                        this.Method2798(a10);
+                this.Method2797(a5.Field1432);
+                if (a2 != 184) {
+                    int a11 = this.Method2795();
+                    if (a2 == 183 && a5.Field1431.charAt(0) == '<') {
+                        this.Method2798(a11);
                     }
                 }
-                this.Method2793(a3, a4.Field1432);
+                this.Method2793(a4, a5.Field1432);
             }
             case 186: {
-                this.Method2797(a4.Field1431);
-                this.Method2793(a3, a4.Field1431);
+                this.Method2797(a5.Field1431);
+                this.Method2793(a4, a5.Field1431);
             }
             case 187: {
-                this.Method2792(0x1800000 | a3.Method1527(a4.Field1430, a2));
+                this.Method2792(0x1800000 | a4.Method1527(a5.Field1430, a3));
             }
             case 188: {
                 this.Method2795();
-                switch (a2) {
+                switch (a3) {
                     case 4: {
                         this.Method2792(0x11000009);
                     }
@@ -648,74 +648,74 @@ final class Class276 {
                 this.Method2792(0x11000004);
             }
             case 189: {
-                String a11 = a4.Field1430;
+                String a12 = a5.Field1430;
                 this.Method2795();
-                if (a11.charAt(0) == '[') {
-                    this.Method2793(a3, '[' + a11);
+                if (a12.charAt(0) == '[') {
+                    this.Method2793(a4, '[' + a12);
                 }
-                this.Method2792(0x11700000 | a3.Method1526(a11));
+                this.Method2792(0x11700000 | a4.Method1526(a12));
             }
             case 192: {
-                String a11 = a4.Field1430;
+                String a12 = a5.Field1430;
                 this.Method2795();
-                if (a11.charAt(0) == '[') {
-                    this.Method2793(a3, a11);
+                if (a12.charAt(0) == '[') {
+                    this.Method2793(a4, a12);
                 }
-                this.Method2792(0x1700000 | a3.Method1526(a11));
+                this.Method2792(0x1700000 | a4.Method1526(a12));
             }
             default: {
-                this.Method2796(a2);
-                this.Method2793(a3, a4.Field1430);
+                this.Method2796(a3);
+                this.Method2793(a4, a5.Field1430);
                 break;
             }
         }
     }
 
-    boolean Method2802(Class169 a, Class276 a2, int a3) {
-        int a4;
+    boolean Method2802(Class169 a2, Class276 a3, int a4) {
         int a5;
-        boolean a6 = false;
-        int a7 = this.Field1505.length;
-        int a8 = this.Field1506.length;
-        if (a2.Field1505 == null) {
-            a2.Field1505 = new int[a7];
-            a6 = true;
+        int a6;
+        boolean a7 = false;
+        int a8 = this.Field1505.length;
+        int a9 = this.Field1506.length;
+        if (a3.Field1505 == null) {
+            a3.Field1505 = new int[a8];
+            a7 = true;
         }
-        for (a5 = 0; a5 < a7; ++a5) {
-            if (this.Field1507 != null && a5 < this.Field1507.length) {
-                int a9 = this.Field1507[a5];
-                a4 = this.Field1505[a5];
+        for (a6 = 0; a6 < a8; ++a6) {
+            if (this.Field1507 != null && a6 < this.Field1507.length) {
+                int a10 = this.Field1507[a6];
+                a5 = this.Field1505[a6];
             } else {
-                a4 = this.Field1505[a5];
+                a5 = this.Field1505[a6];
             }
             if (this.Field1511 != null) {
-                a4 = this.Method2799(a, a4);
+                a5 = this.Method2799(a2, a5);
             }
-            a6 |= Class276.Method2803(a, a4, a2.Field1505, a5);
+            a7 |= Class276.Method2803(a2, a5, a3.Field1505, a6);
         }
-        for (a5 = 0; a5 < a7; ++a5) {
-            a4 = this.Field1505[a5];
-            a6 |= Class276.Method2803(a, a4, a2.Field1505, a5);
+        for (a6 = 0; a6 < a8; ++a6) {
+            a5 = this.Field1505[a6];
+            a7 |= Class276.Method2803(a2, a5, a3.Field1505, a6);
         }
-        if (a2.Field1506 == null) {
-            a2.Field1506 = new int[1];
-            a6 = true;
+        if (a3.Field1506 == null) {
+            a3.Field1506 = new int[1];
+            a7 = true;
         }
-        return a6 |= Class276.Method2803(a, a3, a2.Field1506, 0);
+        return a7 |= Class276.Method2803(a2, a4, a3.Field1506, 0);
     }
 
-    private static boolean Method2803(Class169 a, int a2, int[] a3, int a4) {
-        int a5 = a3[a4];
-        if (a5 == a2) {
+    private static boolean Method2803(Class169 a2, int a3, int[] a4, int a5) {
+        int a6 = a4[a5];
+        if (a6 == a3) {
             return false;
         }
-        if ((a2 & 0xFFFFFFF) == 0x1000005) {
-            if (a5 == 0x1000005) {
+        if ((a3 & 0xFFFFFFF) == 0x1000005) {
+            if (a6 == 0x1000005) {
                 return false;
             }
-            a2 = 0x1000005;
+            a3 = 0x1000005;
         }
-        a3[a4] = a2;
+        a4[a5] = a3;
         return true;
     }
 

@@ -22,9 +22,9 @@ package awsl;
 import awsl.Class148;
 import awsl.Class228;
 import awsl.Class31;
-import awsl.Class46;
 import awsl.Class663;
 import awsl.Class831;
+import obfuscate.b;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.AttributesImpl;
 
@@ -92,92 +92,92 @@ extends Class148 {
      * WARNING - void declaration
      */
     @Override
-    public void Method397(String a, Object a2) {
-        void a3;
-        Class clazz = a2.getClass();
-        int[] a4 = Class831.Method3658();
-        if (a3.isArray()) {
-            Object[] a5;
-            int a6;
-            Class148 a7 = this.Method400(a);
-            if (a2 instanceof byte[]) {
-                a6 = 0;
-                a5 = (byte[])a2;
-                if (a6 < a5.length) {
-                    a7.Method397(null, new Byte(a5[a6]));
-                    ++a6;
+    public void Method397(String a2, Object a3) {
+        void a4;
+        Class clazz = a3.getClass();
+        int[] a5 = Class831.Method3658();
+        if (a4.isArray()) {
+            Object[] a6;
+            int a7;
+            Class148 a8 = this.Method400(a2);
+            if (a3 instanceof byte[]) {
+                a7 = 0;
+                a6 = (byte[])a3;
+                if (a7 < a6.length) {
+                    a8.Method397(null, new Byte(a6[a7]));
+                    ++a7;
                 }
             }
-            if (a2 instanceof char[]) {
-                a6 = 0;
-                a5 = (char[])a2;
-                if (a6 < a5.length) {
-                    a7.Method397(null, new Character((char)a5[a6]));
-                    ++a6;
+            if (a3 instanceof char[]) {
+                a7 = 0;
+                a6 = (char[])a3;
+                if (a7 < a6.length) {
+                    a8.Method397(null, new Character((char)a6[a7]));
+                    ++a7;
                 }
             }
-            if (a2 instanceof short[]) {
-                a6 = 0;
-                a5 = (short[])a2;
-                if (a6 < a5.length) {
-                    a7.Method397(null, new Short((short)a5[a6]));
-                    ++a6;
+            if (a3 instanceof short[]) {
+                a7 = 0;
+                a6 = (short[])a3;
+                if (a7 < a6.length) {
+                    a8.Method397(null, new Short((short)a6[a7]));
+                    ++a7;
                 }
             }
-            if (a2 instanceof boolean[]) {
-                a6 = 0;
-                a5 = (boolean[])a2;
-                if (a6 < a5.length) {
-                    a7.Method397(null, a5[a6]);
-                    ++a6;
+            if (a3 instanceof boolean[]) {
+                a7 = 0;
+                a6 = (boolean[])a3;
+                if (a7 < a6.length) {
+                    a8.Method397(null, a6[a7]);
+                    ++a7;
                 }
             }
-            if (a2 instanceof int[]) {
-                a6 = 0;
-                a5 = (int[])a2;
-                if (a6 < a5.length) {
-                    a7.Method397(null, new Integer((int)a5[a6]));
-                    ++a6;
+            if (a3 instanceof int[]) {
+                a7 = 0;
+                a6 = (int[])a3;
+                if (a7 < a6.length) {
+                    a8.Method397(null, new Integer((int)a6[a7]));
+                    ++a7;
                 }
             }
-            if (a2 instanceof long[]) {
-                a6 = 0;
-                a5 = (long[])a2;
-                if (a6 < a5.length) {
-                    a7.Method397(null, new Long((long)a5[a6]));
-                    ++a6;
+            if (a3 instanceof long[]) {
+                a7 = 0;
+                a6 = (long[])a3;
+                if (a7 < a6.length) {
+                    a8.Method397(null, new Long((long)a6[a7]));
+                    ++a7;
                 }
             }
-            if (a2 instanceof float[]) {
-                a6 = 0;
-                a5 = (float[])a2;
-                if (a6 < a5.length) {
-                    a7.Method397(null, new Float((float)a5[a6]));
-                    ++a6;
+            if (a3 instanceof float[]) {
+                a7 = 0;
+                a6 = (float[])a3;
+                if (a7 < a6.length) {
+                    a8.Method397(null, new Float((float)a6[a7]));
+                    ++a7;
                 }
             }
-            if (a2 instanceof double[] && (a6 = 0) < (a5 = (Object[])((double[])a2)).length) {
-                a7.Method397(null, new Double((double)a5[a6]));
-                ++a6;
+            if (a3 instanceof double[] && (a7 = 0) < (a6 = (Object[])((double[])a3)).length) {
+                a8.Method397(null, new Double((double)a6[a7]));
+                ++a7;
             }
-            a7.Method401();
+            a8.Method401();
         }
-        this.Method449("annotationValue", a, Class46.Method3229((Class)a3), a2.Method3780());
+        this.Method449("annotationValue", a2, b.Method3229((Class)a4), a3.Method3780());
     }
 
     @Override
-    public void Method398(String a, String a2, String a3) {
-        this.Method449("annotationValueEnum", a, a2, a3);
+    public void Method398(String a2, String a3, String a4) {
+        this.Method449("annotationValueEnum", a2, a3, a4);
     }
 
     @Override
-    public Class148 Method399(String a, String a2) {
-        return new Class134(this.Field983, "annotationValueAnnotation", 0, a, a2);
+    public Class148 Method399(String a2, String a3) {
+        return new Class134(this.Field983, "annotationValueAnnotation", 0, a2, a3);
     }
 
     @Override
-    public Class148 Method400(String a) {
-        return new Class134(this.Field983, "annotationValueArray", 0, a, null);
+    public Class148 Method400(String a2) {
+        return new Class134(this.Field983, "annotationValueArray", 0, a2, null);
     }
 
     @Override
@@ -185,11 +185,11 @@ extends Class148 {
         this.Field983.Method2395(this.Field984);
     }
 
-    private void Method449(String a, String a2, String a3, String a4) {
-        AttributesImpl a5 = new AttributesImpl();
-        a5.addAttribute("", "name", "name", "", a2);
-        a5.addAttribute("", "desc", "desc", "", a3);
-        a5.addAttribute("", "value", "value", "", Class228.Method2071(a4));
-        this.Field983.Method2396(a, (Attributes)a5);
+    private void Method449(String a2, String a3, String a4, String a5) {
+        AttributesImpl a6 = new AttributesImpl();
+        a6.addAttribute("", "name", "name", "", a3);
+        a6.addAttribute("", "desc", "desc", "", a4);
+        a6.addAttribute("", "value", "value", "", Class228.Method2071(a5));
+        this.Field983.Method2396(a2, (Attributes)a6);
     }
 }

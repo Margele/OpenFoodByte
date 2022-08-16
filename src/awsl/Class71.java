@@ -15,7 +15,6 @@
  */
 package awsl;
 
-import awsl.Class46;
 import awsl.Class690;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -25,6 +24,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
+import obfuscate.b;
 
 public class Class71 {
     public final Properties Field686 = new Properties();
@@ -58,34 +58,34 @@ public class Class71 {
         return a3;
     }
 
-    public String Method3760(String a) {
-        if (a.startsWith("(")) {
-            Class46[] a2 = Class46.Method3211(a);
-            Class46 a3 = Class46.Method3213(a);
-            for (int a4 = 0; a4 < a2.length; ++a4) {
-                a2[a4] = this.Method3761(a2[a4]);
+    public String Method3760(String a2) {
+        if (a2.startsWith("(")) {
+            b[] a3 = b.Method3211(a2);
+            b a4 = b.Method3213(a2);
+            for (int a5 = 0; a5 < a3.length; ++a5) {
+                a3[a5] = this.Method3761(a3[a5]);
             }
-            a3 = this.Method3761(a3);
-            return Class46.Method3226(a3, a2);
+            a4 = this.Method3761(a4);
+            return b.Method3226(a4, a3);
         }
-        return this.Method3761(Class46.Method3204(a)).Method3225();
+        return this.Method3761(b.Method3204(a2)).Method3225();
     }
 
-    private Class46 Method3761(Class46 a) {
-        String[] a2 = Class690.Method2342();
-        if (a.Method3217() == 10) {
-            return Class46.Method3205(this.Method3759(a.Method3221()));
+    private b Method3761(b a2) {
+        String[] a3 = Class690.Method2342();
+        if (a2.Method3217() == 10) {
+            return b.Method3205(this.Method3759(a2.Method3221()));
         }
-        if (a.Method3217() == 9) {
-            String a3 = this.Method3761(a.Method3219()).Method3225();
-            int a4 = 0;
-            if (a4 < a.Method3218()) {
-                a3 = '[' + a3;
-                ++a4;
+        if (a2.Method3217() == 9) {
+            String a4 = this.Method3761(a2.Method3219()).Method3225();
+            int a5 = 0;
+            if (a5 < a2.Method3218()) {
+                a4 = '[' + a4;
+                ++a5;
             }
-            return Class46.Method3204(a3);
+            return b.Method3204(a4);
         }
-        return a;
+        return a2;
     }
 
     private static IOException Method3762(IOException iOException) {

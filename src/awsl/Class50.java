@@ -25,10 +25,10 @@ implements Comparator {
         return a3 - a4;
     }
 
-    private int Method3198(Class794 a) {
-        int a2 = this.Field587.Field208.Method188(a.Field3559);
-        int a3 = this.Field587.Field208.Method188(a.Field3560);
-        return a3 - a2;
+    private int Method3198(Class794 a2) {
+        int a3 = this.Field587.Field208.Method188(a2.Field3559);
+        int a4 = this.Field587.Field208.Method188(a2.Field3560);
+        return a4 - a3;
     }
 
     public int Method2141(Object object, Object object2) {

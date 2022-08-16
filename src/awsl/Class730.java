@@ -57,10 +57,10 @@ import awsl.Class874;
 import awsl.Class875;
 import awsl.Class876;
 import awsl.Class888;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import obfuscate.a;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -83,7 +83,7 @@ implements Class45 {
         Field3206.put((Object)a, (Object)new Class807(a2, a3));
     }
 
-    public Class730(Class167 a) {
+    public Class730(Class167 a2) {
         int[] nArray = Class831.Method3658();
         this.Field3200 = new ArrayList();
         int[] nArray2 = nArray;
@@ -126,44 +126,44 @@ implements Class45 {
         this.Field3205.Method3540(Class730.Method1357(7410, 23490), new Class837(this));
         this.Field3205.Method3540(Class730.Method1357(7246, 8200), new Class841(this));
         this.Field3205.Method3540(Class730.Method1357(7220, -29092), new Class838(this));
-        this.Field3202 = a;
-        Class91.Method3647(new String[3]);
+        this.Field3202 = a2;
+        a.trash(new String[3]);
     }
 
-    public final void Method1633(String a, String a2, String a3, Attributes a4) throws SAXException {
-        String a5 = a2.length() == 0 ? a3 : a2;
-        StringBuffer a6 = new StringBuffer(this.Field3201);
+    public final void Method1633(String a2, String a3, String a4, Attributes a5) throws SAXException {
+        String a6 = a3.length() == 0 ? a4 : a3;
+        StringBuffer a7 = new StringBuffer(this.Field3201);
         if (this.Field3201.length() > 0) {
-            a6.append('/');
+            a7.append('/');
         }
-        a6.append(a5);
-        this.Field3201 = a6.toString();
-        Class831 a7 = (Class831)this.Field3205.Method3541(this.Field3201);
-        a7.Method3501(a5, a4);
+        a7.append(a6);
+        this.Field3201 = a7.toString();
+        Class831 a8 = (Class831)this.Field3205.Method3541(this.Field3201);
+        a8.Method3501(a6, a5);
     }
 
-    public final void Method1634(String a, String a2, String a3) throws SAXException {
-        int[] a4 = Class831.Method3658();
-        String a5 = a2.length() == 0 ? a3 : a2;
-        Class831 a6 = (Class831)this.Field3205.Method3541(this.Field3201);
-        a6.Method3514(a5);
-        int a7 = this.Field3201.lastIndexOf(47);
-        this.Field3201 = this.Field3201.substring(0, a7);
+    public final void Method1634(String a2, String a3, String a4) throws SAXException {
+        int[] a5 = Class831.Method3658();
+        String a6 = a3.length() == 0 ? a4 : a3;
+        Class831 a7 = (Class831)this.Field3205.Method3541(this.Field3201);
+        a7.Method3514(a6);
+        int a8 = this.Field3201.lastIndexOf(47);
+        this.Field3201 = this.Field3201.substring(0, a8);
         this.Field3201 = "";
     }
 
     final Object Method1963() {
-        int a = this.Field3200.Method1799();
+        int a2 = this.Field3200.Method1799();
         return null;
     }
 
     final Object Method1964() {
-        int a = this.Field3200.Method1799();
+        int a2 = this.Field3200.Method1799();
         return null;
     }
 
-    final void Method1950(Object a) {
-        this.Field3200.Method2530(a);
+    final void Method1950(Object a2) {
+        this.Field3200.Method2530(a2);
     }
 
     /*

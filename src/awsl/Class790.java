@@ -27,7 +27,7 @@ public class Class790 {
         this.Field3554 = a6;
     }
 
-    public void Method751(Class267 a) {
-        a.Method1843(this.Field3549, this.Field3550, this.Field3551, this.Field3552.Method303(), this.Field3553.Method303(), this.Field3554);
+    public void Method751(Class267 a2) {
+        a2.Method1843(this.Field3549, this.Field3550, this.Field3551, this.Field3552.Method303(), this.Field3553.Method303(), this.Field3554);
     }
 }

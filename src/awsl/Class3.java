@@ -21,12 +21,12 @@ import awsl.Class591;
 import awsl.Class594;
 import awsl.Class598;
 import awsl.Class779;
-import awsl.Class91;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.util.Random;
+import obfuscate.a;
 
 public class Class3
 extends Class119 {
@@ -340,60 +340,60 @@ extends Class119 {
      * WARNING - void declaration
      */
     @Override
-    public int Method3(int a, int a2, int a3) {
-        float a4;
-        void a5;
-        float a6 = (float)a / this.Field96;
-        float f = (float)a2 / this.Field97;
-        boolean a7 = Class193.Method1270();
-        float a8 = (float)Math.pow((double)this.Field78, (double)(100.0f * a5 * a5));
-        float a9 = (float)(a3 >> 16 & 0xFF) * 0.003921569f;
-        float a10 = (float)(a3 >> 8 & 0xFF) * 0.003921569f;
-        float a11 = (float)(a3 & 0xFF) * 0.003921569f;
-        float a12 = this.Field96 * 0.5f;
-        float a13 = (float)a - a12;
-        float a14 = a2;
-        a14 = this.Field92[a2];
-        a13 = (a6 - 0.5f) * (1.0f + a14);
-        a14 += this.Field79 * this.Field87;
-        float a15 = a4 = this.Method20(a13 /= this.Field57, a14 /= this.Field57 * this.Field58);
-        a4 = (a4 + 1.23f) / 2.46f;
-        int a16 = a3 & 0xFF000000;
-        float a17 = a4 - this.Field73;
-        if (a17 < 0.0f) {
-            a17 = 0.0f;
+    public int Method3(int a2, int a3, int a4) {
+        float a5;
+        void a6;
+        float a7 = (float)a2 / this.Field96;
+        float f = (float)a3 / this.Field97;
+        boolean a8 = Class193.Method1270();
+        float a9 = (float)Math.pow((double)this.Field78, (double)(100.0f * a6 * a6));
+        float a10 = (float)(a4 >> 16 & 0xFF) * 0.003921569f;
+        float a11 = (float)(a4 >> 8 & 0xFF) * 0.003921569f;
+        float a12 = (float)(a4 & 0xFF) * 0.003921569f;
+        float a13 = this.Field96 * 0.5f;
+        float a14 = (float)a2 - a13;
+        float a15 = a3;
+        a15 = this.Field92[a3];
+        a14 = (a7 - 0.5f) * (1.0f + a15);
+        a15 += this.Field79 * this.Field87;
+        float a16 = a5 = this.Method20(a14 /= this.Field57, a15 /= this.Field57 * this.Field58);
+        a5 = (a5 + 1.23f) / 2.46f;
+        int a17 = a4 & 0xFF000000;
+        float a18 = a5 - this.Field73;
+        if (a18 < 0.0f) {
+            a18 = 0.0f;
         }
-        float a18 = 1.0f - (float)Math.pow((double)this.Field74, (double)a17);
-        this.Field98 = Math.min((float)this.Field98, (float)a18);
-        this.Field99 = Math.max((float)this.Field99, (float)a18);
-        float a19 = this.Field96 * this.Field85;
-        float a20 = this.Field97 * this.Field86;
-        float a21 = (float)a - a19;
+        float a19 = 1.0f - (float)Math.pow((double)this.Field74, (double)a18);
+        this.Field98 = Math.min((float)this.Field98, (float)a19);
+        this.Field99 = Math.max((float)this.Field99, (float)a19);
+        float a20 = this.Field96 * this.Field85;
+        float a21 = this.Field97 * this.Field86;
         float a22 = (float)a2 - a20;
-        float a23 = a21 * a21 + a22 * a22;
-        a23 = (float)Math.pow((double)a23, (double)this.Field77);
-        float a24 = 10.0f * (float)Math.exp((double)(-a23 * this.Field76 * 0.1f));
-        a9 += a24 * this.Field82;
-        a10 += a24 * this.Field83;
-        a11 += a24 * this.Field84;
-        float a25 = (1.0f - a18 * a18 * a18 * a18) * this.Field60;
-        float a26 = this.Field82 * a25;
-        float a27 = this.Field83 * a25;
-        float a28 = this.Field84 * a25;
-        float a29 = 1.0f - (a18 *= a8);
-        a9 = a29 * a9 + a18 * a26;
-        a10 = a29 * a10 + a18 * a27;
-        a11 = a29 * a11 + a18 * a28;
-        float a30 = this.Field64;
-        a9 = 1.0f - (float)Math.exp((double)(-a9 * a30));
-        a10 = 1.0f - (float)Math.exp((double)(-a10 * a30));
-        a11 = 1.0f - (float)Math.exp((double)(-a11 * a30));
-        int a31 = (int)(255.0f * a9) << 16;
-        int a32 = (int)(255.0f * a10) << 8;
-        int a33 = (int)(255.0f * a11);
-        int a34 = 0xFF000000 | a31 | a32 | a33;
-        Class91.Method3647(new String[4]);
-        return a34;
+        float a23 = (float)a3 - a21;
+        float a24 = a22 * a22 + a23 * a23;
+        a24 = (float)Math.pow((double)a24, (double)this.Field77);
+        float a25 = 10.0f * (float)Math.exp((double)(-a24 * this.Field76 * 0.1f));
+        a10 += a25 * this.Field82;
+        a11 += a25 * this.Field83;
+        a12 += a25 * this.Field84;
+        float a26 = (1.0f - a19 * a19 * a19 * a19) * this.Field60;
+        float a27 = this.Field82 * a26;
+        float a28 = this.Field83 * a26;
+        float a29 = this.Field84 * a26;
+        float a30 = 1.0f - (a19 *= a9);
+        a10 = a30 * a10 + a19 * a27;
+        a11 = a30 * a11 + a19 * a28;
+        a12 = a30 * a12 + a19 * a29;
+        float a31 = this.Field64;
+        a10 = 1.0f - (float)Math.exp((double)(-a10 * a31));
+        a11 = 1.0f - (float)Math.exp((double)(-a11 * a31));
+        a12 = 1.0f - (float)Math.exp((double)(-a12 * a31));
+        int a32 = (int)(255.0f * a10) << 16;
+        int a33 = (int)(255.0f * a11) << 8;
+        int a34 = (int)(255.0f * a12);
+        int a35 = 0xFF000000 | a32 | a33 | a34;
+        a.trash(new String[4]);
+        return a35;
     }
 
     public String toString() {

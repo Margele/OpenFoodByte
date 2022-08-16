@@ -23,7 +23,6 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class281;
 import awsl.Class655;
 import eventapi.EventTarget;
 import java.util.Arrays;
@@ -40,8 +39,9 @@ import net.minecraft.network.play.client.C16PacketClientStatus;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.Wrapper;
+import trash.foodbyte.utils.ServerUtils;
 import trash.foodbyte.utils.TimeHelper;
-import trash.foodbyte.utils.Wrapper;
 import trash.foodbyte.value.FloatValue;
 import trash.foodbyte.value.ModeValue;
 
@@ -65,17 +65,17 @@ extends Module {
     @EventTarget
     public void Method1066(Class655 a) {
         if (Field2461.isCurrentMode("OpenInv") && a.Method3582() instanceof GuiInventory) {
-            this.Field2460.Method216((int)(1000.0f * Field2462.Method2746() - 80.0f));
+            this.Field2460.Method216((int)(1000.0f * Field2462.getFloatValueCast() - 80.0f));
             this.Field2464 = System.currentTimeMillis();
         }
     }
 
     @EventTarget(value=0)
-    public void Method712(EventMotion a) {
-        if (a.isPost()) {
+    public void Method712(EventMotion a2) {
+        if (a2.isPost()) {
             return;
         }
-        if (Class281.Method3050()) {
+        if (ServerUtils.isPlayingSkyblock()) {
             return;
         }
         if (Field2461.isCurrentMode("OpenInv") && !(AutoArmor.mc.currentScreen instanceof GuiInventory)) {
@@ -87,116 +87,116 @@ extends Module {
     }
 
     public void Method258() {
-        int a = 1;
-        int a2 = Class148.Method1445();
-        if (a < 5) {
-            int a3;
-            if (AutoArmor.mc.thePlayer.inventoryContainer.getSlot(4 + a).getHasStack()) {
-                ItemStack a4 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(4 + a).getStack();
-                if (AutoArmor.Method1695(a4, a)) {
+        int a2 = 1;
+        int a3 = Class148.Method1445();
+        if (a2 < 5) {
+            int a4;
+            if (AutoArmor.mc.thePlayer.inventoryContainer.getSlot(4 + a2).getHasStack()) {
+                ItemStack a5 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(4 + a2).getStack();
+                if (AutoArmor.Method1695(a5, a2)) {
                 }
-                if (this.Field2460.Method211((long)(1000.0f * Field2462.Method2746()))) {
+                if (this.Field2460.Method211((long)(1000.0f * Field2462.getFloatValueCast()))) {
                     if (Field2461.isCurrentMode("FakeInv")) {
-                        Wrapper.INSTANCE.Method2874((Packet)new C16PacketClientStatus(C16PacketClientStatus.EnumState.OPEN_INVENTORY_ACHIEVEMENT));
+                        Wrapper.INSTANCE.sendPacket((Packet)new C16PacketClientStatus(C16PacketClientStatus.EnumState.OPEN_INVENTORY_ACHIEVEMENT));
                         this.Field2463 = true;
                     }
                     if (this.Method713()) {
-                        this.Method234(4 + a);
+                        this.Method234(4 + a2);
                     }
-                    this.Method233(4 + a);
+                    this.Method233(4 + a2);
                 }
             }
-            if ((a3 = 9) < 45) {
-                if (AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack()) {
-                    ItemStack a5 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a3).getStack();
-                    if (this.Field2460.Method211((long)(1000.0f * Field2462.Method2746())) && AutoArmor.Method239(a5, a) && AutoArmor.Method238(a5) > 0.0f) {
+            if ((a4 = 9) < 45) {
+                if (AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack()) {
+                    ItemStack a6 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a4).getStack();
+                    if (this.Field2460.Method211((long)(1000.0f * Field2462.getFloatValueCast())) && AutoArmor.Method239(a6, a2) && AutoArmor.Method238(a6) > 0.0f) {
                         if (Field2461.isCurrentMode("FakeInv") && !this.Field2463) {
-                            Wrapper.INSTANCE.Method2874((Packet)new C16PacketClientStatus(C16PacketClientStatus.EnumState.OPEN_INVENTORY_ACHIEVEMENT));
+                            Wrapper.INSTANCE.sendPacket((Packet)new C16PacketClientStatus(C16PacketClientStatus.EnumState.OPEN_INVENTORY_ACHIEVEMENT));
                             this.Field2463 = false;
                         }
-                        this.Method233(a3);
+                        this.Method233(a4);
                         if (Field2461.isCurrentMode("FakeInv")) {
-                            Wrapper.INSTANCE.Method2874((Packet)new C0DPacketCloseWindow(0));
+                            Wrapper.INSTANCE.sendPacket((Packet)new C0DPacketCloseWindow(0));
                             this.Field2463 = false;
                         }
-                        this.Field2460.Method214();
+                        this.Field2460.reset();
                     }
                 }
-                ++a3;
+                ++a4;
             }
-            ++a;
+            ++a2;
         }
     }
 
-    public static boolean Method239(ItemStack a, int a2) {
-        float a3 = AutoArmor.Method238(a);
-        String a4 = "";
-        if (a2 == 1) {
-            a4 = "helmet";
-        } else if (a2 == 2) {
-            a4 = "chestplate";
-        } else if (a2 == 3) {
-            a4 = "leggings";
-        } else if (a2 == 4) {
-            a4 = "boots";
+    public static boolean Method239(ItemStack a2, int a3) {
+        float a4 = AutoArmor.Method238(a2);
+        String a5 = "";
+        if (a3 == 1) {
+            a5 = "helmet";
+        } else if (a3 == 2) {
+            a5 = "chestplate";
+        } else if (a3 == 3) {
+            a5 = "leggings";
+        } else if (a3 == 4) {
+            a5 = "boots";
         }
-        if (!a.getUnlocalizedName().contains((CharSequence)a4)) {
+        if (!a2.getUnlocalizedName().contains((CharSequence)a5)) {
             return false;
         }
-        for (int a5 = 5; a5 < 45; ++a5) {
-            ItemStack a6;
-            if (!AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a5).getHasStack() || !(AutoArmor.Method238(a6 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a5).getStack()) > a3) || !a6.getUnlocalizedName().contains((CharSequence)a4)) continue;
-            return false;
-        }
-        return true;
-    }
-
-    public static boolean Method1695(ItemStack a, int a2) {
-        float a3 = AutoArmor.Method238(a);
-        String a4 = "";
-        if (a2 == 1) {
-            a4 = "helmet";
-        } else if (a2 == 2) {
-            a4 = "chestplate";
-        } else if (a2 == 3) {
-            a4 = "leggings";
-        } else if (a2 == 4) {
-            a4 = "boots";
-        }
-        for (int a5 = 5; a5 < 45; ++a5) {
-            ItemStack a6;
-            if (!AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a5).getHasStack() || !(AutoArmor.Method238(a6 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a5).getStack()) > a3) || !a6.getUnlocalizedName().contains((CharSequence)a4)) continue;
+        for (int a6 = 5; a6 < 45; ++a6) {
+            ItemStack a7;
+            if (!AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a6).getHasStack() || !(AutoArmor.Method238(a7 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a6).getStack()) > a4) || !a7.getUnlocalizedName().contains((CharSequence)a5)) continue;
             return false;
         }
         return true;
     }
 
-    public void Method233(int a) {
-        AutoArmor.mc.playerController.windowClick(AutoArmor.mc.thePlayer.inventoryContainer.windowId, a, 0, 1, (EntityPlayer)AutoArmor.mc.thePlayer);
-    }
-
-    public void Method234(int a) {
-        AutoArmor.mc.playerController.windowClick(AutoArmor.mc.thePlayer.inventoryContainer.windowId, a, 1, 4, (EntityPlayer)AutoArmor.mc.thePlayer);
-    }
-
-    public static float Method238(ItemStack a) {
-        float a2 = 0.0f;
-        if (a.getItem() instanceof ItemArmor) {
-            ItemArmor a3 = (ItemArmor)a.getItem();
-            a2 = (float)((double)a2 + ((double)a3.damageReduceAmount + (double)((100 - a3.damageReduceAmount) * EnchantmentHelper.getEnchantmentLevel((int)Enchantment.protection.effectId, (ItemStack)a)) * 0.0075));
-            a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.depthStrider.effectId, (ItemStack)a) / 45.0);
-            a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.featherFalling.effectId, (ItemStack)a) / 40.0);
-            a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.blastProtection.effectId, (ItemStack)a) / 100.0);
-            a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireProtection.effectId, (ItemStack)a) / 100.0);
-            a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.thorns.effectId, (ItemStack)a) / 100.0);
-            a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a) / 50.0);
-            a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.projectileProtection.effectId, (ItemStack)a) / 100.0);
-            a2 = a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7abarbarian chestplate") ? 10.76f : a2;
-            a2 = a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a76exodus") ? 5.91f : a2;
-            a2 = a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7ashoes of vidar") ? 5.91f : a2;
-            a2 = a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7ahermes' boots") ? 5.91f : a2;
+    public static boolean Method1695(ItemStack a2, int a3) {
+        float a4 = AutoArmor.Method238(a2);
+        String a5 = "";
+        if (a3 == 1) {
+            a5 = "helmet";
+        } else if (a3 == 2) {
+            a5 = "chestplate";
+        } else if (a3 == 3) {
+            a5 = "leggings";
+        } else if (a3 == 4) {
+            a5 = "boots";
         }
-        return a2;
+        for (int a6 = 5; a6 < 45; ++a6) {
+            ItemStack a7;
+            if (!AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a6).getHasStack() || !(AutoArmor.Method238(a7 = AutoArmor.mc.thePlayer.inventoryContainer.getSlot(a6).getStack()) > a4) || !a7.getUnlocalizedName().contains((CharSequence)a5)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    public void Method233(int a2) {
+        AutoArmor.mc.playerController.windowClick(AutoArmor.mc.thePlayer.inventoryContainer.windowId, a2, 0, 1, (EntityPlayer)AutoArmor.mc.thePlayer);
+    }
+
+    public void Method234(int a2) {
+        AutoArmor.mc.playerController.windowClick(AutoArmor.mc.thePlayer.inventoryContainer.windowId, a2, 1, 4, (EntityPlayer)AutoArmor.mc.thePlayer);
+    }
+
+    public static float Method238(ItemStack a2) {
+        float a3 = 0.0f;
+        if (a2.getItem() instanceof ItemArmor) {
+            ItemArmor a4 = (ItemArmor)a2.getItem();
+            a3 = (float)((double)a3 + ((double)a4.damageReduceAmount + (double)((100 - a4.damageReduceAmount) * EnchantmentHelper.getEnchantmentLevel((int)Enchantment.protection.effectId, (ItemStack)a2)) * 0.0075));
+            a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.depthStrider.effectId, (ItemStack)a2) / 45.0);
+            a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.featherFalling.effectId, (ItemStack)a2) / 40.0);
+            a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.blastProtection.effectId, (ItemStack)a2) / 100.0);
+            a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireProtection.effectId, (ItemStack)a2) / 100.0);
+            a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.thorns.effectId, (ItemStack)a2) / 100.0);
+            a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a2) / 50.0);
+            a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.projectileProtection.effectId, (ItemStack)a2) / 100.0);
+            a3 = a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7abarbarian chestplate") ? 10.76f : a3;
+            a3 = a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a76exodus") ? 5.91f : a3;
+            a3 = a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7ashoes of vidar") ? 5.91f : a3;
+            a3 = a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7ahermes' boots") ? 5.91f : a3;
+        }
+        return a3;
     }
 
     public boolean Method713() {

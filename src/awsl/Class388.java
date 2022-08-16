@@ -54,55 +54,55 @@ extends Class390 {
      * WARNING - void declaration
      */
     @Override
-    public void Method412(int a, int a2) {
-        void a3;
+    public void Method412(int a2, int a3) {
+        void a4;
         int n = Class390.Method1318();
         Class565.Field2636.Method1217(this.Field1913, this.Field1907 + 5, (float)this.Field1908 + 1.0f, 0xFFFFFF);
         boolean bl = false;
-        int a4 = n;
-        if (a3 < this.Field1900.Method2728().length) {
-            float a5 = this.Field1908 + this.Field1902 + 12 * a3;
-            int a6 = this.Field1901 == a3 ? Class707.Method1831() : Class707.Method1832();
-            Class565.Field2636.Method1217(this.Field1900.Method2728()[a3], this.Field1907 + 13 + 2, a5 + 4.5f, 0xFFFFFF);
-            RenderUtils.Method1103(this.Field1907 + 5, a5 + 5.0f, 6.5f, 6.5f, a6);
-            if (this.Field1900.isCurrentMode(this.Field1900.Method2728()[a3]) && this.Field1903.Method292() > 0.0) {
-                RenderUtils.Method1103((float)this.Field1907 + 6.0f, a5 + 6.0f, 4.5f, 4.5f, new Color(255, 255, 255, (int)(255.0 * this.Field1903.Method292())).getRGB());
+        int a5 = n;
+        if (a4 < this.Field1900.Method2728().length) {
+            float a6 = this.Field1908 + this.Field1902 + 12 * a4;
+            int a7 = this.Field1901 == a4 ? Class707.Method1831() : Class707.Method1832();
+            Class565.Field2636.Method1217(this.Field1900.Method2728()[a4], this.Field1907 + 13 + 2, a6 + 4.5f, 0xFFFFFF);
+            RenderUtils.Method1103(this.Field1907 + 5, a6 + 5.0f, 6.5f, 6.5f, a7);
+            if (this.Field1900.isCurrentMode(this.Field1900.Method2728()[a4]) && this.Field1903.Method292() > 0.0) {
+                RenderUtils.Method1103((float)this.Field1907 + 6.0f, a6 + 6.0f, 4.5f, 4.5f, new Color(255, 255, 255, (int)(255.0 * this.Field1903.Method292())).getRGB());
             }
-            ++a3;
+            ++a4;
         }
     }
 
     @Override
-    public void Method413(int a, int a2, boolean a3) {
-        boolean bl = this.Field1915 = this.Method1311(a, a2) && this.Field1919.Method1392(a, a2);
+    public void Method413(int a2, int a3, boolean a4) {
+        boolean bl = this.Field1915 = this.Method1311(a2, a3) && this.Field1919.Method1392(a2, a3);
         if (!this.Field1915) {
             this.Field1901 = -1;
             return;
         }
-        this.Field1901 = this.Method1442(a, a2);
+        this.Field1901 = this.Method1442(a2, a3);
         if (!this.Field1918 && this.Field1915 && this.Field1901 != -1 && !this.Field1900.getMode().equals((Object)this.Field1900.Method2728()[this.Field1901])) {
             this.Field1900.Method2725(this.Field1900.Method2728()[this.Field1901]);
             this.Field1903.Method291();
         }
-        this.Field1918 = a3;
+        this.Field1918 = a4;
     }
 
     /*
      * WARNING - void declaration
      */
-    private int Method1442(int a, int a2) {
-        void a3;
-        int n = a2 - this.Field1908 - this.Field1902;
-        int a4 = Class390.Method1317();
-        int a5 = 0;
-        void a6 = a3;
-        if (a6 > 12) {
-            ++a5;
-            a6 -= 12;
+    private int Method1442(int a2, int a3) {
+        void a4;
+        int n = a3 - this.Field1908 - this.Field1902;
+        int a5 = Class390.Method1317();
+        int a6 = 0;
+        void a7 = a4;
+        if (a7 > 12) {
+            ++a6;
+            a7 -= 12;
         }
-        if (a5 >= this.Field1900.Method2728().length) {
+        if (a6 >= this.Field1900.Method2728().length) {
             return this.Field1901;
         }
-        return a5;
+        return a6;
     }
 }

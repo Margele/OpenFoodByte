@@ -31,72 +31,72 @@ extends Class167 {
         this(null, a);
     }
 
-    public Class227(Class167 a, PrintWriter a2) {
-        this(a, new Class804(), a2);
+    public Class227(Class167 a2, PrintWriter a3) {
+        this(a2, new Class804(), a3);
     }
 
-    public Class227(Class167 a, Class801 a2, PrintWriter a3) {
-        super(327680, a);
-        this.Field1275 = a3;
-        this.Field1276 = a2;
-    }
-
-    @Override
-    public void Method1447(int a, int a2, String a3, String a4, String a5, String[] a6) {
-        this.Field1276.Method3245(a, a2, a3, a4, a5, a6);
-        super.Method1447(a, a2, a3, a4, a5, a6);
+    public Class227(Class167 a2, Class801 a3, PrintWriter a4) {
+        super(327680, a2);
+        this.Field1275 = a4;
+        this.Field1276 = a3;
     }
 
     @Override
-    public void Method1458(String a, String a2) {
-        this.Field1276.Method3246(a, a2);
-        super.Method1458(a, a2);
+    public void Method1447(int a2, int a3, String a4, String a5, String a6, String[] a7) {
+        this.Field1276.Method3245(a2, a3, a4, a5, a6, a7);
+        super.Method1447(a2, a3, a4, a5, a6, a7);
     }
 
     @Override
-    public void Method1453(String a, String a2, String a3) {
-        this.Field1276.Method3247(a, a2, a3);
-        super.Method1453(a, a2, a3);
+    public void Method1458(String a2, String a3) {
+        this.Field1276.Method3246(a2, a3);
+        super.Method1458(a2, a3);
     }
 
     @Override
-    public Class148 Method1448(String a, boolean a2) {
-        Class801 a3 = this.Field1276.Method3248(a, a2);
-        Class148 a4 = this.Field1035 == null ? null : this.Field1035.Method1448(a, a2);
-        return new Class132(a4, a3);
+    public void Method1453(String a2, String a3, String a4) {
+        this.Field1276.Method3247(a2, a3, a4);
+        super.Method1453(a2, a3, a4);
     }
 
     @Override
-    public Class148 Method1449(int a, Class31 a2, String a3, boolean a4) {
-        Class801 a5 = this.Field1276.Method3249(a, a2, a3, a4);
-        Class148 a6 = this.Field1035 == null ? null : this.Field1035.Method1449(a, a2, a3, a4);
-        return new Class132(a6, a5);
+    public Class148 Method1448(String a2, boolean a3) {
+        Class801 a4 = this.Field1276.Method3248(a2, a3);
+        Class148 a5 = this.Field1035 == null ? null : this.Field1035.Method1448(a2, a3);
+        return new Class132(a5, a4);
     }
 
     @Override
-    public void Method1459(Class136 a) {
-        this.Field1276.Method3250(a);
-        super.Method1459(a);
+    public Class148 Method1449(int a2, Class31 a3, String a4, boolean a5) {
+        Class801 a6 = this.Field1276.Method3249(a2, a3, a4, a5);
+        Class148 a7 = this.Field1035 == null ? null : this.Field1035.Method1449(a2, a3, a4, a5);
+        return new Class132(a7, a6);
     }
 
     @Override
-    public void Method1452(String a, String a2, String a3, int a4) {
-        this.Field1276.Method3251(a, a2, a3, a4);
-        super.Method1452(a, a2, a3, a4);
+    public void Method1459(Class136 a2) {
+        this.Field1276.Method3250(a2);
+        super.Method1459(a2);
     }
 
     @Override
-    public Class253 Method1450(int a, String a2, String a3, String a4, Object a5) {
-        Class801 a6 = this.Field1276.Method3252(a, a2, a3, a4, a5);
-        Class253 a7 = this.Field1035 == null ? null : this.Field1035.Method1450(a, a2, a3, a4, a5);
-        return new Class270(a7, a6);
+    public void Method1452(String a2, String a3, String a4, int a5) {
+        this.Field1276.Method3251(a2, a3, a4, a5);
+        super.Method1452(a2, a3, a4, a5);
     }
 
     @Override
-    public Class267 Method1451(int a, String a2, String a3, String a4, String[] a5) {
-        Class801 a6 = this.Field1276.Method3253(a, a2, a3, a4, a5);
-        Class267 a7 = this.Field1035 == null ? null : this.Field1035.Method1451(a, a2, a3, a4, a5);
-        return new Class41(a7, a6);
+    public Class253 Method1450(int a2, String a3, String a4, String a5, Object a6) {
+        Class801 a7 = this.Field1276.Method3252(a2, a3, a4, a5, a6);
+        Class253 a8 = this.Field1035 == null ? null : this.Field1035.Method1450(a2, a3, a4, a5, a6);
+        return new Class270(a8, a7);
+    }
+
+    @Override
+    public Class267 Method1451(int a2, String a3, String a4, String a5, String[] a6) {
+        Class801 a7 = this.Field1276.Method3253(a2, a3, a4, a5, a6);
+        Class267 a8 = this.Field1035 == null ? null : this.Field1035.Method1451(a2, a3, a4, a5, a6);
+        return new Class41(a8, a7);
     }
 
     @Override

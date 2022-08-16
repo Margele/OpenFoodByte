@@ -19,21 +19,21 @@ import awsl.Class224;
 import awsl.Class363;
 import awsl.Class422;
 import awsl.Class45;
-import awsl.Class46;
 import awsl.Class628;
-import awsl.Class630;
-import awsl.Class634;
 import awsl.Class644;
-import awsl.Class653;
 import awsl.Class673;
 import awsl.Class83;
 import awsl.Class98;
 import eventapi.EventManager;
 import native0.Class614;
 import net.minecraft.client.entity.AbstractClientPlayer;
+import obfuscate.b;
 import trash.foodbyte.event.EventMotion;
+import trash.foodbyte.event.EventMove;
+import trash.foodbyte.event.EventTick;
+import trash.foodbyte.event.EventUpdate;
 import trash.foodbyte.event.Type;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 
 public class Class460
 implements Class422,
@@ -45,32 +45,32 @@ Class45 {
     public native void Method1362(Class15 var1, String var2);
 
     private static Class116 Method2143() {
-        Class116 a = new Class116();
-        a.Method194(new Class110(187, Class46.Method3228(Class630.class)));
-        a.Method194(new Class83(89));
-        a.Method194(new Class112(24, 1));
-        a.Method194(new Class112(24, 3));
-        a.Method194(new Class112(24, 5));
-        a.Method194(new Class98(183, Class46.Method3228(Class630.class), Class460.Method1357(-20289, -17928), Class460.Method1357(-20293, -15683), false));
-        a.Method194(new Class112(58, 11));
-        a.Method194(new Class112(25, 11));
-        a.Method194(new Class98(184, Class46.Method3228(EventManager.class), Class460.Method1357(-20306, -9616), Class460.Method1357(-20291, 29686), false));
-        a.Method194(new Class83(87));
-        a.Method194(new Class112(25, 11));
-        a.Method194(new Class98(182, Class46.Method3228(Class630.class), Class460.Method1357(-20294, -7320), Class460.Method1357(-20318, -25068), false));
-        a.Method194(new Class112(57, 1));
-        a.Method194(new Class112(25, 11));
-        a.Method194(new Class98(182, Class46.Method3228(Class630.class), Class460.Method1357(-20315, -31985), Class460.Method1357(-20296, -31442), false));
-        a.Method194(new Class112(57, 3));
-        a.Method194(new Class112(25, 11));
-        a.Method194(new Class98(182, Class46.Method3228(Class630.class), Class460.Method1357(-20302, 733), Class460.Method1357(-20296, -31442), false));
-        a.Method194(new Class112(57, 5));
-        a.Method194(new Class112(25, 0));
-        a.Method194(new Class112(24, 1));
-        a.Method194(new Class112(24, 3));
-        a.Method194(new Class112(24, 5));
-        a.Method194(new Class98(183, Class46.Method3228(AbstractClientPlayer.class), Class460.Method1357(-20319, -27161), Class460.Method1357(-20308, -12613), false));
-        return a;
+        Class116 a2 = new Class116();
+        a2.Method194(new Class110(187, b.Method3228(EventMove.class)));
+        a2.Method194(new Class83(89));
+        a2.Method194(new Class112(24, 1));
+        a2.Method194(new Class112(24, 3));
+        a2.Method194(new Class112(24, 5));
+        a2.Method194(new Class98(183, b.Method3228(EventMove.class), Class460.Method1357(-20289, -17928), Class460.Method1357(-20293, -15683), false));
+        a2.Method194(new Class112(58, 11));
+        a2.Method194(new Class112(25, 11));
+        a2.Method194(new Class98(184, b.Method3228(EventManager.class), Class460.Method1357(-20306, -9616), Class460.Method1357(-20291, 29686), false));
+        a2.Method194(new Class83(87));
+        a2.Method194(new Class112(25, 11));
+        a2.Method194(new Class98(182, b.Method3228(EventMove.class), Class460.Method1357(-20294, -7320), Class460.Method1357(-20318, -25068), false));
+        a2.Method194(new Class112(57, 1));
+        a2.Method194(new Class112(25, 11));
+        a2.Method194(new Class98(182, b.Method3228(EventMove.class), Class460.Method1357(-20315, -31985), Class460.Method1357(-20296, -31442), false));
+        a2.Method194(new Class112(57, 3));
+        a2.Method194(new Class112(25, 11));
+        a2.Method194(new Class98(182, b.Method3228(EventMove.class), Class460.Method1357(-20302, 733), Class460.Method1357(-20296, -31442), false));
+        a2.Method194(new Class112(57, 5));
+        a2.Method194(new Class112(25, 0));
+        a2.Method194(new Class112(24, 1));
+        a2.Method194(new Class112(24, 3));
+        a2.Method194(new Class112(24, 5));
+        a2.Method194(new Class98(183, b.Method3228(AbstractClientPlayer.class), Class460.Method1357(-20319, -27161), Class460.Method1357(-20308, -12613), false));
+        return a2;
     }
 
     private static String Method1357(int n, int n2) {
@@ -1121,19 +1121,19 @@ Class45 {
         return Field2152[n3];
     }
 
-    public static void Method2144(Type a) {
-        if (a == Type.PRE) {
-            EventMotion a2 = new EventMotion(Wrapper.INSTANCE.Method2869().posX, Wrapper.INSTANCE.Method2869().posY, Wrapper.INSTANCE.Method2869().posZ, Wrapper.INSTANCE.Method2869().rotationYaw, Wrapper.INSTANCE.Method2869().rotationPitch, Wrapper.INSTANCE.Method2869().onGround);
-            EventManager.Method2686(a2);
-            a2.Method2240();
-        } else if (a == Type.POST) {
-            EventMotion a3 = new EventMotion(a);
-            EventManager.Method2686(a3);
+    public static void Method2144(Type a2) {
+        if (a2 == Type.PRE) {
+            EventMotion a3 = new EventMotion(Wrapper.INSTANCE.getThePlayer().posX, Wrapper.INSTANCE.getThePlayer().posY, Wrapper.INSTANCE.getThePlayer().posZ, Wrapper.INSTANCE.getThePlayer().rotationYaw, Wrapper.INSTANCE.getThePlayer().rotationPitch, Wrapper.INSTANCE.getThePlayer().onGround);
+            EventManager.call(a3);
+            a3.Method2240();
+        } else if (a2 == Type.POST) {
+            EventMotion a4 = new EventMotion(a2);
+            EventManager.call(a4);
         }
     }
 
     public static void Method2145() {
-        EventManager.Method2686(new Class653());
+        EventManager.call(new EventTick());
     }
 
     @Override
@@ -1142,22 +1142,22 @@ Class45 {
     }
 
     @Override
-    public void Method1361(Class224 a, String a2) {
+    public void Method1361(Class224 a2, String a3) {
     }
 
     @Override
-    public void Method1359(Class15 a, String a2) {
-        this.Method1362(a, a2);
+    public void Method1359(Class15 a2, String a3) {
+        this.Method1362(a2, a3);
     }
 
     public static boolean Method2146() {
         return Class363.Method642();
     }
 
-    public static void Method2147(boolean a) {
-        EventMotion a2 = new EventMotion(Wrapper.INSTANCE.Method2869().posX, Wrapper.INSTANCE.Method2869().posY, Wrapper.INSTANCE.Method2869().posZ, Wrapper.INSTANCE.Method2869().rotationYaw, Wrapper.INSTANCE.Method2869().rotationPitch, Wrapper.INSTANCE.Method2869().onGround);
-        EventManager.Method2686(a2);
-        a2.Method2240();
+    public static void Method2147(boolean a2) {
+        EventMotion a3 = new EventMotion(Wrapper.INSTANCE.getThePlayer().posX, Wrapper.INSTANCE.getThePlayer().posY, Wrapper.INSTANCE.getThePlayer().posZ, Wrapper.INSTANCE.getThePlayer().rotationYaw, Wrapper.INSTANCE.getThePlayer().rotationPitch, Wrapper.INSTANCE.getThePlayer().onGround);
+        EventManager.call(a3);
+        a3.Method2240();
     }
 
     static {
@@ -1166,29 +1166,29 @@ Class45 {
     }
 
     public static void Method2148() {
-        EventManager.Method2686(new Class634());
+        EventManager.call(new EventUpdate());
     }
 
     private static Class116 Method2149() {
-        Class116 a = new Class116();
-        a.Method194(new Class110(187, Class46.Method3228(Class644.class)));
-        a.Method194(new Class83(89));
-        a.Method194(new Class112(25, 1));
-        a.Method194(new Class98(183, Class46.Method3228(Class644.class), Class460.Method1357(-20312, 4156), Class460.Method1357(-20297, 7576), false));
-        a.Method194(new Class112(58, 9));
-        a.Method194(new Class112(25, 9));
-        a.Method194(new Class98(184, Class46.Method3228(EventManager.class), Class460.Method1357(-20316, 5671), Class460.Method1357(-20304, 26750), false));
-        a.Method194(new Class83(87));
-        a.Method194(new Class112(25, 9));
-        a.Method194(new Class98(182, Class46.Method3228(Class644.class), Class460.Method1357(-20317, -31589), Class460.Method1357(-20311, 32664), false));
-        Class104 a2 = new Class104();
-        a.Method194(new Class102(153, a2));
-        a.Method194(new Class83(177));
-        a.Method194(a2);
-        a.Method194(new Class112(25, 9));
-        a.Method194(new Class98(182, Class46.Method3228(Class644.class), Class460.Method1357(-20295, -9798), Class460.Method1357(-20303, -22672), false));
-        a.Method194(new Class112(58, 1));
-        return a;
+        Class116 a2 = new Class116();
+        a2.Method194(new Class110(187, b.Method3228(Class644.class)));
+        a2.Method194(new Class83(89));
+        a2.Method194(new Class112(25, 1));
+        a2.Method194(new Class98(183, b.Method3228(Class644.class), Class460.Method1357(-20312, 4156), Class460.Method1357(-20297, 7576), false));
+        a2.Method194(new Class112(58, 9));
+        a2.Method194(new Class112(25, 9));
+        a2.Method194(new Class98(184, b.Method3228(EventManager.class), Class460.Method1357(-20316, 5671), Class460.Method1357(-20304, 26750), false));
+        a2.Method194(new Class83(87));
+        a2.Method194(new Class112(25, 9));
+        a2.Method194(new Class98(182, b.Method3228(Class644.class), Class460.Method1357(-20317, -31589), Class460.Method1357(-20311, 32664), false));
+        Class104 a3 = new Class104();
+        a2.Method194(new Class102(153, a3));
+        a2.Method194(new Class83(177));
+        a2.Method194(a3);
+        a2.Method194(new Class112(25, 9));
+        a2.Method194(new Class98(182, b.Method3228(Class644.class), Class460.Method1357(-20295, -9798), Class460.Method1357(-20303, -22672), false));
+        a2.Method194(new Class112(58, 1));
+        return a2;
     }
 
     private static native /* synthetic */ void Method2150();

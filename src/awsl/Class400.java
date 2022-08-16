@@ -36,7 +36,7 @@ Class45 {
 
     public static boolean Method3603(Object a, boolean a2) {
         EventPacket a3 = new EventPacket(a2, a);
-        EventManager.Method2686(a3);
+        EventManager.call(a3);
         return a3.isCancelled();
     }
 

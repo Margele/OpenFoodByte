@@ -41,8 +41,6 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class634;
-import awsl.Class749;
 import eventapi.EventTarget;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,10 +72,12 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import trash.foodbyte.event.EventUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.combat.AutoSword;
 import trash.foodbyte.module.impl.player.AutoArmor;
+import trash.foodbyte.utils.PlayerUtils;
 import trash.foodbyte.utils.TimeHelper;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
@@ -119,7 +119,7 @@ extends Module {
      * Exception decompiling
      */
     @EventTarget
-    public void Method232(Class634 a) {
+    public void Method232(EventUpdate a) {
         /*
          * This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file.
          * 
@@ -152,171 +152,171 @@ extends Module {
         throw new IllegalStateException("Decompilation failed");
     }
 
-    public void Method233(int a) {
-        for (int a2 = 9; a2 < 45; ++a2) {
-            ItemStack a3;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !this.Method237(a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()) || !(InvCleaner.Method238(a3) > 0.0f) || !(a3.getItem() instanceof ItemSword)) continue;
-            this.Method235(a2, a - 36);
-            Field2729.Method214();
+    public void Method233(int a2) {
+        for (int a3 = 9; a3 < 45; ++a3) {
+            ItemStack a4;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !this.Method237(a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()) || !(InvCleaner.Method238(a4) > 0.0f) || !(a4.getItem() instanceof ItemSword)) continue;
+            this.Method235(a3, a2 - 36);
+            Field2729.reset();
             break;
         }
     }
 
-    public void Method234(int a) {
-        InvCleaner.mc.playerController.windowClick(InvCleaner.mc.thePlayer.inventoryContainer.windowId, a, 0, 1, (EntityPlayer)InvCleaner.mc.thePlayer);
+    public void Method234(int a2) {
+        InvCleaner.mc.playerController.windowClick(InvCleaner.mc.thePlayer.inventoryContainer.windowId, a2, 0, 1, (EntityPlayer)InvCleaner.mc.thePlayer);
     }
 
-    public void Method235(int a, int a2) {
-        InvCleaner.mc.playerController.windowClick(InvCleaner.mc.thePlayer.inventoryContainer.windowId, a, a2, 2, (EntityPlayer)InvCleaner.mc.thePlayer);
+    public void Method235(int a2, int a3) {
+        InvCleaner.mc.playerController.windowClick(InvCleaner.mc.thePlayer.inventoryContainer.windowId, a2, a3, 2, (EntityPlayer)InvCleaner.mc.thePlayer);
     }
 
-    public void Method236(int a) {
-        InvCleaner.mc.playerController.windowClick(InvCleaner.mc.thePlayer.inventoryContainer.windowId, a, 1, 4, (EntityPlayer)InvCleaner.mc.thePlayer);
+    public void Method236(int a2) {
+        InvCleaner.mc.playerController.windowClick(InvCleaner.mc.thePlayer.inventoryContainer.windowId, a2, 1, 4, (EntityPlayer)InvCleaner.mc.thePlayer);
     }
 
-    public boolean Method237(ItemStack a) {
-        float a2 = InvCleaner.Method238(a);
-        for (int a3 = 9; a3 < 45; ++a3) {
-            ItemStack a4;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !(InvCleaner.Method238(a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()) > a2) || !(a4.getItem() instanceof ItemSword)) continue;
+    public boolean Method237(ItemStack a2) {
+        float a3 = InvCleaner.Method238(a2);
+        for (int a4 = 9; a4 < 45; ++a4) {
+            ItemStack a5;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack() || !(InvCleaner.Method238(a5 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getStack()) > a3) || !(a5.getItem() instanceof ItemSword)) continue;
             return false;
         }
-        return a.getItem() instanceof ItemSword;
+        return a2.getItem() instanceof ItemSword;
     }
 
-    private static float Method238(ItemStack a) {
-        float a2 = 0.0f;
-        Item a3 = a.getItem();
-        if (a3 instanceof ItemTool) {
-            a2 += Class749.Method1590(a);
+    private static float Method238(ItemStack a2) {
+        float a3 = 0.0f;
+        Item a4 = a2.getItem();
+        if (a4 instanceof ItemTool) {
+            a3 += PlayerUtils.Method1590(a2);
         }
-        if (a3 instanceof ItemSword) {
-            a2 += Class749.Method1590(a);
+        if (a4 instanceof ItemSword) {
+            a3 += PlayerUtils.Method1590(a2);
         }
-        return a2 += (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a) * 1.25f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a) * 0.25f;
+        return a3 += (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a2) * 1.25f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a2) * 0.25f;
     }
 
-    public boolean Method239(ItemStack a, int a2) {
-        if (a2 == Field2735 + AutoSword.Field2609.Method2744().intValue() - 1 && this.Method237(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2735 + AutoSword.Field2609.Method2744().intValue() - 1).getStack())) {
+    public boolean Method239(ItemStack a2, int a3) {
+        if (a3 == Field2735 + AutoSword.Field2609.getFloatValue().intValue() - 1 && this.Method237(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2735 + AutoSword.Field2609.getFloatValue().intValue() - 1).getStack())) {
             return false;
         }
-        if (a2 == Field2738 && this.Method252(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2738).getStack()) && Field2738 >= 0 || a2 == Field2737 && this.Method254(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2737).getStack()) && Field2737 >= 0 || a2 == Field2736 && this.Method253(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2736).getStack()) && Field2736 >= 0) {
+        if (a3 == Field2738 && this.Method252(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2738).getStack()) && Field2738 >= 0 || a3 == Field2737 && this.Method254(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2737).getStack()) && Field2737 >= 0 || a3 == Field2736 && this.Method253(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2736).getStack()) && Field2736 >= 0) {
             return false;
         }
-        return this.Method240(a);
+        return this.Method240(a2);
     }
 
     /*
      * WARNING - void declaration
      */
-    private boolean Method240(ItemStack a) {
-        int a2;
-        Item a3 = a.getItem();
-        int n = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a);
-        int a4 = Class148.Method1445();
-        int a5 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a);
-        int a6 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.protection.effectId, (ItemStack)a);
-        int a7 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.infinity.effectId, (ItemStack)a);
-        if (a.getItem() instanceof ItemArmor && (a2 = 1) < 5) {
-            ItemStack a8;
-            if (InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a2).getHasStack() && AutoArmor.Method239(a8 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a2).getStack(), a2)) {
+    private boolean Method240(ItemStack a2) {
+        int a3;
+        Item a4 = a2.getItem();
+        int n = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a2);
+        int a5 = Class148.Method1445();
+        int a6 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a2);
+        int a7 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.protection.effectId, (ItemStack)a2);
+        int a8 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.infinity.effectId, (ItemStack)a2);
+        if (a2.getItem() instanceof ItemArmor && (a3 = 1) < 5) {
+            ItemStack a9;
+            if (InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a3).getHasStack() && AutoArmor.Method239(a9 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a3).getStack(), a3)) {
             }
-            if (AutoArmor.Method239(a, a2)) {
+            if (AutoArmor.Method239(a2, a3)) {
                 return false;
             }
-            ++a2;
+            ++a3;
         }
-        if (a.getItem() instanceof ItemPotion && this.Method256(a)) {
+        if (a2.getItem() instanceof ItemPotion && this.Method256(a2)) {
             return true;
         }
-        if (Item.getIdFromItem((Item)a3) == 326 && this.Method244() <= 1) {
+        if (Item.getIdFromItem((Item)a4) == 326 && this.Method244() <= 1) {
             return false;
         }
-        if (a.getItem() instanceof ItemFishingRod && this.Method261(a)) {
+        if (a2.getItem() instanceof ItemFishingRod && this.Method261(a2)) {
             return false;
         }
-        if (a.getItem() instanceof ItemBow && this.Method259(a)) {
+        if (a2.getItem() instanceof ItemBow && this.Method259(a2)) {
             return false;
         }
         if (this.Field2722.isCurrentMode("SkyWars")) {
-            if (a.getItem() instanceof ItemBlock && this.Method242() > this.Field2723.Method2744().intValue()) {
+            if (a2.getItem() instanceof ItemBlock && this.Method242() > this.Field2723.getFloatValue().intValue()) {
                 return true;
             }
-            if (a.getItem().getUnlocalizedName().contains((CharSequence)"stick") || a.getItem().getUnlocalizedName().contains((CharSequence)"string") || a.getItem().getUnlocalizedName().contains((CharSequence)"cake") || a.getItem().getUnlocalizedName().contains((CharSequence)"mushroom") || a.getItem().getUnlocalizedName().contains((CharSequence)"flint") || a.getItem().getUnlocalizedName().contains((CharSequence)"dyePowder") || a.getItem().getUnlocalizedName().contains((CharSequence)"feather") || a.getItem().getUnlocalizedName().contains((CharSequence)"bucket") || a.getItem().getUnlocalizedName().contains((CharSequence)"chest") && !a.getDisplayName().toLowerCase().contains((CharSequence)"collect") || a.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a.getItem().getUnlocalizedName().contains((CharSequence)"enchant") || a.getItem().getUnlocalizedName().contains((CharSequence)"exp") || a.getItem().getUnlocalizedName().contains((CharSequence)"shears") || a.getItem().getUnlocalizedName().contains((CharSequence)"anvil") || a.getItem().getUnlocalizedName().contains((CharSequence)"torch") || a.getItem().getUnlocalizedName().contains((CharSequence)"seeds") || a.getItem().getUnlocalizedName().contains((CharSequence)"leather") || a.getItem().getUnlocalizedName().contains((CharSequence)"reeds") || a.getItem().getUnlocalizedName().contains((CharSequence)"Iron") || a.getItem().getUnlocalizedName().contains((CharSequence)"Tag") || a.getItem().getUnlocalizedName().contains((CharSequence)"slime") || a.getItem().getUnlocalizedName().contains((CharSequence)"sign") || a.getItem().getUnlocalizedName().contains((CharSequence)"blaze") || a.getItem().getUnlocalizedName().contains((CharSequence)"horse") || a.getItem().getUnlocalizedName().contains((CharSequence)"coal") || a.getItem().getUnlocalizedName().contains((CharSequence)"bone") || a.getItem().getUnlocalizedName().contains((CharSequence)"Gunpowder") || a.getItem().getUnlocalizedName().contains((CharSequence)"paper") || a.getItem().getUnlocalizedName().contains((CharSequence)"book") || a.getItem().getUnlocalizedName().contains((CharSequence)"redstone") || a.getItem().getUnlocalizedName().contains((CharSequence)"skull") || a.getItem().getUnlocalizedName().contains((CharSequence)"record") || a.getItem().getUnlocalizedName().contains((CharSequence)"wheat") || a.getItem() instanceof ItemGlassBottle || a.getItem().getUnlocalizedName().contains((CharSequence)"piston")) {
+            if (a2.getItem().getUnlocalizedName().contains((CharSequence)"stick") || a2.getItem().getUnlocalizedName().contains((CharSequence)"string") || a2.getItem().getUnlocalizedName().contains((CharSequence)"cake") || a2.getItem().getUnlocalizedName().contains((CharSequence)"mushroom") || a2.getItem().getUnlocalizedName().contains((CharSequence)"flint") || a2.getItem().getUnlocalizedName().contains((CharSequence)"dyePowder") || a2.getItem().getUnlocalizedName().contains((CharSequence)"feather") || a2.getItem().getUnlocalizedName().contains((CharSequence)"bucket") || a2.getItem().getUnlocalizedName().contains((CharSequence)"chest") && !a2.getDisplayName().toLowerCase().contains((CharSequence)"collect") || a2.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a2.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a2.getItem().getUnlocalizedName().contains((CharSequence)"enchant") || a2.getItem().getUnlocalizedName().contains((CharSequence)"exp") || a2.getItem().getUnlocalizedName().contains((CharSequence)"shears") || a2.getItem().getUnlocalizedName().contains((CharSequence)"anvil") || a2.getItem().getUnlocalizedName().contains((CharSequence)"torch") || a2.getItem().getUnlocalizedName().contains((CharSequence)"seeds") || a2.getItem().getUnlocalizedName().contains((CharSequence)"leather") || a2.getItem().getUnlocalizedName().contains((CharSequence)"reeds") || a2.getItem().getUnlocalizedName().contains((CharSequence)"Iron") || a2.getItem().getUnlocalizedName().contains((CharSequence)"Tag") || a2.getItem().getUnlocalizedName().contains((CharSequence)"slime") || a2.getItem().getUnlocalizedName().contains((CharSequence)"sign") || a2.getItem().getUnlocalizedName().contains((CharSequence)"blaze") || a2.getItem().getUnlocalizedName().contains((CharSequence)"horse") || a2.getItem().getUnlocalizedName().contains((CharSequence)"coal") || a2.getItem().getUnlocalizedName().contains((CharSequence)"bone") || a2.getItem().getUnlocalizedName().contains((CharSequence)"Gunpowder") || a2.getItem().getUnlocalizedName().contains((CharSequence)"paper") || a2.getItem().getUnlocalizedName().contains((CharSequence)"book") || a2.getItem().getUnlocalizedName().contains((CharSequence)"redstone") || a2.getItem().getUnlocalizedName().contains((CharSequence)"skull") || a2.getItem().getUnlocalizedName().contains((CharSequence)"record") || a2.getItem().getUnlocalizedName().contains((CharSequence)"wheat") || a2.getItem() instanceof ItemGlassBottle || a2.getItem().getUnlocalizedName().contains((CharSequence)"piston")) {
                 return true;
             }
         }
         if (this.Field2722.isCurrentMode("UHC")) {
-            void a9;
-            if (a.getItem() instanceof ItemBlock && Field2720.contains((Object)((ItemBlock)a.getItem()).getBlock())) {
+            void a10;
+            if (a2.getItem() instanceof ItemBlock && Field2720.contains((Object)((ItemBlock)a2.getItem()).getBlock())) {
                 return false;
             }
-            if (a.getItem() instanceof ItemBlock && this.Method242() > this.Field2723.Method2744().intValue()) {
+            if (a2.getItem() instanceof ItemBlock && this.Method242() > this.Field2723.getFloatValue().intValue()) {
                 return true;
             }
-            if (a.getDisplayName().toLowerCase().contains((CharSequence)"dragon armor") || a.getDisplayName().toLowerCase().contains((CharSequence)"death's scythe") || a.getDisplayName().toLowerCase().contains((CharSequence)"barbarian chestplate") || a.getDisplayName().toLowerCase().contains((CharSequence)"exodus") || a.getDisplayName().toLowerCase().contains((CharSequence)"exper seal") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00faril") || a.getDisplayName().toLowerCase().contains((CharSequence)"perun") || a.getDisplayName().toLowerCase().contains((CharSequence)"leviathan") || a.getDisplayName().toLowerCase().contains((CharSequence)"excalibur") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7cfusion")) {
+            if (a2.getDisplayName().toLowerCase().contains((CharSequence)"dragon armor") || a2.getDisplayName().toLowerCase().contains((CharSequence)"death's scythe") || a2.getDisplayName().toLowerCase().contains((CharSequence)"barbarian chestplate") || a2.getDisplayName().toLowerCase().contains((CharSequence)"exodus") || a2.getDisplayName().toLowerCase().contains((CharSequence)"exper seal") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00faril") || a2.getDisplayName().toLowerCase().contains((CharSequence)"perun") || a2.getDisplayName().toLowerCase().contains((CharSequence)"leviathan") || a2.getDisplayName().toLowerCase().contains((CharSequence)"excalibur") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7cfusion")) {
                 return false;
             }
-            if (a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u6f6e\u6c50\u62a4\u817f") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u6c38\u751f\u5e3d") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u9739\u9686\u4e4b\u65a7") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u5b89\u90fd\u745e\u5c14\u4e4b\u5251") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u4e30\u9976\u4e4b\u89d2") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u86ee\u65cf\u4e4b\u7532") || a.getDisplayName().toLowerCase().contains((CharSequence)"a\u5de8\u9f99\u4e4b\u5251") || a.getDisplayName().contains((CharSequence)"Axe of Perun")) {
+            if (a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u6f6e\u6c50\u62a4\u817f") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u6c38\u751f\u5e3d") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u9739\u9686\u4e4b\u65a7") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u5b89\u90fd\u745e\u5c14\u4e4b\u5251") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u4e30\u9976\u4e4b\u89d2") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u86ee\u65cf\u4e4b\u7532") || a2.getDisplayName().toLowerCase().contains((CharSequence)"a\u5de8\u9f99\u4e4b\u5251") || a2.getDisplayName().contains((CharSequence)"Axe of Perun")) {
                 return false;
             }
-            if (a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7aforge") || a.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u953b\u7089") || a.getDisplayName().toLowerCase().contains((CharSequence)"backpack")) {
+            if (a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7aforge") || a2.getDisplayName().toLowerCase().contains((CharSequence)"\u00a7a\u953b\u7089") || a2.getDisplayName().toLowerCase().contains((CharSequence)"backpack")) {
                 return false;
             }
-            if (a.getDisplayName().toLowerCase().contains((CharSequence)"bloodlust")) {
+            if (a2.getDisplayName().toLowerCase().contains((CharSequence)"bloodlust")) {
                 return false;
             }
-            if (a.getDisplayName().contains((CharSequence)"Wither Skeleton Skull") || a.getDisplayName().contains((CharSequence)"Creeper Head") || a.getDisplayName().contains((CharSequence)"Skeleton Skull") || a.getDisplayName().contains((CharSequence)"Zombie Head")) {
+            if (a2.getDisplayName().contains((CharSequence)"Wither Skeleton Skull") || a2.getDisplayName().contains((CharSequence)"Creeper Head") || a2.getDisplayName().contains((CharSequence)"Skeleton Skull") || a2.getDisplayName().contains((CharSequence)"Zombie Head")) {
                 return true;
             }
-            if (Item.getIdFromItem((Item)a3) == 397 && a.getItemDamage() == 3) {
+            if (Item.getIdFromItem((Item)a4) == 397 && a2.getItemDamage() == 3) {
                 return false;
             }
-            if (Item.getIdFromItem((Item)a3) == 276 && (a9 >= 3 || a5 >= 1)) {
+            if (Item.getIdFromItem((Item)a4) == 276 && (a10 >= 3 || a6 >= 1)) {
                 return false;
             }
-            if (a.getItem() instanceof ItemEnchantedBook) {
-                int a10 = 0;
-                NBTTagList a11 = Items.enchanted_book.getEnchantments(a);
-                if (a10 < a11.tagCount()) {
-                    short a12 = a11.getCompoundTagAt(a10).getShort("id");
-                    short a13 = a11.getCompoundTagAt(a10).getShort("lvl");
-                    if (a12 == Enchantment.sharpness.effectId && a13 >= 3 || a12 == Enchantment.fireAspect.effectId || a12 == Enchantment.efficiency.effectId && a13 >= 3 || a12 == Enchantment.fortune.effectId || a12 == Enchantment.featherFalling.effectId && a13 >= 3 || a12 == Enchantment.protection.effectId || a12 == Enchantment.punch.effectId || a12 == Enchantment.flame.effectId || a12 == Enchantment.infinity.effectId || a12 == Enchantment.depthStrider.effectId) {
+            if (a2.getItem() instanceof ItemEnchantedBook) {
+                int a11 = 0;
+                NBTTagList a12 = Items.enchanted_book.getEnchantments(a2);
+                if (a11 < a12.tagCount()) {
+                    short a13 = a12.getCompoundTagAt(a11).getShort("id");
+                    short a14 = a12.getCompoundTagAt(a11).getShort("lvl");
+                    if (a13 == Enchantment.sharpness.effectId && a14 >= 3 || a13 == Enchantment.fireAspect.effectId || a13 == Enchantment.efficiency.effectId && a14 >= 3 || a13 == Enchantment.fortune.effectId || a13 == Enchantment.featherFalling.effectId && a14 >= 3 || a13 == Enchantment.protection.effectId || a13 == Enchantment.punch.effectId || a13 == Enchantment.flame.effectId || a13 == Enchantment.infinity.effectId || a13 == Enchantment.depthStrider.effectId) {
                         return false;
                     }
-                    ++a10;
+                    ++a11;
                 }
                 return true;
             }
-            if (a.getDisplayName().toLowerCase().contains((CharSequence)"k||") || a.getDisplayName().toLowerCase().contains((CharSequence)"cornucopia")) {
+            if (a2.getDisplayName().toLowerCase().contains((CharSequence)"k||") || a2.getDisplayName().toLowerCase().contains((CharSequence)"cornucopia")) {
                 return false;
             }
-            if (Item.getIdFromItem((Item)a3) == 263 && this.Method243() <= 64) {
+            if (Item.getIdFromItem((Item)a4) == 263 && this.Method243() <= 64) {
                 return false;
             }
-            if (Item.getIdFromItem((Item)a3) == 345 && this.Method247() <= 1) {
+            if (Item.getIdFromItem((Item)a4) == 345 && this.Method247() <= 1) {
                 return false;
             }
-            if (Item.getIdFromItem((Item)a3) == 265 && this.Method248() <= 64) {
+            if (Item.getIdFromItem((Item)a4) == 265 && this.Method248() <= 64) {
                 return false;
             }
-            if (a.getItem().getUnlocalizedName().contains((CharSequence)"stick") || a.getItem().getUnlocalizedName().contains((CharSequence)"string") || a.getItem().getUnlocalizedName().contains((CharSequence)"cake") || a.getItem().getUnlocalizedName().contains((CharSequence)"mushroom") || a.getItem().getUnlocalizedName().contains((CharSequence)"flint") || a.getItem().getUnlocalizedName().contains((CharSequence)"dyePowder") || a.getItem().getUnlocalizedName().contains((CharSequence)"feather") || a.getItem().getUnlocalizedName().contains((CharSequence)"bucket") || a.getItem().getUnlocalizedName().contains((CharSequence)"chest") && !a.getDisplayName().toLowerCase().contains((CharSequence)"collect") || a.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a.getItem().getUnlocalizedName().contains((CharSequence)"enchant") || a.getItem().getUnlocalizedName().contains((CharSequence)"exp") || a.getItem().getUnlocalizedName().contains((CharSequence)"shears") || a.getItem().getUnlocalizedName().contains((CharSequence)"anvil") || a.getItem().getUnlocalizedName().contains((CharSequence)"torch") || a.getItem().getUnlocalizedName().contains((CharSequence)"seeds") || a.getItem().getUnlocalizedName().contains((CharSequence)"leather") || a.getItem().getUnlocalizedName().contains((CharSequence)"reeds") || a.getItem().getUnlocalizedName().contains((CharSequence)"Iron") || a.getItem().getUnlocalizedName().contains((CharSequence)"Tag") || a.getItem().getUnlocalizedName().contains((CharSequence)"slime") || a.getItem().getUnlocalizedName().contains((CharSequence)"sign") || a.getItem().getUnlocalizedName().contains((CharSequence)"blaze") || a.getItem().getUnlocalizedName().contains((CharSequence)"horse") || a.getItem().getUnlocalizedName().contains((CharSequence)"coal") || a.getItem().getUnlocalizedName().contains((CharSequence)"bone") || a.getItem().getUnlocalizedName().contains((CharSequence)"Gunpowder") || a.getItem().getUnlocalizedName().contains((CharSequence)"paper") || a.getItem().getUnlocalizedName().contains((CharSequence)"book") || a.getItem().getUnlocalizedName().contains((CharSequence)"redstone") || a.getItem().getUnlocalizedName().contains((CharSequence)"skull") || a.getItem().getUnlocalizedName().contains((CharSequence)"record") || a.getItem().getUnlocalizedName().contains((CharSequence)"wheat") || a.getItem() instanceof ItemGlassBottle || a.getItem().getUnlocalizedName().contains((CharSequence)"piston")) {
+            if (a2.getItem().getUnlocalizedName().contains((CharSequence)"stick") || a2.getItem().getUnlocalizedName().contains((CharSequence)"string") || a2.getItem().getUnlocalizedName().contains((CharSequence)"cake") || a2.getItem().getUnlocalizedName().contains((CharSequence)"mushroom") || a2.getItem().getUnlocalizedName().contains((CharSequence)"flint") || a2.getItem().getUnlocalizedName().contains((CharSequence)"dyePowder") || a2.getItem().getUnlocalizedName().contains((CharSequence)"feather") || a2.getItem().getUnlocalizedName().contains((CharSequence)"bucket") || a2.getItem().getUnlocalizedName().contains((CharSequence)"chest") && !a2.getDisplayName().toLowerCase().contains((CharSequence)"collect") || a2.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a2.getItem().getUnlocalizedName().contains((CharSequence)"fish") || a2.getItem().getUnlocalizedName().contains((CharSequence)"enchant") || a2.getItem().getUnlocalizedName().contains((CharSequence)"exp") || a2.getItem().getUnlocalizedName().contains((CharSequence)"shears") || a2.getItem().getUnlocalizedName().contains((CharSequence)"anvil") || a2.getItem().getUnlocalizedName().contains((CharSequence)"torch") || a2.getItem().getUnlocalizedName().contains((CharSequence)"seeds") || a2.getItem().getUnlocalizedName().contains((CharSequence)"leather") || a2.getItem().getUnlocalizedName().contains((CharSequence)"reeds") || a2.getItem().getUnlocalizedName().contains((CharSequence)"Iron") || a2.getItem().getUnlocalizedName().contains((CharSequence)"Tag") || a2.getItem().getUnlocalizedName().contains((CharSequence)"slime") || a2.getItem().getUnlocalizedName().contains((CharSequence)"sign") || a2.getItem().getUnlocalizedName().contains((CharSequence)"blaze") || a2.getItem().getUnlocalizedName().contains((CharSequence)"horse") || a2.getItem().getUnlocalizedName().contains((CharSequence)"coal") || a2.getItem().getUnlocalizedName().contains((CharSequence)"bone") || a2.getItem().getUnlocalizedName().contains((CharSequence)"Gunpowder") || a2.getItem().getUnlocalizedName().contains((CharSequence)"paper") || a2.getItem().getUnlocalizedName().contains((CharSequence)"book") || a2.getItem().getUnlocalizedName().contains((CharSequence)"redstone") || a2.getItem().getUnlocalizedName().contains((CharSequence)"skull") || a2.getItem().getUnlocalizedName().contains((CharSequence)"record") || a2.getItem().getUnlocalizedName().contains((CharSequence)"wheat") || a2.getItem() instanceof ItemGlassBottle || a2.getItem().getUnlocalizedName().contains((CharSequence)"piston")) {
                 return true;
             }
         }
-        if (a.getItem().getUnlocalizedName().contains((CharSequence)"arrow") && this.Field2726.Method2509().booleanValue()) {
+        if (a2.getItem().getUnlocalizedName().contains((CharSequence)"arrow") && this.Field2726.getBooleanValue().booleanValue()) {
             return true;
         }
-        if (a.getItem() instanceof ItemBow) {
+        if (a2.getItem() instanceof ItemBow) {
             return true;
         }
-        if (a.getItem() instanceof ItemAppleGold || a.getItem().getUnlocalizedName().contains((CharSequence)"apple")) {
+        if (a2.getItem() instanceof ItemAppleGold || a2.getItem().getUnlocalizedName().contains((CharSequence)"apple")) {
             return false;
         }
-        if (a.getItem() instanceof ItemFood && this.Field2727.Method2509().booleanValue()) {
+        if (a2.getItem() instanceof ItemFood && this.Field2727.getBooleanValue().booleanValue()) {
             return true;
         }
-        return a.getItem() instanceof ItemHoe || a.getItem() instanceof ItemTool || a.getItem() instanceof ItemSword || a.getItem() instanceof ItemArmor;
+        return a2.getItem() instanceof ItemHoe || a2.getItem() instanceof ItemTool || a2.getItem() instanceof ItemSword || a2.getItem() instanceof ItemArmor;
     }
 
     public ArrayList Method241() {
@@ -324,287 +324,287 @@ extends Module {
     }
 
     private int Method242() {
-        int a = 0;
-        for (int a2 = 0; a2 < 45; ++a2) {
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack()) continue;
-            ItemStack a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack();
-            Item a4 = a3.getItem();
-            if (!(a3.getItem() instanceof ItemBlock)) continue;
-            a += a3.stackSize;
+        int a2 = 0;
+        for (int a3 = 0; a3 < 45; ++a3) {
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack()) continue;
+            ItemStack a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack();
+            Item a5 = a4.getItem();
+            if (!(a4.getItem() instanceof ItemBlock)) continue;
+            a2 += a4.stackSize;
         }
-        return a;
+        return a2;
     }
 
     private int Method243() {
-        int a = 0;
-        for (int a2 = 0; a2 < 45; ++a2) {
-            ItemStack a3;
-            Item a4;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || Item.getIdFromItem((Item)(a4 = (a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()).getItem())) != 263) continue;
-            a += a3.stackSize;
+        int a2 = 0;
+        for (int a3 = 0; a3 < 45; ++a3) {
+            ItemStack a4;
+            Item a5;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || Item.getIdFromItem((Item)(a5 = (a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()).getItem())) != 263) continue;
+            a2 += a4.stackSize;
         }
-        return a;
+        return a2;
     }
 
     private int Method244() {
-        int a = 0;
-        for (int a2 = 0; a2 < 45; ++a2) {
-            ItemStack a3;
-            Item a4;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || Item.getIdFromItem((Item)(a4 = (a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()).getItem())) != 326) continue;
-            a += a3.stackSize;
+        int a2 = 0;
+        for (int a3 = 0; a3 < 45; ++a3) {
+            ItemStack a4;
+            Item a5;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || Item.getIdFromItem((Item)(a5 = (a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()).getItem())) != 326) continue;
+            a2 += a4.stackSize;
         }
-        return a;
+        return a2;
     }
 
     private int Method245() {
-        int a = 0;
-        for (int a2 = 0; a2 < 45; ++a2) {
-            ItemStack a3;
-            Item a4;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !((a4 = (a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()).getItem()) instanceof ItemFishingRod)) continue;
-            a += a3.stackSize;
+        int a2 = 0;
+        for (int a3 = 0; a3 < 45; ++a3) {
+            ItemStack a4;
+            Item a5;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !((a5 = (a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()).getItem()) instanceof ItemFishingRod)) continue;
+            a2 += a4.stackSize;
         }
-        return a;
+        return a2;
     }
 
     private int Method246() {
-        int a = 0;
-        for (int a2 = 0; a2 < 45; ++a2) {
-            ItemStack a3;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !((a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()).getItem() instanceof ItemBow)) continue;
-            a += a3.stackSize;
+        int a2 = 0;
+        for (int a3 = 0; a3 < 45; ++a3) {
+            ItemStack a4;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !((a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()).getItem() instanceof ItemBow)) continue;
+            a2 += a4.stackSize;
         }
-        return a;
+        return a2;
     }
 
     private int Method247() {
-        int a = 0;
-        for (int a2 = 0; a2 < 45; ++a2) {
-            ItemStack a3;
-            Item a4;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || Item.getIdFromItem((Item)(a4 = (a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()).getItem())) != 345) continue;
-            a += a3.stackSize;
+        int a2 = 0;
+        for (int a3 = 0; a3 < 45; ++a3) {
+            ItemStack a4;
+            Item a5;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || Item.getIdFromItem((Item)(a5 = (a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()).getItem())) != 345) continue;
+            a2 += a4.stackSize;
         }
-        return a;
+        return a2;
     }
 
     private int Method248() {
-        int a = 0;
-        for (int a2 = 0; a2 < 45; ++a2) {
-            ItemStack a3;
-            Item a4;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || Item.getIdFromItem((Item)(a4 = (a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()).getItem())) != 265) continue;
-            a += a3.stackSize;
+        int a2 = 0;
+        for (int a3 = 0; a3 < 45; ++a3) {
+            ItemStack a4;
+            Item a5;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || Item.getIdFromItem((Item)(a5 = (a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()).getItem())) != 265) continue;
+            a2 += a4.stackSize;
         }
-        return a;
+        return a2;
     }
 
-    private void Method249(int a) {
-        for (int a2 = 9; a2 < 45; ++a2) {
-            ItemStack a3;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !this.Method252(a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()) || Field2738 == a2 || this.Method237(a3)) continue;
+    private void Method249(int a2) {
+        for (int a3 = 9; a3 < 45; ++a3) {
+            ItemStack a4;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !this.Method252(a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()) || Field2738 == a3 || this.Method237(a4)) continue;
             if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2738).getHasStack()) {
-                this.Method235(a2, Field2738 - 36);
-                Field2729.Method214();
-                if (this.Field2724.Method2744().longValue() <= 0L) continue;
+                this.Method235(a3, Field2738 - 36);
+                Field2729.reset();
+                if (this.Field2724.getFloatValue().longValue() <= 0L) continue;
                 return;
             }
             if (this.Method252(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2738).getStack())) continue;
-            this.Method235(a2, Field2738 - 36);
-            Field2729.Method214();
-            if (this.Field2724.Method2744().longValue() <= 0L) continue;
+            this.Method235(a3, Field2738 - 36);
+            Field2729.reset();
+            if (this.Field2724.getFloatValue().longValue() <= 0L) continue;
             return;
         }
     }
 
-    private void Method250(int a) {
-        for (int a2 = 9; a2 < 45; ++a2) {
-            ItemStack a3;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !this.Method253(a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()) || Field2736 == a2 || this.Method237(a3)) continue;
+    private void Method250(int a2) {
+        for (int a3 = 9; a3 < 45; ++a3) {
+            ItemStack a4;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !this.Method253(a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()) || Field2736 == a3 || this.Method237(a4)) continue;
             if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2736).getHasStack()) {
-                this.Method235(a2, Field2736 - 36);
-                Field2729.Method214();
-                if (this.Field2724.Method2744().longValue() <= 0L) continue;
+                this.Method235(a3, Field2736 - 36);
+                Field2729.reset();
+                if (this.Field2724.getFloatValue().longValue() <= 0L) continue;
                 return;
             }
             if (this.Method253(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2736).getStack())) continue;
-            this.Method235(a2, Field2736 - 36);
-            Field2729.Method214();
-            if (this.Field2724.Method2744().longValue() <= 0L) continue;
+            this.Method235(a3, Field2736 - 36);
+            Field2729.reset();
+            if (this.Field2724.getFloatValue().longValue() <= 0L) continue;
             return;
         }
     }
 
-    private void Method251(int a) {
-        for (int a2 = 9; a2 < 45; ++a2) {
-            ItemStack a3;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !this.Method254(a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()) || Field2737 == a2 || this.Method237(a3)) continue;
+    private void Method251(int a2) {
+        for (int a3 = 9; a3 < 45; ++a3) {
+            ItemStack a4;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !this.Method254(a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()) || Field2737 == a3 || this.Method237(a4)) continue;
             if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2737).getHasStack()) {
-                this.Method235(a2, Field2737 - 36);
-                Field2729.Method214();
-                if (this.Field2724.Method2744().longValue() <= 0L) continue;
+                this.Method235(a3, Field2737 - 36);
+                Field2729.reset();
+                if (this.Field2724.getFloatValue().longValue() <= 0L) continue;
                 return;
             }
             if (this.Method254(InvCleaner.mc.thePlayer.inventoryContainer.getSlot(Field2737).getStack())) continue;
-            this.Method235(a2, Field2737 - 36);
-            Field2729.Method214();
-            if (this.Field2724.Method2744().longValue() <= 0L) continue;
+            this.Method235(a3, Field2737 - 36);
+            Field2729.reset();
+            if (this.Field2724.getFloatValue().longValue() <= 0L) continue;
             return;
         }
     }
 
-    private boolean Method252(ItemStack a) {
-        Item a2 = a.getItem();
-        if (!(a2 instanceof ItemPickaxe)) {
+    private boolean Method252(ItemStack a2) {
+        Item a3 = a2.getItem();
+        if (!(a3 instanceof ItemPickaxe)) {
             return false;
         }
-        float a3 = this.Method255(a);
-        for (int a4 = 9; a4 < 45; ++a4) {
-            ItemStack a5;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack() || !(this.Method255(a5 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getStack()) > a3) || !(a5.getItem() instanceof ItemPickaxe)) continue;
-            return false;
-        }
-        return true;
-    }
-
-    private boolean Method253(ItemStack a) {
-        Item a2 = a.getItem();
-        if (!(a2 instanceof ItemSpade)) {
-            return false;
-        }
-        float a3 = this.Method255(a);
-        for (int a4 = 9; a4 < 45; ++a4) {
-            ItemStack a5;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack() || !(this.Method255(a5 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getStack()) > a3) || !(a5.getItem() instanceof ItemSpade)) continue;
+        float a4 = this.Method255(a2);
+        for (int a5 = 9; a5 < 45; ++a5) {
+            ItemStack a6;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a5).getHasStack() || !(this.Method255(a6 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a5).getStack()) > a4) || !(a6.getItem() instanceof ItemPickaxe)) continue;
             return false;
         }
         return true;
     }
 
-    private boolean Method254(ItemStack a) {
-        Item a2 = a.getItem();
-        if (!(a2 instanceof ItemAxe)) {
+    private boolean Method253(ItemStack a2) {
+        Item a3 = a2.getItem();
+        if (!(a3 instanceof ItemSpade)) {
             return false;
         }
-        float a3 = this.Method255(a);
-        for (int a4 = 9; a4 < 45; ++a4) {
-            ItemStack a5;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack() || !(this.Method255(a5 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getStack()) > a3) || !(a5.getItem() instanceof ItemAxe) || this.Method237(a)) continue;
+        float a4 = this.Method255(a2);
+        for (int a5 = 9; a5 < 45; ++a5) {
+            ItemStack a6;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a5).getHasStack() || !(this.Method255(a6 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a5).getStack()) > a4) || !(a6.getItem() instanceof ItemSpade)) continue;
             return false;
         }
         return true;
     }
 
-    private float Method255(ItemStack a) {
-        Item a2 = a.getItem();
-        if (!(a2 instanceof ItemTool)) {
+    private boolean Method254(ItemStack a2) {
+        Item a3 = a2.getItem();
+        if (!(a3 instanceof ItemAxe)) {
+            return false;
+        }
+        float a4 = this.Method255(a2);
+        for (int a5 = 9; a5 < 45; ++a5) {
+            ItemStack a6;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a5).getHasStack() || !(this.Method255(a6 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a5).getStack()) > a4) || !(a6.getItem() instanceof ItemAxe) || this.Method237(a2)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    private float Method255(ItemStack a2) {
+        Item a3 = a2.getItem();
+        if (!(a3 instanceof ItemTool)) {
             return 0.0f;
         }
-        String a3 = a2.getUnlocalizedName();
-        ItemTool a4 = (ItemTool)a2;
-        float a5 = 1.0f;
-        if (a2 instanceof ItemPickaxe) {
-            a5 = a4.getStrVsBlock(a, Blocks.stone);
-            if (a3.toLowerCase().contains((CharSequence)"gold")) {
-                a5 -= 5.0f;
+        String a4 = a3.getUnlocalizedName();
+        ItemTool a5 = (ItemTool)a3;
+        float a6 = 1.0f;
+        if (a3 instanceof ItemPickaxe) {
+            a6 = a5.getStrVsBlock(a2, Blocks.stone);
+            if (a4.toLowerCase().contains((CharSequence)"gold")) {
+                a6 -= 5.0f;
             }
-        } else if (a2 instanceof ItemSpade) {
-            a5 = a4.getStrVsBlock(a, Blocks.dirt);
-            if (a3.toLowerCase().contains((CharSequence)"gold")) {
-                a5 -= 5.0f;
+        } else if (a3 instanceof ItemSpade) {
+            a6 = a5.getStrVsBlock(a2, Blocks.dirt);
+            if (a4.toLowerCase().contains((CharSequence)"gold")) {
+                a6 -= 5.0f;
             }
-        } else if (a2 instanceof ItemAxe) {
-            a5 = a4.getStrVsBlock(a, Blocks.log);
-            if (a3.toLowerCase().contains((CharSequence)"gold")) {
-                a5 -= 5.0f;
+        } else if (a3 instanceof ItemAxe) {
+            a6 = a5.getStrVsBlock(a2, Blocks.log);
+            if (a4.toLowerCase().contains((CharSequence)"gold")) {
+                a6 -= 5.0f;
             }
         } else {
             return 1.0f;
         }
-        a5 = (float)((double)a5 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.efficiency.effectId, (ItemStack)a) * 0.0075);
-        a5 = (float)((double)a5 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a) / 100.0);
-        return a5;
+        a6 = (float)((double)a6 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.efficiency.effectId, (ItemStack)a2) * 0.0075);
+        a6 = (float)((double)a6 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a2) / 100.0);
+        return a6;
     }
 
-    private boolean Method256(ItemStack a) {
-        if (a.getItem() instanceof ItemPotion) {
-            ItemPotion a2 = (ItemPotion)a.getItem();
-            if (a2.getEffects(a) == null) {
+    private boolean Method256(ItemStack a2) {
+        if (a2.getItem() instanceof ItemPotion) {
+            ItemPotion a3 = (ItemPotion)a2.getItem();
+            if (a3.getEffects(a2) == null) {
                 return true;
             }
-            Iterator iterator = a2.getEffects(a).Method1383();
+            Iterator iterator = a3.getEffects(a2).Method1383();
             while (iterator.Method932()) {
-                Object a3 = iterator.Method933();
-                PotionEffect a4 = (PotionEffect)a3;
-                if (a4.getPotionID() != Potion.poison.getId() && a4.getPotionID() != Potion.harm.getId() && a4.getPotionID() != Potion.moveSlowdown.getId() && a4.getPotionID() != Potion.weakness.getId()) continue;
+                Object a4 = iterator.Method933();
+                PotionEffect a5 = (PotionEffect)a4;
+                if (a5.getPotionID() != Potion.poison.getId() && a5.getPotionID() != Potion.harm.getId() && a5.getPotionID() != Potion.moveSlowdown.getId() && a5.getPotionID() != Potion.weakness.getId()) continue;
                 return true;
             }
         }
         return false;
     }
 
-    boolean Method257(int a) {
-        for (int a2 = 9; a2 < 45; ++a2) {
-            ItemStack a3;
-            Item a4;
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getHasStack() || !((a4 = (a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a2).getStack()).getItem()) instanceof ItemArmor)) continue;
-            ItemArmor a5 = (ItemArmor)a4;
-            if (a != a5.armorType) continue;
+    boolean Method257(int a2) {
+        for (int a3 = 9; a3 < 45; ++a3) {
+            ItemStack a4;
+            Item a5;
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !((a5 = (a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack()).getItem()) instanceof ItemArmor)) continue;
+            ItemArmor a6 = (ItemArmor)a5;
+            if (a2 != a6.armorType) continue;
             return true;
         }
         return false;
     }
 
     public void Method258() {
-        for (int a = 1; a < 5; ++a) {
-            if (InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a).getHasStack()) {
-                ItemStack a2 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a).getStack();
-                if (AutoArmor.Method239(a2, a)) continue;
-                this.Method236(4 + a);
+        for (int a2 = 1; a2 < 5; ++a2) {
+            if (InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a2).getHasStack()) {
+                ItemStack a3 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(4 + a2).getStack();
+                if (AutoArmor.Method239(a3, a2)) continue;
+                this.Method236(4 + a2);
             }
-            for (int a3 = 9; a3 < 45; ++a3) {
-                ItemStack a4;
-                if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack() || !AutoArmor.Method239(a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack(), a) || !(AutoArmor.Method238(a4) > 0.0f)) continue;
-                this.Method234(a3);
-                Field2729.Method214();
-                if (this.Field2724.Method2744().longValue() <= 0L) continue;
+            for (int a4 = 9; a4 < 45; ++a4) {
+                ItemStack a5;
+                if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack() || !AutoArmor.Method239(a5 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getStack(), a2) || !(AutoArmor.Method238(a5) > 0.0f)) continue;
+                this.Method234(a4);
+                Field2729.reset();
+                if (this.Field2724.getFloatValue().longValue() <= 0L) continue;
                 return;
             }
         }
     }
 
-    public boolean Method259(ItemStack a) {
-        float a2 = InvCleaner.Method260(a);
-        for (int a3 = 9; a3 < 45; ++a3) {
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack()) continue;
-            ItemStack a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack();
-            if (!(InvCleaner.Method260(a4) >= a2) || !(a4.getItem() instanceof ItemBow) || a == a4) continue;
+    public boolean Method259(ItemStack a2) {
+        float a3 = InvCleaner.Method260(a2);
+        for (int a4 = 9; a4 < 45; ++a4) {
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack()) continue;
+            ItemStack a5 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getStack();
+            if (!(InvCleaner.Method260(a5) >= a3) || !(a5.getItem() instanceof ItemBow) || a2 == a5) continue;
             return false;
         }
         return true;
     }
 
-    private static float Method260(ItemStack a) {
-        float a2 = 7.0f;
-        return a2 += (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.power.effectId, (ItemStack)a) * 1.25f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.flame.effectId, (ItemStack)a) * 0.5f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.punch.effectId, (ItemStack)a) * 0.1f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a) * 0.001f;
+    private static float Method260(ItemStack a2) {
+        float a3 = 7.0f;
+        return a3 += (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.power.effectId, (ItemStack)a2) * 1.25f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.flame.effectId, (ItemStack)a2) * 0.5f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.punch.effectId, (ItemStack)a2) * 0.1f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a2) * 0.001f;
     }
 
-    public boolean Method261(ItemStack a) {
-        float a2 = InvCleaner.Method262(a);
-        for (int a3 = 9; a3 < 45; ++a3) {
-            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getHasStack()) continue;
-            ItemStack a4 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a3).getStack();
-            if (!(InvCleaner.Method262(a4) >= a2) || !a4.getUnlocalizedName().toLowerCase().contains((CharSequence)"fish") || a == a4) continue;
+    public boolean Method261(ItemStack a2) {
+        float a3 = InvCleaner.Method262(a2);
+        for (int a4 = 9; a4 < 45; ++a4) {
+            if (!InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getHasStack()) continue;
+            ItemStack a5 = InvCleaner.mc.thePlayer.inventoryContainer.getSlot(a4).getStack();
+            if (!(InvCleaner.Method262(a5) >= a3) || !a5.getUnlocalizedName().toLowerCase().contains((CharSequence)"fish") || a2 == a5) continue;
             return false;
         }
         return true;
     }
 
-    private static float Method262(ItemStack a) {
-        float a2 = 0.0f;
-        a2 = (float)((double)a2 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.knockback.effectId, (ItemStack)a) * 1.0);
-        return a2;
+    private static float Method262(ItemStack a2) {
+        float a3 = 0.0f;
+        a3 = (float)((double)a3 + (double)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.knockback.effectId, (ItemStack)a2) * 1.0);
+        return a3;
     }
 
     static {

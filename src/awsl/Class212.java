@@ -22,7 +22,6 @@
 package awsl;
 
 import awsl.Class681;
-import awsl.Class91;
 import java.awt.Color;
 import java.util.ConcurrentModificationException;
 import java.util.List;
@@ -34,12 +33,13 @@ import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.Slot;
 import net.minecraft.util.AxisAlignedBB;
+import obfuscate.a;
 import org.lwjgl.opengl.GL11;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 
 public class Class212 {
-    static Minecraft Field1191 = Wrapper.INSTANCE.Method2868();
-    FontRenderer Field1192 = Wrapper.INSTANCE.Method2873();
+    static Minecraft Field1191 = Wrapper.INSTANCE.getMinecraft();
+    FontRenderer Field1192 = Wrapper.INSTANCE.getFontRendererObj();
     private static Frustum Field1193 = new Frustum();
     private static String Field1194;
 
@@ -123,77 +123,77 @@ public class Class212 {
         throw new IllegalStateException("Decompilation failed");
     }
 
-    public static void Method2547(int a, int a2, double a3, int a4) {
-        float a5 = (float)(a4 >> 24 & 0xFF) / 255.0f;
-        float a6 = (float)(a4 >> 16 & 0xFF) / 255.0f;
-        float a7 = (float)(a4 >> 8 & 0xFF) / 255.0f;
-        float a8 = (float)(a4 & 0xFF) / 255.0f;
-        GL11.glColor4f((float)a6, (float)a7, (float)a8, (float)a5);
-        GL11.glBegin((int)6);
-        for (int a9 = 0; a9 <= 18; ++a9) {
-            double a10 = Math.sin((double)((double)(a9 * 20) * Math.PI / 180.0)) * a3;
-            double a11 = Math.cos((double)((double)(a9 * 20) * Math.PI / 180.0)) * a3;
-            GL11.glVertex2d((double)((double)a + a10), (double)((double)a2 + a11));
-        }
-        GL11.glEnd();
-    }
-
-    public static void Method2548(int a, int a2, double a3, int a4, int a5) {
-        float a6 = (float)(a4 >> 24 & 0xFF) / 255.0f;
-        float a7 = (float)(a4 >> 16 & 0xFF) / 255.0f;
-        float a8 = (float)(a4 >> 8 & 0xFF) / 255.0f;
-        float a9 = (float)(a4 & 0xFF) / 255.0f;
+    public static void Method2547(int a2, int a3, double a4, int a5) {
+        float a6 = (float)(a5 >> 24 & 0xFF) / 255.0f;
+        float a7 = (float)(a5 >> 16 & 0xFF) / 255.0f;
+        float a8 = (float)(a5 >> 8 & 0xFF) / 255.0f;
+        float a9 = (float)(a5 & 0xFF) / 255.0f;
         GL11.glColor4f((float)a7, (float)a8, (float)a9, (float)a6);
         GL11.glBegin((int)6);
-        for (int a10 = 0; a10 <= 360 / a5; ++a10) {
-            double a11 = Math.sin((double)((double)(a10 * a5) * Math.PI / 180.0)) * a3;
-            double a12 = Math.cos((double)((double)(a10 * a5) * Math.PI / 180.0)) * a3;
-            GL11.glVertex2d((double)((double)a + a11), (double)((double)a2 + a12));
+        for (int a10 = 0; a10 <= 18; ++a10) {
+            double a11 = Math.sin((double)((double)(a10 * 20) * Math.PI / 180.0)) * a4;
+            double a12 = Math.cos((double)((double)(a10 * 20) * Math.PI / 180.0)) * a4;
+            GL11.glVertex2d((double)((double)a2 + a11), (double)((double)a3 + a12));
         }
         GL11.glEnd();
     }
 
-    public static boolean Method2549(Entity a) {
-        return Class212.Method2550(a.getEntityBoundingBox()) || a.ignoreFrustumCheck;
+    public static void Method2548(int a2, int a3, double a4, int a5, int a6) {
+        float a7 = (float)(a5 >> 24 & 0xFF) / 255.0f;
+        float a8 = (float)(a5 >> 16 & 0xFF) / 255.0f;
+        float a9 = (float)(a5 >> 8 & 0xFF) / 255.0f;
+        float a10 = (float)(a5 & 0xFF) / 255.0f;
+        GL11.glColor4f((float)a8, (float)a9, (float)a10, (float)a7);
+        GL11.glBegin((int)6);
+        for (int a11 = 0; a11 <= 360 / a6; ++a11) {
+            double a12 = Math.sin((double)((double)(a11 * a6) * Math.PI / 180.0)) * a4;
+            double a13 = Math.cos((double)((double)(a11 * a6) * Math.PI / 180.0)) * a4;
+            GL11.glVertex2d((double)((double)a2 + a12), (double)((double)a3 + a13));
+        }
+        GL11.glEnd();
     }
 
-    public static boolean Method2550(AxisAlignedBB a) {
-        Entity a2 = Wrapper.INSTANCE.Method2868().getRenderViewEntity();
-        Field1193.setPosition(a2.posX, a2.posY, a2.posZ);
-        return Field1193.isBoundingBoxInFrustum(a);
+    public static boolean Method2549(Entity a2) {
+        return Class212.Method2550(a2.getEntityBoundingBox()) || a2.ignoreFrustumCheck;
     }
 
-    public void Method2551(double a, double a2, double a3, boolean a4, Color a5) {
-        Class212.Method2555(a, a2, a3, 360.0, a4, a5);
+    public static boolean Method2550(AxisAlignedBB a2) {
+        Entity a3 = Wrapper.INSTANCE.getMinecraft().getRenderViewEntity();
+        Field1193.setPosition(a3.posX, a3.posY, a3.posZ);
+        return Field1193.isBoundingBoxInFrustum(a2);
     }
 
-    public void Method2552(double a, double a2, double a3, boolean a4) {
-        this.Method2556(a, a2, a3, 360, a4);
+    public void Method2551(double a2, double a3, double a4, boolean a5, Color a6) {
+        Class212.Method2555(a2, a3, a4, 360.0, a5, a6);
     }
 
-    public static void Method2553(double a, double a2, double a3, Color a4) {
-        Class212.Method2557(a, a2, a3, 360, a4);
+    public void Method2552(double a2, double a3, double a4, boolean a5) {
+        this.Method2556(a2, a3, a4, 360, a5);
     }
 
-    public void Method2554(double a, double a2, double a3) {
-        this.Method2558(a, a2, a3, 360);
+    public static void Method2553(double a2, double a3, double a4, Color a5) {
+        Class212.Method2557(a2, a3, a4, 360, a5);
     }
 
-    public static void Method2555(double a, double a2, double a3, double a4, boolean a5, Color a6) {
-        a3 /= 2.0;
+    public void Method2554(double a2, double a3, double a4) {
+        this.Method2558(a2, a3, a4, 360);
+    }
+
+    public static void Method2555(double a2, double a3, double a4, double a5, boolean a6, Color a7) {
+        a4 /= 2.0;
         GL11.glEnable((int)3042);
         GL11.glBlendFunc((int)770, (int)771);
         GL11.glDisable((int)3553);
         GL11.glDisable((int)2884);
         GlStateManager.disableAlpha();
         GlStateManager.disableDepth();
-        Class212.Method2543(a6);
+        Class212.Method2543(a7);
         GL11.glLineWidth((float)2.0f);
         GL11.glEnable((int)2848);
         GL11.glBegin((int)6);
-        for (double a7 = 0.0; a7 <= a4 / 4.0; a7 += 1.0) {
-            double a8 = a7 * 4.0 * (Math.PI * 2) / 360.0;
-            GL11.glVertex2d((double)(a + a3 * Math.cos((double)a8) + a3), (double)(a2 + a3 * Math.sin((double)a8) + a3));
+        for (double a8 = 0.0; a8 <= a5 / 4.0; a8 += 1.0) {
+            double a9 = a8 * 4.0 * (Math.PI * 2) / 360.0;
+            GL11.glVertex2d((double)(a2 + a4 * Math.cos((double)a9) + a4), (double)(a3 + a4 * Math.sin((double)a9) + a4));
         }
         GL11.glEnd();
         GL11.glDisable((int)2848);
@@ -205,139 +205,139 @@ public class Class212 {
         Class212.Method2543(Color.white);
     }
 
-    public void Method2556(double a, double a2, double a3, int a4, boolean a5) {
-        Class212.Method2555(a, a2, a3, a4, a5, null);
+    public void Method2556(double a2, double a3, double a4, int a5, boolean a6) {
+        Class212.Method2555(a2, a3, a4, a5, a6, null);
     }
 
-    public static void Method2557(double a, double a2, double a3, int a4, Color a5) {
-        Class212.Method2555(a, a2, a3, a4, true, a5);
+    public static void Method2557(double a2, double a3, double a4, int a5, Color a6) {
+        Class212.Method2555(a2, a3, a4, a5, true, a6);
     }
 
-    public void Method2558(double a, double a2, double a3, int a4) {
-        Class212.Method2555(a, a2, a3, a4, true, null);
+    public void Method2558(double a2, double a3, double a4, int a5) {
+        Class212.Method2555(a2, a3, a4, a5, true, null);
     }
 
-    public static void Method2559(float a, float a2, float a3, float a4, float a5, int a6, float a7, int a8) {
-        double a9;
-        String a10 = Class212.Method2566();
-        if (a6 == 0xFFFFFF) {
-            a6 = Class681.WHITE.Field2962;
+    public static void Method2559(float a2, float a3, float a4, float a5, float a6, int a7, float a8, int a9) {
+        double a10;
+        String a11 = Class212.Method2566();
+        if (a7 == 0xFFFFFF) {
+            a7 = Class681.WHITE.Field2962;
         }
-        if (a8 == 0xFFFFFF) {
-            a8 = Class681.WHITE.Field2962;
+        if (a9 == 0xFFFFFF) {
+            a9 = Class681.WHITE.Field2962;
         }
-        if (a5 < 0.0f) {
-            a5 = 0.0f;
+        if (a6 < 0.0f) {
+            a6 = 0.0f;
         }
-        if (a5 > a3 / 2.0f) {
-            a5 = a3 / 2.0f;
+        if (a6 > a4 / 2.0f) {
+            a6 = a4 / 2.0f;
         }
-        if (a5 > a4 / 2.0f) {
-            a5 = a4 / 2.0f;
+        if (a6 > a5 / 2.0f) {
+            a6 = a5 / 2.0f;
         }
-        Class212.Method2560(a + a5, a2 + a5, a3 - a5 * 2.0f, a4 - a5 * 2.0f, a6);
-        Class212.Method2560(a + a5, a2, a3 - a5 * 2.0f, a5, a6);
-        Class212.Method2560(a + a5, a2 + a4 - a5, a3 - a5 * 2.0f, a5, a6);
-        Class212.Method2560(a, a2 + a5, a5, a4 - a5 * 2.0f, a6);
-        Class212.Method2560(a + a3 - a5, a2 + a5, a5, a4 - a5 * 2.0f, a6);
+        Class212.Method2560(a2 + a6, a3 + a6, a4 - a6 * 2.0f, a5 - a6 * 2.0f, a7);
+        Class212.Method2560(a2 + a6, a3, a4 - a6 * 2.0f, a6, a7);
+        Class212.Method2560(a2 + a6, a3 + a5 - a6, a4 - a6 * 2.0f, a6, a7);
+        Class212.Method2560(a2, a3 + a6, a6, a5 - a6 * 2.0f, a7);
+        Class212.Method2560(a2 + a4 - a6, a3 + a6, a6, a5 - a6 * 2.0f, a7);
         Class212.Method2561();
-        Class212.Method2542(a6);
+        Class212.Method2542(a7);
         GL11.glBegin((int)6);
-        float a11 = a + a5;
-        float a12 = a2 + a5;
-        GL11.glVertex2d((double)a11, (double)a12);
-        int a13 = (int)Math.min((float)Math.max((float)a5, (float)10.0f), (float)90.0f);
-        int a14 = 0;
-        if (a14 < a13 + 1) {
-            a9 = Math.PI * 2 * (double)(a14 + 180) / (double)(a13 * 4);
-            GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-            ++a14;
-            Class91.Method3647(new String[4]);
+        float a12 = a2 + a6;
+        float a13 = a3 + a6;
+        GL11.glVertex2d((double)a12, (double)a13);
+        int a14 = (int)Math.min((float)Math.max((float)a6, (float)10.0f), (float)90.0f);
+        int a15 = 0;
+        if (a15 < a14 + 1) {
+            a10 = Math.PI * 2 * (double)(a15 + 180) / (double)(a14 * 4);
+            GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+            ++a15;
+            a.trash(new String[4]);
         }
         GL11.glEnd();
         GL11.glBegin((int)6);
-        a11 = a + a3 - a5;
-        a12 = a2 + a5;
-        GL11.glVertex2d((double)a11, (double)a12);
-        a13 = (int)Math.min((float)Math.max((float)a5, (float)10.0f), (float)90.0f);
-        a14 = 0;
-        if (a14 < a13 + 1) {
-            a9 = Math.PI * 2 * (double)(a14 + 90) / (double)(a13 * 4);
-            GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-            ++a14;
+        a12 = a2 + a4 - a6;
+        a13 = a3 + a6;
+        GL11.glVertex2d((double)a12, (double)a13);
+        a14 = (int)Math.min((float)Math.max((float)a6, (float)10.0f), (float)90.0f);
+        a15 = 0;
+        if (a15 < a14 + 1) {
+            a10 = Math.PI * 2 * (double)(a15 + 90) / (double)(a14 * 4);
+            GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+            ++a15;
         }
         GL11.glEnd();
         GL11.glBegin((int)6);
-        a11 = a + a5;
-        a12 = a2 + a4 - a5;
-        GL11.glVertex2d((double)a11, (double)a12);
-        a13 = (int)Math.min((float)Math.max((float)a5, (float)10.0f), (float)90.0f);
-        a14 = 0;
-        if (a14 < a13 + 1) {
-            a9 = Math.PI * 2 * (double)(a14 + 270) / (double)(a13 * 4);
-            GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-            ++a14;
+        a12 = a2 + a6;
+        a13 = a3 + a5 - a6;
+        GL11.glVertex2d((double)a12, (double)a13);
+        a14 = (int)Math.min((float)Math.max((float)a6, (float)10.0f), (float)90.0f);
+        a15 = 0;
+        if (a15 < a14 + 1) {
+            a10 = Math.PI * 2 * (double)(a15 + 270) / (double)(a14 * 4);
+            GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+            ++a15;
         }
         GL11.glEnd();
         GL11.glBegin((int)6);
-        a11 = a + a3 - a5;
-        a12 = a2 + a4 - a5;
-        GL11.glVertex2d((double)a11, (double)a12);
-        a13 = (int)Math.min((float)Math.max((float)a5, (float)10.0f), (float)90.0f);
-        a14 = 0;
-        if (a14 < a13 + 1) {
-            a9 = Math.PI * 2 * (double)a14 / (double)(a13 * 4);
-            GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-            ++a14;
+        a12 = a2 + a4 - a6;
+        a13 = a3 + a5 - a6;
+        GL11.glVertex2d((double)a12, (double)a13);
+        a14 = (int)Math.min((float)Math.max((float)a6, (float)10.0f), (float)90.0f);
+        a15 = 0;
+        if (a15 < a14 + 1) {
+            a10 = Math.PI * 2 * (double)a15 / (double)(a14 * 4);
+            GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+            ++a15;
         }
         GL11.glEnd();
-        Class212.Method2542(a8);
-        GL11.glLineWidth((float)a7);
+        Class212.Method2542(a9);
+        GL11.glLineWidth((float)a8);
         GL11.glBegin((int)3);
-        a11 = a + a5;
-        a12 = a2 + a5;
-        a14 = a13 = (int)Math.min((float)Math.max((float)a5, (float)10.0f), (float)90.0f);
-        a9 = Math.PI * 2 * (double)(a14 + 180) / (double)(a13 * 4);
-        GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-        --a14;
-        GL11.glVertex2d((double)(a + a5), (double)a2);
-        GL11.glVertex2d((double)(a + a3 - a5), (double)a2);
-        a11 = a + a3 - a5;
-        a12 = a2 + a5;
-        a14 = a13;
-        a9 = Math.PI * 2 * (double)(a14 + 90) / (double)(a13 * 4);
-        GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-        --a14;
-        GL11.glVertex2d((double)(a + a3), (double)(a2 + a5));
-        GL11.glVertex2d((double)(a + a3), (double)(a2 + a4 - a5));
-        a11 = a + a3 - a5;
-        a12 = a2 + a4 - a5;
-        a14 = a13;
-        a9 = Math.PI * 2 * (double)a14 / (double)(a13 * 4);
-        GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-        --a14;
-        GL11.glVertex2d((double)(a + a3 - a5), (double)(a2 + a4));
-        GL11.glVertex2d((double)(a + a5), (double)(a2 + a4));
-        a11 = a + a5;
-        a12 = a2 + a4 - a5;
-        a14 = a13;
-        a9 = Math.PI * 2 * (double)(a14 + 270) / (double)(a13 * 4);
-        GL11.glVertex2d((double)((double)a11 + Math.sin((double)a9) * (double)a5), (double)((double)a12 + Math.cos((double)a9) * (double)a5));
-        --a14;
-        GL11.glVertex2d((double)a, (double)(a2 + a4 - a5));
-        GL11.glVertex2d((double)a, (double)(a2 + a5));
+        a12 = a2 + a6;
+        a13 = a3 + a6;
+        a15 = a14 = (int)Math.min((float)Math.max((float)a6, (float)10.0f), (float)90.0f);
+        a10 = Math.PI * 2 * (double)(a15 + 180) / (double)(a14 * 4);
+        GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+        --a15;
+        GL11.glVertex2d((double)(a2 + a6), (double)a3);
+        GL11.glVertex2d((double)(a2 + a4 - a6), (double)a3);
+        a12 = a2 + a4 - a6;
+        a13 = a3 + a6;
+        a15 = a14;
+        a10 = Math.PI * 2 * (double)(a15 + 90) / (double)(a14 * 4);
+        GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+        --a15;
+        GL11.glVertex2d((double)(a2 + a4), (double)(a3 + a6));
+        GL11.glVertex2d((double)(a2 + a4), (double)(a3 + a5 - a6));
+        a12 = a2 + a4 - a6;
+        a13 = a3 + a5 - a6;
+        a15 = a14;
+        a10 = Math.PI * 2 * (double)a15 / (double)(a14 * 4);
+        GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+        --a15;
+        GL11.glVertex2d((double)(a2 + a4 - a6), (double)(a3 + a5));
+        GL11.glVertex2d((double)(a2 + a6), (double)(a3 + a5));
+        a12 = a2 + a6;
+        a13 = a3 + a5 - a6;
+        a15 = a14;
+        a10 = Math.PI * 2 * (double)(a15 + 270) / (double)(a14 * 4);
+        GL11.glVertex2d((double)((double)a12 + Math.sin((double)a10) * (double)a6), (double)((double)a13 + Math.cos((double)a10) * (double)a6));
+        --a15;
+        GL11.glVertex2d((double)a2, (double)(a3 + a5 - a6));
+        GL11.glVertex2d((double)a2, (double)(a3 + a6));
         GL11.glEnd();
         Class212.Method2562();
     }
 
-    public static void Method2560(float a, float a2, float a3, float a4, int a5) {
+    public static void Method2560(float a2, float a3, float a4, float a5, int a6) {
         Class212.Method2561();
-        Class212.Method2542(a5);
+        Class212.Method2542(a6);
         GL11.glBegin((int)7);
-        GL11.glVertex2d((double)a, (double)a2);
-        GL11.glVertex2d((double)(a + a3), (double)a2);
-        GL11.glVertex2d((double)(a + a3), (double)(a2 + a4));
-        GL11.glVertex2d((double)a, (double)(a2 + a4));
+        GL11.glVertex2d((double)a2, (double)a3);
+        GL11.glVertex2d((double)(a2 + a4), (double)a3);
+        GL11.glVertex2d((double)(a2 + a4), (double)(a3 + a5));
+        GL11.glVertex2d((double)a2, (double)(a3 + a5));
         GL11.glEnd();
         Class212.Method2562();
     }
@@ -362,14 +362,14 @@ public class Class212 {
         GlStateManager.enableTexture2D();
     }
 
-    public static void Method2563(int a, int a2, Slot a3, int a4) {
-        int a5 = a + a3.xDisplayPosition;
-        int a6 = a2 + a3.yDisplayPosition;
-        Class212.Method2559(a5, a6, 16.0f, 16.0f, 1.0f, -1, 2.0f, a4);
+    public static void Method2563(int a2, int a3, Slot a4, int a5) {
+        int a6 = a2 + a4.xDisplayPosition;
+        int a7 = a3 + a4.yDisplayPosition;
+        Class212.Method2559(a6, a7, 16.0f, 16.0f, 1.0f, -1, 2.0f, a5);
     }
 
-    public static void Method2564(Slot a, Color a2) {
-        Gui.drawRect((int)a.xDisplayPosition, (int)a.yDisplayPosition, (int)(a.xDisplayPosition + 16), (int)(a.yDisplayPosition + 16), (int)a2.getRGB());
+    public static void Method2564(Slot a2, Color a3) {
+        Gui.drawRect((int)a2.xDisplayPosition, (int)a2.yDisplayPosition, (int)(a2.xDisplayPosition + 16), (int)(a2.yDisplayPosition + 16), (int)a3.getRGB());
     }
 
     static {

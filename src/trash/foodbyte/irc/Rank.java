@@ -10,12 +10,12 @@
  */
 package trash.foodbyte.irc;
 
-import awsl.Class91;
 import java.util.ArrayList;
+import obfuscate.a;
 
 public class Rank {
     public static ArrayList Field2632;
-    private static Class91[] Field2633;
+    private static a[] Field2633;
 
     /*
      * Exception decompiling
@@ -59,47 +59,47 @@ public class Rank {
         throw new IllegalStateException("Decompilation failed");
     }
 
-    public static String Method1198(String a) {
-        String[] a2 = a.split(" ");
-        StringBuilder a3 = new StringBuilder();
-        for (int a4 = 1; a4 < a2.length; ++a4) {
-            a3.append(a2[a4]).append(" ");
+    public static String Method1198(String a2) {
+        String[] a3 = a2.split(" ");
+        StringBuilder a4 = new StringBuilder();
+        for (int a5 = 1; a5 < a3.length; ++a5) {
+            a4.append(a3[a5]).append(" ");
         }
-        return a3.toString();
+        return a4.toString();
     }
 
     /*
      * WARNING - void declaration
      */
-    public static String Method1199(long a) {
-        void a2;
+    public static String Method1199(long a2) {
         void a3;
-        long a4 = 1471228928L;
-        long a5 = 86400000L;
-        long a6 = 3600000L;
-        long a7 = 60000L;
+        void a4;
+        long a5 = 1471228928L;
+        long a6 = 86400000L;
+        long a7 = 3600000L;
+        long a8 = 60000L;
         long l = 1000L;
-        long a8 = a - System.currentTimeMillis();
-        long a9 = a8 / a4;
-        long a10 = a8 / a5;
-        long l2 = a8 % a5 / a6;
-        Class91[] a11 = Rank.Method1202();
-        long a12 = a8 % a5 % a6 / a7;
-        long a13 = a8 % a5 % a6 % a7 / a3;
-        String a14 = a9 <= 0L ? "" : a9 + "y ";
-        String a15 = a10 <= 0L ? "" : a10 + "d ";
-        String a16 = a2 <= 0L ? "" : (long)a2 + "h ";
-        String a17 = a12 <= 0L ? "" : a12 + "m ";
-        String a18 = a13 <= 0L ? "" : a13 + "s";
-        String string = a14 + a15 + a16 + a17 + a18;
-        Class91.Method3647(new String[2]);
+        long a9 = a2 - System.currentTimeMillis();
+        long a10 = a9 / a5;
+        long a11 = a9 / a6;
+        long l2 = a9 % a6 / a7;
+        a[] a12 = Rank.Method1202();
+        long a13 = a9 % a6 % a7 / a8;
+        long a14 = a9 % a6 % a7 % a8 / a4;
+        String a15 = a10 <= 0L ? "" : a10 + "y ";
+        String a16 = a11 <= 0L ? "" : a11 + "d ";
+        String a17 = a3 <= 0L ? "" : (long)a3 + "h ";
+        String a18 = a13 <= 0L ? "" : a13 + "m ";
+        String a19 = a14 <= 0L ? "" : a14 + "s";
+        String string = a15 + a16 + a17 + a18 + a19;
+        a.trash(new String[2]);
         return string;
     }
 
-    public static int Method1200(String a) {
-        String string = a.toLowerCase();
+    public static int Method1200(String a2) {
+        String string = a2.toLowerCase();
         int n = -1;
-        Class91[] a2 = Rank.Method1202();
+        a[] a3 = Rank.Method1202();
         switch (string.hashCode()) {
             case 106164915: {
                 if (!string.equals((Object)"owner")) break;
@@ -158,22 +158,22 @@ public class Rank {
                 return 1;
             }
         }
-        if (Class91.Method3648() == null) {
-            Rank.Method1201(new Class91[3]);
+        if (a.trash() == null) {
+            Rank.Method1201(new a[3]);
         }
         return 0;
     }
 
     static {
-        Rank.Method1201(new Class91[4]);
+        Rank.Method1201(new a[4]);
         Field2632 = new ArrayList();
     }
 
-    public static void Method1201(Class91[] class91Array) {
-        Field2633 = class91Array;
+    public static void Method1201(a[] aArray) {
+        Field2633 = aArray;
     }
 
-    public static Class91[] Method1202() {
+    public static a[] Method1202() {
         return Field2633;
     }
 }

@@ -11,12 +11,12 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class634;
 import eventapi.EventTarget;
 import net.minecraft.item.ItemBlock;
+import trash.foodbyte.event.EventUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.value.BooleanValue;
 
 public class FastPlace
@@ -33,21 +33,21 @@ extends Module {
     }
 
     @EventTarget
-    public void Method232(Class634 a) {
+    public void Method232(EventUpdate a2) {
         block3: {
             block2: {
                 int n = Class148.Method1445();
                 if (!this.Field2674.getValue()) break block2;
                 if (FastPlace.mc.thePlayer.inventory.getCurrentItem() == null || !(FastPlace.mc.thePlayer.getCurrentEquippedItem().getItem() instanceof ItemBlock)) break block3;
-                ReflectionUtils.Method2595(0);
+                ReflectionUtils.setRightClickDelayTimer(0);
             }
-            ReflectionUtils.Method2595(0);
+            ReflectionUtils.setRightClickDelayTimer(0);
         }
     }
 
     @Override
-    public void Method279() {
-        ReflectionUtils.Method2595(4);
-        super.Method279();
+    public void onDisable() {
+        ReflectionUtils.setRightClickDelayTimer(4);
+        super.onDisable();
     }
 }

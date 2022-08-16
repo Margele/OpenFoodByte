@@ -83,17 +83,17 @@ extends Module {
     public boolean Method965(EntityLivingBase a) {
         block7: {
             block6: {
-                boolean a2 = this.Field2398.Method2509();
-                boolean a3 = this.Field2401.Method2509();
-                boolean a4 = this.Field2399.Method2509();
-                boolean a5 = this.Field2400.Method2509();
+                boolean a2 = this.Field2398.getBooleanValue();
+                boolean a3 = this.Field2401.getBooleanValue();
+                boolean a4 = this.Field2399.getBooleanValue();
+                boolean a5 = this.Field2400.getBooleanValue();
                 if (a.isInvisible()) {
                     return false;
                 }
                 if (a == Chams.mc.thePlayer) {
                     return false;
                 }
-                if (a instanceof EntityPlayer && !AntiBot.Field2577.contains((Object)a)) break block6;
+                if (a instanceof EntityPlayer && !AntiBot.botList.contains((Object)a)) break block6;
                 if (a instanceof EntityMob || a instanceof EntityDragon || a instanceof EntityGhast || a instanceof EntitySlime || a instanceof EntityIronGolem || a instanceof EntitySnowman) break block6;
                 if (!(a instanceof EntityAnimal) && !(a instanceof EntitySquid) && !(a instanceof EntityVillager) && !(a instanceof EntityBat)) break block7;
             }

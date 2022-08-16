@@ -29,7 +29,6 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class634;
 import awsl.Class655;
 import eventapi.EventTarget;
 import java.util.Objects;
@@ -49,10 +48,11 @@ import net.minecraft.network.play.client.C16PacketClientStatus;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import org.lwjgl.input.Keyboard;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ObfuscatedClasses;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.ObfuscatedField;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 
 public class InvWalk
@@ -77,7 +77,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method232(Class634 a) {
+    public void Method232(EventUpdate a) {
         block16: {
             KeyBinding a2;
             int a3;
@@ -166,7 +166,7 @@ extends Module {
                     if (InvWalk.mc.currentScreen instanceof GuiInventory && !this.Field2718) {
                         int a4 = 999;
                         try {
-                            a4 = ReflectionHelper.findField((Class)a3.getClass(), (String[])new String[]{ObfuscatedClasses.windowId.getObfuscatedName()}).getInt((Object)a3);
+                            a4 = ReflectionHelper.findField((Class)a3.getClass(), (String[])new String[]{ObfuscatedField.windowId.getObfuscatedName()}).getInt((Object)a3);
                             a.setCancelled(true);
                         }
                         catch (IllegalAccessException illegalAccessException) {
@@ -197,9 +197,9 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         KeyBinding[] a;
-        if (InvWalk.mc.currentScreen == null && !Wrapper.INSTANCE.Method2871()) {
+        if (InvWalk.mc.currentScreen == null && !Wrapper.INSTANCE.isVaildWorldAndPlayer()) {
             return;
         }
         KeyBinding[] a2 = a = new KeyBinding[]{InvWalk.mc.gameSettings.keyBindForward, InvWalk.mc.gameSettings.keyBindBack, InvWalk.mc.gameSettings.keyBindLeft, InvWalk.mc.gameSettings.keyBindRight, InvWalk.mc.gameSettings.keyBindSprint, InvWalk.mc.gameSettings.keyBindJump};

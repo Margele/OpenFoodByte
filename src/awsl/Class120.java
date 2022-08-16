@@ -10,18 +10,18 @@
 package awsl;
 
 import awsl.Class267;
-import awsl.Class91;
 import java.util.Map;
+import obfuscate.a;
 
 public class Class120
-extends Class91 {
+extends a {
     public String Field952;
     public int Field953;
 
-    public Class120(String a, int a2) {
+    public Class120(String a2, int a3) {
         super(197);
-        this.Field952 = a;
-        this.Field953 = a2;
+        this.Field952 = a2;
+        this.Field953 = a3;
     }
 
     @Override
@@ -30,13 +30,13 @@ extends Class91 {
     }
 
     @Override
-    public void Method1(Class267 a) {
-        a.Method1951(this.Field952, this.Field953);
-        this.Method3643(a);
+    public void Method1(Class267 a2) {
+        a2.Method1951(this.Field952, this.Field953);
+        this.Method3643(a2);
     }
 
     @Override
-    public Class91 Method2(Map a) {
+    public a Method2(Map a2) {
         return new Class120(this.Field952, this.Field953).Method3646(this);
     }
 }

@@ -8,21 +8,21 @@
  */
 package awsl;
 
-import awsl.Class249;
 import awsl.Class251;
-import awsl.Class91;
 import eventapi.Event;
+import obfuscate.a;
+import trash.foodbyte.event.UnknownEvent;
 
 public abstract class Class257
 implements Event,
 Class251 {
     private final byte Field1409;
 
-    protected Class257(byte a) {
-        String string = Class249.Method2302();
+    protected Class257(byte a2) {
+        String string = UnknownEvent.Method2302();
         String string2 = string;
-        this.Field1409 = a;
-        Class91.Method3647(new String[3]);
+        this.Field1409 = a2;
+        a.trash(new String[3]);
     }
 
     @Override

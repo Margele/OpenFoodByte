@@ -28,7 +28,7 @@ Class45 {
     private static final String[] Field2155;
 
     public static void Method2166(Object a) {
-        EventManager.Method2686(new Class633((EntityLivingBase)a));
+        EventManager.call(new Class633((EntityLivingBase)a));
     }
 
     public static boolean Method2167() {

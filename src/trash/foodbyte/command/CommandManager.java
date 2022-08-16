@@ -16,7 +16,6 @@
 package trash.foodbyte.command;
 
 import awsl.Class632;
-import awsl.Class91;
 import eventapi.EventManager;
 import eventapi.EventTarget;
 import java.util.ArrayList;
@@ -26,6 +25,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.network.play.client.C01PacketChatMessage;
+import obfuscate.a;
 import trash.foodbyte.command.Command;
 import trash.foodbyte.command.impl.BindCommand;
 import trash.foodbyte.command.impl.ConfigCommand;
@@ -67,40 +67,40 @@ public class CommandManager {
         commands.Method2530((Object)new WaypointCommand());
         commands.sort(Comparator.comparing(Command::getName));
         EventManager.register(this);
-        Class91.Method3647(new String[4]);
+        a.trash(new String[4]);
     }
 
     @EventTarget
-    public void Method3590(Class632 a) {
-        int a2 = Command.Method1666();
-        if (GlobalModule.Field3160.Method2509().booleanValue() && Minecraft.getMinecraft().currentScreen == null && a.Method3513() == 12) {
-            GuiChat a3;
+    public void Method3590(Class632 a2) {
+        int a3 = Command.Method1666();
+        if (GlobalModule.Field3160.getBooleanValue().booleanValue() && Minecraft.getMinecraft().currentScreen == null && a2.Method3513() == 12) {
+            GuiChat a4;
             if (GlobalModule.INSTANCE.Field3186.Field2834 != null && GlobalModule.INSTANCE.Field3186.Field2834.isOpen()) {
-                a3 = new GuiChat("-I ");
-                Minecraft.getMinecraft().displayGuiScreen((GuiScreen)a3);
+                a4 = new GuiChat("-I ");
+                Minecraft.getMinecraft().displayGuiScreen((GuiScreen)a4);
             }
-            a3 = new GuiChat(PREFIX);
-            Minecraft.getMinecraft().displayGuiScreen((GuiScreen)a3);
+            a4 = new GuiChat(PREFIX);
+            Minecraft.getMinecraft().displayGuiScreen((GuiScreen)a4);
         }
     }
 
     @EventTarget
-    public void Method3591(EventPacket a) {
-        int a2 = Command.Method1665();
-        if (GlobalModule.Field3160.getValue() && a.getPacket() instanceof C01PacketChatMessage) {
+    public void Method3591(EventPacket a2) {
+        int a3 = Command.Method1665();
+        if (GlobalModule.Field3160.getValue() && a2.getPacket() instanceof C01PacketChatMessage) {
             Iterator iterator;
-            C01PacketChatMessage a3 = (C01PacketChatMessage)a.getPacket();
-            String a4 = CommandManager.Method3593(a3.getMessage());
-            if (a3.getMessage().startsWith(PREFIX) && (iterator = CommandManager.Method3592().Method1383()).Method932()) {
-                int a5 = 0;
-                Command a6 = (Command)iterator.Method933();
-                if (a5 < a6.getCommands().length) {
-                    if (a4.toLowerCase().split(" ")[0].equals((Object)(PREFIX + a6.getCommands()[a5].toLowerCase()))) {
-                        a.setCancelled(true);
-                        a6.onCommand(a4.split(" "));
+            C01PacketChatMessage a4 = (C01PacketChatMessage)a2.getPacket();
+            String a5 = CommandManager.Method3593(a4.getMessage());
+            if (a4.getMessage().startsWith(PREFIX) && (iterator = CommandManager.Method3592().Method1383()).Method932()) {
+                int a6 = 0;
+                Command a7 = (Command)iterator.Method933();
+                if (a6 < a7.getCommands().length) {
+                    if (a5.toLowerCase().split(" ")[0].equals((Object)(PREFIX + a7.getCommands()[a6].toLowerCase()))) {
+                        a2.setCancelled(true);
+                        a7.onCommand(a5.split(" "));
                         return;
                     }
-                    ++a5;
+                    ++a6;
                 }
             }
         }
@@ -110,12 +110,12 @@ public class CommandManager {
         return commands;
     }
 
-    public static String Method3593(String a) {
-        String a2 = " ";
-        String a3 = "  ";
-        while (a.contains((CharSequence)a3)) {
-            a = a.replace((CharSequence)a3, (CharSequence)a2);
+    public static String Method3593(String a2) {
+        String a3 = " ";
+        String a4 = "  ";
+        while (a2.contains((CharSequence)a4)) {
+            a2 = a2.replace((CharSequence)a4, (CharSequence)a3);
         }
-        return a;
+        return a2;
     }
 }

@@ -68,27 +68,27 @@ extends Class394 {
     }
 
     @Override
-    public void Method412(int a, int a2) {
-        int a3 = new Color(0xD5D5D5).getRGB();
+    public void Method412(int a2, int a3) {
+        int a4 = new Color(0xD5D5D5).getRGB();
         this.Field1891.Method290(GlobalModule.INSTANCE.Field3190.Method1827(this.Field1888.getName() + "_setting"));
         if (this.Field1915) {
             RenderUtils.Method1103(this.Field1907, this.Field1908, this.Method1310(), this.Field1910, Class681.Method2699(Class707.Method1829(), -250));
         }
         Class565.Field2635.Method1217(this.Field1913, this.Field1907 + 12, (float)(this.Field1908 + this.Field1910 / 2) - Class565.Field2635.Method1227(this.Field1913) / 2.0f + 1.0f, this.Field1888.canUse() ? new Color(0x6F6F6F).getRGB() : (this.Field1949 ? Class707.Method1832() : 0xFFFFFF));
         if (this.Field1888.Method1031()) {
-            a3 = this.Field1890 ? Class681.Method2699(a3, 30) : a3;
-            float a4 = (float)this.Field1907 + (float)this.Field1909 - 6.5f;
-            float a5 = (float)this.Field1908 + (float)this.Field1910 / 2.0f;
+            a4 = this.Field1890 ? Class681.Method2699(a4, 30) : a4;
+            float a5 = (float)this.Field1907 + (float)this.Field1909 - 6.5f;
+            float a6 = (float)this.Field1908 + (float)this.Field1910 / 2.0f;
             GlStateManager.pushMatrix();
-            GlStateManager.translate((float)a4, (float)a5, (float)0.0f);
+            GlStateManager.translate((float)a5, (float)a6, (float)0.0f);
             GlStateManager.rotate((float)((float)this.Field1891.Method292() * 90.0f), (float)0.0f, (float)0.0f, (float)1.0f);
-            RenderUtils.Method1085(-1.0, -2.0, 1.0, 0.0, 1.0f, a3);
-            RenderUtils.Method1085(-1.0, 2.0, 1.0, 0.0, 1.0f, a3);
-            GlStateManager.translate((float)(-a4), (float)(-a5), (float)0.0f);
+            RenderUtils.Method1085(-1.0, -2.0, 1.0, 0.0, 1.0f, a4);
+            RenderUtils.Method1085(-1.0, 2.0, 1.0, 0.0, 1.0f, a4);
+            GlStateManager.translate((float)(-a5), (float)(-a6), (float)0.0f);
             GlStateManager.popMatrix();
         }
-        int a6 = this.Field1888.getState() ? Class707.Method1832() : 0xFFFFFF;
-        RenderUtils.Method1133(a6);
+        int a7 = this.Field1888.getState() ? Class707.Method1832() : 0xFFFFFF;
+        RenderUtils.Method1133(a7);
     }
 
     @Override
@@ -116,10 +116,10 @@ extends Class394 {
     }
 
     @Override
-    public void Method413(int a, int a2, boolean a3) {
-        this.Field1889 = this.Method423(a, a2) && this.Field1919.Method1392(a, a2) && this.Field1915;
-        this.Field1890 = this.Method1438(a, a2) && this.Field1919.Method1392(a, a2) && this.Field1915;
-        super.Method413(a, a2, a3);
+    public void Method413(int a2, int a3, boolean a4) {
+        this.Field1889 = this.Method423(a2, a3) && this.Field1919.Method1392(a2, a3) && this.Field1915;
+        this.Field1890 = this.Method1438(a2, a3) && this.Field1919.Method1392(a2, a3) && this.Field1915;
+        super.Method413(a2, a3, a4);
     }
 
     @Override
@@ -129,19 +129,19 @@ extends Class394 {
         super.Method414();
     }
 
-    private boolean Method423(int a, int a2) {
-        return MathUtils.Method549(a, a2, this.Field1907, this.Field1908, this.Field1907 + this.Field1909 - 15, this.Field1908 + this.Field1910);
+    private boolean Method423(int a2, int a3) {
+        return MathUtils.isHovering(a2, a3, this.Field1907, this.Field1908, this.Field1907 + this.Field1909 - 15, this.Field1908 + this.Field1910);
     }
 
-    private boolean Method1438(int a, int a2) {
-        return MathUtils.Method549(a, a2, (float)this.Field1907 + (float)this.Field1909 - (float)(this.Field1919.Method1418() ? 2 : 0) - 10.0f, this.Field1908, this.Field1907 + this.Field1909 - (this.Field1919.Method1418() ? 2 : 0) - 2, this.Field1908 + this.Field1910);
+    private boolean Method1438(int a2, int a3) {
+        return MathUtils.isHovering(a2, a3, (float)this.Field1907 + (float)this.Field1909 - (float)(this.Field1919.Method1418() ? 2 : 0) - 10.0f, this.Field1908, this.Field1907 + this.Field1909 - (this.Field1919.Method1418() ? 2 : 0) - 2, this.Field1908 + this.Field1910);
     }
 
     public Module Method1439() {
         return this.Field1888;
     }
 
-    public void Method1440(Module a) {
-        this.Field1888 = a;
+    public void Method1440(Module a2) {
+        this.Field1888 = a2;
     }
 }

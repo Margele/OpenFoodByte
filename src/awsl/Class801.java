@@ -19,10 +19,10 @@ import awsl.Class136;
 import awsl.Class264;
 import awsl.Class279;
 import awsl.Class31;
-import awsl.Class91;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import obfuscate.a;
 
 public abstract class Class801 {
     public static final String[] Field3575;
@@ -31,12 +31,12 @@ public abstract class Class801 {
     protected final int Field3578;
     protected final StringBuffer Field3579;
     public final List Field3580;
-    private static Class91[] Field3581;
+    private static a[] Field3581;
     private static final String[] Field3582;
     private static final String[] Field3583;
 
-    protected Class801(int a) {
-        this.Field3578 = a;
+    protected Class801(int a2) {
+        this.Field3578 = a2;
         this.Field3579 = new StringBuffer();
         this.Field3580 = new ArrayList();
     }
@@ -49,7 +49,7 @@ public abstract class Class801 {
 
     public abstract Class801 Method3248(String var1, boolean var2);
 
-    public Class801 Method3249(int a, Class31 a2, String a3, boolean a4) {
+    public Class801 Method3249(int a2, Class31 a3, String a4, boolean a5) {
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
     }
 
@@ -75,7 +75,7 @@ public abstract class Class801 {
 
     public abstract Class801 Method3260(String var1, boolean var2);
 
-    public Class801 Method3261(int a, Class31 a2, String a3, boolean a4) {
+    public Class801 Method3261(int a2, Class31 a3, String a4, boolean a5) {
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
     }
 
@@ -83,7 +83,7 @@ public abstract class Class801 {
 
     public abstract void Method3263();
 
-    public void Method3264(String a, int a2) {
+    public void Method3264(String a2, int a3) {
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
     }
 
@@ -91,7 +91,7 @@ public abstract class Class801 {
 
     public abstract Class801 Method3266(String var1, boolean var2);
 
-    public Class801 Method3267(int a, Class31 a2, String a3, boolean a4) {
+    public Class801 Method3267(int a2, Class31 a3, String a4, boolean a5) {
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
     }
 
@@ -114,21 +114,21 @@ public abstract class Class801 {
     public abstract void Method3276(int var1, String var2, String var3, String var4);
 
     @Deprecated
-    public void Method3277(int a, String a2, String a3, String a4) {
+    public void Method3277(int a2, String a3, String a4, String a5) {
         if (this.Field3578 >= 327680) {
-            boolean a5 = a == 185;
-            this.Method3278(a, a2, a3, a4, a5);
+            boolean a6 = a2 == 185;
+            this.Method3278(a2, a3, a4, a5, a6);
             return;
         }
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
     }
 
-    public void Method3278(int a, String a2, String a3, String a4, boolean a5) {
+    public void Method3278(int a2, String a3, String a4, String a5, boolean a6) {
         if (this.Field3578 < 327680) {
-            if (a5 != (a == 185)) {
+            if (a6 != (a2 == 185)) {
                 throw new IllegalArgumentException(Class801.Method3302(-15092, 32110));
             }
-            this.Method3277(a, a2, a3, a4);
+            this.Method3277(a2, a3, a4, a5);
             return;
         }
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
@@ -150,19 +150,19 @@ public abstract class Class801 {
 
     public abstract void Method3286(String var1, int var2);
 
-    public Class801 Method3287(int a, Class31 a2, String a3, boolean a4) {
+    public Class801 Method3287(int a2, Class31 a3, String a4, boolean a5) {
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
     }
 
     public abstract void Method3288(Class264 var1, Class264 var2, Class264 var3, String var4);
 
-    public Class801 Method3289(int a, Class31 a2, String a3, boolean a4) {
+    public Class801 Method3289(int a2, Class31 a3, String a4, boolean a5) {
         throw new RuntimeException(Class801.Method3302(-15101, -7472));
     }
 
     public abstract void Method3290(String var1, String var2, String var3, Class264 var4, Class264 var5, int var6);
 
-    public Class801 Method3291(int a, Class31 a2, Class264[] a3, Class264[] a4, int[] a5, String a6, boolean a7) {
+    public Class801 Method3291(int a2, Class31 a3, Class264[] a4, Class264[] a5, int[] a6, String a7, boolean a8) {
         throw new RuntimeException(Class801.Method3302(-15102, -18815));
     }
 
@@ -176,56 +176,56 @@ public abstract class Class801 {
         return this.Field3580;
     }
 
-    public void Method3296(PrintWriter a) {
-        Class801.Method3298(a, this.Field3580);
+    public void Method3296(PrintWriter a2) {
+        Class801.Method3298(a2, this.Field3580);
     }
 
-    public static void Method3297(StringBuffer a, String a2) {
-        Class91[] class91Array = Class801.Method3300();
-        a.append('\"');
-        Class91[] a3 = class91Array;
-        int a4 = 0;
-        if (a4 < a2.length()) {
-            char a5 = a2.charAt(a4);
-            if (a5 == '\n') {
-                a.append(Class801.Method3302(-15104, 28918));
+    public static void Method3297(StringBuffer a2, String a3) {
+        a[] aArray = Class801.Method3300();
+        a2.append('\"');
+        a[] a4 = aArray;
+        int a5 = 0;
+        if (a5 < a3.length()) {
+            char a6 = a3.charAt(a5);
+            if (a6 == '\n') {
+                a2.append(Class801.Method3302(-15104, 28918));
             }
-            if (a5 == '\r') {
-                a.append(Class801.Method3302(-15091, 28797));
+            if (a6 == '\r') {
+                a2.append(Class801.Method3302(-15091, 28797));
             }
-            if (a5 == '\\') {
-                a.append(Class801.Method3302(-15099, -31256));
+            if (a6 == '\\') {
+                a2.append(Class801.Method3302(-15099, -31256));
             }
-            if (a5 == '\"') {
-                a.append(Class801.Method3302(-15089, 640));
+            if (a6 == '\"') {
+                a2.append(Class801.Method3302(-15089, 640));
             }
-            if (a5 < ' ' || a5 > '\u007f') {
-                a.append(Class801.Method3302(-15097, -2357));
-                if (a5 < '\u0010') {
-                    a.append(Class801.Method3302(-15096, -4927));
+            if (a6 < ' ' || a6 > '\u007f') {
+                a2.append(Class801.Method3302(-15097, -2357));
+                if (a6 < '\u0010') {
+                    a2.append(Class801.Method3302(-15096, -4927));
                 }
-                if (a5 < '\u0100') {
-                    a.append(Class801.Method3302(-15090, 27822));
+                if (a6 < '\u0100') {
+                    a2.append(Class801.Method3302(-15090, 27822));
                 }
-                if (a5 < '\u1000') {
-                    a.append('0');
+                if (a6 < '\u1000') {
+                    a2.append('0');
                 }
-                a.append(Integer.toString((int)a5, (int)16));
+                a2.append(Integer.toString((int)a6, (int)16));
             }
-            a.append(a5);
-            ++a4;
+            a2.append(a6);
+            ++a5;
         }
-        a.append('\"');
+        a2.append('\"');
     }
 
-    static void Method3298(PrintWriter a, List a2) {
-        for (int a3 = 0; a3 < a2.Method1799(); ++a3) {
-            Object a4 = a2.get(a3);
-            if (a4 instanceof List) {
-                Class801.Method3298(a, (List)a4);
+    static void Method3298(PrintWriter a2, List a3) {
+        for (int a4 = 0; a4 < a3.Method1799(); ++a4) {
+            Object a5 = a3.get(a4);
+            if (a5 instanceof List) {
+                Class801.Method3298(a2, (List)a5);
                 continue;
             }
-            a.print(a4.Method3780());
+            a2.print(a5.Method3780());
         }
     }
 
@@ -241,7 +241,7 @@ public abstract class Class801 {
                 a = "\u00dd\u00c8\u00d8I\u00d7\u0082\u00e9\u00fc\u00a6\u00f8hX\u00ad\u00f5\u00cf9\u00c1\u0017\u00c0\u00c6\u00d8\u00c2\u0013\u007f=\u00f0\u00b8\u00c1\u00f13\u007fo^Bf\u00feHD\u00b6\u00aaD\u0006\u00ae6?\u00f6\u001f\u00fa#El\u00f0\u00cf\u00f4R\u0084\u00e6\u000b\u00bb\u00ddMb\u0080oQ<\u0005\u0083\u0087\u00af\u00a1`j\u00f9\u00ff\u008b\u0019\u00de\u00a6\u00f7\u00d1\u00c3\u00f1(\u0002\u00b8\u0092#\u001d_|\u00a8\u0084T\u0099;\u009d\u00ca+\u00dd\u0010\u0004 \u0012We\u001ch\u00b3\u001bR\u00a3P|Q\u00cd\u00ac\u0012a\u00ee\u00b7\u00baJl\u0090\u00881\u00fc\u00f7\u00b0\u00fa1\u0084w\u008c\u00b0\u00c8\u00a4\u00adr\u001a\u00cfov\u00da\u00d5[z\u00b2\u00ee\u009e\u00ea\u00fb]\u00bfrV\u0099\u00f0\u00f4\u00cbP\u0092^m3h\u00b1\u0081\u00d8aK\u007f\u00ca\u009f\u001ax6Q\u00f3.\u00c3\u00e9\u0095\r\u008a3\u009d\u00b6\\<\u00dd\u0018\u008c\u00c7!\u00b4\u00cf\u00a7\u00a6\u00a6\u0010dNg\u00f8\u00b3M\u00b2\u0019\u001a\u00c8r#q\t=l+|?\u00b0/\u0005\u00a8,\u00e4\u00d5\u00a39gj`\u00bc^\u00a8\n\u0006\fLp\u00de1\u00bf5\u00ba*\u00a6\u0011\u00eb%n\u00e9A\u00cc}\u00a6\u0089\u00c7|t~\u00cb\u00f0M\r\u00e4-m\u00fa\u0080*S\u0000\u00e7\u0080\u0087= \u00e4A\u0011\u00a8S8\u00f1D{\u0005\u00ef\u00d3\u00d0\u00a3Y1\u00a6\u00a6\u00a2\u00f9(|@\u0002\u0088[C\u00af\u00d8\u00b9\u00f0\u0006A\u0092\u00ec\u00e2\u00d1\u00b7\u000b\u00a93\u00f1\u00d6r1\u001a\u0014\u00a7\u00fe\u00b7\u009a{\u00d3\u0014EU\u00a0\u0015\u00f6\u00f50\u00c2\u00af\u00b0\u0001\u000e\u0018\u00f8\u00e0\u00f7\u00c1\u00a8k\u00d7;\u00ce\u0012@c\\\u00e5'\u00e7F\u00fd\u00ae98\u00c0\u00a6\u00d5\u0002G\u0080\u00b4\u00b2|a6\u0006\u009c\u00ca\u00a1\u00e4H\u00dfLv\t\u00a9\u0010~\u00bd\f??\u00a9FD\u0001\u00dd\u009d\u0011\u0095iS\u001a&R#l/l\u00d2\u00c2K\u00dcO\u00d0eYU\u00b9\u0082 \u0082i\u00e0\u009b!;b}\b\u00b6N\u00c7Z\u00dc\u00e47\u00ec<\u001b\u0017\u0094\u00d5Sg\"\u00af\u0010\u00a5=?\u00bf\u00ce\u0011\u0085pJ\u00af\u00f9\u00c6d\u0017\u0085s\u000b\u00cb\u00d3\u00c4\u0082\u00b8\\-m\"9i\u0086)\u00d2\u00f4\u00a6X\u00b3XE\u00da5AKxhp\u009f\u00ba\u00de\u00a0\u00c7\u001d\u00a3\u000fh\u00b2/2\u00d2\u001d\u0081\u00da#\u00d8\u0017[y\u00f2\u00f7\u0012\n\u00baN{\u00ad\u000f\u00bd'\u00f8\u00be\u009dW$\u00d8!\u00fa?(]\u00b97\u0098\u00ff.\rDU\u00a2#`~\u001ag\u0091\u00ee\u009c\u00a8\u00a2%\u009cQ\u009b\u00a2=\u00a6\u0005\u00f8\u001c,`D\u00bb\u00d3\u00ccg;\u00ef\u0087\u00dd\u00aa\u0091\r\u00aa3\u00d2\u000b\u00e6M\u00bd\u009cO\u0090X\u00a8\u001b\u00c8\u0084Z\u008f\u0011\u00ce\u00e8\u00c1\u007f\u00d3\u00bd\u0092\u00eaG\u008e\u00b653\u008d\u009e\u00f1l\u00a3\u0012J\u0099\u0014#W\u0083\u00a7oL\u00a1\u00e4Y\u00d9\u00de\u00a9Y%\u00f1\u00b5\u00afX\u00da]\u00d4\u00c64\u0092\u00b0$W\u00d2\u00f3\u00e5,\u0015i^aHAC\u00dd\u00169\u009d\u00fd\u0003.*\u00ea\u001f\u00d2#\u00f4'\u00a8\u0097T\u0007\u0093\u0096 \u009f\u00e8KQ\u001bG\u00dfl\u00c7,\u00e7\u00d8#\u0011q>\u0082\u0093\u00fb\u0084\u00cd]{\u009aR\u0093\u0004\u0013\u0098W#\u00bc^\u0001t\u00a8\u00d5\u00ea\u00b2\u00ddQ\u009dj\u00cc<\u00ea)D6\u000f\u00e5\u00d4L\u0010?of~\u00cc\u009bO\u00a9\f\u0090\u00dcl\u00a3\u00f3\u0086@\u0093\u00c7\t$\u00a1\u0083\u0012!1\t\u00dc\u001b\u0004\u00b5E\u00a6\u009d<5EB\u00bdTc\u00b4\u00baL\u00a1 w\u00f3B\u009cb\u00d9\u0086`5\u001c\u0010\u009b\u00b0\u00be\u00ac\u008e\u00d5\u007f\u00b0\u00e1\u008f\u00a5P\u00cbT\u00a5\u00e75w\u00b3\u00ce\u0013\u0097\n\u00974\u001a\u00be=-\u0099\u00ef\u00fc\u008dW[uD;\u00d5O\u0081RT\u0096\u00ae\u008aCG\u00a35!\u00ed\u00df\u00f1\u0096\u000f\u000e\u000b9\u00d2\u00f0k\u00d5\u00b5\u0080\u00aa\b\u0082\u00a6\u00f8\u00c2@1\u00b4\u0007d\u00ed\u0001\u00f8\u00ff\u009f\u00ee\u00df\u001c\u0082\u00f2\u00b2[\u00b8}\u00adQ0\u00fc>\u00f4$\u001cJ\u00c3kt;\u00e8\u0012\u00eep\u009f\u00f6\u0091\u0085\u00c2\u00b1D\u00b4p\u00f4Un\u00ab\u00c4\u00f7\u00d7\u009a\u00a7jK\u00a4\u009al\u00f2\u00a6\u0011Ma\u00bf\u0012\r\b\u00acX\u00b0\u009e\t\u009e=\u00be;\u00f7\u0095\u00b6f\u00b8\u001a\u00e9\u00a6\u00fa\u0089\u0000\u0001w\u00dd\u00f06\u00de\u00b8\u00c2b \u001a\u00d9\u00b2mf\u00da1E\u00abm\u0012\u0006\u001aQ\u00e0h\u00ed[\u008d\u001cL\u009d\u0004v\u00e3a\u00b79\u00a2\u0005\u0082\u009d\u00b1:\u00d4m\u009f\u00ba\u001dBn\u00d6]y3\u00f2\u0015\u00f8\u00a1\u001e\u008d\u0094\r\u00f1b8OI\u00fa\u00bf\u00edZXC\u00960\u00d8}\u00b5\u00a1&\u001b5\u008a\u0096<7\u00e2g\u00d3o\u00ec\u00e9\u009b\u000f&\f_s\u009d\u00d0\u00d0\u00a7I\u00dc\u00fe'\u00cb\u00a1\u0019\u00cfs\u00d0\u00ceA\u0012\u00e0\u009e\u00a5|\u00c8\u00afG|o\u0086B\u0001W+\u00e0zL[.\u00f4\u00e3#\u00e72\u00c8Q\u0095!PQ\u0085\u001b[\u00b9qv\u0016\u00f7U\u001b\u0098\u00e6\u008f\u008c\u00d7\u00ee\u0010dT\u00cc\u0012\u00939\u00dc)\u000b\n\u0090\u00a0*{\u00abm\u00a8\u00f0C&\u00070\u00e0\u0080z\u0001+\u0088\u0002\u00e8\u0004>\u00cd\u0081\u0091\u0011\u00a0\u0089\u00c2|\u0095~\u00bb\u00ee\u00ab\u0014\u00d6\u00ff+iD\u00f4E\u0096B\u0094\u00d7\u00cfMV\u009b=#\u00ce\u00fcq\u0013\u0011\u0090{\u0096\u008fa}\u0013L*%\u0081\u00171\u00a1\u00be\u0017\u00f7\u0001\u0014\u009f\u00bd\u000f\u00f8\u00b0)\u00fc\u0002\u00c9\u00bc\u0002\u00f1x\u0082\u00dd#\tO\r\u0003\u0003b\"QwyY\u001c\u0013\u0016h\u0092\u00a2\u0099Ag\n;m\u00a1\r\u000f\u00d1\u0018E\u00f5\u00d6\u0016k\u00fd\u0012\u00ea\u0096&\u0019\u0089`\u007f%y\u0010\u0098? \u00bfx\u00fa;j\u00f6J\u0084\u00b0\u00d5r\u00be\u00f6\u00e8\u00b8S\u00fbu\u00e9x\u0085\u00d8|Kx\u00b5v\u001cV?\u00ea\u0006\u00d4\"\u00b0[\u001f\u00cd-\\\u00fant\u00f4\u00a2F\u00e4-\u00f18\u00bc\u0015\u0097\u0000\u00b6t\u00c4#\u00e6\u00d9\u00b1Kr\u00f1\u00f2\u001e\u00bfJ\u0015c\u00a7{\u001az\u008e\u00d1A\u0099\u00b0\u00ee\u0011\u00a9e\u0016\u00d9(\u00e2q\u009b\u00e6\u0095\u00e1\u00af\u00c6\u0095I\u00fd\u001b\u0011\u0087\u00a0\u00d3a\u0090\u00f5fy\u0004\u00c9\u00bd$M\u00e48\u00d350\f\u001b\u0003q`\u008cH\u00e5\u001b\u0011\u001d\u009f\u00ce\u0080\u0086\u00e0\u001cLtU\u00fb'[\u00f2{\u00c3\u001e\u008b\u0082\u00b0\u00b9\u0005\u00c8\u009d\u00c5\u0015\u0097[\u0094\u008azE\u009aN\u00907\u00dcv\u0002\u00df\u00fd\u0002\u00dc\u00a3".length();
                 a = 1140;
                 a = -1;
-                Class801.Method3299(new Class91[2]);
+                Class801.Method3299(new a[2]);
 lbl8:
                 // 2 sources
 
@@ -391,11 +391,11 @@ lbl96:
         }
     }
 
-    public static void Method3299(Class91[] class91Array) {
-        Field3581 = class91Array;
+    public static void Method3299(a[] aArray) {
+        Field3581 = aArray;
     }
 
-    public static Class91[] Method3300() {
+    public static a[] Method3300() {
         return Field3581;
     }
 

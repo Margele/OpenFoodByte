@@ -31,7 +31,7 @@ import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.ModuleManager;
 import trash.foodbyte.module.impl.player.Freecam;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 
 public class AntiObbyTrap
@@ -110,11 +110,11 @@ extends Module {
     public void Method1699(BlockPos a, EnumFacing a2) {
         int n = Class148.Method1444();
         if (this.Field2467.getValue()) {
-            Wrapper.INSTANCE.Method2874((Packet)new C0APacketAnimation());
+            Wrapper.INSTANCE.sendPacket((Packet)new C0APacketAnimation());
         }
         AntiObbyTrap.mc.thePlayer.swingItem();
-        Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.START_DESTROY_BLOCK, a, a2));
-        Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a, a2));
-        Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.START_DESTROY_BLOCK, a, a2));
+        Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.START_DESTROY_BLOCK, a, a2));
+        Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a, a2));
+        Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.START_DESTROY_BLOCK, a, a2));
     }
 }

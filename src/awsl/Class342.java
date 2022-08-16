@@ -20,7 +20,7 @@ public class Class342 {
     public static float Method280(float a, float a2, float a3) {
         void a4;
         float f = GlobalModule.Field3185 * (a3 / 1000.0f);
-        int[] a5 = RenderUtils.Method1148();
+        int[] a5 = RenderUtils.trash();
         if (a < a2) {
             if (a + a4 < a2) {
                 a += a4;

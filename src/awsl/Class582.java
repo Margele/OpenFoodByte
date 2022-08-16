@@ -16,7 +16,6 @@ package awsl;
 import awsl.Class372;
 import awsl.Class484;
 import awsl.Class615;
-import awsl.Class91;
 import eventapi.EventManager;
 import eventapi.EventTarget;
 import net.minecraft.network.Packet;
@@ -24,6 +23,7 @@ import net.minecraft.network.login.server.S02PacketLoginSuccess;
 import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.network.play.server.S3EPacketTeams;
 import net.minecraft.util.StringUtils;
+import obfuscate.a;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.utils.ChatUtils;
 
@@ -57,18 +57,18 @@ public class Class582 {
         }
     }
 
-    public void Method271(String a) {
-        a = StringUtils.stripControlCodes((String)a).replace((CharSequence)" \u23e3 ", (CharSequence)"");
+    public void Method271(String a2) {
+        a2 = StringUtils.stripControlCodes((String)a2).replace((CharSequence)" \u23e3 ", (CharSequence)"");
         int[] nArray = Class615.Method3534();
-        ChatUtils.debug(a);
-        String string = a;
+        ChatUtils.debug(a2);
+        String string = a2;
         int n = -1;
-        int[] a2 = nArray;
+        int[] a3 = nArray;
         switch (string.hashCode()) {
             case 2433880: {
                 if (!string.equals((Object)"None")) break;
                 n = 0;
-                Class91.Method3647(new String[3]);
+                a.trash(new String[3]);
             }
             case -725141854: {
                 if (!string.equals((Object)"Your Island")) break;
@@ -138,10 +138,10 @@ public class Class582 {
                 break;
             }
         }
-        if (a.startsWith("The Catacombs")) {
+        if (a2.startsWith("The Catacombs")) {
             Class484.Field2234 = Class615.DUNGEON;
         }
-        if (a.startsWith("Cleared:")) {
+        if (a2.startsWith("Cleared:")) {
             Class484.Field2234 = Class615.DUNGEONING;
         }
     }

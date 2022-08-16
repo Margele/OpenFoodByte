@@ -9,8 +9,8 @@
  */
 package trash.foodbyte.command;
 
-import awsl.Class91;
 import net.minecraft.client.Minecraft;
+import obfuscate.a;
 
 public class Command {
     public Minecraft mc = Minecraft.getMinecraft();
@@ -41,21 +41,21 @@ public class Command {
         return this.help;
     }
 
-    public static String Method1663(String[] a, String a2, int a3, int a4) {
-        int a5 = Command.Method1665();
-        a3 = 0;
-        if (a4 > a.length) {
-            a4 = a.length;
+    public static String Method1663(String[] a2, String a3, int a4, int a5) {
+        int a6 = Command.Method1665();
+        a4 = 0;
+        if (a5 > a2.length) {
+            a5 = a2.length;
         }
-        StringBuilder a6 = new StringBuilder();
-        int a7 = a3;
-        if (a7 < a4) {
-            a6.append(a[a7]).append(a2);
-            ++a7;
+        StringBuilder a7 = new StringBuilder();
+        int a8 = a4;
+        if (a8 < a5) {
+            a7.append(a2[a8]).append(a3);
+            ++a8;
         }
-        String string = a6.substring(0, a6.toString().length() - 1);
-        if (Class91.Method3648() == null) {
-            Command.Method1664(++a5);
+        String string = a7.substring(0, a7.toString().length() - 1);
+        if (a.trash() == null) {
+            Command.Method1664(++a6);
         }
         return string;
     }

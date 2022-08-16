@@ -52,33 +52,33 @@ extends Class390 {
     }
 
     @Override
-    public void Method412(int a, int a2) {
+    public void Method412(int a2, int a3) {
         int n = Class390.Method1317();
         Class565.Field2636.Method1217(this.Field1913, this.Field1907 + 5, this.Field1908 + 1, 0xFFFFFF);
-        int a3 = n;
-        float a4 = 0.0f;
-        if (a4 < (float)(this.Method1310() - 10)) {
-            int a5 = Color.getHSBColor((float)(a4 / (float)(this.Method1310() - 10)), (float)1.0f, (float)1.0f).getRGB();
-            RenderUtils.Method1103((float)(this.Field1907 + 5) + a4, this.Field1908 + this.Field1910 - 8, 0.5f, 4.0f, a5);
-            if ((float)a == (float)(this.Field1907 + 5) + a4 && this.Field1906) {
-                this.Field1905.Method2440(a5);
+        int a4 = n;
+        float a5 = 0.0f;
+        if (a5 < (float)(this.Method1310() - 10)) {
+            int a6 = Color.getHSBColor((float)(a5 / (float)(this.Method1310() - 10)), (float)1.0f, (float)1.0f).getRGB();
+            RenderUtils.Method1103((float)(this.Field1907 + 5) + a5, this.Field1908 + this.Field1910 - 8, 0.5f, 4.0f, a6);
+            if ((float)a2 == (float)(this.Field1907 + 5) + a5 && this.Field1906) {
+                this.Field1905.Method2440(a6);
                 GlobalModule.INSTANCE.fileManager.saveValues();
             }
-            if (this.Field1905.Method2442() == a5) {
-                RenderUtils.Method1103((float)(this.Field1907 + 5) + a4, this.Field1908 + this.Field1910 - 8, 0.5f, 4.0f, -1);
+            if (this.Field1905.Method2442() == a6) {
+                RenderUtils.Method1103((float)(this.Field1907 + 5) + a5, this.Field1908 + this.Field1910 - 8, 0.5f, 4.0f, -1);
             }
-            a4 += 0.5f;
+            a5 += 0.5f;
         }
     }
 
     @Override
-    public void Method413(int a, int a2, boolean a3) {
-        this.Field1915 = MathUtils.Method549(a, a2, this.Field1907, this.Field1908 + 8, this.Field1907 + this.Field1909 - (this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910) && this.Field1919.Method1392(a, a2);
+    public void Method413(int a2, int a3, boolean a4) {
+        this.Field1915 = MathUtils.isHovering(a2, a3, this.Field1907, this.Field1908 + 8, this.Field1907 + this.Field1909 - (this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910) && this.Field1919.Method1392(a2, a3);
         if (!this.Field1918 && this.Field1915 && Mouse.isButtonDown((int)0)) {
             this.Field1906 = true;
         }
         this.Field1906 = false;
-        this.Field1918 = a3;
+        this.Field1918 = a4;
     }
 
     @Override

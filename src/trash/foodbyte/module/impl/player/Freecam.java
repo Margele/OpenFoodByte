@@ -25,7 +25,6 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class630;
 import eventapi.EventTarget;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.entity.Entity;
@@ -38,10 +37,11 @@ import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import trash.foodbyte.event.EventMove;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.value.FloatValue;
 
 public class Freecam
@@ -73,7 +73,7 @@ extends Module {
         }
         if (a.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook || a.getPacket() instanceof C03PacketPlayer.C04PacketPlayerPosition || a.getPacket() instanceof C03PacketPlayer.C05PacketPlayerLook) {
             a.setCancelled(true);
-            Wrapper.INSTANCE.Method2874((Packet)new C03PacketPlayer(this.Field2739.onGround));
+            Wrapper.INSTANCE.sendPacket((Packet)new C03PacketPlayer(this.Field2739.onGround));
         } else if (a.getPacket() instanceof C03PacketPlayer) {
             C03PacketPlayer a3 = (C03PacketPlayer)a.getPacket();
             ++this.Field2744;
@@ -88,30 +88,30 @@ extends Module {
     }
 
     @EventTarget
-    public void Method274(Class630 a) {
+    public void Method274(EventMove a) {
         int a2 = Class148.Method1444();
-        if (a.Method3502().booleanValue()) {
+        if (a.isLocalPlayer().booleanValue()) {
             this.Field2739.setSneaking(Freecam.mc.thePlayer.isSneaking());
             Freecam.mc.thePlayer.noClip = true;
             Freecam.mc.thePlayer.onGround = this.Field2739.onGround;
-            float a3 = this.Field2740.Method2744().floatValue();
+            float a3 = this.Field2740.getFloatValue().floatValue();
             if (Freecam.mc.thePlayer.movementInput.jump) {
                 Freecam.mc.thePlayer.motionY = a3;
-                a.Method3507(Freecam.mc.thePlayer.motionY);
+                a.setY(Freecam.mc.thePlayer.motionY);
             }
             if (Freecam.mc.thePlayer.movementInput.sneak) {
                 Freecam.mc.thePlayer.motionY = -a3;
-                a.Method3507(Freecam.mc.thePlayer.motionY);
+                a.setY(Freecam.mc.thePlayer.motionY);
             }
             Freecam.mc.thePlayer.motionY = 0.0;
-            a.Method3507(0.0);
+            a.setY(0.0);
             a3 = (float)Math.max((double)a3, (double)Freecam.Method275());
             double a4 = Freecam.mc.thePlayer.movementInput.moveForward;
             double a5 = Freecam.mc.thePlayer.movementInput.moveStrafe;
             float a6 = Freecam.mc.thePlayer.rotationYaw;
             if (a4 == 0.0 && a5 == 0.0) {
-                a.Method3505(0.0);
-                a.Method3509(0.0);
+                a.setX(0.0);
+                a.setZ(0.0);
             }
             if (a4 != 0.0) {
                 if (a5 > 0.0) {
@@ -127,8 +127,8 @@ extends Module {
                 }
                 a4 = -1.0;
             }
-            a.Method3505(a4 * (double)a3 * Math.cos((double)Math.toRadians((double)(a6 + 90.0f))) + a5 * (double)a3 * Math.sin((double)Math.toRadians((double)(a6 + 90.0f))));
-            a.Method3509(a4 * (double)a3 * Math.sin((double)Math.toRadians((double)(a6 + 90.0f))) - a5 * (double)a3 * Math.cos((double)Math.toRadians((double)(a6 + 90.0f))));
+            a.setX(a4 * (double)a3 * Math.cos((double)Math.toRadians((double)(a6 + 90.0f))) + a5 * (double)a3 * Math.sin((double)Math.toRadians((double)(a6 + 90.0f))));
+            a.setZ(a4 * (double)a3 * Math.sin((double)Math.toRadians((double)(a6 + 90.0f))) - a5 * (double)a3 * Math.cos((double)Math.toRadians((double)(a6 + 90.0f))));
         }
     }
 
@@ -186,7 +186,7 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         if (!this.Method1026()) {
             return;
         }

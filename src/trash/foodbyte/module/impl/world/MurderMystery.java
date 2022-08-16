@@ -14,11 +14,7 @@
  */
 package trash.foodbyte.module.impl.world;
 
-import awsl.Class281;
 import awsl.Class448;
-import awsl.Class653;
-import awsl.Class667;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,10 +23,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.util.EnumChatFormatting;
+import obfuscate.a;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.utils.ChatUtils;
+import trash.foodbyte.utils.ServerUtils;
+import trash.foodbyte.utils.Servers;
 
 public class MurderMystery
 extends Module {
@@ -44,27 +44,27 @@ extends Module {
     }
 
     @EventTarget
-    public void Method755(Class653 a) {
+    public void Method755(EventTick a2) {
         Iterator iterator;
-        Class91[] a2 = Class448.Method2461();
-        if (mc.getCurrentServerData() != null && MurderMystery.mc.theWorld != null && Class281.Method3049(Class667.MM) && (iterator = MurderMystery.mc.theWorld.loadedEntityList.Method1383()).Method932()) {
-            Object a3 = iterator.Method933();
-            if (a3 instanceof EntityPlayer) {
-                EntityPlayer a4 = (EntityPlayer)a3;
-                if (Field2300.contains((Object)a4) && !a4.isEntityAlive()) {
-                    Field2300.remove((Object)a4);
+        a[] a3 = Class448.Method2461();
+        if (mc.getCurrentServerData() != null && MurderMystery.mc.theWorld != null && ServerUtils.isSinglePlayer(Servers.MM) && (iterator = MurderMystery.mc.theWorld.loadedEntityList.Method1383()).Method932()) {
+            Object a4 = iterator.Method933();
+            if (a4 instanceof EntityPlayer) {
+                EntityPlayer a5 = (EntityPlayer)a4;
+                if (Field2300.contains((Object)a5) && !a5.isEntityAlive()) {
+                    Field2300.remove((Object)a5);
                 }
-                if (Field2301.contains((Object)a4) && !a4.isEntityAlive()) {
-                    Field2301.remove((Object)a4);
+                if (Field2301.contains((Object)a5) && !a5.isEntityAlive()) {
+                    Field2301.remove((Object)a5);
                 }
-                if (a4 != MurderMystery.mc.thePlayer && !a4.isDead && !a4.isInvisible()) {
-                    if (!Field2300.contains((Object)a4) && a4.getHeldItem() != null && this.Method2258(a4.getHeldItem().getItem())) {
-                        ChatUtils.addChatMessage(EnumChatFormatting.RED + a4.getName() + EnumChatFormatting.WHITE + " might be a murderer watch out!");
-                        Field2300.Method2530((Object)a4);
+                if (a5 != MurderMystery.mc.thePlayer && !a5.isDead && !a5.isInvisible()) {
+                    if (!Field2300.contains((Object)a5) && a5.getHeldItem() != null && this.Method2258(a5.getHeldItem().getItem())) {
+                        ChatUtils.addChatMessage(EnumChatFormatting.RED + a5.getName() + EnumChatFormatting.WHITE + " might be a murderer watch out!");
+                        Field2300.Method2530((Object)a5);
                     }
-                    if (!Field2301.contains((Object)a4) && !Field2300.contains((Object)a4) && a4.getHeldItem() != null && a4.getHeldItem().getItem() instanceof ItemBow) {
-                        ChatUtils.addChatMessage(EnumChatFormatting.BLUE + a4.getName() + EnumChatFormatting.WHITE + " is a good guy.");
-                        Field2301.Method2530((Object)a4);
+                    if (!Field2301.contains((Object)a5) && !Field2300.contains((Object)a5) && a5.getHeldItem() != null && a5.getHeldItem().getItem() instanceof ItemBow) {
+                        ChatUtils.addChatMessage(EnumChatFormatting.BLUE + a5.getName() + EnumChatFormatting.WHITE + " is a good guy.");
+                        Field2301.Method2530((Object)a5);
                     }
                 }
             }
@@ -75,14 +75,14 @@ extends Module {
         }
     }
 
-    private boolean Method2258(Item a) {
+    private boolean Method2258(Item a2) {
         int[] nArray = Field2302;
         int n = nArray.length;
-        Class91[] a2 = Class448.Method2461();
+        a[] a3 = Class448.Method2461();
         int n2 = 0;
         if (n2 < n) {
-            int a3 = nArray[n2];
-            if (Item.getIdFromItem((Item)a) == a3) {
+            int a4 = nArray[n2];
+            if (Item.getIdFromItem((Item)a2) == a4) {
                 return true;
             }
             ++n2;
@@ -91,15 +91,15 @@ extends Module {
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
-        if (a.getPacket() instanceof S07PacketRespawn) {
+    public void Method273(EventPacket a2) {
+        if (a2.getPacket() instanceof S07PacketRespawn) {
             Field2300.clear();
             Field2301.clear();
         }
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         Field2300.clear();
         Field2301.clear();
     }

@@ -41,7 +41,7 @@ extends Module {
     public FloatValue Field2219 = new FloatValue("Radar", "Width", 80.0, 50.0, 500.0, 10.0, "\u96f7\u8fbe\u5bbd\u5ea6");
     public FloatValue Field2220 = new FloatValue("Radar", "Height", 80.0, 50.0, 500.0, 10.0, "\u96f7\u8fbe\u9ad8\u5ea6");
     public BooleanValue Field2221 = new BooleanValue("Radar", "WayPoints", (Boolean)true, "\u663e\u793a00\u5750\u6807");
-    public Class379 Field2222 = new Class353(this.Field2216.Method2744().intValue(), this.Field2217.Method2744().intValue(), this.Field2219.Method2744().intValue(), this.Field2220.Method2744().intValue(), 12.0f, 1.0f, 0.5f, true, this.Field2219.Method2750(), this.Field2220.Method2750(), this.Field2219.Method2751(), this.Field2220.Method2751());
+    public Class379 Field2222 = new Class353(this.Field2216.getFloatValue().intValue(), this.Field2217.getFloatValue().intValue(), this.Field2219.getFloatValue().intValue(), this.Field2220.getFloatValue().intValue(), 12.0f, 1.0f, 0.5f, true, this.Field2219.Method2750(), this.Field2220.Method2750(), this.Field2219.Method2751(), this.Field2220.Method2751());
 
     public Radar() {
         super("Radar", Category.RENDER);
@@ -54,24 +54,24 @@ extends Module {
     }
 
     @EventTarget
-    public void Method810(EventRender2D a) {
-        String a2 = Class492.Method2239();
+    public void Method810(EventRender2D a2) {
+        String a3 = Class492.Method2239();
         if (!Class352.Field1690.contains((Object)this.Field2222)) {
             GlobalModule.INSTANCE.Field3168.Method69(this.Field2222);
         }
         if (!Radar.mc.gameSettings.showDebugInfo) {
-            int a3 = (int)MathUtils.Method547(Mouse.getX(), 0.0f, Display.getWidth(), 0.0f, RenderUtils.Method1076());
-            int a4 = (int)MathUtils.Method547(Display.getHeight() - Mouse.getY(), 0.0f, Display.getHeight(), 0.0f, RenderUtils.Method1077());
+            int a4 = (int)MathUtils.Method547(Mouse.getX(), 0.0f, Display.getWidth(), 0.0f, RenderUtils.Method1076());
+            int a5 = (int)MathUtils.Method547(Display.getHeight() - Mouse.getY(), 0.0f, Display.getHeight(), 0.0f, RenderUtils.Method1077());
             if (Radar.mc.currentScreen instanceof GuiChat && this.Field2222.Field1811 || this.Field2222.Field1822) {
                 this.Field2216.Method2747(this.Field2222.Field1806);
                 this.Field2217.Method2747(this.Field2222.Field1807);
                 this.Field2219.Method2747(this.Field2222.Field1814);
                 this.Field2220.Method2747(this.Field2222.Field1815);
             }
-            this.Field2222.Field1814 = this.Field2219.Method2744().intValue();
-            this.Field2222.Field1815 = this.Field2220.Method2744().intValue();
-            this.Field2222.Field1806 = this.Field2216.Method2744().floatValue();
-            this.Field2222.Field1807 = this.Field2217.Method2744().floatValue();
+            this.Field2222.Field1814 = this.Field2219.getFloatValue().intValue();
+            this.Field2222.Field1815 = this.Field2220.getFloatValue().intValue();
+            this.Field2222.Field1806 = this.Field2216.getFloatValue().floatValue();
+            this.Field2222.Field1807 = this.Field2217.getFloatValue().floatValue();
         }
     }
 }

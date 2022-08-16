@@ -20,7 +20,7 @@ package awsl;
 
 import awsl.Class148;
 import awsl.Class39;
-import awsl.Class46;
+import obfuscate.b;
 
 public class Class130
 extends Class148 {
@@ -37,43 +37,43 @@ extends Class148 {
     }
 
     @Override
-    public void Method397(String a, Object a2) {
+    public void Method397(String a2, Object a3) {
         block2: {
-            int a3;
+            int a4;
             this.Method402();
-            this.Method403(a);
-            if (!(a2 instanceof Byte || a2 instanceof Boolean || a2 instanceof Character || a2 instanceof Short || a2 instanceof Integer || a2 instanceof Long || a2 instanceof Float || a2 instanceof Double || a2 instanceof String || a2 instanceof Class46 || a2 instanceof byte[] || a2 instanceof boolean[] || a2 instanceof char[] || a2 instanceof short[] || a2 instanceof int[] || a2 instanceof long[] || a2 instanceof float[] || a2 instanceof double[])) {
+            this.Method403(a2);
+            if (!(a3 instanceof Byte || a3 instanceof Boolean || a3 instanceof Character || a3 instanceof Short || a3 instanceof Integer || a3 instanceof Long || a3 instanceof Float || a3 instanceof Double || a3 instanceof String || a3 instanceof b || a3 instanceof byte[] || a3 instanceof boolean[] || a3 instanceof char[] || a3 instanceof short[] || a3 instanceof int[] || a3 instanceof long[] || a3 instanceof float[] || a3 instanceof double[])) {
                 throw new IllegalArgumentException("Invalid annotation value");
             }
-            if (a2 instanceof Class46 && (a3 = ((Class46)a2).Method3217()) == 11) {
+            if (a3 instanceof b && (a4 = ((b)a3).Method3217()) == 11) {
                 throw new IllegalArgumentException("Invalid annotation value");
             }
             if (this.Field1006 == null) break block2;
-            this.Field1006.Method397(a, a2);
+            this.Field1006.Method397(a2, a3);
         }
     }
 
     @Override
-    public void Method398(String a, String a2, String a3) {
+    public void Method398(String a2, String a3, String a4) {
         this.Method402();
-        this.Method403(a);
-        Class39.Method3395(a2, false);
+        this.Method403(a2);
+        Class39.Method3395(a3, false);
         throw new IllegalArgumentException("Invalid enum value");
     }
 
     @Override
-    public Class148 Method399(String a, String a2) {
+    public Class148 Method399(String a2, String a3) {
         this.Method402();
-        this.Method403(a);
-        Class39.Method3395(a2, false);
-        return new Class130(this.Field1006 == null ? null : this.Field1006.Method399(a, a2));
+        this.Method403(a2);
+        Class39.Method3395(a3, false);
+        return new Class130(this.Field1006 == null ? null : this.Field1006.Method399(a2, a3));
     }
 
     @Override
-    public Class148 Method400(String a) {
+    public Class148 Method400(String a2) {
         this.Method402();
-        this.Method403(a);
-        return new Class130(this.Field1006 == null ? null : this.Field1006.Method400(a), false);
+        this.Method403(a2);
+        return new Class130(this.Field1006 == null ? null : this.Field1006.Method400(a2), false);
     }
 
     @Override
@@ -92,7 +92,7 @@ extends Class148 {
         }
     }
 
-    private void Method403(String a) {
+    private void Method403(String a2) {
         if (this.Field980) {
             throw new IllegalArgumentException("Annotation value name must not be null");
         }

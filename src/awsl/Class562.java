@@ -2,6 +2,7 @@
  * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
  * 
  * Could not load the following classes:
+ *  awsl.Class234
  *  java.lang.Object
  *  java.lang.Override
  *  java.util.ArrayList
@@ -15,10 +16,10 @@ import awsl.Class606;
 import awsl.Class608;
 import awsl.Class609;
 import awsl.Class611;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import obfuscate.a;
 
 public class Class562
 implements Class609 {
@@ -33,37 +34,37 @@ implements Class609 {
     }
 
     @Override
-    public void Method687(Class234 a) {
-        ArrayList a2 = new ArrayList();
-        int a3 = Class562.Method906();
-        int a4 = 0;
-        int a5 = a.readInt();
-        if (a4 < a5) {
-            a2.Method2530((Object)a.Method2092());
-            ++a4;
+    public void Method687(Class234 a2) {
+        ArrayList a3 = new ArrayList();
+        int a4 = Class562.Method906();
+        int a5 = 0;
+        int a6 = a2.readInt();
+        if (a5 < a6) {
+            a3.Method2530((Object)a2.Method2092());
+            ++a5;
         }
         this.Field2623 = new ArrayList();
-        this.Field2623.addAll((Collection)a2);
-        if (Class91.Method3648() == null) {
-            Class562.Method1189(++a3);
+        this.Field2623.addAll((Collection)a3);
+        if (a.trash() == null) {
+            Class562.Method1189(++a4);
         }
     }
 
     @Override
-    public void Method688(Class234 a) {
+    public void Method688(Class234 a2) {
         int n = Class562.Method906();
-        a.writeInt(this.Method845().Method1799());
-        int a2 = 0;
-        int a3 = n;
-        if (a2 < this.Method845().Method1799()) {
-            Class606 a4 = (Class606)this.Method845().get(a2);
-            a.Method2093(a4);
-            ++a2;
+        a2.writeInt(this.Method845().Method1799());
+        int a3 = 0;
+        int a4 = n;
+        if (a3 < this.Method845().Method1799()) {
+            Class606 a5 = (Class606)this.Method845().get(a3);
+            a2.Method2093(a5);
+            ++a3;
         }
     }
 
-    public void Method794(Class611 a) {
-        a.Method3718(this);
+    public void Method794(Class611 a2) {
+        a2.Method3718(this);
     }
 
     public List Method845() {

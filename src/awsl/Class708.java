@@ -12,10 +12,10 @@
 package awsl;
 
 import awsl.Class709;
-import awsl.Class91;
 import java.io.IOException;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.EnumChatFormatting;
+import obfuscate.a;
 import org.lwjgl.input.Keyboard;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
@@ -47,15 +47,15 @@ extends GuiScreen {
         }
     }
 
-    public void Method1803(int a, int a2, float a3) {
+    public void Method1803(int a2, int a3, float a4) {
         int n = Class709.Method1828();
         Class708.drawRect((int)0, (int)0, (int)this.width, (int)this.height, (int)-2012213232);
         int n2 = n;
         this.drawCenteredString(this.fontRendererObj, EnumChatFormatting.DARK_GREEN + this.Field3064.getName() + (this.Field3064.Method1020() > -1 ? EnumChatFormatting.DARK_PURPLE + " (" + Keyboard.getKeyName((int)this.Field3064.Method1020()) + ")" : ""), this.width / 2, 130, 0xFFFFFF);
         this.drawCenteredString(this.fontRendererObj, "Press any key to bind " + EnumChatFormatting.AQUA + this.Field3064.getName(), this.width / 2, 150, 0xFFFFFF);
         this.drawCenteredString(this.fontRendererObj, "Press 'DEL' or 'ESCAPE' to unbind " + EnumChatFormatting.AQUA + this.Field3064.getName(), this.width / 2, 170, 0xFFFFFF);
-        super.Method1803(a, a2, a3);
-        Class91.Method3647(new String[2]);
+        super.Method1803(a2, a3, a4);
+        a.trash(new String[2]);
     }
 
     public boolean Method1812() {

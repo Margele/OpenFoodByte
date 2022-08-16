@@ -40,7 +40,6 @@ package awsl;
 import awsl.Class288;
 import awsl.Class298;
 import awsl.Class628;
-import awsl.Class706;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -68,6 +67,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import trash.foodbyte.gui.AltLogin;
 
 public final class Class392
 implements Runnable {
@@ -1278,7 +1278,7 @@ implements Runnable {
         }
         catch (IOException | URISyntaxException throwable) {
             void a;
-            Class706.Field3049 = Class392.Method1327(16178, 24119);
+            AltLogin.Field3049 = Class392.Method1327(16178, 24119);
             a.printStackTrace();
         }
     }

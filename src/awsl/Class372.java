@@ -67,7 +67,7 @@ public class Class372 {
             int n;
             block3: {
                 ConcurrentHashMap a3 = (ConcurrentHashMap)ReflectionHelper.getPrivateValue(EventBus.class, (Object)a, (int)1);
-                int[] a4 = RenderUtils.Method1148();
+                int[] a4 = RenderUtils.trash();
                 Map a5 = (Map)ReflectionHelper.getPrivateValue(EventBus.class, (Object)a, (int)2);
                 if (a3.containsKey(a2)) break block4;
                 MinecraftDummyContainer a6 = Loader.instance().getMinecraftModContainer();

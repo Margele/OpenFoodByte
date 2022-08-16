@@ -25,7 +25,7 @@ public class Inventory
 extends Module {
     public FloatValue Field2360 = new FloatValue("Inventory", "X", 0.0, 0.0, 1920.0, 1.0, "\u8fbe\u4f4d\u7f6e\u5de6\u53f3");
     public FloatValue Field2361 = new FloatValue("Inventory", "Y", 80.0, 0.0, 1080.0, 1.0, "\u8fbe\u4f4d\u7f6e\u4e0a\u4e0b");
-    public Class379 Field2362 = new Class373(this.Field2360.Method2744().intValue(), (float)this.Field2361.Method2744().intValue(), 180.0f, 62.0f, 12.0f, 1.0f, 0.5f);
+    public Class379 Field2362 = new Class373(this.Field2360.getFloatValue().intValue(), (float)this.Field2361.getFloatValue().intValue(), 180.0f, 62.0f, 12.0f, 1.0f, 0.5f);
 
     public Inventory() {
         super("Inventory", "Inventory", Category.RENDER);
@@ -38,7 +38,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method810(EventRender2D a) {
+    public void Method810(EventRender2D a2) {
         String string = Class492.Method2239();
         if (!Class352.Field1690.contains((Object)this.Field2362)) {
             GlobalModule.INSTANCE.Field3168.Method69(this.Field2362);
@@ -48,8 +48,8 @@ extends Module {
                 this.Field2360.Method2747(this.Field2362.Field1806);
                 this.Field2361.Method2747(this.Field2362.Field1807);
             }
-            this.Field2362.Field1806 = this.Field2360.Method2744().floatValue();
-            this.Field2362.Field1807 = this.Field2361.Method2744().floatValue();
+            this.Field2362.Field1806 = this.Field2360.getFloatValue().floatValue();
+            this.Field2362.Field1807 = this.Field2361.getFloatValue().floatValue();
         }
     }
 }

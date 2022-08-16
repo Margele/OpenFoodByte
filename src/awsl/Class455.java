@@ -67,7 +67,7 @@ Class45 {
 
     public static void Method2628(float a) {
         GL11.glPushMatrix();
-        EventManager.Method2686(new EventRender3D(a));
+        EventManager.call(new EventRender3D(a));
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         GL11.glPopMatrix();
     }

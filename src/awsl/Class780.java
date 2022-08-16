@@ -19,18 +19,18 @@ import awsl.Class116;
 import awsl.Class122;
 import awsl.Class15;
 import awsl.Class45;
-import awsl.Class46;
 import awsl.Class731;
 import awsl.Class784;
 import awsl.Class786;
 import awsl.Class794;
 import awsl.Class796;
 import awsl.Class82;
-import awsl.Class91;
 import awsl.Class96;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import obfuscate.a;
+import obfuscate.b;
 
 public class Class780
 implements Class45 {
@@ -110,11 +110,11 @@ implements Class45 {
                                                 }
                                                 a = this.Method852(a.Field211, a.Field210);
                                                 a = this.Method852(a.Field211, a.Field210);
-                                                a.Method885(this.Field3475.Method907(Class46.Method3213(a.Field196)));
-                                                a = Class46.Method3211(a.Field196);
+                                                a.Method885(this.Field3475.Method907(b.Method3213(a.Field196)));
+                                                a = b.Method3211(a.Field196);
                                                 a = 0;
                                                 if ((a.Field194 & 8) == 0) {
-                                                    a = Class46.Method3205(a);
+                                                    a = b.Method3205(a);
                                                     a.Method889(a++, this.Field3475.Method907(a));
                                                 }
                                                 if ((a = 0) < a.length) {
@@ -170,7 +170,7 @@ lbl113:
                                 a = 0;
                                 if (a < a /* !! */ .Field819.Method1799()) {
                                     a = (Class104)a /* !! */ .Field819.get(a);
-                                    a = this.Field3477.Method188((Class91)a);
+                                    a = this.Field3477.Method188((a)a);
                                     this.Method857(a, a, a);
                                     this.Method854(a, a);
                                     ++a;
@@ -186,7 +186,7 @@ lbl128:
                                 a = 0;
                                 if (a < a /* !! */ .Field962.Method1799()) {
                                     a = (Class104)a /* !! */ .Field962.get(a);
-                                    a = this.Field3477.Method188((Class91)a);
+                                    a = this.Field3477.Method188((a)a);
                                     this.Method857(a, a, a);
                                     this.Method854(a, a);
                                     ++a;
@@ -229,14 +229,14 @@ lbl180:
                 if (a >= a.Method1799()) break block49;
                 a = (Class794)a.get(a);
                 if (a.Field3562 == null) {
-                    a = Class46.Method3205("java/lang/Throwable");
+                    a = b.Method3205("java/lang/Throwable");
                 }
-                a = Class46.Method3205(a.Field3562);
+                a = b.Method3205(a.Field3562);
                 a = this.Field3477.Method188(a.Field3561);
                 if (!this.Method856(a, a)) break block50;
                 a.Method884(a);
                 a.Method892();
-                a.Method894(this.Field3475.Method907((Class46)a));
+                a.Method894(this.Field3475.Method907((b)a));
                 this.Method857(a, a, a);
             }
             try {
@@ -252,54 +252,54 @@ lbl180:
         return this.Field3479;
     }
 
-    private void Method848(int a, Class796 a2, List a3) throws Class731 {
+    private void Method848(int a2, Class796 a3, List a4) throws Class731 {
         while (true) {
-            Object a4;
-            int a5;
-            Class91 a6;
-            if (a >= this.Field3476) {
+            Object a5;
+            int a6;
+            a a7;
+            if (a2 >= this.Field3476) {
                 throw new Class731(null, "Execution can fall off end of the code");
             }
-            if (this.Field3480[a] != null) {
+            if (this.Field3480[a2] != null) {
                 return;
             }
-            this.Field3480[a] = a2.Method807();
-            Class91 a7 = this.Field3477.Method186(a);
-            if (a7 instanceof Class102) {
-                if (a7.Method3640() == 168) {
-                    a3.Method2530((Object)a7);
+            this.Field3480[a2] = a3.Method807();
+            a a8 = this.Field3477.Method186(a2);
+            if (a8 instanceof Class102) {
+                if (a8.Method3640() == 168) {
+                    a4.Method2530((Object)a8);
                 } else {
-                    a6 = (Class102)a7;
-                    this.Method848(this.Field3477.Method188(((Class102)a6).Field829), a2, a3);
+                    a7 = (Class102)a8;
+                    this.Method848(this.Field3477.Method188(((Class102)a7).Field829), a3, a4);
                 }
             } else {
-                if (a7 instanceof Class122) {
-                    a6 = (Class122)a7;
-                    this.Method848(this.Field3477.Method188(a6.Field961), a2, a3);
-                    a5 = a6.Field962.Method1799() - 1;
+                if (a8 instanceof Class122) {
+                    a7 = (Class122)a8;
+                    this.Method848(this.Field3477.Method188(a7.Field961), a3, a4);
+                    a6 = a7.Field962.Method1799() - 1;
                     while (true) {
-                        a4 = (Class104)a6.Field962.get(a5);
-                        this.Method848(this.Field3477.Method188((Class91)a4), a2, a3);
-                        --a5;
+                        a5 = (Class104)a7.Field962.get(a6);
+                        this.Method848(this.Field3477.Method188((a)a5), a3, a4);
+                        --a6;
                     }
                 }
-                if (a7 instanceof Class96) {
-                    a6 = (Class96)a7;
-                    this.Method848(this.Field3477.Method188(((Class96)a6).Field817), a2, a3);
-                    a5 = ((Class96)a6).Field819.Method1799() - 1;
+                if (a8 instanceof Class96) {
+                    a7 = (Class96)a8;
+                    this.Method848(this.Field3477.Method188(((Class96)a7).Field817), a3, a4);
+                    a6 = ((Class96)a7).Field819.Method1799() - 1;
                     while (true) {
-                        a4 = (Class104)((Class96)a6).Field819.get(a5);
-                        this.Method848(this.Field3477.Method188((Class91)a4), a2, a3);
-                        --a5;
+                        a5 = (Class104)((Class96)a7).Field819.get(a6);
+                        this.Method848(this.Field3477.Method188((a)a5), a3, a4);
+                        --a6;
                     }
                 }
             }
-            a6 = this.Field3478[a];
-            for (a5 = 0; a5 < a6.Method1799(); ++a5) {
-                a4 = (Class794)a6.get(a5);
-                this.Method848(this.Field3477.Method188(((Class794)a4).Field3561), a2, a3);
+            a7 = this.Field3478[a2];
+            for (a6 = 0; a6 < a7.Method1799(); ++a6) {
+                a5 = (Class794)a7.get(a6);
+                this.Method848(this.Field3477.Method188(((Class794)a5).Field3561), a3, a4);
             }
-            switch (a7.Method3640()) {
+            switch (a8.Method3640()) {
                 case 167: 
                 case 169: 
                 case 170: 
@@ -314,7 +314,7 @@ lbl180:
                     return;
                 }
             }
-            ++a;
+            ++a2;
         }
     }
 
@@ -322,57 +322,57 @@ lbl180:
         return this.Field3479;
     }
 
-    public List Method850(int a) {
-        return this.Field3478[a];
+    public List Method850(int a2) {
+        return this.Field3478[a2];
     }
 
-    protected void Method851(String a, Class15 a2) throws Class731 {
+    protected void Method851(String a2, Class15 a3) throws Class731 {
     }
 
-    protected Class784 Method852(int a, int a2) {
-        return new Class784(a, a2);
+    protected Class784 Method852(int a2, int a3) {
+        return new Class784(a2, a3);
     }
 
-    protected Class784 Method853(Class784 a) {
-        return new Class784(a);
+    protected Class784 Method853(Class784 a2) {
+        return new Class784(a2);
     }
 
-    protected void Method854(int a, int a2) {
+    protected void Method854(int a2, int a3) {
     }
 
-    protected boolean Method855(int a, int a2) {
+    protected boolean Method855(int a2, int a3) {
         return true;
     }
 
-    protected boolean Method856(int a, Class794 a2) {
-        return this.Method855(a, this.Field3477.Method188(a2.Field3561));
+    protected boolean Method856(int a2, Class794 a3) {
+        return this.Method855(a2, this.Field3477.Method188(a3.Field3561));
     }
 
-    private void Method857(int a, Class784 a2, Class796 a3) throws Class731 {
+    private void Method857(int a2, Class784 a3, Class796 a4) throws Class731 {
         block0: {
-            Class784 a4 = this.Field3479[a];
-            Class796 a5 = this.Field3480[a];
-            this.Field3479[a] = this.Method853(a2);
-            boolean a6 = true;
-            this.Field3480[a] = a3.Method807();
-            a6 = true;
-            if (this.Field3481[a]) break block0;
-            this.Field3481[a] = true;
-            this.Field3482[this.Field3483++] = a;
+            Class784 a5 = this.Field3479[a2];
+            Class796 a6 = this.Field3480[a2];
+            this.Field3479[a2] = this.Method853(a3);
+            boolean a7 = true;
+            this.Field3480[a2] = a4.Method807();
+            a7 = true;
+            if (this.Field3481[a2]) break block0;
+            this.Field3481[a2] = true;
+            this.Field3482[this.Field3483++] = a2;
         }
     }
 
-    private void Method858(int a, Class784 a2, Class784 a3, Class796 a4, boolean[] a5) throws Class731 {
+    private void Method858(int a2, Class784 a3, Class784 a4, Class796 a5, boolean[] a6) throws Class731 {
         block0: {
-            Class784 a6 = this.Field3479[a];
-            Class796 a7 = this.Field3480[a];
-            a3.Method897(a2, a5);
-            this.Field3479[a] = this.Method853(a3);
-            boolean a8 = true;
-            a8 |= a7.Method808(a4);
-            if (this.Field3481[a]) break block0;
-            this.Field3481[a] = true;
-            this.Field3482[this.Field3483++] = a;
+            Class784 a7 = this.Field3479[a2];
+            Class796 a8 = this.Field3480[a2];
+            a4.Method897(a3, a6);
+            this.Field3479[a2] = this.Method853(a4);
+            boolean a9 = true;
+            a9 |= a8.Method808(a5);
+            if (this.Field3481[a2]) break block0;
+            this.Field3481[a2] = true;
+            this.Field3482[this.Field3483++] = a2;
         }
     }
 

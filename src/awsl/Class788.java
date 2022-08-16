@@ -11,25 +11,25 @@ package awsl;
 
 import awsl.Class116;
 import awsl.Class15;
-import awsl.Class91;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
+import obfuscate.a;
 
 final class Class788
 implements ListIterator {
-    Class91 Field3545;
-    Class91 Field3546;
-    Class91 Field3547;
+    a Field3545;
+    a Field3546;
+    a Field3547;
     final Class116 Field3548;
 
-    Class788(Class116 class116, int a) {
+    Class788(Class116 class116, int a2) {
         this.Field3548 = class116;
         int n = Class15.Method1984();
-        if (a == class116.Method183()) {
+        if (a2 == class116.Method183()) {
             this.Field3545 = null;
             this.Field3546 = class116.Method185();
         }
-        this.Field3545 = class116.Method186(a);
+        this.Field3545 = class116.Method186(a2);
         this.Field3546 = this.Field3545.Field799;
     }
 
@@ -38,14 +38,14 @@ implements ListIterator {
     }
 
     public Object Method933() {
-        Class91 a;
+        a a2;
         if (this.Field3545 == null) {
             throw new NoSuchElementException();
         }
-        this.Field3546 = a = this.Field3545;
-        this.Field3545 = a.Field800;
-        this.Field3547 = a;
-        return a;
+        this.Field3546 = a2 = this.Field3545;
+        this.Field3545 = a2.Field800;
+        this.Field3547 = a2;
+        return a2;
     }
 
     public void Method934() {
@@ -66,11 +66,11 @@ implements ListIterator {
     }
 
     public Object Method936() {
-        Class91 a;
-        this.Field3545 = a = this.Field3546;
-        this.Field3546 = a.Field799;
-        this.Field3547 = a;
-        return a;
+        a a2;
+        this.Field3545 = a2 = this.Field3546;
+        this.Field3546 = a2.Field799;
+        this.Field3547 = a2;
+        return a2;
     }
 
     public int Method937() {
@@ -95,15 +95,15 @@ implements ListIterator {
         return this.Field3546.Field801;
     }
 
-    public void Method939(Object a) {
-        this.Field3548.Method200(this.Field3545, (Class91)a);
-        this.Field3546 = (Class91)a;
+    public void Method939(Object a2) {
+        this.Field3548.Method200(this.Field3545, (a)a2);
+        this.Field3546 = (a)a2;
         this.Field3547 = null;
     }
 
-    public void Method940(Object a) {
-        this.Field3548.Method193(this.Field3545.Field799, (Class91)a);
-        this.Field3546 = (Class91)a;
+    public void Method940(Object a2) {
+        this.Field3548.Method193(this.Field3545.Field799, (a)a2);
+        this.Field3546 = (a)a2;
     }
 
     private static NoSuchElementException Method941(NoSuchElementException noSuchElementException) {

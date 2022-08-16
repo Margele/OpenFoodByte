@@ -13,10 +13,10 @@
 package awsl;
 
 import awsl.Class212;
-import awsl.Class91;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.shader.Framebuffer;
+import obfuscate.a;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;
 
@@ -55,16 +55,16 @@ public class Class211 {
         }
     }
 
-    public static void Method2577(Framebuffer a) {
+    public static void Method2577(Framebuffer a2) {
         String string = Class212.Method2566();
-        EXTFramebufferObject.glDeleteRenderbuffersEXT((int)a.depthBuffer);
-        String a2 = string;
-        int a3 = EXTFramebufferObject.glGenRenderbuffersEXT();
-        EXTFramebufferObject.glBindRenderbufferEXT((int)36161, (int)a3);
+        EXTFramebufferObject.glDeleteRenderbuffersEXT((int)a2.depthBuffer);
+        String a3 = string;
+        int a4 = EXTFramebufferObject.glGenRenderbuffersEXT();
+        EXTFramebufferObject.glBindRenderbufferEXT((int)36161, (int)a4);
         EXTFramebufferObject.glRenderbufferStorageEXT((int)36161, (int)34041, (int)Class211.Field1190.displayWidth, (int)Class211.Field1190.displayHeight);
-        EXTFramebufferObject.glFramebufferRenderbufferEXT((int)36160, (int)36128, (int)36161, (int)a3);
-        EXTFramebufferObject.glFramebufferRenderbufferEXT((int)36160, (int)36096, (int)36161, (int)a3);
-        if (Class91.Method3648() == null) {
+        EXTFramebufferObject.glFramebufferRenderbufferEXT((int)36160, (int)36128, (int)36161, (int)a4);
+        EXTFramebufferObject.glFramebufferRenderbufferEXT((int)36160, (int)36096, (int)36161, (int)a4);
+        if (a.trash() == null) {
             Class212.Method2565("Xh3nn");
         }
     }
@@ -73,9 +73,9 @@ public class Class211 {
         Class211.Method2579(Field1190.getFramebuffer());
     }
 
-    public static void Method2579(Framebuffer a) {
-        a.bindFramebuffer(false);
-        Class211.Method2576(a);
+    public static void Method2579(Framebuffer a2) {
+        a2.bindFramebuffer(false);
+        Class211.Method2576(a2);
         GL11.glClear((int)1024);
         GL11.glEnable((int)2960);
     }
@@ -86,9 +86,9 @@ public class Class211 {
         GL11.glColorMask((boolean)false, (boolean)false, (boolean)false, (boolean)false);
     }
 
-    public static void Method2581(int a) {
+    public static void Method2581(int a2) {
         GL11.glColorMask((boolean)true, (boolean)true, (boolean)true, (boolean)true);
-        GL11.glStencilFunc((int)514, (int)a, (int)1);
+        GL11.glStencilFunc((int)514, (int)a2, (int)1);
         GL11.glStencilOp((int)7680, (int)7680, (int)7680);
     }
 

@@ -10,9 +10,9 @@
  */
 package trash.foodbyte.module.impl.render;
 
-import awsl.Class654;
 import eventapi.EventTarget;
 import org.lwjgl.input.Keyboard;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.value.BooleanValue;
@@ -40,15 +40,15 @@ extends Module {
     }
 
     @EventTarget
-    public void Method801(Class654 a) {
+    public void Method801(EventTickUpdate a) {
         if (Perspective.mc.gameSettings.thirdPersonView != 1) {
             Field2202 = Perspective.mc.gameSettings.thirdPersonView;
             this.Method1028();
         }
-        if (this.Field2197.Method2509().booleanValue()) {
-            Perspective.mc.gameSettings.fovSetting = this.Field2198.Method2744().floatValue();
+        if (this.Field2197.getBooleanValue().booleanValue()) {
+            Perspective.mc.gameSettings.fovSetting = this.Field2198.getFloatValue().floatValue();
         }
-        if (this.Field2196.Method2509().booleanValue() && Perspective.mc.theWorld != null) {
+        if (this.Field2196.getBooleanValue().booleanValue() && Perspective.mc.theWorld != null) {
             boolean a2 = Keyboard.isKeyDown((int)this.Method1020());
             if (Perspective.mc.currentScreen != null) {
                 this.setState(false);
@@ -64,13 +64,13 @@ extends Module {
         Field2202 = Perspective.mc.gameSettings.thirdPersonView;
         Perspective.mc.gameSettings.thirdPersonView = 1;
         Field2199 = Perspective.mc.gameSettings.fovSetting;
-        if (this.Field2197.Method2509().booleanValue()) {
-            Perspective.mc.gameSettings.fovSetting = this.Field2198.Method2744().floatValue();
+        if (this.Field2197.getBooleanValue().booleanValue()) {
+            Perspective.mc.gameSettings.fovSetting = this.Field2198.getFloatValue().floatValue();
         }
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         Field2203 = false;
         if (Perspective.mc.gameSettings.thirdPersonView != 1) {
             // empty if block

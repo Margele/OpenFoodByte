@@ -30,7 +30,6 @@ import awsl.Class253;
 import awsl.Class267;
 import awsl.Class37;
 import awsl.Class61;
-import awsl.Class91;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutput;
 import java.io.DataOutputStream;
@@ -40,6 +39,7 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import obfuscate.a;
 
 public class Class213
 extends Class167 {
@@ -147,60 +147,60 @@ extends Class167 {
      * WARNING - void declaration
      */
     protected long Method2619() throws IOException {
-        void a;
-        DataOutputStream a2;
+        void a2;
+        DataOutputStream a3;
         Object var3_1 = null;
         long l = 0L;
-        boolean a3 = Class37.Method3383();
+        boolean a4 = Class37.Method3383();
         try {
-            ByteArrayOutputStream a4 = new ByteArrayOutputStream();
-            a2 = new DataOutputStream((OutputStream)a4);
-            a2.writeUTF(this.Field1198.replace('/', '.'));
-            a2.writeInt(this.Field1197 & 0x611);
+            ByteArrayOutputStream a5 = new ByteArrayOutputStream();
+            a3 = new DataOutputStream((OutputStream)a5);
+            a3.writeUTF(this.Field1198.replace('/', '.'));
+            a3.writeInt(this.Field1197 & 0x611);
             Arrays.sort((Object[])this.Field1199);
-            int a5 = 0;
-            if (a5 < this.Field1199.length) {
-                a2.writeUTF(this.Field1199[a5].replace('/', '.'));
-                ++a5;
-                Class91.Method3647(new String[1]);
+            int a6 = 0;
+            if (a6 < this.Field1199.length) {
+                a3.writeUTF(this.Field1199[a6].replace('/', '.'));
+                ++a6;
+                a.trash(new String[1]);
             }
-            Class213.Method2621(this.Field1200, (DataOutput)a2, false);
+            Class213.Method2621(this.Field1200, (DataOutput)a3, false);
             if (this.Field1201) {
-                a2.writeUTF("<clinit>");
-                a2.writeInt(8);
-                a2.writeUTF("()V");
+                a3.writeUTF("<clinit>");
+                a3.writeInt(8);
+                a3.writeUTF("()V");
             }
-            Class213.Method2621(this.Field1202, (DataOutput)a2, true);
-            Class213.Method2621(this.Field1203, (DataOutput)a2, true);
-            a2.flush();
-            byte[] a22 = this.Method2620(a4.toByteArray());
-            int a6 = Math.min((int)a22.length, (int)8) - 1;
-            a = a << 8 | (long)(a22[a6] & 0xFF);
-            --a6;
+            Class213.Method2621(this.Field1202, (DataOutput)a3, true);
+            Class213.Method2621(this.Field1203, (DataOutput)a3, true);
+            a3.flush();
+            byte[] a22 = this.Method2620(a5.toByteArray());
+            int a7 = Math.min((int)a22.length, (int)8) - 1;
+            a2 = a2 << 8 | (long)(a22[a7] & 0xFF);
+            --a7;
         }
         finally {
-            a2.close();
+            a3.close();
         }
-        return (long)a;
+        return (long)a2;
     }
 
-    protected byte[] Method2620(byte[] a) {
+    protected byte[] Method2620(byte[] a2) {
         try {
-            return MessageDigest.getInstance((String)"SHA").digest(a);
+            return MessageDigest.getInstance((String)"SHA").digest(a2);
         }
-        catch (Exception a2) {
-            throw new UnsupportedOperationException(a2.toString());
+        catch (Exception a3) {
+            throw new UnsupportedOperationException(a3.toString());
         }
     }
 
-    private static void Method2621(Collection a, DataOutput a2, boolean a3) throws IOException {
-        int a4 = a.Method1799();
-        Object[] a5 = (Class61[])a.toArray((Object[])new Class61[a4]);
-        Arrays.sort((Object[])a5);
-        for (int a6 = 0; a6 < a4; ++a6) {
-            a2.writeUTF(((Class61)a5[a6]).Field627);
-            a2.writeInt(((Class61)a5[a6]).Field628);
-            a2.writeUTF(((Class61)a5[a6]).Field629.replace('/', '.'));
+    private static void Method2621(Collection a2, DataOutput a3, boolean a4) throws IOException {
+        int a5 = a2.Method1799();
+        Object[] a6 = (Class61[])a2.toArray((Object[])new Class61[a5]);
+        Arrays.sort((Object[])a6);
+        for (int a7 = 0; a7 < a5; ++a7) {
+            a3.writeUTF(((Class61)a6[a7]).Field627);
+            a3.writeInt(((Class61)a6[a7]).Field628);
+            a3.writeUTF(((Class61)a6[a7]).Field629.replace('/', '.'));
         }
     }
 

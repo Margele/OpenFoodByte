@@ -35,7 +35,7 @@ extends Class360 {
 
     @Override
     public void Method181(ItemStack a, boolean a2) {
-        int[] a3 = RenderUtils.Method1148();
+        int[] a3 = RenderUtils.trash();
         Class356.Method144(a).setBoolean(this.Field1703, a2);
         if (Class356.Method145(a)) {
             NBTTagCompound a4 = Class356.Method144(a);

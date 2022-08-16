@@ -10,16 +10,16 @@
 package awsl;
 
 import awsl.Class221;
-import awsl.Class91;
 import java.util.ArrayList;
 import net.minecraft.init.Blocks;
+import obfuscate.a;
 
 class Class703
 extends ArrayList {
     final Class221 Field3043;
 
-    Class703(Class221 a) {
-        this.Field3043 = a;
+    Class703(Class221 a2) {
+        this.Field3043 = a2;
         this.Method2530(Blocks.air);
         this.Method2530(Blocks.tallgrass);
         this.Method2530(Blocks.lava);
@@ -38,6 +38,6 @@ extends ArrayList {
         this.Method2530(Blocks.stone_button);
         this.Method2530(Blocks.wooden_button);
         this.Method2530(Blocks.ladder);
-        Class91.Method3647(new String[5]);
+        a.trash(new String[5]);
     }
 }

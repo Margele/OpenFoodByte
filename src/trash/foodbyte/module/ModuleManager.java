@@ -11,10 +11,10 @@
  */
 package trash.foodbyte.module;
 
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import obfuscate.a;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.combat.AimAssist;
@@ -195,32 +195,32 @@ public class ModuleManager {
         this.addModule(new DungeonHelper());
         this.addModule(new Experimentation());
         modules.sort(Comparator.comparing(Module::getName));
-        Class91.Method3647(new String[2]);
+        a.trash(new String[2]);
     }
 
-    public void addModule(Module a) {
-        modules.Method2530((Object)a);
+    public void addModule(Module a2) {
+        modules.Method2530((Object)a2);
     }
 
     public static ArrayList getModules() {
-        ArrayList a = new ArrayList();
+        ArrayList a2 = new ArrayList();
         Iterator iterator = modules.Method1383();
-        int[] a2 = Module.Method1041();
+        int[] a3 = Module.Method1041();
         while (iterator.Method932()) {
-            Module a3 = (Module)iterator.Method933();
-            if (!a3.getState()) continue;
-            a.Method2530((Object)a3);
+            Module a4 = (Module)iterator.Method933();
+            if (!a4.getState()) continue;
+            a2.Method2530((Object)a4);
             break;
         }
-        return a;
+        return a2;
     }
 
-    public static Module getModule(String a) {
+    public static Module getModule(String a2) {
         Iterator iterator = modules.Method1383();
         while (iterator.Method932()) {
-            Module a2 = (Module)iterator.Method933();
-            if (!a2.getName().equalsIgnoreCase(a)) continue;
-            return a2;
+            Module a3 = (Module)iterator.Method933();
+            if (!a3.getName().equalsIgnoreCase(a2)) continue;
+            return a3;
         }
         return null;
     }
@@ -229,53 +229,53 @@ public class ModuleManager {
         return modules;
     }
 
-    public static Module getModule(Class a) {
+    public static Module getModule(Class a2) {
         Iterator iterator = modules.Method1383();
         while (iterator.Method932()) {
-            Module a2 = (Module)iterator.Method933();
-            if (a2.getClass() != a) continue;
-            return a2;
+            Module a3 = (Module)iterator.Method933();
+            if (a3.getClass() != a2) continue;
+            return a3;
         }
         return null;
     }
 
-    public static Module getModule2(Class a) {
+    public static Module getModule2(Class a2) {
         Iterator iterator = modules.Method1383();
         while (iterator.Method932()) {
-            Module a2 = (Module)iterator.Method933();
-            if (a2.getClass() != a) continue;
-            return a2;
+            Module a3 = (Module)iterator.Method933();
+            if (a3.getClass() != a2) continue;
+            return a3;
         }
         return null;
     }
 
     public static ArrayList getModulesNotRender() {
-        ArrayList a = new ArrayList();
+        ArrayList a2 = new ArrayList();
         Iterator iterator = modules.Method1383();
-        int[] a2 = Module.Method1041();
+        int[] a3 = Module.Method1041();
         if (iterator.Method932()) {
-            Module a3 = (Module)iterator.Method933();
-            if (a3.getState() && a3.Method1024() != Category.RENDER) {
-                a.Method2530((Object)a3);
+            Module a4 = (Module)iterator.Method933();
+            if (a4.getState() && a4.Method1024() != Category.RENDER) {
+                a2.Method2530((Object)a4);
             }
         }
-        return a;
+        return a2;
     }
 
     /*
      * WARNING - void declaration
      */
-    public static int Method2299(Category a) {
-        void a2;
+    public static int Method2299(Category a2) {
+        void a3;
         boolean bl = false;
         Iterator iterator = modules.Method1383();
-        int[] a3 = Module.Method1041();
+        int[] a4 = Module.Method1041();
         if (iterator.Method932()) {
-            Module a4 = (Module)iterator.Method933();
-            if (a4.Method1024() == a) {
-                ++a2;
+            Module a5 = (Module)iterator.Method933();
+            if (a5.Method1024() == a2) {
+                ++a3;
             }
         }
-        return (int)a2;
+        return (int)a3;
     }
 }

@@ -13,25 +13,25 @@ import awsl.Class224;
 import awsl.Class422;
 import awsl.Class45;
 import awsl.Class628;
-import awsl.Class91;
 import native0.Class614;
+import obfuscate.a;
 
 public class Class430
 implements Class422,
 Class45 {
     private static final String[] Field2063;
-    private static Class91[] Field2064;
+    private static a[] Field2064;
     private static final String[] Field2065;
 
     @Override
-    public void Method1359(Class15 a, String a2) {
-        this.Method2323(a, a2);
+    public void Method1359(Class15 a2, String a3) {
+        this.Method2323(a2, a3);
     }
 
     @Class628
     public native void Method2323(Class15 var1, String var2);
 
-    public static Class91[] Method2324() {
+    public static a[] Method2324() {
         return Field2064;
     }
 
@@ -1084,7 +1084,7 @@ Class45 {
     }
 
     @Override
-    public void Method1361(Class224 a, String a2) {
+    public void Method1361(Class224 a2, String a3) {
     }
 
     @Override
@@ -1097,8 +1097,8 @@ Class45 {
         Class430.Method1377();
     }
 
-    public static void Method2325(Class91[] class91Array) {
-        Field2064 = class91Array;
+    public static void Method2325(a[] aArray) {
+        Field2064 = aArray;
     }
 
     private static native /* synthetic */ void Method1377();

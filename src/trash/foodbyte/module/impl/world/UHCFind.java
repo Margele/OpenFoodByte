@@ -31,10 +31,7 @@
  */
 package trash.foodbyte.module.impl.world;
 
-import awsl.Class281;
 import awsl.Class448;
-import awsl.Class667;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.awt.Color;
 import java.util.Comparator;
@@ -59,14 +56,17 @@ import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import obfuscate.a;
 import org.lwjgl.opengl.GL11;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.event.EventRender3D;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.utils.ChatUtils;
-import trash.foodbyte.utils.ReflectionUtils;
 import trash.foodbyte.utils.RenderUtils;
+import trash.foodbyte.utils.ServerUtils;
+import trash.foodbyte.utils.Servers;
 import trash.foodbyte.value.BooleanValue;
 
 public class UHCFind
@@ -85,50 +85,50 @@ extends Module {
     }
 
     @EventTarget(value=0)
-    public void Method802(EventRender3D a) {
-        Entity a2;
-        Class91[] a3 = Class448.Method2461();
-        if (!Class281.Method3049(Class667.UHC)) {
+    public void Method802(EventRender3D a2) {
+        Entity a3;
+        a[] a4 = Class448.Method2461();
+        if (!ServerUtils.isSinglePlayer(Servers.UHC)) {
             return;
         }
-        List a4 = UHCFind.mc.theWorld.getLoadedEntityList();
-        a4.sort(Comparator.comparingDouble(UHCFind::Method2246));
-        int a5 = 0;
-        Iterator iterator = a4.Method1383();
+        List a5 = UHCFind.mc.theWorld.getLoadedEntityList();
+        a5.sort(Comparator.comparingDouble(UHCFind::Method2246));
+        int a6 = 0;
+        Iterator iterator = a5.Method1383();
         if (iterator.Method932()) {
-            a2 = (Entity)iterator.Method933();
-            if (this.Field2282.getValue() && a2 instanceof EntityEnderman) {
-                this.Method2245(a2, new Color(143, 0, 226));
+            a3 = (Entity)iterator.Method933();
+            if (this.Field2282.getValue() && a3 instanceof EntityEnderman) {
+                this.Method2245(a3, new Color(143, 0, 226));
             }
-            if (this.Field2284.getValue() && a2 instanceof EntityBlaze) {
-                this.Method2245(a2, new Color(239, 128, 2));
+            if (this.Field2284.getValue() && a3 instanceof EntityBlaze) {
+                this.Method2245(a3, new Color(239, 128, 2));
             }
-            if (this.Field2285.getValue() && a2 instanceof EntitySlime) {
-                this.Method2245(a2, new Color(41, 255, 0));
+            if (this.Field2285.getValue() && a3 instanceof EntitySlime) {
+                this.Method2245(a3, new Color(41, 255, 0));
             }
-            if (this.Field2286.getValue() && a2 instanceof EntityMagmaCube) {
-                this.Method2245(a2, new Color(177, 22, 53));
+            if (this.Field2286.getValue() && a3 instanceof EntityMagmaCube) {
+                this.Method2245(a3, new Color(177, 22, 53));
             }
-            if (this.Field2283.getValue() && a2 instanceof EntityCreeper && a5 < 2) {
-                this.Method2245(a2, new Color(29, 156, 7));
-                ++a5;
+            if (this.Field2283.getValue() && a3 instanceof EntityCreeper && a6 < 2) {
+                this.Method2245(a3, new Color(29, 156, 7));
+                ++a6;
             }
-            if (this.Field2281.getValue() && a2 instanceof EntityZombie && !(a2 instanceof EntityPigZombie) && a2.getDisplayName() != null && Objects.nonNull((Object)((EntityZombie)a2).getEquipmentInSlot(4)) && ((EntityZombie)a2).getEquipmentInSlot(4).getItem() == Items.skull) {
-                this.Method2245(a2, new Color(255, 0, 0, 255));
+            if (this.Field2281.getValue() && a3 instanceof EntityZombie && !(a3 instanceof EntityPigZombie) && a3.getDisplayName() != null && Objects.nonNull((Object)((EntityZombie)a3).getEquipmentInSlot(4)) && ((EntityZombie)a3).getEquipmentInSlot(4).getItem() == Items.skull) {
+                this.Method2245(a3, new Color(255, 0, 0, 255));
             }
         }
         if (this.Field2280.getValue() && (iterator = UHCFind.mc.theWorld.loadedTileEntityList.Method1383()).Method932()) {
-            a2 = (TileEntity)iterator.Method933();
-            if (a2 instanceof TileEntityMobSpawner) {
+            a3 = (TileEntity)iterator.Method933();
+            if (a3 instanceof TileEntityMobSpawner) {
                 GL11.glPushMatrix();
                 RenderUtils.Method1126(2.0f);
-                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a2, a.Field2922, -1);
+                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a3, a2.Field2922, -1);
                 RenderUtils.Method1129();
-                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a2, a.Field2922, -1);
+                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a3, a2.Field2922, -1);
                 RenderUtils.Method1130();
-                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a2, a.Field2922, -1);
+                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a3, a2.Field2922, -1);
                 RenderUtils.Method1131(new Color(0, 86, 255).getRGB());
-                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a2, a.Field2922, -1);
+                TileEntityRendererDispatcher.instance.renderTileEntity((TileEntity)a3, a2.Field2922, -1);
                 RenderUtils.Method1132();
                 GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
                 GL11.glPopMatrix();
@@ -137,82 +137,82 @@ extends Module {
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
-        Class91[] a2 = Class448.Method2461();
-        if (a.isSend() && !Class281.Method3049(Class667.UHC)) {
+    public void Method273(EventPacket a2) {
+        a[] a3 = Class448.Method2461();
+        if (a2.isSend() && !ServerUtils.isSinglePlayer(Servers.UHC)) {
             return;
         }
-        if (a.getPacket() instanceof S0FPacketSpawnMob) {
-            S0FPacketSpawnMob a3 = (S0FPacketSpawnMob)a.getPacket();
-            EntityLivingBase a4 = (EntityLivingBase)EntityList.createEntityByID((int)a3.getEntityType(), (World)UHCFind.mc.theWorld);
-            double a5 = (double)a3.getX() / 32.0;
-            double a6 = (double)a3.getY() / 32.0;
-            double a7 = (double)a3.getZ() / 32.0;
-            float a8 = (float)(a3.getYaw() * 360) / 256.0f;
-            float a9 = (float)(a3.getPitch() * 360) / 256.0f;
-            a4.serverPosX = a3.getX();
-            a4.serverPosY = a3.getY();
-            a4.serverPosZ = a3.getZ();
-            a4.renderYawOffset = a4.rotationYawHead = (float)(a3.getHeadPitch() * 360) / 256.0f;
-            Entity[] a10 = a4.getParts();
-            int a11 = a3.getEntityID() - a4.getEntityId();
-            int a12 = 0;
-            if (a12 < a10.length) {
-                a10[a12].setEntityId(a10[a12].getEntityId() + a11);
-                ++a12;
+        if (a2.getPacket() instanceof S0FPacketSpawnMob) {
+            S0FPacketSpawnMob a4 = (S0FPacketSpawnMob)a2.getPacket();
+            EntityLivingBase a5 = (EntityLivingBase)EntityList.createEntityByID((int)a4.getEntityType(), (World)UHCFind.mc.theWorld);
+            double a6 = (double)a4.getX() / 32.0;
+            double a7 = (double)a4.getY() / 32.0;
+            double a8 = (double)a4.getZ() / 32.0;
+            float a9 = (float)(a4.getYaw() * 360) / 256.0f;
+            float a10 = (float)(a4.getPitch() * 360) / 256.0f;
+            a5.serverPosX = a4.getX();
+            a5.serverPosY = a4.getY();
+            a5.serverPosZ = a4.getZ();
+            a5.renderYawOffset = a5.rotationYawHead = (float)(a4.getHeadPitch() * 360) / 256.0f;
+            Entity[] a11 = a5.getParts();
+            int a12 = a4.getEntityID() - a5.getEntityId();
+            int a13 = 0;
+            if (a13 < a11.length) {
+                a11[a13].setEntityId(a11[a13].getEntityId() + a12);
+                ++a13;
             }
-            a4.setEntityId(a3.getEntityID());
-            a4.setPositionAndRotation(a5, a6, a7, a8, a9);
-            a4.motionX = (float)a3.getVelocityX() / 8000.0f;
-            a4.motionY = (float)a3.getVelocityY() / 8000.0f;
-            a4.motionZ = (float)a3.getVelocityZ() / 8000.0f;
-            List a22 = a3.func_149027_c();
-            a4.getDataWatcher().updateWatchedObjectsFromList(a22);
-            a12 = a3.getX() / 32;
-            int a13 = a3.getY() / 32;
-            int a14 = a3.getZ() / 32;
-            float a15 = (float)(UHCFind.mc.thePlayer.posX - (double)a12);
-            float a16 = (float)(UHCFind.mc.thePlayer.posY - (double)a13);
-            float a17 = (float)(UHCFind.mc.thePlayer.posZ - (double)a14);
-            float a18 = MathHelper.sqrt_float((float)(a15 * a15 + a16 * a16 + a17 * a17));
-            if (this.Field2282.Method2509().booleanValue() && a4 instanceof EntityEnderman) {
-                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a4.getName() + "\u00a7e " + (int)a18 + "\u00a77m \u00a7BX: \u00a7r" + a12 + " \u00a7BY: \u00a7r" + a13 + " \u00a7BZ: \u00a7r" + a14);
+            a5.setEntityId(a4.getEntityID());
+            a5.setPositionAndRotation(a6, a7, a8, a9, a10);
+            a5.motionX = (float)a4.getVelocityX() / 8000.0f;
+            a5.motionY = (float)a4.getVelocityY() / 8000.0f;
+            a5.motionZ = (float)a4.getVelocityZ() / 8000.0f;
+            List a22 = a4.func_149027_c();
+            a5.getDataWatcher().updateWatchedObjectsFromList(a22);
+            a13 = a4.getX() / 32;
+            int a14 = a4.getY() / 32;
+            int a15 = a4.getZ() / 32;
+            float a16 = (float)(UHCFind.mc.thePlayer.posX - (double)a13);
+            float a17 = (float)(UHCFind.mc.thePlayer.posY - (double)a14);
+            float a18 = (float)(UHCFind.mc.thePlayer.posZ - (double)a15);
+            float a19 = MathHelper.sqrt_float((float)(a16 * a16 + a17 * a17 + a18 * a18));
+            if (this.Field2282.getBooleanValue().booleanValue() && a5 instanceof EntityEnderman) {
+                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a5.getName() + "\u00a7e " + (int)a19 + "\u00a77m \u00a7BX: \u00a7r" + a13 + " \u00a7BY: \u00a7r" + a14 + " \u00a7BZ: \u00a7r" + a15);
             }
-            if (this.Field2286.Method2509().booleanValue() && a4 instanceof EntityMagmaCube) {
-                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a4.getName() + "\u00a7e " + (int)a18 + "\u00a77m \u00a7BX: \u00a7r" + a12 + " \u00a7BY: \u00a7r" + a13 + " \u00a7BZ: \u00a7r" + a14);
+            if (this.Field2286.getBooleanValue().booleanValue() && a5 instanceof EntityMagmaCube) {
+                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a5.getName() + "\u00a7e " + (int)a19 + "\u00a77m \u00a7BX: \u00a7r" + a13 + " \u00a7BY: \u00a7r" + a14 + " \u00a7BZ: \u00a7r" + a15);
             }
-            if (this.Field2284.Method2509().booleanValue() && a4 instanceof EntityBlaze) {
-                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a4.getName() + "\u00a7e " + (int)a18 + "\u00a77m \u00a7BX: \u00a7r" + a12 + " \u00a7BY: \u00a7r" + a13 + " \u00a7BZ: \u00a7r" + a14);
+            if (this.Field2284.getBooleanValue().booleanValue() && a5 instanceof EntityBlaze) {
+                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a5.getName() + "\u00a7e " + (int)a19 + "\u00a77m \u00a7BX: \u00a7r" + a13 + " \u00a7BY: \u00a7r" + a14 + " \u00a7BZ: \u00a7r" + a15);
             }
-            if (this.Field2281.Method2509().booleanValue() && a4 instanceof EntityZombie && !(a4 instanceof EntityPigZombie) && a4.getDisplayName() != null && !a4.getDisplayName().getUnformattedText().equalsIgnoreCase("Zombie") && !a4.getDisplayName().getUnformattedText().equalsIgnoreCase("\u50f5\u5c38") && !a4.getDisplayName().getFormattedText().startsWith("\u00a7")) {
-                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a4.getDisplayName().getFormattedText() + " Exit! \u00a7e " + (int)a18 + "\u00a77m \u00a7BX: \u00a7r" + a12 + " \u00a7BY: \u00a7r" + a13 + " \u00a7BZ: \u00a7r" + a14);
+            if (this.Field2281.getBooleanValue().booleanValue() && a5 instanceof EntityZombie && !(a5 instanceof EntityPigZombie) && a5.getDisplayName() != null && !a5.getDisplayName().getUnformattedText().equalsIgnoreCase("Zombie") && !a5.getDisplayName().getUnformattedText().equalsIgnoreCase("\u50f5\u5c38") && !a5.getDisplayName().getFormattedText().startsWith("\u00a7")) {
+                ChatUtils.addChatMessage("\u00a73Find \u00a79" + a5.getDisplayName().getFormattedText() + " Exit! \u00a7e " + (int)a19 + "\u00a77m \u00a7BX: \u00a7r" + a13 + " \u00a7BY: \u00a7r" + a14 + " \u00a7BZ: \u00a7r" + a15);
             }
         }
     }
 
-    public void Method2245(Entity a, Color a2) {
-        float a3 = ReflectionUtils.Method2587();
-        double a4 = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a3 - ReflectionUtils.Method2591();
-        double a5 = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a3 - ReflectionUtils.Method2592();
-        double a6 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a3 - ReflectionUtils.Method2593();
-        double a7 = (double)a.width / 1.5;
-        double a8 = a.getEntityBoundingBox().maxY - a.getEntityBoundingBox().minY;
+    public void Method2245(Entity a2, Color a3) {
+        float a4 = ReflectionUtils.getRenderPartialTicks();
+        double a5 = a2.lastTickPosX + (a2.posX - a2.lastTickPosX) * (double)a4 - ReflectionUtils.getRenderPosX();
+        double a6 = a2.lastTickPosY + (a2.posY - a2.lastTickPosY) * (double)a4 - ReflectionUtils.getRenderPosY();
+        double a7 = a2.lastTickPosZ + (a2.posZ - a2.lastTickPosZ) * (double)a4 - ReflectionUtils.getRenderPosZ();
+        double a8 = (double)a2.width / 1.5;
+        double a9 = a2.getEntityBoundingBox().maxY - a2.getEntityBoundingBox().minY;
         GL11.glPushMatrix();
         RenderUtils.Method1126(2.0f);
         GL11.glDisable((int)2848);
-        RenderUtils.Method1124(new AxisAlignedBB(a4 - a7, a5, a6 - a7, a4 + a7, a5 + a8, a6 + a7));
+        RenderUtils.Method1124(new AxisAlignedBB(a5 - a8, a6, a7 - a8, a5 + a8, a6 + a9, a7 + a8));
         RenderUtils.Method1129();
-        RenderUtils.Method1124(new AxisAlignedBB(a4 - a7, a5, a6 - a7, a4 + a7, a5 + a8, a6 + a7));
+        RenderUtils.Method1124(new AxisAlignedBB(a5 - a8, a6, a7 - a8, a5 + a8, a6 + a9, a7 + a8));
         RenderUtils.Method1130();
-        RenderUtils.Method1124(new AxisAlignedBB(a4 - a7, a5, a6 - a7, a4 + a7, a5 + a8, a6 + a7));
-        RenderUtils.Method1131(a2.getRGB());
-        RenderUtils.Method1124(new AxisAlignedBB(a4 - a7, a5, a6 - a7, a4 + a7, a5 + a8, a6 + a7));
+        RenderUtils.Method1124(new AxisAlignedBB(a5 - a8, a6, a7 - a8, a5 + a8, a6 + a9, a7 + a8));
+        RenderUtils.Method1131(a3.getRGB());
+        RenderUtils.Method1124(new AxisAlignedBB(a5 - a8, a6, a7 - a8, a5 + a8, a6 + a9, a7 + a8));
         RenderUtils.Method1132();
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         GL11.glPopMatrix();
     }
 
-    private static double Method2246(Entity a) {
-        return UHCFind.mc.thePlayer.getDistanceToEntity(a);
+    private static double Method2246(Entity a2) {
+        return UHCFind.mc.thePlayer.getDistanceToEntity(a2);
     }
 }

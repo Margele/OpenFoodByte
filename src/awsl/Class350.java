@@ -28,7 +28,6 @@ import awsl.Class187;
 import awsl.Class196;
 import awsl.Class347;
 import awsl.Class348;
-import awsl.Class91;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -42,6 +41,7 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.texture.TextureUtil;
+import obfuscate.a;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
@@ -248,64 +248,64 @@ public class Class350 {
     /*
      * WARNING - void declaration
      */
-    public static void Method50(int a, int a2, int a3, int a4, int a5, int a6) {
-        void a7;
-        Minecraft a8 = Minecraft.getMinecraft();
-        ScaledResolution a9 = new ScaledResolution(a8);
-        double a10 = 1.0 / (double)a9.getScaleFactor();
+    public static void Method50(int a2, int a3, int a4, int a5, int a6, int a7) {
+        void a8;
+        Minecraft a9 = Minecraft.getMinecraft();
+        ScaledResolution a10 = new ScaledResolution(a9);
+        double a11 = 1.0 / (double)a10.getScaleFactor();
         int n = 2;
         boolean bl = Class348.Method371();
-        int a11 = (a3 *= a9.getScaleFactor()) / a7;
-        int a12 = (a4 *= a9.getScaleFactor()) / a7;
-        int a13 = 3;
-        int a14 = a * a2 * a3 * a4 * a5 + a3 + a4 + a5 + a + a2;
+        int a12 = (a4 *= a10.getScaleFactor()) / a8;
+        int a13 = (a5 *= a10.getScaleFactor()) / a8;
+        int a14 = 3;
+        int a15 = a2 * a3 * a4 * a5 * a6 + a4 + a5 + a6 + a2 + a3;
         GL11.glEnable((int)3553);
         GL11.glDisable((int)2884);
         GL11.glEnable((int)3008);
         GL11.glEnable((int)3042);
-        boolean a15 = bl;
-        int a16 = -1;
-        if (Field1682.containsKey((Object)a14)) {
-            a16 = (Integer)Field1682.Method2665((Object)a14);
-            GlStateManager.bindTexture((int)a16);
-            Class91.Method3647(new String[4]);
+        boolean a16 = bl;
+        int a17 = -1;
+        if (Field1682.containsKey((Object)a15)) {
+            a17 = (Integer)Field1682.Method2665((Object)a15);
+            GlStateManager.bindTexture((int)a17);
+            a.trash(new String[4]);
         }
-        ByteBuffer a17 = BufferUtils.createByteBuffer((int)(a3 * a4 * a13)).order(ByteOrder.nativeOrder());
-        GL11.glReadPixels((int)a, (int)(a8.displayHeight - a2 - a4), (int)a3, (int)a4, (int)6407, (int)5121, (ByteBuffer)a17);
-        BufferedImage a18 = new BufferedImage(a3, a4, 1);
-        int a19 = 0;
-        if (a19 < a3) {
-            int a20 = 0;
-            if (a20 < a4) {
-                int a21 = (a19 + a3 * a20) * a13;
-                int a22 = a17.get(a21) & 0xFF;
-                int a23 = a17.get(a21 + 1) & 0xFF;
-                int a24 = a17.get(a21 + 2) & 0xFF;
-                a18.setRGB(a19, a4 - (a20 + 1), 0xFF000000 | a22 << 16 | a23 << 8 | a24);
-                ++a20;
+        ByteBuffer a18 = BufferUtils.createByteBuffer((int)(a4 * a5 * a14)).order(ByteOrder.nativeOrder());
+        GL11.glReadPixels((int)a2, (int)(a9.displayHeight - a3 - a5), (int)a4, (int)a5, (int)6407, (int)5121, (ByteBuffer)a18);
+        BufferedImage a19 = new BufferedImage(a4, a5, 1);
+        int a20 = 0;
+        if (a20 < a4) {
+            int a21 = 0;
+            if (a21 < a5) {
+                int a22 = (a20 + a4 * a21) * a14;
+                int a23 = a18.get(a22) & 0xFF;
+                int a24 = a18.get(a22 + 1) & 0xFF;
+                int a25 = a18.get(a22 + 2) & 0xFF;
+                a19.setRGB(a20, a5 - (a21 + 1), 0xFF000000 | a23 << 16 | a24 << 8 | a25);
+                ++a21;
             }
-            ++a19;
+            ++a20;
         }
-        Class196 a22 = new Class196(a5, a5, a6);
-        BufferedImage a25 = new BufferedImage(a11, a12, a18.getType());
-        Graphics a26 = a25.getGraphics();
-        a26.drawImage((Image)a18, 0, 0, a11, a12, null);
-        a26.dispose();
-        BufferedImage a27 = a22.Method62(a25, null);
-        a16 = TextureUtil.uploadTextureImageAllocate((int)TextureUtil.glGenTextures(), (BufferedImage)a27, (boolean)true, (boolean)false);
-        Field1682.put((Object)a14, (Object)a16);
+        Class196 a22 = new Class196(a6, a6, a7);
+        BufferedImage a26 = new BufferedImage(a12, a13, a19.getType());
+        Graphics a27 = a26.getGraphics();
+        a27.drawImage((Image)a19, 0, 0, a12, a13, null);
+        a27.dispose();
+        BufferedImage a28 = a22.Method62(a26, null);
+        a17 = TextureUtil.uploadTextureImageAllocate((int)TextureUtil.glGenTextures(), (BufferedImage)a28, (boolean)true, (boolean)false);
+        Field1682.put((Object)a15, (Object)a17);
         GL11.glPushMatrix();
-        GL11.glScaled((double)a10, (double)a10, (double)a10);
+        GL11.glScaled((double)a11, (double)a11, (double)a11);
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         GL11.glBegin((int)7);
         GL11.glTexCoord2f((float)0.0f, (float)0.0f);
-        GL11.glVertex2f((float)a, (float)a2);
+        GL11.glVertex2f((float)a2, (float)a3);
         GL11.glTexCoord2f((float)0.0f, (float)1.0f);
-        GL11.glVertex2f((float)a, (float)(a2 + a4));
+        GL11.glVertex2f((float)a2, (float)(a3 + a5));
         GL11.glTexCoord2f((float)1.0f, (float)1.0f);
-        GL11.glVertex2f((float)(a + a3), (float)(a2 + a4));
+        GL11.glVertex2f((float)(a2 + a4), (float)(a3 + a5));
         GL11.glTexCoord2f((float)1.0f, (float)0.0f);
-        GL11.glVertex2f((float)(a + a3), (float)a2);
+        GL11.glVertex2f((float)(a2 + a4), (float)a3);
         GL11.glEnd();
         GL11.glPopMatrix();
         GL11.glDisable((int)3553);

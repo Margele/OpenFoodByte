@@ -17,9 +17,9 @@ import awsl.Class604;
 import awsl.Class607;
 import awsl.Class608;
 import awsl.Class609;
-import awsl.Class91;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import obfuscate.a;
 import org.apache.commons.lang3.Validate;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.utils.ChatUtils;
@@ -42,22 +42,22 @@ extends SimpleChannelInboundHandler {
         GlobalModule.INSTANCE.Field3186.Field2823.clear();
     }
 
-    public void exceptionCaught(ChannelHandlerContext a, Throwable a2) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext a2, Throwable a3) throws Exception {
         block0: {
             int n = Class604.Method3707();
-            ChatUtils.addChatMessageNoPrefix(a2.getMessage());
+            ChatUtils.addChatMessageNoPrefix(a3.getMessage());
             int n2 = n;
-            a.channel().close();
+            a2.channel().close();
             GlobalModule.INSTANCE.Field3186.Field2823.clear();
-            a2.printStackTrace();
-            if (Class91.Method3648() != null) break block0;
+            a3.printStackTrace();
+            if (a.trash() != null) break block0;
             Class604.Method3706(++n2);
         }
     }
 
-    public void Method3493(Class608 a) {
-        Validate.notNull((Object)a, (String)"packetListener", (Object[])new Object[0]);
-        this.Field2877 = a;
+    public void Method3493(Class608 a2) {
+        Validate.notNull((Object)a2, (String)"packetListener", (Object[])new Object[0]);
+        this.Field2877 = a2;
     }
 
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object object) throws Exception {

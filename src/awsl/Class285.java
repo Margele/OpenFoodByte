@@ -14,12 +14,12 @@ package awsl;
 
 import awsl.Class216;
 import awsl.Class280;
-import awsl.Class749;
-import awsl.Class91;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockLiquid;
+import obfuscate.a;
+import trash.foodbyte.utils.PlayerUtils;
 
 public class Class285 {
     private final Class280 Field1543 = new Class280();
@@ -41,26 +41,26 @@ public class Class285 {
     }
 
     public void Method3096() {
-        Block a;
         Block a2;
-        Block a3 = Class749.Method1580(this.Field1544.Field1207, this.Field1544.Field1208, this.Field1544.Field1209 + this.Field1545.Field1209);
-        int a4 = Class285.Method3102();
-        if (!(a3 instanceof BlockAir || a3 instanceof BlockBush || a3 instanceof BlockLiquid)) {
+        Block a3;
+        Block a4 = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208, this.Field1544.Field1209 + this.Field1545.Field1209);
+        int a5 = Class285.Method3102();
+        if (!(a4 instanceof BlockAir || a4 instanceof BlockBush || a4 instanceof BlockLiquid)) {
             this.Field1545.Field1209 *= -0.8;
         }
-        if (!((a2 = Class749.Method1580(this.Field1544.Field1207, this.Field1544.Field1208 + this.Field1545.Field1208, this.Field1544.Field1209)) instanceof BlockAir || a2 instanceof BlockBush || a2 instanceof BlockLiquid)) {
+        if (!((a3 = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208 + this.Field1545.Field1208, this.Field1544.Field1209)) instanceof BlockAir || a3 instanceof BlockBush || a3 instanceof BlockLiquid)) {
             this.Field1545.Field1207 *= (double)0.999f;
             this.Field1545.Field1209 *= (double)0.999f;
             this.Field1545.Field1208 *= -0.6;
         }
-        if (!((a = Class749.Method1580(this.Field1544.Field1207 + this.Field1545.Field1207, this.Field1544.Field1208, this.Field1544.Field1209)) instanceof BlockAir || a instanceof BlockBush || a instanceof BlockLiquid)) {
+        if (!((a2 = PlayerUtils.getBlock(this.Field1544.Field1207 + this.Field1545.Field1207, this.Field1544.Field1208, this.Field1544.Field1209)) instanceof BlockAir || a2 instanceof BlockBush || a2 instanceof BlockLiquid)) {
             this.Field1545.Field1207 *= -0.8;
         }
         this.Method3097();
         if (this.Method3099()) {
             ++this.Field1546;
         }
-        Class91.Method3647(new String[2]);
+        a.trash(new String[2]);
     }
 
     public void Method3097() {
@@ -71,7 +71,7 @@ public class Class285 {
         this.Field1545.Field1207 /= (double)0.999998f;
         this.Field1545.Field1208 -= 1.5E-6;
         this.Field1545.Field1209 /= (double)0.999998f;
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class285.Method3100(++n);
         }
     }
@@ -81,8 +81,8 @@ public class Class285 {
     }
 
     public boolean Method3099() {
-        Block a = Class749.Method1580(this.Field1544.Field1207, this.Field1544.Field1208 - 1.0E-5, this.Field1544.Field1209);
-        return !(a instanceof BlockAir) && !(a instanceof BlockBush) && !(a instanceof BlockLiquid);
+        Block a2 = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208 - 1.0E-5, this.Field1544.Field1209);
+        return !(a2 instanceof BlockAir) && !(a2 instanceof BlockBush) && !(a2 instanceof BlockLiquid);
     }
 
     public static void Method3100(int n) {

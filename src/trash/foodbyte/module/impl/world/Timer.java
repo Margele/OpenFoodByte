@@ -8,11 +8,11 @@
  */
 package trash.foodbyte.module.impl.world;
 
-import awsl.Class635;
 import eventapi.EventTarget;
+import trash.foodbyte.event.EventEntityTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.value.FloatValue;
 
 public class Timer
@@ -30,17 +30,17 @@ extends Module {
     }
 
     @EventTarget
-    private void Method747(Class635 a) {
-        if (!a.Method3587().equals((Object)Timer.mc.thePlayer)) {
+    private void Method747(EventEntityTick a2) {
+        if (!a2.getEntity().equals((Object)Timer.mc.thePlayer)) {
             return;
         }
         this.Field2273 = !this.Field2273;
-        this.setDisplayTag(this.Field2274.Method2744().toString());
-        ReflectionUtils.setTimerSpeed(this.Field2273 ? 1.0f : this.Field2274.Method2744().floatValue());
+        this.setDisplayTag(this.Field2274.getFloatValue().toString());
+        ReflectionUtils.setTimerSpeed(this.Field2273 ? 1.0f : this.Field2274.getFloatValue().floatValue());
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         ReflectionUtils.setTimerSpeed(1.0f);
     }
 }

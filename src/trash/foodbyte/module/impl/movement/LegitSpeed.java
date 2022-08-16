@@ -17,13 +17,13 @@ package trash.foodbyte.module.impl.movement;
 import awsl.Class167;
 import awsl.Class628;
 import awsl.Class633;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import native0.Class614;
 import net.minecraft.network.play.server.S08PacketPlayerPosLook;
 import net.minecraft.potion.Potion;
+import obfuscate.a;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
@@ -1120,7 +1120,7 @@ extends Module {
         this.Field2552 = new FloatValue(LegitSpeed.Method754(-6369, -24452), LegitSpeed.Method754(-6378, -5862), 15.0, 1.0, 100.0, 1.0, "%", LegitSpeed.Method754(-6377, 5617));
         this.Field2549 = new BooleanValue(LegitSpeed.Method754(-6369, -24452), LegitSpeed.Method754(-6383, -12799), (Boolean)true, LegitSpeed.Method754(-6384, -1590));
         this.setDescription(LegitSpeed.Method754(-6380, 27717));
-        Class91.Method3647(new String[4]);
+        a.trash(new String[4]);
     }
 
     public static int Method242() {
@@ -1131,9 +1131,9 @@ extends Module {
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
+    public void Method273(EventPacket a2) {
         block0: {
-            if (!this.Field2549.Method2509().booleanValue() || !(a.getPacket() instanceof S08PacketPlayerPosLook)) break block0;
+            if (!this.Field2549.getBooleanValue().booleanValue() || !(a2.getPacket() instanceof S08PacketPlayerPosLook)) break block0;
             this.setState(false);
         }
     }

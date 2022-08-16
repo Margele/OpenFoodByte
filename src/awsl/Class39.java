@@ -40,9 +40,7 @@ import awsl.Class267;
 import awsl.Class279;
 import awsl.Class31;
 import awsl.Class45;
-import awsl.Class46;
 import awsl.Class801;
-import awsl.Class91;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,6 +49,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import obfuscate.a;
+import obfuscate.b;
 
 public class Class39
 extends Class267 {
@@ -149,220 +149,242 @@ extends Class267 {
     }
 
     @Override
-    public void Method1845(int a, int a2, Object[] a3, int a4, Object[] a5) {
-        Class91[] a6 = Class801.Method3300();
+    public void Method1845(int a2, int a3, Object[] a4, int a5, Object[] a6) {
+        a[] a7 = Class801.Method3300();
         if (this.Field319 == this.Field324) {
             throw new IllegalStateException(Class39.Method1357(14040, -17270));
         }
         this.Field324 = this.Field319;
-        switch (a) {
+        switch (a2) {
             case -1: 
             case 0: {
-                int a7 = Integer.MAX_VALUE;
                 int a8 = Integer.MAX_VALUE;
-                Class91.Method3647(new String[5]);
+                int a9 = Integer.MAX_VALUE;
+                a.trash(new String[5]);
             }
             case 3: {
-                int a7 = 0;
                 int a8 = 0;
+                int a9 = 0;
             }
             case 4: {
-                int a7 = 0;
-                int a8 = 1;
+                int a8 = 0;
+                int a9 = 1;
             }
             case 1: 
             case 2: {
-                int a7 = 3;
-                int a8 = 0;
+                int a8 = 3;
+                int a9 = 0;
             }
         }
-        throw new IllegalArgumentException(Class39.Method1357(13961, 13305) + a);
+        throw new IllegalArgumentException(Class39.Method1357(13961, 13305) + a2);
     }
 
     @Override
-    public void Method1948(int a) {
+    public void Method1948(int a2) {
         this.Method1879();
         this.Method1882();
-        Class39.Method1881(a, 0);
-        super.Method1948(a);
+        Class39.Method1881(a2, 0);
+        super.Method1948(a2);
         ++this.Field319;
     }
 
     @Override
-    public void Method854(int a, int a2) {
+    public void Method854(int a2, int a3) {
         this.Method1879();
         this.Method1882();
-        Class39.Method1881(a, 1);
-        switch (a) {
+        Class39.Method1881(a2, 1);
+        switch (a2) {
             case 16: {
-                Class39.Method3384(a2, Class39.Method1357(14037, 6458));
+                Class39.Method3384(a3, Class39.Method1357(14037, 6458));
                 break;
             }
             case 17: {
-                Class39.Method3385(a2, Class39.Method1357(13975, 16884));
+                Class39.Method3385(a3, Class39.Method1357(13975, 16884));
                 break;
             }
             default: {
-                if (a2 >= 4 && a2 <= 11) break;
-                throw new IllegalArgumentException(Class39.Method1357(13969, 17789) + a2);
+                if (a3 >= 4 && a3 <= 11) break;
+                throw new IllegalArgumentException(Class39.Method1357(13969, 17789) + a3);
             }
         }
-        super.Method854(a, a2);
+        super.Method854(a2, a3);
         ++this.Field319;
     }
 
     @Override
-    public void Method1840(int a, int a2) {
+    public void Method1840(int a2, int a3) {
         this.Method1879();
         this.Method1882();
-        Class39.Method1881(a, 2);
-        Class39.Method3386(a2, Class39.Method1357(14007, -6715));
-        super.Method1840(a, a2);
+        Class39.Method1881(a2, 2);
+        Class39.Method3386(a3, Class39.Method1357(14007, -6715));
+        super.Method1840(a2, a3);
         ++this.Field319;
     }
 
     @Override
-    public void Method1952(int a, String a2) {
+    public void Method1952(int a2, String a3) {
         this.Method1879();
         this.Method1882();
-        Class39.Method1881(a, 3);
-        Class39.Method3393(a2, Class39.Method1357(14036, 17678));
-        if (a == 187 && a2.charAt(0) == '[') {
-            throw new IllegalArgumentException(Class39.Method1357(13977, 6091) + a2);
+        Class39.Method1881(a2, 3);
+        Class39.Method3393(a3, Class39.Method1357(14036, 17678));
+        if (a2 == 187 && a3.charAt(0) == '[') {
+            throw new IllegalArgumentException(Class39.Method1357(13977, 6091) + a3);
         }
-        super.Method1952(a, a2);
+        super.Method1952(a2, a3);
         ++this.Field319;
     }
 
     @Override
-    public void Method1949(int a, String a2, String a3, String a4) {
+    public void Method1949(int a2, String a3, String a4, String a5) {
         this.Method1879();
         this.Method1882();
-        Class39.Method1881(a, 4);
-        Class39.Method3393(a2, Class39.Method1357(14044, 24582));
-        Class39.Method3389(this.Field314, a3, Class39.Method1357(13997, 21964));
-        Class39.Method3395(a4, false);
-        super.Method1949(a, a2, a3, a4);
+        Class39.Method1881(a2, 4);
+        Class39.Method3393(a3, Class39.Method1357(14044, 24582));
+        Class39.Method3389(this.Field314, a4, Class39.Method1357(13997, 21964));
+        Class39.Method3395(a5, false);
+        super.Method1949(a2, a3, a4, a5);
         ++this.Field319;
     }
 
     @Override
     @Deprecated
-    public void Method1953(int a, String a2, String a3, String a4) {
+    public void Method1953(int a2, String a3, String a4, String a5) {
         if (this.Field1459 >= 327680) {
-            super.Method1953(a, a2, a3, a4);
+            super.Method1953(a2, a3, a4, a5);
             return;
         }
-        this.Method1955(a, a2, a3, a4, a == 185);
+        this.Method1955(a2, a3, a4, a5, a2 == 185);
     }
 
     @Override
-    public void Method1954(int a, String a2, String a3, String a4, boolean a5) {
+    public void Method1954(int a2, String a3, String a4, String a5, boolean a6) {
         if (this.Field1459 < 327680) {
-            super.Method1954(a, a2, a3, a4, a5);
+            super.Method1954(a2, a3, a4, a5, a6);
             return;
         }
-        this.Method1955(a, a2, a3, a4, a5);
+        this.Method1955(a2, a3, a4, a5, a6);
     }
 
-    private void Method1955(int a, String a2, String a3, String a4, boolean a5) {
+    private void Method1955(int a2, String a3, String a4, String a5, boolean a6) {
         this.Method1879();
         this.Method1882();
-        Class39.Method1881(a, 5);
-        if (a != 183 || !Class39.Method1357(13952, 8654).equals((Object)a3)) {
-            Class39.Method3392(this.Field314, a3, Class39.Method1357(13997, 21964));
+        Class39.Method1881(a2, 5);
+        if (a2 != 183 || !Class39.Method1357(13952, 8654).equals((Object)a4)) {
+            Class39.Method3392(this.Field314, a4, Class39.Method1357(13997, 21964));
         }
-        Class39.Method3393(a2, Class39.Method1357(13990, -1808));
-        Class39.Method1873(a4);
-        if (a == 182) {
+        Class39.Method3393(a3, Class39.Method1357(13990, -1808));
+        Class39.Method1873(a5);
+        if (a2 == 182) {
             throw new IllegalArgumentException(Class39.Method1357(14047, 19552));
         }
-        if (a == 185) {
+        if (a2 == 185) {
             throw new IllegalArgumentException(Class39.Method1357(14023, -22914));
         }
         if (this.Field1460 != null) {
-            this.Field1460.Method1954(a, a2, a3, a4, a5);
+            this.Field1460.Method1954(a2, a3, a4, a5, a6);
         }
         ++this.Field319;
     }
 
     @Override
-    public void Method1956(String a, String a2, Class279 a3, Object[] a4) {
+    public void Method1956(String a2, String a3, Class279 a4, Object[] a5) {
         this.Method1879();
         this.Method1882();
-        Class39.Method3392(this.Field314, a, Class39.Method1357(14038, -6328));
-        Class39.Method1873(a2);
-        if (a3.Method2820() != 6 && a3.Method2820() != 8) {
-            throw new IllegalArgumentException(Class39.Method1357(13982, 19293) + a3.Method2820());
+        Class39.Method3392(this.Field314, a2, Class39.Method1357(14038, -6328));
+        Class39.Method1873(a3);
+        if (a4.Method2820() != 6 && a4.Method2820() != 8) {
+            throw new IllegalArgumentException(Class39.Method1357(13982, 19293) + a4.Method2820());
         }
-        for (int a5 = 0; a5 < a4.length; ++a5) {
-            this.Method3388(a4[a5]);
+        for (int a6 = 0; a6 < a5.length; ++a6) {
+            this.Method3388(a5[a6]);
         }
-        super.Method1956(a, a2, a3, a4);
+        super.Method1956(a2, a3, a4, a5);
         ++this.Field319;
     }
 
     @Override
-    public void Method1957(int a, Class264 a2) {
+    public void Method1957(int a2, Class264 a3) {
         this.Method1879();
         this.Method1882();
-        Class39.Method1881(a, 6);
-        this.Method3397(a2, false, Class39.Method1357(13970, 14677));
-        Class39.Method1911(a2);
-        super.Method1957(a, a2);
-        this.Field321.Method2530((Object)a2);
+        Class39.Method1881(a2, 6);
+        this.Method3397(a3, false, Class39.Method1357(13970, 14677));
+        Class39.Method1911(a3);
+        super.Method1957(a2, a3);
+        this.Field321.Method2530((Object)a3);
         ++this.Field319;
     }
 
     @Override
-    public void Method1947(Class264 a) {
+    public void Method1947(Class264 a2) {
         this.Method1879();
         this.Method1882();
-        this.Method3397(a, false, Class39.Method1357(14030, -30632));
-        if (this.Field320.Method2665((Object)a) != null) {
+        this.Method3397(a2, false, Class39.Method1357(14030, -30632));
+        if (this.Field320.Method2665((Object)a2) != null) {
             throw new IllegalArgumentException(Class39.Method1357(14021, -559));
         }
-        this.Field320.put((Object)a, (Object)new Integer(this.Field319));
-        super.Method1947(a);
+        this.Field320.put((Object)a2, (Object)new Integer(this.Field319));
+        super.Method1947(a2);
     }
 
     @Override
-    public void Method1950(Object a) {
+    public void Method1950(Object a2) {
         this.Method1879();
         this.Method1882();
-        this.Method3388(a);
-        super.Method1950(a);
+        this.Method3388(a2);
+        super.Method1950(a2);
         ++this.Field319;
     }
 
     @Override
-    public void Method1841(int a, int a2) {
+    public void Method1841(int a2, int a3) {
         this.Method1879();
         this.Method1882();
-        Class39.Method3386(a, Class39.Method1357(14028, 18861));
-        Class39.Method3385(a2, Class39.Method1357(13962, -27098));
-        super.Method1841(a, a2);
+        Class39.Method3386(a2, Class39.Method1357(14028, 18861));
+        Class39.Method3385(a3, Class39.Method1357(13962, -27098));
+        super.Method1841(a2, a3);
         ++this.Field319;
     }
 
     @Override
-    public void Method1959(int a, int a2, Class264 a3, Class264[] a4) {
-        int a5;
+    public void Method1959(int a2, int a3, Class264 a4, Class264[] a5) {
+        int a6;
         this.Method1879();
         this.Method1882();
-        if (a2 < a) {
-            throw new IllegalArgumentException(Class39.Method1357(13968, -22537) + a2 + Class39.Method1357(14002, 26127) + a);
+        if (a3 < a2) {
+            throw new IllegalArgumentException(Class39.Method1357(13968, -22537) + a3 + Class39.Method1357(14002, 26127) + a2);
         }
-        this.Method3397(a3, false, Class39.Method1357(13963, 28905));
-        Class39.Method1911(a3);
-        if (a4.length != a2 - a + 1) {
+        this.Method3397(a4, false, Class39.Method1357(13963, 28905));
+        Class39.Method1911(a4);
+        if (a5.length != a3 - a2 + 1) {
             throw new IllegalArgumentException(Class39.Method1357(14054, -26736));
         }
+        for (a6 = 0; a6 < a5.length; ++a6) {
+            this.Method3397(a5[a6], false, Class39.Method1357(14013, -5391) + a6);
+            Class39.Method1911(a5[a6]);
+        }
+        super.Method1959(a2, a3, a4, a5);
+        for (a6 = 0; a6 < a5.length; ++a6) {
+            this.Field321.Method2530((Object)a5[a6]);
+        }
+        ++this.Field319;
+    }
+
+    @Override
+    public void Method1958(Class264 a2, int[] a3, Class264[] a4) {
+        int a5;
+        this.Method1882();
+        this.Method1879();
+        this.Method3397(a2, false, Class39.Method1357(13987, -28750));
+        Class39.Method1911(a2);
+        if (a3.length != a4.length) {
+            throw new IllegalArgumentException(Class39.Method1357(13999, 24440));
+        }
         for (a5 = 0; a5 < a4.length; ++a5) {
-            this.Method3397(a4[a5], false, Class39.Method1357(14013, -5391) + a5);
+            this.Method3397(a4[a5], false, Class39.Method1357(13979, 17925) + a5);
             Class39.Method1911(a4[a5]);
         }
-        super.Method1959(a, a2, a3, a4);
+        super.Method1958(a2, a3, a4);
+        this.Field321.Method2530((Object)a2);
         for (a5 = 0; a5 < a4.length; ++a5) {
             this.Field321.Method2530((Object)a4[a5]);
         }
@@ -370,162 +392,140 @@ extends Class267 {
     }
 
     @Override
-    public void Method1958(Class264 a, int[] a2, Class264[] a3) {
-        int a4;
-        this.Method1882();
+    public void Method1951(String a2, int a3) {
         this.Method1879();
-        this.Method3397(a, false, Class39.Method1357(13987, -28750));
-        Class39.Method1911(a);
-        if (a2.length != a3.length) {
-            throw new IllegalArgumentException(Class39.Method1357(13999, 24440));
+        this.Method1882();
+        Class39.Method3395(a2, false);
+        if (a2.charAt(0) != '[') {
+            throw new IllegalArgumentException(Class39.Method1357(14025, 6477) + a2);
         }
-        for (a4 = 0; a4 < a3.length; ++a4) {
-            this.Method3397(a3[a4], false, Class39.Method1357(13979, 17925) + a4);
-            Class39.Method1911(a3[a4]);
+        if (a3 < 1) {
+            throw new IllegalArgumentException(Class39.Method1357(14043, 19855) + a3);
         }
-        super.Method1958(a, a2, a3);
-        this.Field321.Method2530((Object)a);
-        for (a4 = 0; a4 < a3.length; ++a4) {
-            this.Field321.Method2530((Object)a3[a4]);
+        if (a3 > a2.lastIndexOf(91) + 1) {
+            throw new IllegalArgumentException(Class39.Method1357(14017, 401) + a3);
         }
+        super.Method1951(a2, a3);
         ++this.Field319;
     }
 
     @Override
-    public void Method1951(String a, int a2) {
+    public Class148 Method1973(int a2, Class31 a3, String a4, boolean a5) {
         this.Method1879();
         this.Method1882();
-        Class39.Method3395(a, false);
-        if (a.charAt(0) != '[') {
-            throw new IllegalArgumentException(Class39.Method1357(14025, 6477) + a);
+        int a6 = a2 >>> 24;
+        if (a6 != 67 && a6 != 68 && a6 != 69 && a6 != 70 && a6 != 71 && a6 != 72 && a6 != 73 && a6 != 74 && a6 != 75) {
+            throw new IllegalArgumentException(Class39.Method1357(13959, 4129) + Integer.toHexString((int)a6));
         }
-        if (a2 < 1) {
-            throw new IllegalArgumentException(Class39.Method1357(14043, 19855) + a2);
-        }
-        if (a2 > a.lastIndexOf(91) + 1) {
-            throw new IllegalArgumentException(Class39.Method1357(14017, 401) + a2);
-        }
-        super.Method1951(a, a2);
-        ++this.Field319;
+        Class225.Method2200(a2, a3);
+        Class39.Method3395(a4, false);
+        return new Class130(super.Method1973(a2, a3, a4, a5));
     }
 
     @Override
-    public Class148 Method1973(int a, Class31 a2, String a3, boolean a4) {
+    public void Method1960(Class264 a2, Class264 a3, Class264 a4, String a5) {
         this.Method1879();
         this.Method1882();
-        int a5 = a >>> 24;
-        if (a5 != 67 && a5 != 68 && a5 != 69 && a5 != 70 && a5 != 71 && a5 != 72 && a5 != 73 && a5 != 74 && a5 != 75) {
-            throw new IllegalArgumentException(Class39.Method1357(13959, 4129) + Integer.toHexString((int)a5));
-        }
-        Class225.Method2200(a, a2);
-        Class39.Method3395(a3, false);
-        return new Class130(super.Method1973(a, a2, a3, a4));
-    }
-
-    @Override
-    public void Method1960(Class264 a, Class264 a2, Class264 a3, String a4) {
-        this.Method1879();
-        this.Method1882();
-        this.Method3397(a, false, Class39.Method1357(13973, 12168));
-        this.Method3397(a2, false, Class39.Method1357(13967, -29222));
-        this.Method3397(a3, false, Class39.Method1357(14029, -6151));
-        Class39.Method1911(a);
+        this.Method3397(a2, false, Class39.Method1357(13973, 12168));
+        this.Method3397(a3, false, Class39.Method1357(13967, -29222));
+        this.Method3397(a4, false, Class39.Method1357(14029, -6151));
         Class39.Method1911(a2);
         Class39.Method1911(a3);
-        if (this.Field320.Method2665((Object)a) != null || this.Field320.Method2665((Object)a2) != null || this.Field320.Method2665((Object)a3) != null) {
+        Class39.Method1911(a4);
+        if (this.Field320.Method2665((Object)a2) != null || this.Field320.Method2665((Object)a3) != null || this.Field320.Method2665((Object)a4) != null) {
             throw new IllegalStateException(Class39.Method1357(14041, 24221));
         }
-        Class39.Method3393(a4, Class39.Method1357(14022, -22503));
-        super.Method1960(a, a2, a3, a4);
-        this.Field325.Method2530((Object)a);
+        Class39.Method3393(a5, Class39.Method1357(14022, -22503));
+        super.Method1960(a2, a3, a4, a5);
         this.Field325.Method2530((Object)a2);
+        this.Field325.Method2530((Object)a3);
     }
 
     @Override
-    public Class148 Method1974(int a, Class31 a2, String a3, boolean a4) {
+    public Class148 Method1974(int a2, Class31 a3, String a4, boolean a5) {
         this.Method1879();
         this.Method1882();
-        int a5 = a >>> 24;
-        if (a5 != 66) {
-            throw new IllegalArgumentException(Class39.Method1357(13959, 4129) + Integer.toHexString((int)a5));
+        int a6 = a2 >>> 24;
+        if (a6 != 66) {
+            throw new IllegalArgumentException(Class39.Method1357(13959, 4129) + Integer.toHexString((int)a6));
         }
-        Class225.Method2200(a, a2);
-        Class39.Method3395(a3, false);
-        return new Class130(super.Method1974(a, a2, a3, a4));
+        Class225.Method2200(a2, a3);
+        Class39.Method3395(a4, false);
+        return new Class130(super.Method1974(a2, a3, a4, a5));
     }
 
     @Override
-    public void Method1843(String a, String a2, String a3, Class264 a4, Class264 a5, int a6) {
+    public void Method1843(String a2, String a3, String a4, Class264 a5, Class264 a6, int a7) {
         this.Method1879();
         this.Method1882();
-        Class39.Method3389(this.Field314, a, Class39.Method1357(13997, 21964));
-        Class39.Method3395(a2, false);
-        this.Method3397(a4, true, Class39.Method1357(14033, -17820));
-        this.Method3397(a5, true, Class39.Method1357(14039, -7936));
-        Class39.Method3386(a6, Class39.Method1357(14028, 18861));
-        int a7 = (Integer)this.Field320.Method2665((Object)a4);
+        Class39.Method3389(this.Field314, a2, Class39.Method1357(13997, 21964));
+        Class39.Method3395(a3, false);
+        this.Method3397(a5, true, Class39.Method1357(14033, -17820));
+        this.Method3397(a6, true, Class39.Method1357(14039, -7936));
+        Class39.Method3386(a7, Class39.Method1357(14028, 18861));
         int a8 = (Integer)this.Field320.Method2665((Object)a5);
-        if (a8 < a7) {
+        int a9 = (Integer)this.Field320.Method2665((Object)a6);
+        if (a9 < a8) {
             throw new IllegalArgumentException(Class39.Method1357(14014, -20215));
         }
-        super.Method1843(a, a2, a3, a4, a5, a6);
+        super.Method1843(a2, a3, a4, a5, a6, a7);
     }
 
     @Override
-    public Class148 Method1844(int a, Class31 a2, Class264[] a3, Class264[] a4, int[] a5, String a6, boolean a7) {
+    public Class148 Method1844(int a2, Class31 a3, Class264[] a4, Class264[] a5, int[] a6, String a7, boolean a8) {
         this.Method1879();
         this.Method1882();
-        int a8 = a >>> 24;
-        if (a8 != 64 && a8 != 65) {
-            throw new IllegalArgumentException(Class39.Method1357(13959, 4129) + Integer.toHexString((int)a8));
+        int a9 = a2 >>> 24;
+        if (a9 != 64 && a9 != 65) {
+            throw new IllegalArgumentException(Class39.Method1357(13959, 4129) + Integer.toHexString((int)a9));
         }
-        Class225.Method2200(a, a2);
-        Class39.Method3395(a6, false);
-        if (a4.length != a3.length || a5.length != a3.length) {
+        Class225.Method2200(a2, a3);
+        Class39.Method3395(a7, false);
+        if (a5.length != a4.length || a6.length != a4.length) {
             throw new IllegalArgumentException(Class39.Method1357(13960, 527));
         }
-        for (int a9 = 0; a9 < a3.length; ++a9) {
-            this.Method3397(a3[a9], true, Class39.Method1357(14033, -17820));
-            this.Method3397(a4[a9], true, Class39.Method1357(14039, -7936));
-            Class39.Method3386(a5[a9], Class39.Method1357(14028, 18861));
-            int a10 = (Integer)this.Field320.Method2665((Object)a3[a9]);
-            int a11 = (Integer)this.Field320.Method2665((Object)a4[a9]);
-            if (a11 >= a10) continue;
+        for (int a10 = 0; a10 < a4.length; ++a10) {
+            this.Method3397(a4[a10], true, Class39.Method1357(14033, -17820));
+            this.Method3397(a5[a10], true, Class39.Method1357(14039, -7936));
+            Class39.Method3386(a6[a10], Class39.Method1357(14028, 18861));
+            int a11 = (Integer)this.Field320.Method2665((Object)a4[a10]);
+            int a12 = (Integer)this.Field320.Method2665((Object)a5[a10]);
+            if (a12 >= a11) continue;
             throw new IllegalArgumentException(Class39.Method1357(13966, 7756));
         }
-        return super.Method1844(a, a2, a3, a4, a5, a6, a7);
+        return super.Method1844(a2, a3, a4, a5, a6, a7, a8);
     }
 
     @Override
-    public void Method1981(int a, Class264 a2) {
+    public void Method1981(int a2, Class264 a3) {
         this.Method1879();
         this.Method1882();
-        Class39.Method3386(a, Class39.Method1357(13985, -19882));
-        this.Method3397(a2, true, Class39.Method1357(14033, -17820));
-        super.Method1981(a, a2);
+        Class39.Method3386(a2, Class39.Method1357(13985, -19882));
+        this.Method3397(a3, true, Class39.Method1357(14033, -17820));
+        super.Method1981(a2, a3);
     }
 
     @Override
-    public void Method1842(int a, int a2) {
-        Class264 a3;
+    public void Method1842(int a2, int a3) {
+        Class264 a4;
         this.Method1879();
         this.Method1882();
         this.Field317 = true;
         Iterator iterator = this.Field321.Method1383();
         while (iterator.Method932()) {
-            a3 = (Class264)iterator.Method933();
-            if (this.Field320.Method2665((Object)a3) != null) continue;
+            a4 = (Class264)iterator.Method933();
+            if (this.Field320.Method2665((Object)a4) != null) continue;
             throw new IllegalStateException(Class39.Method1357(13986, -18111));
         }
-        int a4 = 0;
-        if (a4 < this.Field325.Method1799()) {
-            a3 = (Integer)this.Field320.Method2665(this.Field325.get(a4++));
-            Integer a5 = (Integer)this.Field320.Method2665(this.Field325.get(a4++));
+        int a5 = 0;
+        if (a5 < this.Field325.Method1799()) {
+            a4 = (Integer)this.Field320.Method2665(this.Field325.get(a5++));
+            Integer a6 = (Integer)this.Field320.Method2665(this.Field325.get(a5++));
             throw new IllegalStateException(Class39.Method1357(13994, 362));
         }
-        Class39.Method3386(a, Class39.Method1357(14003, 24626));
-        Class39.Method3386(a2, Class39.Method1357(14026, -736));
-        super.Method1842(a, a2);
+        Class39.Method3386(a2, Class39.Method1357(14003, 24626));
+        Class39.Method3386(a3, Class39.Method1357(14026, -736));
+        super.Method1842(a2, a3);
     }
 
     @Override
@@ -553,167 +553,167 @@ extends Class267 {
         }
     }
 
-    void Method1965(Object a) {
-        if (a == Class45.Field396 || a == Class45.Field397 || a == Class45.Field398 || a == Class45.Field400 || a == Class45.Field399 || a == Class45.Field401 || a == Class45.Field402) {
+    void Method1965(Object a2) {
+        if (a2 == Class45.Field396 || a2 == Class45.Field397 || a2 == Class45.Field398 || a2 == Class45.Field400 || a2 == Class45.Field399 || a2 == Class45.Field401 || a2 == Class45.Field402) {
             return;
         }
-        if (a instanceof String) {
-            Class39.Method3393((String)a, Class39.Method1357(13974, -31693));
+        if (a2 instanceof String) {
+            Class39.Method3393((String)a2, Class39.Method1357(13974, -31693));
             return;
         }
-        if (!(a instanceof Class264)) {
-            throw new IllegalArgumentException(Class39.Method1357(14009, 15145) + a);
+        if (!(a2 instanceof Class264)) {
+            throw new IllegalArgumentException(Class39.Method1357(14009, 15145) + a2);
         }
-        this.Field321.Method2530((Object)((Class264)a));
+        this.Field321.Method2530((Object)((Class264)a2));
     }
 
-    static void Method1881(int a, int a2) {
-        if (a > 199 || Field326[a] != a2) {
-            throw new IllegalArgumentException(Class39.Method1357(13980, -23955) + a);
-        }
-    }
-
-    static void Method3384(int a, String a2) {
-        if (a < -128 || a > 127) {
-            throw new IllegalArgumentException(a2 + Class39.Method1357(13998, -16220) + a);
+    static void Method1881(int a2, int a3) {
+        if (a2 > 199 || Field326[a2] != a3) {
+            throw new IllegalArgumentException(Class39.Method1357(13980, -23955) + a2);
         }
     }
 
-    static void Method3385(int a, String a2) {
-        if (a < Short.MIN_VALUE || a > Short.MAX_VALUE) {
-            throw new IllegalArgumentException(a2 + Class39.Method1357(14006, 12134) + a);
+    static void Method3384(int a2, String a3) {
+        if (a2 < -128 || a2 > 127) {
+            throw new IllegalArgumentException(a3 + Class39.Method1357(13998, -16220) + a2);
         }
     }
 
-    static void Method3386(int a, String a2) {
-        if (a > 65535) {
-            throw new IllegalArgumentException(a2 + Class39.Method1357(14012, 23096) + a);
+    static void Method3385(int a2, String a3) {
+        if (a2 < Short.MIN_VALUE || a2 > Short.MAX_VALUE) {
+            throw new IllegalArgumentException(a3 + Class39.Method1357(14006, 12134) + a2);
         }
     }
 
-    static void Method3387(Object a) {
-        if (!(a instanceof Integer || a instanceof Float || a instanceof Long || a instanceof Double || a instanceof String)) {
-            throw new IllegalArgumentException(Class39.Method1357(13957, 26162) + a);
+    static void Method3386(int a2, String a3) {
+        if (a2 > 65535) {
+            throw new IllegalArgumentException(a3 + Class39.Method1357(14012, 23096) + a2);
         }
     }
 
-    void Method3388(Object a) {
-        if (a instanceof Class46) {
-            int a2 = ((Class46)a).Method3217();
-            if (a2 != 10 && a2 != 9 && a2 != 11) {
+    static void Method3387(Object a2) {
+        if (!(a2 instanceof Integer || a2 instanceof Float || a2 instanceof Long || a2 instanceof Double || a2 instanceof String)) {
+            throw new IllegalArgumentException(Class39.Method1357(13957, 26162) + a2);
+        }
+    }
+
+    void Method3388(Object a2) {
+        if (a2 instanceof b) {
+            int a3 = ((b)a2).Method3217();
+            if (a3 != 10 && a3 != 9 && a3 != 11) {
                 throw new IllegalArgumentException(Class39.Method1357(13989, -24981));
             }
-            if (a2 != 11 && (this.Field314 & 0xFFFF) < 49) {
+            if (a3 != 11 && (this.Field314 & 0xFFFF) < 49) {
                 throw new IllegalArgumentException(Class39.Method1357(13953, -20660));
             }
-            if (a2 == 11 && (this.Field314 & 0xFFFF) < 51) {
+            if (a3 == 11 && (this.Field314 & 0xFFFF) < 51) {
                 throw new IllegalArgumentException(Class39.Method1357(13958, 22589));
             }
-        } else if (a instanceof Class279) {
+        } else if (a2 instanceof Class279) {
             if ((this.Field314 & 0xFFFF) < 51) {
                 throw new IllegalArgumentException(Class39.Method1357(14046, -5714));
             }
-            int a3 = ((Class279)a).Method2820();
-            if (a3 < 1 || a3 > 9) {
-                throw new IllegalArgumentException(Class39.Method1357(14032, -19466) + a3);
+            int a4 = ((Class279)a2).Method2820();
+            if (a4 < 1 || a4 > 9) {
+                throw new IllegalArgumentException(Class39.Method1357(14032, -19466) + a4);
             }
         } else {
-            Class39.Method3387(a);
+            Class39.Method3387(a2);
         }
     }
 
-    static void Method3389(int a, String a2, String a3) {
-        if ((a & 0xFFFF) < 49) {
-            Class39.Method3390(a2, a3);
+    static void Method3389(int a2, String a3, String a4) {
+        if ((a2 & 0xFFFF) < 49) {
+            Class39.Method3390(a3, a4);
         } else {
-            for (int a4 = 0; a4 < a2.length(); ++a4) {
-                if (Class39.Method1357(14011, 13312).indexOf((int)a2.charAt(a4)) == -1) continue;
-                throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a3 + Class39.Method1357(13972, 24511) + a2);
+            for (int a5 = 0; a5 < a3.length(); ++a5) {
+                if (Class39.Method1357(14011, 13312).indexOf((int)a3.charAt(a5)) == -1) continue;
+                throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(13972, 24511) + a3);
             }
         }
     }
 
-    static void Method3390(String a, String a2) {
-        Class39.Method3391(a, 0, -1, a2);
+    static void Method3390(String a2, String a3) {
+        Class39.Method3391(a2, 0, -1, a3);
     }
 
-    static void Method3391(String a, int a2, int a3, String a4) {
-        if (a3 == -1 ? a.length() <= a2 : a3 <= a2) {
-            throw new IllegalArgumentException(Class39.Method1357(14020, 30626) + a4 + Class39.Method1357(14034, -24370));
+    static void Method3391(String a2, int a3, int a4, String a5) {
+        if (a4 == -1 ? a2.length() <= a3 : a4 <= a3) {
+            throw new IllegalArgumentException(Class39.Method1357(14020, 30626) + a5 + Class39.Method1357(14034, -24370));
         }
-        if (!Character.isJavaIdentifierStart((char)a.charAt(a2))) {
-            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(13988, 10763) + a);
+        if (!Character.isJavaIdentifierStart((char)a2.charAt(a3))) {
+            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a5 + Class39.Method1357(13988, 10763) + a2);
         }
-        int a5 = a3 == -1 ? a.length() : a3;
-        for (int a6 = a2 + 1; a6 < a5; ++a6) {
-            if (Character.isJavaIdentifierPart((char)a.charAt(a6))) continue;
-            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(14027, -670) + a);
+        int a6 = a4 == -1 ? a2.length() : a4;
+        for (int a7 = a3 + 1; a7 < a6; ++a7) {
+            if (Character.isJavaIdentifierPart((char)a2.charAt(a7))) continue;
+            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a5 + Class39.Method1357(14027, -670) + a2);
         }
     }
 
-    static void Method3392(int a, String a2, String a3) {
-        if (a2.length() == 0) {
-            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a3 + Class39.Method1357(13955, 4859));
+    static void Method3392(int a2, String a3, String a4) {
+        if (a3.length() == 0) {
+            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(13955, 4859));
         }
-        if ((a & 0xFFFF) >= 49) {
-            for (int a4 = 0; a4 < a2.length(); ++a4) {
-                if (Class39.Method1357(14019, 15794).indexOf((int)a2.charAt(a4)) == -1) continue;
-                throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a3 + Class39.Method1357(13954, 12983) + a2);
+        if ((a2 & 0xFFFF) >= 49) {
+            for (int a5 = 0; a5 < a3.length(); ++a5) {
+                if (Class39.Method1357(14019, 15794).indexOf((int)a3.charAt(a5)) == -1) continue;
+                throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(13954, 12983) + a3);
             }
             return;
         }
-        if (!Character.isJavaIdentifierStart((char)a2.charAt(0))) {
-            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a3 + Class39.Method1357(14005, -15766) + a2);
+        if (!Character.isJavaIdentifierStart((char)a3.charAt(0))) {
+            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(14005, -15766) + a3);
         }
-        for (int a5 = 1; a5 < a2.length(); ++a5) {
-            if (Character.isJavaIdentifierPart((char)a2.charAt(a5))) continue;
-            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a3 + Class39.Method1357(13995, 21348) + a2);
+        for (int a6 = 1; a6 < a3.length(); ++a6) {
+            if (Character.isJavaIdentifierPart((char)a3.charAt(a6))) continue;
+            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(13995, 21348) + a3);
         }
     }
 
-    static void Method3393(String a, String a2) {
-        if (a.length() == 0) {
-            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a2 + Class39.Method1357(13955, 4859));
+    static void Method3393(String a2, String a3) {
+        if (a2.length() == 0) {
+            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a3 + Class39.Method1357(13955, 4859));
         }
-        if (a.charAt(0) == '[') {
-            Class39.Method3395(a, false);
+        if (a2.charAt(0) == '[') {
+            Class39.Method3395(a2, false);
         } else {
-            Class39.Method3394(a, 0, -1, a2);
+            Class39.Method3394(a2, 0, -1, a3);
         }
     }
 
-    static void Method3394(String a, int a2, int a3, String a4) {
-        int a5 = a3 == -1 ? a.length() : a3;
+    static void Method3394(String a2, int a3, int a4, String a5) {
+        int a6 = a4 == -1 ? a2.length() : a4;
         try {
-            int a6;
-            int a7 = a2;
+            int a7;
+            int a8 = a3;
             do {
-                if ((a6 = a.indexOf(47, a7 + 1)) == -1 || a6 > a5) {
-                    a6 = a5;
+                if ((a7 = a2.indexOf(47, a8 + 1)) == -1 || a7 > a6) {
+                    a7 = a6;
                 }
-                Class39.Method3391(a, a7, a6, null);
-                a7 = a6 + 1;
-            } while (a6 != a5);
+                Class39.Method3391(a2, a8, a7, null);
+                a8 = a7 + 1;
+            } while (a7 != a6);
         }
-        catch (IllegalArgumentException a8) {
-            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(13981, -8755) + a);
-        }
-    }
-
-    static void Method3395(String a, boolean a2) {
-        int a3 = Class39.Method3396(a, 0, a2);
-        if (a3 != a.length()) {
-            throw new IllegalArgumentException(Class39.Method1357(14008, -15078) + a);
+        catch (IllegalArgumentException a9) {
+            throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a5 + Class39.Method1357(13981, -8755) + a2);
         }
     }
 
-    static int Method3396(String a, int a2, boolean a3) {
-        if (a2 >= a.length()) {
+    static void Method3395(String a2, boolean a3) {
+        int a4 = Class39.Method3396(a2, 0, a3);
+        if (a4 != a2.length()) {
+            throw new IllegalArgumentException(Class39.Method1357(14008, -15078) + a2);
+        }
+    }
+
+    static int Method3396(String a2, int a3, boolean a4) {
+        if (a3 >= a2.length()) {
             throw new IllegalArgumentException(Class39.Method1357(13965, 27035));
         }
-        switch (a.charAt(a2)) {
+        switch (a2.charAt(a3)) {
             case 'V': {
-                return a2 + 1;
+                return a3 + 1;
             }
             case 'B': 
             case 'C': 
@@ -723,69 +723,69 @@ extends Class267 {
             case 'J': 
             case 'S': 
             case 'Z': {
-                return a2 + 1;
+                return a3 + 1;
             }
             case '[': {
-                int a4;
-                for (a4 = a2 + 1; a4 < a.length() && a.charAt(a4) == '['; ++a4) {
+                int a5;
+                for (a5 = a3 + 1; a5 < a2.length() && a2.charAt(a5) == '['; ++a5) {
                 }
-                if (a4 < a.length()) {
-                    return Class39.Method3396(a, a4, false);
+                if (a5 < a2.length()) {
+                    return Class39.Method3396(a2, a5, false);
                 }
-                throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a);
+                throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a2);
             }
             case 'L': {
-                int a5 = a.indexOf(59, a2);
-                if (a5 == -1 || a5 - a2 < 2) {
-                    throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a);
+                int a6 = a2.indexOf(59, a3);
+                if (a6 == -1 || a6 - a3 < 2) {
+                    throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a2);
                 }
                 try {
-                    Class39.Method3394(a, a2 + 1, a5, null);
+                    Class39.Method3394(a2, a3 + 1, a6, null);
                 }
-                catch (IllegalArgumentException a6) {
-                    throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a);
+                catch (IllegalArgumentException a7) {
+                    throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a2);
                 }
-                return a5 + 1;
+                return a6 + 1;
             }
         }
-        throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a);
+        throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a2);
     }
 
-    static void Method1873(String a) {
-        if (a.length() == 0) {
+    static void Method1873(String a2) {
+        if (a2.length() == 0) {
             throw new IllegalArgumentException(Class39.Method1357(13978, -24721));
         }
-        if (a.charAt(0) != '(' || a.length() < 3) {
-            throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a);
+        if (a2.charAt(0) != '(' || a2.length() < 3) {
+            throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a2);
         }
-        int a2 = 1;
-        if (a.charAt(a2) != ')') {
+        int a3 = 1;
+        if (a2.charAt(a3) != ')') {
             do {
-                if (a.charAt(a2) != 'V') continue;
-                throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a);
-            } while ((a2 = Class39.Method3396(a, a2, false)) < a.length() && a.charAt(a2) != ')');
+                if (a2.charAt(a3) != 'V') continue;
+                throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a2);
+            } while ((a3 = Class39.Method3396(a2, a3, false)) < a2.length() && a2.charAt(a3) != ')');
         }
-        if ((a2 = Class39.Method3396(a, a2 + 1, true)) != a.length()) {
-            throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a);
+        if ((a3 = Class39.Method3396(a2, a3 + 1, true)) != a2.length()) {
+            throw new IllegalArgumentException(Class39.Method1357(14031, 15180) + a2);
         }
     }
 
-    void Method3397(Class264 a, boolean a2, String a3) {
-        throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a3 + Class39.Method1357(14042, -2791));
+    void Method3397(Class264 a2, boolean a3, String a4) {
+        throw new IllegalArgumentException(Class39.Method1357(14018, -6715) + a4 + Class39.Method1357(14042, -2791));
     }
 
-    private static void Method1911(Class264 a) {
+    private static void Method1911(Class264 a2) {
         boolean bl;
-        Field a2 = Class39.Method3398();
-        boolean a3 = false;
+        Field a3 = Class39.Method3398();
+        boolean a4 = false;
         try {
             bl = false;
         }
-        catch (IllegalAccessException a4) {
+        catch (IllegalAccessException a5) {
             throw new Error(Class39.Method1357(13992, 16439));
         }
-        a3 = bl;
-        if (a3 & true) {
+        a4 = bl;
+        if (a4 & true) {
             throw new IllegalArgumentException(Class39.Method1357(14010, -20471));
         }
     }
@@ -798,13 +798,13 @@ extends Class267 {
         return Field327;
     }
 
-    private static Field Method3399(String a) {
+    private static Field Method3399(String a2) {
         try {
-            Field a2 = Class264.class.getDeclaredField(a);
-            a2.setAccessible(true);
-            return a2;
+            Field a3 = Class264.class.getDeclaredField(a2);
+            a3.setAccessible(true);
+            return a3;
         }
-        catch (NoSuchFieldException a3) {
+        catch (NoSuchFieldException a4) {
             return null;
         }
     }

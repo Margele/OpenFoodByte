@@ -13,7 +13,7 @@ import awsl.Class550;
 import awsl.Class608;
 import awsl.Class609;
 import awsl.Class612;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class548
 implements Class609 {
@@ -33,30 +33,30 @@ implements Class609 {
     }
 
     @Override
-    public void Method687(Class234 a) {
-        this.Field2536 = a.Method497();
-        this.Field2538 = a.readLong();
-        this.Field2539 = a.readDouble();
+    public void Method687(Class234 a2) {
+        this.Field2536 = a2.Method497();
+        this.Field2538 = a2.readLong();
+        this.Field2539 = a2.readDouble();
         int[] nArray = Class550.Method758();
-        this.Field2537 = a.readLong();
-        if (Class91.Method3648() == null) {
+        this.Field2537 = a2.readLong();
+        if (a.trash() == null) {
             Class550.Method757(new int[2]);
         }
     }
 
     @Override
-    public void Method688(Class234 a) {
+    public void Method688(Class234 a2) {
         int[] nArray = Class550.Method758();
-        a.Method496(this.Field2536);
-        a.writeLong(this.Field2538);
-        a.writeDouble(this.Field2539);
+        a2.Method496(this.Field2536);
+        a2.writeLong(this.Field2538);
+        a2.writeDouble(this.Field2539);
         int[] nArray2 = nArray;
-        a.writeLong(this.Field2537);
-        Class91.Method3647(new String[4]);
+        a2.writeLong(this.Field2537);
+        a.trash(new String[4]);
     }
 
-    public void Method689(Class612 a) {
-        a.Method3763(this);
+    public void Method689(Class612 a2) {
+        a2.Method3763(this);
     }
 
     public double Method690() {

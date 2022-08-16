@@ -10,8 +10,8 @@
  */
 package awsl;
 
-import awsl.Class91;
 import java.awt.Color;
+import obfuscate.a;
 
 public class Class416 {
     private static int Field2011;
@@ -23,15 +23,15 @@ public class Class416 {
     /*
      * WARNING - void declaration
      */
-    public static Color Method2353(int a, int a2, float a3, float a4, float a5) {
-        void a6;
+    public static Color Method2353(int a2, int a3, float a4, float a5, float a6) {
         void a7;
-        int n = (int)((System.currentTimeMillis() / (long)a + (long)a2) % 360L);
-        float f = (float)a7 / 360.0f;
-        int a8 = Class416.Method2356();
-        Color a9 = new Color(Color.HSBtoRGB((float)a6, (float)a3, (float)a4));
-        Color color = new Color(a9.getRed(), a9.getGreen(), a9.getBlue(), Math.max((int)0, (int)Math.min((int)255, (int)((int)(a5 * 255.0f)))));
-        Class91.Method3647(new String[2]);
+        void a8;
+        int n = (int)((System.currentTimeMillis() / (long)a2 + (long)a3) % 360L);
+        float f = (float)a8 / 360.0f;
+        int a9 = Class416.Method2356();
+        Color a10 = new Color(Color.HSBtoRGB((float)a7, (float)a4, (float)a5));
+        Color color = new Color(a10.getRed(), a10.getGreen(), a10.getBlue(), Math.max((int)0, (int)Math.min((int)255, (int)((int)(a6 * 255.0f)))));
+        a.trash(new String[2]);
         return color;
     }
 

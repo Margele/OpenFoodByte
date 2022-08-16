@@ -14,10 +14,10 @@ package trash.foodbyte.value;
 import awsl.Class333;
 import awsl.Class446;
 import awsl.Class447;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import obfuscate.a;
 import trash.foodbyte.value.BooleanValue;
 
 public class ModeValue
@@ -53,24 +53,24 @@ extends Class447 {
     public void Method2720(String a) {
     }
 
-    public void Method2721(String a) {
-        ArrayList a2 = new ArrayList((Collection)Arrays.asList((Object[])this.Field2092));
-        int[] a3 = BooleanValue.Method2512();
-        if (!a2.contains((Object)a)) {
-            a2.Method2530((Object)a);
+    public void Method2721(String a2) {
+        ArrayList a3 = new ArrayList((Collection)Arrays.asList((Object[])this.Field2092));
+        int[] a4 = BooleanValue.Method2512();
+        if (!a3.contains((Object)a2)) {
+            a3.Method2530((Object)a2);
         }
-        this.Field2092 = (String[])a2.toArray((Object[])new String[0]);
-        if (Class91.Method3648() == null) {
+        this.Field2092 = (String[])a3.toArray((Object[])new String[0]);
+        if (a.trash() == null) {
             BooleanValue.Method2511(new int[3]);
         }
     }
 
-    public void Method2722(String a) {
-        ArrayList a2 = new ArrayList((Collection)Arrays.asList((Object[])this.Field2092));
-        int[] a3 = BooleanValue.Method2512();
-        a2.removeIf(arg_0 -> ModeValue.Method2729(a, arg_0));
-        this.Field2092 = (String[])a2.toArray((Object[])new String[0]);
-        Class91.Method3647(new String[5]);
+    public void Method2722(String a2) {
+        ArrayList a3 = new ArrayList((Collection)Arrays.asList((Object[])this.Field2092));
+        int[] a4 = BooleanValue.Method2512();
+        a3.removeIf(arg_0 -> ModeValue.Method2729(a2, arg_0));
+        this.Field2092 = (String[])a3.toArray((Object[])new String[0]);
+        a.trash(new String[5]);
     }
 
     public String[] Method2723() {
@@ -81,12 +81,12 @@ extends Class447 {
         return (String)this.Field2120;
     }
 
-    public void Method2725(String a) {
-        this.Method2720(a);
+    public void Method2725(String a2) {
+        this.Method2720(a2);
     }
 
-    public boolean isCurrentMode(String a) {
-        return this.Method2719().equals((Object)a);
+    public boolean isCurrentMode(String a2) {
+        return this.Method2719().equals((Object)a2);
     }
 
     public Class333 Method2727() {
@@ -102,7 +102,7 @@ extends Class447 {
         return this.Method2719();
     }
 
-    private static boolean Method2729(String a, String a2) {
-        return a2.equals((Object)a);
+    private static boolean Method2729(String a2, String a3) {
+        return a3.equals((Object)a2);
     }
 }

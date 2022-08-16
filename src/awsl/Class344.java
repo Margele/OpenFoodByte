@@ -25,7 +25,7 @@ public class Class344 {
     }
 
     public void Method290(boolean a) {
-        int[] nArray = RenderUtils.Method1148();
+        int[] nArray = RenderUtils.trash();
         if (this.Field1658.Method298(10.0)) {
             if (this.Field1656 < this.Field1653) {
                 if (!this.Field1657) {

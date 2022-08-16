@@ -40,14 +40,7 @@
  */
 package trash.foodbyte.module.impl.combat;
 
-import awsl.Class334;
-import awsl.Class362;
-import awsl.Class46;
-import awsl.Class567;
 import awsl.Class628;
-import awsl.Class653;
-import awsl.Class667;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.awt.Color;
 import java.util.Comparator;
@@ -75,19 +68,26 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
+import obfuscate.a;
+import obfuscate.b;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.Cylinder;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.event.EventRender3D;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils2;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.utils.MathUtils;
-import trash.foodbyte.utils.ReflectionUtils;
 import trash.foodbyte.utils.RenderUtils;
+import trash.foodbyte.utils.RotationUtils;
+import trash.foodbyte.utils.ServerPacketHandler;
+import trash.foodbyte.utils.Servers;
 import trash.foodbyte.utils.TimeHelper;
-import trash.foodbyte.utils.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 import trash.foodbyte.value.ModeValue;
@@ -125,7 +125,7 @@ extends Module {
     public BooleanValue Field2521;
     TimeHelper Field2522;
     public BooleanValue Field2523;
-    public static EntityLivingBase Field2524;
+    public static EntityLivingBase target;
     public FloatValue Field2525;
     public BooleanValue Field2526;
     private double Field2527;
@@ -137,7 +137,7 @@ extends Module {
 
     @EventTarget
     public void Method273(EventPacket a) {
-        if ((a.getPacket() instanceof S07PacketRespawn || a.getPacket() instanceof S02PacketLoginSuccess) && this.Field2531.Method2509().booleanValue()) {
+        if ((a.getPacket() instanceof S07PacketRespawn || a.getPacket() instanceof S02PacketLoginSuccess) && this.Field2531.getBooleanValue().booleanValue()) {
             this.Method1028();
         }
         if (this.Field2498.isCurrentMode(KillAura.Method754(7648, 15982))) {
@@ -146,10 +146,10 @@ extends Module {
             }
             if (a.getPacket() instanceof S30PacketWindowItems && ((S30PacketWindowItems)a.getPacket()).func_148911_c() == 0) {
                 if (this.Method713()) {
-                    Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
+                    Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
                     a.setCancelled(true);
                 } else {
-                    Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
+                    Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
                 }
             }
         }
@@ -157,44 +157,44 @@ extends Module {
 
     private void Method814() {
         if (Field2528.Method1799() == 0) {
-            Field2524 = null;
+            target = null;
             return;
         }
-        Field2524 = (EntityLivingBase)Field2528.get(this.Field2508);
+        target = (EntityLivingBase)Field2528.get(this.Field2508);
     }
 
-    private void Method942(EntityLivingBase a) {
-        double a2 = ReflectionUtils.Method2587();
-        double a3 = a.lastTickPosX + (a.posX - a.lastTickPosX) * a2 - ReflectionUtils.Method2591();
-        double a4 = a.lastTickPosY + (a.posY - a.lastTickPosY) * a2 - ReflectionUtils.Method2592();
-        double a5 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a2 - ReflectionUtils.Method2593();
-        this.Method964(a, a3, a4 + (double)a.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0f)) / 10.0, a5);
+    private void Method942(EntityLivingBase a2) {
+        double a3 = ReflectionUtils.getRenderPartialTicks();
+        double a4 = a2.lastTickPosX + (a2.posX - a2.lastTickPosX) * a3 - ReflectionUtils.getRenderPosX();
+        double a5 = a2.lastTickPosY + (a2.posY - a2.lastTickPosY) * a3 - ReflectionUtils.getRenderPosY();
+        double a6 = a2.lastTickPosZ + (a2.posZ - a2.lastTickPosZ) * a3 - ReflectionUtils.getRenderPosZ();
+        this.Method964(a2, a4, a5 + (double)a2.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0f)) / 10.0, a6);
     }
 
     private void Method943() {
         KillAura.mc.thePlayer.swingItem();
-        KillAura.mc.playerController.attackEntity((EntityPlayer)KillAura.mc.thePlayer, this.Method958(Field2524));
-        if ((double)KillAura.mc.thePlayer.getDistanceToEntity((Entity)Field2524) <= (double)(this.Field2505.Method2744().floatValue() + KillAura.Field2524.width / 2.0f)) {
-            int a = 0;
-            while ((double)a < (double)this.Field2499.Method2744().floatValue()) {
-                KillAura.mc.effectRenderer.emitParticleAtEntity((Entity)Field2524, EnumParticleTypes.CRIT_MAGIC);
-                ++a;
+        KillAura.mc.playerController.attackEntity((EntityPlayer)KillAura.mc.thePlayer, this.Method958(target));
+        if ((double)KillAura.mc.thePlayer.getDistanceToEntity((Entity)target) <= (double)(this.Field2505.getFloatValue().floatValue() + KillAura.target.width / 2.0f)) {
+            int a2 = 0;
+            while ((double)a2 < (double)this.Field2499.getFloatValue().floatValue()) {
+                KillAura.mc.effectRenderer.emitParticleAtEntity((Entity)target, EnumParticleTypes.CRIT_MAGIC);
+                ++a2;
             }
         }
     }
 
-    private float[] Method944(Entity a, EntityPlayerSP a2) {
-        double a3 = a.posX - a2.posX;
-        double a4 = a.posY + (double)a.height - (a2.posY + (double)a2.height);
-        double a5 = a.posZ - a2.posZ;
-        float a6 = (float)(Math.atan2((double)a5, (double)a3) * 180.0 / Math.PI) - 90.0f;
-        float a7 = (float)(Math.atan2((double)a4, (double)a2.getDistanceToEntity(a)) * 180.0 / Math.PI);
-        float a8 = a2.rotationYaw + MathHelper.wrapAngleTo180_float((float)(a6 - a2.rotationYaw));
-        float a9 = a2.rotationPitch + MathHelper.wrapAngleTo180_float((float)(a7 - a2.rotationPitch));
-        return new float[]{a8, -a9};
+    private float[] Method944(Entity a2, EntityPlayerSP a3) {
+        double a4 = a2.posX - a3.posX;
+        double a5 = a2.posY + (double)a2.height - (a3.posY + (double)a3.height);
+        double a6 = a2.posZ - a3.posZ;
+        float a7 = (float)(Math.atan2((double)a6, (double)a4) * 180.0 / Math.PI) - 90.0f;
+        float a8 = (float)(Math.atan2((double)a5, (double)a3.getDistanceToEntity(a2)) * 180.0 / Math.PI);
+        float a9 = a3.rotationYaw + MathHelper.wrapAngleTo180_float((float)(a7 - a3.rotationYaw));
+        float a10 = a3.rotationPitch + MathHelper.wrapAngleTo180_float((float)(a8 - a3.rotationPitch));
+        return new float[]{a9, -a10};
     }
 
-    public static void Method945(float a) {
+    public static void Method945(float a2) {
         GL11.glDisable((int)3008);
         GL11.glEnable((int)3042);
         GL11.glBlendFunc((int)770, (int)771);
@@ -205,19 +205,19 @@ extends Module {
         GL11.glEnable((int)2848);
         GL11.glHint((int)3154, (int)4354);
         GL11.glHint((int)3155, (int)4354);
-        GL11.glLineWidth((float)a);
+        GL11.glLineWidth((float)a2);
     }
 
     private void Method946() {
-        int a = this.Field2504.isCurrentMode(KillAura.Method754(7679, -635)) ? 4 : this.Field2513.Method2744().intValue();
+        int a2 = this.Field2504.isCurrentMode(KillAura.Method754(7679, -635)) ? 4 : this.Field2513.getFloatValue().intValue();
         Iterator iterator = KillAura.mc.theWorld.getLoadedEntityList().Method1383();
         while (iterator.Method932()) {
-            EntityLivingBase a2;
-            Entity a3 = (Entity)iterator.Method933();
-            if (a3 instanceof EntityLivingBase && this.Method965(a2 = (EntityLivingBase)a3) && !Field2528.contains((Object)a2)) {
-                Field2528.Method2530((Object)a2);
+            EntityLivingBase a3;
+            Entity a4 = (Entity)iterator.Method933();
+            if (a4 instanceof EntityLivingBase && this.Method965(a3 = (EntityLivingBase)a4) && !Field2528.contains((Object)a3)) {
+                Field2528.Method2530((Object)a3);
             }
-            if (Field2528.Method1799() < a) continue;
+            if (Field2528.Method1799() < a2) continue;
             break;
         }
         if (this.Field2511.isCurrentMode(KillAura.Method754(7588, -11596)) && KillAura.mc.gameSettings.keyBindSprint.isKeyDown()) {
@@ -249,12 +249,12 @@ extends Module {
         }
     }
 
-    private static int Method947(EntityLivingBase a, EntityLivingBase a2) {
-        return (int)(a.getHealth() - a2.getHealth());
+    private static int Method947(EntityLivingBase a2, EntityLivingBase a3) {
+        return (int)(a2.getHealth() - a3.getHealth());
     }
 
-    private void Method948(EntityLivingBase a) {
-        this.Method963(a);
+    private void Method948(EntityLivingBase a2) {
+        this.Method963(a2);
     }
 
     private boolean Method805() {
@@ -272,22 +272,22 @@ extends Module {
     }
 
     @Override
-    public void onDisable() {
+    public void idk() {
         this.Field2495.Method2757(this.Field2504.isCurrentMode(KillAura.Method754(7606, -18533)));
         this.Field2498.Method2757(!this.Field2515.isCurrentMode(KillAura.Method754(7658, 16565)));
     }
 
-    private static int Method950(EntityLivingBase a, EntityLivingBase a2) {
-        return (int)(a.getHealth() - a2.getHealth());
+    private static int Method950(EntityLivingBase a2, EntityLivingBase a3) {
+        return (int)(a2.getHealth() - a3.getHealth());
     }
 
-    public double[] Method818(EntityLivingBase a) {
-        double a2 = a.posX - KillAura.mc.thePlayer.posX;
-        double a3 = a.posY - KillAura.mc.thePlayer.posY;
-        double a4 = a.posZ - KillAura.mc.thePlayer.posZ;
-        double a5 = -(Math.atan2((double)a2, (double)a4) * 57.29577951308232);
-        double a6 = -(Math.asin((double)(a3 /= (double)KillAura.mc.thePlayer.getDistanceToEntity((Entity)a))) * 57.29577951308232);
-        return new double[]{a5, a6};
+    public double[] Method818(EntityLivingBase a2) {
+        double a3 = a2.posX - KillAura.mc.thePlayer.posX;
+        double a4 = a2.posY - KillAura.mc.thePlayer.posY;
+        double a5 = a2.posZ - KillAura.mc.thePlayer.posZ;
+        double a6 = -(Math.atan2((double)a3, (double)a5) * 57.29577951308232);
+        double a7 = -(Math.asin((double)(a4 /= (double)KillAura.mc.thePlayer.getDistanceToEntity((Entity)a2))) * 57.29577951308232);
+        return new double[]{a6, a7};
     }
 
     private void Method951() {
@@ -295,48 +295,48 @@ extends Module {
         Field2528.stream().filter(this::Method960).forEach(this::Method973);
     }
 
-    public void Method952(EntityLivingBase a) {
-        double a2 = ReflectionUtils.Method2587();
-        double a3 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosX + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posX - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosX) * a2 - ReflectionUtils.Method2591();
-        double a4 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosY + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posY - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosY) * a2 - ReflectionUtils.Method2592();
-        double a5 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosZ + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posZ - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosZ) * a2 - ReflectionUtils.Method2593();
-        double a6 = (a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a).getEntityBoundingBox().maxX - (a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a).getEntityBoundingBox().minX;
-        double a7 = (a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a).getEntityBoundingBox().maxY - (a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a).getEntityBoundingBox().minY + 0.25;
-        float a8 = 0.0f;
-        float a9 = 0.5f;
-        float a10 = 1.0f;
-        float a11 = 0.4f;
-        float a12 = 0.0f;
-        float a13 = 0.5f;
-        float a14 = 1.0f;
-        if (this.Method958((EntityLivingBase)a).hurtResistantTime > 0) {
-            a8 = 1.0f;
-            a10 = 0.0f;
-            a9 = 0.0f;
-            a12 = 1.0f;
-            a13 = 0.0f;
-            a14 = 0.0f;
-        } else {
-            a8 = 0.0f;
-            a10 = 1.0f;
-            a9 = 0.5f;
-            a12 = 0.0f;
-            a13 = 0.5f;
-            a14 = 1.0f;
-        }
+    public void Method952(EntityLivingBase a2) {
+        double a3 = ReflectionUtils.getRenderPartialTicks();
+        double a4 = ((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).lastTickPosX + (((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).posX - ((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).lastTickPosX) * a3 - ReflectionUtils.getRenderPosX();
+        double a5 = ((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).lastTickPosY + (((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).posY - ((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).lastTickPosY) * a3 - ReflectionUtils.getRenderPosY();
+        double a6 = ((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).lastTickPosZ + (((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).posZ - ((Entity)(a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2)).lastTickPosZ) * a3 - ReflectionUtils.getRenderPosZ();
+        double a7 = (a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2).getEntityBoundingBox().maxX - (a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2).getEntityBoundingBox().minX;
+        double a8 = (a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2).getEntityBoundingBox().maxY - (a2 instanceof EntityDragon ? ((EntityDragon)a2).dragonPartBody : a2).getEntityBoundingBox().minY + 0.25;
+        float a9 = 0.0f;
+        float a10 = 0.5f;
+        float a11 = 1.0f;
+        float a12 = 0.4f;
+        float a13 = 0.0f;
+        float a14 = 0.5f;
         float a15 = 1.0f;
+        if (this.Method958((EntityLivingBase)a2).hurtResistantTime > 0) {
+            a9 = 1.0f;
+            a11 = 0.0f;
+            a10 = 0.0f;
+            a13 = 1.0f;
+            a14 = 0.0f;
+            a15 = 0.0f;
+        } else {
+            a9 = 0.0f;
+            a11 = 1.0f;
+            a10 = 0.5f;
+            a13 = 0.0f;
+            a14 = 0.5f;
+            a15 = 1.0f;
+        }
         float a16 = 1.0f;
-        RenderUtils.Method1120(a3, a4 + a7, a5, a6 / 1.5, 0.1, a8, a9, a10, a11, a12, a13, a14, 1.0f, 1.0f);
+        float a17 = 1.0f;
+        RenderUtils.Method1120(a4, a5 + a8, a6, a7 / 1.5, 0.1, a9, a10, a11, a12, a13, a14, a15, 1.0f, 1.0f);
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         Field2493 = false;
-        Field2524 = null;
+        target = null;
         Field2528.clear();
         if (this.Method1026() && this.Method805()) {
-            ReflectionUtils.Method2604(0);
-            Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
+            ReflectionUtils.setItemInUseCount(0);
+            Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
         }
     }
 
@@ -1388,14 +1388,14 @@ extends Module {
         return Field2501[n3];
     }
 
-    private static int Method953(EntityLivingBase a, EntityLivingBase a2) {
-        return (int)(a.getHealth() - a2.getHealth());
+    private static int Method953(EntityLivingBase a2, EntityLivingBase a3) {
+        return (int)(a2.getHealth() - a3.getHealth());
     }
 
     @EventTarget(value=4)
-    public void Method755(Class653 a) {
-        if (this.Field2503.Method2509().booleanValue() && !Mouse.isButtonDown((int)0) && !KillAura.mc.gameSettings.keyBindAttack.isKeyDown()) {
-            Field2524 = null;
+    public void Method755(EventTick a2) {
+        if (this.Field2503.getBooleanValue().booleanValue() && !Mouse.isButtonDown((int)0) && !KillAura.mc.gameSettings.keyBindAttack.isKeyDown()) {
+            target = null;
             return;
         }
         if (KillAura.mc.thePlayer.ridingEntity == null) {
@@ -1403,8 +1403,8 @@ extends Module {
         }
         if (this.Field2504.isCurrentMode(KillAura.Method754(7554, -11340))) {
             this.setDisplayTag(KillAura.Method754(7554, -11340));
-            if (this.Field2522.Method219(this.Field2506.Method2744().floatValue())) {
-                this.Field2522.Method214();
+            if (this.Field2522.isDelayComplete(this.Field2506.getFloatValue().floatValue())) {
+                this.Field2522.reset();
                 ++this.Field2508;
             }
         }
@@ -1426,126 +1426,126 @@ extends Module {
         this.Method815();
         this.Method946();
         this.Method814();
-        if (Field2524 != null) {
+        if (target != null) {
             this.Method970();
         } else {
             Field2528.clear();
         }
     }
 
-    public float[] Method954(EntityLivingBase a) {
-        double a2 = Minecraft.getMinecraft().thePlayer.posX;
-        double a3 = Minecraft.getMinecraft().thePlayer.posY + (double)Minecraft.getMinecraft().thePlayer.getEyeHeight();
-        double a4 = Minecraft.getMinecraft().thePlayer.posZ;
-        double a5 = KillAura.Field2524.posX;
-        double a6 = KillAura.Field2524.posY + (double)(KillAura.Field2524.height / 2.0f);
-        double a7 = KillAura.Field2524.posZ;
-        double a8 = a2 - a5;
+    public float[] Method954(EntityLivingBase a2) {
+        double a3 = Minecraft.getMinecraft().thePlayer.posX;
+        double a4 = Minecraft.getMinecraft().thePlayer.posY + (double)Minecraft.getMinecraft().thePlayer.getEyeHeight();
+        double a5 = Minecraft.getMinecraft().thePlayer.posZ;
+        double a6 = KillAura.target.posX;
+        double a7 = KillAura.target.posY + (double)(KillAura.target.height / 2.0f);
+        double a8 = KillAura.target.posZ;
         double a9 = a3 - a6;
         double a10 = a4 - a7;
-        double a11 = Math.sqrt((double)(Math.pow((double)a8, (double)2.0) + Math.pow((double)a10, (double)2.0)));
-        float a12 = (float)(Math.toDegrees((double)Math.atan2((double)a10, (double)a8)) + 90.0);
-        float a13 = (float)Math.toDegrees((double)Math.atan2((double)a11, (double)a9));
-        return new float[]{(float)((double)a12 + (new Random().nextBoolean() ? Math.random() : -Math.random())), (float)((double)(90.0f - a13) + (new Random().nextBoolean() ? Math.random() : -Math.random()))};
+        double a11 = a5 - a8;
+        double a12 = Math.sqrt((double)(Math.pow((double)a9, (double)2.0) + Math.pow((double)a11, (double)2.0)));
+        float a13 = (float)(Math.toDegrees((double)Math.atan2((double)a11, (double)a9)) + 90.0);
+        float a14 = (float)Math.toDegrees((double)Math.atan2((double)a12, (double)a10));
+        return new float[]{(float)((double)a13 + (new Random().nextBoolean() ? Math.random() : -Math.random())), (float)((double)(90.0f - a14) + (new Random().nextBoolean() ? Math.random() : -Math.random()))};
     }
 
     @EventTarget
-    public void Method955(EventMotion a) {
+    public void Method955(EventMotion a2) {
         block23: {
             block26: {
                 block25: {
                     block24: {
-                        Class91[] class91Array = Class46.Method3239();
+                        a[] aArray = b.trash();
                         if (this.Field2515.isCurrentMode(KillAura.Method754(7585, 16095))) {
                             Field2493 = this.Method805();
                         }
                         Field2493 = false;
-                        if (a.isPost()) {
-                            if (Field2524 != null) {
+                        if (a2.isPost()) {
+                            if (target != null) {
                                 this.Method970();
                             }
                             if (Field2493 && KillAura.mc.gameSettings.keyBindUseItem.isKeyDown()) {
                                 if (this.Field2500 != 520) {
-                                    Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
+                                    Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
                                 }
                                 if (this.Field2498.isCurrentMode(KillAura.Method754(7610, -20270))) {
-                                    Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
+                                    Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
                                 }
                                 this.Field2500 = 520;
-                                ReflectionUtils.Method2604(520);
+                                ReflectionUtils.setItemInUseCount(520);
                                 if (this.Field2498.isCurrentMode(KillAura.Method754(7553, 5307))) {
                                     if (KillAura.mc.thePlayer.swingProgressInt == 1) {
-                                        Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
+                                        Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
                                     }
                                     if (KillAura.mc.thePlayer.swingProgressInt == 2) {
-                                        Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.getHeldItem()));
+                                        Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.getHeldItem()));
                                     }
                                 }
                             }
-                            if (Field2524 != null && this.Method805() && this.Field2515.isCurrentMode(KillAura.Method754(7573, -2197))) {
-                                if (ReflectionUtils.Method2603() != 520.0f) {
-                                    Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
+                            if (target != null && this.Method805() && this.Field2515.isCurrentMode(KillAura.Method754(7573, -2197))) {
+                                if (ReflectionUtils.getItemInUseCount() != 520.0f) {
+                                    Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
                                 }
                                 if (this.Field2498.isCurrentMode(KillAura.Method754(7572, -7961))) {
-                                    Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
+                                    Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.inventory.getCurrentItem()));
                                 }
-                                ReflectionUtils.Method2604(520);
+                                ReflectionUtils.setItemInUseCount(520);
                                 if (this.Field2498.isCurrentMode(KillAura.Method754(7558, -1609))) {
                                     if (KillAura.mc.thePlayer.swingProgressInt == 1) {
-                                        Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
+                                        Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
                                     }
                                     if (KillAura.mc.thePlayer.swingProgressInt == 2) {
-                                        Wrapper.INSTANCE.Method2874((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.getHeldItem()));
+                                        Wrapper.INSTANCE.sendPacket((Packet)new C08PacketPlayerBlockPlacement(KillAura.mc.thePlayer.getHeldItem()));
                                     }
                                 }
                             }
                         }
-                        if (!a.isPre()) break block23;
+                        if (!a2.isPre()) break block23;
                         if (!Field2493 || !KillAura.mc.gameSettings.keyBindUseItem.isKeyDown()) break block24;
                         if (!this.Field2498.isCurrentMode(KillAura.Method754(7572, -7961))) break block25;
-                        Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, new BlockPos(-1, -1, -1), EnumFacing.DOWN));
+                        Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, new BlockPos(-1, -1, -1), EnumFacing.DOWN));
                     }
                     if (this.Field2500 == 520) {
                         this.Field2500 = 0;
-                        ReflectionUtils.Method2604(0);
-                        Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
+                        ReflectionUtils.setItemInUseCount(0);
+                        Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
                     }
                 }
-                if (Field2524 == null || !this.Method805() || !this.Field2515.isCurrentMode(KillAura.Method754(7659, -29435))) break block26;
+                if (target == null || !this.Method805() || !this.Field2515.isCurrentMode(KillAura.Method754(7659, -29435))) break block26;
                 if (!this.Field2498.isCurrentMode(KillAura.Method754(7572, -7961))) break block23;
-                Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, new BlockPos(-1, -1, -1), EnumFacing.DOWN));
+                Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, new BlockPos(-1, -1, -1), EnumFacing.DOWN));
             }
-            if (ReflectionUtils.Method2603() == 520.0f) {
-                ReflectionUtils.Method2604(0);
-                Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
+            if (ReflectionUtils.getItemInUseCount() == 520.0f) {
+                ReflectionUtils.setItemInUseCount(0);
+                Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, EnumFacing.DOWN));
             }
         }
     }
 
-    public float Method956(Entity a) {
-        float a2 = (float)(KillAura.mc.thePlayer.posX - a.posX);
-        float a3 = (float)(KillAura.mc.thePlayer.posY - a.posY);
-        float a4 = (float)(KillAura.mc.thePlayer.posZ - a.posZ);
-        return MathHelper.sqrt_float((float)(a2 * a2 + a4 * a4));
+    public float Method956(Entity a2) {
+        float a3 = (float)(KillAura.mc.thePlayer.posX - a2.posX);
+        float a4 = (float)(KillAura.mc.thePlayer.posY - a2.posY);
+        float a5 = (float)(KillAura.mc.thePlayer.posZ - a2.posZ);
+        return MathHelper.sqrt_float((float)(a3 * a3 + a5 * a5));
     }
 
-    private void Method957(EntityLivingBase a) {
-        this.Method952(a);
+    private void Method957(EntityLivingBase a2) {
+        this.Method952(a2);
     }
 
     @EventTarget
-    public void Method712(EventMotion a) {
-        if (this.Field2503.Method2509().booleanValue() && !Mouse.isButtonDown((int)0) && !KillAura.mc.gameSettings.keyBindAttack.isKeyDown()) {
-            Field2524 = null;
+    public void Method712(EventMotion a2) {
+        if (this.Field2503.getBooleanValue().booleanValue() && !Mouse.isButtonDown((int)0) && !KillAura.mc.gameSettings.keyBindAttack.isKeyDown()) {
+            target = null;
             return;
         }
-        if (a.isPost()) {
+        if (a2.isPost()) {
             return;
         }
         if (this.Field2504.isCurrentMode(KillAura.Method754(7554, -11340))) {
             this.setDisplayTag(KillAura.Method754(7554, -11340));
-            if (this.Field2522.Method219(this.Field2506.Method2744().floatValue())) {
-                this.Field2522.Method214();
+            if (this.Field2522.isDelayComplete(this.Field2506.getFloatValue().floatValue())) {
+                this.Field2522.reset();
                 ++this.Field2508;
             }
         }
@@ -1567,17 +1567,17 @@ extends Module {
         this.Method815();
         this.Method946();
         this.Method814();
-        if (Field2524 != null) {
-            float[] a2 = this.Method954(Field2524);
-            if (KillAura.mc.thePlayer.getDistanceToEntity((Entity)Field2524) <= this.Field2505.Method2744().floatValue() + KillAura.Field2524.width / 2.0f) {
-                float[] a3 = this.Method954(Field2524);
-                float[] a4 = new float[]{this.Field2496[0], this.Field2496[1]};
-                this.Field2496 = this.Method968(a3, a4);
-                if (this.Field2518.Method2509().booleanValue()) {
-                    a.setYaw(this.Field2496[0]);
+        if (target != null) {
+            float[] a3 = this.Method954(target);
+            if (KillAura.mc.thePlayer.getDistanceToEntity((Entity)target) <= this.Field2505.getFloatValue().floatValue() + KillAura.target.width / 2.0f) {
+                float[] a4 = this.Method954(target);
+                float[] a5 = new float[]{this.Field2496[0], this.Field2496[1]};
+                this.Field2496 = this.Method968(a4, a5);
+                if (this.Field2518.getBooleanValue().booleanValue()) {
+                    a2.setYaw(this.Field2496[0]);
                 }
-                if (this.Field2516.Method2509().booleanValue()) {
-                    a.setPitch(this.Field2496[1]);
+                if (this.Field2516.getBooleanValue().booleanValue()) {
+                    a2.setPitch(this.Field2496[1]);
                 }
             }
         } else {
@@ -1587,21 +1587,21 @@ extends Module {
         }
     }
 
-    private Entity Method958(EntityLivingBase a) {
-        if (a instanceof EntityDragon) {
-            EntityDragon a2 = (EntityDragon)a;
-            CopyOnWriteArrayList a3 = new CopyOnWriteArrayList();
-            for (EntityDragonPart a4 : a2.dragonPartArray) {
-                a3.Method2530((Object)a4);
+    private Entity Method958(EntityLivingBase a2) {
+        if (a2 instanceof EntityDragon) {
+            EntityDragon a3 = (EntityDragon)a2;
+            CopyOnWriteArrayList a4 = new CopyOnWriteArrayList();
+            for (EntityDragonPart a5 : a3.dragonPartArray) {
+                a4.Method2530((Object)a5);
             }
-            a3.sort(Comparator.comparingDouble(KillAura::Method962));
-            return (Entity)a3.get(0);
+            a4.sort(Comparator.comparingDouble(KillAura::Method962));
+            return (Entity)a4.get(0);
         }
-        return a;
+        return a2;
     }
 
-    private void Method959(EntityLivingBase a) {
-        this.Method961(a, Field2528.Method1799());
+    private void Method959(EntityLivingBase a2) {
+        this.Method961(a2, Field2528.Method1799());
     }
 
     public static void Method258() {
@@ -1616,37 +1616,37 @@ extends Module {
         GL11.glHint((int)3155, (int)4352);
     }
 
-    private boolean Method960(EntityLivingBase a) {
-        return a.hurtTime <= this.Field2495.Method2744().intValue() && a != Field2524;
+    private boolean Method960(EntityLivingBase a2) {
+        return a2.hurtTime <= this.Field2495.getFloatValue().intValue() && a2 != target;
     }
 
     @Class628
     public native void Method961(EntityLivingBase var1, int var2);
 
-    private static double Method962(EntityDragonPart a) {
-        return KillAura.mc.thePlayer.getDistanceToEntity((Entity)a);
+    private static double Method962(EntityDragonPart a2) {
+        return KillAura.mc.thePlayer.getDistanceToEntity((Entity)a2);
     }
 
-    public void Method963(EntityLivingBase a) {
-        double a2 = ReflectionUtils.Method2587();
-        double a3 = a.lastTickPosX + (a.posX - a.lastTickPosX) * a2 - ReflectionUtils.Method2591();
-        double a4 = a.lastTickPosY + (a.posY - a.lastTickPosY) * a2 - ReflectionUtils.Method2592();
-        double a5 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a2 - ReflectionUtils.Method2593();
-        Color a6 = new Color(0, 153, 255, 80);
-        if (a.hurtTime > 0) {
-            a6 = new Color(255, 0, 0, 80);
+    public void Method963(EntityLivingBase a2) {
+        double a3 = ReflectionUtils.getRenderPartialTicks();
+        double a4 = a2.lastTickPosX + (a2.posX - a2.lastTickPosX) * a3 - ReflectionUtils.getRenderPosX();
+        double a5 = a2.lastTickPosY + (a2.posY - a2.lastTickPosY) * a3 - ReflectionUtils.getRenderPosY();
+        double a6 = a2.lastTickPosZ + (a2.posZ - a2.lastTickPosZ) * a3 - ReflectionUtils.getRenderPosZ();
+        Color a7 = new Color(0, 153, 255, 80);
+        if (a2.hurtTime > 0) {
+            a7 = new Color(255, 0, 0, 80);
         }
-        RenderUtils.Method1122(a3, a4, a5, (double)a.width / 1.2, (double)a.height + 0.2, (float)a6.getRed() / 255.0f, (float)a6.getGreen() / 255.0f, (float)a6.getBlue() / 255.0f, (float)a6.getAlpha() / 255.0f);
+        RenderUtils.Method1122(a4, a5, a6, (double)a2.width / 1.2, (double)a2.height + 0.2, (float)a7.getRed() / 255.0f, (float)a7.getGreen() / 255.0f, (float)a7.getBlue() / 255.0f, (float)a7.getAlpha() / 255.0f);
     }
 
-    public boolean Method817(EntityLivingBase a, float a2) {
-        a2 = (float)((double)a2 * 0.5);
-        double a3 = (((double)KillAura.mc.thePlayer.rotationYaw - this.Method818(a)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
-        return a3 > 0.0 && a3 < (double)a2 || (double)(-a2) < a3 && a3 < 0.0;
+    public boolean Method817(EntityLivingBase a2, float a3) {
+        a3 = (float)((double)a3 * 0.5);
+        double a4 = (((double)KillAura.mc.thePlayer.rotationYaw - this.Method818(a2)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
+        return a4 > 0.0 && a4 < (double)a3 || (double)(-a3) < a4 && a4 < 0.0;
     }
 
-    public void Method964(EntityLivingBase a, double a2, double a3, double a4) {
-        Cylinder a5 = new Cylinder();
+    public void Method964(EntityLivingBase a2, double a3, double a4, double a5) {
+        Cylinder a6 = new Cylinder();
         GL11.glPushMatrix();
         GL11.glEnable((int)3042);
         GL11.glBlendFunc((int)770, (int)771);
@@ -1658,13 +1658,13 @@ extends Module {
         GL11.glDepthMask((boolean)false);
         GL11.glHint((int)3154, (int)4354);
         GlStateManager.disableLighting();
-        GL11.glTranslated((double)a2, (double)a3, (double)a4);
-        GL11.glRotatef((float)(-a.width), (float)0.0f, (float)1.0f, (float)0.0f);
+        GL11.glTranslated((double)a3, (double)a4, (double)a5);
+        GL11.glRotatef((float)(-a2.width), (float)0.0f, (float)1.0f, (float)0.0f);
         RenderUtils.Method1125(new Color(0, 153, 255, 150));
         KillAura.Method945(0.1f);
         GL11.glRotatef((float)-90.0f, (float)1.0f, (float)0.0f, (float)0.0f);
-        a5.setDrawStyle(100011);
-        a5.draw(0.0f, 0.2f, 0.5f, 3, 300);
+        a6.setDrawStyle(100011);
+        a6.draw(0.0f, 0.2f, 0.5f, 3, 300);
         KillAura.Method258();
         GL11.glDepthMask((boolean)true);
         GL11.glEnable((int)2929);
@@ -1684,13 +1684,13 @@ extends Module {
         GL11.glDepthMask((boolean)false);
         GL11.glHint((int)3154, (int)4354);
         GlStateManager.disableLighting();
-        GL11.glTranslated((double)a2, (double)(a3 + 0.5), (double)a4);
-        GL11.glRotatef((float)(-a.width), (float)0.0f, (float)1.0f, (float)0.0f);
+        GL11.glTranslated((double)a3, (double)(a4 + 0.5), (double)a5);
+        GL11.glRotatef((float)(-a2.width), (float)0.0f, (float)1.0f, (float)0.0f);
         RenderUtils.Method1125(new Color(0, 153, 255, 150));
         KillAura.Method945(0.1f);
         GL11.glRotatef((float)-90.0f, (float)1.0f, (float)0.0f, (float)0.0f);
-        a5.setDrawStyle(100011);
-        a5.draw(0.0f, 0.2f, 0.0f, 3, 300);
+        a6.setDrawStyle(100011);
+        a6.draw(0.0f, 0.2f, 0.0f, 3, 300);
         KillAura.Method258();
         GL11.glDepthMask((boolean)true);
         GL11.glEnable((int)2929);
@@ -1701,27 +1701,27 @@ extends Module {
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
     }
 
-    private boolean Method965(EntityLivingBase a) {
-        if (Class567.Field2643.equals((Object)Class667.SB)) {
-            return this.Method967(a);
+    private boolean Method965(EntityLivingBase a2) {
+        if (ServerPacketHandler.currentServer.equals((Object)Servers.SB)) {
+            return this.Method967(a2);
         }
         return false;
     }
 
-    private static double Method966(EntityLivingBase a) {
-        return KillAura.mc.thePlayer.getDistanceToEntity((Entity)a);
+    private static double Method966(EntityLivingBase a2) {
+        return KillAura.mc.thePlayer.getDistanceToEntity((Entity)a2);
     }
 
-    private boolean Method967(EntityLivingBase a) {
+    private boolean Method967(EntityLivingBase a2) {
         return false;
     }
 
-    private float[] Method968(float[] a, float[] a2) {
-        float[] a3 = new float[]{a2[0] - a[0], a2[1] - a[1]};
-        a3 = MathUtils.Method569(a3);
-        a3[0] = a2[0] - a3[0] / 100.0f * (this.Field2517.Method2744().floatValue() / 2.0f);
-        a3[1] = a2[1] - a3[1] / 100.0f * (this.Field2517.Method2744().floatValue() / 2.0f);
-        return a3;
+    private float[] Method968(float[] a2, float[] a3) {
+        float[] a4 = new float[]{a3[0] - a2[0], a3[1] - a2[1]};
+        a4 = MathUtils.parseRotations(a4);
+        a4[0] = a3[0] - a4[0] / 100.0f * (this.Field2517.getFloatValue().floatValue() / 2.0f);
+        a4[1] = a3[1] - a4[1] / 100.0f * (this.Field2517.getFloatValue().floatValue() / 2.0f);
+        return a4;
     }
 
     static {
@@ -1731,7 +1731,7 @@ extends Module {
 
     public KillAura() {
         super(KillAura.Method754(7602, 10160), KillAura.Method754(7642, 28097), Category.COMBAT);
-        Class91[] class91Array = Class46.Method3239();
+        a[] aArray = b.trash();
         this.Field2515 = new ModeValue(KillAura.Method754(7562, -17983), KillAura.Method754(7669, 25312), KillAura.Method754(7561, 30117), new String[]{KillAura.Method754(7643, -19851), KillAura.Method754(7659, -29435), KillAura.Method754(7561, 30117)}, KillAura.Method754(7576, 16620));
         this.Field2498 = new ModeValue(KillAura.Method754(7562, -17983), KillAura.Method754(7570, -18011), KillAura.Method754(7675, -8921), new String[]{KillAura.Method754(7580, -22958), KillAura.Method754(7558, -1609), KillAura.Method754(7601, -18491), KillAura.Method754(7552, -8600)}, KillAura.Method754(7678, 18144));
         this.Field2511 = new ModeValue(KillAura.Method754(7562, -17983), KillAura.Method754(7641, -3921), KillAura.Method754(7614, -26901), new String[]{KillAura.Method754(7614, -26901), KillAura.Method754(7568, 20260), KillAura.Method754(7591, 22163), KillAura.Method754(7583, -2524), KillAura.Method754(7605, -8888)}, KillAura.Method754(7596, -24838));
@@ -1763,84 +1763,84 @@ extends Module {
         this.Field2532 = new Random();
         this.Field2496 = new float[2];
         this.setDescription(KillAura.Method754(7590, 9363));
-        Class91.Method3647(new String[2]);
+        a.trash(new String[2]);
     }
 
-    private static int Method969(EntityLivingBase a, EntityLivingBase a2) {
-        float[] a3 = Class334.Method1163(a);
-        float[] a4 = Class334.Method1163(a2);
-        return (int)(KillAura.mc.thePlayer.rotationYaw - a3[0] - (KillAura.mc.thePlayer.rotationYaw - a4[0]));
+    private static int Method969(EntityLivingBase a2, EntityLivingBase a3) {
+        float[] a4 = RotationUtils.getRotation2(a2);
+        float[] a5 = RotationUtils.getRotation2(a3);
+        return (int)(KillAura.mc.thePlayer.rotationYaw - a4[0] - (KillAura.mc.thePlayer.rotationYaw - a5[0]));
     }
 
     private void Method970() {
-        int a = this.Field2530.Method2744().intValue();
-        int a2 = this.Field2529.Method2744().intValue();
-        int a3 = MathUtils.Method577(a2, a);
-        if (KillAura.mc.thePlayer.getDistanceToEntity((Entity)Field2524) <= this.Field2505.Method2744().floatValue() + KillAura.Field2524.width / 2.0f && this.Field2510.Method211(a3 - 20 + this.Field2532.nextInt(50))) {
-            this.Field2510.Method214();
+        int a2 = this.Field2530.getFloatValue().intValue();
+        int a3 = this.Field2529.getFloatValue().intValue();
+        int a4 = MathUtils.getRandomDouble(a3, a2);
+        if (KillAura.mc.thePlayer.getDistanceToEntity((Entity)target) <= this.Field2505.getFloatValue().floatValue() + KillAura.target.width / 2.0f && this.Field2510.Method211(a4 - 20 + this.Field2532.nextInt(50))) {
+            this.Field2510.reset();
             if (KillAura.mc.thePlayer.isBlocking() || KillAura.mc.thePlayer.getHeldItem() == null || KillAura.mc.thePlayer.getHeldItem().getItem() instanceof ItemSword) {
                 // empty if block
             }
-            if (KillAura.mc.thePlayer.isBlocking() || ReflectionUtils.Method2603() > 0.0f) {
+            if (KillAura.mc.thePlayer.isBlocking() || ReflectionUtils.getItemInUseCount() > 0.0f) {
                 // empty if block
             }
-            Class362.Method541(0, true);
+            ReflectionUtils2.pollMouseInputEvent(0, true);
             if (this.Field2504.isCurrentMode(KillAura.Method754(7563, 14278))) {
                 this.Method951();
             } else {
                 this.Method943();
             }
-            Class362.Method541(0, false);
+            ReflectionUtils2.pollMouseInputEvent(0, false);
         }
     }
 
-    private static double Method971(EntityLivingBase a) {
-        return KillAura.mc.thePlayer.getDistanceToEntity((Entity)a);
+    private static double Method971(EntityLivingBase a2) {
+        return KillAura.mc.thePlayer.getDistanceToEntity((Entity)a2);
     }
 
     public boolean Method713() {
-        return ReflectionUtils.Method2603() >= 520.0f && this.Method805();
+        return ReflectionUtils.getItemInUseCount() >= 520.0f && this.Method805();
     }
 
     private void Method815() {
         Iterator iterator = Field2528.Method1383();
         while (iterator.Method932()) {
-            EntityLivingBase a = (EntityLivingBase)iterator.Method933();
-            if (this.Method965(a)) continue;
-            Field2528.remove((Object)a);
+            EntityLivingBase a2 = (EntityLivingBase)iterator.Method933();
+            if (this.Method965(a2)) continue;
+            Field2528.remove((Object)a2);
         }
     }
 
-    public static int Method972(double a, double a2) {
-        Random a3 = new Random();
-        return (int)(a + a3.nextDouble() * (a2 - a));
+    public static int Method972(double a2, double a3) {
+        Random a4 = new Random();
+        return (int)(a2 + a4.nextDouble() * (a3 - a2));
     }
 
-    private void Method973(EntityLivingBase a) {
+    private void Method973(EntityLivingBase a2) {
         KillAura.mc.thePlayer.swingItem();
-        KillAura.mc.playerController.attackEntity((EntityPlayer)KillAura.mc.thePlayer, this.Method958(a));
+        KillAura.mc.playerController.attackEntity((EntityPlayer)KillAura.mc.thePlayer, this.Method958(a2));
     }
 
-    private double Method812(EntityLivingBase a) {
-        float[] a2 = Class334.Method1177(a);
-        float a3 = (int)a2[0];
-        float a4 = KillAura.mc.thePlayer.rotationYaw > a3 ? KillAura.mc.thePlayer.rotationYaw - a3 : a3 - KillAura.mc.thePlayer.rotationYaw;
-        return a4;
+    private double Method812(EntityLivingBase a2) {
+        float[] a3 = RotationUtils.getRotation(a2);
+        float a4 = (int)a3[0];
+        float a5 = KillAura.mc.thePlayer.rotationYaw > a4 ? KillAura.mc.thePlayer.rotationYaw - a4 : a4 - KillAura.mc.thePlayer.rotationYaw;
+        return a5;
     }
 
     @EventTarget
-    public void Method802(EventRender3D a) {
+    public void Method802(EventRender3D a2) {
         if (this.Field2512.isCurrentMode(KillAura.Method754(7615, 28317))) {
             if (this.Field2504.isCurrentMode(KillAura.Method754(7563, 14278))) {
                 if (Field2528.Method1799() > 0) {
                     Field2528.forEach(this::Method942);
                 }
-            } else if (Field2524 != null) {
-                double a2 = ReflectionUtils.Method2587();
-                double a3 = KillAura.Field2524.lastTickPosX + (KillAura.Field2524.posX - KillAura.Field2524.lastTickPosX) * a2 - ReflectionUtils.Method2591();
-                double a4 = KillAura.Field2524.lastTickPosY + (KillAura.Field2524.posY - KillAura.Field2524.lastTickPosY) * a2 - ReflectionUtils.Method2592();
-                double a5 = KillAura.Field2524.lastTickPosZ + (KillAura.Field2524.posZ - KillAura.Field2524.lastTickPosZ) * a2 - ReflectionUtils.Method2593();
-                this.Method964(Field2524, a3, a4 + (double)Field2524.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0f)) / 10.0, a5);
+            } else if (target != null) {
+                double a3 = ReflectionUtils.getRenderPartialTicks();
+                double a4 = KillAura.target.lastTickPosX + (KillAura.target.posX - KillAura.target.lastTickPosX) * a3 - ReflectionUtils.getRenderPosX();
+                double a5 = KillAura.target.lastTickPosY + (KillAura.target.posY - KillAura.target.lastTickPosY) * a3 - ReflectionUtils.getRenderPosY();
+                double a6 = KillAura.target.lastTickPosZ + (KillAura.target.posZ - KillAura.target.lastTickPosZ) * a3 - ReflectionUtils.getRenderPosZ();
+                this.Method964(target, a4, a5 + (double)target.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0f)) / 10.0, a6);
             }
         }
         if (this.Field2512.isCurrentMode(KillAura.Method754(7586, 30651))) {
@@ -1848,8 +1848,8 @@ extends Module {
                 if (Field2528.Method1799() > 0) {
                     Field2528.forEach(this::Method957);
                 }
-            } else if (Field2524 != null) {
-                this.Method952(Field2524);
+            } else if (target != null) {
+                this.Method952(target);
             }
         }
         if (this.Field2512.isCurrentMode(KillAura.Method754(7656, -11258))) {
@@ -1857,8 +1857,8 @@ extends Module {
                 if (Field2528.Method1799() > 0) {
                     Field2528.forEach(this::Method959);
                 }
-            } else if (Field2524 != null) {
-                this.Method961(Field2524, 1);
+            } else if (target != null) {
+                this.Method961(target, 1);
             }
         }
         if (this.Field2512.isCurrentMode(KillAura.Method754(7609, -8870))) {
@@ -1866,14 +1866,14 @@ extends Module {
                 if (Field2528.Method1799() > 0) {
                     Field2528.forEach(this::Method948);
                 }
-            } else if (Field2524 != null) {
-                this.Method963(Field2524);
+            } else if (target != null) {
+                this.Method963(target);
             }
         }
     }
 
-    private static int Method974(EntityLivingBase a, EntityLivingBase a2) {
-        return (int)(a2.getHealth() - a.getHealth());
+    private static int Method974(EntityLivingBase a2, EntityLivingBase a3) {
+        return (int)(a3.getHealth() - a2.getHealth());
     }
 
     private static native /* synthetic */ void Method975();

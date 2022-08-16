@@ -13,7 +13,7 @@ package awsl;
 import awsl.Class39;
 import awsl.Class63;
 import awsl.Class801;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class69
 extends Class63 {
@@ -108,20 +108,20 @@ extends Class63 {
 
     @Override
     public Class63 Method3616() {
-        Class69 a;
+        Class69 a2;
         block1: {
-            Class91[] a2 = Class801.Method3300();
+            a[] a3 = Class801.Method3300();
             if (this.Field676 != 1 || (this.Field677 & 0x17) == 0) {
                 throw new IllegalArgumentException();
             }
             this.Field677 = 32;
-            Class63 a3 = this.Field679 == null ? null : this.Field679.Method3616();
-            a = new Class69(2, a3);
-            a.Field678 = true;
-            if (Class91.Method3648() != null) break block1;
-            Class801.Method3299(new Class91[5]);
+            Class63 a4 = this.Field679 == null ? null : this.Field679.Method3616();
+            a2 = new Class69(2, a4);
+            a2.Field678 = true;
+            if (a.trash() != null) break block1;
+            Class801.Method3299(new a[5]);
         }
-        return a;
+        return a2;
     }
 
     @Override
@@ -129,35 +129,35 @@ extends Class63 {
         if (this.Field677 != 32) {
             throw new IllegalStateException();
         }
-        Class63 a = this.Field679 == null ? null : this.Field679.Method3617();
-        return new Class69(2, a);
+        Class63 a2 = this.Field679 == null ? null : this.Field679.Method3617();
+        return new Class69(2, a2);
     }
 
     @Override
-    public void Method3618(char a) {
+    public void Method3618(char a2) {
         block2: {
             if (this.Field676 != 2 || this.Field677 != 1) {
                 throw new IllegalStateException();
             }
-            if (a == 'V' ? !this.Field678 : "ZCBSIFJD".indexOf((int)a) == -1) {
+            if (a2 == 'V' ? !this.Field678 : "ZCBSIFJD".indexOf((int)a2) == -1) {
                 throw new IllegalArgumentException();
             }
             this.Field677 = 64;
             if (this.Field679 == null) break block2;
-            this.Field679.Method3618(a);
+            this.Field679.Method3618(a2);
         }
     }
 
     @Override
-    public void Method3619(String a) {
+    public void Method3619(String a2) {
         block1: {
             if (this.Field676 != 2 || this.Field677 != 1) {
                 throw new IllegalStateException();
             }
-            Class39.Method3390(a, "type variable");
+            Class39.Method3390(a2, "type variable");
             this.Field677 = 64;
             if (this.Field679 == null) break block1;
-            this.Field679.Method3619(a);
+            this.Field679.Method3619(a2);
         }
     }
 
@@ -167,32 +167,32 @@ extends Class63 {
             throw new IllegalStateException();
         }
         this.Field677 = 64;
-        Class63 a = this.Field679 == null ? null : this.Field679.Method3620();
-        return new Class69(2, a);
+        Class63 a2 = this.Field679 == null ? null : this.Field679.Method3620();
+        return new Class69(2, a2);
     }
 
     @Override
-    public void Method3621(String a) {
+    public void Method3621(String a2) {
         block1: {
             if (this.Field676 != 2 || this.Field677 != 1) {
                 throw new IllegalStateException();
             }
-            Class39.Method3393(a, "class name");
+            Class39.Method3393(a2, "class name");
             this.Field677 = 128;
             if (this.Field679 == null) break block1;
-            this.Field679.Method3621(a);
+            this.Field679.Method3621(a2);
         }
     }
 
     @Override
-    public void Method3622(String a) {
+    public void Method3622(String a2) {
         block1: {
             if (this.Field677 != 128) {
                 throw new IllegalStateException();
             }
-            Class39.Method3390(a, "inner class name");
+            Class39.Method3390(a2, "inner class name");
             if (this.Field679 == null) break block1;
-            this.Field679.Method3622(a);
+            this.Field679.Method3622(a2);
         }
     }
 
@@ -208,15 +208,15 @@ extends Class63 {
     }
 
     @Override
-    public Class63 Method3624(char a) {
+    public Class63 Method3624(char a2) {
         if (this.Field677 != 128) {
             throw new IllegalStateException();
         }
-        if ("+-=".indexOf((int)a) == -1) {
+        if ("+-=".indexOf((int)a2) == -1) {
             throw new IllegalArgumentException();
         }
-        Class63 a2 = this.Field679 == null ? null : this.Field679.Method3624(a);
-        return new Class69(2, a2);
+        Class63 a3 = this.Field679 == null ? null : this.Field679.Method3624(a2);
+        return new Class69(2, a3);
     }
 
     @Override

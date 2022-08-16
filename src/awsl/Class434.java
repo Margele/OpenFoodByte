@@ -33,7 +33,7 @@ Class45 {
 
     public static void Method2343(String a) {
         if (!a.equalsIgnoreCase(Class434.Method1357(-4210, -2802)) && !a.equalsIgnoreCase(Class434.Method1357(-4212, -27442)) && a.equalsIgnoreCase(Class434.Method1357(-4209, -13740))) {
-            EventManager.Method2686(new Class642());
+            EventManager.call(new Class642());
         }
     }
 

@@ -8,7 +8,7 @@
  */
 package awsl;
 
-import awsl.Class91;
+import obfuscate.a;
 
 public final class Class280 {
     public long Field1523 = 0L;
@@ -26,10 +26,10 @@ public final class Class280 {
         return System.currentTimeMillis() - this.Field1523;
     }
 
-    public boolean Method3077(long a) {
+    public boolean Method3077(long a2) {
         int n = Class280.Method3083();
-        boolean bl = this.Method3075() - this.Field1523 >= a;
-        Class91.Method3647(new String[5]);
+        boolean bl = this.Method3075() - this.Field1523 >= a2;
+        a.trash(new String[5]);
         return bl;
     }
 
@@ -45,8 +45,8 @@ public final class Class280 {
         this.Field1523 = System.currentTimeMillis();
     }
 
-    public void Method3081(long a) {
-        this.Field1523 = a;
+    public void Method3081(long a2) {
+        this.Field1523 = a2;
     }
 
     public static void Method3082(int n) {

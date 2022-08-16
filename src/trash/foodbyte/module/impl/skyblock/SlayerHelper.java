@@ -17,9 +17,6 @@
  */
 package trash.foodbyte.module.impl.skyblock;
 
-import awsl.Class630;
-import awsl.Class653;
-import awsl.Class91;
 import awsl.Class98;
 import eventapi.EventTarget;
 import net.minecraft.entity.Entity;
@@ -29,10 +26,13 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.C02PacketUseEntity;
 import net.minecraft.network.play.client.C0BPacketEntityAction;
 import net.minecraft.world.World;
+import obfuscate.a;
+import trash.foodbyte.event.EventMove;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 
 public class SlayerHelper
@@ -47,13 +47,13 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1655(Class653 a) {
+    public void Method1655(EventTick a2) {
         ++this.Field3136;
         int[] nArray = Class98.Method3639();
         if (this.Field3135 && this.Field3136 > 5) {
             this.Field3135 = !this.Field3135;
             Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C0BPacketEntityAction((Entity)SlayerHelper.mc.thePlayer, C0BPacketEntityAction.Action.STOP_SNEAKING));
-            Class91.Method3647(new String[1]);
+            a.trash(new String[1]);
         }
         if (this.Field3135) {
             // empty if block
@@ -61,24 +61,24 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1994(Class630 a) {
+    public void Method1994(EventMove a2) {
         if (this.Field3135) {
-            a.Field2881 *= 0.5;
-            a.Field2883 *= 0.5;
+            a2.x *= 0.5;
+            a2.z *= 0.5;
         }
     }
 
     @EventTarget
-    public void Method1186(EventPacket a) {
-        int[] a2 = Class98.Method3639();
-        if (a.isSend() && Field3134.Method2509().booleanValue()) {
-            C02PacketUseEntity a3;
-            if (a.getPacket() instanceof C02PacketUseEntity) {
-                a3 = (C02PacketUseEntity)a.getPacket();
-                if (a3.getAction() == C02PacketUseEntity.Action.ATTACK && a3.getEntityFromWorld((World)SlayerHelper.mc.theWorld) instanceof EntityEnderman) {
-                    EntityEnderman a4 = (EntityEnderman)a3.getEntityFromWorld((World)SlayerHelper.mc.theWorld);
+    public void Method1186(EventPacket a2) {
+        int[] a3 = Class98.Method3639();
+        if (a2.isSend() && Field3134.getBooleanValue().booleanValue()) {
+            C02PacketUseEntity a4;
+            if (a2.getPacket() instanceof C02PacketUseEntity) {
+                a4 = (C02PacketUseEntity)a2.getPacket();
+                if (a4.getAction() == C02PacketUseEntity.Action.ATTACK && a4.getEntityFromWorld((World)SlayerHelper.mc.theWorld) instanceof EntityEnderman) {
+                    EntityEnderman a5 = (EntityEnderman)a4.getEntityFromWorld((World)SlayerHelper.mc.theWorld);
                     this.Field3136 = 0;
-                    if (!this.Field3135 && a4.getEntityAttribute(SharedMonsterAttributes.maxHealth).getBaseValue() >= 750000.0) {
+                    if (!this.Field3135 && a5.getEntityAttribute(SharedMonsterAttributes.maxHealth).getBaseValue() >= 750000.0) {
                         this.Field3135 = !this.Field3135;
                         Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C0BPacketEntityAction((Entity)SlayerHelper.mc.thePlayer, C0BPacketEntityAction.Action.START_SNEAKING));
                     }
@@ -87,10 +87,10 @@ extends Module {
                     }
                 }
             }
-            if (a.getPacket() instanceof C0BPacketEntityAction) {
-                a3 = (C0BPacketEntityAction)a.getPacket();
-                if (this.Field3135 && (a3.getAction().equals((Object)C0BPacketEntityAction.Action.START_SNEAKING) || a3.getAction().equals((Object)C0BPacketEntityAction.Action.STOP_SNEAKING))) {
-                    a.setCancelled(true);
+            if (a2.getPacket() instanceof C0BPacketEntityAction) {
+                a4 = (C0BPacketEntityAction)a2.getPacket();
+                if (this.Field3135 && (a4.getAction().equals((Object)C0BPacketEntityAction.Action.START_SNEAKING) || a4.getAction().equals((Object)C0BPacketEntityAction.Action.STOP_SNEAKING))) {
+                    a2.setCancelled(true);
                 }
             }
         }

@@ -14,7 +14,6 @@
  */
 package awsl;
 
-import awsl.Class208;
 import java.util.Arrays;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,14 +21,15 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.C0EPacketClickWindow;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
+import trash.foodbyte.utils.MoveUtils;
 
 public class Class747 {
     private static Minecraft Field3270 = Minecraft.getMinecraft();
 
     public static int Method1561() {
         int a = 0;
-        String[] a2 = Class208.Method2491();
+        String[] a2 = MoveUtils.trash();
         if (a < 8) {
             if (Class747.Field3270.thePlayer.inventory.mainInventory[a] == null) {
                 return a;
@@ -54,7 +54,7 @@ public class Class747 {
     public static void Method1565(int a) {
         short a2 = Class747.Field3270.thePlayer.openContainer.getNextTransactionID(Class747.Field3270.thePlayer.inventory);
         ItemStack a3 = Class747.Field3270.thePlayer.openContainer.getSlot(a).getStack();
-        Wrapper.INSTANCE.Method2874((Packet)new C0EPacketClickWindow(Class747.Field3270.thePlayer.openContainer.windowId, a, 0, 0, a3, a2));
+        Wrapper.INSTANCE.sendPacket((Packet)new C0EPacketClickWindow(Class747.Field3270.thePlayer.openContainer.windowId, a, 0, 0, a3, a2));
     }
 
     public static void Method1566(int a, int a2) {
@@ -64,7 +64,7 @@ public class Class747 {
     public static void Method1567(int a, int a2) {
         short a3 = Class747.Field3270.thePlayer.openContainer.getNextTransactionID(Class747.Field3270.thePlayer.inventory);
         ItemStack a4 = Class747.Field3270.thePlayer.openContainer.getSlot(a).getStack();
-        Wrapper.INSTANCE.Method2874((Packet)new C0EPacketClickWindow(Class747.Field3270.thePlayer.openContainer.windowId, a, a2, 0, a4, a3));
+        Wrapper.INSTANCE.sendPacket((Packet)new C0EPacketClickWindow(Class747.Field3270.thePlayer.openContainer.windowId, a, a2, 0, a4, a3));
     }
 
     public static void Method1568(int a) {
@@ -74,7 +74,7 @@ public class Class747 {
     public static void Method1569(int a) {
         short a2 = Class747.Field3270.thePlayer.openContainer.getNextTransactionID(Class747.Field3270.thePlayer.inventory);
         ItemStack a3 = Class747.Field3270.thePlayer.openContainer.getSlot(a).getStack();
-        Wrapper.INSTANCE.Method2874((Packet)new C0EPacketClickWindow(Class747.Field3270.thePlayer.openContainer.windowId, a, 0, 1, a3, a2));
+        Wrapper.INSTANCE.sendPacket((Packet)new C0EPacketClickWindow(Class747.Field3270.thePlayer.openContainer.windowId, a, 0, 1, a3, a2));
     }
 
     public static boolean Method1570() {

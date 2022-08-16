@@ -15,10 +15,10 @@
 package awsl;
 
 import awsl.Class668;
-import awsl.Class91;
 import com.ibm.icu.text.NumberFormat;
 import java.awt.Color;
 import java.util.regex.Pattern;
+import obfuscate.a;
 
 public final class Class274 {
     private static final Pattern Field1476 = Pattern.compile((String)"(?i)\u00a7[0-9A-FK-OR]");
@@ -107,31 +107,25 @@ public final class Class274 {
     /*
      * WARNING - void declaration
      */
-    public static Color Method2787(Color a, Color a2, double a3) {
-        float a4;
-        void a5;
-        float a6 = (float)a3;
-        float a7 = 1.0f - a6;
-        float[] a8 = new float[3];
+    public static Color Method2787(Color a2, Color a3, double a4) {
+        float a5;
+        void a6;
+        float a7 = (float)a4;
+        float a8 = 1.0f - a7;
+        float[] a9 = new float[3];
         float[] fArray = new float[3];
         boolean bl = Class668.Method1270();
-        a.getColorComponents(a8);
-        a2.getColorComponents((float[])a5);
-        float f = a8[0] * a6 + a5[0] * a7;
-        boolean a9 = bl;
-        float a10 = a8[1] * a6 + a5[1] * a7;
-        float a11 = a8[2] * a6 + a5[2] * a7;
-        if (a4 < 0.0f) {
-            a4 = 0.0f;
+        a2.getColorComponents(a9);
+        a3.getColorComponents((float[])a6);
+        float f = a9[0] * a7 + a6[0] * a8;
+        boolean a10 = bl;
+        float a11 = a9[1] * a7 + a6[1] * a8;
+        float a12 = a9[2] * a7 + a6[2] * a8;
+        if (a5 < 0.0f) {
+            a5 = 0.0f;
         }
-        if (a4 > 255.0f) {
-            a4 = 255.0f;
-        }
-        if (a10 < 0.0f) {
-            a10 = 0.0f;
-        }
-        if (a10 > 255.0f) {
-            a10 = 255.0f;
+        if (a5 > 255.0f) {
+            a5 = 255.0f;
         }
         if (a11 < 0.0f) {
             a11 = 0.0f;
@@ -139,32 +133,38 @@ public final class Class274 {
         if (a11 > 255.0f) {
             a11 = 255.0f;
         }
-        Color a12 = null;
+        if (a12 < 0.0f) {
+            a12 = 0.0f;
+        }
+        if (a12 > 255.0f) {
+            a12 = 255.0f;
+        }
+        Color a13 = null;
         try {
-            a12 = new Color(a4, a10, a11);
+            a13 = new Color(a5, a11, a12);
         }
-        catch (IllegalArgumentException a13) {
-            NumberFormat a14 = NumberFormat.getNumberInstance();
-            a13.printStackTrace();
+        catch (IllegalArgumentException a14) {
+            NumberFormat a15 = NumberFormat.getNumberInstance();
+            a14.printStackTrace();
         }
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class668.Method1268(false);
         }
-        return a12;
+        return a13;
     }
 
-    public static String Method2788(int a) {
-        if (a != 1) {
-            if (a == 2) {
+    public static String Method2788(int a2) {
+        if (a2 != 1) {
+            if (a2 == 2) {
                 return "\u00a7a";
             }
-            if (a == 3) {
+            if (a2 == 3) {
                 return "\u00a73";
             }
-            if (a == 4) {
+            if (a2 == 4) {
                 return "\u00a74";
             }
-            if (a >= 5) {
+            if (a2 >= 5) {
                 return "\u00a7e";
             }
         }

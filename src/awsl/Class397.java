@@ -17,9 +17,9 @@ import awsl.Class381;
 import awsl.Class390;
 import awsl.Class565;
 import awsl.Class707;
-import awsl.Class91;
 import java.io.IOException;
 import java.math.BigDecimal;
+import obfuscate.a;
 import org.lwjgl.input.Mouse;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.utils.MathUtils;
@@ -85,42 +85,42 @@ extends Class390 {
     }
 
     @Override
-    public void Method412(int a, int a2) {
-        String a3 = this.Method1355(this.Field1958, 2);
-        a3 = new BigDecimal((double)this.Field1958).setScale(2, 4).floatValue() + "";
-        int a4 = Class390.Method1318();
+    public void Method412(int a2, int a3) {
+        String a4 = this.Method1355(this.Field1958, 2);
+        a4 = new BigDecimal((double)this.Field1958).setScale(2, 4).floatValue() + "";
+        int a5 = Class390.Method1318();
         if (this.Field1958 % 1.0f != 0.0f) {
-            a3 = new BigDecimal((double)this.Field1958).setScale(2, 4).floatValue() + "";
+            a4 = new BigDecimal((double)this.Field1958).setScale(2, 4).floatValue() + "";
         }
-        a3 = new BigDecimal((double)this.Field1958).setScale(0, 4).toString();
+        a4 = new BigDecimal((double)this.Field1958).setScale(0, 4).toString();
         if (this.Field1959.Method2719() != null) {
-            a3 = a3 + this.Field1959.Method2719();
+            a4 = a4 + this.Field1959.Method2719();
         }
-        Class565.Field2636.Method1217(a3, (float)(this.Field1907 + this.Method1310()) - Class565.Field2635.Method1225(a3) - 4.0f, this.Field1908 + 1, 0xFFFFFF);
+        Class565.Field2636.Method1217(a4, (float)(this.Field1907 + this.Method1310()) - Class565.Field2635.Method1225(a4) - 4.0f, this.Field1908 + 1, 0xFFFFFF);
         Class565.Field2636.Method1217(this.Field1913, this.Field1907 + 5, this.Field1908 + 1, 0xFFFFFF);
         RenderUtils.Method1103(this.Field1907 + 5, this.Field1908 + this.Field1910 - 4, this.Method1310() - 10, 1.0f, Class707.Method1832() + 0x50000000);
         RenderUtils.Method1103(this.Field1907 + 5, this.Field1908 + this.Field1910 - 4, MathUtils.Method547(this.Field1958, this.Field1956, this.Field1957, 0.0f, this.Method1310() - 10), 1.0f, Class707.Method1832());
-        float a5 = this.Method1310() - 12;
-        float a6 = (this.Field1958 - this.Field1956) / (this.Field1957 - this.Field1956);
-        RenderUtils.Method1103((float)(this.Field1907 + 5) + a5 * a6, this.Field1908 + this.Field1910 - 5, 2.0f, 3.0f, Class707.Method1832());
-        if (Class91.Method3648() == null) {
-            Class390.Method1316(++a4);
+        float a6 = this.Method1310() - 12;
+        float a7 = (this.Field1958 - this.Field1956) / (this.Field1957 - this.Field1956);
+        RenderUtils.Method1103((float)(this.Field1907 + 5) + a6 * a7, this.Field1908 + this.Field1910 - 5, 2.0f, 3.0f, Class707.Method1832());
+        if (a.trash() == null) {
+            Class390.Method1316(++a5);
         }
     }
 
-    private String Method1355(double a, int a2) {
-        BigDecimal a3 = new BigDecimal(Double.toString((double)a));
-        a3 = a3.setScale(a2, 4);
-        return String.valueOf((Object)a3);
+    private String Method1355(double a2, int a3) {
+        BigDecimal a4 = new BigDecimal(Double.toString((double)a2));
+        a4 = a4.setScale(a3, 4);
+        return String.valueOf((Object)a4);
     }
 
     @Override
-    public void Method1315(char a, int a2) throws IOException {
+    public void Method1315(char a2, int a3) throws IOException {
         int n = Class390.Method1317();
         if (!this.Field1915) {
             return;
         }
-        switch (a2) {
+        switch (a3) {
             case 203: {
                 if (!(this.Field1958 > this.Field1956) || this.Field1958 == this.Field1956) break;
                 this.Field1958 -= this.Field1960;
@@ -140,13 +140,13 @@ extends Class390 {
     }
 
     @Override
-    public void Method413(int a, int a2, boolean a3) {
-        this.Field1915 = this.Method1312(a, a2) && this.Field1919.Method1392(a, a2);
+    public void Method413(int a2, int a3, boolean a4) {
+        this.Field1915 = this.Method1312(a2, a3) && this.Field1919.Method1392(a2, a3);
         if (!this.Field1918 && this.Field1915 && Mouse.isButtonDown((int)0)) {
             this.Field1961 = true;
         }
         this.Field1961 = false;
-        this.Field1918 = a3;
+        this.Field1918 = a4;
     }
 
     @Override

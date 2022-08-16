@@ -15,17 +15,17 @@ package trash.foodbyte.module;
 import awsl.Class322;
 import awsl.Class446;
 import awsl.Class447;
-import awsl.Class91;
 import eventapi.EventManager;
 import java.util.Iterator;
 import java.util.Objects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumChatFormatting;
+import obfuscate.a;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.notification.Notification;
 import trash.foodbyte.notification.Types;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 
 public class Module {
     public static Minecraft mc;
@@ -58,19 +58,19 @@ public class Module {
         this.Field2660 = new Class322();
     }
 
-    public Module(String a, Category category) {
+    public Module(String a2, Category category) {
         int[] nArray = Module.Method1041();
         int[] nArray2 = nArray;
         this.Field2654 = "";
         this.description = "unknown";
         mc = Minecraft.getMinecraft();
-        this.name = a;
-        this.displayName = a;
+        this.name = a2;
+        this.displayName = a2;
         this.Field2653 = 0;
         this.Field2650 = category;
         this.Field2659 = new Class322();
         this.Field2660 = new Class322();
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Module.Method1040(new int[4]);
         }
     }
@@ -79,13 +79,13 @@ public class Module {
         return this.Field2654;
     }
 
-    public void setDisplayTag(String a) {
-        String a2 = a;
-        int[] a3 = Module.Method1041();
-        if (a2.isEmpty()) {
-            this.Field2654 = a2;
+    public void setDisplayTag(String a2) {
+        String a3 = a2;
+        int[] a4 = Module.Method1041();
+        if (a3.isEmpty()) {
+            this.Field2654 = a3;
         }
-        this.Field2654 = String.format((String)" %s", (Object[])new Object[]{EnumChatFormatting.GRAY + a});
+        this.Field2654 = String.format((String)" %s", (Object[])new Object[]{EnumChatFormatting.GRAY + a2});
     }
 
     public String getDescription() {
@@ -108,8 +108,8 @@ public class Module {
         return this.Field2653;
     }
 
-    public void Method1021(int a) {
-        this.Field2653 = a;
+    public void Method1021(int a2) {
+        this.Field2653 = a2;
     }
 
     public void setHideModule(boolean isHide) {
@@ -129,16 +129,16 @@ public class Module {
     }
 
     public boolean Method1026() {
-        return Wrapper.INSTANCE.Method2871();
+        return Wrapper.INSTANCE.isVaildWorldAndPlayer();
     }
 
-    public void onDisable() {
+    public void idk() {
     }
 
     public void onEnable() {
     }
 
-    public void Method279() {
+    public void onDisable() {
     }
 
     public void toggle() {
@@ -175,8 +175,8 @@ public class Module {
             module = this;
             bl = !this.getState();
         }
-        catch (Exception a) {
-            a.printStackTrace();
+        catch (Exception a2) {
+            a2.printStackTrace();
             return;
         }
         {
@@ -192,12 +192,12 @@ public class Module {
         }
     }
 
-    public void setState(boolean a, boolean a2) {
-        int[] a3 = Module.Method1041();
+    public void setState(boolean a2, boolean a3) {
+        int[] a4 = Module.Method1041();
         if (this.canUse()) {
             return;
         }
-        this.state = a;
+        this.state = a2;
         this.toggle();
         this.Field2659.Method1192(0.0);
         this.Field2660.Method1192(0.0);
@@ -205,14 +205,14 @@ public class Module {
         try {
             this.onEnable();
         }
-        catch (Exception a4) {
-            a4.printStackTrace();
+        catch (Exception a5) {
+            a5.printStackTrace();
             EventManager.unregister(this);
             try {
-                this.Method279();
+                this.onDisable();
             }
-            catch (Exception a5) {
-                a5.printStackTrace();
+            catch (Exception a6) {
+                a6.printStackTrace();
             }
         }
         GlobalModule.INSTANCE.fileManager.saveMods();
@@ -221,9 +221,9 @@ public class Module {
     public boolean Method1031() {
         Iterator iterator = Class446.Method2764().Method1383();
         while (iterator.Method932()) {
-            Class447 a = (Class447)iterator.Method933();
-            String a2 = a.Method2755();
-            if (!a2.equalsIgnoreCase(this.getName())) continue;
+            Class447 a2 = (Class447)iterator.Method933();
+            String a3 = a2.Method2755();
+            if (!a3.equalsIgnoreCase(this.getName())) continue;
             return true;
         }
         return false;
@@ -233,16 +233,16 @@ public class Module {
         return this.hide;
     }
 
-    public void Method1033(boolean a) {
-        this.hide = a;
+    public void Method1033(boolean a2) {
+        this.hide = a2;
     }
 
-    public void Method1034(double a) {
-        this.Field2657 = a;
+    public void Method1034(double a2) {
+        this.Field2657 = a2;
     }
 
-    public void Method1035(double a) {
-        this.Field2658 = a;
+    public void Method1035(double a2) {
+        this.Field2658 = a2;
     }
 
     public double Method1036() {
@@ -263,7 +263,7 @@ public class Module {
 
     static {
         Module.Method1040(new int[4]);
-        mc = Wrapper.INSTANCE.Method2868();
+        mc = Wrapper.INSTANCE.getMinecraft();
     }
 
     public static void Method1040(int[] nArray) {

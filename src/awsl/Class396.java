@@ -22,7 +22,7 @@ extends Class397 {
     public Class396(FloatValue a, Class381 a2, int a3, int a4, String a5, String a6) {
         super(a, a2, a3, a4, a5, a.Method2750(), a.Method2751(), a.Method2752(), a6);
         this.Field1954 = a;
-        this.Field1958 = this.Field1954.Method2744().floatValue();
+        this.Field1958 = this.Field1954.getFloatValue().floatValue();
         this.Field1920 = "Slider";
     }
 
@@ -40,6 +40,6 @@ extends Class397 {
             this.Field1954.Method2745(this.Field1958);
             GlobalModule.INSTANCE.fileManager.saveValues();
         }
-        this.Field1958 = this.Field1954.Method2744().floatValue();
+        this.Field1958 = this.Field1954.getFloatValue().floatValue();
     }
 }

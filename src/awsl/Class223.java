@@ -11,8 +11,8 @@
 package awsl;
 
 import awsl.Class216;
-import awsl.Class91;
 import net.minecraft.util.Vec3i;
+import obfuscate.a;
 
 public class Class223 {
     public static final Class223 Field1238 = new Class223(0.0, 0.0, 0.0);
@@ -90,25 +90,25 @@ public class Class223 {
     }
 
     public int Method2178() {
-        int a;
-        long a2 = Double.doubleToLongBits((double)this.Field1239);
-        int n = (int)(a2 ^ a2 >>> 32);
-        a2 = Double.doubleToLongBits((double)this.Field1240);
-        a = 31 * a + (int)(a2 ^ a2 >>> 32);
-        String a3 = Class216.Method2647();
-        a2 = Double.doubleToLongBits((double)this.Field1241);
-        a = 31 * a + (int)(a2 ^ a2 >>> 32);
-        if (Class91.Method3648() == null) {
+        int a2;
+        long a3 = Double.doubleToLongBits((double)this.Field1239);
+        int n = (int)(a3 ^ a3 >>> 32);
+        a3 = Double.doubleToLongBits((double)this.Field1240);
+        a2 = 31 * a2 + (int)(a3 ^ a3 >>> 32);
+        String a4 = Class216.Method2647();
+        a3 = Double.doubleToLongBits((double)this.Field1241);
+        a2 = 31 * a2 + (int)(a3 ^ a3 >>> 32);
+        if (a.trash() == null) {
             Class216.Method2646("w2n8Y");
         }
-        return a;
+        return a2;
     }
 
     public String Method2179() {
         return "(" + this.Field1239 + ", " + this.Field1240 + ", " + this.Field1241 + ")";
     }
 
-    public Class223 Method2180(float a) {
-        return new Class223(this.Field1239 * (double)a, this.Field1240 * (double)a, this.Field1241 * (double)a);
+    public Class223 Method2180(float a2) {
+        return new Class223(this.Field1239 * (double)a2, this.Field1240 * (double)a2, this.Field1241 * (double)a2);
     }
 }

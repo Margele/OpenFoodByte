@@ -12,8 +12,8 @@ package awsl;
 import awsl.Class291;
 import awsl.Class298;
 import awsl.Class666;
-import awsl.Class91;
 import java.util.Locale;
+import obfuscate.a;
 
 public class Class287 {
     public static final String Field1550 = "\r\n";
@@ -41,25 +41,25 @@ public class Class287 {
         return a2;
     }
 
-    public static String Method3107(Class298 a) throws Class666 {
-        StringBuilder a2 = new StringBuilder();
-        int[] a3 = Class666.Method3438();
-        if (a.Method2964("Status-Code") && a.Method2964("Reason-Phrase")) {
-            a2.append(a.Method2963("HTTP-Version"));
-            a2.append(' ');
-            a2.append(a.Method2963("Status-Code"));
-            a2.append(' ');
-            a2.append(a.Method2963("Reason-Phrase"));
-            Class91.Method3647(new String[2]);
+    public static String Method3107(Class298 a2) throws Class666 {
+        StringBuilder a3 = new StringBuilder();
+        int[] a4 = Class666.Method3438();
+        if (a2.Method2964("Status-Code") && a2.Method2964("Reason-Phrase")) {
+            a3.append(a2.Method2963("HTTP-Version"));
+            a3.append(' ');
+            a3.append(a2.Method2963("Status-Code"));
+            a3.append(' ');
+            a3.append(a2.Method2963("Reason-Phrase"));
+            a.trash(new String[2]);
         }
-        if (a.Method2964("Method") && a.Method2964("Request-URI")) {
-            a2.append(a.Method2963("Method"));
-            a2.append(' ');
-            a2.append('\"');
-            a2.append(a.Method2963("Request-URI"));
-            a2.append('\"');
-            a2.append(' ');
-            a2.append(a.Method2963("HTTP-Version"));
+        if (a2.Method2964("Method") && a2.Method2964("Request-URI")) {
+            a3.append(a2.Method2963("Method"));
+            a3.append(' ');
+            a3.append('\"');
+            a3.append(a2.Method2963("Request-URI"));
+            a3.append('\"');
+            a3.append(' ');
+            a3.append(a2.Method2963("HTTP-Version"));
         }
         throw new Class666("Not enough material for an HTTP header.");
     }

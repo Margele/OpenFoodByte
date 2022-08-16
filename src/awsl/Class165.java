@@ -27,9 +27,9 @@ import awsl.Class267;
 import awsl.Class279;
 import awsl.Class31;
 import awsl.Class45;
-import awsl.Class46;
 import java.io.IOException;
 import java.io.InputStream;
+import obfuscate.b;
 
 public class Class165 {
     static final boolean Field1020 = true;
@@ -957,350 +957,350 @@ public class Class165 {
         return a2 + 1 + 2 * a3;
     }
 
-    private void Method1477(Class267 a, Class247 a2, int a3, boolean a4) {
-        Class148 a5;
-        int a6;
-        int a7 = this.Field1029[a3++] & 0xFF;
-        int a8 = Class46.Method3211(a2.Field1358).length - a7;
-        for (a6 = 0; a6 < a8; ++a6) {
-            a5 = a.Method1971(a6, "Ljava/lang/Synthetic;", false);
-            a5.Method401();
+    private void Method1477(Class267 a2, Class247 a3, int a4, boolean a5) {
+        Class148 a6;
+        int a7;
+        int a8 = this.Field1029[a4++] & 0xFF;
+        int a9 = b.Method3211(a3.Field1358).length - a8;
+        for (a7 = 0; a7 < a9; ++a7) {
+            a6 = a2.Method1971(a7, "Ljava/lang/Synthetic;", false);
+            a6.Method401();
         }
-        char[] a9 = a2.Field1354;
-        if (a6 < a7 + a8) {
-            int a10 = this.Method1490(a3);
-            a3 += 2;
+        char[] a10 = a3.Field1354;
+        if (a7 < a8 + a9) {
+            int a11 = this.Method1490(a4);
+            a4 += 2;
             while (true) {
-                a5 = a.Method1971(a6, this.Method1494(a3, a9), a4);
-                a3 = this.Method1478(a3 + 2, a9, true, a5);
-                --a10;
+                a6 = a2.Method1971(a7, this.Method1494(a4, a10), a5);
+                a4 = this.Method1478(a4 + 2, a10, true, a6);
+                --a11;
             }
         }
     }
 
-    private int Method1478(int a, char[] a2, boolean a3, Class148 a4) {
-        int a5 = this.Method1490(a);
-        a += 2;
+    private int Method1478(int a2, char[] a3, boolean a4, Class148 a5) {
+        int a6 = this.Method1490(a2);
+        a2 += 2;
         while (true) {
-            a = this.Method1479(a + 2, a2, this.Method1494(a, a2), a4);
-            --a5;
+            a2 = this.Method1479(a2 + 2, a3, this.Method1494(a2, a3), a5);
+            --a6;
         }
     }
 
-    private int Method1479(int a, char[] a2, String a3, Class148 a4) {
-        switch (this.Field1029[a] & 0xFF) {
+    private int Method1479(int a2, char[] a3, String a4, Class148 a5) {
+        switch (this.Field1029[a2] & 0xFF) {
             case 101: {
-                return a + 5;
+                return a2 + 5;
             }
             case 64: {
-                return this.Method1478(a + 3, a2, true, null);
+                return this.Method1478(a2 + 3, a3, true, null);
             }
             case 91: {
-                return this.Method1478(a + 1, a2, false, null);
+                return this.Method1478(a2 + 1, a3, false, null);
             }
         }
-        return a + 3;
+        return a2 + 3;
     }
 
-    private void Method1480(Class247 a) {
-        String a2 = a.Field1358;
-        Object[] a3 = a.Field1369;
-        int a4 = 0;
-        if ((a.Field1356 & 8) == 0) {
-            a3[a4++] = "<init>".equals((Object)a.Field1357) ? Class45.Field402 : this.Method1496(this.Field1033 + 2, a.Field1354);
+    private void Method1480(Class247 a2) {
+        String a3 = a2.Field1358;
+        Object[] a4 = a2.Field1369;
+        int a5 = 0;
+        if ((a2.Field1356 & 8) == 0) {
+            a4[a5++] = "<init>".equals((Object)a2.Field1357) ? Class45.Field402 : this.Method1496(this.Field1033 + 2, a2.Field1354);
         }
-        int a5 = 1;
+        int a6 = 1;
         block8: while (true) {
-            int a6 = a5;
-            switch (a2.charAt(a5++)) {
+            int a7 = a6;
+            switch (a3.charAt(a6++)) {
                 case 'B': 
                 case 'C': 
                 case 'I': 
                 case 'S': 
                 case 'Z': {
-                    a3[a4++] = Class45.Field397;
+                    a4[a5++] = Class45.Field397;
                     continue block8;
                 }
                 case 'F': {
-                    a3[a4++] = Class45.Field398;
+                    a4[a5++] = Class45.Field398;
                     continue block8;
                 }
                 case 'J': {
-                    a3[a4++] = Class45.Field400;
+                    a4[a5++] = Class45.Field400;
                     continue block8;
                 }
                 case 'D': {
-                    a3[a4++] = Class45.Field399;
+                    a4[a5++] = Class45.Field399;
                     continue block8;
                 }
                 case '[': {
-                    while (a2.charAt(a5) == '[') {
-                        ++a5;
+                    while (a3.charAt(a6) == '[') {
+                        ++a6;
                     }
-                    if (a2.charAt(a5) == 'L') {
-                        ++a5;
-                        while (a2.charAt(a5) != ';') {
-                            ++a5;
+                    if (a3.charAt(a6) == 'L') {
+                        ++a6;
+                        while (a3.charAt(a6) != ';') {
+                            ++a6;
                         }
                     }
-                    a3[a4++] = a2.substring(a6, ++a5);
+                    a4[a5++] = a3.substring(a7, ++a6);
                     continue block8;
                 }
                 case 'L': {
-                    while (a2.charAt(a5) != ';') {
-                        ++a5;
+                    while (a3.charAt(a6) != ';') {
+                        ++a6;
                     }
-                    a3[a4++] = a2.substring(a6 + 1, a5++);
+                    a4[a5++] = a3.substring(a7 + 1, a6++);
                     continue block8;
                 }
             }
             break;
         }
-        a.Field1367 = a4;
+        a2.Field1367 = a5;
     }
 
-    private int Method1481(int a, boolean a2, boolean a3, Class247 a4) {
-        int a5;
-        char[] a6 = a4.Field1354;
-        Class264[] a7 = a4.Field1359;
-        int a8 = this.Field1029[a++] & 0xFF;
-        a4.Field1368 = 0;
-        if (a8 < 64) {
-            a5 = a8;
-            a4.Field1366 = 3;
-            a4.Field1370 = 0;
-        } else if (a8 < 128) {
-            a5 = a8 - 64;
-            a = this.Method1482(a4.Field1371, 0, a, a6, a7);
-            a4.Field1366 = 4;
-            a4.Field1370 = 1;
+    private int Method1481(int a2, boolean a3, boolean a4, Class247 a5) {
+        int a6;
+        char[] a7 = a5.Field1354;
+        Class264[] a8 = a5.Field1359;
+        int a9 = this.Field1029[a2++] & 0xFF;
+        a5.Field1368 = 0;
+        if (a9 < 64) {
+            a6 = a9;
+            a5.Field1366 = 3;
+            a5.Field1370 = 0;
+        } else if (a9 < 128) {
+            a6 = a9 - 64;
+            a2 = this.Method1482(a5.Field1371, 0, a2, a7, a8);
+            a5.Field1366 = 4;
+            a5.Field1370 = 1;
         } else {
-            a5 = this.Method1490(a);
-            a += 2;
-            if (a8 == 247) {
-                a = this.Method1482(a4.Field1371, 0, a, a6, a7);
-                a4.Field1366 = 4;
-                a4.Field1370 = 1;
-            } else if (a8 >= 248 && a8 < 251) {
-                a4.Field1366 = 2;
-                a4.Field1368 = 251 - a8;
-                a4.Field1367 -= a4.Field1368;
-                a4.Field1370 = 0;
-            } else if (a8 == 251) {
-                a4.Field1366 = 3;
-                a4.Field1370 = 0;
+            a6 = this.Method1490(a2);
+            a2 += 2;
+            if (a9 == 247) {
+                a2 = this.Method1482(a5.Field1371, 0, a2, a7, a8);
+                a5.Field1366 = 4;
+                a5.Field1370 = 1;
+            } else if (a9 >= 248 && a9 < 251) {
+                a5.Field1366 = 2;
+                a5.Field1368 = 251 - a9;
+                a5.Field1367 -= a5.Field1368;
+                a5.Field1370 = 0;
+            } else if (a9 == 251) {
+                a5.Field1366 = 3;
+                a5.Field1370 = 0;
             } else {
-                if (a8 < 255) {
-                    int a9 = a4.Field1367;
-                    int a10 = a8 - 251;
+                if (a9 < 255) {
+                    int a10 = a5.Field1367;
+                    int a11 = a9 - 251;
                     while (true) {
-                        a = this.Method1482(a4.Field1369, a9++, a, a6, a7);
-                        --a10;
+                        a2 = this.Method1482(a5.Field1369, a10++, a2, a7, a8);
+                        --a11;
                     }
                 }
-                a4.Field1366 = 0;
-                int a11 = this.Method1490(a);
-                a += 2;
-                a4.Field1368 = a11;
-                a4.Field1367 = a11;
-                int a12 = 0;
+                a5.Field1366 = 0;
+                int a12 = this.Method1490(a2);
+                a2 += 2;
+                a5.Field1368 = a12;
+                a5.Field1367 = a12;
+                int a13 = 0;
                 while (true) {
-                    a = this.Method1482(a4.Field1369, a12++, a, a6, a7);
-                    --a11;
+                    a2 = this.Method1482(a5.Field1369, a13++, a2, a7, a8);
+                    --a12;
                 }
             }
         }
-        a4.Field1362 += a5 + 1;
-        this.Method1483(a4.Field1362, a7);
-        return a;
+        a5.Field1362 += a6 + 1;
+        this.Method1483(a5.Field1362, a8);
+        return a2;
     }
 
-    private int Method1482(Object[] a, int a2, int a3, char[] a4, Class264[] a5) {
-        int a6 = this.Field1029[a3++] & 0xFF;
-        switch (a6) {
+    private int Method1482(Object[] a2, int a3, int a4, char[] a5, Class264[] a6) {
+        int a7 = this.Field1029[a4++] & 0xFF;
+        switch (a7) {
             case 0: {
-                a[a2] = Class45.Field396;
+                a2[a3] = Class45.Field396;
                 break;
             }
             case 1: {
-                a[a2] = Class45.Field397;
+                a2[a3] = Class45.Field397;
                 break;
             }
             case 2: {
-                a[a2] = Class45.Field398;
+                a2[a3] = Class45.Field398;
                 break;
             }
             case 3: {
-                a[a2] = Class45.Field399;
+                a2[a3] = Class45.Field399;
                 break;
             }
             case 4: {
-                a[a2] = Class45.Field400;
+                a2[a3] = Class45.Field400;
                 break;
             }
             case 5: {
-                a[a2] = Class45.Field401;
+                a2[a3] = Class45.Field401;
                 break;
             }
             case 6: {
-                a[a2] = Class45.Field402;
+                a2[a3] = Class45.Field402;
                 break;
             }
             case 7: {
-                a[a2] = this.Method1496(a3, a4);
-                a3 += 2;
+                a2[a3] = this.Method1496(a4, a5);
+                a4 += 2;
                 break;
             }
             default: {
-                a[a2] = this.Method1483(this.Method1490(a3), a5);
-                a3 += 2;
+                a2[a3] = this.Method1483(this.Method1490(a4), a6);
+                a4 += 2;
             }
         }
-        return a3;
+        return a4;
     }
 
-    protected Class264 Method1483(int a, Class264[] a2) {
+    protected Class264 Method1483(int a2, Class264[] a3) {
         block0: {
-            if (a2[a] != null) break block0;
-            a2[a] = new Class264();
+            if (a3[a2] != null) break block0;
+            a3[a2] = new Class264();
         }
-        return a2[a];
+        return a3[a2];
     }
 
     private int Method1484() {
-        int a = this.Field1033 + 8 + this.Method1490(this.Field1033 + 6) * 2;
-        int a2 = this.Method1490(a);
-        int a3 = this.Method1490(a + 8);
+        int a2 = this.Field1033 + 8 + this.Method1490(this.Field1033 + 6) * 2;
+        int a3 = this.Method1490(a2);
+        int a4 = this.Method1490(a2 + 8);
         while (true) {
-            a += 6 + this.Method1492(a + 12);
-            --a3;
+            a2 += 6 + this.Method1492(a2 + 12);
+            --a4;
         }
     }
 
-    private Class136 Method1485(Class136[] a, String a2, int a3, int a4, char[] a5, int a6, Class264[] a7) {
-        for (int a8 = 0; a8 < a.length; ++a8) {
-            if (!a[a8].Field987.equals((Object)a2)) continue;
-            return a[a8].Method471(this, a3, a4, a5, a6, a7);
+    private Class136 Method1485(Class136[] a2, String a3, int a4, int a5, char[] a6, int a7, Class264[] a8) {
+        for (int a9 = 0; a9 < a2.length; ++a9) {
+            if (!a2[a9].Field987.equals((Object)a3)) continue;
+            return a2[a9].Method471(this, a4, a5, a6, a7, a8);
         }
-        return new Class136(a2).Method471(this, a3, a4, null, -1, null);
+        return new Class136(a3).Method471(this, a4, a5, null, -1, null);
     }
 
     public int Method1486() {
         return this.Field1030.length;
     }
 
-    public int Method1487(int a) {
-        return this.Field1030[a];
+    public int Method1487(int a2) {
+        return this.Field1030[a2];
     }
 
     public int Method1488() {
         return this.Field1032;
     }
 
-    public int Method1489(int a) {
-        return this.Field1029[a] & 0xFF;
+    public int Method1489(int a2) {
+        return this.Field1029[a2] & 0xFF;
     }
 
-    public int Method1490(int a) {
-        byte[] a2 = this.Field1029;
-        return (a2[a] & 0xFF) << 8 | a2[a + 1] & 0xFF;
+    public int Method1490(int a2) {
+        byte[] a3 = this.Field1029;
+        return (a3[a2] & 0xFF) << 8 | a3[a2 + 1] & 0xFF;
     }
 
-    public short Method1491(int a) {
-        byte[] a2 = this.Field1029;
-        return (short)((a2[a] & 0xFF) << 8 | a2[a + 1] & 0xFF);
+    public short Method1491(int a2) {
+        byte[] a3 = this.Field1029;
+        return (short)((a3[a2] & 0xFF) << 8 | a3[a2 + 1] & 0xFF);
     }
 
-    public int Method1492(int a) {
-        byte[] a2 = this.Field1029;
-        return (a2[a] & 0xFF) << 24 | (a2[a + 1] & 0xFF) << 16 | (a2[a + 2] & 0xFF) << 8 | a2[a + 3] & 0xFF;
+    public int Method1492(int a2) {
+        byte[] a3 = this.Field1029;
+        return (a3[a2] & 0xFF) << 24 | (a3[a2 + 1] & 0xFF) << 16 | (a3[a2 + 2] & 0xFF) << 8 | a3[a2 + 3] & 0xFF;
     }
 
-    public long Method1493(int a) {
-        long a2 = this.Method1492(a);
-        long a3 = (long)this.Method1492(a + 4) & 0xFFFFFFFFL;
-        return a2 << 32 | a3;
+    public long Method1493(int a2) {
+        long a3 = this.Method1492(a2);
+        long a4 = (long)this.Method1492(a2 + 4) & 0xFFFFFFFFL;
+        return a3 << 32 | a4;
     }
 
-    public String Method1494(int a, char[] a2) {
-        int a3 = this.Method1490(a);
+    public String Method1494(int a2, char[] a3) {
+        int a4 = this.Method1490(a2);
         return null;
     }
 
-    private String Method1495(int a, int a2, char[] a3) {
-        int a4 = a + a2;
-        byte[] a5 = this.Field1029;
-        int a6 = 0;
+    private String Method1495(int a2, int a3, char[] a4) {
+        int a5 = a2 + a3;
+        byte[] a6 = this.Field1029;
         int a7 = 0;
         int a8 = 0;
-        while (a < a4) {
-            int a9 = a5[a++];
-            switch (a7) {
+        int a9 = 0;
+        while (a2 < a5) {
+            int a10 = a6[a2++];
+            switch (a8) {
                 case 0: {
-                    if ((a9 &= 0xFF) < 128) {
-                        a3[a6++] = (char)a9;
+                    if ((a10 &= 0xFF) < 128) {
+                        a4[a7++] = (char)a10;
                         break;
                     }
-                    if (a9 < 224 && a9 > 191) {
-                        a8 = (char)(a9 & 0x1F);
-                        a7 = 1;
+                    if (a10 < 224 && a10 > 191) {
+                        a9 = (char)(a10 & 0x1F);
+                        a8 = 1;
                         break;
                     }
-                    a8 = (char)(a9 & 0xF);
-                    a7 = 2;
+                    a9 = (char)(a10 & 0xF);
+                    a8 = 2;
                     break;
                 }
                 case 1: {
-                    a3[a6++] = (char)(a8 << 6 | a9 & 0x3F);
-                    a7 = 0;
+                    a4[a7++] = (char)(a9 << 6 | a10 & 0x3F);
+                    a8 = 0;
                     break;
                 }
                 case 2: {
-                    a8 = (char)(a8 << 6 | a9 & 0x3F);
-                    a7 = 1;
+                    a9 = (char)(a9 << 6 | a10 & 0x3F);
+                    a8 = 1;
                 }
             }
         }
-        return new String(a3, 0, a6);
+        return new String(a4, 0, a7);
     }
 
-    public String Method1496(int a, char[] a2) {
-        return this.Method1494(this.Field1030[this.Method1490(a)], a2);
+    public String Method1496(int a2, char[] a3) {
+        return this.Method1494(this.Field1030[this.Method1490(a2)], a3);
     }
 
-    public Object Method1497(int a, char[] a2) {
-        int a3 = this.Field1030[a];
-        switch (this.Field1029[a3 - 1]) {
+    public Object Method1497(int a2, char[] a3) {
+        int a4 = this.Field1030[a2];
+        switch (this.Field1029[a4 - 1]) {
             case 3: {
-                return new Integer(this.Method1492(a3));
+                return new Integer(this.Method1492(a4));
             }
             case 4: {
-                return new Float(Float.intBitsToFloat((int)this.Method1492(a3)));
+                return new Float(Float.intBitsToFloat((int)this.Method1492(a4)));
             }
             case 5: {
-                return new Long(this.Method1493(a3));
+                return new Long(this.Method1493(a4));
             }
             case 6: {
-                return new Double(Double.longBitsToDouble((long)this.Method1493(a3)));
+                return new Double(Double.longBitsToDouble((long)this.Method1493(a4)));
             }
             case 7: {
-                return Class46.Method3205(this.Method1494(a3, a2));
+                return b.Method3205(this.Method1494(a4, a3));
             }
             case 8: {
-                return this.Method1494(a3, a2);
+                return this.Method1494(a4, a3);
             }
             case 16: {
-                return Class46.Method3206(this.Method1494(a3, a2));
+                return b.Method3206(this.Method1494(a4, a3));
             }
         }
-        int a4 = this.Method1489(a3);
-        int[] a5 = this.Field1030;
-        int a6 = a5[this.Method1490(a3 + 1)];
-        String a7 = this.Method1496(a6, a2);
-        a6 = a5[this.Method1490(a6 + 2)];
-        String a8 = this.Method1494(a6, a2);
-        String a9 = this.Method1494(a6 + 2, a2);
-        return new Class279(a4, a7, a8, a9);
+        int a5 = this.Method1489(a4);
+        int[] a6 = this.Field1030;
+        int a7 = a6[this.Method1490(a4 + 1)];
+        String a8 = this.Method1496(a7, a3);
+        a7 = a6[this.Method1490(a7 + 2)];
+        String a9 = this.Method1494(a7, a3);
+        String a10 = this.Method1494(a7 + 2, a3);
+        return new Class279(a5, a8, a9, a10);
     }
 
     private static Exception Method1498(Exception exception) {

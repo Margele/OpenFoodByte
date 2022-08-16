@@ -52,8 +52,8 @@ extends Class390 {
     }
 
     @Override
-    public void Method412(int a, int a2) {
-        int a3 = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
+    public void Method412(int a2, int a3) {
+        int a4 = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
         Class565.Field2636.Method1217(this.Field1913, this.Field1907 + 18, (float)this.Field1908 + 2.0f, 0xFFFFFF);
         RenderUtils.Method1103(this.Field1907 + 5, this.Field1908 + 2, 8.0f, 8.0f, this.Field1915 ? Class681.Method2699(Class707.Method1832(), 30) : Class707.Method1832());
         if (this.Field1885.Method292() > 0.0) {
@@ -65,14 +65,14 @@ extends Class390 {
     }
 
     @Override
-    public void Method413(int a, int a2, boolean a3) {
-        this.Field1915 = this.Method1313(a, a2) && this.Field1919.Method1392(a, a2);
+    public void Method413(int a2, int a3, boolean a4) {
+        this.Field1915 = this.Method1313(a2, a3) && this.Field1919.Method1392(a2, a3);
         if (!this.Field1918 && this.Field1915 && this.Field1884 != null && Mouse.isButtonDown((int)0)) {
             this.Field1883 = !this.Field1883;
             this.Field1884.Method2510(this.Field1883);
             GlobalModule.INSTANCE.fileManager.saveValues();
         }
-        this.Field1918 = a3;
+        this.Field1918 = a4;
     }
 
     @Override

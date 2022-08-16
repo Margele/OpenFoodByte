@@ -21,5 +21,5 @@ import java.lang.annotation.Target;
 @Target(value={ElementType.METHOD})
 @Retention(value=RetentionPolicy.RUNTIME)
 public @interface EventTarget {
-    public byte Method1462() default 2;
+    public byte value() default 2;
 }

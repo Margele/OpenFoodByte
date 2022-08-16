@@ -12,13 +12,13 @@
  */
 package trash.foodbyte.module.impl.render;
 
-import awsl.Class653;
 import eventapi.EventTarget;
 import net.minecraft.entity.Entity;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ObfuscatedClasses;
+import trash.foodbyte.reflections.ObfuscatedField;
 import trash.foodbyte.value.BooleanValue;
 
 public class ViewClip
@@ -35,11 +35,11 @@ extends Module {
     }
 
     @EventTarget
-    private void Method755(Class653 a) {
+    private void Method755(EventTick a) {
         ViewClip.mc.thePlayer.noClip = true;
         try {
             if (this.Field2175.getValue()) {
-                ReflectionHelper.findField(Entity.class, (String[])new String[]{ObfuscatedClasses.inPortal.getObfuscatedName()}).set((Object)ViewClip.mc.thePlayer, (Object)false);
+                ReflectionHelper.findField(Entity.class, (String[])new String[]{ObfuscatedField.inPortal.getObfuscatedName()}).set((Object)ViewClip.mc.thePlayer, (Object)false);
             }
         }
         catch (Exception a2) {

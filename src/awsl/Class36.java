@@ -13,11 +13,11 @@
  */
 package awsl;
 
-import awsl.Class46;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+import obfuscate.b;
 
 public class Class36 {
     private final String Field298;
@@ -29,62 +29,62 @@ public class Class36 {
         this.Field299 = a2;
     }
 
-    public Class36(String a, Class46 a2, Class46[] a3) {
-        this(a, Class46.Method3226(a2, a3));
+    public Class36(String a2, b a3, b[] a4) {
+        this(a2, b.Method3226(a3, a4));
     }
 
-    public static Class36 Method3419(Method a) {
-        return new Class36(a.getName(), Class46.Method3231(a));
+    public static Class36 Method3419(Method a2) {
+        return new Class36(a2.getName(), b.Method3231(a2));
     }
 
-    public static Class36 Method3420(Constructor a) {
-        return new Class36("<init>", Class46.Method3230(a));
+    public static Class36 Method3420(Constructor a2) {
+        return new Class36("<init>", b.Method3230(a2));
     }
 
-    public static Class36 Method3421(String a) throws IllegalArgumentException {
-        return Class36.Method3422(a, false);
+    public static Class36 Method3421(String a2) throws IllegalArgumentException {
+        return Class36.Method3422(a2, false);
     }
 
-    public static Class36 Method3422(String a, boolean a2) throws IllegalArgumentException {
-        int a3;
-        int a4 = a.indexOf(32);
-        int a5 = a.indexOf(40, a4) + 1;
-        int a6 = a.indexOf(41, a5);
-        if (a4 == -1 || a5 == -1 || a6 == -1) {
+    public static Class36 Method3422(String a2, boolean a3) throws IllegalArgumentException {
+        int a4;
+        int a5 = a2.indexOf(32);
+        int a6 = a2.indexOf(40, a5) + 1;
+        int a7 = a2.indexOf(41, a6);
+        if (a5 == -1 || a6 == -1 || a7 == -1) {
             throw new IllegalArgumentException();
         }
-        String a7 = a.substring(0, a4);
-        String a8 = a.substring(a4 + 1, a5 - 1).trim();
-        StringBuilder a9 = new StringBuilder();
-        a9.append('(');
+        String a8 = a2.substring(0, a5);
+        String a9 = a2.substring(a5 + 1, a6 - 1).trim();
+        StringBuilder a10 = new StringBuilder();
+        a10.append('(');
         do {
-            String a10;
-            if ((a3 = a.indexOf(44, a5)) == -1) {
-                a10 = Class36.Method3423(a.substring(a5, a6).trim(), a2);
+            String a11;
+            if ((a4 = a2.indexOf(44, a6)) == -1) {
+                a11 = Class36.Method3423(a2.substring(a6, a7).trim(), a3);
             } else {
-                a10 = Class36.Method3423(a.substring(a5, a3).trim(), a2);
-                a5 = a3 + 1;
+                a11 = Class36.Method3423(a2.substring(a6, a4).trim(), a3);
+                a6 = a4 + 1;
             }
-            a9.append(a10);
-        } while (a3 != -1);
-        a9.append(')');
-        a9.append(Class36.Method3423(a7, a2));
-        return new Class36(a8, a9.toString());
+            a10.append(a11);
+        } while (a4 != -1);
+        a10.append(')');
+        a10.append(Class36.Method3423(a8, a3));
+        return new Class36(a9, a10.toString());
     }
 
-    private static String Method3423(String a, boolean a2) {
-        if ("".equals((Object)a)) {
-            return a;
+    private static String Method3423(String a2, boolean a3) {
+        if ("".equals((Object)a2)) {
+            return a2;
         }
-        StringBuilder a3 = new StringBuilder();
-        int a4 = 0;
-        while ((a4 = a.indexOf("[]", a4) + 1) > 0) {
-            a3.append('[');
+        StringBuilder a4 = new StringBuilder();
+        int a5 = 0;
+        while ((a5 = a2.indexOf("[]", a5) + 1) > 0) {
+            a4.append('[');
         }
-        String a5 = a.substring(0, a.length() - a3.length() * 2);
-        String a6 = (String)Field300.Method2665((Object)a5);
-        a3.append(a6);
-        return a3.toString();
+        String a6 = a2.substring(0, a2.length() - a4.length() * 2);
+        String a7 = (String)Field300.Method2665((Object)a6);
+        a4.append(a7);
+        return a4.toString();
     }
 
     public String Method3424() {
@@ -95,24 +95,24 @@ public class Class36 {
         return this.Field299;
     }
 
-    public Class46 Method3426() {
-        return Class46.Method3213(this.Field299);
+    public b Method3426() {
+        return b.Method3213(this.Field299);
     }
 
-    public Class46[] Method3427() {
-        return Class46.Method3211(this.Field299);
+    public b[] Method3427() {
+        return b.Method3211(this.Field299);
     }
 
     public String Method3428() {
         return this.Field298 + this.Field299;
     }
 
-    public boolean Method3429(Object a) {
-        if (!(a instanceof Class36)) {
+    public boolean Method3429(Object a2) {
+        if (!(a2 instanceof Class36)) {
             return false;
         }
-        Class36 a2 = (Class36)a;
-        return this.Field298.equals((Object)a2.Field298) && this.Field299.equals((Object)a2.Field299);
+        Class36 a3 = (Class36)a2;
+        return this.Field298.equals((Object)a3.Field298) && this.Field299.equals((Object)a3.Field299);
     }
 
     public int Method3430() {

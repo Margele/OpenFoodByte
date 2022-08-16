@@ -41,12 +41,9 @@
  */
 package trash.foodbyte.module.impl.world;
 
-import awsl.Class345;
 import awsl.Class448;
 import awsl.Class451;
-import awsl.Class634;
 import awsl.Class725;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -72,20 +69,23 @@ import net.minecraft.network.play.server.S08PacketPlayerPosLook;
 import net.minecraft.network.play.server.S32PacketConfirmTransaction;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import obfuscate.a;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventUpdate;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflection.ReflectionsHelper;
+import trash.foodbyte.reflections.ObfuscatedField;
+import trash.foodbyte.reflections.ReflectionUtils;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.utils.ChatUtils;
 import trash.foodbyte.utils.DelayedPacket;
 import trash.foodbyte.utils.MathUtils;
-import trash.foodbyte.utils.ObfuscatedClasses;
-import trash.foodbyte.utils.ReflectionUtils;
 import trash.foodbyte.utils.TimeHelper;
 import trash.foodbyte.utils.TimeHelperForDisabler;
-import trash.foodbyte.utils.Wrapper;
 import trash.foodbyte.value.ModeValue;
 
 public class Disabler
@@ -133,7 +133,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method232(Class634 event) {
+    public void Method232(EventUpdate event) {
         this.setDisplayTag(this.mode.getMode());
         if (this.mode.isCurrentMode("HypixelNew") && this.timer3.isDelayComplete(Disabler.mc.thePlayer.ticksExisted < 100 ? 2500L : 450L)) {
             while (!this.deque.isEmpty()) {
@@ -172,10 +172,10 @@ extends Module {
     @EventTarget
     public void Method273(EventPacket event) {
         block47: {
-            C03PacketPlayer a;
+            C03PacketPlayer a2;
             block48: {
-                boolean a2;
-                Class91[] a3 = Class448.Method2461();
+                boolean a3;
+                a[] a4 = Class448.Method2461();
                 if (!event.isSend()) break block47;
                 if (this.mode.isCurrentMode("Watchdog")) {
                     if (Disabler.mc.thePlayer.ticksExisted == 60) {
@@ -187,9 +187,9 @@ extends Module {
                     if (event.getPacket() instanceof C0BPacketEntityAction) {
                         event.setCancelled(true);
                     }
-                    a2 = false;
+                    a3 = false;
                     try {
-                        a2 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedClasses.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
+                        a3 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedField.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
                     }
                     catch (Exception exception) {
                         // empty catch block
@@ -199,20 +199,20 @@ extends Module {
                         this.queue2.add((Object)event.getPacket());
                     }
                     if (event.getPacket() instanceof C03PacketPlayer) {
-                        a = (C03PacketPlayer)event.getPacket();
-                        if (!Disabler.mc.thePlayer.isUsingItem() && !a.isMoving()) {
+                        a2 = (C03PacketPlayer)event.getPacket();
+                        if (!Disabler.mc.thePlayer.isUsingItem() && !a2.isMoving()) {
                             event.setCancelled(true);
                         }
                     }
                     if (event.getPacket() instanceof C03PacketPlayer.C05PacketPlayerLook) {
-                        a = (C03PacketPlayer.C05PacketPlayerLook)event.getPacket();
+                        a2 = (C03PacketPlayer.C05PacketPlayerLook)event.getPacket();
                         if (!Disabler.mc.thePlayer.onGround) {
                             event.setCancelled(true);
-                            Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a.getPositionX(), a.getPositionY(), a.getPositionZ(), false));
+                            Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a2.getPositionX(), a2.getPositionY(), a2.getPositionZ(), false));
                         }
                     }
                     if (event.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook) {
-                        a = (C03PacketPlayer.C06PacketPlayerPosLook)event.getPacket();
+                        a2 = (C03PacketPlayer.C06PacketPlayerPosLook)event.getPacket();
                         if (!Disabler.mc.thePlayer.onGround) {
                             // empty if block
                         }
@@ -226,19 +226,19 @@ extends Module {
                         event.setCancelled(true);
                     }
                     if (event.getPacket() instanceof C03PacketPlayer) {
-                        C03PacketPlayer a4 = (C03PacketPlayer)event.getPacket();
-                        if (!Disabler.mc.thePlayer.isUsingItem() && !a4.isMoving()) {
+                        C03PacketPlayer a5 = (C03PacketPlayer)event.getPacket();
+                        if (!Disabler.mc.thePlayer.isUsingItem() && !a5.isMoving()) {
                             event.setCancelled(true);
                         }
                     }
                     if (event.getPacket() instanceof C0BPacketEntityAction) {
                         event.setCancelled(true);
                     }
-                    a2 = false;
+                    a3 = false;
                     try {
-                        a2 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedClasses.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
+                        a3 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedField.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
                     }
-                    catch (Exception a5) {
+                    catch (Exception a6) {
                         // empty catch block
                     }
                     if (!event.isCancelled() && (event.getPacket() instanceof C03PacketPlayer || event.getPacket() instanceof C0FPacketConfirmTransaction || event.getPacket() instanceof C00PacketKeepAlive)) {
@@ -248,10 +248,10 @@ extends Module {
                 }
                 if (!this.mode.isCurrentMode("HypixelNew")) break block48;
                 if (event.getPacket() instanceof C03PacketPlayer && !(event.getPacket() instanceof C03PacketPlayer.C04PacketPlayerPosition) && !(event.getPacket() instanceof C03PacketPlayer.C05PacketPlayerLook) && !(event.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook)) {
-                    C03PacketPlayer a6 = (C03PacketPlayer)event.getPacket();
-                    event.setCancelled(!a6.isMoving() && !a6.getRotating() && !Disabler.mc.thePlayer.isUsingItem() || Disabler.mc.thePlayer.ticksExisted < 120);
+                    C03PacketPlayer a7 = (C03PacketPlayer)event.getPacket();
+                    event.setCancelled(!a7.isMoving() && !a7.getRotating() && !Disabler.mc.thePlayer.isUsingItem() || Disabler.mc.thePlayer.ticksExisted < 120);
                     if (Disabler.mc.thePlayer.ticksExisted < 120) {
-                        this.deque.push((Object)new DelayedPacket(this, (Packet)a6));
+                        this.deque.push((Object)new DelayedPacket(this, (Packet)a7));
                     }
                 }
                 if (Disabler.mc.thePlayer.ticksExisted <= 70) break block47;
@@ -267,41 +267,41 @@ extends Module {
                 event.setCancelled(true);
             }
             if (this.mode.isCurrentMode("Hypixel")) {
-                Packet a7 = event.getPacket();
-                if (a7 instanceof C03PacketPlayer) {
+                Packet a8 = event.getPacket();
+                if (a8 instanceof C03PacketPlayer) {
                     if (Disabler.mc.thePlayer.ticksExisted < 100) {
                         event.setCancelled(true);
                     }
                     if (this.timer3.isDelayComplete(this.delay) && !this.queue2.isEmpty()) {
                         Wrapper.INSTANCE.sendPacketNoEvent((Packet)this.queue2.poll());
-                        this.delay = Math.round((float)MathUtils.Method555(50L, 150L));
+                        this.delay = Math.round((float)MathUtils.getRandomLong(50L, 150L));
                         this.timer3.reset();
                     }
                 }
-                if (a7 instanceof C03PacketPlayer && !Disabler.mc.thePlayer.isSwingInProgress && !Disabler.mc.thePlayer.isUsingItem() && !((C03PacketPlayer)a7).isMoving()) {
+                if (a8 instanceof C03PacketPlayer && !Disabler.mc.thePlayer.isSwingInProgress && !Disabler.mc.thePlayer.isUsingItem() && !((C03PacketPlayer)a8).isMoving()) {
                     event.setCancelled(true);
                 }
-                if (a7 instanceof C0FPacketConfirmTransaction || a7 instanceof C00PacketKeepAlive) {
+                if (a8 instanceof C0FPacketConfirmTransaction || a8 instanceof C00PacketKeepAlive) {
                     if (Disabler.mc.thePlayer.ticksExisted >= 100) {
-                        this.queue2.add((Object)a7);
+                        this.queue2.add((Object)a8);
                     }
                     event.setCancelled(true);
                 }
-                if (a7 instanceof C0BPacketEntityAction) {
-                    a = (C0BPacketEntityAction)a7;
-                    if (a.getAction().equals((Object)C0BPacketEntityAction.Action.START_SPRINTING)) {
-                        boolean a8 = false;
+                if (a8 instanceof C0BPacketEntityAction) {
+                    a2 = (C0BPacketEntityAction)a8;
+                    if (a2.getAction().equals((Object)C0BPacketEntityAction.Action.START_SPRINTING)) {
+                        boolean a9 = false;
                         try {
-                            a8 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.getClass(), (String[])new String[]{ObfuscatedClasses.serverSprintState.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer);
+                            a9 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.getClass(), (String[])new String[]{ObfuscatedField.serverSprintState.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer);
                         }
                         catch (Exception exception) {
                             // empty catch block
                         }
                         Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C0BPacketEntityAction((Entity)Disabler.mc.thePlayer, C0BPacketEntityAction.Action.STOP_SPRINTING));
-                        Class345.Method337(Disabler.mc.thePlayer, ObfuscatedClasses.serverSprintState.getObfuscatedName(), true, false);
+                        ReflectionsHelper.setFinalField(Disabler.mc.thePlayer, ObfuscatedField.serverSprintState.getObfuscatedName(), true, false);
                         event.setCancelled(true);
                     }
-                    if (a.getAction().equals((Object)C0BPacketEntityAction.Action.STOP_SPRINTING)) {
+                    if (a2.getAction().equals((Object)C0BPacketEntityAction.Action.STOP_SPRINTING)) {
                         event.setCancelled(true);
                     }
                 }
@@ -319,19 +319,19 @@ extends Module {
                 this.delay = 0L;
             }
             if (this.mode.isCurrentMode("Watchdog") && event.getPacket() instanceof S08PacketPlayerPosLook) {
-                S08PacketPlayerPosLook a = (S08PacketPlayerPosLook)event.getPacket();
-                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a.getX(), a.getY(), a.getZ(), false));
-                Disabler.mc.thePlayer.setPosition(a.getX(), a.getY(), a.getZ());
+                S08PacketPlayerPosLook a10 = (S08PacketPlayerPosLook)event.getPacket();
+                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a10.getX(), a10.getY(), a10.getZ(), false));
+                Disabler.mc.thePlayer.setPosition(a10.getX(), a10.getY(), a10.getZ());
                 mc.displayGuiScreen(null);
                 event.setCancelled(true);
             }
             if (this.mode.isCurrentMode("Watchdog2") && event.getPacket() instanceof S08PacketPlayerPosLook) {
-                S08PacketPlayerPosLook a = (S08PacketPlayerPosLook)event.getPacket();
-                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a.getX(), a.getY(), a.getZ(), false));
+                S08PacketPlayerPosLook a11 = (S08PacketPlayerPosLook)event.getPacket();
+                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a11.getX(), a11.getY(), a11.getZ(), false));
                 Disabler.mc.thePlayer.motionZ = 0.0;
                 Disabler.mc.thePlayer.motionY = 0.0;
                 Disabler.mc.thePlayer.motionX = 0.0;
-                Disabler.mc.thePlayer.setPosition(a.getX(), a.getY(), a.getZ());
+                Disabler.mc.thePlayer.setPosition(a11.getX(), a11.getY(), a11.getZ());
                 Disabler.mc.thePlayer.prevPosX = Disabler.mc.thePlayer.posX;
                 Disabler.mc.thePlayer.prevPosY = Disabler.mc.thePlayer.posY;
                 Disabler.mc.thePlayer.prevPosZ = Disabler.mc.thePlayer.posZ;
@@ -342,36 +342,36 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1537(EventPacket a) {
+    public void Method1537(EventPacket a2) {
         block7: {
             if (!this.mode.isCurrentMode("HypixelGG")) {
                 return;
             }
-            if (!a.isRecieve() || !(a.getPacket() instanceof S08PacketPlayerPosLook)) break block7;
-            S08PacketPlayerPosLook a2 = (S08PacketPlayerPosLook)a.getPacket();
-            EntityPlayerSP a3 = Disabler.mc.thePlayer;
-            C03PacketPlayer.C06PacketPlayerPosLook a4 = new C03PacketPlayer.C06PacketPlayerPosLook(a3.posX, a3.posY, a3.posZ, a3.rotationYaw, a3.rotationPitch, false);
-            double a5 = a2.getX();
-            double a6 = a2.getY();
-            double a7 = a2.getZ();
-            float a8 = a2.getYaw();
-            float a9 = a2.getPitch();
-            boolean a10 = false;
+            if (!a2.isRecieve() || !(a2.getPacket() instanceof S08PacketPlayerPosLook)) break block7;
+            S08PacketPlayerPosLook a3 = (S08PacketPlayerPosLook)a2.getPacket();
+            EntityPlayerSP a4 = Disabler.mc.thePlayer;
+            C03PacketPlayer.C06PacketPlayerPosLook a5 = new C03PacketPlayer.C06PacketPlayerPosLook(a4.posX, a4.posY, a4.posZ, a4.rotationYaw, a4.rotationPitch, false);
+            double a6 = a3.getX();
+            double a7 = a3.getY();
+            double a8 = a3.getZ();
+            float a9 = a3.getYaw();
+            float a10 = a3.getPitch();
+            boolean a11 = false;
             try {
-                a10 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedClasses.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
+                a11 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedField.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
             }
             catch (Exception exception) {
                 // empty catch block
             }
             if (this.mode.isCurrentMode("HypixelNew")) {
-                this.packetList2.Method2530((Object)new Class451(a5, a6, a7, null));
+                this.packetList2.Method2530((Object)new Class451(a6, a7, a8, null));
                 if (this.packetList2.Method1799() > 0 && Disabler.mc.thePlayer.ticksExisted < 120) {
-                    for (int a11 = 0; a11 < 10; ++a11) {
-                        Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a5, a6 + 1.0E-6, a7, false));
+                    for (int a12 = 0; a12 < 10; ++a12) {
+                        Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a6, a7 + 1.0E-6, a8, false));
                     }
-                    Wrapper.INSTANCE.sendPacketNoEvent((Packet)a4);
-                    if (Disabler.mc.thePlayer.getDistance(a5, a6, a7) <= 8.0) {
-                        a.setCancelled(true);
+                    Wrapper.INSTANCE.sendPacketNoEvent((Packet)a5);
+                    if (Disabler.mc.thePlayer.getDistance(a6, a7, a8) <= 8.0) {
+                        a2.setCancelled(true);
                     }
                 }
             }
@@ -379,38 +379,38 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1538(EventPacket a) {
+    public void Method1538(EventPacket a2) {
         block5: {
             if (!this.mode.isCurrentMode("HypixelGG")) {
                 return;
             }
-            if (!a.isRecieve() || !(a.getPacket() instanceof S32PacketConfirmTransaction) || !(Disabler.mc.currentScreen instanceof GuiInventory)) break block5;
-            S32PacketConfirmTransaction a2 = (S32PacketConfirmTransaction)a.getPacket();
-            GuiContainer a3 = (GuiContainer)Disabler.mc.currentScreen;
-            if (a2.getWindowId() == a3.inventorySlots.windowId && a2.getActionNumber() > 0) {
-                this.Field2351 = a2.getActionNumber();
-                short a4 = 0;
+            if (!a2.isRecieve() || !(a2.getPacket() instanceof S32PacketConfirmTransaction) || !(Disabler.mc.currentScreen instanceof GuiInventory)) break block5;
+            S32PacketConfirmTransaction a3 = (S32PacketConfirmTransaction)a2.getPacket();
+            GuiContainer a4 = (GuiContainer)Disabler.mc.currentScreen;
+            if (a3.getWindowId() == a4.inventorySlots.windowId && a3.getActionNumber() > 0) {
+                this.Field2351 = a3.getActionNumber();
+                short a5 = 0;
                 try {
-                    a4 = ReflectionHelper.findField(Container.class, (String[])new String[]{ObfuscatedClasses.transactionID.getObfuscatedName()}).getShort((Object)a3.inventorySlots);
+                    a5 = ReflectionHelper.findField(Container.class, (String[])new String[]{ObfuscatedField.transactionID.getObfuscatedName()}).getShort((Object)a4.inventorySlots);
                 }
                 catch (Exception exception) {
                     // empty catch block
                 }
-                if (this.Field2351 < a4) {
-                    Class345.Method337(a3.inventorySlots, ObfuscatedClasses.transactionID.getObfuscatedName(), (short)(this.Field2351 + 1), false);
+                if (this.Field2351 < a5) {
+                    ReflectionsHelper.setFinalField(a4.inventorySlots, ObfuscatedField.transactionID.getObfuscatedName(), (short)(this.Field2351 + 1), false);
                 }
             }
         }
     }
 
     public boolean Method713() {
-        String[] a = new String[]{"CLICK TO PLAY", "\u70b9\u51fb\u5f00\u59cb\u6e38\u620f"};
+        String[] a2 = new String[]{"CLICK TO PLAY", "\u70b9\u51fb\u5f00\u59cb\u6e38\u620f"};
         Iterator iterator = Disabler.mc.theWorld.loadedEntityList.Method1383();
         while (iterator.Method932()) {
-            Entity a2 = (Entity)iterator.Method933();
-            if (!a2.getName().startsWith("\u00a7e\u00a7l")) continue;
-            for (String a3 : a) {
-                if (!a2.getName().equals((Object)("\u00a7e\u00a7l" + a3))) continue;
+            Entity a3 = (Entity)iterator.Method933();
+            if (!a3.getName().startsWith("\u00a7e\u00a7l")) continue;
+            for (String a4 : a2) {
+                if (!a3.getName().equals((Object)("\u00a7e\u00a7l" + a4))) continue;
                 return true;
             }
         }
@@ -418,78 +418,78 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1539(EventPacket a) {
+    public void Method1539(EventPacket a2) {
         block15: {
-            S08PacketPlayerPosLook a2;
-            Class91[] a3 = Class448.Method2461();
-            if (a.isSend()) {
-                if ((a.getPacket() instanceof C03PacketPlayer || a.getPacket() instanceof C03PacketPlayer.C04PacketPlayerPosition || a.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook) && Disabler.mc.thePlayer.ticksExisted < 60) {
-                    a.setCancelled(true);
+            S08PacketPlayerPosLook a3;
+            a[] a4 = Class448.Method2461();
+            if (a2.isSend()) {
+                if ((a2.getPacket() instanceof C03PacketPlayer || a2.getPacket() instanceof C03PacketPlayer.C04PacketPlayerPosition || a2.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook) && Disabler.mc.thePlayer.ticksExisted < 60) {
+                    a2.setCancelled(true);
                 }
-                if (a.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook) {
-                    a2 = (C03PacketPlayer.C06PacketPlayerPosLook)a.getPacket();
-                    if (this.Field2352 > 0 && a2.getPositionX() == this.Field2353 && a2.getPositionY() == this.Field2354 && a2.getPositionZ() == this.Field2355) {
-                        mc.getNetHandler().addToSendQueue((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a2.getPositionX(), a2.getPositionY(), a2.getPositionZ(), a2.isOnGround()));
-                        a.setCancelled(true);
+                if (a2.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook) {
+                    a3 = (C03PacketPlayer.C06PacketPlayerPosLook)a2.getPacket();
+                    if (this.Field2352 > 0 && a3.getPositionX() == this.Field2353 && a3.getPositionY() == this.Field2354 && a3.getPositionZ() == this.Field2355) {
+                        mc.getNetHandler().addToSendQueue((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a3.getPositionX(), a3.getPositionY(), a3.getPositionZ(), a3.isOnGround()));
+                        a2.setCancelled(true);
                     }
                     ++this.Field2352;
-                    if (a.getPacket() instanceof C03PacketPlayer.C05PacketPlayerLook && Disabler.mc.thePlayer.isRiding()) {
+                    if (a2.getPacket() instanceof C03PacketPlayer.C05PacketPlayerLook && Disabler.mc.thePlayer.isRiding()) {
                         mc.getNetHandler().addToSendQueue((Packet)new C0BPacketEntityAction((Entity)Disabler.mc.thePlayer, C0BPacketEntityAction.Action.START_SPRINTING));
                     }
-                    if (a.getPacket() instanceof C0CPacketInput && Disabler.mc.thePlayer.isRiding()) {
-                        mc.getNetHandler().addToSendQueue(a.getPacket());
+                    if (a2.getPacket() instanceof C0CPacketInput && Disabler.mc.thePlayer.isRiding()) {
+                        mc.getNetHandler().addToSendQueue(a2.getPacket());
                         mc.getNetHandler().addToSendQueue((Packet)new C0BPacketEntityAction((Entity)Disabler.mc.thePlayer, C0BPacketEntityAction.Action.STOP_SNEAKING));
-                        a.setCancelled(true);
+                        a2.setCancelled(true);
                     }
                 }
-                a2 = a.getPacket();
-                this.Method1540(a);
-                if (a2 instanceof C03PacketPlayer) {
-                    C03PacketPlayer a4 = (C03PacketPlayer)a2;
-                    boolean a5 = false;
+                a3 = a2.getPacket();
+                this.Method1540(a2);
+                if (a3 instanceof C03PacketPlayer) {
+                    C03PacketPlayer a5 = (C03PacketPlayer)a3;
+                    boolean a6 = false;
                     try {
-                        a5 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedClasses.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
+                        a6 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedField.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
                     }
                     catch (Exception exception) {
                         // empty catch block
                     }
                     if (Disabler.mc.thePlayer.ticksExisted == 1) {
-                        Field2356 = new Vec3(a4.getPositionX() + Disabler.Method763(-1000000.0, 1000000.0), a4.getPositionY() + Disabler.Method763(-1000000.0, 1000000.0), a4.getPositionZ() + Disabler.Method763(-1000000.0, 1000000.0));
+                        Field2356 = new Vec3(a5.getPositionX() + Disabler.Method763(-1000000.0, 1000000.0), a5.getPositionY() + Disabler.Method763(-1000000.0, 1000000.0), a5.getPositionZ() + Disabler.Method763(-1000000.0, 1000000.0));
                     }
                     if (Field2356 != null && Disabler.mc.thePlayer.ticksExisted < 100) {
-                        Class345.Method337(a4, ObfuscatedClasses.C03X.getObfuscatedName(), (short)Disabler.Field2356.xCoord, false);
-                        Class345.Method337(a4, ObfuscatedClasses.C03Y.getObfuscatedName(), (short)Disabler.Field2356.yCoord, false);
-                        Class345.Method337(a4, ObfuscatedClasses.C03Z.getObfuscatedName(), (short)Disabler.Field2356.zCoord, false);
+                        ReflectionsHelper.setFinalField(a5, ObfuscatedField.C03X.getObfuscatedName(), (short)Disabler.Field2356.xCoord, false);
+                        ReflectionsHelper.setFinalField(a5, ObfuscatedField.C03Y.getObfuscatedName(), (short)Disabler.Field2356.yCoord, false);
+                        ReflectionsHelper.setFinalField(a5, ObfuscatedField.C03Z.getObfuscatedName(), (short)Disabler.Field2356.zCoord, false);
                     }
                 }
             }
-            if (!a.isRecieve()) break block15;
-            if (a.getPacket() instanceof S08PacketPlayerPosLook) {
-                a2 = (S08PacketPlayerPosLook)a.getPacket();
-                this.Field2353 = a2.getX();
-                this.Field2354 = a2.getY();
-                this.Field2355 = a2.getZ();
+            if (!a2.isRecieve()) break block15;
+            if (a2.getPacket() instanceof S08PacketPlayerPosLook) {
+                a3 = (S08PacketPlayerPosLook)a2.getPacket();
+                this.Field2353 = a3.getX();
+                this.Field2354 = a3.getY();
+                this.Field2355 = a3.getZ();
             }
-            if (a.getPacket() instanceof S07PacketRespawn) {
+            if (a2.getPacket() instanceof S07PacketRespawn) {
                 this.Field2352 = 0;
             }
-            if (a.getPacket() instanceof S08PacketPlayerPosLook) {
-                a2 = (S08PacketPlayerPosLook)a.getPacket();
-                ChatUtils.debug("S08: " + a2.getX() + " " + a2.getY() + " " + a2.getZ());
+            if (a2.getPacket() instanceof S08PacketPlayerPosLook) {
+                a3 = (S08PacketPlayerPosLook)a2.getPacket();
+                ChatUtils.debug("S08: " + a3.getX() + " " + a3.getY() + " " + a3.getZ());
                 if (!Field2359 && Disabler.mc.thePlayer.ticksExisted > 20) {
-                    a.setCancelled(true);
+                    a2.setCancelled(true);
                 }
             }
         }
     }
 
-    private void Method1540(EventPacket a) {
-        if (a.getPacket() instanceof C03PacketPlayer) {
-            C03PacketPlayer a2 = (C03PacketPlayer)a.getPacket();
-            if (!a2.isMoving() && !Disabler.mc.thePlayer.isUsingItem()) {
-                a.setCancelled(true);
+    private void Method1540(EventPacket a2) {
+        if (a2.getPacket() instanceof C03PacketPlayer) {
+            C03PacketPlayer a3 = (C03PacketPlayer)a2.getPacket();
+            if (!a3.isMoving() && !Disabler.mc.thePlayer.isUsingItem()) {
+                a2.setCancelled(true);
             }
-            if (this.Field2358 && this.Field2357.Method219(400.0)) {
+            if (this.Field2358 && this.Field2357.isDelayComplete(400.0)) {
                 this.queue2.forEach(Wrapper.INSTANCE::sendPacketNoEvent);
                 this.queue2.clear();
                 this.Field2358 = false;
@@ -497,16 +497,16 @@ extends Module {
         }
     }
 
-    public static double Method763(double a, double a2) {
-        if (a == a2) {
-            return a;
+    public static double Method763(double a2, double a3) {
+        if (a2 == a3) {
+            return a2;
         }
-        if (a > a2) {
-            double a3 = a;
-            a = a2;
+        if (a2 > a3) {
+            double a4 = a2;
             a2 = a3;
+            a3 = a4;
         }
-        return ThreadLocalRandom.current().nextDouble(a, a2);
+        return ThreadLocalRandom.current().nextDouble(a2, a3);
     }
 
     @Override
@@ -525,7 +525,7 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         this.Field2350 = false;
         this.deque.clear();
         this.Field2349 = false;
@@ -542,41 +542,41 @@ extends Module {
     }
 
     @EventTarget
-    public void Method752(EventMotion a) {
+    public void Method752(EventMotion a2) {
         if (mc.isIntegratedServerRunning()) {
             return;
         }
-        if (a.isPre() && this.mode.isCurrentMode("Fucker")) {
+        if (a2.isPre() && this.mode.isCurrentMode("Fucker")) {
             Field2345 = true;
             Iterator iterator = queue3.iterator();
             while (iterator.Method932()) {
-                Class725 a2 = (Class725)iterator.Method933();
-                if (System.currentTimeMillis() <= a2.Method1996() + this.Field2346) continue;
-                Wrapper.INSTANCE.sendPacketNoEvent(a2.Method1995());
-                queue3.remove((Object)a2);
+                Class725 a3 = (Class725)iterator.Method933();
+                if (System.currentTimeMillis() <= a3.Method1996() + this.Field2346) continue;
+                Wrapper.INSTANCE.sendPacketNoEvent(a3.Method1995());
+                queue3.remove((Object)a3);
                 this.Field2346 = Math.round((double)MathUtils.getRandomDouble(200.0, 250.0));
             }
         }
     }
 
     @EventTarget
-    public void Method1186(EventPacket a) {
+    public void Method1186(EventPacket a2) {
         if (mc.isIntegratedServerRunning()) {
             return;
         }
-        if (a.isSend()) {
-            Packet a2 = a.getPacket();
+        if (a2.isSend()) {
+            Packet a3 = a2.getPacket();
             if (this.mode.isCurrentMode("Fucker")) {
-                C03PacketPlayer a3;
-                boolean a4 = false;
+                C03PacketPlayer a4;
+                boolean a5 = false;
                 try {
-                    a4 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedClasses.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
+                    a5 = ReflectionHelper.findField((Class)Disabler.mc.thePlayer.sendQueue.getClass(), (String[])new String[]{ObfuscatedField.doneLoadingTerrain.getObfuscatedName()}).getBoolean((Object)Disabler.mc.thePlayer.sendQueue);
                 }
                 catch (Exception exception) {
                     // empty catch block
                 }
-                if (a2 instanceof C03PacketPlayer && (a3 = (C03PacketPlayer)a2) instanceof C03PacketPlayer.C06PacketPlayerPosLook && this.Field2347 <= 50) {
-                    a.setPacket((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a3.getPositionX() + Double.MIN_NORMAL, a3.getPositionY(), a3.getPositionZ() - Double.MIN_NORMAL, ((C03PacketPlayer.C06PacketPlayerPosLook)a3).isOnGround()));
+                if (a3 instanceof C03PacketPlayer && (a4 = (C03PacketPlayer)a3) instanceof C03PacketPlayer.C06PacketPlayerPosLook && this.Field2347 <= 50) {
+                    a2.setPacket((Packet)new C03PacketPlayer.C04PacketPlayerPosition(a4.getPositionX() + Double.MIN_NORMAL, a4.getPositionY(), a4.getPositionZ() - Double.MIN_NORMAL, ((C03PacketPlayer.C06PacketPlayerPosLook)a4).isOnGround()));
                 }
                 ++this.Field2347;
                 if (Disabler.mc.thePlayer != null) {
@@ -584,11 +584,11 @@ extends Module {
                 queue3.clear();
                 return;
             }
-        } else if (a.isRecieve()) {
-            Packet a5 = a.getPacket();
-            if (this.mode.isCurrentMode("Fucker") && a5 instanceof S08PacketPlayerPosLook) {
+        } else if (a2.isRecieve()) {
+            Packet a6 = a2.getPacket();
+            if (this.mode.isCurrentMode("Fucker") && a6 instanceof S08PacketPlayerPosLook) {
                 if (Disabler.mc.thePlayer.ticksExisted < 100) {
-                    a.setCancelled(true);
+                    a2.setCancelled(true);
                 }
                 this.Field2347 = 0;
                 this.delay = 0L;
@@ -596,12 +596,12 @@ extends Module {
         }
     }
 
-    private static void Method1541(Class725 a) {
-        Wrapper.INSTANCE.sendPacketNoEvent(a.Method1995());
+    private static void Method1541(Class725 a2) {
+        Wrapper.INSTANCE.sendPacketNoEvent(a2.Method1995());
     }
 
-    private static void Method1542(Class725 a) {
-        Wrapper.INSTANCE.sendPacketNoEvent(a.Method1995());
+    private static void Method1542(Class725 a2) {
+        Wrapper.INSTANCE.sendPacketNoEvent(a2.Method1995());
     }
 
     private static Exception Method263(Exception exception) {

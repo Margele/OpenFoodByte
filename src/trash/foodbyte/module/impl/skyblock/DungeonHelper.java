@@ -84,7 +84,7 @@ extends Module {
     }
 
     @Override
-    public void onDisable() {
+    public void idk() {
         Field3246.Method2757(Field3247.isCurrentMode(DungeonHelper.Method754(-11422, -9067)));
     }
 

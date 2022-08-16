@@ -48,7 +48,7 @@ public final class Class438 {
         double a4 = Math.abs((double)(a - a2));
         int a5 = Minecraft.getDebugFPS();
         if (a4 > 0.0) {
-            double a6 = MathUtils.Method576(Math.min((double)10.0, (double)Math.max((double)0.05, (double)(144.0 / (double)a5 * (a4 / 10.0) * a3))), 0.05);
+            double a6 = MathUtils.floor(Math.min((double)10.0, (double)Math.max((double)0.05, (double)(144.0 / (double)a5 * (a4 / 10.0) * a3))), 0.05);
             if (a4 != 0.0 && a4 < a6) {
                 a6 = a4;
             }

@@ -58,7 +58,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 
 @SideOnly(value=Side.CLIENT)
 public class Class716
@@ -202,7 +202,7 @@ extends GuiChat {
             if (this.mc.objectMouseOver != null && this.mc.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
                 a3 = this.mc.objectMouseOver.getBlockPos();
             }
-            Wrapper.INSTANCE.Method2874((Packet)new C14PacketTabComplete(a, a3));
+            Wrapper.INSTANCE.sendPacket((Packet)new C14PacketTabComplete(a, a3));
             this.Field3106 = true;
         }
     }

@@ -12,11 +12,11 @@
 package awsl;
 
 import awsl.Class447;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import obfuscate.a;
 
 public class Class446 {
     private static final ArrayList Field2115 = new ArrayList();
@@ -49,46 +49,46 @@ public class Class446 {
     /*
      * WARNING - void declaration
      */
-    public static List Method2766(String a) {
-        void a2;
+    public static List Method2766(String a2) {
+        void a3;
         ArrayList arrayList = new ArrayList();
         Iterator iterator = Class446.Method2764().Method1383();
-        String[] a3 = Class447.Method2759();
+        String[] a4 = Class447.Method2759();
         if (iterator.Method932()) {
-            Class447 a4 = (Class447)iterator.Method933();
-            if (a4.Method2755().equalsIgnoreCase(a)) {
-                a2.Method2530((Object)a4);
+            Class447 a5 = (Class447)iterator.Method933();
+            if (a5.Method2755().equalsIgnoreCase(a2)) {
+                a3.Method2530((Object)a5);
             }
         }
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class447.Method2758(new String[4]);
         }
-        return a2;
+        return a3;
     }
 
-    public static Class447 Method2767(String a, String a2) {
+    public static Class447 Method2767(String a2, String a3) {
         Iterator iterator = Class446.Method2764().Method1383();
-        String[] a3 = Class447.Method2759();
+        String[] a4 = Class447.Method2759();
         if (iterator.Method932()) {
-            Class447 a4 = (Class447)iterator.Method933();
-            if (a4.Method2755().equalsIgnoreCase(a) && a4.Method2754().equals((Object)a2)) {
-                return a4;
+            Class447 a5 = (Class447)iterator.Method933();
+            if (a5.Method2755().equalsIgnoreCase(a2) && a5.Method2754().equals((Object)a3)) {
+                return a5;
             }
         }
         return null;
     }
 
-    public static List Method2768(String a) {
-        ArrayList a2 = new ArrayList();
-        String[] a3 = Class447.Method2759();
+    public static List Method2768(String a2) {
+        ArrayList a3 = new ArrayList();
+        String[] a4 = Class447.Method2759();
         Iterator iterator = Class446.Method2764().Method1383();
         if (iterator.Method932()) {
-            Class447 a4 = (Class447)iterator.Method933();
-            if (a4.Method2755().equals((Object)a)) {
-                a2.Method2530((Object)a4);
+            Class447 a5 = (Class447)iterator.Method933();
+            if (a5.Method2755().equals((Object)a2)) {
+                a3.Method2530((Object)a5);
             }
-            Class91.Method3647(new String[4]);
+            a.trash(new String[4]);
         }
-        return a2;
+        return a3;
     }
 }

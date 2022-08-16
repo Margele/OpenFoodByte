@@ -20,8 +20,6 @@
 package trash.foodbyte.module.impl.movement;
 
 import awsl.Class167;
-import awsl.Class630;
-import awsl.Class635;
 import eventapi.EventTarget;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockTallGrass;
@@ -32,6 +30,8 @@ import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
+import trash.foodbyte.event.EventEntityTick;
+import trash.foodbyte.event.EventMove;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
@@ -73,9 +73,9 @@ extends Module {
     }
 
     @EventTarget
-    public void Method747(Class635 a) {
+    public void Method747(EventEntityTick a) {
         this.setDisplayTag(this.Field2449.getMode());
-        if (a.Method3587().equals((Object)SafeWalk.mc.thePlayer) && this.Field2449.isCurrentMode("Sneak")) {
+        if (a.getEntity().equals((Object)SafeWalk.mc.thePlayer) && this.Field2449.isCurrentMode("Sneak")) {
             if (SafeWalk.mc.thePlayer.prevPosY - SafeWalk.mc.thePlayer.posY > 0.4 && this.Field2452.getValue()) {
                 this.Method1028();
             }
@@ -164,19 +164,19 @@ extends Module {
     }
 
     @EventTarget
-    public void Method274(Class630 a) {
+    public void Method274(EventMove a) {
         double a2;
         double a3;
         double a4;
         double a5;
         boolean a6 = Class167.Method1500();
-        if (!a.Method3503().equals((Object)SafeWalk.mc.thePlayer)) {
+        if (!a.getEntity().equals((Object)SafeWalk.mc.thePlayer)) {
             return;
         }
         if (this.Field2449.isCurrentMode("Vanilla")) {
-            a5 = a.Method3504();
-            a4 = a.Method3506();
-            a3 = a.Method3508();
+            a5 = a.getX();
+            a4 = a.getY();
+            a3 = a.getZ();
             if (SafeWalk.mc.thePlayer.onGround) {
                 a2 = 0.05;
                 if (a5 != 0.0) {
@@ -218,13 +218,13 @@ extends Module {
                     a3 += a2;
                 }
             }
-            a.Method3505(a5);
-            a.Method3509(a3);
+            a.setX(a5);
+            a.setZ(a3);
         }
         if (this.Field2449.isCurrentMode("Insane")) {
-            a5 = a.Method3504();
+            a5 = a.getX();
             a4 = 1.0;
-            a3 = a.Method3508();
+            a3 = a.getZ();
             a2 = 0.05;
             if (a5 != 0.0) {
                 if (this.Method1682(a5, -a4, 0.0)) {
@@ -264,13 +264,13 @@ extends Module {
                 }
                 a3 += a2;
             }
-            a.Method3505(a5);
-            a.Method3509(a3);
+            a.setX(a5);
+            a.setZ(a3);
         }
     }
 
     public boolean Method1682(double a, double a2, double a3) {
-        int a4 = this.Field2450.Method2744().intValue();
+        int a4 = this.Field2450.getFloatValue().intValue();
         while (true) {
             if (!SafeWalk.mc.theWorld.getCollidingBoundingBoxes((Entity)SafeWalk.mc.thePlayer, SafeWalk.mc.thePlayer.getEntityBoundingBox().offset(a, (double)(-a4), a3)).isEmpty()) {
                 return true;
@@ -295,7 +295,7 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         if (this.Field2449.isCurrentMode("Sneak")) {
             KeyBinding.setKeyBindState((int)SafeWalk.mc.gameSettings.keyBindSneak.getKeyCode(), (boolean)false);
         }

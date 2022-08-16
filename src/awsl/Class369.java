@@ -39,51 +39,51 @@ public class Class369 {
      * WARNING - Removed try catching itself - possible behaviour change.
      */
     public static void Method680() {
-        Util.EnumOS a = Util.getOSType();
-        if (a != Util.EnumOS.OSX) {
-            InputStream a2 = null;
+        Util.EnumOS a2 = Util.getOSType();
+        if (a2 != Util.EnumOS.OSX) {
             InputStream a3 = null;
-            a2 = Field1736.getResourceManager().getResource(Class393.Field1941).getInputStream();
-            a3 = Field1736.getResourceManager().getResource(Class393.Field1942).getInputStream();
+            InputStream a4 = null;
+            a3 = Field1736.getResourceManager().getResource(Class393.Field1941).getInputStream();
+            a4 = Field1736.getResourceManager().getResource(Class393.Field1942).getInputStream();
             try {
-                Display.setIcon((ByteBuffer[])new ByteBuffer[]{Class369.Method681(a2), Class369.Method681(a3)});
+                Display.setIcon((ByteBuffer[])new ByteBuffer[]{Class369.Method681(a3), Class369.Method681(a4)});
             }
-            catch (IOException a4) {
+            catch (IOException a5) {
                 try {
-                    LogManager.getLogger((String)"FoodByte Transformer").error("Couldn't set icon", (Throwable)a4);
+                    LogManager.getLogger((String)"FoodByte Transformer").error("Couldn't set icon", (Throwable)a5);
                 }
                 catch (Throwable throwable) {
-                    IOUtils.closeQuietly(a2);
                     IOUtils.closeQuietly(a3);
+                    IOUtils.closeQuietly(a4);
                     throw throwable;
                 }
-                IOUtils.closeQuietly((InputStream)a2);
                 IOUtils.closeQuietly((InputStream)a3);
+                IOUtils.closeQuietly((InputStream)a4);
             }
-            IOUtils.closeQuietly((InputStream)a2);
             IOUtils.closeQuietly((InputStream)a3);
+            IOUtils.closeQuietly((InputStream)a4);
         }
     }
 
     /*
      * WARNING - void declaration
      */
-    public static ByteBuffer Method681(InputStream a) throws IOException {
-        void a2;
-        BufferedImage bufferedImage = ImageIO.read((InputStream)a);
-        int[] a3 = a2.getRGB(0, 0, a2.getWidth(), a2.getHeight(), (int[])null, 0, a2.getWidth());
-        int[] a4 = RenderUtils.Method1148();
-        ByteBuffer a5 = ByteBuffer.allocate((int)(4 * a3.length));
+    public static ByteBuffer Method681(InputStream a2) throws IOException {
+        void a3;
+        BufferedImage bufferedImage = ImageIO.read((InputStream)a2);
+        int[] a4 = a3.getRGB(0, 0, a3.getWidth(), a3.getHeight(), (int[])null, 0, a3.getWidth());
+        int[] a5 = RenderUtils.trash();
+        ByteBuffer a6 = ByteBuffer.allocate((int)(4 * a4.length));
         int n = 0;
-        int[] nArray = a3;
+        int[] nArray = a4;
         int n2 = nArray.length;
         if (n < n2) {
-            int a6 = nArray[n];
-            a5.putInt(a6 << 8 | a6 >> 24 & 0xFF);
+            int a7 = nArray[n];
+            a6.putInt(a7 << 8 | a7 >> 24 & 0xFF);
             ++n;
         }
-        a5.flip();
-        return a5;
+        a6.flip();
+        return a6;
     }
 
     private static IOException Method682(IOException iOException) {

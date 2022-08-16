@@ -16,7 +16,7 @@ import awsl.Class169;
 import awsl.Class253;
 import awsl.Class267;
 import awsl.Class31;
-import awsl.Class91;
+import obfuscate.a;
 
 final class Class256
 extends Class253 {
@@ -138,76 +138,76 @@ extends Class253 {
     /*
      * WARNING - void declaration
      */
-    void Method2252(Class138 a) {
-        void a2;
+    void Method2252(Class138 a2) {
+        void a3;
         int n = 64;
         String[] stringArray = Class267.Method2862();
-        int a3 = 0x60000 | (this.Field1399 & 0x40000) / 64;
-        a.Method487(this.Field1399 & ~a3).Method487(this.Field1400).Method487(this.Field1401);
+        int a4 = 0x60000 | (this.Field1399 & 0x40000) / 64;
+        a2.Method487(this.Field1399 & ~a4).Method487(this.Field1400).Method487(this.Field1401);
         boolean bl = false;
-        String[] a4 = stringArray;
+        String[] a5 = stringArray;
         if (this.Field1403 != 0) {
-            ++a2;
+            ++a3;
         }
         if ((this.Field1399 & 0x1000) != 0 && ((this.Field1398.Field1080 & 0xFFFF) < 49 || (this.Field1399 & 0x40000) != 0)) {
-            ++a2;
+            ++a3;
         }
         if ((this.Field1399 & 0x20000) != 0) {
-            ++a2;
+            ++a3;
         }
         if (this.Field1402 != 0) {
-            ++a2;
+            ++a3;
         }
         if (this.Field1404 != null) {
-            ++a2;
+            ++a3;
         }
         if (this.Field1405 != null) {
-            ++a2;
+            ++a3;
         }
         if (this.Field1406 != null) {
-            ++a2;
+            ++a3;
         }
         if (this.Field1407 != null) {
-            ++a2;
+            ++a3;
         }
         if (this.Field1408 != null) {
-            a2 += this.Field1408.Method473();
+            a3 += this.Field1408.Method473();
         }
-        a.Method487((int)a2);
+        a2.Method487((int)a3);
         if (this.Field1403 != 0) {
-            a.Method487(this.Field1398.Method1506("ConstantValue"));
-            a.Method489(2).Method487(this.Field1403);
+            a2.Method487(this.Field1398.Method1506("ConstantValue"));
+            a2.Method489(2).Method487(this.Field1403);
         }
         if ((this.Field1399 & 0x1000) != 0 && ((this.Field1398.Field1080 & 0xFFFF) < 49 || (this.Field1399 & 0x40000) != 0)) {
-            a.Method487(this.Field1398.Method1506("Synthetic")).Method489(0);
+            a2.Method487(this.Field1398.Method1506("Synthetic")).Method489(0);
         }
         if ((this.Field1399 & 0x20000) != 0) {
-            a.Method487(this.Field1398.Method1506("Deprecated")).Method489(0);
+            a2.Method487(this.Field1398.Method1506("Deprecated")).Method489(0);
         }
         if (this.Field1402 != 0) {
-            a.Method487(this.Field1398.Method1506("Signature"));
-            a.Method489(2).Method487(this.Field1402);
+            a2.Method487(this.Field1398.Method1506("Signature"));
+            a2.Method489(2).Method487(this.Field1402);
         }
         if (this.Field1404 != null) {
-            a.Method487(this.Field1398.Method1506("RuntimeVisibleAnnotations"));
-            this.Field1404.Method1322(a);
+            a2.Method487(this.Field1398.Method1506("RuntimeVisibleAnnotations"));
+            this.Field1404.Method1322(a2);
         }
         if (this.Field1405 != null) {
-            a.Method487(this.Field1398.Method1506("RuntimeInvisibleAnnotations"));
-            this.Field1405.Method1322(a);
+            a2.Method487(this.Field1398.Method1506("RuntimeInvisibleAnnotations"));
+            this.Field1405.Method1322(a2);
         }
         if (this.Field1406 != null) {
-            a.Method487(this.Field1398.Method1506("RuntimeVisibleTypeAnnotations"));
-            this.Field1406.Method1322(a);
+            a2.Method487(this.Field1398.Method1506("RuntimeVisibleTypeAnnotations"));
+            this.Field1406.Method1322(a2);
         }
         if (this.Field1407 != null) {
-            a.Method487(this.Field1398.Method1506("RuntimeInvisibleTypeAnnotations"));
-            this.Field1407.Method1322(a);
+            a2.Method487(this.Field1398.Method1506("RuntimeInvisibleTypeAnnotations"));
+            this.Field1407.Method1322(a2);
         }
         if (this.Field1408 != null) {
-            this.Field1408.Method475(this.Field1398, null, 0, -1, -1, a);
+            this.Field1408.Method475(this.Field1398, null, 0, -1, -1, a2);
         }
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class267.Method2861(new String[2]);
         }
     }

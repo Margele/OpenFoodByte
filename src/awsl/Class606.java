@@ -13,8 +13,8 @@
  */
 package awsl;
 
-import awsl.Class91;
 import com.google.gson.JsonObject;
+import obfuscate.a;
 import trash.foodbyte.irc.PermissionManager;
 
 public class Class606 {
@@ -110,13 +110,13 @@ public class Class606 {
 
     public String Method3737() {
         String string = this.Field2839;
-        int[] a = PermissionManager.Method3697();
+        int[] a2 = PermissionManager.Method3697();
         int n = -1;
         switch (string.hashCode()) {
             case 76612243: {
                 if (!string.equals((Object)"Owner")) break;
                 n = 0;
-                Class91.Method3647(new String[1]);
+                a.trash(new String[1]);
             }
             case 68597: {
                 if (!string.equals((Object)"Dev")) break;
@@ -176,34 +176,34 @@ public class Class606 {
         return this.Method3738(this.Field2839);
     }
 
-    public String Method3738(String a) {
-        String a2 = "\u00a7b";
+    public String Method3738(String a2) {
+        String a3 = "\u00a7b";
         switch (this.Field2843) {
             case 999: {
-                a2 = "\u00a73";
+                a3 = "\u00a73";
                 break;
             }
             case 5: {
-                a2 = "\u00a7c";
+                a3 = "\u00a7c";
                 break;
             }
             case 4: {
-                a2 = "\u00a72";
+                a3 = "\u00a72";
                 break;
             }
             case 3: {
-                a2 = "\u00a79";
+                a3 = "\u00a79";
                 break;
             }
             case 2: {
-                a2 = "\u00a75";
+                a3 = "\u00a75";
                 break;
             }
             case 1: {
-                a2 = "\u00a7a";
+                a3 = "\u00a7a";
             }
         }
-        return a2 + "[" + a + a2 + "]\u00a7r";
+        return a3 + "[" + a2 + a3 + "]\u00a7r";
     }
 
     /*
@@ -256,20 +256,20 @@ public class Class606 {
         return this.Field2838.equalsIgnoreCase("server");
     }
 
-    public String Method3742(long a) {
-        long a2 = 86400000L;
-        long a3 = 3600000L;
-        long a4 = 60000L;
-        long a5 = 1000L;
-        long a6 = a;
-        long a7 = a6 / a2;
-        long a8 = a6 % a2 / a3;
-        long a9 = a6 % a2 % a3 / a4;
-        long a10 = a6 % a2 % a3 % a4 / a5;
-        String a11 = a7 <= 0L ? "" : a7 + "d ";
-        String a12 = a8 <= 0L ? "" : a8 + "h ";
-        String a13 = a9 <= 0L ? "" : a9 + "m ";
-        String a14 = a10 <= 0L ? "" : a10 + "s";
-        return a11 + a12 + a13 + a14;
+    public String Method3742(long a2) {
+        long a3 = 86400000L;
+        long a4 = 3600000L;
+        long a5 = 60000L;
+        long a6 = 1000L;
+        long a7 = a2;
+        long a8 = a7 / a3;
+        long a9 = a7 % a3 / a4;
+        long a10 = a7 % a3 % a4 / a5;
+        long a11 = a7 % a3 % a4 % a5 / a6;
+        String a12 = a8 <= 0L ? "" : a8 + "d ";
+        String a13 = a9 <= 0L ? "" : a9 + "h ";
+        String a14 = a10 <= 0L ? "" : a10 + "m ";
+        String a15 = a11 <= 0L ? "" : a11 + "s";
+        return a12 + a13 + a14 + a15;
     }
 }

@@ -13,7 +13,6 @@
  */
 package trash.foodbyte.module.impl.render;
 
-import awsl.Class281;
 import awsl.Class305;
 import awsl.Class492;
 import eventapi.EventTarget;
@@ -26,7 +25,8 @@ import trash.foodbyte.event.EventRender3D;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.combat.AntiBot;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
+import trash.foodbyte.utils.ServerUtils;
 
 public class Tracers
 extends Module {
@@ -40,15 +40,15 @@ extends Module {
     }
 
     @EventTarget
-    public void Method802(EventRender3D a) {
-        if (Class281.Method3050()) {
+    public void Method802(EventRender3D a2) {
+        if (ServerUtils.isPlayingSkyblock()) {
             return;
         }
         Iterator iterator = Tracers.mc.theWorld.playerEntities.Method1383();
         while (iterator.Method932()) {
-            EntityPlayer a2 = (EntityPlayer)iterator.Method933();
-            if (Tracers.mc.thePlayer == a2 || a2.isInvisible() || AntiBot.Field2577.contains((Object)a2)) continue;
-            this.drawLine((EntityLivingBase)a2, a);
+            EntityPlayer a3 = (EntityPlayer)iterator.Method933();
+            if (Tracers.mc.thePlayer == a3 || a3.isInvisible() || AntiBot.botList.contains((Object)a3)) continue;
+            this.drawLine((EntityLivingBase)a3, a2);
         }
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
     }
@@ -56,41 +56,41 @@ extends Module {
     /*
      * WARNING - void declaration
      */
-    private void drawLine(EntityLivingBase enitity, EventRender3D a) {
-        void a2;
-        float f = a.Method3523();
+    private void drawLine(EntityLivingBase enitity, EventRender3D a2) {
+        void a3;
+        float f = a2.Method3523();
         String string = Class492.Method2239();
-        double a3 = enitity.lastTickPosX + (enitity.posX - enitity.lastTickPosX) * (double)a2 - ReflectionUtils.Method2591();
-        double a4 = enitity.lastTickPosY + (enitity.posY - enitity.lastTickPosY) * (double)a2 - ReflectionUtils.Method2592();
-        double a5 = enitity.lastTickPosZ + (enitity.posZ - enitity.lastTickPosZ) * (double)a2 - ReflectionUtils.Method2593();
+        double a4 = enitity.lastTickPosX + (enitity.posX - enitity.lastTickPosX) * (double)a3 - ReflectionUtils.getRenderPosX();
+        double a5 = enitity.lastTickPosY + (enitity.posY - enitity.lastTickPosY) * (double)a3 - ReflectionUtils.getRenderPosY();
+        double a6 = enitity.lastTickPosZ + (enitity.posZ - enitity.lastTickPosZ) * (double)a3 - ReflectionUtils.getRenderPosZ();
         GL11.glPushMatrix();
         GL11.glEnable((int)3042);
         GL11.glEnable((int)2848);
         GL11.glDisable((int)2929);
-        String a6 = string;
+        String a7 = string;
         GL11.glDisable((int)3553);
         GL11.glBlendFunc((int)770, (int)771);
         GL11.glLineWidth((float)1.0f);
-        float a7 = Tracers.mc.thePlayer.getDistanceToEntity((Entity)enitity);
+        float a8 = Tracers.mc.thePlayer.getDistanceToEntity((Entity)enitity);
         if (Class305.Method697((Entity)enitity)) {
             GL11.glColor3f((float)0.0f, (float)1.0f, (float)1.0f);
         }
         if (Class305.Method704((Entity)enitity)) {
             GL11.glColor3f((float)0.0f, (float)1.0f, (float)0.0f);
         }
-        if (a7 <= 200.0f) {
-            GL11.glColor3f((float)1.0f, (float)(a7 / 40.0f), (float)0.0f);
+        if (a8 <= 200.0f) {
+            GL11.glColor3f((float)1.0f, (float)(a8 / 40.0f), (float)0.0f);
         }
         GL11.glLoadIdentity();
-        boolean a8 = Tracers.mc.gameSettings.viewBobbing;
+        boolean a9 = Tracers.mc.gameSettings.viewBobbing;
         Tracers.mc.gameSettings.viewBobbing = false;
-        ReflectionUtils.Method2609((float)a2);
+        ReflectionUtils.setOrientCamera((float)a3);
         GL11.glBegin((int)3);
         GL11.glVertex3d((double)0.0, (double)Tracers.mc.thePlayer.getEyeHeight(), (double)0.0);
-        GL11.glVertex3d((double)a3, (double)a4, (double)a5);
-        GL11.glVertex3d((double)a3, (double)a4, (double)a5);
+        GL11.glVertex3d((double)a4, (double)a5, (double)a6);
+        GL11.glVertex3d((double)a4, (double)a5, (double)a6);
         GL11.glEnd();
-        Tracers.mc.gameSettings.viewBobbing = a8;
+        Tracers.mc.gameSettings.viewBobbing = a9;
         GL11.glEnable((int)3553);
         GL11.glEnable((int)2929);
         GL11.glDisable((int)2848);
@@ -101,10 +101,10 @@ extends Module {
     /*
      * WARNING - void declaration
      */
-    private void Method952(EntityLivingBase a) {
-        void a2;
+    private void Method952(EntityLivingBase a2) {
         void a3;
-        float f = ReflectionUtils.Method2587();
+        void a4;
+        float f = ReflectionUtils.getRenderPartialTicks();
         String string = Class492.Method2239();
         GL11.glPushMatrix();
         GL11.glEnable((int)3042);
@@ -113,28 +113,28 @@ extends Module {
         GL11.glDisable((int)3553);
         GL11.glBlendFunc((int)770, (int)771);
         GL11.glLineWidth((float)2.0f);
-        double a4 = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a3 - ReflectionUtils.Method2591();
-        double d = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a3 - ReflectionUtils.Method2592();
-        String a5 = string;
-        double a6 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a3 - ReflectionUtils.Method2593();
-        float a7 = Tracers.mc.thePlayer.getDistanceToEntity((Entity)a);
-        if (Class305.Method697((Entity)a)) {
+        double a5 = a2.lastTickPosX + (a2.posX - a2.lastTickPosX) * (double)a4 - ReflectionUtils.getRenderPosX();
+        double d = a2.lastTickPosY + (a2.posY - a2.lastTickPosY) * (double)a4 - ReflectionUtils.getRenderPosY();
+        String a6 = string;
+        double a7 = a2.lastTickPosZ + (a2.posZ - a2.lastTickPosZ) * (double)a4 - ReflectionUtils.getRenderPosZ();
+        float a8 = Tracers.mc.thePlayer.getDistanceToEntity((Entity)a2);
+        if (Class305.Method697((Entity)a2)) {
             GL11.glColor3f((float)0.0f, (float)1.0f, (float)1.0f);
         }
-        if (Class305.Method704((Entity)a)) {
+        if (Class305.Method704((Entity)a2)) {
             GL11.glColor3f((float)0.0f, (float)1.0f, (float)0.0f);
         }
-        if (a7 <= 200.0f) {
-            GL11.glColor3f((float)1.0f, (float)(a7 / 40.0f), (float)0.0f);
+        if (a8 <= 200.0f) {
+            GL11.glColor3f((float)1.0f, (float)(a8 / 40.0f), (float)0.0f);
         }
-        boolean a8 = Tracers.mc.gameSettings.viewBobbing;
+        boolean a9 = Tracers.mc.gameSettings.viewBobbing;
         Tracers.mc.gameSettings.viewBobbing = false;
         GL11.glBegin((int)3);
         GL11.glVertex3d((double)0.0, (double)Tracers.mc.thePlayer.getEyeHeight(), (double)0.0);
-        GL11.glVertex3d((double)a4, (double)a2, (double)a6);
-        GL11.glVertex3d((double)a4, (double)a2, (double)a6);
+        GL11.glVertex3d((double)a5, (double)a3, (double)a7);
+        GL11.glVertex3d((double)a5, (double)a3, (double)a7);
         GL11.glEnd();
-        Tracers.mc.gameSettings.viewBobbing = a8;
+        Tracers.mc.gameSettings.viewBobbing = a9;
         GL11.glEnable((int)3553);
         GL11.glEnable((int)2929);
         GL11.glDisable((int)2848);

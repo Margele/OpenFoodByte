@@ -17,7 +17,6 @@
  */
 package awsl;
 
-import awsl.Class706;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
@@ -26,6 +25,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.util.ChatAllowedCharacters;
 import org.lwjgl.opengl.GL11;
+import trash.foodbyte.gui.AltLogin;
 
 public class Class696
 extends Gui {
@@ -181,7 +181,7 @@ extends Gui {
     }
 
     public boolean Method2038(char a, int a2) {
-        String string = Class706.Method1809();
+        String string = AltLogin.Method1809();
         if (!this.Field3002 || !this.Field3001) {
             return false;
         }
@@ -285,7 +285,7 @@ extends Gui {
     }
 
     public void Method2040() {
-        String a = Class706.Method1809();
+        String a = AltLogin.Method1809();
         if (this.Method2051()) {
             boolean a2;
             if (this.Method1834()) {

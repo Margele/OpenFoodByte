@@ -55,17 +55,17 @@ implements Event {
         this.packet = packet;
     }
 
-    public static void Method2242(String[] stringArray) {
+    public static void trash(String[] stringArray) {
         Field2907 = stringArray;
     }
 
-    public static String[] Method2243() {
+    public static String[] trash() {
         return Field2907;
     }
 
     static {
-        if (EventPacket.Method2243() == null) {
-            EventPacket.Method2242(new String[5]);
+        if (EventPacket.trash() == null) {
+            EventPacket.trash(new String[5]);
         }
     }
 }

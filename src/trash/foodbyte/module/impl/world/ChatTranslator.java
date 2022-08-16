@@ -27,7 +27,6 @@
 package trash.foodbyte.module.impl.world;
 
 import awsl.Class448;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.io.InputStream;
 import java.net.URI;
@@ -39,6 +38,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.C01PacketChatMessage;
 import net.minecraft.network.play.server.S02PacketChat;
 import net.minecraft.util.IChatComponent;
+import obfuscate.a;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -212,19 +212,19 @@ extends Module {
         return Field2180.getValue() && a2.startsWith("\u00a7d") && a2.contains((CharSequence)":") && (a2.contains((CharSequence)"From") || a2.contains((CharSequence)"To"));
     }
 
-    private void Method2089(String a, String a2) {
-        Class91[] a3 = Class448.Method2461();
-        CloseableHttpClient a4 = HttpClients.createDefault();
-        URL a5 = new URL(this.Method2082(a));
-        URI a6 = new URI(a5.getProtocol(), a5.getUserInfo(), a5.getHost(), a5.getPort(), a5.getPath(), a5.getQuery(), a5.getRef());
-        String a7 = a6.toString();
-        HttpGet a8 = new HttpGet(a7);
-        a8.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
-        String a9 = "null";
-        Object a10 = a4.execute((HttpUriRequest)a8);
+    private void Method2089(String a2, String a3) {
+        a[] a4 = Class448.Method2461();
+        CloseableHttpClient a5 = HttpClients.createDefault();
+        URL a6 = new URL(this.Method2082(a2));
+        URI a7 = new URI(a6.getProtocol(), a6.getUserInfo(), a6.getHost(), a6.getPort(), a6.getPath(), a6.getQuery(), a6.getRef());
+        String a8 = a7.toString();
+        HttpGet a9 = new HttpGet(a8);
+        a9.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
+        String a10 = "null";
+        Object a11 = a5.execute((HttpUriRequest)a9);
         Throwable throwable = null;
         try {
-            a9 = IOUtils.toString((InputStream)a10.getEntity().getContent(), (Charset)StandardCharsets.UTF_8);
+            a10 = IOUtils.toString((InputStream)a11.getEntity().getContent(), (Charset)StandardCharsets.UTF_8);
         }
         catch (Throwable throwable2) {
             throwable = throwable2;
@@ -234,19 +234,19 @@ extends Module {
         }
     }
 
-    private void Method2090(String a, String a2) {
-        Class91[] a3 = Class448.Method2461();
-        CloseableHttpClient a4 = HttpClients.createDefault();
-        URL a5 = new URL(this.Method2082(a));
-        URI a6 = new URI(a5.getProtocol(), a5.getUserInfo(), a5.getHost(), a5.getPort(), a5.getPath(), a5.getQuery(), a5.getRef());
-        String a7 = a6.toString();
-        HttpGet a8 = new HttpGet(a7);
-        a8.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
-        String a9 = "null";
-        Object a10 = a4.execute((HttpUriRequest)a8);
+    private void Method2090(String a2, String a3) {
+        a[] a4 = Class448.Method2461();
+        CloseableHttpClient a5 = HttpClients.createDefault();
+        URL a6 = new URL(this.Method2082(a2));
+        URI a7 = new URI(a6.getProtocol(), a6.getUserInfo(), a6.getHost(), a6.getPort(), a6.getPath(), a6.getQuery(), a6.getRef());
+        String a8 = a7.toString();
+        HttpGet a9 = new HttpGet(a8);
+        a9.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
+        String a10 = "null";
+        Object a11 = a5.execute((HttpUriRequest)a9);
         Throwable throwable = null;
         try {
-            a9 = IOUtils.toString((InputStream)a10.getEntity().getContent(), (Charset)StandardCharsets.UTF_8);
+            a10 = IOUtils.toString((InputStream)a11.getEntity().getContent(), (Charset)StandardCharsets.UTF_8);
         }
         catch (Throwable throwable2) {
             throwable = throwable2;

@@ -12,11 +12,11 @@
 package awsl;
 
 import awsl.Class236;
-import awsl.Class91;
 import java.awt.CompositeContext;
 import java.awt.image.ColorModel;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
+import obfuscate.a;
 
 class Class240
 implements CompositeContext {
@@ -32,57 +32,57 @@ implements CompositeContext {
     /*
      * WARNING - void declaration
      */
-    public void Method1437(Raster a, Raster a2, WritableRaster a3) {
-        int n = a.getMinX();
-        String[] a4 = Class236.Method2106();
-        int a5 = a.getMinY();
-        int a6 = a.getWidth();
-        int a7 = a.getHeight();
-        int[] a8 = null;
+    public void Method1437(Raster a2, Raster a3, WritableRaster a4) {
+        int n = a2.getMinX();
+        String[] a5 = Class236.Method2106();
+        int a6 = a2.getMinY();
+        int a7 = a2.getWidth();
+        int a8 = a2.getHeight();
         int[] a9 = null;
         int[] a10 = null;
-        int[] a11 = new int[a6 * 4];
-        int a12 = 0;
-        if (a12 < a7) {
-            void a13;
-            a8 = a.getPixels((int)a13, a5, a6, 1, a8);
-            a10 = a2.getPixels((int)a13, a5, a6, 1, a10);
-            int a14 = 0;
+        int[] a11 = null;
+        int[] a12 = new int[a7 * 4];
+        int a13 = 0;
+        if (a13 < a8) {
+            void a14;
+            a9 = a2.getPixels((int)a14, a6, a7, 1, a9);
+            a11 = a3.getPixels((int)a14, a6, a7, 1, a11);
             int a15 = 0;
             int a16 = 0;
-            if (a16 < a6) {
-                int a17 = a8[a15 + 3];
-                void a18 = a9[a15 + 3];
-                if (((a17 ^ a14) & 0x80) != 0 || ((a17 ^ a18) & 0x80) != 0) {
-                    if ((this.Field1340 + a12 + a16) % 10 > 4) {
-                        a11[a15] = 0;
-                        a11[a15 + 1] = 0;
-                        a11[a15 + 2] = 0;
+            int a17 = 0;
+            if (a17 < a7) {
+                int a18 = a9[a16 + 3];
+                void a19 = a10[a16 + 3];
+                if (((a18 ^ a15) & 0x80) != 0 || ((a18 ^ a19) & 0x80) != 0) {
+                    if ((this.Field1340 + a13 + a17) % 10 > 4) {
+                        a12[a16] = 0;
+                        a12[a16 + 1] = 0;
+                        a12[a16 + 2] = 0;
                     }
-                    a11[a15] = 255;
-                    a11[a15 + 1] = 255;
-                    a11[a15 + 2] = 127;
-                    a11[a15 + 3] = 255;
+                    a12[a16] = 255;
+                    a12[a16 + 1] = 255;
+                    a12[a16 + 2] = 127;
+                    a12[a16 + 3] = 255;
                 }
-                a11[a15] = a10[a15];
-                a11[a15 + 1] = a10[a15 + 1];
-                a11[a15 + 2] = a10[a15 + 2];
-                a11[a15] = 255;
-                a11[a15 + 1] = 0;
-                a11[a15 + 2] = 0;
-                a11[a15 + 3] = 0;
-                a14 = a17;
-                a15 += 4;
-                ++a16;
+                a12[a16] = a11[a16];
+                a12[a16 + 1] = a11[a16 + 1];
+                a12[a16 + 2] = a11[a16 + 2];
+                a12[a16] = 255;
+                a12[a16 + 1] = 0;
+                a12[a16 + 2] = 0;
+                a12[a16 + 3] = 0;
+                a15 = a18;
+                a16 += 4;
+                ++a17;
             }
-            a3.setPixels((int)a13, a5, a6, 1, a11);
-            int[] a22 = a8;
-            a8 = a9;
-            a9 = a22;
-            ++a5;
-            ++a12;
+            a4.setPixels((int)a14, a6, a7, 1, a12);
+            int[] a22 = a9;
+            a9 = a10;
+            a10 = a22;
+            ++a6;
+            ++a13;
         }
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class236.Method2105(new String[1]);
         }
     }

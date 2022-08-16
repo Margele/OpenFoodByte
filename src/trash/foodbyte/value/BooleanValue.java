@@ -32,7 +32,7 @@ extends Class447 {
         this(a, a2, a3, false);
     }
 
-    public Boolean Method2509() {
+    public Boolean getBooleanValue() {
         return (Boolean)this.Field2120;
     }
 
@@ -42,12 +42,12 @@ extends Class447 {
     }
 
     public boolean getValue() {
-        return this.Method2509();
+        return this.getBooleanValue();
     }
 
     @Override
     public Object Method2454() {
-        return this.Method2509();
+        return this.getBooleanValue();
     }
 
     public static void Method2511(int[] nArray) {

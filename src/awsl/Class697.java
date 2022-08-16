@@ -15,8 +15,6 @@
  */
 package awsl;
 
-import awsl.Class706;
-import awsl.Class91;
 import com.mojang.authlib.Agent;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
@@ -24,7 +22,9 @@ import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
 import java.net.Proxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Session;
-import trash.foodbyte.utils.ReflectionUtils;
+import obfuscate.a;
+import trash.foodbyte.gui.AltLogin;
+import trash.foodbyte.reflections.ReflectionUtils;
 
 public final class Class697
 extends Thread {
@@ -37,7 +37,7 @@ extends Thread {
         super("Alt Login Thread");
         this.Field3011 = a;
         this.Field3009 = a2;
-        Class706.Field3049 = this.Field3010 = "Waiting...";
+        AltLogin.Field3049 = this.Field3010 = "Waiting...";
     }
 
     private Session Method2636(String a, String a2) {
@@ -60,23 +60,23 @@ extends Thread {
     }
 
     public void Method1339() {
-        String a = Class706.Method1809();
+        String a2 = AltLogin.Method1809();
         if (this.Field3009.equals((Object)"")) {
-            ReflectionUtils.Method2585(this.Field3011);
-            Class706.Field3049 = this.Field3010 = "Logged in. (\u00a7a" + this.Field3011 + "\u00a7r - cracked name)";
+            ReflectionUtils.setUsername(this.Field3011);
+            AltLogin.Field3049 = this.Field3010 = "Logged in. (\u00a7a" + this.Field3011 + "\u00a7r - cracked name)";
             return;
         }
-        Class706.Field3049 = this.Field3010 = "Logging in...";
-        Session a2 = this.Method2636(this.Field3011, this.Field3009);
-        Class706.Field3049 = this.Field3010 = "\u00a7cLogin failed!";
-        Class706.Field3049 = this.Field3010 = "Logged in. (\u00a7a" + a2.getUsername() + "\u00a7r - Premium Account)";
-        ReflectionUtils.Method2586(a2);
-        if (Class91.Method3648() == null) {
-            Class706.Method1808("EHLwQ");
+        AltLogin.Field3049 = this.Field3010 = "Logging in...";
+        Session a3 = this.Method2636(this.Field3011, this.Field3009);
+        AltLogin.Field3049 = this.Field3010 = "\u00a7cLogin failed!";
+        AltLogin.Field3049 = this.Field3010 = "Logged in. (\u00a7a" + a3.getUsername() + "\u00a7r - Premium Account)";
+        ReflectionUtils.setSession(a3);
+        if (a.trash() == null) {
+            AltLogin.Method1808("EHLwQ");
         }
     }
 
-    public void Method1342(String a) {
-        this.Field3010 = a;
+    public void Method1342(String a2) {
+        this.Field3010 = a2;
     }
 }

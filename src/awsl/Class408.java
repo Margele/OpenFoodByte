@@ -12,7 +12,6 @@ package awsl;
 
 import awsl.Class15;
 import awsl.Class224;
-import awsl.Class362;
 import awsl.Class363;
 import awsl.Class422;
 import awsl.Class45;
@@ -22,6 +21,7 @@ import awsl.Class710;
 import native0.Class614;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.IChatComponent;
+import trash.foodbyte.reflections.ReflectionUtils2;
 
 public class Class408
 implements Class422,
@@ -1096,7 +1096,7 @@ Class45 {
 
     public static void Method3547(GuiScreen a, String a2, IChatComponent a3) {
         if (Class363.Method592()) {
-            Class362.Method540((Object)new Class710(a, a2, a3));
+            ReflectionUtils2.displayGuiScreen((Object)new Class710(a, a2, a3));
         }
     }
 

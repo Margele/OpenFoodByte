@@ -1094,7 +1094,7 @@ Class45 {
     }
 
     public static void Method3546(Object a) {
-        EventManager.Method2686(new Class643((GuiScreen)a));
+        EventManager.call(new Class643((GuiScreen)a));
     }
 
     @Class628

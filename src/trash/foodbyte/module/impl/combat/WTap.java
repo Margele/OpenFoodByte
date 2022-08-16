@@ -12,18 +12,18 @@
  */
 package trash.foodbyte.module.impl.combat;
 
-import awsl.Class46;
-import awsl.Class91;
 import eventapi.EventTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.C02PacketUseEntity;
 import net.minecraft.network.play.client.C0BPacketEntityAction;
+import obfuscate.a;
+import obfuscate.b;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 
 public class WTap
@@ -44,14 +44,14 @@ extends Module {
     }
 
     @EventTarget
-    public void Method752(EventMotion a) {
+    public void Method752(EventMotion a2) {
         block5: {
             block6: {
-                Class91[] class91Array = Class46.Method3239();
-                if (!a.isPre()) break block5;
+                a[] aArray = b.trash();
+                if (!a2.isPre()) break block5;
                 ++this.Field1624;
                 if (!WTap.mc.thePlayer.isSprinting()) break block5;
-                if (this.Field1623.Method2509().booleanValue()) break block6;
+                if (this.Field1623.getBooleanValue().booleanValue()) break block6;
                 if (this.Field1624 == 2) {
                     WTap.mc.thePlayer.setSprinting(false);
                 }

@@ -25,18 +25,18 @@ extends Command {
 
     @Override
     public void onCommand(String[] commands) {
-        String a = "";
-        int a2 = GetDmgCommand.Method3599();
+        String a2 = "";
+        int a3 = GetDmgCommand.Method3599();
         if (commands.length <= 1) {
             ChatUtils.addChatMessage(this.getHelp());
             return;
         }
-        int a3 = 1;
-        if (a3 < commands.length) {
-            a = String.valueOf((Object)String.valueOf((Object)a)) + commands[a3] + " ";
-            ++a3;
+        int a4 = 1;
+        if (a4 < commands.length) {
+            a2 = String.valueOf((Object)String.valueOf((Object)a2)) + commands[a4] + " ";
+            ++a4;
         }
-        GlobalModule.fakeName = a.substring(0, a.length() - 1).replace((CharSequence)"&", (CharSequence)"\u00a7");
+        GlobalModule.fakeName = a2.substring(0, a2.length() - 1).replace((CharSequence)"&", (CharSequence)"\u00a7");
         GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("NameProtect", "Updated You New NameProtect - " + GlobalModule.fakeName, Types.WARNING));
         GlobalModule.INSTANCE.fileManager.saveNameProtect();
         super.onCommand(commands);

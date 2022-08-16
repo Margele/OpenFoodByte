@@ -1099,7 +1099,7 @@ Class45 {
     }
 
     public static void Method2349(Object a, Object a2) {
-        EventManager.Method2686(new Class636((BlockPos)a, (EnumFacing)a2));
+        EventManager.call(new Class636((BlockPos)a, (EnumFacing)a2));
     }
 
     private static native /* synthetic */ void Method2139();

@@ -34,20 +34,20 @@ extends Class15 {
 
     @Override
     public void Method1653() {
-        Class780 a = new Class780(new Class811());
+        Class780 a2 = new Class780(new Class811());
         try {
-            a.Method847("dummy", this);
+            a2.Method847("dummy", this);
         }
-        catch (Exception a2) {
-            if (a2 instanceof IndexOutOfBoundsException && this.Field211 == 0 && this.Field210 == 0) {
+        catch (Exception a3) {
+            if (a3 instanceof IndexOutOfBoundsException && this.Field211 == 0 && this.Field210 == 0) {
                 throw new RuntimeException("Data flow checking option requires valid, non zero maxLocals and maxStack values.");
             }
-            a2.printStackTrace();
-            StringWriter a3 = new StringWriter();
-            PrintWriter a4 = new PrintWriter((Writer)a3, true);
-            Class225.Method2194(this, a, a4);
-            a4.close();
-            throw new RuntimeException(a2.getMessage() + ' ' + a3.toString());
+            a3.printStackTrace();
+            StringWriter a4 = new StringWriter();
+            PrintWriter a5 = new PrintWriter((Writer)a4, true);
+            Class225.Method2194(this, a2, a5);
+            a5.close();
+            throw new RuntimeException(a3.getMessage() + ' ' + a4.toString());
         }
         this.Method3444(this.Field232);
     }

@@ -22,12 +22,12 @@ import awsl.Class267;
 import awsl.Class279;
 import awsl.Class37;
 import awsl.Class45;
-import awsl.Class46;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import obfuscate.b;
 
 public abstract class Class5
 extends Class2
@@ -373,33 +373,33 @@ implements Class45 {
         this.Method1955(a, a2, a3, a4, a5);
     }
 
-    private void Method1955(int a, String a2, String a3, String a4, boolean a5) {
-        this.Field1460.Method1954(a, a2, a3, a4, a5);
+    private void Method1955(int a2, String a3, String a4, String a5, boolean a6) {
+        this.Field1460.Method1954(a2, a3, a4, a5, a6);
         if (this.Field105) {
-            Class46[] a6 = Class46.Method3211(a4);
-            for (int a7 = 0; a7 < a6.length; ++a7) {
+            b[] a7 = b.Method3211(a5);
+            for (int a8 = 0; a8 < a7.length; ++a8) {
                 this.Method1963();
-                if (a6[a7].Method3233() != 2) continue;
+                if (a7[a8].Method3233() != 2) continue;
                 this.Method1963();
             }
-            switch (a) {
+            switch (a2) {
                 case 182: 
                 case 185: {
                     this.Method1963();
                     break;
                 }
                 case 183: {
-                    Object a8 = this.Method1963();
-                    if (a8 != Field101 || this.Field106) break;
+                    Object a9 = this.Method1963();
+                    if (a9 != Field101 || this.Field106) break;
                     this.Method1966();
                     this.Field106 = true;
                     this.Field105 = false;
                 }
             }
-            Class46 a9 = Class46.Method3213(a4);
-            if (a9 != Class46.Field572) {
+            b a10 = b.Method3213(a5);
+            if (a10 != b.Field572) {
                 this.Method1965(Field102);
-                if (a9.Method3233() == 2) {
+                if (a10.Method3233() == 2) {
                     this.Method1965(Field102);
                 }
             }
@@ -407,19 +407,19 @@ implements Class45 {
     }
 
     @Override
-    public void Method1956(String a, String a2, Class279 a3, Object[] a4) {
-        this.Field1460.Method1956(a, a2, a3, a4);
+    public void Method1956(String a2, String a3, Class279 a4, Object[] a5) {
+        this.Field1460.Method1956(a2, a3, a4, a5);
         if (this.Field105) {
-            Class46[] a5 = Class46.Method3211(a2);
-            for (int a6 = 0; a6 < a5.length; ++a6) {
+            b[] a6 = b.Method3211(a3);
+            for (int a7 = 0; a7 < a6.length; ++a7) {
                 this.Method1963();
-                if (a5[a6].Method3233() != 2) continue;
+                if (a6[a7].Method3233() != 2) continue;
                 this.Method1963();
             }
-            Class46 a7 = Class46.Method3213(a2);
-            if (a7 != Class46.Field572) {
+            b a8 = b.Method3213(a3);
+            if (a8 != b.Field572) {
                 this.Method1965(Field102);
-                if (a7.Method3233() == 2) {
+                if (a8.Method3233() == 2) {
                     this.Method1965(Field102);
                 }
             }
@@ -427,10 +427,10 @@ implements Class45 {
     }
 
     @Override
-    public void Method1957(int a, Class264 a2) {
-        this.Field1460.Method1957(a, a2);
+    public void Method1957(int a2, Class264 a3) {
+        this.Field1460.Method1957(a2, a3);
         if (this.Field105) {
-            switch (a) {
+            switch (a2) {
                 case 153: 
                 case 154: 
                 case 155: 
@@ -458,50 +458,50 @@ implements Class45 {
                     this.Method1965(Field102);
                 }
             }
-            this.Method1962(a2);
+            this.Method1962(a3);
         }
     }
 
     @Override
-    public void Method1958(Class264 a, int[] a2, Class264[] a3) {
-        this.Field1460.Method1958(a, a2, a3);
+    public void Method1958(Class264 a2, int[] a3, Class264[] a4) {
+        this.Field1460.Method1958(a2, a3, a4);
         if (this.Field105) {
             this.Method1963();
-            this.Method1961(a, a3);
+            this.Method1961(a2, a4);
         }
     }
 
     @Override
-    public void Method1959(int a, int a2, Class264 a3, Class264[] a4) {
-        this.Field1460.Method1959(a, a2, a3, a4);
+    public void Method1959(int a2, int a3, Class264 a4, Class264[] a5) {
+        this.Field1460.Method1959(a2, a3, a4, a5);
         if (this.Field105) {
             this.Method1963();
-            this.Method1961(a3, a4);
+            this.Method1961(a4, a5);
         }
     }
 
     @Override
-    public void Method1960(Class264 a, Class264 a2, Class264 a3, String a4) {
-        super.Method1960(a, a2, a3, a4);
-        if (this.Field105 && !this.Field108.containsKey((Object)a3)) {
-            ArrayList a5 = new ArrayList();
-            a5.Method2530(Field102);
-            this.Field108.put((Object)a3, (Object)a5);
+    public void Method1960(Class264 a2, Class264 a3, Class264 a4, String a5) {
+        super.Method1960(a2, a3, a4, a5);
+        if (this.Field105 && !this.Field108.containsKey((Object)a4)) {
+            ArrayList a6 = new ArrayList();
+            a6.Method2530(Field102);
+            this.Field108.put((Object)a4, (Object)a6);
         }
     }
 
-    private void Method1961(Class264 a, Class264[] a2) {
-        this.Method1962(a);
-        for (int a3 = 0; a3 < a2.length; ++a3) {
-            this.Method1962(a2[a3]);
+    private void Method1961(Class264 a2, Class264[] a3) {
+        this.Method1962(a2);
+        for (int a4 = 0; a4 < a3.length; ++a4) {
+            this.Method1962(a3[a4]);
         }
     }
 
-    private void Method1962(Class264 a) {
-        if (this.Field108.containsKey((Object)a)) {
+    private void Method1962(Class264 a2) {
+        if (this.Field108.containsKey((Object)a2)) {
             return;
         }
-        this.Field108.put((Object)a, (Object)new ArrayList((Collection)this.Field107));
+        this.Field108.put((Object)a2, (Object)new ArrayList((Collection)this.Field107));
     }
 
     private Object Method1963() {
@@ -512,13 +512,13 @@ implements Class45 {
         return this.Field107.get(this.Field107.Method1799() - 1);
     }
 
-    private void Method1965(Object a) {
-        this.Field107.Method2530(a);
+    private void Method1965(Object a2) {
+        this.Field107.Method2530(a2);
     }
 
     protected void Method1966() {
     }
 
-    protected void Method1967(int a) {
+    protected void Method1967(int a2) {
     }
 }

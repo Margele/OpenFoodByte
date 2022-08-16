@@ -62,7 +62,7 @@ public class Class367 {
     public static String Method677(String a, String a2) {
         void a3;
         String string = "https://hypixel.net/api/players/" + a + "/ban/" + a2.replace((CharSequence)"#", (CharSequence)"");
-        int[] nArray = RenderUtils.Method1148();
+        int[] nArray = RenderUtils.trash();
         System.err.println((String)a3);
         int[] a4 = nArray;
         CloseableHttpClient a5 = HttpClients.createDefault();

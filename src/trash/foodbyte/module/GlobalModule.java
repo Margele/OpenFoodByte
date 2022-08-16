@@ -23,12 +23,12 @@ import awsl.Class604;
 import awsl.Class628;
 import awsl.Class705;
 import awsl.Class707;
-import awsl.Class91;
 import java.util.concurrent.ConcurrentHashMap;
 import native0.Class614;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.EventBus;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import obfuscate.a;
 import trash.foodbyte.command.CommandManager;
 import trash.foodbyte.module.ModuleManager;
 import trash.foodbyte.module.impl.combat.KillAura;
@@ -125,7 +125,7 @@ public class GlobalModule {
         if (((Freecam)ModuleManager.getModule2(Freecam.class)).getState()) {
             ((Freecam)ModuleManager.getModule2(Freecam.class)).setState(false);
         }
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             GlobalModule.Method2005(new String[1]);
         }
     }
@@ -1194,9 +1194,9 @@ public class GlobalModule {
         return this.Field3191;
     }
 
-    private void Method2010(Object a) {
-        if (a.getClass().getName() == GlobalModule.Method2008(-7714, 16760)) {
-            this.Field3179 = a;
+    private void Method2010(Object a2) {
+        if (a2.getClass().getName() == GlobalModule.Method2008(-7714, 16760)) {
+            this.Field3179 = a2;
         }
     }
 

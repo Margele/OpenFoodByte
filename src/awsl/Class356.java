@@ -66,7 +66,7 @@ public class Class356 {
     public static ItemStack Method133(String a, String[] a2) {
         void a3;
         ItemStack itemStack = new ItemStack(Items.paper);
-        int[] nArray = RenderUtils.Method1148();
+        int[] nArray = RenderUtils.trash();
         a3.setStackDisplayName(a);
         int[] a4 = nArray;
         NBTTagList a5 = new NBTTagList();
@@ -107,7 +107,7 @@ public class Class356 {
     public static void Method136(ItemStack a, int a2, String a3) {
         void a4;
         NBTTagList nBTTagList = Class356.Method139(a);
-        int[] a5 = RenderUtils.Method1148();
+        int[] a5 = RenderUtils.trash();
         if (a2 >= a4.tagCount()) {
             Class356.Method134(a, a3);
         }
@@ -192,7 +192,7 @@ public class Class356 {
     }
 
     private static void Method150(ItemStack a, String a2, boolean a3) {
-        int[] a4 = RenderUtils.Method1148();
+        int[] a4 = RenderUtils.trash();
         Class356.Method149(a).setBoolean(a2, a3);
         if (a.hasTagCompound()) {
             NBTTagCompound a5 = Class356.Method149(a);

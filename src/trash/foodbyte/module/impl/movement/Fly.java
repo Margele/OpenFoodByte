@@ -10,11 +10,11 @@
 package trash.foodbyte.module.impl.movement;
 
 import awsl.Class167;
-import awsl.Class630;
-import awsl.Class653;
 import eventapi.EventTarget;
 import net.minecraft.client.entity.EntityPlayerSP;
 import trash.foodbyte.event.EventMotion;
+import trash.foodbyte.event.EventMove;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
@@ -41,7 +41,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method755(Class653 a) {
+    public void Method755(EventTick a) {
         this.setDisplayTag("Vanilla");
     }
 
@@ -62,9 +62,9 @@ extends Module {
     }
 
     @EventTarget
-    public void Method274(Class630 a) {
-        if (a.Method3503() instanceof EntityPlayerSP) {
-            a.Method3512(Field2477.Method2746());
+    public void Method274(EventMove a) {
+        if (a.getEntity() instanceof EntityPlayerSP) {
+            a.setSpeed(Field2477.getFloatValueCast());
         }
     }
 }

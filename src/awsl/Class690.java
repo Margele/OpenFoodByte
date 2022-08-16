@@ -14,9 +14,9 @@
 package awsl;
 
 import awsl.Class279;
-import awsl.Class46;
 import awsl.Class52;
 import java.util.HashMap;
+import obfuscate.b;
 
 public class Class690
 extends HashMap {
@@ -108,97 +108,97 @@ extends HashMap {
         return a6;
     }
 
-    public Class52 Method2501(Object a) {
-        if (a instanceof Integer) {
-            int a2 = (Integer)a;
-            return this.Method2492(a2);
+    public Class52 Method2501(Object a2) {
+        if (a2 instanceof Integer) {
+            int a3 = (Integer)a2;
+            return this.Method2492(a3);
         }
-        if (a instanceof Float) {
-            float a3 = ((Float)a).floatValue();
-            return this.Method2493(a3);
+        if (a2 instanceof Float) {
+            float a4 = ((Float)a2).floatValue();
+            return this.Method2493(a4);
         }
-        if (a instanceof Long) {
-            long a4 = (Long)a;
-            return this.Method2494(a4);
+        if (a2 instanceof Long) {
+            long a5 = (Long)a2;
+            return this.Method2494(a5);
         }
-        if (a instanceof Double) {
-            double a5 = (Double)a;
-            return this.Method2495(a5);
+        if (a2 instanceof Double) {
+            double a6 = (Double)a2;
+            return this.Method2495(a6);
         }
-        if (a instanceof String) {
-            return this.Method2497((String)a);
+        if (a2 instanceof String) {
+            return this.Method2497((String)a2);
         }
-        if (a instanceof Class46) {
-            Class46 a6 = (Class46)a;
-            int a7 = a6.Method3217();
-            if (a7 == 10) {
-                return this.Method2498(a6.Method3221());
+        if (a2 instanceof b) {
+            b a7 = (b)a2;
+            int a8 = a7.Method3217();
+            if (a8 == 10) {
+                return this.Method2498(a7.Method3221());
             }
-            if (a7 == 11) {
-                return this.Method2499(a6.Method3225());
+            if (a8 == 11) {
+                return this.Method2499(a7.Method3225());
             }
-            return this.Method2498(a6.Method3225());
+            return this.Method2498(a7.Method3225());
         }
-        if (a instanceof Class279) {
-            Class279 a8 = (Class279)a;
-            return this.Method2500(a8.Method2820(), a8.Method2821(), a8.Method2822(), a8.Method2823());
+        if (a2 instanceof Class279) {
+            Class279 a9 = (Class279)a2;
+            return this.Method2500(a9.Method2820(), a9.Method2821(), a9.Method2822(), a9.Method2823());
         }
-        throw new IllegalArgumentException("value " + a);
+        throw new IllegalArgumentException("value " + a2);
     }
 
-    public Class52 Method2502(String a, String a2, String a3) {
-        this.Field2981.Method3190('G', a, a2, a3);
-        Class52 a4 = this.Method2506(this.Field2981);
-        this.Method2498(a);
-        this.Method2505(a2, a3);
-        a4 = new Class52(this.Field2981);
-        this.Method2507(a4);
-        return a4;
-    }
-
-    public Class52 Method2503(String a, String a2, String a3, boolean a4) {
-        this.Field2981.Method3190('N', a, a2, a3);
+    public Class52 Method2502(String a2, String a3, String a4) {
+        this.Field2981.Method3190('G', a2, a3, a4);
         Class52 a5 = this.Method2506(this.Field2981);
-        this.Method2498(a);
-        this.Method2505(a2, a3);
+        this.Method2498(a2);
+        this.Method2505(a3, a4);
         a5 = new Class52(this.Field2981);
         this.Method2507(a5);
         return a5;
     }
 
-    public Class52 Method2504(String a, String a2, Class279 a3, Object[] a4) {
-        String[] stringArray = Class690.Method2342();
-        this.Field2983.Method3191(a, a2, a3, a4);
-        String[] a5 = stringArray;
-        Class52 a6 = this.Method2506(this.Field2983);
-        this.Method2505(a, a2);
-        this.Method2500(a3.Method2820(), a3.Method2821(), a3.Method2822(), a3.Method2823());
-        int a7 = 0;
-        if (a7 < a4.length) {
-            this.Method2501(a4[a7]);
-            ++a7;
-        }
-        a6 = new Class52(this.Field2983);
+    public Class52 Method2503(String a2, String a3, String a4, boolean a5) {
+        this.Field2981.Method3190('N', a2, a3, a4);
+        Class52 a6 = this.Method2506(this.Field2981);
+        this.Method2498(a2);
+        this.Method2505(a3, a4);
+        a6 = new Class52(this.Field2981);
         this.Method2507(a6);
         return a6;
     }
 
-    public Class52 Method2505(String a, String a2) {
-        this.Field2980.Method3190('T', a, a2, null);
-        Class52 a3 = this.Method2506(this.Field2980);
-        this.Method2496(a);
+    public Class52 Method2504(String a2, String a3, Class279 a4, Object[] a5) {
+        String[] stringArray = Class690.Method2342();
+        this.Field2983.Method3191(a2, a3, a4, a5);
+        String[] a6 = stringArray;
+        Class52 a7 = this.Method2506(this.Field2983);
+        this.Method2505(a2, a3);
+        this.Method2500(a4.Method2820(), a4.Method2821(), a4.Method2822(), a4.Method2823());
+        int a8 = 0;
+        if (a8 < a5.length) {
+            this.Method2501(a5[a8]);
+            ++a8;
+        }
+        a7 = new Class52(this.Field2983);
+        this.Method2507(a7);
+        return a7;
+    }
+
+    public Class52 Method2505(String a2, String a3) {
+        this.Field2980.Method3190('T', a2, a3, null);
+        Class52 a4 = this.Method2506(this.Field2980);
         this.Method2496(a2);
-        a3 = new Class52(this.Field2980);
-        this.Method2507(a3);
-        return a3;
+        this.Method2496(a3);
+        a4 = new Class52(this.Field2980);
+        this.Method2507(a4);
+        return a4;
     }
 
-    private Class52 Method2506(Class52 a) {
-        return (Class52)this.Method2665(a);
+    private Class52 Method2506(Class52 a2) {
+        return (Class52)this.Method2665(a2);
     }
 
-    private void Method2507(Class52 a) {
-        this.put(a, a);
+    private void Method2507(Class52 a2) {
+        this.put(a2, a2);
     }
 
     public static void Method2341(String[] stringArray) {

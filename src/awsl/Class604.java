@@ -36,7 +36,6 @@
  */
 package awsl;
 
-import awsl.Class281;
 import awsl.Class461;
 import awsl.Class538;
 import awsl.Class540;
@@ -44,11 +43,9 @@ import awsl.Class542;
 import awsl.Class544;
 import awsl.Class546;
 import awsl.Class550;
-import awsl.Class567;
 import awsl.Class606;
 import awsl.Class609;
 import awsl.Class628;
-import awsl.Class654;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.mojang.authlib.GameProfile;
 import eventapi.EventManager;
@@ -77,10 +74,13 @@ import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.network.play.server.S40PacketDisconnect;
 import net.minecraft.util.IChatComponent;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.module.GlobalModule;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.utils.ChatUtils;
+import trash.foodbyte.utils.ServerPacketHandler;
+import trash.foodbyte.utils.ServerUtils;
 import trash.foodbyte.utils.TimeHelper;
-import trash.foodbyte.utils.Wrapper;
 
 public class Class604 {
     public TimeHelper Field2818;
@@ -121,7 +121,7 @@ public class Class604 {
         }
         catch (Throwable a3) {
             this.Field2829 = false;
-            this.Field2818.Method214();
+            this.Field2818.reset();
             this.Field2835 += 10000;
         }
     }
@@ -130,7 +130,7 @@ public class Class604 {
         this.Field2820 = Minecraft.getMinecraft().getSession().getProfile().getName();
         this.Field2827 = new Class606(GlobalModule.Field3150, GlobalModule.Field3170, GlobalModule.Field3149, this.Field2820, this.Field2820);
         System.out.println(Class604.Method3700(-29518, -1702));
-        this.Field2818.Method214();
+        this.Field2818.reset();
         this.Method3698(this.Field2830, Field2825);
         Executors.newScheduledThreadPool((int)1).scheduleWithFixedDelay(this::Method3710, 0L, 5L, TimeUnit.SECONDS);
     }
@@ -1204,7 +1204,7 @@ public class Class604 {
     }
 
     public void Method3701() {
-        this.Field2818.Method214();
+        this.Field2818.reset();
         EventManager.unregister(this);
         if (this.Field2834 == null) {
             return;
@@ -1247,42 +1247,42 @@ public class Class604 {
     }
 
     @EventTarget
-    public void Method3705(Class654 a) {
-        int a2 = Class604.Method3707();
+    public void Method3705(EventTickUpdate a2) {
+        int a3 = Class604.Method3707();
         if (Objects.nonNull((Object)this.Field2834) && (this.Field2834.isOpen() || this.Field2834.isWritable())) {
-            String a3;
-            if (this.Field2818.Method219(5000.0)) {
+            String a4;
+            if (this.Field2818.isDelayComplete(5000.0)) {
                 Iterator iterator;
-                this.Field2818.Method214();
-                a3 = Minecraft.getMinecraft().getSession().getUsername();
+                this.Field2818.reset();
+                a4 = Minecraft.getMinecraft().getSession().getUsername();
                 if (Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().theWorld != null && (iterator = Minecraft.getMinecraft().thePlayer.sendQueue.getPlayerInfoMap().Method1383()).Method932()) {
-                    NetworkPlayerInfo a4 = (NetworkPlayerInfo)iterator.Method933();
-                    GameProfile a5 = a4.getGameProfile();
-                    if (a5.getId() != null && a5.getId().equals((Object)Minecraft.getMinecraft().getSession().getProfile().getId())) {
-                        if (a5.getName().equalsIgnoreCase(Minecraft.getMinecraft().getSession().getProfile().getName())) {
+                    NetworkPlayerInfo a5 = (NetworkPlayerInfo)iterator.Method933();
+                    GameProfile a6 = a5.getGameProfile();
+                    if (a6.getId() != null && a6.getId().equals((Object)Minecraft.getMinecraft().getSession().getProfile().getId())) {
+                        if (a6.getName().equalsIgnoreCase(Minecraft.getMinecraft().getSession().getProfile().getName())) {
                         }
-                        a3 = a5.getName();
+                        a4 = a6.getName();
                     }
                 }
-                if (!this.Field2820.equals((Object)a3)) {
-                    this.Field2820 = a3;
+                if (!this.Field2820.equals((Object)a4)) {
+                    this.Field2820 = a4;
                     this.Field2827.Field2842 = Minecraft.getMinecraft().getSession().getUsername();
-                    this.Field2827.Field2841 = a3;
+                    this.Field2827.Field2841 = a4;
                     this.Field2827.Field2844 = System.currentTimeMillis();
                     System.err.println(Class604.Method3700(-29508, 17997) + this.Field2820);
                     ChatUtils.debug(Class604.Method3700(-29517, -13501) + this.Field2820);
                     this.Method3711(new Class538(this.Field2827, Class604.Method3700(-29516, -5513)));
                 }
             }
-            if (this.Field2826.Method219(8.64E7)) {
-                this.Field2826.Method214();
-                if (Wrapper.INSTANCE.Method2868().thePlayer != null) {
-                    a3 = Wrapper.INSTANCE.Method2868().theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-                    this.Method3711(new Class540(Class567.Field2643.name(), Class281.Method3066(a3.getDisplayName())));
-                    if (Wrapper.INSTANCE.Method2868().isSingleplayer()) {
+            if (this.Field2826.isDelayComplete(8.64E7)) {
+                this.Field2826.reset();
+                if (Wrapper.INSTANCE.getMinecraft().thePlayer != null) {
+                    a4 = Wrapper.INSTANCE.getMinecraft().theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+                    this.Method3711(new Class540(ServerPacketHandler.currentServer.name(), ServerUtils.format(a4.getDisplayName())));
+                    if (Wrapper.INSTANCE.getMinecraft().isSingleplayer()) {
                         this.Method3711(new Class540(Class604.Method3700(-29514, -8869), Class604.Method3700(-29520, -19348)));
                     }
-                    if (!Wrapper.INSTANCE.Method2868().isSingleplayer()) {
+                    if (!Wrapper.INSTANCE.getMinecraft().isSingleplayer()) {
                         this.Method3711(new Class540(Class604.Method3700(-29509, -3647), Class604.Method3700(-29519, 30598)));
                     }
                 }
@@ -1290,8 +1290,8 @@ public class Class604 {
             }
             return;
         }
-        if (this.Field2818.Method219(this.Field2835) && !this.Field2829) {
-            this.Field2818.Method214();
+        if (this.Field2818.isDelayComplete(this.Field2835) && !this.Field2829) {
+            this.Field2818.reset();
             this.Method3699();
         }
     }
@@ -1338,7 +1338,7 @@ public class Class604 {
         this.Method3711(new Class544(66));
     }
 
-    public void Method3711(Class609 a) {
+    public void Method3711(Class609 a2) {
         if (this.Field2834 == null) {
             return;
         }
@@ -1346,9 +1346,9 @@ public class Class604 {
             return;
         }
         if (this.Field2834.eventLoop().inEventLoop()) {
-            this.Field2834.writeAndFlush((Object)a).addListener((GenericFutureListener)ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
+            this.Field2834.writeAndFlush((Object)a2).addListener((GenericFutureListener)ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
         } else {
-            this.Field2834.eventLoop().execute(() -> this.Method3703(a));
+            this.Field2834.eventLoop().execute(() -> this.Method3703(a2));
         }
     }
 

@@ -8,9 +8,9 @@
  */
 package trash.foodbyte.module.impl.player;
 
-import awsl.Class653;
 import eventapi.EventTarget;
 import net.minecraft.potion.Potion;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.value.BooleanValue;
@@ -27,14 +27,14 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1655(Class653 a) {
-        if (Field3233.Method2509().booleanValue() && Zoot.mc.thePlayer.isPotionActive(Potion.blindness.getId())) {
+    public void Method1655(EventTick a) {
+        if (Field3233.getBooleanValue().booleanValue() && Zoot.mc.thePlayer.isPotionActive(Potion.blindness.getId())) {
             Zoot.mc.thePlayer.removePotionEffect(Potion.blindness.getId());
         }
-        if (Field3234.Method2509().booleanValue() && Zoot.mc.thePlayer.isPotionActive(Potion.confusion.getId())) {
+        if (Field3234.getBooleanValue().booleanValue() && Zoot.mc.thePlayer.isPotionActive(Potion.confusion.getId())) {
             Zoot.mc.thePlayer.removePotionEffect(Potion.confusion.getId());
         }
-        if (Field3235.Method2509().booleanValue() && Zoot.mc.thePlayer.isPotionActive(Potion.digSlowdown.getId())) {
+        if (Field3235.getBooleanValue().booleanValue() && Zoot.mc.thePlayer.isPotionActive(Potion.digSlowdown.getId())) {
             Zoot.mc.thePlayer.removePotionEffect(Potion.digSlowdown.getId());
         }
     }

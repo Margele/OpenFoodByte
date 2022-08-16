@@ -20,7 +20,6 @@ package awsl;
 import awsl.Class307;
 import awsl.Class309;
 import awsl.Class606;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Iterator;
 import net.minecraft.client.Minecraft;
@@ -30,6 +29,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
+import obfuscate.a;
 import trash.foodbyte.module.GlobalModule;
 
 public class Class305 {
@@ -175,12 +175,12 @@ public class Class305 {
     }
 
     public static String Method708() {
-        NetworkPlayerInfo a = Minecraft.getMinecraft().getNetHandler().getPlayerInfo(Minecraft.getMinecraft().getSession().getProfile().getId());
-        boolean a2 = Class305.Method710();
+        NetworkPlayerInfo a2 = Minecraft.getMinecraft().getNetHandler().getPlayerInfo(Minecraft.getMinecraft().getSession().getProfile().getId());
+        boolean a3 = Class305.Method710();
         if (Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().theWorld != null) {
-            return a.getDisplayName() != null ? a.getDisplayName().getFormattedText() : ScorePlayerTeam.formatPlayerName((Team)a.getPlayerTeam(), (String)a.getGameProfile().getName());
+            return a2.getDisplayName() != null ? a2.getDisplayName().getFormattedText() : ScorePlayerTeam.formatPlayerName((Team)a2.getPlayerTeam(), (String)a2.getGameProfile().getName());
         }
-        Class91.Method3647(new String[5]);
+        a.trash(new String[5]);
         return "NULL";
     }
 

@@ -28,12 +28,12 @@ import awsl.Class552;
 import awsl.Class562;
 import awsl.Class606;
 import awsl.Class611;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Iterator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IChatComponent;
+import obfuscate.a;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
@@ -74,16 +74,16 @@ implements Class611 {
     }
 
     @Override
-    public void Method3719(Class523 a) {
-        String a2 = a.Method692();
-        boolean a3 = Class607.Method3733();
-        String string = a2;
+    public void Method3719(Class523 a2) {
+        String a3 = a2.Method692();
+        boolean a4 = Class607.Method3733();
+        String string = a3;
         int n = -1;
         switch (string.hashCode()) {
             case 1513939: {
                 if (!string.equals((Object)"/set")) break;
                 n = 0;
-                Class91.Method3647(new String[2]);
+                a.trash(new String[2]);
             }
             case 1496594: {
                 if (!string.equals((Object)"/add")) break;
@@ -104,73 +104,73 @@ implements Class611 {
         }
         switch (n) {
             case 0: {
-                int a4;
-                if (a.Method846().Field2840.equals((Object)GlobalModule.INSTANCE.Field3186.Field2827.Field2840) && a.Method846().Field2846 == GlobalModule.INSTANCE.Field3186.Field2827.Field2846) {
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2838 = a.Method846().Field2838;
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2839 = a.Method846().Field2839;
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2843 = a.Method846().Field2843;
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2840 = a.Method846().Field2840;
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2841 = a.Method846().Field2841;
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2842 = a.Method846().Field2842;
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2847 = a.Method846().Field2847;
-                    GlobalModule.INSTANCE.Field3186.Field2827.Field2848 = a.Method846().Field2848;
+                int a5;
+                if (a2.Method846().Field2840.equals((Object)GlobalModule.INSTANCE.Field3186.Field2827.Field2840) && a2.Method846().Field2846 == GlobalModule.INSTANCE.Field3186.Field2827.Field2846) {
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2838 = a2.Method846().Field2838;
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2839 = a2.Method846().Field2839;
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2843 = a2.Method846().Field2843;
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2840 = a2.Method846().Field2840;
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2841 = a2.Method846().Field2841;
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2842 = a2.Method846().Field2842;
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2847 = a2.Method846().Field2847;
+                    GlobalModule.INSTANCE.Field3186.Field2827.Field2848 = a2.Method846().Field2848;
                 }
-                if ((a4 = 0) < GlobalModule.INSTANCE.Field3186.Field2823.Method1799()) {
-                    Class606 a5 = (Class606)GlobalModule.INSTANCE.Field3186.Field2823.get(a4);
-                    if (a.Method846().Field2840.equals((Object)a5.Field2840) && a.Method846().Field2846 == a5.Field2846) {
-                        a5.Field2838 = a.Method846().Field2838;
-                        a5.Field2839 = a.Method846().Field2839;
-                        a5.Field2843 = a.Method846().Field2843;
-                        a5.Field2840 = a.Method846().Field2840;
-                        a5.Field2841 = a.Method846().Field2841;
-                        a5.Field2842 = a.Method846().Field2842;
-                        a5.Field2847 = a.Method846().Field2847;
-                        a5.Field2848 = a.Method846().Field2848;
+                if ((a5 = 0) < GlobalModule.INSTANCE.Field3186.Field2823.Method1799()) {
+                    Class606 a6 = (Class606)GlobalModule.INSTANCE.Field3186.Field2823.get(a5);
+                    if (a2.Method846().Field2840.equals((Object)a6.Field2840) && a2.Method846().Field2846 == a6.Field2846) {
+                        a6.Field2838 = a2.Method846().Field2838;
+                        a6.Field2839 = a2.Method846().Field2839;
+                        a6.Field2843 = a2.Method846().Field2843;
+                        a6.Field2840 = a2.Method846().Field2840;
+                        a6.Field2841 = a2.Method846().Field2841;
+                        a6.Field2842 = a2.Method846().Field2842;
+                        a6.Field2847 = a2.Method846().Field2847;
+                        a6.Field2848 = a2.Method846().Field2848;
                     }
-                    ++a4;
+                    ++a5;
                 }
             }
             case 1: {
-                GlobalModule.INSTANCE.Field3186.Field2823.Method2530((Object)a.Method846());
+                GlobalModule.INSTANCE.Field3186.Field2823.Method2530((Object)a2.Method846());
             }
             case 2: {
-                GlobalModule.INSTANCE.Field3186.Field2823.removeIf(arg_0 -> Class607.Method3730(a, arg_0));
+                GlobalModule.INSTANCE.Field3186.Field2823.removeIf(arg_0 -> Class607.Method3730(a2, arg_0));
             }
             case 3: {
-                GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3729(a, arg_0));
+                GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3729(a2, arg_0));
             }
             case 4: {
-                GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3728(a, arg_0));
+                GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3728(a2, arg_0));
             }
         }
-        GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3727(a, a2, arg_0));
+        GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3727(a2, a3, arg_0));
     }
 
     @Override
-    public void Method3720(Class527 a) {
-        if (a.Method692().equalsIgnoreCase("kick")) {
+    public void Method3720(Class527 a2) {
+        if (a2.Method692().equalsIgnoreCase("kick")) {
             Minecraft.getMinecraft().shutdown();
-        } else if (Double.parseDouble((String)"5.6") < Double.parseDouble((String)a.Method692())) {
+        } else if (Double.parseDouble((String)"5.6") < Double.parseDouble((String)a2.Method692())) {
             Minecraft.getMinecraft().shutdown();
         }
     }
 
     @Override
-    public void Method3721(Class525 a) {
+    public void Method3721(Class525 a2) {
         if (Minecraft.getMinecraft().getCurrentServerData() != null) {
-            Minecraft.getMinecraft().getNetHandler().getNetworkManager().closeChannel((IChatComponent)new ChatComponentText(a.Method692()));
+            Minecraft.getMinecraft().getNetHandler().getNetworkManager().closeChannel((IChatComponent)new ChatComponentText(a2.Method692()));
         }
     }
 
     @Override
-    public void Method3722(Class529 a) {
-        GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3726(a, arg_0));
+    public void Method3722(Class529 a2) {
+        GlobalModule.INSTANCE.Field3186.Field2823.forEach(arg_0 -> Class607.Method3726(a2, arg_0));
     }
 
     @Override
-    public void Method3723(Class536 a) {
-        if (a.Method845() != null) {
-            PermissionManager.permissions = a.Method845();
+    public void Method3723(Class536 a2) {
+        if (a2.Method845() != null) {
+            PermissionManager.permissions = a2.Method845();
         }
         if (PermissionManager.canUseFeature("multi")) {
             ((KillAura)ModuleManager.getModule2(KillAura.class)).Field2504.Method2721("Multi");
@@ -184,52 +184,52 @@ implements Class611 {
         }
         Iterator iterator = ModuleManager.getAllModules().Method1383();
         while (iterator.Method932()) {
-            Module a2 = (Module)iterator.Method933();
-            if (!a2.canUse() || !a2.getState()) continue;
-            a2.setState(!a2.getState());
+            Module a3 = (Module)iterator.Method933();
+            if (!a3.canUse() || !a3.getState()) continue;
+            a3.setState(!a3.getState());
         }
     }
 
-    private static void Method3724(Class381 a) {
-        if (a.Method1395().equalsIgnoreCase("IRC")) {
-            a.Method1407(false);
+    private static void Method3724(Class381 a2) {
+        if (a2.Method1395().equalsIgnoreCase("IRC")) {
+            a2.Method1407(false);
         }
     }
 
-    private static void Method3725(Class381 a) {
-        if (a.Method1395().equalsIgnoreCase("IRC")) {
-            a.Method1407(true);
+    private static void Method3725(Class381 a2) {
+        if (a2.Method1395().equalsIgnoreCase("IRC")) {
+            a2.Method1407(true);
         }
     }
 
-    private static void Method3726(Class529 a, Class606 a2) {
-        if (a.Method883().equals((Object)a2.Field2840) && a.Method691() == a2.Field2846) {
-            a2.Field2849 = a.Method692();
-            a2.Field2850 = a.Method860();
-            a2.Field2851 = System.currentTimeMillis();
+    private static void Method3726(Class529 a2, Class606 a3) {
+        if (a2.Method883().equals((Object)a3.Field2840) && a2.Method691() == a3.Field2846) {
+            a3.Field2849 = a2.Method692();
+            a3.Field2850 = a2.Method860();
+            a3.Field2851 = System.currentTimeMillis();
         }
     }
 
-    private static void Method3727(Class523 a, String a2, Class606 a3) {
-        if (a.Method846().Field2840.equals((Object)a3.Field2840) && a.Method846().Field2846 == a3.Field2846) {
-            a3.Field2841 = a2;
+    private static void Method3727(Class523 a2, String a3, Class606 a4) {
+        if (a2.Method846().Field2840.equals((Object)a4.Field2840) && a2.Method846().Field2846 == a4.Field2846) {
+            a4.Field2841 = a3;
         }
     }
 
-    private static void Method3728(Class523 a, Class606 a2) {
-        if (a.Method846().Field2840.equals((Object)a2.Field2840) && a.Method846().Field2846 == a2.Field2846) {
-            a2.Field2847 = a.Method846().Field2847;
+    private static void Method3728(Class523 a2, Class606 a3) {
+        if (a2.Method846().Field2840.equals((Object)a3.Field2840) && a2.Method846().Field2846 == a3.Field2846) {
+            a3.Field2847 = a2.Method846().Field2847;
         }
     }
 
-    private static void Method3729(Class523 a, Class606 a2) {
-        if (a.Method846().Field2840.equals((Object)a2.Field2840) && a.Method846().Field2846 == a2.Field2846) {
-            GlobalModule.INSTANCE.Field3186.Field2827 = a.Method846();
+    private static void Method3729(Class523 a2, Class606 a3) {
+        if (a2.Method846().Field2840.equals((Object)a3.Field2840) && a2.Method846().Field2846 == a3.Field2846) {
+            GlobalModule.INSTANCE.Field3186.Field2827 = a2.Method846();
         }
     }
 
-    private static boolean Method3730(Class523 a, Class606 a2) {
-        return a.Method846().Field2840.equals((Object)a2.Field2840) && a.Method846().Field2846 == a2.Field2846;
+    private static boolean Method3730(Class523 a2, Class606 a3) {
+        return a2.Method846().Field2840.equals((Object)a3.Field2840) && a2.Method846().Field2846 == a3.Field2846;
     }
 
     public static void Method3731(boolean bl) {

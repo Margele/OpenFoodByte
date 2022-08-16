@@ -22,15 +22,12 @@
  */
 package trash.foodbyte.module.impl.world;
 
-import awsl.Class281;
 import awsl.Class363;
 import awsl.Class448;
 import awsl.Class565;
 import awsl.Class628;
 import awsl.Class649;
 import awsl.Class652;
-import awsl.Class654;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.awt.Color;
 import java.math.BigDecimal;
@@ -45,16 +42,19 @@ import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
+import obfuscate.a;
 import org.lwjgl.opengl.GL11;
 import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.event.EventRender2D;
 import trash.foodbyte.event.EventRender3D;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.utils.ChatUtils;
-import trash.foodbyte.utils.ReflectionUtils;
 import trash.foodbyte.utils.RenderUtils;
+import trash.foodbyte.utils.ServerUtils;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 
@@ -116,33 +116,33 @@ extends Module {
         this.Field2266 = new Class448(this);
     }
 
-    public boolean Method2289(BlockPos a) {
-        int a2 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a).getBlock());
-        if (a2 == 83 && this.Field2252.Method2509().booleanValue()) {
+    public boolean Method2289(BlockPos a2) {
+        int a3 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a2).getBlock());
+        if (a3 == 83 && this.Field2252.getBooleanValue().booleanValue()) {
             return false;
         }
-        if (a2 == 16 && this.Field2262.Method2509().booleanValue()) {
+        if (a3 == 16 && this.Field2262.getBooleanValue().booleanValue()) {
             return false;
         }
-        if (a2 == 15 && this.Field2259.Method2509().booleanValue()) {
+        if (a3 == 15 && this.Field2259.getBooleanValue().booleanValue()) {
             return false;
         }
-        if (a2 == 14 && this.Field2257.Method2509().booleanValue()) {
+        if (a3 == 14 && this.Field2257.getBooleanValue().booleanValue()) {
             return false;
         }
-        if (a2 == 56 && this.Field2248.Method2509().booleanValue()) {
+        if (a3 == 56 && this.Field2248.getBooleanValue().booleanValue()) {
             return false;
         }
-        if (a2 == 73 && this.Field2256.Method2509().booleanValue()) {
+        if (a3 == 73 && this.Field2256.getBooleanValue().booleanValue()) {
             return false;
         }
-        if (a2 == 74 && this.Field2256.Method2509().booleanValue()) {
+        if (a3 == 74 && this.Field2256.getBooleanValue().booleanValue()) {
             return false;
         }
-        if (a2 == 129 && this.Field2258.Method2509().booleanValue()) {
+        if (a3 == 129 && this.Field2258.getBooleanValue().booleanValue()) {
             return false;
         }
-        return a2 != 21 || this.Field2254.Method2509() == false;
+        return a3 != 21 || this.Field2254.getBooleanValue() == false;
     }
 
     private static String Method754(int n, int n2) {
@@ -1193,62 +1193,62 @@ extends Module {
         return Field2261[n3];
     }
 
-    private void Method2096(BlockPos a) {
-        float a2 = ReflectionUtils.Method2587();
-        double a3 = (double)a.getX() - XRay.mc.getRenderManager().viewerPosX + 0.5;
-        double a4 = (double)a.getY() - XRay.mc.getRenderManager().viewerPosY + 0.5;
-        double a5 = (double)a.getZ() - XRay.mc.getRenderManager().viewerPosZ + 0.5;
+    private void Method2096(BlockPos a2) {
+        float a3 = ReflectionUtils.getRenderPartialTicks();
+        double a4 = (double)a2.getX() - XRay.mc.getRenderManager().viewerPosX + 0.5;
+        double a5 = (double)a2.getY() - XRay.mc.getRenderManager().viewerPosY + 0.5;
+        double a6 = (double)a2.getZ() - XRay.mc.getRenderManager().viewerPosZ + 0.5;
         GL11.glPushMatrix();
         GL11.glEnable((int)3042);
         GL11.glEnable((int)2848);
-        Class91[] class91Array = Class448.Method2461();
+        a[] aArray = Class448.Method2461();
         GL11.glDisable((int)2929);
         GL11.glDisable((int)3553);
         GL11.glBlendFunc((int)770, (int)771);
-        Class91[] a6 = class91Array;
+        a[] a7 = aArray;
         GL11.glLineWidth((float)1.0f);
-        float a7 = (float)(XRay.mc.thePlayer.posX - (double)a.getX());
-        float a8 = (float)(XRay.mc.thePlayer.posY - (double)a.getY());
-        float a9 = (float)(XRay.mc.thePlayer.posZ - (double)a.getZ());
-        int a10 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a).getBlock());
-        float a11 = this.Field2246.Method2744().floatValue() / 255.0f;
-        if (a10 == 83) {
-            GL11.glColor4f((float)0.38039216f, (float)0.63529414f, (float)0.15686275f, (float)a11);
+        float a8 = (float)(XRay.mc.thePlayer.posX - (double)a2.getX());
+        float a9 = (float)(XRay.mc.thePlayer.posY - (double)a2.getY());
+        float a10 = (float)(XRay.mc.thePlayer.posZ - (double)a2.getZ());
+        int a11 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a2).getBlock());
+        float a12 = this.Field2246.getFloatValue().floatValue() / 255.0f;
+        if (a11 == 83) {
+            GL11.glColor4f((float)0.38039216f, (float)0.63529414f, (float)0.15686275f, (float)a12);
         }
-        if (a10 == 16) {
-            GL11.glColor4f((float)0.047058824f, (float)0.047058824f, (float)0.047058824f, (float)a11);
+        if (a11 == 16) {
+            GL11.glColor4f((float)0.047058824f, (float)0.047058824f, (float)0.047058824f, (float)a12);
         }
-        if (a10 == 15) {
-            GL11.glColor4f((float)0.8235294f, (float)0.8235294f, (float)0.8235294f, (float)a11);
+        if (a11 == 15) {
+            GL11.glColor4f((float)0.8235294f, (float)0.8235294f, (float)0.8235294f, (float)a12);
         }
-        if (a10 == 14) {
-            GL11.glColor4f((float)1.0f, (float)1.0f, (float)0.0f, (float)a11);
+        if (a11 == 14) {
+            GL11.glColor4f((float)1.0f, (float)1.0f, (float)0.0f, (float)a12);
         }
-        if (a10 == 56) {
-            GL11.glColor4f((float)0.0f, (float)0.78431374f, (float)0.78431374f, (float)a11);
+        if (a11 == 56) {
+            GL11.glColor4f((float)0.0f, (float)0.78431374f, (float)0.78431374f, (float)a12);
         }
-        if (a10 == 73) {
-            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a11);
+        if (a11 == 73) {
+            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a12);
         }
-        if (a10 == 74) {
-            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a11);
+        if (a11 == 74) {
+            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a12);
         }
-        if (a10 == 129) {
-            GL11.glColor4f((float)0.0f, (float)0.7921569f, (float)0.1882353f, (float)a11);
+        if (a11 == 129) {
+            GL11.glColor4f((float)0.0f, (float)0.7921569f, (float)0.1882353f, (float)a12);
         }
-        if (a10 == 21) {
-            GL11.glColor4f((float)0.0f, (float)0.0f, (float)0.3882353f, (float)a11);
+        if (a11 == 21) {
+            GL11.glColor4f((float)0.0f, (float)0.0f, (float)0.3882353f, (float)a12);
         }
         GL11.glLoadIdentity();
-        boolean a12 = XRay.mc.gameSettings.viewBobbing;
+        boolean a13 = XRay.mc.gameSettings.viewBobbing;
         XRay.mc.gameSettings.viewBobbing = false;
-        ReflectionUtils.Method2609(a2);
+        ReflectionUtils.setOrientCamera(a3);
         GL11.glBegin((int)3);
         GL11.glVertex3d((double)0.0, (double)XRay.mc.thePlayer.getEyeHeight(), (double)0.0);
-        GL11.glVertex3d((double)a3, (double)a4, (double)a5);
-        GL11.glVertex3d((double)a3, (double)a4, (double)a5);
+        GL11.glVertex3d((double)a4, (double)a5, (double)a6);
+        GL11.glVertex3d((double)a4, (double)a5, (double)a6);
         GL11.glEnd();
-        XRay.mc.gameSettings.viewBobbing = a12;
+        XRay.mc.gameSettings.viewBobbing = a13;
         GL11.glEnable((int)3553);
         GL11.glEnable((int)2929);
         GL11.glDisable((int)2848);
@@ -1257,32 +1257,32 @@ extends Module {
     }
 
     @EventTarget
-    public void Method2290(Class652 a) {
-        BlockPos a2 = new BlockPos(a.Field2924.getX(), a.Field2924.getY(), a.Field2924.getZ());
-        if ((this.Field2247.Method2509().booleanValue() || this.Field2251.Method2509().booleanValue()) && !Field2263.contains((Object)a2)) {
-            double d = this.Method2291(a2);
+    public void Method2290(Class652 a2) {
+        BlockPos a3 = new BlockPos(a2.Field2924.getX(), a2.Field2924.getY(), a2.Field2924.getZ());
+        if ((this.Field2247.getBooleanValue().booleanValue() || this.Field2251.getBooleanValue().booleanValue()) && !Field2263.contains((Object)a3)) {
+            double d = this.Method2291(a3);
             double d2 = XRay.mc.thePlayer.posY > 60.0 ? 50.0 : 60.0;
-            if (d < d2 && Field2253.contains((Object)Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a2).getBlock()))) {
-                Field2263.Method2530((Object)a2);
+            if (d < d2 && Field2253.contains((Object)Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a3).getBlock()))) {
+                Field2263.Method2530((Object)a3);
             }
         }
     }
 
     @EventTarget
-    public void Method810(EventRender2D a) {
-        this.Field2244 = (int)(this.Field2245.Method2744().floatValue() * 1000.0f);
-        if (!Class281.Method3058() && this.Field2260.Method2509().booleanValue() && XRay.mc.thePlayer.posY <= 25.0) {
+    public void Method810(EventRender2D a2) {
+        this.Field2244 = (int)(this.Field2245.getFloatValue().floatValue() * 1000.0f);
+        if (!ServerUtils.isPlayingMegaWalls() && this.Field2260.getBooleanValue().booleanValue() && XRay.mc.thePlayer.posY <= 25.0) {
             if (this.Field2266.Method2455(this.Field2244)) {
                 this.Method258();
                 this.Field2266.Method2456();
             }
-            float a2 = this.Field2266.Method2459();
-            ScaledResolution a3 = new ScaledResolution(mc);
-            Color a4 = a2 >= 0.0f ? RenderUtils.Method1139(new float[]{0.0f, 0.5f, 1.0f}, new Color[]{Color.RED, Color.YELLOW, new Color(0, 153, 255)}, a2 / (float)this.Field2244).brighter() : Color.RED;
-            XRay.Method2111((double)a3.getScaledWidth() / 2.0 - 60.5, (double)a3.getScaledHeight() - 70.5, 121.0, 3.0, new Color(0, 0, 0, 150).getRGB());
-            XRay.Method2111((double)a3.getScaledWidth() / 2.0 - 60.0, (double)a3.getScaledHeight() - 70.0, 120.0 * (double)(a2 / (float)this.Field2244), 2.0, a4.getRGB());
-            Class565.Field2636.Method1222(XRay.Method754(-15305, -4127), (float)a3.getScaledWidth() / 2.0f, a3.getScaledHeight() - 79, -1);
-            Class565.Field2636.Method1217(BigDecimal.valueOf((double)(((float)this.Field2244 - a2) / 1000.0f)).setScale(1, 4) + "s", (float)a3.getScaledWidth() / 2.0f - Class565.Field2636.Method1225(BigDecimal.valueOf((double)(((float)this.Field2244 - a2) / 1000.0f)).setScale(1, 4) + "s") + 60.0f, a3.getScaledHeight() - 79, -1);
+            float a3 = this.Field2266.Method2459();
+            ScaledResolution a4 = new ScaledResolution(mc);
+            Color a5 = a3 >= 0.0f ? RenderUtils.Method1139(new float[]{0.0f, 0.5f, 1.0f}, new Color[]{Color.RED, Color.YELLOW, new Color(0, 153, 255)}, a3 / (float)this.Field2244).brighter() : Color.RED;
+            XRay.Method2111((double)a4.getScaledWidth() / 2.0 - 60.5, (double)a4.getScaledHeight() - 70.5, 121.0, 3.0, new Color(0, 0, 0, 150).getRGB());
+            XRay.Method2111((double)a4.getScaledWidth() / 2.0 - 60.0, (double)a4.getScaledHeight() - 70.0, 120.0 * (double)(a3 / (float)this.Field2244), 2.0, a5.getRGB());
+            Class565.Field2636.Method1222(XRay.Method754(-15305, -4127), (float)a4.getScaledWidth() / 2.0f, a4.getScaledHeight() - 79, -1);
+            Class565.Field2636.Method1217(BigDecimal.valueOf((double)(((float)this.Field2244 - a3) / 1000.0f)).setScale(1, 4) + "s", (float)a4.getScaledWidth() / 2.0f - Class565.Field2636.Method1225(BigDecimal.valueOf((double)(((float)this.Field2244 - a3) / 1000.0f)).setScale(1, 4) + "s") + 60.0f, a4.getScaledHeight() - 79, -1);
         }
     }
 
@@ -1292,15 +1292,15 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1625(Class649 a) {
-        BlockPos a2;
-        if ((this.Field2247.Method2509().booleanValue() || this.Field2251.Method2509().booleanValue()) && Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a2 = new BlockPos(a.Method3513(), a.Method3542(), a.Method3543())).getBlock()) == 83 && !Field2263.contains((Object)a2)) {
-            Field2263.Method2530((Object)a2);
+    public void Method1625(Class649 a2) {
+        BlockPos a3;
+        if ((this.Field2247.getBooleanValue().booleanValue() || this.Field2251.getBooleanValue().booleanValue()) && Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a3 = new BlockPos(a2.Method3513(), a2.Method3542(), a2.Method3543())).getBlock()) == 83 && !Field2263.contains((Object)a3)) {
+            Field2263.Method2530((Object)a3);
         }
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         Class363.Field1713 = false;
         Field2263.clear();
         Field2242.clear();
@@ -1311,12 +1311,12 @@ extends Module {
     }
 
     @EventTarget
-    public void Method801(Class654 a) {
-        for (int a2 = 0; a2 < Field2263.Method1799(); ++a2) {
-            BlockPos a3 = (BlockPos)Field2263.get(a2);
-            int a4 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a3).getBlock());
-            if (Field2253.contains((Object)a4)) continue;
-            Field2263.remove(a2);
+    public void Method801(EventTickUpdate a2) {
+        for (int a3 = 0; a3 < Field2263.Method1799(); ++a3) {
+            BlockPos a4 = (BlockPos)Field2263.get(a3);
+            int a5 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a4).getBlock());
+            if (Field2253.contains((Object)a5)) continue;
+            Field2263.remove(a3);
         }
     }
 
@@ -1333,27 +1333,27 @@ extends Module {
         }
         Field2263.clear();
         Field2242.clear();
-        Class363.Field1722 = this.Field2243.Method2509();
-        Class363.Field1721 = this.Field2255.Method2509();
-        Class363.Field1719 = this.Field2265.Method2744().intValue();
+        Class363.Field1722 = this.Field2243.getBooleanValue();
+        Class363.Field1721 = this.Field2255.getBooleanValue();
+        Class363.Field1719 = this.Field2265.getFloatValue().intValue();
         Class363.Field1713 = true;
-        this.Field2266.Method2457((long)(this.Field2245.Method2744().floatValue() * 1000.0f));
+        this.Field2266.Method2457((long)(this.Field2245.getFloatValue().floatValue() * 1000.0f));
         if (!this.Method1026()) {
             return;
         }
         XRay.mc.renderGlobal.loadRenderers();
-        int a = (int)XRay.mc.thePlayer.posX;
-        int a2 = (int)XRay.mc.thePlayer.posY;
-        int a3 = (int)XRay.mc.thePlayer.posZ;
-        XRay.mc.renderGlobal.markBlockRangeForRenderUpdate(a - 900, a2 - 900, a3 - 900, a + 900, a2 + 900, a3 + 900);
+        int a2 = (int)XRay.mc.thePlayer.posX;
+        int a3 = (int)XRay.mc.thePlayer.posY;
+        int a4 = (int)XRay.mc.thePlayer.posZ;
+        XRay.mc.renderGlobal.markBlockRangeForRenderUpdate(a2 - 900, a3 - 900, a4 - 900, a2 + 900, a3 + 900, a4 + 900);
     }
 
-    private void Method1178(BlockPos a) {
-        double a2 = (double)a.getX() - XRay.mc.getRenderManager().viewerPosX;
-        double a3 = (double)a.getY() - XRay.mc.getRenderManager().viewerPosY;
-        double a4 = (double)a.getZ() - XRay.mc.getRenderManager().viewerPosZ;
-        int a5 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a).getBlock());
-        float a6 = this.Field2246.Method2744().floatValue() / 255.0f;
+    private void Method1178(BlockPos a2) {
+        double a3 = (double)a2.getX() - XRay.mc.getRenderManager().viewerPosX;
+        double a4 = (double)a2.getY() - XRay.mc.getRenderManager().viewerPosY;
+        double a5 = (double)a2.getZ() - XRay.mc.getRenderManager().viewerPosZ;
+        int a6 = Block.getIdFromBlock((Block)XRay.mc.theWorld.getBlockState(a2).getBlock());
+        float a7 = this.Field2246.getFloatValue().floatValue() / 255.0f;
         GL11.glPushMatrix();
         GL11.glEnable((int)3042);
         GL11.glBlendFunc((int)770, (int)771);
@@ -1361,26 +1361,26 @@ extends Module {
         GL11.glDisable((int)2929);
         GL11.glDepthMask((boolean)false);
         GL11.glLineWidth((float)1.0f);
-        if (a5 == 83) {
-            GL11.glColor4f((float)0.38039216f, (float)0.63529414f, (float)0.15686275f, (float)a6);
-        } else if (a5 == 16) {
-            GL11.glColor4f((float)0.047058824f, (float)0.047058824f, (float)0.047058824f, (float)a6);
-        } else if (a5 == 15) {
-            GL11.glColor4f((float)0.8235294f, (float)0.8235294f, (float)0.8235294f, (float)a6);
-        } else if (a5 == 14) {
-            GL11.glColor4f((float)1.0f, (float)1.0f, (float)0.0f, (float)a6);
-        } else if (a5 == 56) {
-            GL11.glColor4f((float)0.0f, (float)0.78431374f, (float)0.78431374f, (float)a6);
-        } else if (a5 == 73) {
-            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a6);
-        } else if (a5 == 74) {
-            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a6);
-        } else if (a5 == 129) {
-            GL11.glColor4f((float)0.0f, (float)0.7921569f, (float)0.1882353f, (float)a6);
-        } else if (a5 == 21) {
-            GL11.glColor4f((float)0.0f, (float)0.0f, (float)0.3882353f, (float)a6);
+        if (a6 == 83) {
+            GL11.glColor4f((float)0.38039216f, (float)0.63529414f, (float)0.15686275f, (float)a7);
+        } else if (a6 == 16) {
+            GL11.glColor4f((float)0.047058824f, (float)0.047058824f, (float)0.047058824f, (float)a7);
+        } else if (a6 == 15) {
+            GL11.glColor4f((float)0.8235294f, (float)0.8235294f, (float)0.8235294f, (float)a7);
+        } else if (a6 == 14) {
+            GL11.glColor4f((float)1.0f, (float)1.0f, (float)0.0f, (float)a7);
+        } else if (a6 == 56) {
+            GL11.glColor4f((float)0.0f, (float)0.78431374f, (float)0.78431374f, (float)a7);
+        } else if (a6 == 73) {
+            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a7);
+        } else if (a6 == 74) {
+            GL11.glColor4f((float)1.0f, (float)0.0f, (float)0.0f, (float)a7);
+        } else if (a6 == 129) {
+            GL11.glColor4f((float)0.0f, (float)0.7921569f, (float)0.1882353f, (float)a7);
+        } else if (a6 == 21) {
+            GL11.glColor4f((float)0.0f, (float)0.0f, (float)0.3882353f, (float)a7);
         }
-        RenderUtils.Method1098(new AxisAlignedBB(a2, a3, a4, a2 + 1.0, a3 + 1.0, a4 + 1.0));
+        RenderUtils.Method1098(new AxisAlignedBB(a3, a4, a5, a3 + 1.0, a4 + 1.0, a5 + 1.0));
         GL11.glColor3f((float)1.0f, (float)1.0f, (float)1.0f);
         GL11.glEnable((int)3553);
         GL11.glEnable((int)2929);
@@ -1390,32 +1390,32 @@ extends Module {
     }
 
     @EventTarget
-    public void Method802(EventRender3D a) {
-        BlockPos a2;
+    public void Method802(EventRender3D a2) {
+        BlockPos a3;
         Iterator iterator;
-        if (this.Field2247.Method2509().booleanValue()) {
+        if (this.Field2247.getBooleanValue().booleanValue()) {
             iterator = Field2263.Method1383();
             while (iterator.Method932()) {
-                a2 = (BlockPos)iterator.Method933();
-                if (this.Method2289(a2)) continue;
-                this.Method1178(a2);
+                a3 = (BlockPos)iterator.Method933();
+                if (this.Method2289(a3)) continue;
+                this.Method1178(a3);
                 GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
             }
         }
-        if (this.Field2251.Method2509().booleanValue()) {
+        if (this.Field2251.getBooleanValue().booleanValue()) {
             iterator = Field2263.Method1383();
             while (iterator.Method932()) {
-                a2 = (BlockPos)iterator.Method933();
-                if (this.Method2289(a2)) continue;
-                this.Method2096(a2);
+                a3 = (BlockPos)iterator.Method933();
+                if (this.Method2289(a3)) continue;
+                this.Method2096(a3);
                 GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
             }
         }
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
-        if (a.getPacket() instanceof S07PacketRespawn || a.getPacket() instanceof S02PacketLoginSuccess) {
+    public void Method273(EventPacket a2) {
+        if (a2.getPacket() instanceof S07PacketRespawn || a2.getPacket() instanceof S02PacketLoginSuccess) {
             Field2263.clear();
             Field2242.clear();
         }
@@ -1426,12 +1426,12 @@ extends Module {
         return XRay.Method754(-15317, -16147);
     }
 
-    public double Method2291(BlockPos a) {
-        float a2 = (float)(XRay.mc.thePlayer.posX - (double)a.getX());
-        float a3 = (float)(XRay.mc.thePlayer.posY - (double)a.getY());
-        float a4 = (float)(XRay.mc.thePlayer.posZ - (double)a.getZ());
-        float a5 = MathHelper.sqrt_float((float)(a2 * a2 + 0.0f + a4 * a4));
-        return a5;
+    public double Method2291(BlockPos a2) {
+        float a3 = (float)(XRay.mc.thePlayer.posX - (double)a2.getX());
+        float a4 = (float)(XRay.mc.thePlayer.posY - (double)a2.getY());
+        float a5 = (float)(XRay.mc.thePlayer.posZ - (double)a2.getZ());
+        float a6 = MathHelper.sqrt_float((float)(a3 * a3 + 0.0f + a5 * a5));
+        return a6;
     }
 
     private static native /* synthetic */ void Method2065();

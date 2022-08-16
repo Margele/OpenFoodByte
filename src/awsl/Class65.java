@@ -10,7 +10,7 @@ package awsl;
 
 import awsl.Class37;
 import awsl.Class63;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class65
 extends Class63 {
@@ -38,27 +38,27 @@ extends Class63 {
      * WARNING - void declaration
      */
     @Override
-    public void Method3622(String a) {
-        void a2;
+    public void Method3622(String a2) {
+        void a3;
         String string = this.Field647.Method3374(this.Field648) + '$';
-        this.Field648 = this.Field648 + '$' + a;
-        boolean a3 = Class37.Method3383();
-        String a4 = this.Field647.Method3374(this.Field648);
-        int a5 = a4.startsWith((String)a2) ? a2.length() : a4.lastIndexOf(36) + 1;
-        this.Field646.Method3622(a4.substring(a5));
-        if (Class91.Method3648() == null) {
+        this.Field648 = this.Field648 + '$' + a2;
+        boolean a4 = Class37.Method3383();
+        String a5 = this.Field647.Method3374(this.Field648);
+        int a6 = a5.startsWith((String)a3) ? a3.length() : a5.lastIndexOf(36) + 1;
+        this.Field646.Method3622(a5.substring(a6));
+        if (a.trash() == null) {
             Class37.Method3381(false);
         }
     }
 
     @Override
-    public void Method3610(String a) {
-        this.Field646.Method3610(a);
+    public void Method3610(String a2) {
+        this.Field646.Method3610(a2);
     }
 
     @Override
-    public void Method3619(String a) {
-        this.Field646.Method3619(a);
+    public void Method3619(String a2) {
+        this.Field646.Method3619(a2);
     }
 
     @Override
@@ -68,8 +68,8 @@ extends Class63 {
     }
 
     @Override
-    public void Method3618(char a) {
-        this.Field646.Method3618(a);
+    public void Method3618(char a2) {
+        this.Field646.Method3618(a2);
     }
 
     @Override
@@ -120,8 +120,8 @@ extends Class63 {
     }
 
     @Override
-    public Class63 Method3624(char a) {
-        this.Field646.Method3624(a);
+    public Class63 Method3624(char a2) {
+        this.Field646.Method3624(a2);
         return this;
     }
 

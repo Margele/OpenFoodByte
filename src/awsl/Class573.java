@@ -22,7 +22,6 @@ package awsl;
 
 import awsl.Class563;
 import awsl.Class571;
-import awsl.Class91;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -32,6 +31,7 @@ import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.texture.TextureUtil;
+import obfuscate.a;
 import org.lwjgl.opengl.GL11;
 
 public class Class573 {
@@ -173,78 +173,78 @@ public class Class573 {
         GL11.glEnd();
     }
 
-    public void Method1047(String a, double a2, double a3, Color a4, boolean a5) {
+    public void Method1047(String a2, double a3, double a4, Color a5, boolean a6) {
         block2: {
-            a2 -= 3.0;
-            Class91[] a6 = Class563.Method1234();
-            a3 -= 1.0;
+            a3 -= 3.0;
+            a[] a7 = Class563.Method1234();
+            a4 -= 1.0;
             GL11.glPushMatrix();
             GlStateManager.bindTexture((int)this.Field2668);
-            this.Method1050(new Color(0.05f, 0.05f, 0.05f, (float)a4.getAlpha() / 255.0f));
-            int a7 = a.length();
-            int a8 = 0;
-            if (a8 < a7) {
-                char a9 = a.charAt(a8);
-                if (a9 < this.Field2669.length) {
-                    this.Method1045(a9, (float)a2, (float)a3);
-                    a2 += (double)(this.Field2669[a9].Field2662 - this.Field2673);
+            this.Method1050(new Color(0.05f, 0.05f, 0.05f, (float)a5.getAlpha() / 255.0f));
+            int a8 = a2.length();
+            int a9 = 0;
+            if (a9 < a8) {
+                char a10 = a2.charAt(a9);
+                if (a10 < this.Field2669.length) {
+                    this.Method1045(a10, (float)a3, (float)a4);
+                    a3 += (double)(this.Field2669[a10].Field2662 - this.Field2673);
                 }
-                ++a8;
+                ++a9;
             }
             GL11.glPopMatrix();
-            if (Class91.Method3648() != null) break block2;
-            Class563.Method1233(new Class91[2]);
+            if (a.trash() != null) break block2;
+            Class563.Method1233(new a[2]);
         }
     }
 
     /*
      * WARNING - void declaration
      */
-    public void Method1048(String a, double a2, double a3, int a4, boolean a5) {
-        void a6;
-        a2 -= 3.0;
-        Class91[] class91Array = Class563.Method1234();
-        a3 -= 1.0;
+    public void Method1048(String a2, double a3, double a4, int a5, boolean a6) {
+        void a7;
+        a3 -= 3.0;
+        a[] aArray = Class563.Method1234();
+        a4 -= 1.0;
         GL11.glPushMatrix();
         GlStateManager.bindTexture((int)this.Field2668);
-        Class573.Method1049(a4);
-        int n = a.length();
-        Class91[] a7 = class91Array;
-        int a8 = 0;
-        if (a8 < a6) {
-            char a9 = a.charAt(a8);
-            if (a9 < this.Field2669.length) {
-                this.Method1045(a9, (float)a2, (float)a3);
-                a2 += (double)(this.Field2669[a9].Field2662 - this.Field2673);
+        Class573.Method1049(a5);
+        int n = a2.length();
+        a[] a8 = aArray;
+        int a9 = 0;
+        if (a9 < a7) {
+            char a10 = a2.charAt(a9);
+            if (a10 < this.Field2669.length) {
+                this.Method1045(a10, (float)a3, (float)a4);
+                a3 += (double)(this.Field2669[a10].Field2662 - this.Field2673);
             }
-            ++a8;
+            ++a9;
         }
         GL11.glPopMatrix();
     }
 
-    public static void Method1049(int a) {
-        float a2 = (float)(a >> 24 & 0xFF) / 255.0f;
-        float a3 = (float)(a >> 16 & 0xFF) / 255.0f;
-        float a4 = (float)(a >> 8 & 0xFF) / 255.0f;
-        float a5 = (float)(a & 0xFF) / 255.0f;
-        GL11.glColor4f((float)a3, (float)a4, (float)a5, (float)a2);
+    public static void Method1049(int a2) {
+        float a3 = (float)(a2 >> 24 & 0xFF) / 255.0f;
+        float a4 = (float)(a2 >> 16 & 0xFF) / 255.0f;
+        float a5 = (float)(a2 >> 8 & 0xFF) / 255.0f;
+        float a6 = (float)(a2 & 0xFF) / 255.0f;
+        GL11.glColor4f((float)a4, (float)a5, (float)a6, (float)a3);
     }
 
-    public void Method1050(Color a) {
-        float a2 = (float)a.getRed() / 255.0f;
-        float a3 = (float)a.getGreen() / 255.0f;
-        float a4 = (float)a.getBlue() / 255.0f;
-        float a5 = (float)a.getAlpha() / 255.0f;
-        GL11.glColor4f((float)a2, (float)a3, (float)a4, (float)a5);
+    public void Method1050(Color a2) {
+        float a3 = (float)a2.getRed() / 255.0f;
+        float a4 = (float)a2.getGreen() / 255.0f;
+        float a5 = (float)a2.getBlue() / 255.0f;
+        float a6 = (float)a2.getAlpha() / 255.0f;
+        GL11.glColor4f((float)a3, (float)a4, (float)a5, (float)a6);
     }
 
-    public int Method1051(String a) {
-        int a2 = 1;
-        for (char a3 : a.toCharArray()) {
-            if (a3 != '\n') continue;
-            ++a2;
+    public int Method1051(String a2) {
+        int a3 = 1;
+        for (char a4 : a2.toCharArray()) {
+            if (a4 != '\n') continue;
+            ++a3;
         }
-        return this.Field2672 * a2;
+        return this.Field2672 * a3;
     }
 
     public int Method1052() {
@@ -254,33 +254,33 @@ public class Class573 {
     /*
      * WARNING - void declaration
      */
-    public int Method1053(String a) {
-        void a2;
+    public int Method1053(String a2) {
         void a3;
+        void a4;
         boolean bl = false;
-        char[] a4 = a.toCharArray();
-        int n = a4.length;
-        Class91[] a5 = Class563.Method1234();
-        int a6 = 0;
-        if (a6 < a3) {
-            char a7 = a4[a6];
-            if (a7 < this.Field2669.length) {
-                a2 += this.Field2669[a7].Field2662 - this.Field2673;
+        char[] a5 = a2.toCharArray();
+        int n = a5.length;
+        a[] a6 = Class563.Method1234();
+        int a7 = 0;
+        if (a7 < a4) {
+            char a8 = a5[a7];
+            if (a8 < this.Field2669.length) {
+                a3 += this.Field2669[a8].Field2662 - this.Field2673;
             }
-            ++a6;
+            ++a7;
         }
-        return (int)a2;
+        return (int)a3;
     }
 
     public boolean Method1054() {
         return this.Field2671;
     }
 
-    public void Method1055(boolean a, boolean a2, int a3) {
+    public void Method1055(boolean a2, boolean a3, int a4) {
         block0: {
-            if (this.Field2671 == a) break block0;
-            this.Field2671 = a;
-            this.Method1043(this.Field2671, a2, a3);
+            if (this.Field2671 == a2) break block0;
+            this.Field2671 = a2;
+            this.Method1043(this.Field2671, a3, a4);
         }
     }
 

@@ -12,7 +12,7 @@ package awsl;
 import awsl.Class314;
 import awsl.Class321;
 import awsl.Class661;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class312
 extends Class321 {
@@ -38,13 +38,13 @@ extends Class321 {
      * WARNING - void declaration
      */
     @Override
-    protected double Method797(double a) {
-        void a2;
-        double a3 = Math.pow((double)(a / (double)this.Field1605), (double)this.Field1600);
+    protected double Method797(double a2) {
+        void a3;
+        double a4 = Math.pow((double)(a2 / (double)this.Field1605), (double)this.Field1600);
         double d = this.Field1599 * 0.1f;
-        String[] a4 = Class314.Method833();
-        double d2 = Math.pow((double)2.0, (double)(-10.0 * (this.Field1601 ? Math.sqrt((double)a3) : a3))) * Math.sin((double)((a3 - a2 / 4.0) * (Math.PI * 2 / a2))) + 1.0;
-        Class91.Method3647(new String[2]);
+        String[] a5 = Class314.Method833();
+        double d2 = Math.pow((double)2.0, (double)(-10.0 * (this.Field1601 ? Math.sqrt((double)a4) : a4))) * Math.sin((double)((a4 - a3 / 4.0) * (Math.PI * 2 / a3))) + 1.0;
+        a.trash(new String[2]);
         return d2;
     }
 }

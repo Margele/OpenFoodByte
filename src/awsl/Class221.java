@@ -23,7 +23,6 @@ import awsl.Class659;
 import awsl.Class670;
 import awsl.Class685;
 import awsl.Class703;
-import awsl.Class749;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -32,6 +31,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import trash.foodbyte.utils.ChatUtils;
+import trash.foodbyte.utils.PlayerUtils;
 
 public class Class221 {
     private final ArrayList Field1220 = new ArrayList();
@@ -205,19 +205,19 @@ public class Class221 {
 
     private boolean Method2158(Vec3 a, Vec3 a2) {
         Class210 a3;
-        Block a4 = Class749.Method1580(a.xCoord, a.yCoord, a.zCoord);
+        Block a4 = PlayerUtils.getBlock(a.xCoord, a.yCoord, a.zCoord);
         if (!this.Field1231.contains((Object)a4)) {
             return false;
         }
-        Block a5 = Class749.Method1580(a.xCoord, a.yCoord + 1.0, a.zCoord);
+        Block a5 = PlayerUtils.getBlock(a.xCoord, a.yCoord + 1.0, a.zCoord);
         if (!this.Field1231.contains((Object)a5)) {
             return false;
         }
         switch (Class220.Field1219[this.Field1233.ordinal()]) {
             case 2: {
-                Block a6 = Class749.Method1580(a.xCoord, a.yCoord, a.zCoord);
-                a3 = Class749.Method1580(a2.xCoord, a2.yCoord - 1.0, a2.zCoord);
-                Block a7 = Class749.Method1580(a2.xCoord, a2.yCoord - 2.0, a2.zCoord);
+                Block a6 = PlayerUtils.getBlock(a.xCoord, a.yCoord, a.zCoord);
+                a3 = PlayerUtils.getBlock(a2.xCoord, a2.yCoord - 1.0, a2.zCoord);
+                Block a7 = PlayerUtils.getBlock(a2.xCoord, a2.yCoord - 2.0, a2.zCoord);
                 if (!this.Field1231.contains((Object)a7) || !this.Field1231.contains((Object)a3) || this.Method2159(a.addVector(0.0, 1.0, 0.0), a2) || a6.Method3429((Object)Blocks.ladder)) break;
                 if (a6.Method3429((Object)Blocks.ladder)) {
                     ChatUtils.addChatMessage("" + Math.random());

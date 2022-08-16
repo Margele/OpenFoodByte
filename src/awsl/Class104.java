@@ -10,20 +10,20 @@ package awsl;
 
 import awsl.Class264;
 import awsl.Class267;
-import awsl.Class91;
 import java.util.Map;
+import obfuscate.a;
 
 public class Class104
-extends Class91 {
+extends a {
     private Class264 Field848;
 
     public Class104() {
         super(-1);
     }
 
-    public Class104(Class264 a) {
+    public Class104(Class264 a2) {
         super(-1);
-        this.Field848 = a;
+        this.Field848 = a2;
     }
 
     @Override
@@ -39,13 +39,13 @@ extends Class91 {
     }
 
     @Override
-    public void Method1(Class267 a) {
-        a.Method1947(this.Method303());
+    public void Method1(Class267 a2) {
+        a2.Method1947(this.Method303());
     }
 
     @Override
-    public Class91 Method2(Map a) {
-        return (Class91)a.Method2665((Object)this);
+    public a Method2(Map a2) {
+        return (a)a2.Method2665((Object)this);
     }
 
     public void Method304() {

@@ -8,8 +8,8 @@
  */
 package awsl;
 
-import awsl.Class91;
 import net.minecraft.launchwrapper.Launch;
+import obfuscate.a;
 
 public class Class441 {
     private static boolean Field2087;
@@ -20,7 +20,7 @@ public class Class441 {
         Field2087 = false;
         Field2088 = Field2087 = ((Boolean)Launch.blackboard.Method2665((Object)"fml.deobfuscatedEnvironment")).booleanValue();
         int n = Class441.Method2707();
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class441.Method2705(++n);
         }
     }
@@ -33,12 +33,12 @@ public class Class441 {
         return Field2088;
     }
 
-    public static void Method2703(Boolean a) {
-        Field2087 = a;
+    public static void Method2703(Boolean a2) {
+        Field2087 = a2;
     }
 
-    public static void Method2704(Boolean a) {
-        Field2088 = a;
+    public static void Method2704(Boolean a2) {
+        Field2088 = a2;
     }
 
     public static void Method2705(int n) {

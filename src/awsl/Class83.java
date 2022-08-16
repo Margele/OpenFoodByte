@@ -9,13 +9,13 @@
 package awsl;
 
 import awsl.Class267;
-import awsl.Class91;
 import java.util.Map;
+import obfuscate.a;
 
 public class Class83
-extends Class91 {
-    public Class83(int a) {
-        super(a);
+extends a {
+    public Class83(int a2) {
+        super(a2);
     }
 
     @Override
@@ -24,13 +24,13 @@ extends Class91 {
     }
 
     @Override
-    public void Method1(Class267 a) {
-        a.Method1948(this.Field796);
-        this.Method3643(a);
+    public void Method1(Class267 a2) {
+        a2.Method1948(this.Field796);
+        this.Method3643(a2);
     }
 
     @Override
-    public Class91 Method2(Map a) {
+    public a Method2(Map a2) {
         return new Class83(this.Field796).Method3646(this);
     }
 }

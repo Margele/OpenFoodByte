@@ -22,7 +22,7 @@ import net.minecraft.util.Vec3;
 import trash.foodbyte.event.EventRender3D;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.render.Arrow;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.utils.RenderUtils;
 
 public class Class492 {
@@ -60,20 +60,20 @@ public class Class492 {
         }
     }
 
-    private Vec3 Method2235(Entity a) {
-        double a2 = ReflectionUtils.Method2587();
-        double a3 = a.lastTickPosX + (a.posX - a.lastTickPosX) * a2 - Module.mc.getRenderManager().viewerPosX;
-        double a4 = a.lastTickPosY + (a.posY - a.lastTickPosY) * a2 - Module.mc.getRenderManager().viewerPosY;
-        double a5 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a2 - Module.mc.getRenderManager().viewerPosZ;
-        return new Vec3(a3, a4, a5);
+    private Vec3 Method2235(Entity a2) {
+        double a3 = ReflectionUtils.getRenderPartialTicks();
+        double a4 = a2.lastTickPosX + (a2.posX - a2.lastTickPosX) * a3 - Module.mc.getRenderManager().viewerPosX;
+        double a5 = a2.lastTickPosY + (a2.posY - a2.lastTickPosY) * a3 - Module.mc.getRenderManager().viewerPosY;
+        double a6 = a2.lastTickPosZ + (a2.posZ - a2.lastTickPosZ) * a3 - Module.mc.getRenderManager().viewerPosZ;
+        return new Vec3(a4, a5, a6);
     }
 
     public Map Method2236() {
         return this.Field2270;
     }
 
-    static void Method2237(Class492 a, EventRender3D a2) {
-        a.Method2234(a2);
+    static void Method2237(Class492 a2, EventRender3D a3) {
+        a2.Method2234(a3);
     }
 
     public static void Method2238(String string) {

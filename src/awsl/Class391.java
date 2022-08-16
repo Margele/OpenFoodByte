@@ -8,7 +8,7 @@
  */
 package awsl;
 
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class391 {
     private float Field1925;
@@ -87,21 +87,21 @@ public class Class391 {
     }
 
     public int Method1305() {
-        int a = 59;
-        int a2 = 1;
-        a2 = a2 * 59 + Float.floatToIntBits((float)this.Method1295());
-        a2 = a2 * 59 + Float.floatToIntBits((float)this.Method1296());
-        a2 = a2 * 59 + Float.floatToIntBits((float)this.Method1297());
-        a2 = a2 * 59 + Float.floatToIntBits((float)this.Method1298());
-        String[] a3 = Class391.Method1308();
-        Class91.Method3647(new String[2]);
-        return a2;
+        int a2 = 59;
+        int a3 = 1;
+        a3 = a3 * 59 + Float.floatToIntBits((float)this.Method1295());
+        a3 = a3 * 59 + Float.floatToIntBits((float)this.Method1296());
+        a3 = a3 * 59 + Float.floatToIntBits((float)this.Method1297());
+        a3 = a3 * 59 + Float.floatToIntBits((float)this.Method1298());
+        String[] a4 = Class391.Method1308();
+        a.trash(new String[2]);
+        return a3;
     }
 
     public String Method1306() {
         String[] stringArray = Class391.Method1308();
         String string = "Rect(x=" + this.Method1295() + ", y=" + this.Method1296() + ", width=" + this.Method1297() + ", height=" + this.Method1298() + ")";
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class391.Method1307(new String[2]);
         }
         return string;

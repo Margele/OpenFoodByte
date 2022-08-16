@@ -10,11 +10,11 @@
  */
 package trash.foodbyte.command.impl;
 
-import awsl.Class91;
 import eventapi.EventManager;
 import eventapi.EventTarget;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.server.S01PacketJoinGame;
+import obfuscate.a;
 import trash.foodbyte.command.Command;
 import trash.foodbyte.command.impl.GetDmgCommand;
 import trash.foodbyte.event.EventPacket;
@@ -29,7 +29,7 @@ extends Command {
         this.mc2 = Minecraft.getMinecraft();
         this.setHelp("Rejoin");
         int n2 = n;
-        Class91.Method3647(new String[4]);
+        a.trash(new String[4]);
     }
 
     @Override

@@ -13,8 +13,8 @@
 package awsl;
 
 import awsl.Class148;
-import awsl.Class46;
 import awsl.Class690;
+import obfuscate.b;
 
 public class Class154
 extends Class148 {
@@ -26,113 +26,113 @@ extends Class148 {
     }
 
     @Override
-    public void Method397(String a, Object a2) {
-        Object[] a3;
-        int a4;
-        String[] a5 = Class690.Method2342();
-        this.Field1019.Method2496(a);
-        if (a2 instanceof Byte) {
-            this.Field1019.Method2492(((Byte)a2).byteValue());
+    public void Method397(String a2, Object a3) {
+        Object[] a4;
+        int a5;
+        String[] a6 = Class690.Method2342();
+        this.Field1019.Method2496(a2);
+        if (a3 instanceof Byte) {
+            this.Field1019.Method2492(((Byte)a3).byteValue());
         }
-        if (a2 instanceof Boolean) {
-            this.Field1019.Method2492((Boolean)a2 != false ? 1 : 0);
+        if (a3 instanceof Boolean) {
+            this.Field1019.Method2492((Boolean)a3 != false ? 1 : 0);
         }
-        if (a2 instanceof Character) {
-            this.Field1019.Method2492(((Character)a2).charValue());
+        if (a3 instanceof Character) {
+            this.Field1019.Method2492(((Character)a3).charValue());
         }
-        if (a2 instanceof Short) {
-            this.Field1019.Method2492(((Short)a2).shortValue());
+        if (a3 instanceof Short) {
+            this.Field1019.Method2492(((Short)a3).shortValue());
         }
-        if (a2 instanceof Class46) {
-            this.Field1019.Method2496(((Class46)a2).Method3225());
+        if (a3 instanceof b) {
+            this.Field1019.Method2496(((b)a3).Method3225());
         }
-        if (a2 instanceof byte[]) {
-            a4 = 0;
-            a3 = (byte[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2492(a3[a4]);
-                ++a4;
+        if (a3 instanceof byte[]) {
+            a5 = 0;
+            a4 = (byte[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2492(a4[a5]);
+                ++a5;
             }
         }
-        if (a2 instanceof boolean[]) {
-            a4 = 0;
-            a3 = (boolean[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2492(a3[a4] != 0 ? 1 : 0);
-                ++a4;
+        if (a3 instanceof boolean[]) {
+            a5 = 0;
+            a4 = (boolean[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2492(a4[a5] != 0 ? 1 : 0);
+                ++a5;
             }
         }
-        if (a2 instanceof short[]) {
-            a4 = 0;
-            a3 = (short[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2492(a3[a4]);
-                ++a4;
+        if (a3 instanceof short[]) {
+            a5 = 0;
+            a4 = (short[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2492(a4[a5]);
+                ++a5;
             }
         }
-        if (a2 instanceof char[]) {
-            a4 = 0;
-            a3 = (char[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2492(a3[a4]);
-                ++a4;
+        if (a3 instanceof char[]) {
+            a5 = 0;
+            a4 = (char[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2492(a4[a5]);
+                ++a5;
             }
         }
-        if (a2 instanceof int[]) {
-            a4 = 0;
-            a3 = (int[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2492(a3[a4]);
-                ++a4;
+        if (a3 instanceof int[]) {
+            a5 = 0;
+            a4 = (int[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2492(a4[a5]);
+                ++a5;
             }
         }
-        if (a2 instanceof long[]) {
-            a4 = 0;
-            a3 = (long[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2494(a3[a4]);
-                ++a4;
+        if (a3 instanceof long[]) {
+            a5 = 0;
+            a4 = (long[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2494(a4[a5]);
+                ++a5;
             }
         }
-        if (a2 instanceof float[]) {
-            a4 = 0;
-            a3 = (float[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2493(a3[a4]);
-                ++a4;
+        if (a3 instanceof float[]) {
+            a5 = 0;
+            a4 = (float[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2493(a4[a5]);
+                ++a5;
             }
         }
-        if (a2 instanceof double[]) {
-            a4 = 0;
-            a3 = (double[])a2;
-            if (a4 < a3.length) {
-                this.Field1019.Method2495(a3[a4]);
-                ++a4;
+        if (a3 instanceof double[]) {
+            a5 = 0;
+            a4 = (double[])a3;
+            if (a5 < a4.length) {
+                this.Field1019.Method2495(a4[a5]);
+                ++a5;
             }
         }
-        this.Field1019.Method2501(a2);
-        this.Field1006.Method397(a, a2);
+        this.Field1019.Method2501(a3);
+        this.Field1006.Method397(a2, a3);
     }
 
     @Override
-    public void Method398(String a, String a2, String a3) {
-        this.Field1019.Method2496(a);
+    public void Method398(String a2, String a3, String a4) {
         this.Field1019.Method2496(a2);
         this.Field1019.Method2496(a3);
-        this.Field1006.Method398(a, a2, a3);
+        this.Field1019.Method2496(a4);
+        this.Field1006.Method398(a2, a3, a4);
     }
 
     @Override
-    public Class148 Method399(String a, String a2) {
-        this.Field1019.Method2496(a);
+    public Class148 Method399(String a2, String a3) {
         this.Field1019.Method2496(a2);
-        return new Class154(this.Field1006.Method399(a, a2), this.Field1019);
+        this.Field1019.Method2496(a3);
+        return new Class154(this.Field1006.Method399(a2, a3), this.Field1019);
     }
 
     @Override
-    public Class148 Method400(String a) {
-        this.Field1019.Method2496(a);
-        return new Class154(this.Field1006.Method400(a), this.Field1019);
+    public Class148 Method400(String a2) {
+        this.Field1019.Method2496(a2);
+        return new Class154(this.Field1006.Method400(a2), this.Field1019);
     }
 
     @Override

@@ -36,7 +36,6 @@ import awsl.Class260;
 import awsl.Class448;
 import awsl.Class565;
 import awsl.Class628;
-import awsl.Class91;
 import eventapi.EventTarget;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -58,6 +57,7 @@ import net.minecraft.network.play.server.S2CPacketSpawnGlobalEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
+import obfuscate.a;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import trash.foodbyte.event.EventPacket;
@@ -67,8 +67,8 @@ import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.utils.ChatUtils;
-import trash.foodbyte.utils.ReflectionUtils;
 import trash.foodbyte.utils.RenderUtils;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
@@ -86,7 +86,7 @@ extends Module {
     private ArrayList Field2299;
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         this.Field2299.clear();
         this.Field2298 = 0;
     }
@@ -158,56 +158,56 @@ extends Module {
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
-        float a2;
+    public void Method273(EventPacket a2) {
         float a3;
         float a4;
         float a5;
         float a6;
         float a7;
         float a8;
-        S2CPacketSpawnGlobalEntity a9;
-        Class91[] a10 = Class448.Method2461();
-        if (a.isSend()) {
+        float a9;
+        S2CPacketSpawnGlobalEntity a10;
+        a[] a11 = Class448.Method2461();
+        if (a2.isSend()) {
             return;
         }
-        if (this.Field2293.isCurrentMode(LightningTrack.Method754(-22783, -13597)) && a.packet instanceof S2CPacketSpawnGlobalEntity && (a9 = (S2CPacketSpawnGlobalEntity)a.packet).func_149053_g() == 1) {
-            a8 = (float)((double)a9.func_149051_d() / 32.0);
-            a7 = (float)((double)a9.func_149050_e() / 32.0);
-            a6 = (float)((double)a9.func_149049_f() / 32.0);
-            a5 = (float)(LightningTrack.mc.thePlayer.posX - (double)a8);
-            a4 = (float)(LightningTrack.mc.thePlayer.posY - (double)a7);
-            a3 = (float)(LightningTrack.mc.thePlayer.posZ - (double)a6);
-            a2 = MathHelper.sqrt_float((float)(a5 * a5 + a4 * a4 + a3 * a3));
+        if (this.Field2293.isCurrentMode(LightningTrack.Method754(-22783, -13597)) && a2.packet instanceof S2CPacketSpawnGlobalEntity && (a10 = (S2CPacketSpawnGlobalEntity)a2.packet).func_149053_g() == 1) {
+            a9 = (float)((double)a10.func_149051_d() / 32.0);
+            a8 = (float)((double)a10.func_149050_e() / 32.0);
+            a7 = (float)((double)a10.func_149049_f() / 32.0);
+            a6 = (float)(LightningTrack.mc.thePlayer.posX - (double)a9);
+            a5 = (float)(LightningTrack.mc.thePlayer.posY - (double)a8);
+            a4 = (float)(LightningTrack.mc.thePlayer.posZ - (double)a7);
+            a3 = MathHelper.sqrt_float((float)(a6 * a6 + a5 * a5 + a4 * a4));
             ++this.Field2298;
             if (GlobalModule.INSTANCE.Field3186 != null && PermissionManager.canUseModule(LightningTrack.Method754(-22745, 6737))) {
-                LightningTrack.Method2253(LightningTrack.Method754(-22776, 5493) + this.Field2298 + LightningTrack.Method754(-22727, 29040) + (int)a2 + LightningTrack.Method754(-22773, 13712) + (int)a8 + LightningTrack.Method754(-22782, -17792) + (int)a7 + LightningTrack.Method754(-22774, -11077) + (int)a6, LightningTrack.Method754(-22778, -19916), LightningTrack.Method754(-22752, -27254), new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, LightningTrack.Method754(-22750, 13738) + a8 + " " + GlobalModule.Field3162.Method2744() + " " + a6));
+                LightningTrack.Method2253(LightningTrack.Method754(-22776, 5493) + this.Field2298 + LightningTrack.Method754(-22727, 29040) + (int)a3 + LightningTrack.Method754(-22773, 13712) + (int)a9 + LightningTrack.Method754(-22782, -17792) + (int)a8 + LightningTrack.Method754(-22774, -11077) + (int)a7, LightningTrack.Method754(-22778, -19916), LightningTrack.Method754(-22752, -27254), new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, LightningTrack.Method754(-22750, 13738) + a9 + " " + GlobalModule.Field3162.getFloatValue() + " " + a7));
             }
-            ChatUtils.addChatMessage(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a2 + LightningTrack.Method754(-22732, -12008) + (int)a8 + LightningTrack.Method754(-22749, 1978) + (int)a7 + LightningTrack.Method754(-22770, -1221) + (int)a6);
-            this.Field2299.Method2530((Object)new Class260(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22769, -7971), a8, a7, a6, LightningTrack.Method754(-22777, 8564), 0));
-            if (this.Field2299.Method1799() > this.Field2294.Method2744().intValue()) {
+            ChatUtils.addChatMessage(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a3 + LightningTrack.Method754(-22732, -12008) + (int)a9 + LightningTrack.Method754(-22749, 1978) + (int)a8 + LightningTrack.Method754(-22770, -1221) + (int)a7);
+            this.Field2299.Method2530((Object)new Class260(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22769, -7971), a9, a8, a7, LightningTrack.Method754(-22777, 8564), 0));
+            if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
                 this.Field2299.remove(0);
             }
         }
-        if (this.Field2293.isCurrentMode(LightningTrack.Method754(-22725, -23162)) && a.getPacket() instanceof S29PacketSoundEffect && (a9 = (S29PacketSoundEffect)a.getPacket()).getSoundName().equals((Object)LightningTrack.Method754(-22726, -11947))) {
-            a8 = (float)a9.getX();
-            a7 = (float)a9.getY();
-            a6 = (float)a9.getZ();
-            a5 = (float)(LightningTrack.mc.thePlayer.posX - (double)a8);
-            a4 = (float)(LightningTrack.mc.thePlayer.posY - (double)a7);
-            a3 = (float)(LightningTrack.mc.thePlayer.posZ - (double)a6);
-            a2 = MathHelper.sqrt_float((float)(a5 * a5 + a4 * a4 + a3 * a3));
+        if (this.Field2293.isCurrentMode(LightningTrack.Method754(-22725, -23162)) && a2.getPacket() instanceof S29PacketSoundEffect && (a10 = (S29PacketSoundEffect)a2.getPacket()).getSoundName().equals((Object)LightningTrack.Method754(-22726, -11947))) {
+            a9 = (float)a10.getX();
+            a8 = (float)a10.getY();
+            a7 = (float)a10.getZ();
+            a6 = (float)(LightningTrack.mc.thePlayer.posX - (double)a9);
+            a5 = (float)(LightningTrack.mc.thePlayer.posY - (double)a8);
+            a4 = (float)(LightningTrack.mc.thePlayer.posZ - (double)a7);
+            a3 = MathHelper.sqrt_float((float)(a6 * a6 + a5 * a5 + a4 * a4));
             ++this.Field2298;
             if (GlobalModule.INSTANCE.Field3186 != null && PermissionManager.canUseModule(LightningTrack.Method754(-22740, 31221))) {
-                LightningTrack.Method2253(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a2 + LightningTrack.Method754(-22732, -12008) + (int)a8 + LightningTrack.Method754(-22749, 1978) + (int)a7 + LightningTrack.Method754(-22770, -1221) + (int)a6, LightningTrack.Method754(-22735, -29438), LightningTrack.Method754(-22772, -20661), new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, LightningTrack.Method754(-22739, 20426) + a8 + " " + GlobalModule.Field3162.Method2744() + " " + a6));
+                LightningTrack.Method2253(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a3 + LightningTrack.Method754(-22732, -12008) + (int)a9 + LightningTrack.Method754(-22749, 1978) + (int)a8 + LightningTrack.Method754(-22770, -1221) + (int)a7, LightningTrack.Method754(-22735, -29438), LightningTrack.Method754(-22772, -20661), new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, LightningTrack.Method754(-22739, 20426) + a9 + " " + GlobalModule.Field3162.getFloatValue() + " " + a7));
             }
-            ChatUtils.addChatMessage(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a2 + LightningTrack.Method754(-22732, -12008) + (int)a8 + LightningTrack.Method754(-22749, 1978) + (int)a7 + LightningTrack.Method754(-22770, -1221) + (int)a6);
-            this.Field2299.Method2530((Object)new Class260(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22724, -32110), a8, a7, a6, LightningTrack.Method754(-22736, 24329), 0));
-            if (this.Field2299.Method1799() > this.Field2294.Method2744().intValue()) {
+            ChatUtils.addChatMessage(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a3 + LightningTrack.Method754(-22732, -12008) + (int)a9 + LightningTrack.Method754(-22749, 1978) + (int)a8 + LightningTrack.Method754(-22770, -1221) + (int)a7);
+            this.Field2299.Method2530((Object)new Class260(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22724, -32110), a9, a8, a7, LightningTrack.Method754(-22736, 24329), 0));
+            if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
                 this.Field2299.remove(0);
             }
         }
-        if (a.getPacket() instanceof S07PacketRespawn) {
+        if (a2.getPacket() instanceof S07PacketRespawn) {
             this.Field2299.clear();
             this.Field2298 = 0;
         }
@@ -219,48 +219,48 @@ extends Module {
         this.Field2298 = 0;
     }
 
-    private void Method2250(EventRender3D a, Class260 a2) {
-        Entity a3 = Minecraft.getMinecraft().getRenderViewEntity();
-        float a4 = a.Method3523();
-        double a5 = a3.lastTickPosX + (a3.posX - a3.lastTickPosX) * (double)a4;
-        double a6 = a3.lastTickPosY + (a3.posY - a3.lastTickPosY) * (double)a4;
-        double a7 = a3.lastTickPosZ + (a3.posZ - a3.lastTickPosZ) * (double)a4;
-        this.Method2248(a2, 12.0, a5, a6, a7, a3);
+    private void Method2250(EventRender3D a2, Class260 a3) {
+        Entity a4 = Minecraft.getMinecraft().getRenderViewEntity();
+        float a5 = a2.Method3523();
+        double a6 = a4.lastTickPosX + (a4.posX - a4.lastTickPosX) * (double)a5;
+        double a7 = a4.lastTickPosY + (a4.posY - a4.lastTickPosY) * (double)a5;
+        double a8 = a4.lastTickPosZ + (a4.posZ - a4.lastTickPosZ) * (double)a5;
+        this.Method2248(a3, 12.0, a6, a7, a8, a4);
         RenderHelper.disableStandardItemLighting();
         GlStateManager.enableDepth();
         GlStateManager.depthMask((boolean)true);
     }
 
-    private void Method2249(EventRender2D a, Class260 a2) {
-        Class91[] a3 = Class448.Method2461();
-        if (!this.Method1734(new Vec3(a2.Method2837(), a2.Method2838(), a2.Method2839()))) {
-            double a4 = a2.Method2837();
-            double a5 = a2.Method2838();
-            double a6 = a2.Method2839();
-            AxisAlignedBB a7 = new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94).offset(a4 - ReflectionUtils.Method2591(), a5 - ReflectionUtils.Method2592(), a6 - ReflectionUtils.Method2593());
-            List a8 = Arrays.asList((Object[])new Vector3d[]{new Vector3d(a4 + a7.minX - a7.maxX + 0.5, a5, a6 + a7.minZ - a7.maxZ + 0.5), new Vector3d(a4 + a7.maxX - a7.minX - 0.5, a5, a6 + a7.minZ - a7.maxZ + 0.5), new Vector3d(a4 + a7.minX - a7.maxX + 0.5, a5, a6 + a7.maxZ - a7.minZ - 0.5), new Vector3d(a4 + a7.maxX - a7.minX - 0.5, a5, a6 + a7.maxZ - a7.minZ - 0.5), new Vector3d(a4 + a7.minX - a7.maxX + 0.5, a5 + a7.maxY - a7.minY, a6 + a7.minZ - a7.maxZ + 0.5), new Vector3d(a4 + a7.maxX - a7.minX - 0.5, a5 + a7.maxY - a7.minY, a6 + a7.minZ - a7.maxZ + 0.5), new Vector3d(a4 + a7.minX - a7.maxX + 0.5, a5 + a7.maxY - a7.minY, a6 + a7.maxZ - a7.minZ - 0.5), new Vector3d(a4 + a7.maxX - a7.minX - 0.5, a5 + a7.maxY - a7.minY, a6 + a7.maxZ - a7.minZ - 0.5)});
-            ReflectionUtils.Method2608(a.Field2923, 0);
-            Vector4d a9 = null;
-            Iterator iterator = a8.Method1383();
+    private void Method2249(EventRender2D a2, Class260 a3) {
+        a[] a4 = Class448.Method2461();
+        if (!this.Method1734(new Vec3(a3.Method2837(), a3.Method2838(), a3.Method2839()))) {
+            double a5 = a3.Method2837();
+            double a6 = a3.Method2838();
+            double a7 = a3.Method2839();
+            AxisAlignedBB a8 = new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94).offset(a5 - ReflectionUtils.getRenderPosX(), a6 - ReflectionUtils.getRenderPosY(), a7 - ReflectionUtils.getRenderPosZ());
+            List a9 = Arrays.asList((Object[])new Vector3d[]{new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6, a7 + a8.maxZ - a8.minZ - 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6, a7 + a8.maxZ - a8.minZ - 0.5), new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6 + a8.maxY - a8.minY, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6 + a8.maxY - a8.minY, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6 + a8.maxY - a8.minY, a7 + a8.maxZ - a8.minZ - 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6 + a8.maxY - a8.minY, a7 + a8.maxZ - a8.minZ - 0.5)});
+            ReflectionUtils.setupCameraTransform(a2.Field2923, 0);
+            Vector4d a10 = null;
+            Iterator iterator = a9.Method1383();
             if (iterator.Method932()) {
-                Vector3d a10 = (Vector3d)iterator.Method933();
-                a10 = RenderUtils.Method1136(a10.x - LightningTrack.mc.getRenderManager().viewerPosX, a10.y - LightningTrack.mc.getRenderManager().viewerPosY, a10.z - LightningTrack.mc.getRenderManager().viewerPosZ);
-                if (a10.z >= 0.0 && a10.z < 1.0) {
-                    a9 = new Vector4d(a10.x, a10.y, a10.z, 0.0);
-                    a9.x = Math.min((double)a10.x, (double)a9.x);
-                    a9.y = Math.min((double)a10.y, (double)a9.y);
-                    a9.z = Math.max((double)a10.x, (double)a9.z);
-                    a9.w = Math.max((double)a10.y, (double)a9.w);
+                Vector3d a11 = (Vector3d)iterator.Method933();
+                a11 = RenderUtils.Method1136(a11.x - LightningTrack.mc.getRenderManager().viewerPosX, a11.y - LightningTrack.mc.getRenderManager().viewerPosY, a11.z - LightningTrack.mc.getRenderManager().viewerPosZ);
+                if (a11.z >= 0.0 && a11.z < 1.0) {
+                    a10 = new Vector4d(a11.x, a11.y, a11.z, 0.0);
+                    a10.x = Math.min((double)a11.x, (double)a10.x);
+                    a10.y = Math.min((double)a11.y, (double)a10.y);
+                    a10.z = Math.max((double)a11.x, (double)a10.z);
+                    a10.w = Math.max((double)a11.y, (double)a10.w);
                 }
             }
             LightningTrack.mc.entityRenderer.setupOverlayRendering();
             GL11.glPushMatrix();
-            float a11 = (float)a9.x;
-            float a12 = (float)a9.z;
-            float a13 = (float)a9.y;
-            String a14 = "[" + Math.round((double)LightningTrack.mc.thePlayer.getDistance(a2.Method2837(), a2.Method2838(), a2.Method2839())) + LightningTrack.Method754(-22723, 27692) + a2.Method2835() + LightningTrack.Method754(-22722, -24056) + (int)a2.Method2837() + "," + (int)a2.Method2838() + "," + (int)a2.Method2839() + "]";
-            RenderUtils.Method1103(a11 + (a12 - a11) / 2.0f - Class565.Field2637.Method1225(a14) / 2.0f - 1.0f, a13 - (float)LightningTrack.mc.fontRendererObj.FONT_HEIGHT + 8.0f, Class565.Field2637.Method1225(a14) + 2.0f, LightningTrack.mc.fontRendererObj.FONT_HEIGHT, new Color(0, 0, 0, 120).getRGB());
-            Class565.Field2637.Method1217(a14, a11 + (a12 - a11) / 2.0f - Class565.Field2637.Method1225(a14) / 2.0f, a13 - (float)(LightningTrack.mc.fontRendererObj.FONT_HEIGHT / 2), -1);
+            float a12 = (float)a10.x;
+            float a13 = (float)a10.z;
+            float a14 = (float)a10.y;
+            String a15 = "[" + Math.round((double)LightningTrack.mc.thePlayer.getDistance(a3.Method2837(), a3.Method2838(), a3.Method2839())) + LightningTrack.Method754(-22723, 27692) + a3.Method2835() + LightningTrack.Method754(-22722, -24056) + (int)a3.Method2837() + "," + (int)a3.Method2838() + "," + (int)a3.Method2839() + "]";
+            RenderUtils.Method1103(a12 + (a13 - a12) / 2.0f - Class565.Field2637.Method1225(a15) / 2.0f - 1.0f, a14 - (float)LightningTrack.mc.fontRendererObj.FONT_HEIGHT + 8.0f, Class565.Field2637.Method1225(a15) + 2.0f, LightningTrack.mc.fontRendererObj.FONT_HEIGHT, new Color(0, 0, 0, 120).getRGB());
+            Class565.Field2637.Method1217(a15, a12 + (a13 - a12) / 2.0f - Class565.Field2637.Method1225(a15) / 2.0f, a14 - (float)(LightningTrack.mc.fontRendererObj.FONT_HEIGHT / 2), -1);
             GL11.glPopMatrix();
         }
     }
@@ -1313,9 +1313,9 @@ extends Module {
         return Field2292[n3];
     }
 
-    public void Method810(EventRender2D a) {
+    public void Method810(EventRender2D a2) {
         if (!mc.isSingleplayer() && mc.getCurrentServerData() != null && this.Field2296.getValue()) {
-            this.Field2299.forEach(arg_0 -> this.Method2249(a, arg_0));
+            this.Field2299.forEach(arg_0 -> this.Method2249(a2, arg_0));
         }
     }
 
@@ -1324,8 +1324,8 @@ extends Module {
         return LightningTrack.Method754(-22730, 31268);
     }
 
-    public static String Method2255(String a) {
-        return a.replaceAll("&", "\u00a7");
+    public static String Method2255(String a2) {
+        return a2.replaceAll("&", "\u00a7");
     }
 
     private static native /* synthetic */ void Method1658();

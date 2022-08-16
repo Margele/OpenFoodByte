@@ -15,12 +15,12 @@ package awsl;
 
 import awsl.Class234;
 import awsl.Class693;
-import awsl.Class91;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import java.util.List;
+import obfuscate.a;
 
 public class Class684
 extends ByteToMessageDecoder {
@@ -28,37 +28,37 @@ extends ByteToMessageDecoder {
      * WARNING - Removed try catching itself - possible behaviour change.
      * WARNING - void declaration
      */
-    protected void decode(ChannelHandlerContext a, ByteBuf a2, List a3) {
-        void a4;
-        a2.markReaderIndex();
-        byte[] a5 = new byte[3];
+    protected void decode(ChannelHandlerContext a2, ByteBuf a3, List a4) {
+        void a5;
+        a3.markReaderIndex();
+        byte[] a6 = new byte[3];
         boolean bl = false;
-        String a6 = Class693.Method2536();
-        if (a4 < a5.length) {
-            if (!a2.isReadable()) {
-                a2.resetReaderIndex();
+        String a7 = Class693.Method2536();
+        if (a5 < a6.length) {
+            if (!a3.isReadable()) {
+                a3.resetReaderIndex();
                 return;
             }
-            a5[a4] = a2.readByte();
-            if (a5[a4] >= 0) {
-                Class234 a7 = new Class234(Unpooled.wrappedBuffer((byte[])a5));
+            a6[a5] = a3.readByte();
+            if (a6[a5] >= 0) {
+                Class234 a8 = new Class234(Unpooled.wrappedBuffer((byte[])a6));
                 try {
-                    int a8 = a7.Method10();
-                    if (a2.readableBytes() < a8) {
-                        a2.resetReaderIndex();
+                    int a9 = a8.Method10();
+                    if (a3.readableBytes() < a9) {
+                        a3.resetReaderIndex();
                         return;
                     }
-                    a3.Method2530((Object)a2.readBytes(a8));
+                    a4.Method2530((Object)a3.readBytes(a9));
                 }
                 finally {
-                    a7.release();
+                    a8.release();
                 }
-                if (Class91.Method3648() == null) {
+                if (a.trash() == null) {
                     Class693.Method2535("x2OaV");
                 }
                 return;
             }
-            ++a4;
+            ++a5;
         }
         throw new RuntimeException("length wider than 21-bit");
     }

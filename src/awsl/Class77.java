@@ -14,10 +14,10 @@
 package awsl;
 
 import awsl.Class279;
-import awsl.Class46;
 import awsl.Class52;
 import awsl.Class690;
 import java.util.Comparator;
+import obfuscate.b;
 
 class Class77
 implements Comparator {
@@ -74,33 +74,33 @@ implements Comparator {
         return a3;
     }
 
-    private static int Method3745(Class46 a, Class46 a2) {
-        return a.Method3225().compareTo(a2.Method3225());
+    private static int Method3745(b a2, b a3) {
+        return a2.Method3225().compareTo(a3.Method3225());
     }
 
-    private static int Method3746(Object[] a, Object[] a2) {
-        int a3 = a.length;
-        String[] a4 = Class690.Method2342();
-        int a5 = a3 - a2.length;
-        int a6 = 0;
-        if (a6 < a3) {
-            Object a7 = a[a6];
-            Object a8 = a2[a6];
-            a5 = a7.getClass().getName().compareTo(a8.getClass().getName());
-            if (a7 instanceof Class46) {
-                a5 = Class77.Method3745((Class46)a7, (Class46)a8);
+    private static int Method3746(Object[] a2, Object[] a3) {
+        int a4 = a2.length;
+        String[] a5 = Class690.Method2342();
+        int a6 = a4 - a3.length;
+        int a7 = 0;
+        if (a7 < a4) {
+            Object a8 = a2[a7];
+            Object a9 = a3[a7];
+            a6 = a8.getClass().getName().compareTo(a9.getClass().getName());
+            if (a8 instanceof b) {
+                a6 = Class77.Method3745((b)a8, (b)a9);
             }
-            if (a7 instanceof Class279) {
-                a5 = Class77.Method3744((Class279)a7, (Class279)a8);
+            if (a8 instanceof Class279) {
+                a6 = Class77.Method3744((Class279)a8, (Class279)a9);
             }
-            a5 = ((Comparable)a7).compareTo(a8);
-            return a5;
+            a6 = ((Comparable)a8).compareTo(a9);
+            return a6;
         }
         return 0;
     }
 
-    private static int Method3747(Class52 a) {
-        switch (a.Field590) {
+    private static int Method3747(Class52 a2) {
+        switch (a2.Field590) {
             case 'I': {
                 return 0;
             }
@@ -141,7 +141,7 @@ implements Comparator {
                 return 12;
             }
         }
-        return 100 + a.Field590 - 104;
+        return 100 + a2.Field590 - 104;
     }
 
     public int Method2141(Object object, Object object2) {

@@ -8,18 +8,18 @@
 package awsl;
 
 import awsl.Class305;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class307 {
     private String Field1590;
     private String Field1591;
 
-    public Class307(String a, String a2) {
+    public Class307(String a2, String a3) {
         boolean bl = Class305.Method710();
-        this.Field1590 = a;
+        this.Field1590 = a2;
         boolean bl2 = bl;
-        this.Field1591 = a2;
-        if (Class91.Method3648() == null) {
+        this.Field1591 = a3;
+        if (a.trash() == null) {
             Class305.Method709(false);
         }
     }
@@ -32,7 +32,7 @@ public class Class307 {
         return this.Field1591;
     }
 
-    public void Method746(String a) {
-        this.Field1591 = a;
+    public void Method746(String a2) {
+        this.Field1591 = a2;
     }
 }

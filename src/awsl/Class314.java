@@ -11,7 +11,7 @@ package awsl;
 
 import awsl.Class321;
 import awsl.Class661;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class314
 extends Class321 {
@@ -37,14 +37,14 @@ extends Class321 {
      * WARNING - void declaration
      */
     @Override
-    protected double Method797(double a) {
-        void a2;
+    protected double Method797(double a2) {
         void a3;
-        double d = a / (double)this.Field1605;
+        void a4;
+        double d = a2 / (double)this.Field1605;
         float f = this.Field1602 + 1.0f;
-        String[] a4 = Class314.Method833();
-        double d2 = Math.max((double)0.0, (double)(1.0 + (double)a3 * Math.pow((double)(a2 - 1.0), (double)3.0) + (double)this.Field1602 * Math.pow((double)(a2 - 1.0), (double)2.0)));
-        if (Class91.Method3648() == null) {
+        String[] a5 = Class314.Method833();
+        double d2 = Math.max((double)0.0, (double)(1.0 + (double)a4 * Math.pow((double)(a3 - 1.0), (double)3.0) + (double)this.Field1602 * Math.pow((double)(a3 - 1.0), (double)2.0)));
+        if (a.trash() == null) {
             Class314.Method832(new String[1]);
         }
         return d2;

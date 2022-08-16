@@ -47,7 +47,7 @@ import trash.foodbyte.event.EventRender3D;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.combat.AntiBot;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.utils.RenderUtils;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.ColorValue;
@@ -66,48 +66,48 @@ extends Module {
     }
 
     @EventTarget
-    public void Method802(EventRender3D a) {
+    public void Method802(EventRender3D a2) {
         Iterator iterator = ESP.mc.theWorld.loadedEntityList.Method1383();
-        String a2 = Class492.Method2239();
+        String a3 = Class492.Method2239();
         while (iterator.Method932()) {
-            EntityLivingBase a3;
-            Object a4 = iterator.Method933();
-            if (!(a4 instanceof EntityLivingBase)) continue;
-            if (a4 == ESP.mc.getMinecraft().thePlayer || AntiBot.Field2577.contains(a4) || !this.Method965(a3 = (EntityLivingBase)a4)) continue;
-            double a5 = ReflectionUtils.Method2587();
-            double a6 = a3.lastTickPosX + (a3.posX - a3.lastTickPosX) * a5 - ReflectionUtils.Method2591();
-            double a7 = a3.lastTickPosY + (a3.posY - a3.lastTickPosY) * a5 - ReflectionUtils.Method2592();
-            double a8 = a3.lastTickPosZ + (a3.posZ - a3.lastTickPosZ) * a5 - ReflectionUtils.Method2593();
-            Color a9 = this.Field2378.Method2444();
-            if (Class305.Method704((Entity)a3)) {
-                a9 = new Color(0, 255, 0);
+            EntityLivingBase a4;
+            Object a5 = iterator.Method933();
+            if (!(a5 instanceof EntityLivingBase)) continue;
+            if (a5 == ESP.mc.getMinecraft().thePlayer || AntiBot.botList.contains(a5) || !this.Method965(a4 = (EntityLivingBase)a5)) continue;
+            double a6 = ReflectionUtils.getRenderPartialTicks();
+            double a7 = a4.lastTickPosX + (a4.posX - a4.lastTickPosX) * a6 - ReflectionUtils.getRenderPosX();
+            double a8 = a4.lastTickPosY + (a4.posY - a4.lastTickPosY) * a6 - ReflectionUtils.getRenderPosY();
+            double a9 = a4.lastTickPosZ + (a4.posZ - a4.lastTickPosZ) * a6 - ReflectionUtils.getRenderPosZ();
+            Color a10 = this.Field2378.Method2444();
+            if (Class305.Method704((Entity)a4)) {
+                a10 = new Color(0, 255, 0);
             }
-            if (a3.hurtTime > 0) {
-                a9 = new Color(255, 0, 0);
+            if (a4.hurtTime > 0) {
+                a10 = new Color(255, 0, 0);
             }
-            if (a3.isInvisible()) {
-                a9 = new Color(255, 255, 0);
+            if (a4.isInvisible()) {
+                a10 = new Color(255, 255, 0);
             }
-            RenderUtils.Method1121(a6, a7, a8, (double)a3.width / 1.5, (double)a3.height + 0.2, (float)a9.getRed() / 255.0f, (float)a9.getGreen() / 255.0f, (float)a9.getBlue() / 255.0f, (float)a9.getAlpha() / 255.0f);
+            RenderUtils.Method1121(a7, a8, a9, (double)a4.width / 1.5, (double)a4.height + 0.2, (float)a10.getRed() / 255.0f, (float)a10.getGreen() / 255.0f, (float)a10.getBlue() / 255.0f, (float)a10.getAlpha() / 255.0f);
             break;
         }
     }
 
-    public boolean Method965(EntityLivingBase a) {
+    public boolean Method965(EntityLivingBase a2) {
         block6: {
             block5: {
-                boolean a2 = this.Field2379.Method2509();
-                boolean a3 = this.Field2382.Method2509();
-                boolean a4 = this.Field2380.Method2509();
-                boolean a5 = this.Field2381.Method2509();
-                if (a.isInvisible()) {
+                boolean a3 = this.Field2379.getBooleanValue();
+                boolean a4 = this.Field2382.getBooleanValue();
+                boolean a5 = this.Field2380.getBooleanValue();
+                boolean a6 = this.Field2381.getBooleanValue();
+                if (a2.isInvisible()) {
                     return false;
                 }
-                if (a instanceof EntityPlayer) break block5;
-                if (a instanceof EntityMob || a instanceof EntityDragon || a instanceof EntityGhast || a instanceof EntitySlime || a instanceof EntityIronGolem || a instanceof EntitySnowman) break block5;
-                if (!(a instanceof EntityAnimal) && !(a instanceof EntitySquid) && !(a instanceof EntityVillager) && !(a instanceof EntityBat)) break block6;
+                if (a2 instanceof EntityPlayer) break block5;
+                if (a2 instanceof EntityMob || a2 instanceof EntityDragon || a2 instanceof EntityGhast || a2 instanceof EntitySlime || a2 instanceof EntityIronGolem || a2 instanceof EntitySnowman) break block5;
+                if (!(a2 instanceof EntityAnimal) && !(a2 instanceof EntitySquid) && !(a2 instanceof EntityVillager) && !(a2 instanceof EntityBat)) break block6;
             }
-            if (a instanceof EntityPlayerSP) {
+            if (a2 instanceof EntityPlayerSP) {
                 return ESP.mc.gameSettings.thirdPersonView != 0;
             }
             return true;

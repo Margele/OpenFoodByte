@@ -46,7 +46,6 @@ package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
 import awsl.Class655;
-import awsl.Class749;
 import eventapi.EventTarget;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -85,6 +84,7 @@ import trash.foodbyte.event.EventPacket;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.utils.ChatUtils;
+import trash.foodbyte.utils.PlayerUtils;
 import trash.foodbyte.utils.TimeHelper;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
@@ -115,7 +115,7 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         this.Field2679 = false;
         this.Field2678 = false;
         this.Field2682.clear();
@@ -161,7 +161,7 @@ extends Module {
     }
 
     public boolean Method713() {
-        return (float)(System.currentTimeMillis() - Field2676) > this.Field2686.Method2744().floatValue() * 1000.0f;
+        return (float)(System.currentTimeMillis() - Field2676) > this.Field2686.getFloatValue().floatValue() * 1000.0f;
     }
 
     @EventTarget
@@ -236,13 +236,13 @@ extends Module {
                 }
                 if ((iterator = a22.Method1383()).Method932()) {
                     a7 = (Integer)iterator.Method933();
-                    int a20 = 50 * this.Field2687.Method2744().intValue();
-                    if (this.Field2688.Method2509().booleanValue() || this.Field2677.Method219(a20)) {
-                        ChestStealer.mc.playerController.windowClick(a4.windowId, a7.intValue(), 1, this.Field2689.Method2509() != false ? 0 : 1, (EntityPlayer)ChestStealer.mc.thePlayer);
+                    int a20 = 50 * this.Field2687.getFloatValue().intValue();
+                    if (this.Field2688.getBooleanValue().booleanValue() || this.Field2677.isDelayComplete(a20)) {
+                        ChestStealer.mc.playerController.windowClick(a4.windowId, a7.intValue(), 1, this.Field2689.getBooleanValue() != false ? 0 : 1, (EntityPlayer)ChestStealer.mc.thePlayer);
                         if (this.Field2689.getValue()) {
                             ChestStealer.mc.playerController.windowClick(a4.windowId, -999, 0, 0, (EntityPlayer)ChestStealer.mc.thePlayer);
                         }
-                        this.Field2677.Method214();
+                        this.Field2677.reset();
                     }
                 }
             }
@@ -421,10 +421,10 @@ extends Module {
         float a2 = 0.0f;
         Item a3 = a.getItem();
         if (a3 instanceof ItemTool) {
-            a2 += Class749.Method1590(a);
+            a2 += PlayerUtils.Method1590(a);
         }
         if (a3 instanceof ItemSword) {
-            a2 += Class749.Method1590(a);
+            a2 += PlayerUtils.Method1590(a);
         }
         return a2 += (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a) * 1.25f + (float)EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a) * 0.5f;
     }

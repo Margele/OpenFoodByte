@@ -15,15 +15,15 @@
  */
 package awsl;
 
-import awsl.Class345;
 import java.lang.invoke.MethodHandle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.util.ResourceLocation;
+import trash.foodbyte.reflection.ReflectionsHelper;
 
 public class Class346 {
-    private static MethodHandle Field1660 = Class345.Method332(AbstractClientPlayer.class, new String[]{"getPlayerInfo", "func_175155_b"}, new Class[0]);
+    private static MethodHandle Field1660 = ReflectionsHelper.Method332(AbstractClientPlayer.class, new String[]{"getPlayerInfo", "func_175155_b"}, new Class[0]);
 
     public static void Method305(AbstractClientPlayer a, ResourceLocation a2) {
         Minecraft.getMinecraft().addScheduledTask(() -> Class346.Method309(a, a2));

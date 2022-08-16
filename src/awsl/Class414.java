@@ -22,12 +22,12 @@ import awsl.Class426;
 import awsl.Class446;
 import awsl.Class447;
 import awsl.Class565;
-import awsl.Class91;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import net.minecraft.client.Minecraft;
+import obfuscate.a;
 import org.lwjgl.input.Keyboard;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
@@ -48,54 +48,54 @@ public class Class414 {
     public boolean Field2008 = false;
     public boolean Field2009 = false;
 
-    public Class414(Module a, Class421 a2) {
-        Class447 a3;
-        String[] a4 = Class426.Method2315();
-        this.Field2001 = a;
+    public Class414(Module a2, Class421 a3) {
+        Class447 a4;
+        String[] a5 = Class426.Method2315();
+        this.Field2001 = a2;
         this.Field2007 = Minecraft.getMinecraft().fontRendererObj.FONT_HEIGHT + 2;
-        this.Field2003 = a2;
+        this.Field2003 = a3;
         this.Field2002 = new ArrayList();
-        Iterator iterator = Class446.Method2766(a.getName()).Method1383();
+        Iterator iterator = Class446.Method2766(a2.getName()).Method1383();
         if (iterator.Method932()) {
-            a3 = (Class447)iterator.Method933();
-            if (a3 instanceof ModeValue) {
-                this.Field2002.Method2530((Object)new Class424(this, (ModeValue)a3));
+            a4 = (Class447)iterator.Method933();
+            if (a4 instanceof ModeValue) {
+                this.Field2002.Method2530((Object)new Class424(this, (ModeValue)a4));
             }
-            Class91.Method3647(new String[3]);
+            a.trash(new String[3]);
         }
-        if ((iterator = Class446.Method2766(a.getName()).Method1383()).Method932()) {
-            a3 = (Class447)iterator.Method933();
-            if (a3 instanceof FloatValue) {
-                this.Field2002.Method2530((Object)new Class423(this, (FloatValue)a3));
+        if ((iterator = Class446.Method2766(a2.getName()).Method1383()).Method932()) {
+            a4 = (Class447)iterator.Method933();
+            if (a4 instanceof FloatValue) {
+                this.Field2002.Method2530((Object)new Class423(this, (FloatValue)a4));
             }
         }
-        if ((iterator = Class446.Method2766(a.getName()).Method1383()).Method932()) {
-            a3 = (Class447)iterator.Method933();
-            if (a3 instanceof BooleanValue) {
-                this.Field2002.Method2530((Object)new Class425(this, (BooleanValue)a3));
+        if ((iterator = Class446.Method2766(a2.getName()).Method1383()).Method932()) {
+            a4 = (Class447)iterator.Method933();
+            if (a4 instanceof BooleanValue) {
+                this.Field2002.Method2530((Object)new Class425(this, (BooleanValue)a4));
             }
         }
     }
 
-    public void Method3568(int a, int a2, float a3) {
-        Color a4 = Class416.Method2352();
-        int a5 = new Color(a4.getRed(), a4.getGreen(), a4.getBlue(), 150).getRGB();
-        int a6 = -1052689;
+    public void Method3568(int a2, int a3, float a4) {
+        Color a5 = Class416.Method2352();
+        int a6 = new Color(a5.getRed(), a5.getGreen(), a5.getBlue(), 150).getRGB();
+        int a7 = -1052689;
         if (this.Field2001.getState()) {
-            a6 = new Color(0, 153, 255).getRGB();
+            a7 = new Color(0, 153, 255).getRGB();
         }
-        if (this.Method3571(a, a2)) {
+        if (this.Method3571(a2, a3)) {
             RenderUtils.Method1105(this.Field2004 - 2.0, this.Field2005, this.Field2004 + this.Field2006 + 2.0, this.Field2005 + this.Field2007 + 1.0, 0x55111111);
         }
-        Class565.Field2635.Method1222(this.Field2001.getName(), (float)(this.Field2004 + this.Field2006 / 2.0), (float)(this.Field2005 + 1.0), a6);
+        Class565.Field2635.Method1222(this.Field2001.getName(), (float)(this.Field2004 + this.Field2006 / 2.0), (float)(this.Field2005 + 1.0), a7);
         if (this.Field2002 != null && this.Field2002.Method1799() > 0) {
-            String a7 = this.Field2008 ? "g" : "i";
-            Class565.Field2640.Method1217(a7, (float)(this.Field2004 + this.Field2006 - (double)Class565.Field2640.Method1225(a7)), (float)(this.Field2005 + 1.0), 0xFFFFFF);
+            String a8 = this.Field2008 ? "g" : "i";
+            Class565.Field2640.Method1217(a8, (float)(this.Field2004 + this.Field2006 - (double)Class565.Field2640.Method1225(a8)), (float)(this.Field2005 + 1.0), 0xFFFFFF);
         }
     }
 
-    public boolean Method3569(int a, int a2, int a3) {
-        if (!this.Method3571(a, a2)) {
+    public boolean Method3569(int a2, int a3, int a4) {
+        if (!this.Method3571(a2, a3)) {
             return false;
         }
         this.Field2001.setState(!this.Field2001.getState());
@@ -103,11 +103,11 @@ public class Class414 {
         return true;
     }
 
-    public boolean Method3570(char a, int a2) throws IOException {
+    public boolean Method3570(char a2, int a3) throws IOException {
         if (this.Field2009) {
-            if (a2 != 1) {
-                ChatUtils.addChatMessage("Bound '" + this.Field2001.getName() + "' to '" + Keyboard.getKeyName((int)a2) + "'");
-                this.Field2001.Method1021(a2);
+            if (a3 != 1) {
+                ChatUtils.addChatMessage("Bound '" + this.Field2001.getName() + "' to '" + Keyboard.getKeyName((int)a3) + "'");
+                this.Field2001.Method1021(a3);
             } else {
                 ChatUtils.addChatMessage("Unbound '" + this.Field2001.getName() + "'");
                 this.Field2001.Method1021(0);
@@ -119,8 +119,8 @@ public class Class414 {
         return false;
     }
 
-    public boolean Method3571(int a, int a2) {
-        return (double)a >= this.Field2004 && (double)a <= this.Field2004 + this.Field2006 && (double)a2 >= this.Field2005 && (double)a2 <= this.Field2005 + this.Field2007;
+    public boolean Method3571(int a2, int a3) {
+        return (double)a2 >= this.Field2004 && (double)a2 <= this.Field2004 + this.Field2006 && (double)a3 >= this.Field2005 && (double)a3 <= this.Field2005 + this.Field2007;
     }
 
     private static IOException Method3572(IOException iOException) {

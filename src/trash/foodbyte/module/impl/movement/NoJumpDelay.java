@@ -8,11 +8,11 @@
  */
 package trash.foodbyte.module.impl.movement;
 
-import awsl.Class635;
 import eventapi.EventTarget;
+import trash.foodbyte.event.EventEntityTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 
 public class NoJumpDelay
 extends Module {
@@ -26,9 +26,9 @@ extends Module {
     }
 
     @EventTarget
-    public void Method747(Class635 a) {
-        if (a.Method3587().equals((Object)NoJumpDelay.mc.thePlayer)) {
-            ReflectionUtils.Method2600(0);
+    public void Method747(EventEntityTick a2) {
+        if (a2.getEntity().equals((Object)NoJumpDelay.mc.thePlayer)) {
+            ReflectionUtils.setJumpTicks(0);
         }
     }
 }

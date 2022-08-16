@@ -8,12 +8,12 @@
 package trash.foodbyte.module.impl.movement;
 
 import awsl.Class167;
-import awsl.Class653;
 import eventapi.EventTarget;
 import net.minecraft.entity.Entity;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 
 public class Packour
 extends Module {
@@ -25,7 +25,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method755(Class653 a) {
+    public void Method755(EventTick a2) {
         block6: {
             block5: {
                 boolean bl = Class167.Method1501();
@@ -33,7 +33,7 @@ extends Module {
                 if (!Packour.mc.thePlayer.onGround) break block6;
                 this.Field2455 = false;
             }
-            if (ReflectionUtils.Method2605(Packour.mc.gameSettings.keyBindJump)) {
+            if (ReflectionUtils.isPressed(Packour.mc.gameSettings.keyBindJump)) {
                 this.Field2455 = true;
             }
             if (Packour.mc.theWorld.getCollidingBoundingBoxes((Entity)Packour.mc.thePlayer, Packour.mc.thePlayer.getEntityBoundingBox().offset(0.0, -0.5, 0.0).expand(0.001, 0.0, 0.001)).isEmpty()) {

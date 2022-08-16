@@ -20,9 +20,7 @@
 package trash.foodbyte.module.impl.world;
 
 import awsl.Class448;
-import awsl.Class634;
 import awsl.Class636;
-import awsl.Class91;
 import eventapi.EventTarget;
 import net.minecraft.block.Block;
 import net.minecraft.client.multiplayer.PlayerControllerMP;
@@ -33,11 +31,13 @@ import net.minecraft.network.play.client.C07PacketPlayerDigging;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
+import obfuscate.a;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ReflectionUtils;
-import trash.foodbyte.utils.Wrapper;
+import trash.foodbyte.reflections.ReflectionUtils;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 import trash.foodbyte.value.ModeValue;
@@ -63,62 +63,62 @@ extends Module {
     }
 
     @Override
-    public void onDisable() {
+    public void idk() {
         this.Field2324.Method2757(Field2322.isCurrentMode("Packet"));
         this.Field2323.Method2757(Field2322.isCurrentMode("Vanilla"));
     }
 
     @EventTarget
-    public void Method232(Class634 a) {
+    public void Method232(EventUpdate a2) {
         this.setDisplayTag(Field2322.getMode());
         if (Field2322.isCurrentMode("Vanilla")) {
-            if (ReflectionUtils.Method2601() >= this.Field2323.Method2746()) {
-                ReflectionUtils.Method2602(1.0f);
+            if (ReflectionUtils.getCurBlockDamageMP() >= this.Field2323.getFloatValueCast()) {
+                ReflectionUtils.setCurBlockDamageMP(1.0f);
             }
-            ReflectionUtils.Method2598(0);
+            ReflectionUtils.setBlockHitDelay(0);
         }
     }
 
     @EventTarget
-    private void Method1543(Class636 a) {
-        Block a2;
+    private void Method1543(Class636 a2) {
+        Block a3;
         if (Field2322.isCurrentMode("FastPacket")) {
-            a2 = FastBreak.mc.theWorld.getBlockState(a.Method3583()).getBlock();
-            int a3 = Block.getIdFromBlock((Block)a2);
-            PlayerControllerMP a4 = FastBreak.mc.playerController;
-            ReflectionUtils.Method2598(0);
-            if (a3 != 7) {
-                Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a.Method3583(), a.Method3585()));
-                Wrapper.INSTANCE.Method2874((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a.Method3583(), a.Method3585()));
+            a3 = FastBreak.mc.theWorld.getBlockState(a2.Method3583()).getBlock();
+            int a4 = Block.getIdFromBlock((Block)a3);
+            PlayerControllerMP a5 = FastBreak.mc.playerController;
+            ReflectionUtils.setBlockHitDelay(0);
+            if (a4 != 7) {
+                Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a2.Method3583(), a2.Method3585()));
+                Wrapper.INSTANCE.sendPacket((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a2.Method3583(), a2.Method3585()));
             }
         }
-        if (this.Field2325.getValue() && (a2 = FastBreak.mc.theWorld.getBlockState(a.Method3583()).getBlock()) == Blocks.bed) {
-            if (ReflectionUtils.Method2601() > 0.1f) {
-                FastBreak.mc.theWorld.setBlockState(a.Method3583(), Blocks.air.getDefaultState(), 11);
-                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a.Method3583(), a.Method3585()));
+        if (this.Field2325.getValue() && (a3 = FastBreak.mc.theWorld.getBlockState(a2.Method3583()).getBlock()) == Blocks.bed) {
+            if (ReflectionUtils.getCurBlockDamageMP() > 0.1f) {
+                FastBreak.mc.theWorld.setBlockState(a2.Method3583(), Blocks.air.getDefaultState(), 11);
+                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, a2.Method3583(), a2.Method3585()));
             }
-            ReflectionUtils.Method2598(0);
+            ReflectionUtils.setBlockHitDelay(0);
         }
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
-        Class91[] a2 = Class448.Method2461();
-        if (a.isRecieve()) {
+    public void Method273(EventPacket a2) {
+        a[] a3 = Class448.Method2461();
+        if (a2.isRecieve()) {
             return;
         }
         if (!Field2322.isCurrentMode("Packet")) {
             return;
         }
-        if (a.packet instanceof C07PacketPlayerDigging && !FastBreak.mc.playerController.extendedReach() && FastBreak.mc.playerController != null) {
-            C07PacketPlayerDigging a3 = (C07PacketPlayerDigging)a.packet;
-            if (a3.getStatus() == C07PacketPlayerDigging.Action.START_DESTROY_BLOCK) {
+        if (a2.packet instanceof C07PacketPlayerDigging && !FastBreak.mc.playerController.extendedReach() && FastBreak.mc.playerController != null) {
+            C07PacketPlayerDigging a4 = (C07PacketPlayerDigging)a2.packet;
+            if (a4.getStatus() == C07PacketPlayerDigging.Action.START_DESTROY_BLOCK) {
                 this.Field2326 = true;
-                this.Field2328 = a3.getPosition();
-                this.Field2329 = a3.getFacing();
+                this.Field2328 = a4.getPosition();
+                this.Field2329 = a4.getFacing();
                 this.Field2327 = 0.0f;
             }
-            if (a3.getStatus() == C07PacketPlayerDigging.Action.ABORT_DESTROY_BLOCK || a3.getStatus() == C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK) {
+            if (a4.getStatus() == C07PacketPlayerDigging.Action.ABORT_DESTROY_BLOCK || a4.getStatus() == C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK) {
                 this.Field2326 = false;
                 this.Field2328 = null;
                 this.Field2329 = null;
@@ -127,17 +127,17 @@ extends Module {
     }
 
     @EventTarget
-    public void Method803(Class634 a) {
-        Class91[] a2 = Class448.Method2461();
+    public void Method803(EventUpdate a2) {
+        a[] a3 = Class448.Method2461();
         if (!Field2322.isCurrentMode("Packet")) {
             return;
         }
         if (FastBreak.mc.playerController.extendedReach()) {
-            ReflectionUtils.Method2598(0);
+            ReflectionUtils.setBlockHitDelay(0);
         }
         if (this.Field2326) {
-            Block a3 = FastBreak.mc.theWorld.getBlockState(this.Field2328).getBlock();
-            this.Field2327 += (float)((double)a3.getPlayerRelativeBlockHardness((EntityPlayer)FastBreak.mc.thePlayer, (World)FastBreak.mc.theWorld, this.Field2328) * (double)this.Field2324.Method2746());
+            Block a4 = FastBreak.mc.theWorld.getBlockState(this.Field2328).getBlock();
+            this.Field2327 += (float)((double)a4.getPlayerRelativeBlockHardness((EntityPlayer)FastBreak.mc.thePlayer, (World)FastBreak.mc.theWorld, this.Field2328) * (double)this.Field2324.getFloatValueCast());
             if (this.Field2327 >= 1.0f) {
                 FastBreak.mc.theWorld.setBlockState(this.Field2328, Blocks.air.getDefaultState(), 11);
                 Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C07PacketPlayerDigging(C07PacketPlayerDigging.Action.STOP_DESTROY_BLOCK, this.Field2328, this.Field2329));
@@ -148,7 +148,7 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         this.Field2327 = 0.0f;
         this.Field2326 = false;
         this.Field2328 = null;

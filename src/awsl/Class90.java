@@ -11,7 +11,7 @@ package awsl;
 
 import awsl.Class63;
 import awsl.Class801;
-import awsl.Class91;
+import obfuscate.a;
 
 public final class Class90
 extends Class63 {
@@ -113,9 +113,9 @@ extends Class63 {
     }
 
     @Override
-    public void Method3618(char a) {
-        Class91[] class91Array = Class801.Method3300();
-        switch (a) {
+    public void Method3618(char a2) {
+        a[] aArray = Class801.Method3300();
+        switch (a2) {
             case 'V': {
                 this.Field769.append("void");
             }
@@ -146,8 +146,8 @@ extends Class63 {
     }
 
     @Override
-    public void Method3619(String a) {
-        this.Field769.append(a);
+    public void Method3619(String a2) {
+        this.Field769.append(a2);
         this.Method3631();
     }
 
@@ -159,25 +159,25 @@ extends Class63 {
     }
 
     @Override
-    public void Method3621(String a) {
-        if ("java/lang/Object".equals((Object)a)) {
-            boolean a2 = this.Field777 % 2 != 0 || this.Field773;
-            this.Field769.append(this.Field779).append(a.replace('/', '.'));
+    public void Method3621(String a2) {
+        if ("java/lang/Object".equals((Object)a2)) {
+            boolean a3 = this.Field777 % 2 != 0 || this.Field773;
+            this.Field769.append(this.Field779).append(a2.replace('/', '.'));
         } else {
-            this.Field769.append(this.Field779).append(a.replace('/', '.'));
+            this.Field769.append(this.Field779).append(a2.replace('/', '.'));
         }
         this.Field779 = "";
         this.Field777 *= 2;
     }
 
     @Override
-    public void Method3622(String a) {
+    public void Method3622(String a2) {
         if (this.Field777 % 2 != 0) {
             this.Field769.append('>');
         }
         this.Field777 /= 2;
         this.Field769.append('.');
-        this.Field769.append(this.Field779).append(a.replace('/', '.'));
+        this.Field769.append(this.Field779).append(a2.replace('/', '.'));
         this.Field779 = "";
         this.Field777 *= 2;
     }
@@ -194,16 +194,16 @@ extends Class63 {
     }
 
     @Override
-    public Class63 Method3624(char a) {
+    public Class63 Method3624(char a2) {
         if (this.Field777 % 2 == 0) {
             ++this.Field777;
             this.Field769.append('<');
         } else {
             this.Field769.append(", ");
         }
-        if (a == '+') {
+        if (a2 == '+') {
             this.Field769.append("? extends ");
-        } else if (a == '-') {
+        } else if (a2 == '-') {
             this.Field769.append("? super ");
         }
         this.Method3630();

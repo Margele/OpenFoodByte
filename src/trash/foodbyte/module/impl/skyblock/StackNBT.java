@@ -20,7 +20,6 @@
 package trash.foodbyte.module.impl.skyblock;
 
 import awsl.Class356;
-import awsl.Class654;
 import awsl.Class98;
 import eventapi.EventTarget;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -31,13 +30,14 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import org.lwjgl.input.Keyboard;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
+import trash.foodbyte.reflections.ObfuscatedField;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.utils.ChatUtils;
-import trash.foodbyte.utils.ObfuscatedClasses;
-import trash.foodbyte.utils.Wrapper;
 
 public class StackNBT
 extends Module {
@@ -54,72 +54,72 @@ extends Module {
     }
 
     @EventTarget
-    public void Method1626(Class654 a) {
-        int[] a2 = Class98.Method3639();
-        if (Wrapper.INSTANCE.Method2869() != null) {
-            boolean a3 = Keyboard.isKeyDown((int)15);
+    public void Method1626(EventTickUpdate a2) {
+        int[] a3 = Class98.Method3639();
+        if (Wrapper.INSTANCE.getThePlayer() != null) {
+            boolean a4 = Keyboard.isKeyDown((int)15);
             if (!this.Field3137) {
                 this.Field3137 = true;
                 if (StackNBT.mc.currentScreen instanceof GuiContainer) {
-                    GuiContainer a4 = (GuiContainer)StackNBT.mc.currentScreen;
-                    ItemStack a5 = null;
-                    if (this.Method1993(a4) != null) {
-                        a5 = this.Method1993(a4).getStack();
+                    GuiContainer a5 = (GuiContainer)StackNBT.mc.currentScreen;
+                    ItemStack a6 = null;
+                    if (this.Method1993(a5) != null) {
+                        a6 = this.Method1993(a5).getStack();
                     }
-                    if (a5.getTagCompound() != null) {
-                        ChatUtils.addChatMessageNoPrefix(a5.getDisplayName());
-                        NBTTagCompound a6 = a5.getTagCompound();
-                        NBTTagList a7 = Class356.Method139(a5);
-                        int a8 = 0;
-                        if (a8 < a7.tagCount()) {
-                            System.err.println((Object)a7.get(a8));
-                            ++a8;
-                        }
-                        if ((a8 = 0) < a7.tagCount()) {
-                            if (a7.get(a8).toString().contains((CharSequence)"Category") || a7.get(a8).toString().contains((CharSequence)"Max Crafts")) {
-                                a7.removeTag(a8);
-                            }
-                            ++a8;
-                        }
-                        if ((a8 = 0) < a7.tagCount()) {
-                            if (a7.get(a8).toString().contains((CharSequence)"Category") || a7.get(a8).toString().contains((CharSequence)"Max Crafts")) {
-                                a7.removeTag(a8);
-                            }
-                            ++a8;
-                        }
-                        a8 = 0;
+                    if (a6.getTagCompound() != null) {
+                        ChatUtils.addChatMessageNoPrefix(a6.getDisplayName());
+                        NBTTagCompound a7 = a6.getTagCompound();
+                        NBTTagList a8 = Class356.Method139(a6);
                         int a9 = 0;
-                        if (a9 < a7.tagCount()) {
-                            if (a7.get(a9).toString().equals((Object)"\"\"") && ++a8 >= 2) {
-                                a7.removeTag(a9);
+                        if (a9 < a8.tagCount()) {
+                            System.err.println((Object)a8.get(a9));
+                            ++a9;
+                        }
+                        if ((a9 = 0) < a8.tagCount()) {
+                            if (a8.get(a9).toString().contains((CharSequence)"Category") || a8.get(a9).toString().contains((CharSequence)"Max Crafts")) {
+                                a8.removeTag(a9);
                             }
                             ++a9;
                         }
-                        String a22 = this.Method1992(a5.getItem()) + " " + a5.stackSize + " " + a5.getItemDamage() + " " + a5.getTagCompound().toString();
+                        if ((a9 = 0) < a8.tagCount()) {
+                            if (a8.get(a9).toString().contains((CharSequence)"Category") || a8.get(a9).toString().contains((CharSequence)"Max Crafts")) {
+                                a8.removeTag(a9);
+                            }
+                            ++a9;
+                        }
+                        a9 = 0;
+                        int a10 = 0;
+                        if (a10 < a8.tagCount()) {
+                            if (a8.get(a10).toString().equals((Object)"\"\"") && ++a9 >= 2) {
+                                a8.removeTag(a10);
+                            }
+                            ++a10;
+                        }
+                        String a22 = this.Method1992(a6.getItem()) + " " + a6.stackSize + " " + a6.getItemDamage() + " " + a6.getTagCompound().toString();
                         a22 = a22.replace((CharSequence)"\u00a7aClick to view recipe!", (CharSequence)"\u00a7dClick to craft!");
-                        Wrapper.INSTANCE.Method2876(a22);
+                        Wrapper.INSTANCE.setClipboard(a22);
                     }
                 }
             }
-            this.Field3137 = a3;
+            this.Field3137 = a4;
         }
     }
 
-    public String Method1992(Item a) {
-        if (a.delegate.getResourceName() != null) {
-            return a.delegate.getResourceName().toString();
+    public String Method1992(Item a2) {
+        if (a2.delegate.getResourceName() != null) {
+            return a2.delegate.getResourceName().toString();
         }
         return "";
     }
 
-    public Slot Method1993(GuiContainer a) {
-        Slot a2 = null;
+    public Slot Method1993(GuiContainer a2) {
+        Slot a3 = null;
         try {
-            a2 = (Slot)ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedClasses.theSlot.getObfuscatedName()}).get((Object)a);
+            a3 = (Slot)ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedField.theSlot.getObfuscatedName()}).get((Object)a2);
         }
         catch (Exception exception) {
             // empty catch block
         }
-        return a2;
+        return a3;
     }
 }

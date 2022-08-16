@@ -33,7 +33,7 @@ public class Class349 {
     public double Method5(double a) {
         void a2;
         float f = (float)((double)GlobalModule.Field3185 * this.Field1677);
-        int[] a3 = RenderUtils.Method1148();
+        int[] a3 = RenderUtils.trash();
         if (this.Field1679 < a) {
             if (this.Field1679 + (double)a2 < a) {
                 this.Field1679 += (double)a2;

@@ -15,13 +15,13 @@
 package awsl;
 
 import awsl.Class236;
-import awsl.Class91;
 import java.awt.Color;
 import java.awt.CompositeContext;
 import java.awt.color.ColorSpace;
 import java.awt.image.ColorModel;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
+import obfuscate.a;
 
 public class Class237
 implements CompositeContext {
@@ -56,253 +56,253 @@ implements CompositeContext {
         return 0;
     }
 
-    public void Method1437(Raster a, Raster a2, WritableRaster a3) {
-        float[] a4;
+    public void Method1437(Raster a2, Raster a3, WritableRaster a4) {
         float[] a5;
-        float a6 = 0.0f;
+        float[] a6;
         float a7 = 0.0f;
-        float a8 = this.Field1302;
+        float a8 = 0.0f;
+        float a9 = this.Field1302;
         Object var9_7 = null;
         Object var10_8 = null;
-        String[] a9 = Class236.Method2106();
-        float[] a10 = null;
+        String[] a10 = Class236.Method2106();
+        float[] a11 = null;
         switch (this.Field1301) {
             case 12: 
             case 13: 
             case 14: 
             case 15: {
+                a6 = new float[3];
                 a5 = new float[3];
-                a4 = new float[3];
-                a10 = new float[3];
+                a11 = new float[3];
             }
         }
-        int[] a11 = null;
         int[] a12 = null;
-        int a13 = a3.getMinX();
-        int a14 = a3.getWidth();
-        int a15 = a3.getMinY();
-        int a16 = a15 + a3.getHeight();
-        int a17 = a15;
-        if (a17 < a16) {
-            a11 = a.getPixels(a13, a17, a14, 1, a11);
-            a12 = a2.getPixels(a13, a17, a14, 1, a12);
-            int a18 = 0;
-            int a19 = a14 * 4;
-            if (a18 < a19) {
-                int a20;
+        int[] a13 = null;
+        int a14 = a4.getMinX();
+        int a15 = a4.getWidth();
+        int a16 = a4.getMinY();
+        int a17 = a16 + a4.getHeight();
+        int a18 = a16;
+        if (a18 < a17) {
+            a12 = a2.getPixels(a14, a18, a15, 1, a12);
+            a13 = a3.getPixels(a14, a18, a15, 1, a13);
+            int a19 = 0;
+            int a20 = a15 * 4;
+            if (a19 < a20) {
                 int a21;
                 int a22;
-                int a23 = a11[a18];
-                int a24 = a12[a18];
-                int a25 = a11[a18 + 1];
-                int a26 = a12[a18 + 1];
-                int a27 = a11[a18 + 2];
-                int a28 = a12[a18 + 2];
-                int a29 = a11[a18 + 3];
-                int a30 = a12[a18 + 3];
+                int a23;
+                int a24 = a12[a19];
+                int a25 = a13[a19];
+                int a26 = a12[a19 + 1];
+                int a27 = a13[a19 + 1];
+                int a28 = a12[a19 + 2];
+                int a29 = a13[a19 + 2];
+                int a30 = a12[a19 + 3];
+                int a31 = a13[a19 + 3];
                 switch (this.Field1301) {
                     default: {
-                        a22 = a24 + a23;
-                        if (a22 > 255) {
+                        a23 = a25 + a24;
+                        if (a23 > 255) {
+                            a23 = 255;
+                        }
+                        if ((a22 = a27 + a26) > 255) {
                             a22 = 255;
                         }
-                        if ((a21 = a26 + a25) > 255) {
-                            a21 = 255;
-                        }
-                        if ((a20 = a28 + a27) <= 255) break;
-                        a20 = 255;
-                        Class91.Method3647(new String[2]);
+                        if ((a21 = a29 + a28) <= 255) break;
+                        a21 = 255;
+                        a.trash(new String[2]);
                     }
                     case 2: {
-                        a22 = a24 - a23;
+                        a23 = a25 - a24;
+                        a23 = 0;
+                        a22 = a27 - a26;
                         a22 = 0;
-                        a21 = a26 - a25;
+                        a21 = a29 - a28;
                         a21 = 0;
-                        a20 = a28 - a27;
-                        a20 = 0;
                     }
                     case 3: {
-                        a22 = a24 - a23;
+                        a23 = a25 - a24;
+                        a23 = -a23;
+                        a22 = a27 - a26;
                         a22 = -a22;
-                        a21 = a26 - a25;
+                        a21 = a29 - a28;
                         a21 = -a21;
-                        a20 = a28 - a27;
-                        a20 = -a20;
                     }
                     case 4: {
-                        int a31 = a24 * a23 + 128;
-                        a22 = (a31 >> 8) + a31 >> 8;
-                        a31 = a26 * a25 + 128;
-                        a21 = (a31 >> 8) + a31 >> 8;
-                        a31 = a28 * a27 + 128;
-                        a20 = (a31 >> 8) + a31 >> 8;
+                        int a32 = a25 * a24 + 128;
+                        a23 = (a32 >> 8) + a32 >> 8;
+                        a32 = a27 * a26 + 128;
+                        a22 = (a32 >> 8) + a32 >> 8;
+                        a32 = a29 * a28 + 128;
+                        a21 = (a32 >> 8) + a32 >> 8;
                     }
                     case 8: {
-                        int a31 = (255 - a24) * (255 - a23) + 128;
-                        a22 = 255 - ((a31 >> 8) + a31 >> 8);
-                        a31 = (255 - a26) * (255 - a25) + 128;
-                        a21 = 255 - ((a31 >> 8) + a31 >> 8);
-                        a31 = (255 - a28) * (255 - a27) + 128;
-                        a20 = 255 - ((a31 >> 8) + a31 >> 8);
+                        int a32 = (255 - a25) * (255 - a24) + 128;
+                        a23 = 255 - ((a32 >> 8) + a32 >> 8);
+                        a32 = (255 - a27) * (255 - a26) + 128;
+                        a22 = 255 - ((a32 >> 8) + a32 >> 8);
+                        a32 = (255 - a29) * (255 - a28) + 128;
+                        a21 = 255 - ((a32 >> 8) + a32 >> 8);
                     }
                     case 16: {
-                        int a31;
-                        if (a24 < 128) {
-                            a31 = a24 * a23 + 128;
-                            a22 = 2 * ((a31 >> 8) + a31 >> 8);
+                        int a32;
+                        if (a25 < 128) {
+                            a32 = a25 * a24 + 128;
+                            a23 = 2 * ((a32 >> 8) + a32 >> 8);
                         }
-                        a31 = (255 - a24) * (255 - a23) + 128;
-                        a22 = 2 * (255 - ((a31 >> 8) + a31 >> 8));
-                        if (a26 < 128) {
-                            a31 = a26 * a25 + 128;
-                            a21 = 2 * ((a31 >> 8) + a31 >> 8);
+                        a32 = (255 - a25) * (255 - a24) + 128;
+                        a23 = 2 * (255 - ((a32 >> 8) + a32 >> 8));
+                        if (a27 < 128) {
+                            a32 = a27 * a26 + 128;
+                            a22 = 2 * ((a32 >> 8) + a32 >> 8);
                         }
-                        a31 = (255 - a26) * (255 - a25) + 128;
-                        a21 = 2 * (255 - ((a31 >> 8) + a31 >> 8));
-                        if (a28 < 128) {
-                            a31 = a28 * a27 + 128;
-                            a20 = 2 * ((a31 >> 8) + a31 >> 8);
+                        a32 = (255 - a27) * (255 - a26) + 128;
+                        a22 = 2 * (255 - ((a32 >> 8) + a32 >> 8));
+                        if (a29 < 128) {
+                            a32 = a29 * a28 + 128;
+                            a21 = 2 * ((a32 >> 8) + a32 >> 8);
                         }
-                        a31 = (255 - a28) * (255 - a27) + 128;
-                        a20 = 2 * (255 - ((a31 >> 8) + a31 >> 8));
+                        a32 = (255 - a29) * (255 - a28) + 128;
+                        a21 = 2 * (255 - ((a32 >> 8) + a32 >> 8));
                     }
                     case 5: {
-                        a22 = a24 < a23 ? a24 : a23;
-                        a21 = a26 < a25 ? a26 : a25;
-                        a20 = a28 < a27 ? a28 : a27;
+                        a23 = a25 < a24 ? a25 : a24;
+                        a22 = a27 < a26 ? a27 : a26;
+                        a21 = a29 < a28 ? a29 : a28;
                     }
                     case 9: {
-                        a22 = a24 > a23 ? a24 : a23;
-                        a21 = a26 > a25 ? a26 : a25;
-                        a20 = a28 > a27 ? a28 : a27;
+                        a23 = a25 > a24 ? a25 : a24;
+                        a22 = a27 > a26 ? a27 : a26;
+                        a21 = a29 > a28 ? a29 : a28;
                     }
                     case 22: {
-                        a22 = (a24 + a23) / 2;
-                        a21 = (a26 + a25) / 2;
-                        a20 = (a28 + a27) / 2;
+                        a23 = (a25 + a24) / 2;
+                        a22 = (a27 + a26) / 2;
+                        a21 = (a29 + a28) / 2;
                     }
                     case 12: 
                     case 13: 
                     case 14: 
                     case 15: {
-                        Color.RGBtoHSB((int)a23, (int)a25, (int)a27, (float[])a5);
-                        Color.RGBtoHSB((int)a24, (int)a26, (int)a28, (float[])a4);
+                        Color.RGBtoHSB((int)a24, (int)a26, (int)a28, (float[])a6);
+                        Color.RGBtoHSB((int)a25, (int)a27, (int)a29, (float[])a5);
                         switch (this.Field1301) {
                             case 12: {
-                                a10[0] = a5[0];
-                                a10[1] = a4[1];
-                                a10[2] = a4[2];
+                                a11[0] = a6[0];
+                                a11[1] = a5[1];
+                                a11[2] = a5[2];
                             }
                             case 13: {
-                                a10[0] = a4[0];
-                                a10[1] = a5[1];
-                                a10[2] = a4[2];
+                                a11[0] = a5[0];
+                                a11[1] = a6[1];
+                                a11[2] = a5[2];
                             }
                             case 14: {
-                                a10[0] = a4[0];
-                                a10[1] = a4[1];
-                                a10[2] = a5[2];
+                                a11[0] = a5[0];
+                                a11[1] = a5[1];
+                                a11[2] = a6[2];
                             }
                             case 15: {
-                                a10[0] = a5[0];
-                                a10[1] = a5[1];
-                                a10[2] = a4[2];
+                                a11[0] = a6[0];
+                                a11[1] = a6[1];
+                                a11[2] = a5[2];
                             }
                         }
-                        int a32 = Color.HSBtoRGB((float)a10[0], (float)a10[1], (float)a10[2]);
-                        a22 = (a32 & 0xFF0000) >> 16;
-                        a21 = (a32 & 0xFF00) >> 8;
-                        a20 = a32 & 0xFF;
+                        int a33 = Color.HSBtoRGB((float)a11[0], (float)a11[1], (float)a11[2]);
+                        a23 = (a33 & 0xFF0000) >> 16;
+                        a22 = (a33 & 0xFF00) >> 8;
+                        a21 = a33 & 0xFF;
                     }
                     case 6: {
-                        if (a24 != 255) {
-                            a22 = Class237.Method1436(255 - (255 - a23 << 8) / (a24 + 1));
+                        if (a25 != 255) {
+                            a23 = Class237.Method1436(255 - (255 - a24 << 8) / (a25 + 1));
                         }
-                        a22 = a23;
-                        if (a26 != 255) {
-                            a21 = Class237.Method1436(255 - (255 - a25 << 8) / (a26 + 1));
+                        a23 = a24;
+                        if (a27 != 255) {
+                            a22 = Class237.Method1436(255 - (255 - a26 << 8) / (a27 + 1));
                         }
-                        a21 = a25;
-                        if (a28 != 255) {
-                            a20 = Class237.Method1436(255 - (255 - a27 << 8) / (a28 + 1));
+                        a22 = a26;
+                        if (a29 != 255) {
+                            a21 = Class237.Method1436(255 - (255 - a28 << 8) / (a29 + 1));
                         }
-                        a20 = a27;
+                        a21 = a28;
                     }
                     case 7: {
-                        a22 = Math.max((int)(255 - (255 - a24 << 8) / a23), (int)0);
-                        a22 = a23;
-                        a21 = Math.max((int)(255 - (255 - a26 << 8) / a25), (int)0);
-                        a21 = a25;
-                        a20 = Math.max((int)(255 - (255 - a28 << 8) / a27), (int)0);
-                        a20 = a27;
+                        a23 = Math.max((int)(255 - (255 - a25 << 8) / a24), (int)0);
+                        a23 = a24;
+                        a22 = Math.max((int)(255 - (255 - a27 << 8) / a26), (int)0);
+                        a22 = a26;
+                        a21 = Math.max((int)(255 - (255 - a29 << 8) / a28), (int)0);
+                        a21 = a28;
                     }
                     case 10: {
-                        a22 = Class237.Method1436((a23 << 8) / (256 - a24));
-                        a21 = Class237.Method1436((a25 << 8) / (256 - a26));
-                        a20 = Class237.Method1436((a27 << 8) / (256 - a28));
+                        a23 = Class237.Method1436((a24 << 8) / (256 - a25));
+                        a22 = Class237.Method1436((a26 << 8) / (256 - a27));
+                        a21 = Class237.Method1436((a28 << 8) / (256 - a29));
                     }
                     case 11: {
-                        if (a23 != 255) {
-                            a22 = Math.min((int)((a24 << 8) / (255 - a23)), (int)255);
+                        if (a24 != 255) {
+                            a23 = Math.min((int)((a25 << 8) / (255 - a24)), (int)255);
                         }
-                        a22 = a23;
-                        if (a25 != 255) {
-                            a21 = Math.min((int)((a26 << 8) / (255 - a25)), (int)255);
+                        a23 = a24;
+                        if (a26 != 255) {
+                            a22 = Math.min((int)((a27 << 8) / (255 - a26)), (int)255);
                         }
-                        a21 = a25;
-                        if (a27 != 255) {
-                            a20 = Math.min((int)((a28 << 8) / (255 - a27)), (int)255);
+                        a22 = a26;
+                        if (a28 != 255) {
+                            a21 = Math.min((int)((a29 << 8) / (255 - a28)), (int)255);
                         }
-                        a20 = a27;
+                        a21 = a28;
                     }
                     case 17: {
-                        int a33 = Class237.Method1435(a23, a24);
-                        a22 = a33 + Class237.Method1435(a24, 255 - Class237.Method1435(255 - a24, 255 - a23) - a33);
-                        a33 = Class237.Method1435(a25, a26);
-                        a21 = a33 + Class237.Method1435(a26, 255 - Class237.Method1435(255 - a26, 255 - a25) - a33);
-                        a33 = Class237.Method1435(a27, a28);
-                        a20 = a33 + Class237.Method1435(a28, 255 - Class237.Method1435(255 - a28, 255 - a27) - a33);
+                        int a34 = Class237.Method1435(a24, a25);
+                        a23 = a34 + Class237.Method1435(a25, 255 - Class237.Method1435(255 - a25, 255 - a24) - a34);
+                        a34 = Class237.Method1435(a26, a27);
+                        a22 = a34 + Class237.Method1435(a27, 255 - Class237.Method1435(255 - a27, 255 - a26) - a34);
+                        a34 = Class237.Method1435(a28, a29);
+                        a21 = a34 + Class237.Method1435(a29, 255 - Class237.Method1435(255 - a29, 255 - a28) - a34);
                     }
                     case 18: {
-                        if (a23 > 127) {
-                            a22 = 255 - 2 * Class237.Method1435(255 - a23, 255 - a24);
+                        if (a24 > 127) {
+                            a23 = 255 - 2 * Class237.Method1435(255 - a24, 255 - a25);
                         }
-                        a22 = 2 * Class237.Method1435(a23, a24);
-                        if (a25 > 127) {
-                            a21 = 255 - 2 * Class237.Method1435(255 - a25, 255 - a26);
+                        a23 = 2 * Class237.Method1435(a24, a25);
+                        if (a26 > 127) {
+                            a22 = 255 - 2 * Class237.Method1435(255 - a26, 255 - a27);
                         }
-                        a21 = 2 * Class237.Method1435(a25, a26);
-                        if (a27 > 127) {
-                            a20 = 255 - 2 * Class237.Method1435(255 - a27, 255 - a28);
+                        a22 = 2 * Class237.Method1435(a26, a27);
+                        if (a28 > 127) {
+                            a21 = 255 - 2 * Class237.Method1435(255 - a28, 255 - a29);
                         }
-                        a20 = 2 * Class237.Method1435(a27, a28);
+                        a21 = 2 * Class237.Method1435(a28, a29);
                     }
                     case 19: {
-                        a22 = a23 > 127 ? Math.max((int)a23, (int)a24) : Math.min((int)a23, (int)a24);
-                        a21 = a25 > 127 ? Math.max((int)a25, (int)a26) : Math.min((int)a25, (int)a26);
-                        a20 = a27 > 127 ? Math.max((int)a27, (int)a28) : Math.min((int)a27, (int)a28);
+                        a23 = a24 > 127 ? Math.max((int)a24, (int)a25) : Math.min((int)a24, (int)a25);
+                        a22 = a26 > 127 ? Math.max((int)a26, (int)a27) : Math.min((int)a26, (int)a27);
+                        a21 = a28 > 127 ? Math.max((int)a28, (int)a29) : Math.min((int)a28, (int)a29);
                     }
                     case 20: {
-                        a22 = a24 + Class237.Method1435(a23, 255 - a24 - a24);
-                        a21 = a26 + Class237.Method1435(a25, 255 - a26 - a26);
-                        a20 = a28 + Class237.Method1435(a27, 255 - a28 - a28);
+                        a23 = a25 + Class237.Method1435(a24, 255 - a25 - a25);
+                        a22 = a27 + Class237.Method1435(a26, 255 - a27 - a27);
+                        a21 = a29 + Class237.Method1435(a28, 255 - a29 - a29);
                     }
                     case 21: {
-                        a22 = 255 - Math.abs((int)(255 - a23 - a24));
-                        a21 = 255 - Math.abs((int)(255 - a25 - a26));
-                        a20 = 255 - Math.abs((int)(255 - a27 - a28));
+                        a23 = 255 - Math.abs((int)(255 - a24 - a25));
+                        a22 = 255 - Math.abs((int)(255 - a26 - a27));
+                        a21 = 255 - Math.abs((int)(255 - a28 - a29));
                     }
                 }
-                a6 = a8 * (float)a29 / 255.0f;
-                a7 = 1.0f - a6;
-                a12[a18] = (int)(a6 * (float)a22 + a7 * (float)a24);
-                a12[a18 + 1] = (int)(a6 * (float)a21 + a7 * (float)a26);
-                a12[a18 + 2] = (int)(a6 * (float)a20 + a7 * (float)a28);
-                a12[a18 + 3] = (int)((float)a29 * a8 + (float)a30 * a7);
-                a18 += 4;
+                a7 = a9 * (float)a30 / 255.0f;
+                a8 = 1.0f - a7;
+                a13[a19] = (int)(a7 * (float)a23 + a8 * (float)a25);
+                a13[a19 + 1] = (int)(a7 * (float)a22 + a8 * (float)a27);
+                a13[a19 + 2] = (int)(a7 * (float)a21 + a8 * (float)a29);
+                a13[a19 + 3] = (int)((float)a30 * a9 + (float)a31 * a8);
+                a19 += 4;
             }
-            a3.setPixels(a13, a17, a14, 1, a12);
-            ++a17;
+            a4.setPixels(a14, a18, a15, 1, a13);
+            ++a18;
         }
     }
 }

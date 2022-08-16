@@ -34,7 +34,6 @@ import awsl.Class396;
 import awsl.Class446;
 import awsl.Class447;
 import awsl.Class565;
-import awsl.Class706;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,6 +43,7 @@ import net.minecraft.client.gui.GuiScreen;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
+import trash.foodbyte.gui.AltLogin;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
@@ -76,15 +76,15 @@ extends GuiScreen {
         this.Field3057 = true;
     }
 
-    public void Method1803(int a, int a2, float a3) {
+    public void Method1803(int a2, int a3, float a4) {
         this.Method1814();
         this.Method1816();
-        String a4 = "Tips: \u00a76\u9f20\u6807\u653e\u4e0a\u53bb\u6309\u4f4f\u5de6Shift\u5373\u53ef\u67e5\u770b\u8be5\u529f\u80fd\u7ffb\u8bd1";
-        RenderUtils.Method1103(0.0f, RenderUtils.Method1077(), this.mc.fontRendererObj.getStringWidth(a4) + 1, -this.mc.fontRendererObj.FONT_HEIGHT - 1, new Color(0, 0, 0, 120).getRGB());
-        this.mc.fontRendererObj.drawStringWithShadow(a4, 1.0f, (float)(RenderUtils.Method1077() - this.mc.fontRendererObj.FONT_HEIGHT), -1);
-        String a5 = "\u00a7cFoodByte \u00a7bBY-SuChen";
-        RenderUtils.Method1103(0.0f, RenderUtils.Method1077() - this.mc.fontRendererObj.FONT_HEIGHT - 1, Class565.Field2634.Method1225(a5) + 2.0f, -Class565.Field2634.Field2625, new Color(0, 0, 0, 120).getRGB());
-        Class565.Field2634.Method1220(a5, 1.0f, (float)(RenderUtils.Method1077() - this.mc.fontRendererObj.FONT_HEIGHT) - Class565.Field2634.Field2625, -1);
+        String a5 = "Tips: \u00a76\u9f20\u6807\u653e\u4e0a\u53bb\u6309\u4f4f\u5de6Shift\u5373\u53ef\u67e5\u770b\u8be5\u529f\u80fd\u7ffb\u8bd1";
+        RenderUtils.Method1103(0.0f, RenderUtils.Method1077(), this.mc.fontRendererObj.getStringWidth(a5) + 1, -this.mc.fontRendererObj.FONT_HEIGHT - 1, new Color(0, 0, 0, 120).getRGB());
+        this.mc.fontRendererObj.drawStringWithShadow(a5, 1.0f, (float)(RenderUtils.Method1077() - this.mc.fontRendererObj.FONT_HEIGHT), -1);
+        String a6 = "\u00a7cFoodByte \u00a7bBY-SuChen";
+        RenderUtils.Method1103(0.0f, RenderUtils.Method1077() - this.mc.fontRendererObj.FONT_HEIGHT - 1, Class565.Field2634.Method1225(a6) + 2.0f, -Class565.Field2634.Field2625, new Color(0, 0, 0, 120).getRGB());
+        Class565.Field2634.Method1220(a6, 1.0f, (float)(RenderUtils.Method1077() - this.mc.fontRendererObj.FONT_HEIGHT) - Class565.Field2634.Field2625, -1);
     }
 
     public void Method1814() {
@@ -98,30 +98,30 @@ extends GuiScreen {
         }
         Field3055 = this.Field3057 ? -803200992 : -1340071904;
         Field3054 = this.Field3057 ? Class707.Method1832() : Class707.Method1832() - 0x50000000;
-        Class381 a = null;
+        Class381 a2 = null;
         Iterator iterator = this.Field3056.Method1383();
         while (iterator.Method932()) {
-            Class381 a2 = (Class381)iterator.Method933();
-            a2.Method1385(this.Field3060, this.Field3061);
+            Class381 a3 = (Class381)iterator.Method933();
+            a3.Method1385(this.Field3060, this.Field3061);
             if (this.Field3057 && !this.Field3058) {
-                if (!a2.Method1388(this.Field3060, this.Field3061, Mouse.isButtonDown((int)0) || Mouse.isButtonDown((int)1) || Mouse.isButtonDown((int)2))) continue;
-                a = a2;
+                if (!a3.Method1388(this.Field3060, this.Field3061, Mouse.isButtonDown((int)0) || Mouse.isButtonDown((int)1) || Mouse.isButtonDown((int)2))) continue;
+                a2 = a3;
                 continue;
             }
-            a2.Method1394();
+            a3.Method1394();
         }
-        this.Method1818(a);
+        this.Method1818(a2);
         this.Method1817();
     }
 
     public void Method1816() {
-        int a = this.Field3056.Method1799() - 1;
+        int a2 = this.Field3056.Method1799() - 1;
         while (true) {
-            Class381 a2 = (Class381)this.Field3056.get(a);
-            if (a2.Method1406() && (this.Field3057 || a2.Method1400() && a2.Method1402())) {
-                a2.Method1386(this.Field3060, this.Field3061);
+            Class381 a3 = (Class381)this.Field3056.get(a2);
+            if (a3.Method1406() && (this.Field3057 || a3.Method1400() && a3.Method1402())) {
+                a3.Method1386(this.Field3060, this.Field3061);
             }
-            --a;
+            --a2;
         }
     }
 
@@ -129,162 +129,162 @@ extends GuiScreen {
         ModuleManager.modules.forEach(Class707::Method1835);
     }
 
-    public void Method1818(Class381 a) {
-        if (this.Field3056.remove((Object)a)) {
-            this.Field3056.add(0, (Object)a);
+    public void Method1818(Class381 a2) {
+        if (this.Field3056.remove((Object)a2)) {
+            this.Field3056.add(0, (Object)a2);
         }
     }
 
     private void Method1819() {
-        Class381 a;
-        Object a2;
+        Class381 a2;
+        Object a3;
         int n = Class707.Method1838();
         this.Field3056.clear();
-        int a3 = 2;
-        int a4 = n;
-        int a5 = 12;
-        Category[] a6 = Category.Method2760();
-        int a7 = a6.length;
+        int a4 = 2;
+        int a5 = n;
+        int a6 = 12;
+        Category[] a7 = Category.Method2760();
+        int a8 = a7.length;
         int a222 = 0;
-        if (a222 < a7) {
-            a2 = a6[a222];
-            if (ModuleManager.Method2299(a2) != 0) {
-                a = new Class381(a2.Field2976, a3, a5);
+        if (a222 < a8) {
+            a3 = a7[a222];
+            if (ModuleManager.Method2299(a3) != 0) {
+                a2 = new Class381(a3.Field2976, a4, a6);
                 Iterator iterator = ModuleManager.getAllModules().Method1383();
                 if (iterator.Method932()) {
-                    Module a8 = (Module)iterator.Method933();
-                    if (a8.Method1024() != a2) {
+                    Module a9 = (Module)iterator.Method933();
+                    if (a9.Method1024() != a3) {
                     }
-                    a.Method1399().Method2530((Object)new Class385(a, 0, 0, a8.getName(), a8, a8.getDescription()));
-                    Class395 a9 = new Class395(a, 0, 0, String.valueOf((Object)a8.getName()) + "_box");
-                    a9.Field1922 = String.valueOf((Object)a8.getName()) + "_setting";
-                    a.Method1399().Method2530((Object)a9);
-                    a.Method1384();
-                    if (a8.Method1031()) {
-                        Class390 a10;
-                        Class447 a11;
-                        Iterator iterator2 = Class446.Method2766(a8.getName()).Method1383();
+                    a2.Method1399().Method2530((Object)new Class385(a2, 0, 0, a9.getName(), a9, a9.getDescription()));
+                    Class395 a10 = new Class395(a2, 0, 0, String.valueOf((Object)a9.getName()) + "_box");
+                    a10.Field1922 = String.valueOf((Object)a9.getName()) + "_setting";
+                    a2.Method1399().Method2530((Object)a10);
+                    a2.Method1384();
+                    if (a9.Method1031()) {
+                        Class390 a11;
+                        Class447 a12;
+                        Iterator iterator2 = Class446.Method2766(a9.getName()).Method1383();
                         if (iterator2.Method932()) {
-                            a11 = (Class447)iterator2.Method933();
-                            if (a11 instanceof ModeValue) {
-                                a10 = new Class387((ModeValue)a11, a, 0, 0, a11.Method2753());
-                                a10.Field1922 = String.valueOf((Object)a8.getName()) + "_setting";
-                                a9.Method1344(a10);
+                            a12 = (Class447)iterator2.Method933();
+                            if (a12 instanceof ModeValue) {
+                                a11 = new Class387((ModeValue)a12, a2, 0, 0, a12.Method2753());
+                                a11.Field1922 = String.valueOf((Object)a9.getName()) + "_setting";
+                                a10.Method1344(a11);
                             }
                         }
-                        if ((iterator2 = Class446.Method2766(a8.getName()).Method1383()).Method932()) {
-                            a11 = (Class447)iterator2.Method933();
-                            if (a11 instanceof FloatValue) {
-                                a10 = new Class396((FloatValue)a11, a, 0, 0, a11.Method2754(), a11.Method2753());
-                                ((Class396)a10).Field1922 = String.valueOf((Object)a8.getName()) + "_setting";
-                                a9.Method1344(a10);
+                        if ((iterator2 = Class446.Method2766(a9.getName()).Method1383()).Method932()) {
+                            a12 = (Class447)iterator2.Method933();
+                            if (a12 instanceof FloatValue) {
+                                a11 = new Class396((FloatValue)a12, a2, 0, 0, a12.Method2754(), a12.Method2753());
+                                ((Class396)a11).Field1922 = String.valueOf((Object)a9.getName()) + "_setting";
+                                a10.Method1344(a11);
                             }
-                            if (a11 instanceof ColorValue) {
-                                a10 = new Class374((ColorValue)a11, a, 0, 0, a11.Method2754(), a11.Method2753());
-                                ((Class374)a10).Field1922 = String.valueOf((Object)a8.getName()) + "_setting";
-                                a9.Method1344(a10);
+                            if (a12 instanceof ColorValue) {
+                                a11 = new Class374((ColorValue)a12, a2, 0, 0, a12.Method2754(), a12.Method2753());
+                                ((Class374)a11).Field1922 = String.valueOf((Object)a9.getName()) + "_setting";
+                                a10.Method1344(a11);
                             }
                         }
-                        if ((iterator2 = Class446.Method2766(a8.getName()).Method1383()).Method932()) {
-                            a11 = (Class447)iterator2.Method933();
-                            if (a11 instanceof BooleanValue) {
-                                a10 = new Class382((BooleanValue)a11, a, 0, 0, a11.Method2754(), a11.Method2753());
-                                ((Class382)a10).Field1922 = String.valueOf((Object)a8.getName()) + "_setting";
-                                a9.Method1344(a10);
+                        if ((iterator2 = Class446.Method2766(a9.getName()).Method1383()).Method932()) {
+                            a12 = (Class447)iterator2.Method933();
+                            if (a12 instanceof BooleanValue) {
+                                a11 = new Class382((BooleanValue)a12, a2, 0, 0, a12.Method2754(), a12.Method2753());
+                                ((Class382)a11).Field1922 = String.valueOf((Object)a9.getName()) + "_setting";
+                                a10.Method1344(a11);
                             }
                         }
                     }
                 }
-                a.Method1407(true);
-                a.Method1405(true);
-                a.Method1384();
-                this.Field3056.Method2530((Object)a);
-                a3 += a.Method1414() + 5;
+                a2.Method1407(true);
+                a2.Method1405(true);
+                a2.Method1384();
+                this.Field3056.Method2530((Object)a2);
+                a4 += a2.Method1414() + 5;
             }
             ++a222;
         }
-        if ((a222 = Class446.Method2766((a = new Class381("Global", a3, a5)).Method1395()).Method1383()).Method932()) {
-            a2 = (Class447)a222.Method933();
-            if (a2 instanceof ModeValue) {
-                a.Method1399().Method2530((Object)new Class387((ModeValue)a2, a, 0, 0, ((Class447)a2).Method2753()));
+        if ((a222 = Class446.Method2766((a = new Class381("Global", a4, a6)).Method1395()).Method1383()).Method932()) {
+            a3 = (Class447)a222.Method933();
+            if (a3 instanceof ModeValue) {
+                a.Method1399().Method2530((Object)new Class387((ModeValue)a3, a, 0, 0, ((Class447)a3).Method2753()));
             }
         }
         if ((a222 = Class446.Method2766(a.Method1395()).Method1383()).Method932()) {
-            a2 = (Class447)a222.Method933();
-            if (a2 instanceof FloatValue) {
-                a.Method1399().Method2530((Object)new Class396((FloatValue)a2, a, 0, 0, ((Class447)a2).Method2754(), ((Class447)a2).Method2753()));
+            a3 = (Class447)a222.Method933();
+            if (a3 instanceof FloatValue) {
+                a.Method1399().Method2530((Object)new Class396((FloatValue)a3, a, 0, 0, ((Class447)a3).Method2754(), ((Class447)a3).Method2753()));
             }
-            if (a2 instanceof ColorValue) {
-                a.Method1399().Method2530((Object)new Class374((ColorValue)a2, a, 0, 0, ((Class447)a2).Method2754(), ((Class447)a2).Method2753()));
+            if (a3 instanceof ColorValue) {
+                a.Method1399().Method2530((Object)new Class374((ColorValue)a3, a, 0, 0, ((Class447)a3).Method2754(), ((Class447)a3).Method2753()));
             }
         }
         if ((a222 = Class446.Method2766(a.Method1395()).Method1383()).Method932()) {
-            a2 = (Class447)a222.Method933();
-            if (a2 instanceof BooleanValue) {
-                a.Method1399().Method2530((Object)new Class382((BooleanValue)a2, a, 0, 0, ((Class447)a2).Method2754(), ((Class447)a2).Method2753()));
+            a3 = (Class447)a222.Method933();
+            if (a3 instanceof BooleanValue) {
+                a.Method1399().Method2530((Object)new Class382((BooleanValue)a3, a, 0, 0, ((Class447)a3).Method2754(), ((Class447)a3).Method2753()));
             }
         }
         a.Method1407(true);
         a.Method1405(true);
         a.Method1384();
         this.Field3056.Method2530((Object)a);
-        Object a222 = new Class381("Config", a3 += a.Method1414() + 5, a5);
+        Object a222 = new Class381("Config", a4 += a.Method1414() + 5, a6);
         ((Class381)a222).Method1399().Method2530((Object)new Class375((Class381)a222, 0, 0, null));
         ((Class381)a222).Method1407(true);
         ((Class381)a222).Method1405(true);
         ((Class381)a222).Method1384();
         this.Field3056.Method2530(a222);
-        a2 = new Class381("IRC", a3 += ((Class381)a222).Method1414() + 5, a5);
-        ((Class381)a2).Method1399().Method2530((Object)new Class386((Class381)a2, 0, 0, null));
-        ((Class381)a2).Method1407(false);
-        ((Class381)a2).Method1405(true);
-        ((Class381)a2).Method1384();
-        this.Field3056.Method2530(a2);
-        a = new Class381("Gui Option", 2, a5 + 188);
-        a.Method1399().Method2530((Object)new Class384(a, 0, 36, "Xray Select", new Class706(this)));
-        a.Method1407(true);
-        a.Method1405(true);
-        a.Method1384();
-        Class381 a12 = new Class381("Player Inventory", 2, 194);
-        a12.Method1399().Method2530((Object)new Class376(a12, 0, 0));
-        a12.Method1407(true);
-        a12.Method1409(true);
-        a12.Method1405(true);
-        a12.Method1401(true);
-        a12.Method1384();
+        a3 = new Class381("IRC", a4 += ((Class381)a222).Method1414() + 5, a6);
+        ((Class381)a3).Method1399().Method2530((Object)new Class386((Class381)a3, 0, 0, null));
+        ((Class381)a3).Method1407(false);
+        ((Class381)a3).Method1405(true);
+        ((Class381)a3).Method1384();
+        this.Field3056.Method2530(a3);
+        a2 = new Class381("Gui Option", 2, a6 + 188);
+        a2.Method1399().Method2530((Object)new Class384(a2, 0, 36, "Xray Select", new AltLogin(this)));
+        a2.Method1407(true);
+        a2.Method1405(true);
+        a2.Method1384();
+        Class381 a13 = new Class381("Player Inventory", 2, 194);
+        a13.Method1399().Method2530((Object)new Class376(a13, 0, 0));
+        a13.Method1407(true);
+        a13.Method1409(true);
+        a13.Method1405(true);
+        a13.Method1401(true);
+        a13.Method1384();
     }
 
-    public void Method1820(List a, int a2, int a3) {
-        if (!a.isEmpty()) {
-            int a4;
-            int a5 = 0;
-            Iterator iterator = a.Method1383();
+    public void Method1820(List a2, int a3, int a4) {
+        if (!a2.isEmpty()) {
+            int a5;
+            int a6 = 0;
+            Iterator iterator = a2.Method1383();
             while (iterator.Method932()) {
-                String a6 = (String)iterator.Method933();
-                a4 = this.fontRendererObj.getStringWidth(a6);
-                if (a4 <= a5) continue;
-                a5 = a4;
+                String a7 = (String)iterator.Method933();
+                a5 = this.fontRendererObj.getStringWidth(a7);
+                if (a5 <= a6) continue;
+                a6 = a5;
             }
-            int a7 = a2 + 12;
-            int a8 = a3 - 12;
-            a4 = 8;
-            if (a.Method1799() > 1) {
-                a4 += 2 + (a.Method1799() - 1) * 10;
+            int a8 = a3 + 12;
+            int a9 = a4 - 12;
+            a5 = 8;
+            if (a2.Method1799() > 1) {
+                a5 += 2 + (a2.Method1799() - 1) * 10;
             }
-            if (a7 + a5 > this.width) {
-                a7 -= 28 + a5;
+            if (a8 + a6 > this.width) {
+                a8 -= 28 + a6;
             }
-            if (a8 + a4 + 6 > this.height) {
-                a8 = this.height - a4 - 6;
+            if (a9 + a5 + 6 > this.height) {
+                a9 = this.height - a5 - 6;
             }
-            Class350.Method48(a7 - 3, a8 - 3, a5 + 6, a4 + 6, 7);
-            RenderUtils.Method1104(a7 - 3, a8 - 3, a7 + a5 + 3, a8 + a4 + 3, Integer.MIN_VALUE);
-            Class348.Method364(a7 - 3, a8 - 3, a5 + 6, a4 + 6, true);
-            for (int a9 = 0; a9 < a.Method1799(); ++a9) {
-                String a10 = (String)a.get(a9);
-                this.fontRendererObj.drawStringWithShadow(a10, (float)a7, (float)a8, -1);
-                a8 += 2;
-                a8 += 10;
+            Class350.Method48(a8 - 3, a9 - 3, a6 + 6, a5 + 6, 7);
+            RenderUtils.Method1104(a8 - 3, a9 - 3, a8 + a6 + 3, a9 + a5 + 3, Integer.MIN_VALUE);
+            Class348.Method364(a8 - 3, a9 - 3, a6 + 6, a5 + 6, true);
+            for (int a10 = 0; a10 < a2.Method1799(); ++a10) {
+                String a11 = (String)a2.get(a10);
+                this.fontRendererObj.drawStringWithShadow(a11, (float)a8, (float)a9, -1);
+                a9 += 2;
+                a9 += 10;
             }
         }
     }
@@ -306,8 +306,8 @@ extends GuiScreen {
         if (this.Field3057 && Mouse.getEventDWheel() != 0) {
             Iterator iterator = this.Field3056.Method1383();
             while (iterator.Method932()) {
-                Class381 a = (Class381)iterator.Method933();
-                a.Method1389(this.Field3060, this.Field3061, Mouse.isButtonDown((int)0));
+                Class381 a2 = (Class381)iterator.Method933();
+                a2.Method1389(this.Field3060, this.Field3061, Mouse.isButtonDown((int)0));
             }
             if (this.Method1825() != null) {
                 this.Method1824(null);
@@ -316,13 +316,13 @@ extends GuiScreen {
         super.Method1822();
     }
 
-    public void Method1804(char a, int a2) throws IOException {
-        super.Method1804(a, a2);
+    public void Method1804(char a2, int a3) throws IOException {
+        super.Method1804(a2, a3);
         if (this.Field3057) {
             Iterator iterator = this.Field3056.Method1383();
             while (iterator.Method932()) {
-                Class381 a3 = (Class381)iterator.Method933();
-                a3.Method1390(a, a2);
+                Class381 a4 = (Class381)iterator.Method933();
+                a4.Method1390(a2, a3);
             }
         }
     }
@@ -336,56 +336,56 @@ extends GuiScreen {
         return false;
     }
 
-    public void Method1805(int a, int a2, int a3) throws IOException {
+    public void Method1805(int a2, int a3, int a4) throws IOException {
         block1: {
-            super.Method1805(a, a2, a3);
-            if (this.Method1825() != null && !this.Method1825().Method423(a, a2) && !this.Method1825().Method420()) {
+            super.Method1805(a2, a3, a4);
+            if (this.Method1825() != null && !this.Method1825().Method423(a2, a3) && !this.Method1825().Method420()) {
                 this.Method1824(null);
             }
             if (this.Method1825() == null) break block1;
-            this.Method1825().Method424(a, a2);
+            this.Method1825().Method424(a2, a3);
         }
     }
 
-    protected void Method1823(int a, int a2, int a3, long a4) {
+    protected void Method1823(int a2, int a3, int a4, long a5) {
     }
 
-    protected void Method1811(int a, int a2, int a3) {
+    protected void Method1811(int a2, int a3, int a4) {
         if (this.Method1825() != null) {
             this.Method1825().Method425();
         }
     }
 
-    public void Method1824(Class374 a) {
-        this.Field3062 = a;
+    public void Method1824(Class374 a2) {
+        this.Field3062 = a2;
     }
 
     public Class374 Method1825() {
         return this.Field3062;
     }
 
-    public void Method1826(String a, boolean a2) {
+    public void Method1826(String a2, boolean a3) {
+        Iterator iterator = this.Field3056.Method1383();
+        while (iterator.Method932()) {
+            Class381 a4 = (Class381)iterator.Method933();
+            Iterator iterator2 = a4.Method1399().Method1383();
+            while (iterator2.Method932()) {
+                Class390 a5 = (Class390)iterator2.Method933();
+                if (!a5.Field1922.equals((Object)a2) || !(a5 instanceof Class395)) continue;
+                ((Class395)a5).Method1345(a3);
+            }
+            a4.Method1384();
+        }
+    }
+
+    public boolean Method1827(String a2) {
         Iterator iterator = this.Field3056.Method1383();
         while (iterator.Method932()) {
             Class381 a3 = (Class381)iterator.Method933();
             Iterator iterator2 = a3.Method1399().Method1383();
             while (iterator2.Method932()) {
                 Class390 a4 = (Class390)iterator2.Method933();
-                if (!a4.Field1922.equals((Object)a) || !(a4 instanceof Class395)) continue;
-                ((Class395)a4).Method1345(a2);
-            }
-            a3.Method1384();
-        }
-    }
-
-    public boolean Method1827(String a) {
-        Iterator iterator = this.Field3056.Method1383();
-        while (iterator.Method932()) {
-            Class381 a2 = (Class381)iterator.Method933();
-            Iterator iterator2 = a2.Method1399().Method1383();
-            while (iterator2.Method932()) {
-                Class390 a3 = (Class390)iterator2.Method933();
-                if (!a3.Field1922.equals((Object)a) || !(a3 instanceof Class395) || !((Class395)a3).Method420()) continue;
+                if (!a4.Field1922.equals((Object)a2) || !(a4 instanceof Class395) || !((Class395)a4).Method420()) continue;
                 return true;
             }
         }
@@ -423,12 +423,12 @@ extends GuiScreen {
         return this.Field3057;
     }
 
-    public void Method1808(String a) {
-        this.Field3059 = a;
+    public void Method1808(String a2) {
+        this.Field3059 = a2;
     }
 
-    private static void Method1835(Module a) {
-        a.onDisable();
+    private static void Method1835(Module a2) {
+        a2.idk();
     }
 
     public static void Method1836(int n) {

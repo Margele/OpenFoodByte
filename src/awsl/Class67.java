@@ -10,7 +10,7 @@
 package awsl;
 
 import awsl.Class63;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class67
 extends Class63 {
@@ -100,26 +100,26 @@ extends Class63 {
     }
 
     @Override
-    public void Method3621(String a) {
+    public void Method3621(String a2) {
         String string = Class63.Method3784();
         this.Field655.append('L');
-        this.Field655.append(a);
+        this.Field655.append(a2);
         this.Field658 *= 2;
         String string2 = string;
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class63.Method3783("RfczRc");
         }
     }
 
     @Override
-    public void Method3622(String a) {
+    public void Method3622(String a2) {
         String string = Class63.Method3784();
         this.Method3630();
         String string2 = string;
         this.Field655.append('.');
-        this.Field655.append(a);
+        this.Field655.append(a2);
         this.Field658 *= 2;
-        Class91.Method3647(new String[1]);
+        a.trash(new String[1]);
     }
 
     @Override
@@ -132,13 +132,13 @@ extends Class63 {
     }
 
     @Override
-    public Class63 Method3624(char a) {
+    public Class63 Method3624(char a2) {
         if (this.Field658 % 2 == 0) {
             ++this.Field658;
             this.Field655.append('<');
         }
-        if (a != '=') {
-            this.Field655.append(a);
+        if (a2 != '=') {
+            this.Field655.append(a2);
         }
         return this;
     }

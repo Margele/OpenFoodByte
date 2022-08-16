@@ -77,12 +77,12 @@ extends Module {
                             var3_2 = new ScaledResolution(ShowEntity.mc);
                             var4_3 = System.currentTimeMillis();
                             a = Class492.Method2239();
-                            a = this.Method2277(this.Field2209.Method2744().floatValue(), 0.0f);
+                            a = this.Method2277(this.Field2209.getFloatValue().floatValue(), 0.0f);
                             if (a.entityHit != null && a.entityHit instanceof EntityLivingBase) {
                                 this.Field2213 = (EntityLivingBase)a.entityHit;
                                 this.Field2214 = a;
                             }
-                            if (this.Field2213 == null || this.Field2213.isInvisibleToPlayer((EntityPlayer)ShowEntity.mc.thePlayer) || !((float)(a - this.Field2214) <= 1000.0f * this.Field2210.Method2746())) break block20;
+                            if (this.Field2213 == null || this.Field2213.isInvisibleToPlayer((EntityPlayer)ShowEntity.mc.thePlayer) || !((float)(a - this.Field2214) <= 1000.0f * this.Field2210.getFloatValueCast())) break block20;
                             a = 1.0f;
                             if (this.Field2213.width > a) {
                                 a = this.Field2213.width;

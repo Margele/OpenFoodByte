@@ -17,14 +17,12 @@ package awsl;
 
 import awsl.Class15;
 import awsl.Class224;
-import awsl.Class248;
 import awsl.Class363;
 import awsl.Class422;
 import awsl.Class45;
 import awsl.Class628;
 import awsl.Class632;
 import awsl.Class648;
-import awsl.Class654;
 import awsl.Class673;
 import eventapi.EventManager;
 import java.util.Iterator;
@@ -35,6 +33,8 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
+import trash.foodbyte.event.EventTickUpdate;
+import trash.foodbyte.event.MouseEvent;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.ModuleManager;
@@ -69,7 +69,7 @@ Class45 {
     }
 
     public static void Method1367() {
-        EventManager.Method2686(new Class654());
+        EventManager.call(new EventTickUpdate());
     }
 
     @Class628
@@ -1143,7 +1143,7 @@ Class45 {
         if (Keyboard.getEventKeyState()) {
             int a = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 256 : Keyboard.getEventKey();
             Class632 a2 = new Class632(a);
-            EventManager.Method2686(a2);
+            EventManager.call(a2);
         }
     }
 
@@ -1172,7 +1172,7 @@ Class45 {
 
     public static void Method1374(float a, boolean a2) {
         Class648 a3 = new Class648(a, a2);
-        EventManager.Method2686(a3);
+        EventManager.call(a3);
     }
 
     @Override
@@ -1185,8 +1185,8 @@ Class45 {
     }
 
     public static boolean Method1376() {
-        Class248 a = new Class248();
-        EventManager.Method2686(a);
+        MouseEvent a = new MouseEvent();
+        EventManager.call(a);
         return a.Method2241();
     }
 

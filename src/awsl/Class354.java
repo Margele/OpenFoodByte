@@ -54,7 +54,7 @@ public class Class354 {
     public static void Method93(ItemStack a, Class664 a2, float a3, float a4, float a5) {
         void a6;
         NBTTagList nBTTagList = Class354.Method100(a, a2);
-        int[] a7 = RenderUtils.Method1148();
+        int[] a7 = RenderUtils.trash();
         if (a6.hasNoTags()) {
             a6.appendTag((NBTBase)new NBTTagFloat(a3));
             a6.appendTag((NBTBase)new NBTTagFloat(a4));

@@ -1094,7 +1094,7 @@ Class45 {
     public native void Method1362(Class15 var1, String var2);
 
     public static void Method2181(IBlockState a, BlockPos a2) {
-        EventManager.Method2686(new Class649(a2, a));
+        EventManager.call(new Class649(a2, a));
     }
 
     @Override

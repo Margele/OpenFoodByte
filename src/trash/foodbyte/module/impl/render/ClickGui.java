@@ -31,7 +31,7 @@ extends Module {
     }
 
     @Override
-    public void onDisable() {
+    public void idk() {
         GlobalModule.Field3162.Method2757(GlobalModule.INSTANCE.Field3186 != null && PermissionManager.canUseModule("tp"));
         GlobalModule.Field3173.Method2757(GlobalModule.INSTANCE.Field3186 != null && PermissionManager.canUseModule("tp"));
         GlobalModule.Field3156.Method2757(GlobalModule.INSTANCE.Field3186 != null && PermissionManager.canUseModule("tp"));

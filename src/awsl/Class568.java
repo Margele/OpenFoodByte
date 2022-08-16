@@ -15,9 +15,9 @@ package awsl;
 import awsl.Class290;
 import awsl.Class298;
 import awsl.Class666;
-import awsl.Class91;
 import java.util.Iterator;
 import java.util.Locale;
+import obfuscate.a;
 
 public class Class568 {
     public static String Method1249(String a) {
@@ -72,68 +72,68 @@ public class Class568 {
     /*
      * WARNING - void declaration
      */
-    public static String Method1251(Class298 a) throws Class666 {
+    public static String Method1251(Class298 a2) throws Class666 {
         String string;
         block7: {
-            void a2;
-            String a3;
+            void a3;
+            String a4;
             StringBuilder stringBuilder = new StringBuilder();
-            String a4 = null;
-            int[] a5 = Class666.Method3438();
-            Object a6 = null;
-            Iterator iterator = a.Method2968().Method1383();
+            String a5 = null;
+            int[] a6 = Class666.Method3438();
+            Object a7 = null;
+            Iterator iterator = a2.Method2968().Method1383();
             if (iterator.Method932()) {
-                a3 = (String)iterator.Method933();
-                if ("name".equalsIgnoreCase(a3)) {
-                    a4 = a.Method2963(a3).trim();
+                a4 = (String)iterator.Method933();
+                if ("name".equalsIgnoreCase(a4)) {
+                    a5 = a2.Method2963(a4).trim();
                 }
-                if ("value".equalsIgnoreCase(a3)) {
-                    a6 = a.Method2963(a3).trim();
+                if ("value".equalsIgnoreCase(a4)) {
+                    a7 = a2.Method2963(a4).trim();
                 }
             }
-            if ("".equals((Object)a4.trim())) {
+            if ("".equals((Object)a5.trim())) {
                 throw new Class666("Cookie does not have a name");
             }
-            a6 = "";
-            a2.append(Class568.Method1249(a4));
-            a2.append("=");
-            a2.append(Class568.Method1249((String)a6));
-            iterator = a.Method2968().Method1383();
+            a7 = "";
+            a3.append(Class568.Method1249(a5));
+            a3.append("=");
+            a3.append(Class568.Method1249((String)a7));
+            iterator = a2.Method2968().Method1383();
             while (iterator.Method932()) {
-                a3 = (String)iterator.Method933();
-                if ("name".equalsIgnoreCase(a3)) continue;
-                if ("value".equalsIgnoreCase(a3)) {
+                a4 = (String)iterator.Method933();
+                if ("name".equalsIgnoreCase(a4)) continue;
+                if ("value".equalsIgnoreCase(a4)) {
                 }
-                if ((a6 = a.Method2974(a3)) instanceof Boolean) {
-                    if (!Boolean.TRUE.equals(a6)) break;
-                    a2.append(';').append(Class568.Method1249(a3));
+                if ((a7 = a2.Method2974(a4)) instanceof Boolean) {
+                    if (!Boolean.TRUE.equals(a7)) break;
+                    a3.append(';').append(Class568.Method1249(a4));
                 }
-                a2.append(';').append(Class568.Method1249(a3)).append('=').append(Class568.Method1249(a6.Method3780()));
+                a3.append(';').append(Class568.Method1249(a4)).append('=').append(Class568.Method1249(a7.Method3780()));
                 break;
             }
-            string = a2.toString();
-            if (Class91.Method3648() != null) break block7;
+            string = a3.toString();
+            if (a.trash() != null) break block7;
             Class666.Method85(new int[2]);
         }
         return string;
     }
 
-    public static String Method1252(String a) {
-        int a2 = a.length();
-        StringBuilder a3 = new StringBuilder(a2);
-        for (int a4 = 0; a4 < a2; ++a4) {
-            char a5 = a.charAt(a4);
-            if (a5 == '+') {
-                a5 = ' ';
-            } else if (a5 == '%' && a4 + 2 < a2) {
-                int a6 = Class290.Method2882(a.charAt(a4 + 1));
-                int a7 = Class290.Method2882(a.charAt(a4 + 2));
-                a5 = (char)(a6 * 16 + a7);
-                a4 += 2;
+    public static String Method1252(String a2) {
+        int a3 = a2.length();
+        StringBuilder a4 = new StringBuilder(a3);
+        for (int a5 = 0; a5 < a3; ++a5) {
+            char a6 = a2.charAt(a5);
+            if (a6 == '+') {
+                a6 = ' ';
+            } else if (a6 == '%' && a5 + 2 < a3) {
+                int a7 = Class290.Method2882(a2.charAt(a5 + 1));
+                int a8 = Class290.Method2882(a2.charAt(a5 + 2));
+                a6 = (char)(a7 * 16 + a8);
+                a5 += 2;
             }
-            a3.append(a5);
+            a4.append(a6);
         }
-        return a3.toString();
+        return a4.toString();
     }
 
     private static Class666 Method1253(Class666 class666) {

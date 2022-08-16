@@ -44,7 +44,7 @@ extends Module {
         if (ChinaHat.mc.thePlayer == null || ChinaHat.mc.theWorld == null || ChinaHat.mc.thePlayer.isInvisible() || ChinaHat.mc.thePlayer.isDead) {
             return;
         }
-        if (!this.Field2377.Method2509().booleanValue() && ChinaHat.mc.gameSettings.thirdPersonView == 0) {
+        if (!this.Field2377.getBooleanValue().booleanValue() && ChinaHat.mc.gameSettings.thirdPersonView == 0) {
             return;
         }
         double a4 = ChinaHat.mc.thePlayer.lastTickPosX + (ChinaHat.mc.thePlayer.posX - ChinaHat.mc.thePlayer.lastTickPosX) * (double)a.Field2922 - ChinaHat.mc.getRenderManager().viewerPosX;
@@ -55,7 +55,7 @@ extends Module {
         double a9 = a7.maxX - a7.minX;
         GL11.glPushMatrix();
         GlStateManager.disableCull();
-        if (this.Field2376.Method2509().booleanValue()) {
+        if (this.Field2376.getBooleanValue().booleanValue()) {
             GL11.glDisable((int)2929);
         }
         GL11.glDepthMask((boolean)false);
@@ -65,8 +65,8 @@ extends Module {
         GlStateManager.disableLighting();
         GlStateManager.color((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         OpenGlHelper.glBlendFunc((int)770, (int)771, (int)1, (int)0);
-        float a10 = MathUtils.Method578(ChinaHat.mc.thePlayer.prevRotationYaw, ChinaHat.mc.thePlayer.rotationYaw, a.Field2922).floatValue();
-        float a11 = MathUtils.Method578(ChinaHat.mc.thePlayer.prevRenderArmPitch, ChinaHat.mc.thePlayer.renderArmPitch, a.Field2922).floatValue();
+        float a10 = MathUtils.getMid(ChinaHat.mc.thePlayer.prevRotationYaw, ChinaHat.mc.thePlayer.rotationYaw, a.Field2922).floatValue();
+        float a11 = MathUtils.getMid(ChinaHat.mc.thePlayer.prevRenderArmPitch, ChinaHat.mc.thePlayer.renderArmPitch, a.Field2922).floatValue();
         GL11.glTranslated((double)a4, (double)a5, (double)a6);
         GL11.glEnable((int)2848);
         GL11.glHint((int)3154, (int)4354);
@@ -104,7 +104,7 @@ extends Module {
         GL11.glEnable((int)3553);
         GL11.glShadeModel((int)7424);
         GL11.glDepthMask((boolean)true);
-        if (this.Field2376.Method2509().booleanValue()) {
+        if (this.Field2376.getBooleanValue().booleanValue()) {
             GL11.glEnable((int)2929);
         }
     }

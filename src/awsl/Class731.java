@@ -10,24 +10,24 @@
 package awsl;
 
 import awsl.Class797;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class731
 extends Exception {
-    public final Class91 Field3210;
+    public final a Field3210;
 
-    public Class731(Class91 a, String a2) {
-        super(a2);
-        this.Field3210 = a;
+    public Class731(a a2, String a3) {
+        super(a3);
+        this.Field3210 = a2;
     }
 
-    public Class731(Class91 a, String a2, Throwable a3) {
-        super(a2, a3);
-        this.Field3210 = a;
+    public Class731(a a2, String a3, Throwable a4) {
+        super(a3, a4);
+        this.Field3210 = a2;
     }
 
-    public Class731(Class91 a, String a2, Object a3, Class797 a4) {
-        super("Expected " + a3 + ", but found " + a4);
-        this.Field3210 = a;
+    public Class731(a a2, String a3, Object a4, Class797 a5) {
+        super("Expected " + a4 + ", but found " + a5);
+        this.Field3210 = a2;
     }
 }

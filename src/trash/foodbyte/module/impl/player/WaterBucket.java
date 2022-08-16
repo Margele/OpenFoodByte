@@ -32,7 +32,6 @@ package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
 import awsl.Class627;
-import awsl.Class654;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import eventapi.EventTarget;
@@ -57,9 +56,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldProviderHell;
 import trash.foodbyte.command.impl.TeleportCommand;
 import trash.foodbyte.event.EventRender3D;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 
@@ -78,7 +78,7 @@ extends Module {
     }
 
     @EventTarget(value=4)
-    public void Method801(Class654 a) {
+    public void Method801(EventTickUpdate a2) {
         if (Objects.isNull((Object)WaterBucket.mc.thePlayer) && Objects.isNull((Object)WaterBucket.mc.theWorld) || WaterBucket.mc.thePlayer.worldObj.provider instanceof WorldProviderHell || mc.isGamePaused()) {
             return;
         }
@@ -98,47 +98,47 @@ extends Module {
     }
 
     @EventTarget(value=0)
-    public void Method802(EventRender3D a) {
+    public void Method802(EventRender3D a2) {
         this.position = this.getPosition();
     }
 
     private boolean canPlace() {
-        if (WaterBucket.mc.thePlayer.fallDistance > this.fallCheck.Method2744().floatValue() && !WaterBucket.mc.thePlayer.onGround && WaterBucket.mc.thePlayer.rotationPitch >= 70.0f && this.position.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK && this.position.sideHit == EnumFacing.UP && !WaterBucket.mc.thePlayer.capabilities.isFlying && !WaterBucket.mc.thePlayer.capabilities.isCreativeMode && !this.placed) {
-            Block a = WaterBucket.mc.theWorld.getBlockState(this.position.getBlockPos().up()).getBlock();
-            return a != Blocks.water;
+        if (WaterBucket.mc.thePlayer.fallDistance > this.fallCheck.getFloatValue().floatValue() && !WaterBucket.mc.thePlayer.onGround && WaterBucket.mc.thePlayer.rotationPitch >= 70.0f && this.position.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK && this.position.sideHit == EnumFacing.UP && !WaterBucket.mc.thePlayer.capabilities.isFlying && !WaterBucket.mc.thePlayer.capabilities.isCreativeMode && !this.placed) {
+            Block a2 = WaterBucket.mc.theWorld.getBlockState(this.position.getBlockPos().up()).getBlock();
+            return a2 != Blocks.water;
         }
         return false;
     }
 
     private boolean backWater() {
-        int a = Class148.Method1444();
+        int a2 = Class148.Method1444();
         if (this.isHeldingItem(WaterBucket.mc.thePlayer.getHeldItem(), Items.water_bucket)) {
             this.originItem = WaterBucket.mc.thePlayer.inventory.currentItem;
             return true;
         }
-        int a2 = 0;
-        if (a2 < InventoryPlayer.getHotbarSize()) {
-            if (this.isHeldingItem(WaterBucket.mc.thePlayer.inventory.mainInventory[a2], Items.water_bucket)) {
+        int a3 = 0;
+        if (a3 < InventoryPlayer.getHotbarSize()) {
+            if (this.isHeldingItem(WaterBucket.mc.thePlayer.inventory.mainInventory[a3], Items.water_bucket)) {
                 this.originItem = WaterBucket.mc.thePlayer.inventory.currentItem;
-                WaterBucket.mc.thePlayer.inventory.currentItem = a2;
+                WaterBucket.mc.thePlayer.inventory.currentItem = a3;
                 return true;
             }
-            ++a2;
+            ++a3;
         }
         return false;
     }
 
     private void useItem() {
-        ItemStack a = WaterBucket.mc.thePlayer.getHeldItem();
-        if (this.isHeldingItem(a, Items.water_bucket) && WaterBucket.mc.thePlayer.rotationPitch >= 70.0f && this.position.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK && this.position.sideHit == EnumFacing.UP) {
-            WaterBucket.mc.playerController.sendUseItem((EntityPlayer)WaterBucket.mc.thePlayer, (World)WaterBucket.mc.theWorld, a);
+        ItemStack a2 = WaterBucket.mc.thePlayer.getHeldItem();
+        if (this.isHeldingItem(a2, Items.water_bucket) && WaterBucket.mc.thePlayer.rotationPitch >= 70.0f && this.position.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK && this.position.sideHit == EnumFacing.UP) {
+            WaterBucket.mc.playerController.sendUseItem((EntityPlayer)WaterBucket.mc.thePlayer, (World)WaterBucket.mc.theWorld, a2);
         }
     }
 
     private void placeWater() {
-        ItemStack a = WaterBucket.mc.thePlayer.getHeldItem();
-        if (this.isHeldingItem(a, Items.bucket) && this.recycle.getValue()) {
-            WaterBucket.mc.playerController.sendUseItem((EntityPlayer)WaterBucket.mc.thePlayer, (World)WaterBucket.mc.theWorld, a);
+        ItemStack a2 = WaterBucket.mc.thePlayer.getHeldItem();
+        if (this.isHeldingItem(a2, Items.bucket) && this.recycle.getValue()) {
+            WaterBucket.mc.playerController.sendUseItem((EntityPlayer)WaterBucket.mc.thePlayer, (World)WaterBucket.mc.theWorld, a2);
         }
         if (this.swap.getValue() && this.originItem != WaterBucket.mc.thePlayer.inventory.currentItem) {
             WaterBucket.mc.thePlayer.inventory.currentItem = this.originItem;
@@ -151,44 +151,44 @@ extends Module {
     }
 
     public MovingObjectPosition getPosition() {
-        Entity a = mc.getRenderViewEntity();
-        int a2 = Class148.Method1445();
+        Entity a2 = mc.getRenderViewEntity();
+        int a3 = Class148.Method1445();
         if (WaterBucket.mc.theWorld != null) {
             WaterBucket.mc.mcProfiler.startSection("pick");
-            float a3 = ReflectionUtils.Method2587();
-            double a4 = WaterBucket.mc.playerController.getBlockReachDistance();
-            MovingObjectPosition a5 = a.rayTrace(a4, a3);
-            double a6 = a4;
-            Vec3 a7 = a.getPositionEyes(a3);
-            boolean a8 = false;
-            boolean a9 = true;
+            float a4 = ReflectionUtils.getRenderPartialTicks();
+            double a5 = WaterBucket.mc.playerController.getBlockReachDistance();
+            MovingObjectPosition a6 = a2.rayTrace(a5, a4);
+            double a7 = a5;
+            Vec3 a8 = a2.getPositionEyes(a4);
+            boolean a9 = false;
+            boolean a10 = true;
             if (WaterBucket.mc.playerController.extendedReach()) {
-                a4 = 6.0;
-                a6 = 6.0;
+                a5 = 6.0;
+                a7 = 6.0;
             }
-            if (a4 > 3.0) {
-                a8 = true;
+            if (a5 > 3.0) {
+                a9 = true;
             }
-            a6 = a5.hitVec.distanceTo(a7);
-            Vec3 a10 = a.getLook(a3);
-            Vec3 a11 = a7.addVector(a10.xCoord * a4, a10.yCoord * a4, a10.zCoord * a4);
-            Entity a12 = null;
-            Vec3 a13 = null;
-            float a14 = 1.0f;
-            List a15 = WaterBucket.mc.theWorld.getEntitiesInAABBexcluding(a, a.getEntityBoundingBox().addCoord(a10.xCoord * a4, a10.yCoord * a4, a10.zCoord * a4).expand((double)a14, (double)a14, (double)a14), Predicates.and((Predicate)EntitySelectors.NOT_SPECTATING, Entity::func_70067_L));
-            double a16 = a6;
-            if (a7.distanceTo(a13) > 3.0) {
-                a12 = null;
-                a5 = new MovingObjectPosition(MovingObjectPosition.MovingObjectType.MISS, a13, null, new BlockPos(a13));
+            a7 = a6.hitVec.distanceTo(a8);
+            Vec3 a11 = a2.getLook(a4);
+            Vec3 a12 = a8.addVector(a11.xCoord * a5, a11.yCoord * a5, a11.zCoord * a5);
+            Entity a13 = null;
+            Vec3 a14 = null;
+            float a15 = 1.0f;
+            List a16 = WaterBucket.mc.theWorld.getEntitiesInAABBexcluding(a2, a2.getEntityBoundingBox().addCoord(a11.xCoord * a5, a11.yCoord * a5, a11.zCoord * a5).expand((double)a15, (double)a15, (double)a15), Predicates.and((Predicate)EntitySelectors.NOT_SPECTATING, Entity::func_70067_L));
+            double a17 = a7;
+            if (a8.distanceTo(a14) > 3.0) {
+                a13 = null;
+                a6 = new MovingObjectPosition(MovingObjectPosition.MovingObjectType.MISS, a14, null, new BlockPos(a14));
             }
-            if (!(a16 < a6)) {
+            if (!(a17 < a7)) {
             }
-            a5 = new MovingObjectPosition(a12, a13);
-            if (a12 instanceof EntityLivingBase || a12 instanceof EntityItemFrame) {
+            a6 = new MovingObjectPosition(a13, a14);
+            if (a13 instanceof EntityLivingBase || a13 instanceof EntityItemFrame) {
                 // empty if block
             }
             WaterBucket.mc.mcProfiler.endSection();
-            return a5;
+            return a6;
         }
         return null;
     }
@@ -199,7 +199,7 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         this.placed = false;
     }
 }

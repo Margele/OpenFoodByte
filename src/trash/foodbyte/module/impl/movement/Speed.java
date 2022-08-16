@@ -14,24 +14,24 @@
 package trash.foodbyte.module.impl.movement;
 
 import awsl.Class167;
-import awsl.Class208;
-import awsl.Class345;
-import awsl.Class630;
 import awsl.Class633;
-import awsl.Class653;
-import awsl.Class654;
 import eventapi.EventTarget;
 import net.minecraft.network.play.server.S08PacketPlayerPosLook;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.MathHelper;
 import trash.foodbyte.event.EventMotion;
+import trash.foodbyte.event.EventMove;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventTick;
+import trash.foodbyte.event.EventTickUpdate;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ObfuscatedClasses;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflection.ReflectionsHelper;
+import trash.foodbyte.reflections.ObfuscatedField;
+import trash.foodbyte.reflections.ReflectionUtils;
+import trash.foodbyte.utils.MoveUtils;
 import trash.foodbyte.utils.TimeHelper;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
@@ -45,8 +45,8 @@ extends Module {
     public BooleanValue Field2434 = new BooleanValue("Speed", "Timer Boost", true);
     public BooleanValue Field2435 = new BooleanValue("Speed", "LagBack Check", true);
     public static TimeHelper Field2436 = new TimeHelper();
-    private int Field2437;
-    private double Field2438;
+    private int stage;
+    private double speed;
     private double Field2439;
     private double Field2440;
 
@@ -67,72 +67,72 @@ extends Module {
 
     @Override
     public void onEnable() {
-        this.Field2438 = 0.0;
-        this.Field2437 = 0;
+        this.speed = 0.0;
+        this.stage = 0;
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         ReflectionUtils.setTimerSpeed(1.0f);
     }
 
     @EventTarget
-    public void Method762(Class633 a) {
+    public void Method762(Class633 a2) {
     }
 
     @EventTarget
-    public void Method801(Class654 a) {
+    public void Method801(EventTickUpdate a2) {
     }
 
     @EventTarget
-    public void Method755(Class653 a) {
+    public void Method755(EventTick a2) {
     }
 
     @EventTarget(value=3)
-    public void Method712(EventMotion a) {
+    public void Method712(EventMotion a2) {
         boolean bl = Class167.Method1501();
         this.setDisplayTag(this.Field2431.getMode());
         boolean bl2 = bl;
-        if (a.isPre()) {
-            if (this.Field2433.Method2509().booleanValue() && this.Method713() && !Speed.mc.thePlayer.isSneaking()) {
-                a.setYaw(this.Method276() / ((float)Math.PI / 180));
+        if (a2.isPre()) {
+            if (this.Field2433.getBooleanValue().booleanValue() && this.Method713() && !Speed.mc.thePlayer.isSneaking()) {
+                a2.setYaw(this.Method276() / ((float)Math.PI / 180));
             }
             if (this.Field2431.isCurrentMode("JumpStrafe")) {
-                if (Speed.mc.thePlayer.onGround && Class208.Method2466()) {
-                    Class208.Method2481(Class208.Method2474() - Math.random() / 50.0);
-                    if (Class208.Method2466()) {
-                        if (this.Field2434.Method2509().booleanValue()) {
-                            ReflectionUtils.setTimerSpeed(this.Field2432.Method2744().floatValue());
+                if (Speed.mc.thePlayer.onGround && MoveUtils.isMoving()) {
+                    MoveUtils.setSpeed(MoveUtils.getDefaultSpeed() - Math.random() / 50.0);
+                    if (MoveUtils.isMoving()) {
+                        if (this.Field2434.getBooleanValue().booleanValue()) {
+                            ReflectionUtils.setTimerSpeed(this.Field2432.getFloatValue().floatValue());
                         }
                         Speed.mc.thePlayer.jump();
-                        Speed.mc.thePlayer.motionY = Class208.Method2484(0.39999998688697813);
-                        a.setY(Speed.mc.thePlayer.motionY);
+                        Speed.mc.thePlayer.motionY = MoveUtils.getJumpEffect(0.39999998688697813);
+                        a2.setY(Speed.mc.thePlayer.motionY);
                     }
                     ReflectionUtils.setTimerSpeed(1.0f);
                 }
-                Class208.Method2479();
+                MoveUtils.setHypottedSpeed();
             }
-            if (this.Field2431.isCurrentMode("WatchDog") && Class208.Method2466()) {
+            if (this.Field2431.isCurrentMode("WatchDog") && MoveUtils.isMoving()) {
                 if (Speed.mc.thePlayer.onGround) {
-                    Speed.mc.thePlayer.motionY = Class208.Method2484(0.42f);
-                    this.Field2438 = 0.3323;
+                    Speed.mc.thePlayer.motionY = MoveUtils.getJumpEffect(0.42f);
+                    this.speed = 0.3323;
                     if (Speed.mc.thePlayer.isPotionActive(Potion.moveSpeed)) {
-                        this.Field2438 = 0.465023;
+                        this.speed = 0.465023;
                     }
-                    ReflectionUtils.setTimerSpeed(this.Field2432.Method2744().floatValue());
+                    ReflectionUtils.setTimerSpeed(this.Field2432.getFloatValue().floatValue());
                 }
-                this.Field2438 -= 0.006;
-                Class208.Method2487(this.Field2438);
+                this.speed -= 0.006;
+                MoveUtils.setSpeed2(this.speed);
             }
             if (this.Field2431.isCurrentMode("WatchDogLow")) {
-                if (this.Field2434.Method2509().booleanValue()) {
-                    ReflectionUtils.setTimerSpeed(this.Field2432.Method2744().floatValue());
+                if (this.Field2434.getBooleanValue().booleanValue()) {
+                    ReflectionUtils.setTimerSpeed(this.Field2432.getFloatValue().floatValue());
                 }
-                if (Class208.Method2466() && Speed.mc.thePlayer.onGround) {
+                if (MoveUtils.isMoving() && Speed.mc.thePlayer.onGround) {
                     this.Field2439 = 1.2f;
                     Speed.mc.thePlayer.motionY = 0.31999998688697817;
                 }
-                Class208.Method2487(Class208.Method2478() * (double)0.90151f * this.Field2439);
+                MoveUtils.setSpeed2(MoveUtils.getMoveSpeed() * (double)0.90151f * this.Field2439);
                 if (this.Field2439 > 1.0) {
                     this.Field2439 -= 0.05;
                 }
@@ -141,108 +141,108 @@ extends Module {
     }
 
     private float Method1779() {
-        double a = (Double)Class345.Method340(Speed.mc.thePlayer, new String[]{ObfuscatedClasses.lastReportedPosX.getObfuscatedName()});
-        double a2 = (Double)Class345.Method340(Speed.mc.thePlayer, new String[]{ObfuscatedClasses.lastReportedPosY.getObfuscatedName()}) + (double)Speed.mc.thePlayer.getEyeHeight();
-        double a3 = (Double)Class345.Method340(Speed.mc.thePlayer, new String[]{ObfuscatedClasses.lastReportedPosZ.getObfuscatedName()});
-        double a4 = Speed.mc.thePlayer.posX;
-        double a5 = Speed.mc.thePlayer.posY + (double)Speed.mc.thePlayer.getEyeHeight();
-        double a6 = Speed.mc.thePlayer.posZ;
-        double a7 = a - a4;
+        double a2 = (Double)ReflectionsHelper.getFieldAsObject(Speed.mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosX.getObfuscatedName()});
+        double a3 = (Double)ReflectionsHelper.getFieldAsObject(Speed.mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosY.getObfuscatedName()}) + (double)Speed.mc.thePlayer.getEyeHeight();
+        double a4 = (Double)ReflectionsHelper.getFieldAsObject(Speed.mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosZ.getObfuscatedName()});
+        double a5 = Speed.mc.thePlayer.posX;
+        double a6 = Speed.mc.thePlayer.posY + (double)Speed.mc.thePlayer.getEyeHeight();
+        double a7 = Speed.mc.thePlayer.posZ;
         double a8 = a2 - a5;
         double a9 = a3 - a6;
-        double a10 = Math.sqrt((double)(Math.pow((double)a7, (double)2.0) + Math.pow((double)a9, (double)2.0)));
-        double a11 = Math.toDegrees((double)Math.atan2((double)a9, (double)a7)) + 90.0;
-        double a12 = Math.toDegrees((double)Math.atan2((double)a10, (double)a8));
-        return (float)a11;
+        double a10 = a4 - a7;
+        double a11 = Math.sqrt((double)(Math.pow((double)a8, (double)2.0) + Math.pow((double)a10, (double)2.0)));
+        double a12 = Math.toDegrees((double)Math.atan2((double)a10, (double)a8)) + 90.0;
+        double a13 = Math.toDegrees((double)Math.atan2((double)a11, (double)a9));
+        return (float)a12;
     }
 
     @EventTarget
-    public void Method274(Class630 a) {
-        if (this.Field2431.isCurrentMode("Hypixel") && a.Method3502().booleanValue()) {
-            double a2 = Class208.Method2474();
-            if (Class208.Method2466()) {
-                if (this.Field2434.Method2509().booleanValue() && !Class208.Method2469(0.0) && Speed.mc.thePlayer.ticksExisted > 5) {
-                    ReflectionUtils.setTimerSpeed(this.Field2432.Method2744().floatValue() + Class208.Method2464());
+    public void Method274(EventMove e) {
+        if (this.Field2431.isCurrentMode("Hypixel") && e.isLocalPlayer().booleanValue()) {
+            double a2 = MoveUtils.getDefaultSpeed();
+            if (MoveUtils.isMoving()) {
+                if (this.Field2434.getBooleanValue().booleanValue() && !MoveUtils.isReallyOnGround(0.0) && Speed.mc.thePlayer.ticksExisted > 5) {
+                    ReflectionUtils.setTimerSpeed(this.Field2432.getFloatValue().floatValue() + MoveUtils.getRandomFloat());
                 }
-                if (Class208.Method2467()) {
-                    Speed.mc.thePlayer.motionY = Class208.Method2484(0.42f);
-                    a.Method3507(Speed.mc.thePlayer.motionY);
-                    this.Field2437 = 0;
+                if (MoveUtils.isTouchingWall()) {
+                    Speed.mc.thePlayer.motionY = MoveUtils.getJumpEffect(0.42f);
+                    e.setY(Speed.mc.thePlayer.motionY);
+                    this.stage = 0;
                 }
-                switch (this.Field2437) {
+                switch (this.stage) {
                     case 0: {
-                        this.Field2438 = a2 * 2.15;
+                        this.speed = a2 * 2.15;
                         break;
                     }
                     case 1: {
-                        this.Field2438 *= 0.58;
+                        this.speed *= 0.58;
                         break;
                     }
                     case 4: {
-                        this.Field2438 = a2 * 1.2;
+                        this.speed = a2 * 1.2;
                         break;
                     }
                     default: {
-                        this.Field2438 = this.Field2438 / 100.0 * 98.5;
+                        this.speed = this.speed / 100.0 * 98.5;
                     }
                 }
-                ++this.Field2437;
-                double[] a3 = Class208.Method2476(this.Method276(), Math.max((double)a2, (double)this.Field2438));
-                a.Method3505(a3[0]);
-                a.Method3509(a3[1]);
+                ++this.stage;
+                double[] a3 = MoveUtils.warp(this.Method276(), Math.max((double)a2, (double)this.speed));
+                e.setX(a3[0]);
+                e.setZ(a3[1]);
             } else {
                 ReflectionUtils.setTimerSpeed(1.0f);
                 Speed.mc.thePlayer.motionX = 0.0;
-                a.Method3505(0.0);
+                e.setX(0.0);
                 Speed.mc.thePlayer.motionZ = 0.0;
-                a.Method3509(0.0);
+                e.setZ(0.0);
             }
         }
     }
 
     public float Method276() {
-        float a = Speed.mc.thePlayer.rotationYaw;
+        float a2 = Speed.mc.thePlayer.rotationYaw;
         if (Speed.mc.thePlayer.moveForward < 0.0f) {
-            a += 180.0f;
+            a2 += 180.0f;
         }
-        float a2 = 1.0f;
+        float a3 = 1.0f;
         if (Speed.mc.thePlayer.moveForward < 0.0f) {
-            a2 = -0.5f;
+            a3 = -0.5f;
         } else if (Speed.mc.thePlayer.moveForward > 0.0f) {
-            a2 = 0.5f;
+            a3 = 0.5f;
         }
         if (Speed.mc.thePlayer.moveStrafing > 0.0f) {
-            a -= 90.0f * a2;
+            a2 -= 90.0f * a3;
         }
         if (Speed.mc.thePlayer.moveStrafing < 0.0f) {
-            a += 90.0f * a2;
+            a2 += 90.0f * a3;
         }
-        a = (float)((double)a * 0.017453292);
-        return a;
+        a2 = (float)((double)a2 * 0.017453292);
+        return a2;
     }
 
     private double Method1780() {
         this.Field2440 = Math.toRadians((double)Speed.mc.thePlayer.rotationYaw);
-        boolean a = Class167.Method1501();
-        boolean a2 = Speed.mc.thePlayer.moveForward > 0.0f;
-        boolean a3 = Speed.mc.thePlayer.moveForward < 0.0f;
-        boolean a4 = Speed.mc.thePlayer.moveStrafing > 0.0f;
-        boolean a5 = Speed.mc.thePlayer.moveStrafing < 0.0f;
-        boolean a6 = true;
+        boolean a2 = Class167.Method1501();
+        boolean a3 = Speed.mc.thePlayer.moveForward > 0.0f;
+        boolean a4 = Speed.mc.thePlayer.moveForward < 0.0f;
+        boolean a5 = Speed.mc.thePlayer.moveStrafing > 0.0f;
+        boolean a6 = Speed.mc.thePlayer.moveStrafing < 0.0f;
         boolean a7 = true;
-        double a8 = MathHelper.wrapAngleTo180_double((double)Speed.mc.thePlayer.rotationYaw);
+        boolean a8 = true;
+        double a9 = MathHelper.wrapAngleTo180_double((double)Speed.mc.thePlayer.rotationYaw);
         if (this.Field2440 == Double.NaN) {
-            this.Field2440 = a8;
+            this.Field2440 = a9;
         }
-        double a9 = 45.0;
-        if (Math.abs((double)(a8 - this.Field2440)) > 45.0 && Math.abs((double)(a8 - this.Field2440)) < 315.0) {
-            if (a8 > this.Field2440) {
-                a8 += a9;
+        double a10 = 45.0;
+        if (Math.abs((double)(a9 - this.Field2440)) > 45.0 && Math.abs((double)(a9 - this.Field2440)) < 315.0) {
+            if (a9 > this.Field2440) {
+                a9 += a10;
             }
-            a8 -= a9;
+            a9 -= a10;
         }
-        this.Field2440 = a8;
-        return Math.toRadians((double)a8);
+        this.Field2440 = a9;
+        return Math.toRadians((double)a9);
     }
 
     /*
@@ -258,8 +258,8 @@ extends Module {
     }
 
     @EventTarget
-    public void Method273(EventPacket a) {
-        if (this.Field2435.Method2509().booleanValue() && a.getPacket() instanceof S08PacketPlayerPosLook) {
+    public void Method273(EventPacket a2) {
+        if (this.Field2435.getBooleanValue().booleanValue() && a2.getPacket() instanceof S08PacketPlayerPosLook) {
             this.setState(false);
         }
     }

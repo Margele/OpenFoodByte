@@ -32,9 +32,6 @@
 package trash.foodbyte.module.impl.player;
 
 import awsl.Class148;
-import awsl.Class567;
-import awsl.Class634;
-import awsl.Class667;
 import eventapi.EventTarget;
 import java.lang.reflect.Field;
 import java.util.Random;
@@ -53,9 +50,12 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventUpdate;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.utils.MathUtils;
+import trash.foodbyte.utils.ServerPacketHandler;
+import trash.foodbyte.utils.Servers;
 import trash.foodbyte.value.FloatValue;
 
 public class AutoFish
@@ -93,7 +93,7 @@ extends Module {
     }
 
     @EventTarget
-    public void Method232(Class634 a) {
+    public void Method232(EventUpdate a) {
         block2: {
             block3: {
                 EntityPlayerSP a2;
@@ -108,12 +108,12 @@ extends Module {
                     if (a2.fishEntity == null) break block4;
                     if (this.Field2697 || !a2.fishEntity.isInWater()) break block2;
                     ++this.Field2696;
-                    if (this.Field2696 > this.Field2705.Method2744().longValue() && Math.abs((double)AutoFish.mc.thePlayer.fishEntity.motionY) > 0.02) {
+                    if (this.Field2696 > this.Field2705.getFloatValue().longValue() && Math.abs((double)AutoFish.mc.thePlayer.fishEntity.motionY) > 0.02) {
                         // empty if block
                     }
                     break block2;
                 }
-                if (this.Method713() && a3.theWorld.getTotalWorldTime() > this.Field2699 + this.Field2706.Method2744().longValue()) {
+                if (this.Method713() && a3.theWorld.getTotalWorldTime() > this.Field2699 + this.Field2706.getFloatValue().longValue()) {
                     a3.playerController.sendUseItem((EntityPlayer)a2, (World)a3.theWorld, a2.getHeldItem());
                     this.Field2699 = -1L;
                 }
@@ -133,12 +133,12 @@ extends Module {
     public void Method752(EventMotion a) {
         block1: {
             int a2 = Class148.Method1444();
-            if (a.isPost() && Class567.Field2643 != Class667.SB) {
+            if (a.isPost() && ServerPacketHandler.currentServer != Servers.SB) {
                 return;
             }
             if (AutoFish.mc.thePlayer.fishEntity == null) break block1;
             boolean a3 = AutoFish.mc.thePlayer.ticksExisted % 50 == 0;
-            float a4 = (float)(Math.random() / (90.0 / (80.0 + MathUtils.Method572(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / (80.0 + MathUtils.Method572(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8);
+            float a4 = (float)(Math.random() / (90.0 / (80.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / (80.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8);
             a.setYaw(AutoFish.mc.thePlayer.rotationYaw + 5.0f / a4);
             a.setYaw(AutoFish.mc.thePlayer.rotationYaw - 5.0f / a4);
         }
@@ -246,7 +246,7 @@ extends Module {
 
     private boolean Method1157() {
         EntityFishHook a = AutoFish.mc.thePlayer.fishEntity;
-        return a.motionX == 0.0 && a.motionZ == 0.0 && a.motionY < -0.008 && this.Field2696 > this.Field2705.Method2744().longValue();
+        return a.motionX == 0.0 && a.motionZ == 0.0 && a.motionY < -0.008 && this.Field2696 > this.Field2705.getFloatValue().longValue();
     }
 
     private EntityPlayer Method1158() {

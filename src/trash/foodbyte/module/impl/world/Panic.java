@@ -9,8 +9,8 @@
  */
 package trash.foodbyte.module.impl.world;
 
-import awsl.Class91;
 import java.util.Iterator;
+import obfuscate.a;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.ModuleManager;
@@ -23,21 +23,21 @@ extends Module {
         super("Panic", Category.WORLD);
         this.setDescription("\u4e00\u952e\u5173\u95ed\u6240\u6709\u529f\u80fd");
         int n2 = n;
-        Class91.Method3647(new String[5]);
+        a.trash(new String[5]);
     }
 
     @Override
     public void onEnable() {
         Iterator iterator = ModuleManager.getAllModules().Method1383();
-        int a = FloatValue.Method2450();
+        int a2 = FloatValue.Method2450();
         if (iterator.Method932()) {
-            Module a2 = (Module)iterator.Method933();
-            if (!a2.getState()) {
+            Module a3 = (Module)iterator.Method933();
+            if (!a3.getState()) {
             }
-            a2.setState(false);
+            a3.setState(false);
         }
-        if (Class91.Method3648() == null) {
-            FloatValue.Method2440(++a);
+        if (a.trash() == null) {
+            FloatValue.Method2440(++a2);
         }
     }
 }

@@ -22,7 +22,7 @@ public class TimeHelper {
         return System.nanoTime() / 1000000L - this.last;
     }
 
-    public void Method214() {
+    public void reset() {
         this.last = System.currentTimeMillis();
     }
 
@@ -42,7 +42,7 @@ public class TimeHelper {
         return (float)(this.Method212() - this.last) >= a;
     }
 
-    public boolean Method219(double a) {
+    public boolean isDelayComplete(double a) {
         return (double)(System.currentTimeMillis() - this.last) >= a;
     }
 }

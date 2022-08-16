@@ -22,6 +22,7 @@
  *  net.minecraft.util.ResourceLocation
  *  net.minecraftforge.fml.relauncher.ReflectionHelper
  *  org.lwjgl.input.Mouse
+ *  trash.foodbyte.utils.RenderUtils
  */
 package awsl;
 
@@ -49,10 +50,10 @@ import org.lwjgl.input.Mouse;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.impl.world.UHCFastCraft;
+import trash.foodbyte.reflections.ObfuscatedField;
+import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.utils.MathUtils;
-import trash.foodbyte.utils.ObfuscatedClasses;
 import trash.foodbyte.utils.RenderUtils;
-import trash.foodbyte.utils.Wrapper;
 
 public class Class378
 extends Class379 {
@@ -80,11 +81,11 @@ extends Class379 {
     public void Method476() {
         this.Field1797.clear();
         this.Method478(this.Field1797);
-        int a = 4;
+        int a2 = 4;
         this.Field1796 = 5;
-        this.Field1798 = this.Field1796 * a;
+        this.Field1798 = this.Field1796 * a2;
         this.Field1814 = 82.0f;
-        this.Field1815 = a * 16 + 16;
+        this.Field1815 = a2 * 16 + 16;
     }
 
     @Override
@@ -92,10 +93,10 @@ extends Class379 {
         String string = Class492.Method2239();
         GlStateManager.disableDepth();
         this.Method450();
-        RenderUtils.Method1103(this.Field1806, this.Field1807, this.Field1814, this.Field1812, GlobalModule.Field3143.Method2442());
-        String a = string;
-        RenderUtils.Method1103(this.Field1806, this.Field1807 + this.Field1812, this.Field1814, this.Field1815, Field1833.getRGB());
-        boolean a2 = !this.Field1823.isEmpty();
+        RenderUtils.Method1103((float)this.Field1806, (float)this.Field1807, (float)this.Field1814, (float)this.Field1812, (int)GlobalModule.Field3143.Method2442());
+        String a2 = string;
+        RenderUtils.Method1103((float)this.Field1806, (float)(this.Field1807 + this.Field1812), (float)this.Field1814, (float)this.Field1815, (int)Field1833.getRGB());
+        boolean a3 = !this.Field1823.isEmpty();
         Class565.Field2638.Method1217(this.Field1823, this.Field1806 + this.Field1824, this.Field1807 + this.Field1825, Class681.WHITE.Field2962);
         Class565.Field2636.Method1217(this.Field1816, this.Field1806 + 3.0f + (float)8, this.Field1807 + this.Field1812 / 2.0f - Class565.Field2636.Field2625 / 2.0f, Class681.WHITE.Field2962);
         GlStateManager.enableDepth();
@@ -106,55 +107,55 @@ extends Class379 {
             this.Field1808.fontRendererObj.drawStringWithShadow(Class378.Method482(16631, 12546), this.Field1806 + this.Field1814 / 2.0f - (float)(this.Field1808.fontRendererObj.getStringWidth(Class378.Method482(16550, -24143)) / 2), this.Field1807 + 60.0f + 1.0f, -1);
             return;
         }
-        int a3 = 13;
-        int a4 = (int)((this.Field1814 - (float)(this.Field1796 * 16 + 3)) / 2.0f);
-        int a5 = this.Field1792 / this.Field1798;
-        int a6 = new Color(255, 150, 200, 255).getRGB();
-        int a7 = (int)Math.ceil((double)(this.Field1797.size() / this.Field1798)) + 1;
-        int a8 = 16;
+        int a4 = 13;
+        int a5 = (int)((this.Field1814 - (float)(this.Field1796 * 16 + 3)) / 2.0f);
+        int a6 = this.Field1792 / this.Field1798;
+        int a7 = new Color(255, 150, 200, 255).getRGB();
+        int a8 = (int)Math.ceil((double)(this.Field1797.size() / this.Field1798)) + 1;
+        int a9 = 16;
         this.Field1794 = null;
         if (this.Field1797.size() > 0) {
             RenderHelper.enableGUIStandardItemLighting();
-            int a9 = Math.min((int)(this.Field1797.size() - 1), (int)(a5 * this.Field1798));
-            if (a9 < Math.min((int)this.Field1797.size(), (int)((a5 + 1) * this.Field1798))) {
-                int a10 = (int)(this.Field1806 + 1.0f + (float)a4 + (float)(a8 * (a9 % this.Field1796)));
-                int a11 = (int)(this.Field1807 + (float)a3 + (float)(a8 * (a9 % this.Field1798 / this.Field1796)));
-                ItemStack a12 = (ItemStack)this.Field1797.keySet().toArray()[a9];
-                if (UHCFastCraft.Method2118(this.Field1802) > a10 && UHCFastCraft.Method2118(this.Field1802) < a10 + 16 && UHCFastCraft.Method2119(this.Field1802) > a11 && UHCFastCraft.Method2119(this.Field1802) < a11 + a8) {
-                    RenderUtils.Method1103(a10, a11, a8, a8, new Color(150, 150, 150, 150).getRGB());
-                    this.Field1794 = a12;
+            int a10 = Math.min((int)(this.Field1797.size() - 1), (int)(a6 * this.Field1798));
+            if (a10 < Math.min((int)this.Field1797.size(), (int)((a6 + 1) * this.Field1798))) {
+                int a11 = (int)(this.Field1806 + 1.0f + (float)a5 + (float)(a9 * (a10 % this.Field1796)));
+                int a12 = (int)(this.Field1807 + (float)a4 + (float)(a9 * (a10 % this.Field1798 / this.Field1796)));
+                ItemStack a13 = (ItemStack)this.Field1797.keySet().toArray()[a10];
+                if (UHCFastCraft.Method2118(this.Field1802) > a11 && UHCFastCraft.Method2118(this.Field1802) < a11 + 16 && UHCFastCraft.Method2119(this.Field1802) > a12 && UHCFastCraft.Method2119(this.Field1802) < a12 + a9) {
+                    RenderUtils.Method1103((float)a11, (float)a12, (float)a9, (float)a9, (int)new Color(150, 150, 150, 150).getRGB());
+                    this.Field1794 = a13;
                 }
-                this.Field1808.getRenderItem().renderItemAndEffectIntoGUI(a12, a10, a11);
-                this.Field1808.getRenderItem().renderItemOverlays(this.Field1808.fontRendererObj, a12, a10, a11);
-                ++a9;
+                this.Field1808.getRenderItem().renderItemAndEffectIntoGUI(a13, a11, a12);
+                this.Field1808.getRenderItem().renderItemOverlays(this.Field1808.fontRendererObj, a13, a11, a12);
+                ++a10;
             }
             RenderHelper.disableStandardItemLighting();
         }
         GlStateManager.disableDepth();
-        float a13 = this.Field1801.Method1295() + this.Field1801.Method1297() / 2.0f - 2.0f;
-        float a14 = this.Field1801.Method1296() + this.Field1801.Method1298() / 2.0f;
+        float a14 = this.Field1801.Method1295() + this.Field1801.Method1297() / 2.0f - 2.0f;
+        float a15 = this.Field1801.Method1296() + this.Field1801.Method1298() / 2.0f;
         this.Field1801 = new Class391(this.Field1806 + 2.0f, this.Field1807 + this.Field1815 - 2.0f, 12.0f, 12.0f);
-        RenderUtils.Method1103(this.Field1801.Method1295(), this.Field1801.Method1296(), this.Field1801.Method1297(), this.Field1801.Method1298(), this.Field1791 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442());
+        RenderUtils.Method1103((float)this.Field1801.Method1295(), (float)this.Field1801.Method1296(), (float)this.Field1801.Method1297(), (float)this.Field1801.Method1298(), (int)(this.Field1791 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442()));
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)a13, (float)a14, (float)0.0f);
+        GlStateManager.translate((float)a14, (float)a15, (float)0.0f);
         GlStateManager.rotate((float)180.0f, (float)0.0f, (float)0.0f, (float)1.0f);
-        RenderUtils.Method1085(-3.0, -3.0, 1.0, 0.0, 1.0f, -1);
-        RenderUtils.Method1085(-3.0, 3.0, 1.0, 0.0, 1.0f, -1);
-        GlStateManager.translate((float)(-a13), (float)(-a14), (float)0.0f);
+        RenderUtils.Method1085((double)-3.0, (double)-3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
+        RenderUtils.Method1085((double)-3.0, (double)3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
+        GlStateManager.translate((float)(-a14), (float)(-a15), (float)0.0f);
         GlStateManager.popMatrix();
         this.Field1805 = new Class391(this.Field1806 + this.Field1814 - 14.0f, this.Field1807 + this.Field1815 - 2.0f, 12.0f, 12.0f);
-        RenderUtils.Method1103(this.Field1805.Method1295(), this.Field1805.Method1296(), this.Field1805.Method1297(), this.Field1805.Method1298(), this.Field1803 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442());
-        a13 = this.Field1805.Method1295() + this.Field1805.Method1297() / 2.0f + 2.0f;
-        a14 = this.Field1805.Method1296() + this.Field1805.Method1298() / 2.0f;
+        RenderUtils.Method1103((float)this.Field1805.Method1295(), (float)this.Field1805.Method1296(), (float)this.Field1805.Method1297(), (float)this.Field1805.Method1298(), (int)(this.Field1803 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442()));
+        a14 = this.Field1805.Method1295() + this.Field1805.Method1297() / 2.0f + 2.0f;
+        a15 = this.Field1805.Method1296() + this.Field1805.Method1298() / 2.0f;
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)a13, (float)a14, (float)0.0f);
+        GlStateManager.translate((float)a14, (float)a15, (float)0.0f);
         GlStateManager.rotate((float)0.0f, (float)0.0f, (float)0.0f, (float)1.0f);
-        RenderUtils.Method1085(-3.0, -3.0, 1.0, 0.0, 1.0f, -1);
-        RenderUtils.Method1085(-3.0, 3.0, 1.0, 0.0, 1.0f, -1);
-        GlStateManager.translate((float)(-a13), (float)(-a14), (float)0.0f);
+        RenderUtils.Method1085((double)-3.0, (double)-3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
+        RenderUtils.Method1085((double)-3.0, (double)3.0, (double)1.0, (double)0.0, (float)1.0f, (int)-1);
+        GlStateManager.translate((float)(-a14), (float)(-a15), (float)0.0f);
         GlStateManager.popMatrix();
-        String a15 = a5 + 1 + "/" + ((this.Field1797.size() - 1) / this.Field1798 + 1);
-        this.Field1808.fontRendererObj.drawStringWithShadow(a15, this.Field1806 + this.Field1814 / 2.0f - (float)(this.Field1808.fontRendererObj.getStringWidth(a15) / 2), this.Field1807 + this.Field1815 + 1.0f, -1);
+        String a16 = a6 + 1 + "/" + ((this.Field1797.size() - 1) / this.Field1798 + 1);
+        this.Field1808.fontRendererObj.drawStringWithShadow(a16, this.Field1806 + this.Field1814 / 2.0f - (float)(this.Field1808.fontRendererObj.getStringWidth(a16) / 2), this.Field1807 + this.Field1815 + 1.0f, -1);
         GlStateManager.enableDepth();
     }
 
@@ -165,9 +166,9 @@ extends Class379 {
     @Class628
     public native void Method478(LinkedHashMap var1);
 
-    public Class378(UHCFastCraft a, float a2, float a3, float a4, float a5, float a6, float a7, float a8) {
-        this.Field1802 = a;
-        super(Class378.Method482(16562, -8555), a2, a3, a4, a5, Class378.Method482(16621, 29981), "Y", a6, a7, a8);
+    public Class378(UHCFastCraft a2, float a3, float a4, float a5, float a6, float a7, float a8, float a9) {
+        this.Field1802 = a2;
+        super(Class378.Method482(16562, -8555), a3, a4, a5, a6, Class378.Method482(16621, 29981), "Y", a7, a8, a9);
         this.Field1797 = new LinkedHashMap();
         this.Field1794 = null;
         this.Field1801 = new Class391();
@@ -177,65 +178,65 @@ extends Class379 {
     }
 
     @Override
-    public void Method64(int a, int a2) {
-        super.Method64(a, a2);
+    public void Method64(int a2, int a3) {
+        super.Method64(a2, a3);
     }
 
-    public void Method479(int a, int a2, boolean a3) {
+    public void Method479(int a2, int a3, boolean a4) {
         if (this.Field1795 && Mouse.isCreated()) {
             while (Mouse.next()) {
-                int a4 = Mouse.getEventDWheel();
-                int a5 = this.Field1792 / this.Field1798;
-                this.Field1792 = Math.max((int)0, (int)((a5 - 1) * this.Field1798));
+                int a5 = Mouse.getEventDWheel();
+                int a6 = this.Field1792 / this.Field1798;
+                this.Field1792 = Math.max((int)0, (int)((a6 - 1) * this.Field1798));
             }
         }
     }
 
-    public void Method480(int a, int a2, boolean a3) {
-        this.Field1795 = this.Method459(a, a2);
-        this.Field1791 = MathUtils.Method550(a, a2, this.Field1801) && this.Field1795;
-        this.Field1803 = MathUtils.Method550(a, a2, this.Field1805) && this.Field1795;
+    public void Method480(int a2, int a3, boolean a4) {
+        this.Field1795 = this.Method459(a2, a3);
+        this.Field1791 = MathUtils.Method550(a2, a3, this.Field1801) && this.Field1795;
+        this.Field1803 = MathUtils.Method550(a2, a3, this.Field1805) && this.Field1795;
         if (!this.Field1793 && Mouse.isButtonDown((int)0)) {
             if (this.Field1794 != null) {
                 Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C01PacketChatMessage((String)this.Field1797.get((Object)this.Field1794)));
             }
-            int a4 = this.Field1792 / this.Field1798;
+            int a5 = this.Field1792 / this.Field1798;
             if (this.Field1791) {
-                this.Field1792 = Math.max((int)0, (int)((a4 - 1) * this.Field1798));
+                this.Field1792 = Math.max((int)0, (int)((a5 - 1) * this.Field1798));
             }
             if (this.Field1803) {
-                this.Field1792 = Math.min((int)(this.Field1797.size() - 1), (int)((a4 + 1) * this.Field1798));
+                this.Field1792 = Math.min((int)(this.Field1797.size() - 1), (int)((a5 + 1) * this.Field1798));
             }
         }
-        this.Field1793 = a3;
+        this.Field1793 = a4;
     }
 
     @Override
-    public boolean Method456(int a, int a2, boolean a3) {
-        boolean a4;
+    public boolean Method456(int a2, int a3, boolean a4) {
+        boolean a5;
         boolean bl = false;
-        String a5 = Class492.Method2239();
-        if (this.Method458(a, a2)) {
+        String a6 = Class492.Method2239();
+        if (this.Method458(a2, a3)) {
             if (!this.Field1793) {
-                a4 = true;
+                a5 = true;
             }
-            boolean a6 = RenderUtils.Method1096(a, a2, this.Field1806, this.Field1807, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812);
-            boolean a7 = RenderUtils.Method1096(a, a2, this.Field1806 + this.Field1814 - 8.0f, this.Field1807 + this.Field1812 + this.Field1815 - 8.0f, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812 + this.Field1815);
+            boolean a7 = RenderUtils.Method1096((float)a2, (float)a3, (float)this.Field1806, (float)this.Field1807, (float)(this.Field1806 + this.Field1814), (float)(this.Field1807 + this.Field1812));
+            boolean a8 = RenderUtils.Method1096((float)a2, (float)a3, (float)(this.Field1806 + this.Field1814 - 8.0f), (float)(this.Field1807 + this.Field1812 + this.Field1815 - 8.0f), (float)(this.Field1806 + this.Field1814), (float)(this.Field1807 + this.Field1812 + this.Field1815));
             if (!this.Field1793) {
                 this.Field1811 = true;
                 this.Field1827 = System.currentTimeMillis();
-                this.Field1809 = (float)a - this.Field1806;
-                this.Field1810 = (float)a2 - this.Field1807;
+                this.Field1809 = (float)a2 - this.Field1806;
+                this.Field1810 = (float)a3 - this.Field1807;
             }
             this.Field1811 = false;
             if (this.Field1817 && !this.Field1793) {
                 this.Field1822 = true;
                 this.Field1827 = System.currentTimeMillis();
-                this.Field1809 = a;
-                this.Field1810 = a2;
+                this.Field1809 = a2;
+                this.Field1810 = a3;
             }
             this.Field1822 = false;
-            this.Method480(a, a2, a3);
+            this.Method480(a2, a3, a4);
         }
         if (this.Field1811) {
             this.Field1811 = false;
@@ -244,27 +245,27 @@ extends Class379 {
             this.Field1822 = false;
         }
         this.Method457();
-        this.Field1793 = a3;
-        return a4;
+        this.Field1793 = a4;
+        return a5;
     }
 
-    public ItemStack Method481(String a) {
+    public ItemStack Method481(String a2) {
         block3: {
             try {
-                Item a2;
-                a = a.replace('&', '\u00a7');
-                Item a3 = a2 = new Item();
-                String[] a4 = null;
-                boolean a5 = true;
-                boolean a6 = false;
-                int a7 = 0;
-                if (a7 > Math.min((int)12, (int)(a.length() - 2))) break block3;
-                a4 = a.substring(a7).split(Pattern.quote((String)" "));
-                ResourceLocation a8 = new ResourceLocation(a4[0]);
-                a2 = (Item)Item.itemRegistry.getObject((Object)a8);
+                Item a3;
+                a2 = a2.replace('&', '\u00a7');
+                Item a4 = a3 = new Item();
+                String[] a5 = null;
+                boolean a6 = true;
+                boolean a7 = false;
+                int a8 = 0;
+                if (a8 > Math.min((int)12, (int)(a2.length() - 2))) break block3;
+                a5 = a2.substring(a8).split(Pattern.quote((String)" "));
+                ResourceLocation a9 = new ResourceLocation(a5[0]);
+                a3 = (Item)Item.itemRegistry.getObject((Object)a9);
             }
-            catch (Exception a9) {
-                a9.printStackTrace();
+            catch (Exception a10) {
+                a10.printStackTrace();
                 return null;
             }
         }
@@ -1319,15 +1320,15 @@ extends Class379 {
         return Field1800[n3];
     }
 
-    public Slot Method483(GuiContainer a) {
-        Slot a2 = null;
+    public Slot Method483(GuiContainer a2) {
+        Slot a3 = null;
         try {
-            a2 = (Slot)ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedClasses.theSlot.getObfuscatedName()}).get((Object)a);
+            a3 = (Slot)ReflectionHelper.findField(GuiContainer.class, (String[])new String[]{ObfuscatedField.theSlot.getObfuscatedName()}).get((Object)a2);
         }
         catch (Exception exception) {
             // empty catch block
         }
-        return a2;
+        return a3;
     }
 
     @Override

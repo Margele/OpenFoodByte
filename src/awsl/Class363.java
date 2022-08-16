@@ -58,7 +58,6 @@ import awsl.Class652;
 import awsl.Class655;
 import awsl.Class681;
 import awsl.Class707;
-import awsl.Class749;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.mojang.authlib.GameProfile;
@@ -118,7 +117,8 @@ import trash.foodbyte.module.impl.render.NoFov;
 import trash.foodbyte.module.impl.render.NoHurtcam;
 import trash.foodbyte.module.impl.render.Perspective;
 import trash.foodbyte.module.impl.render.ViewClip;
-import trash.foodbyte.utils.ReflectionUtils;
+import trash.foodbyte.reflections.ReflectionUtils;
+import trash.foodbyte.utils.PlayerUtils;
 import trash.foodbyte.utils.RenderUtils;
 
 public class Class363 {
@@ -180,7 +180,7 @@ public class Class363 {
     }
 
     public static boolean Method592() {
-        return GlobalModule.Field3153.Method2509();
+        return GlobalModule.Field3153.getBooleanValue();
     }
 
     public static void Method593(RenderManager a, float a2) {
@@ -193,7 +193,7 @@ public class Class363 {
     }
 
     public static boolean Method595() {
-        return GlobalModule.Field3174.Method2509();
+        return GlobalModule.Field3174.getBooleanValue();
     }
 
     public static float Method596(Entity a) {
@@ -1274,15 +1274,15 @@ public class Class363 {
     public static native void Method600(BlockPos var0);
 
     public static void Method601() {
-        if (GlobalModule.Field3146.Method2509().booleanValue()) {
+        if (GlobalModule.Field3146.getBooleanValue().booleanValue()) {
             GL11.glPushMatrix();
         }
     }
 
     public static boolean Method602(EntityLivingBase a) {
         NameTag a2 = (NameTag)ModuleManager.getModule(NameTag.class);
-        if (a2.Field2223.Method2509().booleanValue()) {
-            return a2.getState() && a2.Method965(a) && !AntiBot.Field2577.contains((Object)a) && a != Class363.Field1715.thePlayer;
+        if (a2.Field2223.getBooleanValue().booleanValue()) {
+            return a2.getState() && a2.Method965(a) && !AntiBot.botList.contains((Object)a) && a != Class363.Field1715.thePlayer;
         }
         return false;
     }
@@ -1311,13 +1311,13 @@ public class Class363 {
                     block13: {
                         Vec3 a11;
                         a10 = Field1715.getRenderViewEntity();
-                        int[] a12 = RenderUtils.Method1148();
+                        int[] a12 = RenderUtils.trash();
                         if (Class363.Field1715.theWorld == null) break block11;
                         Class363.Field1715.mcProfiler.startSection(Class363.Method598(-7091, 12151));
                         Class363.Field1715.pointedEntity = null;
                         a6 = (Reach)ModuleManager.getModule(Reach.class);
                         double a13 = a6.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a6.Method798() : (double)Class363.Field1715.playerController.getBlockReachDistance();
-                        Class363.Field1715.objectMouseOver = a10.rayTrace(a6.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a6.Field2488.Method2744().floatValue() : a13, a);
+                        Class363.Field1715.objectMouseOver = a10.rayTrace(a6.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a6.Field2488.getFloatValue().floatValue() : a13, a);
                         a5 = a13;
                         a4 = a10.getPositionEyes(a);
                         boolean a14 = false;
@@ -1347,7 +1347,7 @@ public class Class363 {
                         if (!iterator.Method932()) break block12;
                         a9 = (Entity)iterator.Method933();
                         HitBox a18 = (HitBox)ModuleManager.getModule(HitBox.class);
-                        float a19 = a18.getState() && a18.Method1187(a9) ? a18.Field2607.Method2744().floatValue() : a9.getCollisionBorderSize();
+                        float a19 = a18.getState() && a18.Method1187(a9) ? a18.Field2607.getFloatValue().floatValue() : a9.getCollisionBorderSize();
                         AxisAlignedBB a20 = a9.getEntityBoundingBox().expand((double)a19, (double)a19, (double)a19);
                         a8 = a20.calculateIntercept(a4, a15);
                         if (!a20.isVecInside(a4)) break block13;
@@ -1427,7 +1427,7 @@ public class Class363 {
     }
 
     public static void Method608(GuiScreen a) {
-        EventManager.Method2686(new Class655(a));
+        EventManager.call(new Class655(a));
         if (Objects.isNull((Object)a) && GuiChest.class.Method3429((Object)Field1716)) {
             Field1723 = System.currentTimeMillis();
             Field1716 = null;
@@ -1455,15 +1455,15 @@ public class Class363 {
 
     public static void Method612() {
         GlStateManager.pushMatrix();
-        EventRender3D a = new EventRender3D(ReflectionUtils.Method2587());
-        EventManager.Method2686(a);
+        EventRender3D a2 = new EventRender3D(ReflectionUtils.getRenderPartialTicks());
+        EventManager.call(a2);
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         GlStateManager.popMatrix();
     }
 
     public static boolean Method613() {
-        ItemRender a = (ItemRender)ModuleManager.getModule(ItemRender.class);
-        if (a.getState() && a.Field2374.isCurrentMode(Class363.Method598(-7097, -24298))) {
+        ItemRender a2 = (ItemRender)ModuleManager.getModule(ItemRender.class);
+        if (a2.getState() && a2.Field2374.isCurrentMode(Class363.Method598(-7097, -24298))) {
             GL11.glRotatef((float)(-Class363.Field1715.getRenderManager().playerViewY), (float)0.0f, (float)1.0f, (float)0.0f);
             GL11.glRotatef((float)(Class363.Field1715.gameSettings.thirdPersonView == 2 ? -Class363.Field1715.getRenderManager().playerViewX : Class363.Field1715.getRenderManager().playerViewX), (float)1.0f, (float)0.0f, (float)0.0f);
             GlStateManager.rotate((float)180.0f, (float)0.0f, (float)1.0f, (float)0.0f);
@@ -1476,9 +1476,9 @@ public class Class363 {
         return ModuleManager.getModule(KeepSprint.class).getState();
     }
 
-    public static float Method615(Entity a) {
-        if (!a.equals((Object)Class363.Field1715.thePlayer)) {
-            return a.prevRotationPitch;
+    public static float Method615(Entity a2) {
+        if (!a2.equals((Object)Class363.Field1715.thePlayer)) {
+            return a2.prevRotationPitch;
         }
         return Perspective.Field2203 ? Perspective.Field2201 : Class363.Field1715.thePlayer.prevRotationPitch;
     }
@@ -1488,7 +1488,7 @@ public class Class363 {
     }
 
     public static boolean Method617() {
-        return GlobalModule.Field3158.Method2509();
+        return GlobalModule.Field3158.getBooleanValue();
     }
 
     public static ResourceLocation Method618() {
@@ -1496,112 +1496,112 @@ public class Class363 {
     }
 
     public static boolean Method619() {
-        return Class363.Method616() && NameProtect.Field2717.Method2509() != false;
+        return Class363.Method616() && NameProtect.Field2717.getBooleanValue() != false;
     }
 
-    protected static float Method620(float a, float a2, float a3) {
-        float a4;
-        for (a4 = a2 - a; a4 < -180.0f; a4 += 360.0f) {
+    protected static float Method620(float a2, float a3, float a4) {
+        float a5;
+        for (a5 = a3 - a2; a5 < -180.0f; a5 += 360.0f) {
         }
-        while (a4 >= 180.0f) {
-            a4 -= 360.0f;
+        while (a5 >= 180.0f) {
+            a5 -= 360.0f;
         }
-        return a + a3 * a4;
+        return a2 + a4 * a5;
     }
 
     public static boolean Method621() {
-        return GlobalModule.Field3160.Method2509();
+        return GlobalModule.Field3160.getBooleanValue();
     }
 
-    public static MovingObjectPosition Method622(float a) {
-        Entity a2 = Field1715.getRenderViewEntity();
-        MovingObjectPosition a3 = null;
+    public static MovingObjectPosition Method622(float a2) {
+        Entity a3 = Field1715.getRenderViewEntity();
+        MovingObjectPosition a4 = null;
         if (Class363.Field1715.theWorld != null) {
-            Vec3 a4;
+            Vec3 a5;
             Class363.Field1715.pointedEntity = null;
-            Reach a5 = (Reach)ModuleManager.getModule(Reach.class);
-            double a6 = a5.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a5.Method798() : (double)Class363.Field1715.playerController.getBlockReachDistance();
-            Class363.Field1715.objectMouseOver = a2.rayTrace(a5.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a5.Field2488.Method2744().floatValue() : a6, a);
-            double a7 = a6;
-            Vec3 a8 = a2.getPositionEyes(a);
-            boolean a9 = false;
+            Reach a6 = (Reach)ModuleManager.getModule(Reach.class);
+            double a7 = a6.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a6.Method798() : (double)Class363.Field1715.playerController.getBlockReachDistance();
+            Class363.Field1715.objectMouseOver = a3.rayTrace(a6.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a6.Field2488.getFloatValue().floatValue() : a7, a2);
+            double a8 = a7;
+            Vec3 a9 = a3.getPositionEyes(a2);
+            boolean a10 = false;
             if (Class363.Field1715.playerController.extendedReach()) {
-                a6 = 6.0;
                 a7 = 6.0;
-            } else if (a6 > 3.0) {
-                a9 = true;
+                a8 = 6.0;
+            } else if (a7 > 3.0) {
+                a10 = true;
             }
             if (Class363.Field1715.objectMouseOver != null) {
-                a7 = Class363.Field1715.objectMouseOver.hitVec.distanceTo(a8);
+                a8 = Class363.Field1715.objectMouseOver.hitVec.distanceTo(a9);
             }
-            if (a5.getState() && !Class363.Field1715.playerController.extendedReach()) {
-                a7 = a5.Method276();
-                a4 = a2.rayTrace(a7, a);
-                a7 = a4.hitVec.distanceTo(a8);
+            if (a6.getState() && !Class363.Field1715.playerController.extendedReach()) {
+                a8 = a6.Method276();
+                a5 = a3.rayTrace(a8, a2);
+                a8 = a5.hitVec.distanceTo(a9);
             }
-            a4 = a2.getLook(a);
-            Vec3 a10 = a8.addVector(a4.xCoord * a6, a4.yCoord * a6, a4.zCoord * a6);
-            Entity a11 = null;
-            Vec3 a12 = null;
-            float a13 = 1.0f;
-            List a14 = Class363.Field1715.theWorld.getEntitiesInAABBexcluding(a2, a2.getEntityBoundingBox().addCoord(a4.xCoord * a6, a4.yCoord * a6, a4.zCoord * a6).expand((double)a13, (double)a13, (double)a13), Predicates.and((Predicate)EntitySelectors.NOT_SPECTATING, Class363::Method607));
-            double a15 = a7;
-            Iterator iterator = a14.Method1383();
+            a5 = a3.getLook(a2);
+            Vec3 a11 = a9.addVector(a5.xCoord * a7, a5.yCoord * a7, a5.zCoord * a7);
+            Entity a12 = null;
+            Vec3 a13 = null;
+            float a14 = 1.0f;
+            List a15 = Class363.Field1715.theWorld.getEntitiesInAABBexcluding(a3, a3.getEntityBoundingBox().addCoord(a5.xCoord * a7, a5.yCoord * a7, a5.zCoord * a7).expand((double)a14, (double)a14, (double)a14), Predicates.and((Predicate)EntitySelectors.NOT_SPECTATING, Class363::Method607));
+            double a16 = a8;
+            Iterator iterator = a15.Method1383();
             while (iterator.Method932()) {
-                Entity a16 = (Entity)iterator.Method933();
-                HitBox a17 = (HitBox)ModuleManager.getModule(HitBox.class);
-                float a18 = a17.Method1187(a16) ? a17.Field2607.Method2744().floatValue() : a16.getCollisionBorderSize();
-                AxisAlignedBB a19 = a16.getEntityBoundingBox().expand((double)a18, (double)a18, (double)a18);
-                MovingObjectPosition a20 = a19.calculateIntercept(a8, a10);
-                if (a19.isVecInside(a8)) {
-                    if (!(a15 >= 0.0)) continue;
-                    a11 = a16;
-                    a12 = a8;
-                    a15 = 0.0;
+                Entity a17 = (Entity)iterator.Method933();
+                HitBox a18 = (HitBox)ModuleManager.getModule(HitBox.class);
+                float a19 = a18.Method1187(a17) ? a18.Field2607.getFloatValue().floatValue() : a17.getCollisionBorderSize();
+                AxisAlignedBB a20 = a17.getEntityBoundingBox().expand((double)a19, (double)a19, (double)a19);
+                MovingObjectPosition a21 = a20.calculateIntercept(a9, a11);
+                if (a20.isVecInside(a9)) {
+                    if (!(a16 >= 0.0)) continue;
+                    a12 = a17;
+                    a13 = a9;
+                    a16 = 0.0;
                     continue;
                 }
-                double a21 = a8.distanceTo(a20.hitVec);
-                if (!(a21 < a15) && a15 != 0.0) continue;
-                if (a16 == a2.ridingEntity) {
-                    if (a15 != 0.0) continue;
-                    a11 = a16;
-                    a12 = a20.hitVec;
+                double a22 = a9.distanceTo(a21.hitVec);
+                if (!(a22 < a16) && a16 != 0.0) continue;
+                if (a17 == a3.ridingEntity) {
+                    if (a16 != 0.0) continue;
+                    a12 = a17;
+                    a13 = a21.hitVec;
                     continue;
                 }
-                a11 = a16;
-                a12 = a20.hitVec;
-                a15 = a21;
+                a12 = a17;
+                a13 = a21.hitVec;
+                a16 = a22;
             }
-            double d = a8.distanceTo(a12);
-            double d2 = a5.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a5.Method276() : 3.0;
+            double d = a9.distanceTo(a13);
+            double d2 = a6.getState() && !Class363.Field1715.playerController.extendedReach() ? (double)a6.Method276() : 3.0;
             if (d > d2) {
-                a11 = null;
-                a3 = new MovingObjectPosition(MovingObjectPosition.MovingObjectType.MISS, a12, null, new BlockPos(a12));
+                a12 = null;
+                a4 = new MovingObjectPosition(MovingObjectPosition.MovingObjectType.MISS, a13, null, new BlockPos(a13));
             }
-            if (a15 < a7 || Class363.Field1715.objectMouseOver == null) {
-                a3 = new MovingObjectPosition(a11, a12);
-                if (a11 instanceof EntityLivingBase || a11 instanceof EntityItemFrame) {
-                    Class363.Field1715.pointedEntity = a11;
+            if (a16 < a8 || Class363.Field1715.objectMouseOver == null) {
+                a4 = new MovingObjectPosition(a12, a13);
+                if (a12 instanceof EntityLivingBase || a12 instanceof EntityItemFrame) {
+                    Class363.Field1715.pointedEntity = a12;
                 }
             }
         }
-        return a3;
+        return a4;
     }
 
     public static float Method623() {
-        float a = NoFov.Field2239.Method2744().floatValue();
-        if (Class363.Field1715.thePlayer.isUsingItem() && Class363.Field1715.thePlayer.getItemInUse().getItem() == Items.bow && NoFov.Field2240.Method2509().booleanValue()) {
-            int a2 = Class363.Field1715.thePlayer.getItemInUseDuration();
-            float a3 = (float)a2 / 20.0f;
-            a3 = a3 > 1.0f ? 1.0f : (a3 *= a3);
-            a *= 1.0f - a3 * 0.15f;
+        float a2 = NoFov.Field2239.getFloatValue().floatValue();
+        if (Class363.Field1715.thePlayer.isUsingItem() && Class363.Field1715.thePlayer.getItemInUse().getItem() == Items.bow && NoFov.Field2240.getBooleanValue().booleanValue()) {
+            int a3 = Class363.Field1715.thePlayer.getItemInUseDuration();
+            float a4 = (float)a3 / 20.0f;
+            a4 = a4 > 1.0f ? 1.0f : (a4 *= a4);
+            a2 *= 1.0f - a4 * 0.15f;
         }
-        return a;
+        return a2;
     }
 
-    public static void Method624(int a, int a2) {
-        if (!GlobalModule.Field3171.Method2509().booleanValue() || Class363.Method626()) {
-            Mouse.setCursorPosition((int)a, (int)a2);
+    public static void Method624(int a2, int a3) {
+        if (!GlobalModule.Field3171.getBooleanValue().booleanValue() || Class363.Method626()) {
+            Mouse.setCursorPosition((int)a2, (int)a3);
             Mouse.setGrabbed((boolean)false);
         }
     }
@@ -1616,31 +1616,31 @@ public class Class363 {
         return System.currentTimeMillis() - Field1723 > 200L;
     }
 
-    public static void Method627(Object a) {
-        if (a.Method3429((Object)Minecraft.getMinecraft().thePlayer) && a instanceof AbstractClientPlayer && GlobalModule.Field3187.Method2509().booleanValue()) {
+    public static void Method627(Object a2) {
+        if (a2.Method3429((Object)Minecraft.getMinecraft().thePlayer) && a2 instanceof AbstractClientPlayer && GlobalModule.Field3187.getBooleanValue().booleanValue()) {
             Class346.Method305((AbstractClientPlayer)Minecraft.getMinecraft().thePlayer, Class393.Field1937);
-        } else if (a.Method3429((Object)Minecraft.getMinecraft().thePlayer) && a instanceof AbstractClientPlayer) {
+        } else if (a2.Method3429((Object)Minecraft.getMinecraft().thePlayer) && a2 instanceof AbstractClientPlayer) {
             Class346.Method305((AbstractClientPlayer)Minecraft.getMinecraft().thePlayer, null);
         }
     }
 
     public static void Method628() {
-        if (GlobalModule.Field3146.Method2509().booleanValue()) {
+        if (GlobalModule.Field3146.getBooleanValue().booleanValue()) {
             GL11.glPopMatrix();
         }
     }
 
-    public static float Method629(float a, float a2, float a3, float a4, int a5) {
-        float a6 = EventMotion.Field2892;
-        float a7 = EventMotion.Field2893;
-        float a8 = EventMotion.Field2894;
-        float a9 = EventMotion.Field2895;
-        a = Class363.Method620(a8, a6, a4);
-        float a10 = Class363.Method620(a8, a6, a4) - a;
-        float a11 = Class363.Method620(a9, a7, a4);
-        a2 = a10;
+    public static float Method629(float a2, float a3, float a4, float a5, int a6) {
+        float a7 = EventMotion.Field2892;
+        float a8 = EventMotion.Field2893;
+        float a9 = EventMotion.Field2894;
+        float a10 = EventMotion.Field2895;
+        a2 = Class363.Method620(a9, a7, a5);
+        float a11 = Class363.Method620(a9, a7, a5) - a2;
+        float a12 = Class363.Method620(a10, a8, a5);
         a3 = a11;
-        return a;
+        a4 = a12;
+        return a2;
     }
 
     public static boolean Method630() {
@@ -1649,12 +1649,12 @@ public class Class363 {
                 return true;
             }
             Class363.Field1715.mouseHelper.mouseXYChange();
-            float a = Class363.Field1715.gameSettings.mouseSensitivity * 0.6f + 0.2f;
-            float a2 = a * a * a * 8.0f;
-            float a3 = (float)Class363.Field1715.mouseHelper.deltaX * a2;
-            float a4 = (float)Class363.Field1715.mouseHelper.deltaY * a2;
-            Perspective.Field2200 += a3 * 0.15f;
-            Perspective.Field2201 += a4 * 0.15f;
+            float a2 = Class363.Field1715.gameSettings.mouseSensitivity * 0.6f + 0.2f;
+            float a3 = a2 * a2 * a2 * 8.0f;
+            float a4 = (float)Class363.Field1715.mouseHelper.deltaX * a3;
+            float a5 = (float)Class363.Field1715.mouseHelper.deltaY * a3;
+            Perspective.Field2200 += a4 * 0.15f;
+            Perspective.Field2201 += a5 * 0.15f;
             if (Perspective.Field2201 > 90.0f) {
                 Perspective.Field2201 = 90.0f;
             }
@@ -1665,54 +1665,54 @@ public class Class363 {
         return false;
     }
 
-    public static float Method631(Object a) {
-        Entity a2 = (Entity)a;
-        HitBox a3 = (HitBox)ModuleManager.getModule2(HitBox.class);
-        return a3.Method1187(a2) ? a3.Field2607.Method2744().floatValue() : 0.1f;
+    public static float Method631(Object a2) {
+        Entity a3 = (Entity)a2;
+        HitBox a4 = (HitBox)ModuleManager.getModule2(HitBox.class);
+        return a4.Method1187(a3) ? a4.Field2607.getFloatValue().floatValue() : 0.1f;
     }
 
     public static boolean Method632() {
-        return GlobalModule.Field3148.Method2509() != false && Class749.Method1608();
+        return GlobalModule.Field3148.getBooleanValue() != false && PlayerUtils.getDistanceToFall();
     }
 
-    private static boolean Method633(Entity a) {
-        return a.canBeCollidedWith();
+    private static boolean Method633(Entity a2) {
+        return a2.canBeCollidedWith();
     }
 
-    public static void Method634(EntityLivingBase a, boolean a2) {
-        Class645 a3 = new Class645(a, a2);
-        EventManager.Method2686(a3);
+    public static void Method634(EntityLivingBase a2, boolean a3) {
+        Class645 a4 = new Class645(a2, a3);
+        EventManager.call(a4);
     }
 
     public static boolean Method635() {
-        return !Class363.Field1715.playerController.getIsHittingBlock() || GlobalModule.Field3184.Method2509() != false;
+        return !Class363.Field1715.playerController.getIsHittingBlock() || GlobalModule.Field3184.getBooleanValue() != false;
     }
 
-    public static boolean Method636(Object a) {
-        return a instanceof EntityPlayerSP && ModuleManager.getModule(KillAura.class).getState() && ((KillAura)ModuleManager.getModule2(KillAura.class)).Field2521.Method2509() != false && KillAura.Field2524 != null;
+    public static boolean Method636(Object a2) {
+        return a2 instanceof EntityPlayerSP && ModuleManager.getModule(KillAura.class).getState() && ((KillAura)ModuleManager.getModule2(KillAura.class)).Field2521.getBooleanValue() != false && KillAura.target != null;
     }
 
     public static boolean Method637() {
-        return !Class363.Field1715.thePlayer.isUsingItem() || GlobalModule.Field3184.Method2509() != false;
+        return !Class363.Field1715.thePlayer.isUsingItem() || GlobalModule.Field3184.getBooleanValue() != false;
     }
 
-    public static void Method638(Object a) {
-        EventManager.Method2686(new Class652((BlockPos)a));
+    public static void Method638(Object a2) {
+        EventManager.call(new Class652((BlockPos)a2));
     }
 
     public static boolean Method639() {
         return ModuleManager.getModule(Reach.class).getState();
     }
 
-    public static String Method640(String a) {
-        String a2 = a;
+    public static String Method640(String a2) {
+        String a3 = a2;
         if (Objects.isNull((Object)Class363.Field1715.thePlayer) || !Class363.Method616()) {
-            return a2;
+            return a3;
         }
-        if (Class363.Method616() && Objects.nonNull((Object)a2)) {
-            a2 = a2.replace((CharSequence)Class363.Field1715.thePlayer.getName(), (CharSequence)(Objects.nonNull((Object)GlobalModule.fakeName) ? GlobalModule.fakeName : GlobalModule.Field3149));
+        if (Class363.Method616() && Objects.nonNull((Object)a3)) {
+            a3 = a3.replace((CharSequence)Class363.Field1715.thePlayer.getName(), (CharSequence)(Objects.nonNull((Object)GlobalModule.fakeName) ? GlobalModule.fakeName : GlobalModule.Field3149));
         }
-        return a2;
+        return a3;
     }
 
     public static boolean Method641() {
@@ -1730,8 +1730,8 @@ public class Class363 {
 
     public static void Method643() {
         GlStateManager.pushMatrix();
-        EventRender2D a = new EventRender2D(ReflectionUtils.Method2587());
-        EventManager.Method2686(a);
+        EventRender2D a2 = new EventRender2D(ReflectionUtils.getRenderPartialTicks());
+        EventManager.call(a2);
         GlStateManager.color((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         GlStateManager.popMatrix();
     }

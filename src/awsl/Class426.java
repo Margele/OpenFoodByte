@@ -12,7 +12,7 @@ import awsl.Class414;
 import awsl.Class447;
 import awsl.Class565;
 import awsl.Class705;
-import awsl.Class91;
+import obfuscate.a;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 import trash.foodbyte.value.ModeValue;
@@ -35,8 +35,8 @@ public class Class426 {
     }
 
     public void Method2309() {
-        String a;
         String a2;
+        String a3;
         block11: {
             block13: {
                 block12: {
@@ -44,18 +44,18 @@ public class Class426 {
                     this.Field2051 = this.Field2047.Field2003.Field2029 + this.Field2049 + 15.0;
                     this.Field2052 = this.Field2047.Field2006 + 10.0;
                     this.Field2053 = 15.0;
-                    a2 = this.Field2048.Method2754();
-                    String[] a3 = Class426.Method2315();
+                    a3 = this.Field2048.Method2754();
+                    String[] a4 = Class426.Method2315();
                     if (!(this.Field2048 instanceof ModeValue)) break block11;
                     if (!this.Field2055) break block12;
                     this.Field2053 = 25.0;
-                    int a4 = 0;
-                    if (a4 < ((ModeValue)this.Field2048).Method2728().length) {
-                        a = ((ModeValue)this.Field2048).Method2728()[a4];
-                        if (((ModeValue)this.Field2048).isCurrentMode(a)) {
+                    int a5 = 0;
+                    if (a5 < ((ModeValue)this.Field2048).Method2728().length) {
+                        a2 = ((ModeValue)this.Field2048).Method2728()[a5];
+                        if (((ModeValue)this.Field2048).isCurrentMode(a2)) {
                         }
                         this.Field2053 += (double)(Class565.Field2637.Field2625 - 5.0f);
-                        ++a4;
+                        ++a5;
                     }
                     if (((ModeValue)this.Field2048).Method2728().length <= 1) break block13;
                     this.Field2053 += 3.0;
@@ -63,44 +63,44 @@ public class Class426 {
                 this.Field2053 = 25.0;
             }
             this.Field2054 = this.Field2048.Method2754();
-            double a5 = this.Field2050 + this.Field2052 - (double)((int)Class565.Field2637.Method1225(((ModeValue)this.Field2048).getMode()));
-            if (a5 < this.Field2050 + 33.0) {
-                this.Field2052 += this.Field2050 + 33.0 - a5;
+            double a6 = this.Field2050 + this.Field2052 - (double)((int)Class565.Field2637.Method1225(((ModeValue)this.Field2048).getMode()));
+            if (a6 < this.Field2050 + 33.0) {
+                this.Field2052 += this.Field2050 + 33.0 - a6;
             }
         }
         if (this.Field2048 instanceof FloatValue) {
-            this.Field2054 = String.valueOf((Object)a2.substring(0, 1).toUpperCase()) + a2.substring(1, a2.length());
-            String a6 = "" + (double)Math.round((double)((double)((FloatValue)this.Field2048).Method2744().floatValue() * 100.0)) / 100.0;
-            a = "" + (double)Math.round((double)((double)((FloatValue)this.Field2048).Method2751() * 100.0)) / 100.0;
-            double a7 = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054) - (double)Class565.Field2637.Method1225(a) - 4.0;
-            if (a7 < this.Field2050) {
-                this.Field2052 += this.Field2050 - a7 + 1.0;
+            this.Field2054 = String.valueOf((Object)a3.substring(0, 1).toUpperCase()) + a3.substring(1, a3.length());
+            String a7 = "" + (double)Math.round((double)((double)((FloatValue)this.Field2048).getFloatValue().floatValue() * 100.0)) / 100.0;
+            a2 = "" + (double)Math.round((double)((double)((FloatValue)this.Field2048).Method2751() * 100.0)) / 100.0;
+            double a8 = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054) - (double)Class565.Field2637.Method1225(a2) - 4.0;
+            if (a8 < this.Field2050) {
+                this.Field2052 += this.Field2050 - a8 + 1.0;
             }
         }
         if (this.Field2048 instanceof BooleanValue) {
-            this.Field2054 = a2.substring(0, 1).toUpperCase() + a2.substring(1, a2.length());
-            double a8 = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054);
-            if (a8 < this.Field2050 + 13.0) {
-                this.Field2052 += this.Field2050 + 13.0 - a8 + 1.0;
+            this.Field2054 = a3.substring(0, 1).toUpperCase() + a3.substring(1, a3.length());
+            double a9 = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054);
+            if (a9 < this.Field2050 + 13.0) {
+                this.Field2052 += this.Field2050 + 13.0 - a9 + 1.0;
             }
         }
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class426.Method2314(new String[2]);
         }
     }
 
-    public void Method2310(int a, int a2, float a3) {
+    public void Method2310(int a2, int a3, float a4) {
     }
 
-    public boolean Method2311(int a, int a2, int a3) {
-        return this.Method2313(a, a2);
+    public boolean Method2311(int a2, int a3, int a4) {
+        return this.Method2313(a2, a3);
     }
 
-    public void Method2312(int a, int a2, int a3) {
+    public void Method2312(int a2, int a3, int a4) {
     }
 
-    public boolean Method2313(int a, int a2) {
-        return (double)a >= this.Field2050 && (double)a <= this.Field2050 + this.Field2052 && (double)a2 >= this.Field2051 && (double)a2 <= this.Field2051 + this.Field2053;
+    public boolean Method2313(int a2, int a3) {
+        return (double)a2 >= this.Field2050 && (double)a2 <= this.Field2050 + this.Field2052 && (double)a3 >= this.Field2051 && (double)a3 <= this.Field2051 + this.Field2053;
     }
 
     public static void Method2314(String[] stringArray) {

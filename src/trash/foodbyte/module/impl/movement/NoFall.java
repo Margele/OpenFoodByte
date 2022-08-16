@@ -12,9 +12,7 @@
 package trash.foodbyte.module.impl.movement;
 
 import awsl.Class167;
-import awsl.Class345;
 import awsl.Class628;
-import awsl.Class653;
 import eventapi.EventTarget;
 import native0.Class614;
 import net.minecraft.entity.Entity;
@@ -22,11 +20,13 @@ import net.minecraft.network.play.client.C03PacketPlayer;
 import net.minecraft.util.AxisAlignedBB;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.event.EventPacket;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.irc.PermissionManager;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
-import trash.foodbyte.utils.ObfuscatedClasses;
+import trash.foodbyte.reflection.ReflectionsHelper;
+import trash.foodbyte.reflections.ObfuscatedField;
 import trash.foodbyte.value.ModeValue;
 
 public class NoFall
@@ -39,12 +39,12 @@ extends Module {
     private static final String[] Field2547;
 
     @EventTarget(value=4)
-    public final void Method273(EventPacket a) {
-        if (this.Field2543.isCurrentMode(NoFall.Method754(-12064, -22071)) && a.getPacket() instanceof C03PacketPlayer) {
-            C03PacketPlayer a2 = (C03PacketPlayer)a.getPacket();
+    public final void Method273(EventPacket a2) {
+        if (this.Field2543.isCurrentMode(NoFall.Method754(-12064, -22071)) && a2.getPacket() instanceof C03PacketPlayer) {
+            C03PacketPlayer a3 = (C03PacketPlayer)a2.getPacket();
             if (NoFall.mc.thePlayer.fallDistance >= 3.0f) {
                 NoFall.mc.thePlayer.fallDistance = 0.0f;
-                Class345.Method337(a2, ObfuscatedClasses.C03onGround.getObfuscatedName(), true, false);
+                ReflectionsHelper.setFinalField(a3, ObfuscatedField.C03onGround.getObfuscatedName(), true, false);
             }
         }
     }
@@ -1111,26 +1111,26 @@ extends Module {
     }
 
     private boolean Method713() {
-        int a = 0;
-        boolean a2 = Class167.Method1500();
-        if ((double)a < NoFall.mc.thePlayer.posY + (double)NoFall.mc.thePlayer.getEyeHeight()) {
-            AxisAlignedBB a3 = NoFall.mc.thePlayer.getEntityBoundingBox().offset(0.0, (double)(-a), 0.0);
-            if (!NoFall.mc.theWorld.getCollidingBoundingBoxes((Entity)NoFall.mc.thePlayer, a3).isEmpty()) {
+        int a2 = 0;
+        boolean a3 = Class167.Method1500();
+        if ((double)a2 < NoFall.mc.thePlayer.posY + (double)NoFall.mc.thePlayer.getEyeHeight()) {
+            AxisAlignedBB a4 = NoFall.mc.thePlayer.getEntityBoundingBox().offset(0.0, (double)(-a2), 0.0);
+            if (!NoFall.mc.theWorld.getCollidingBoundingBoxes((Entity)NoFall.mc.thePlayer, a4).isEmpty()) {
                 return true;
             }
-            a += 2;
+            a2 += 2;
         }
         return false;
     }
 
     @EventTarget
-    public void Method755(Class653 a) {
+    public void Method755(EventTick a2) {
         this.setDisplayTag(this.Field2543.getMode());
     }
 
     @EventTarget
-    public void Method712(EventMotion a) {
-        this.Method752(a);
+    public void Method712(EventMotion a2) {
+        this.Method752(a2);
     }
 
     static {

@@ -13,7 +13,7 @@ import awsl.Class589;
 import awsl.Class590;
 import awsl.Class599;
 import awsl.Class602;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class587 {
     public float Field2759;
@@ -143,154 +143,175 @@ public class Class587 {
     /*
      * WARNING - void declaration
      */
-    public void Method350(Class587 a) {
-        void a2;
+    public void Method350(Class587 a2) {
         void a3;
-        float a4 = this.Field2759;
-        float a5 = this.Field2760;
-        float a6 = this.Field2761;
+        void a4;
+        float a5 = this.Field2759;
+        float a6 = this.Field2760;
+        float a7 = this.Field2761;
         float f = this.Field2762;
-        float a7 = this.Field2763;
-        float a8 = this.Field2764;
-        float a9 = this.Field2765;
-        float a10 = this.Field2766;
-        float a11 = this.Field2767;
-        float a12 = this.Field2768;
+        float a8 = this.Field2763;
+        float a9 = this.Field2764;
+        float a10 = this.Field2765;
+        float a11 = this.Field2766;
+        float a12 = this.Field2767;
+        float a13 = this.Field2768;
         float f2 = this.Field2769;
-        boolean a13 = Class599.Method128();
-        float a14 = this.Field2770;
-        float a15 = this.Field2771;
-        float a16 = this.Field2772;
-        float a17 = this.Field2773;
-        float a18 = this.Field2774;
-        this.Field2759 = a4 * a.Field2759 + a7 * a.Field2760 + a11 * a.Field2761 + a15 * a.Field2762;
-        this.Field2760 = a5 * a.Field2759 + a8 * a.Field2760 + a12 * a.Field2761 + a16 * a.Field2762;
-        this.Field2761 = a6 * a.Field2759 + a9 * a.Field2760 + a3 * a.Field2761 + a17 * a.Field2762;
-        this.Field2762 = a2 * a.Field2759 + a10 * a.Field2760 + a14 * a.Field2761 + a18 * a.Field2762;
-        this.Field2763 = a4 * a.Field2763 + a7 * a.Field2764 + a11 * a.Field2765 + a15 * a.Field2766;
-        this.Field2764 = a5 * a.Field2763 + a8 * a.Field2764 + a12 * a.Field2765 + a16 * a.Field2766;
-        this.Field2765 = a6 * a.Field2763 + a9 * a.Field2764 + a3 * a.Field2765 + a17 * a.Field2766;
-        this.Field2766 = a2 * a.Field2763 + a10 * a.Field2764 + a14 * a.Field2765 + a18 * a.Field2766;
-        this.Field2767 = a4 * a.Field2767 + a7 * a.Field2768 + a11 * a.Field2769 + a15 * a.Field2770;
-        this.Field2768 = a5 * a.Field2767 + a8 * a.Field2768 + a12 * a.Field2769 + a16 * a.Field2770;
-        this.Field2769 = a6 * a.Field2767 + a9 * a.Field2768 + a3 * a.Field2769 + a17 * a.Field2770;
-        this.Field2770 = a2 * a.Field2767 + a10 * a.Field2768 + a14 * a.Field2769 + a18 * a.Field2770;
-        this.Field2771 = a4 * a.Field2771 + a7 * a.Field2772 + a11 * a.Field2773 + a15 * a.Field2774;
-        this.Field2772 = a5 * a.Field2771 + a8 * a.Field2772 + a12 * a.Field2773 + a16 * a.Field2774;
-        this.Field2773 = a6 * a.Field2771 + a9 * a.Field2772 + a3 * a.Field2773 + a17 * a.Field2774;
-        this.Field2774 = a2 * a.Field2771 + a10 * a.Field2772 + a14 * a.Field2773 + a18 * a.Field2774;
-        Class91.Method3647(new String[3]);
+        boolean a14 = Class599.Method128();
+        float a15 = this.Field2770;
+        float a16 = this.Field2771;
+        float a17 = this.Field2772;
+        float a18 = this.Field2773;
+        float a19 = this.Field2774;
+        this.Field2759 = a5 * a2.Field2759 + a8 * a2.Field2760 + a12 * a2.Field2761 + a16 * a2.Field2762;
+        this.Field2760 = a6 * a2.Field2759 + a9 * a2.Field2760 + a13 * a2.Field2761 + a17 * a2.Field2762;
+        this.Field2761 = a7 * a2.Field2759 + a10 * a2.Field2760 + a4 * a2.Field2761 + a18 * a2.Field2762;
+        this.Field2762 = a3 * a2.Field2759 + a11 * a2.Field2760 + a15 * a2.Field2761 + a19 * a2.Field2762;
+        this.Field2763 = a5 * a2.Field2763 + a8 * a2.Field2764 + a12 * a2.Field2765 + a16 * a2.Field2766;
+        this.Field2764 = a6 * a2.Field2763 + a9 * a2.Field2764 + a13 * a2.Field2765 + a17 * a2.Field2766;
+        this.Field2765 = a7 * a2.Field2763 + a10 * a2.Field2764 + a4 * a2.Field2765 + a18 * a2.Field2766;
+        this.Field2766 = a3 * a2.Field2763 + a11 * a2.Field2764 + a15 * a2.Field2765 + a19 * a2.Field2766;
+        this.Field2767 = a5 * a2.Field2767 + a8 * a2.Field2768 + a12 * a2.Field2769 + a16 * a2.Field2770;
+        this.Field2768 = a6 * a2.Field2767 + a9 * a2.Field2768 + a13 * a2.Field2769 + a17 * a2.Field2770;
+        this.Field2769 = a7 * a2.Field2767 + a10 * a2.Field2768 + a4 * a2.Field2769 + a18 * a2.Field2770;
+        this.Field2770 = a3 * a2.Field2767 + a11 * a2.Field2768 + a15 * a2.Field2769 + a19 * a2.Field2770;
+        this.Field2771 = a5 * a2.Field2771 + a8 * a2.Field2772 + a12 * a2.Field2773 + a16 * a2.Field2774;
+        this.Field2772 = a6 * a2.Field2771 + a9 * a2.Field2772 + a13 * a2.Field2773 + a17 * a2.Field2774;
+        this.Field2773 = a7 * a2.Field2771 + a10 * a2.Field2772 + a4 * a2.Field2773 + a18 * a2.Field2774;
+        this.Field2774 = a3 * a2.Field2771 + a11 * a2.Field2772 + a15 * a2.Field2773 + a19 * a2.Field2774;
+        a.trash(new String[3]);
     }
 
     public void Method351() {
-        Class587 a = new Class587(this);
-        this.Method352(a);
+        Class587 a2 = new Class587(this);
+        this.Method352(a2);
     }
 
-    public void Method352(Class587 a) {
-        this.Field2759 = a.Field2759;
-        this.Field2760 = a.Field2763;
-        this.Field2761 = a.Field2767;
-        this.Field2762 = a.Field2762;
-        this.Field2763 = a.Field2760;
-        this.Field2764 = a.Field2764;
-        this.Field2765 = a.Field2768;
-        this.Field2766 = a.Field2766;
-        this.Field2767 = a.Field2761;
-        this.Field2768 = a.Field2765;
-        this.Field2769 = a.Field2769;
-        this.Field2770 = a.Field2770;
+    public void Method352(Class587 a2) {
+        this.Field2759 = a2.Field2759;
+        this.Field2760 = a2.Field2763;
+        this.Field2761 = a2.Field2767;
+        this.Field2762 = a2.Field2762;
+        this.Field2763 = a2.Field2760;
+        this.Field2764 = a2.Field2764;
+        this.Field2765 = a2.Field2768;
+        this.Field2766 = a2.Field2766;
+        this.Field2767 = a2.Field2761;
+        this.Field2768 = a2.Field2765;
+        this.Field2769 = a2.Field2769;
+        this.Field2770 = a2.Field2770;
         this.Field2771 *= -1.0f;
         this.Field2772 *= -1.0f;
         this.Field2773 *= -1.0f;
-        this.Field2774 = a.Field2774;
+        this.Field2774 = a2.Field2774;
     }
 
-    public void Method353(Class586 a) {
-        float a2 = a.Field2758 * 0.5f;
-        float a3 = (float)Math.cos((double)a2);
-        float a4 = (float)Math.sin((double)a2);
-        this.Method354(new Class602(a.Field2755 * a4, a.Field2756 * a4, a.Field2757 * a4, a3));
+    public void Method353(Class586 a2) {
+        float a3 = a2.Field2758 * 0.5f;
+        float a4 = (float)Math.cos((double)a3);
+        float a5 = (float)Math.sin((double)a3);
+        this.Method354(new Class602(a2.Field2755 * a5, a2.Field2756 * a5, a2.Field2757 * a5, a4));
     }
 
-    public void Method354(Class602 a) {
-        float a2 = a.Field2813 + a.Field2813;
-        float a3 = a.Field2814 + a.Field2814;
-        float a4 = a.Field2815 + a.Field2815;
-        float a5 = a.Field2813 * a2;
-        float a6 = a.Field2813 * a3;
-        float a7 = a.Field2813 * a4;
-        float a8 = a.Field2814 * a3;
-        float a9 = a.Field2814 * a4;
-        float a10 = a.Field2815 * a4;
-        float a11 = a.Field2816 * a2;
-        float a12 = a.Field2816 * a3;
-        float a13 = a.Field2816 * a4;
-        this.Field2759 = 1.0f - (a8 + a10);
-        this.Field2760 = a6 - a13;
-        this.Field2761 = a7 + a12;
+    public void Method354(Class602 a2) {
+        float a3 = a2.Field2813 + a2.Field2813;
+        float a4 = a2.Field2814 + a2.Field2814;
+        float a5 = a2.Field2815 + a2.Field2815;
+        float a6 = a2.Field2813 * a3;
+        float a7 = a2.Field2813 * a4;
+        float a8 = a2.Field2813 * a5;
+        float a9 = a2.Field2814 * a4;
+        float a10 = a2.Field2814 * a5;
+        float a11 = a2.Field2815 * a5;
+        float a12 = a2.Field2816 * a3;
+        float a13 = a2.Field2816 * a4;
+        float a14 = a2.Field2816 * a5;
+        this.Field2759 = 1.0f - (a9 + a11);
+        this.Field2760 = a7 - a14;
+        this.Field2761 = a8 + a13;
         this.Field2762 = 0.0f;
-        this.Field2763 = a6 + a13;
-        this.Field2764 = 1.0f - (a5 + a10);
-        this.Field2765 = a9 - a11;
+        this.Field2763 = a7 + a14;
+        this.Field2764 = 1.0f - (a6 + a11);
+        this.Field2765 = a10 - a12;
         this.Field2766 = 0.0f;
-        this.Field2767 = a7 - a12;
-        this.Field2768 = a9 + a11;
-        this.Field2769 = 1.0f - (a5 + a8);
+        this.Field2767 = a8 - a13;
+        this.Field2768 = a10 + a12;
+        this.Field2769 = 1.0f - (a6 + a9);
         this.Field2770 = 0.0f;
         this.Field2771 = 0.0f;
-        boolean a14 = Class599.Method129();
+        boolean a15 = Class599.Method129();
         this.Field2772 = 0.0f;
         this.Field2773 = 0.0f;
         this.Field2774 = 1.0f;
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class599.Method127(false);
         }
     }
 
-    public void Method355(Class589 a) {
-        float a2 = a.Field2775 * this.Field2759 + a.Field2776 * this.Field2763 + a.Field2777 * this.Field2767 + this.Field2771;
-        float a3 = a.Field2775 * this.Field2760 + a.Field2776 * this.Field2764 + a.Field2777 * this.Field2768 + this.Field2772;
-        float a4 = a.Field2775 * this.Field2761 + a.Field2776 * this.Field2765 + a.Field2777 * this.Field2769 + this.Field2773;
-        a.Field2775 = a2;
-        a.Field2776 = a3;
-        a.Field2777 = a4;
+    public void Method355(Class589 a2) {
+        float a3 = a2.Field2775 * this.Field2759 + a2.Field2776 * this.Field2763 + a2.Field2777 * this.Field2767 + this.Field2771;
+        float a4 = a2.Field2775 * this.Field2760 + a2.Field2776 * this.Field2764 + a2.Field2777 * this.Field2768 + this.Field2772;
+        float a5 = a2.Field2775 * this.Field2761 + a2.Field2776 * this.Field2765 + a2.Field2777 * this.Field2769 + this.Field2773;
+        a2.Field2775 = a3;
+        a2.Field2776 = a4;
+        a2.Field2777 = a5;
     }
 
-    public void Method356(Class590 a) {
-        float a2 = a.Field2775 * this.Field2759 + a.Field2776 * this.Field2763 + a.Field2777 * this.Field2767;
-        float a3 = a.Field2775 * this.Field2760 + a.Field2776 * this.Field2764 + a.Field2777 * this.Field2768;
-        float a4 = a.Field2775 * this.Field2761 + a.Field2776 * this.Field2765 + a.Field2777 * this.Field2769;
-        a.Field2775 = a2;
-        a.Field2776 = a3;
-        a.Field2777 = a4;
+    public void Method356(Class590 a2) {
+        float a3 = a2.Field2775 * this.Field2759 + a2.Field2776 * this.Field2763 + a2.Field2777 * this.Field2767;
+        float a4 = a2.Field2775 * this.Field2760 + a2.Field2776 * this.Field2764 + a2.Field2777 * this.Field2768;
+        float a5 = a2.Field2775 * this.Field2761 + a2.Field2776 * this.Field2765 + a2.Field2777 * this.Field2769;
+        a2.Field2775 = a3;
+        a2.Field2776 = a4;
+        a2.Field2777 = a5;
     }
 
-    public void Method357(Class590 a) {
-        this.Field2771 = a.Field2775;
-        this.Field2772 = a.Field2776;
-        this.Field2773 = a.Field2777;
+    public void Method357(Class590 a2) {
+        this.Field2771 = a2.Field2775;
+        this.Field2772 = a2.Field2776;
+        this.Field2773 = a2.Field2777;
     }
 
-    public void Method358(float a) {
-        this.Field2759 = a;
-        this.Field2764 = a;
-        this.Field2769 = a;
+    public void Method358(float a2) {
+        this.Field2759 = a2;
+        this.Field2764 = a2;
+        this.Field2769 = a2;
     }
 
-    public void Method359(float a) {
-        float a2 = (float)Math.sin((double)a);
-        float a3 = (float)Math.cos((double)a);
+    public void Method359(float a2) {
+        float a3 = (float)Math.sin((double)a2);
+        float a4 = (float)Math.cos((double)a2);
         this.Field2759 = 1.0f;
         this.Field2760 = 0.0f;
         this.Field2761 = 0.0f;
         this.Field2762 = 0.0f;
         this.Field2763 = 0.0f;
-        this.Field2764 = a3;
-        this.Field2765 = a2;
+        this.Field2764 = a4;
+        this.Field2765 = a3;
         this.Field2766 = 0.0f;
         this.Field2767 = 0.0f;
-        this.Field2768 = -a2;
+        this.Field2768 = -a3;
+        this.Field2769 = a4;
+        this.Field2770 = 0.0f;
+        this.Field2771 = 0.0f;
+        this.Field2772 = 0.0f;
+        this.Field2773 = 0.0f;
+        this.Field2774 = 1.0f;
+    }
+
+    public void Method360(float a2) {
+        float a3;
+        float a4 = (float)Math.sin((double)a2);
+        this.Field2759 = a3 = (float)Math.cos((double)a2);
+        this.Field2760 = 0.0f;
+        this.Field2761 = -a4;
+        this.Field2762 = 0.0f;
+        this.Field2763 = 0.0f;
+        this.Field2764 = 1.0f;
+        this.Field2765 = 0.0f;
+        this.Field2766 = 0.0f;
+        this.Field2767 = a4;
+        this.Field2768 = 0.0f;
         this.Field2769 = a3;
         this.Field2770 = 0.0f;
         this.Field2771 = 0.0f;
@@ -299,36 +320,15 @@ public class Class587 {
         this.Field2774 = 1.0f;
     }
 
-    public void Method360(float a) {
-        float a2;
-        float a3 = (float)Math.sin((double)a);
-        this.Field2759 = a2 = (float)Math.cos((double)a);
-        this.Field2760 = 0.0f;
-        this.Field2761 = -a3;
-        this.Field2762 = 0.0f;
-        this.Field2763 = 0.0f;
-        this.Field2764 = 1.0f;
-        this.Field2765 = 0.0f;
-        this.Field2766 = 0.0f;
-        this.Field2767 = a3;
-        this.Field2768 = 0.0f;
-        this.Field2769 = a2;
-        this.Field2770 = 0.0f;
-        this.Field2771 = 0.0f;
-        this.Field2772 = 0.0f;
-        this.Field2773 = 0.0f;
-        this.Field2774 = 1.0f;
-    }
-
-    public void Method361(float a) {
-        float a2;
-        float a3 = (float)Math.sin((double)a);
-        this.Field2759 = a2 = (float)Math.cos((double)a);
-        this.Field2760 = a3;
+    public void Method361(float a2) {
+        float a3;
+        float a4 = (float)Math.sin((double)a2);
+        this.Field2759 = a3 = (float)Math.cos((double)a2);
+        this.Field2760 = a4;
         this.Field2761 = 0.0f;
         this.Field2762 = 0.0f;
-        this.Field2763 = -a3;
-        this.Field2764 = a2;
+        this.Field2763 = -a4;
+        this.Field2764 = a3;
         this.Field2765 = 0.0f;
         this.Field2766 = 0.0f;
         this.Field2767 = 0.0f;

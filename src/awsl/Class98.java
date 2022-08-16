@@ -11,11 +11,11 @@
 package awsl;
 
 import awsl.Class267;
-import awsl.Class91;
 import java.util.Map;
+import obfuscate.a;
 
 public class Class98
-extends Class91 {
+extends a {
     public String Field824;
     public String Field825;
     public String Field826;
@@ -23,20 +23,20 @@ extends Class91 {
     private static int[] Field828;
 
     @Deprecated
-    public Class98(int a, String a2, String a3, String a4) {
-        this(a, a2, a3, a4, a == 185);
+    public Class98(int a2, String a3, String a4, String a5) {
+        this(a2, a3, a4, a5, a2 == 185);
     }
 
-    public Class98(int a, String a2, String a3, String a4, boolean a5) {
-        super(a);
-        this.Field824 = a2;
-        this.Field825 = a3;
-        this.Field826 = a4;
-        this.Field827 = a5;
+    public Class98(int a2, String a3, String a4, String a5, boolean a6) {
+        super(a2);
+        this.Field824 = a3;
+        this.Field825 = a4;
+        this.Field826 = a5;
+        this.Field827 = a6;
     }
 
-    public void Method68(int a) {
-        this.Field796 = a;
+    public void Method68(int a2) {
+        this.Field796 = a2;
     }
 
     @Override
@@ -45,12 +45,12 @@ extends Class91 {
     }
 
     @Override
-    public void Method1(Class267 a) {
-        a.Method1954(this.Field796, this.Field824, this.Field825, this.Field826, this.Field827);
+    public void Method1(Class267 a2) {
+        a2.Method1954(this.Field796, this.Field824, this.Field825, this.Field826, this.Field827);
     }
 
     @Override
-    public Class91 Method2(Map a) {
+    public a Method2(Map a2) {
         return new Class98(this.Field796, this.Field824, this.Field825, this.Field826, this.Field827);
     }
 

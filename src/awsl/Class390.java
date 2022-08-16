@@ -56,22 +56,22 @@ public abstract class Class390 {
     }
 
     public boolean Method1311(int a, int a2) {
-        return MathUtils.Method549(a, a2, this.Field1907, this.Field1908, this.Field1907 + this.Field1909 - (this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910);
+        return MathUtils.isHovering(a, a2, this.Field1907, this.Field1908, this.Field1907 + this.Field1909 - (this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910);
     }
 
     public boolean Method1312(int a, int a2) {
         float a3 = this.Field1922.contains((CharSequence)"_setting") ? 3.0f : 3.0f;
-        return MathUtils.Method549(a, a2, (float)this.Field1907 + a3, this.Field1908 + 7, (float)(this.Field1907 + this.Field1909) - a3 - (float)(this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910);
+        return MathUtils.isHovering(a, a2, (float)this.Field1907 + a3, this.Field1908 + 7, (float)(this.Field1907 + this.Field1909) - a3 - (float)(this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910);
     }
 
-    public boolean Method1313(int a, int a2) {
-        float a3 = this.Field1922.contains((CharSequence)"_setting") ? 3.0f : 3.0f;
-        return MathUtils.Method549(a, a2, (float)this.Field1907 + a3, this.Field1908, (float)this.Field1907 + Class565.Field2636.Method1225(this.Field1913) + 20.0f - (float)(this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910);
+    public boolean Method1313(int a2, int a3) {
+        float a4 = this.Field1922.contains((CharSequence)"_setting") ? 3.0f : 3.0f;
+        return MathUtils.isHovering(a2, a3, (float)this.Field1907 + a4, this.Field1908, (float)this.Field1907 + Class565.Field2636.Method1225(this.Field1913) + 20.0f - (float)(this.Field1919.Method1418() ? 2 : 0), this.Field1908 + this.Field1910);
     }
 
-    public boolean Method1314(int a, int a2) {
-        float a3 = this.Field1922.contains((CharSequence)"_setting") ? 3.0f : 3.0f;
-        return MathUtils.Method549(a, a2, (float)this.Field1907 + a3, this.Field1908 + 7, (float)(this.Field1907 + this.Field1909) - a3 - (float)(this.Field1919.Method1418() ? 2 : 0), this.Field1908 + 20);
+    public boolean Method1314(int a2, int a3) {
+        float a4 = this.Field1922.contains((CharSequence)"_setting") ? 3.0f : 3.0f;
+        return MathUtils.isHovering(a2, a3, (float)this.Field1907 + a4, this.Field1908 + 7, (float)(this.Field1907 + this.Field1909) - a4 - (float)(this.Field1919.Method1418() ? 2 : 0), this.Field1908 + 20);
     }
 
     public void Method414() {
@@ -79,10 +79,10 @@ public abstract class Class390 {
         this.Field1918 = Mouse.isButtonDown((int)0);
     }
 
-    public void Method419(int a, int a2) {
+    public void Method419(int a2, int a3) {
     }
 
-    public void Method411(int a, int a2) {
+    public void Method411(int a2, int a3) {
         this.Method1309();
     }
 
@@ -90,7 +90,7 @@ public abstract class Class390 {
 
     public abstract void Method413(int var1, int var2, boolean var3);
 
-    public void Method1315(char a, int a2) throws IOException {
+    public void Method1315(char a2, int a3) throws IOException {
     }
 
     public static void Method1316(int n) {

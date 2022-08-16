@@ -85,7 +85,7 @@ extends Class447 {
         this.Field2119 = a8;
     }
 
-    public Float Method2744() {
+    public Float getFloatValue() {
         return (Float)this.Field2120;
     }
 
@@ -99,8 +99,8 @@ extends Class447 {
         this.Field2120 = Float.valueOf((float)a);
     }
 
-    public float Method2746() {
-        return this.Method2744().floatValue();
+    public float getFloatValueCast() {
+        return this.getFloatValue().floatValue();
     }
 
     public void Method2747(float a) {
@@ -141,7 +141,7 @@ extends Class447 {
 
     @Override
     public Object Method2454() {
-        return this.Method2744();
+        return this.getFloatValue();
     }
 
     public static void Method2440(int n) {

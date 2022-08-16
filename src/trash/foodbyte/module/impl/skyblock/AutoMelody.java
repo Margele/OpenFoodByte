@@ -17,7 +17,6 @@ package trash.foodbyte.module.impl.skyblock;
 import awsl.Class484;
 import awsl.Class615;
 import awsl.Class628;
-import awsl.Class630;
 import awsl.Class643;
 import eventapi.EventTarget;
 import java.util.List;
@@ -27,6 +26,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.IInventory;
+import trash.foodbyte.event.EventMove;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.utils.TimeHelper;
@@ -1116,14 +1116,14 @@ extends Module {
     }
 
     @Override
-    public void Method279() {
+    public void onDisable() {
         Blocks.packed_ice.slipperiness = 0.98f;
         Blocks.ice.slipperiness = 0.98f;
     }
 
     @EventTarget
-    public void Method1994(Class630 a) {
-        if (Class484.Field2234.equals((Object)Class615.DUNGEON) && Field3113.Method2509().booleanValue()) {
+    public void Method1994(EventMove a) {
+        if (Class484.Field2234.equals((Object)Class615.DUNGEON) && Field3113.getBooleanValue().booleanValue()) {
             Blocks.packed_ice.slipperiness = 0.6f;
             Blocks.ice.slipperiness = 0.6f;
         }

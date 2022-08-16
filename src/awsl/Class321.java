@@ -11,7 +11,7 @@ package awsl;
 
 import awsl.Class341;
 import awsl.Class661;
-import awsl.Class91;
+import obfuscate.a;
 
 public abstract class Class321 {
     public Class341 Field1604;
@@ -27,24 +27,24 @@ public abstract class Class321 {
         this.Field1607 = Class661.FORWARDS;
     }
 
-    public Class321(int a, double a2, Class661 a3) {
+    public Class321(int a2, double a3, Class661 a4) {
         String[] stringArray = Class321.Method1215();
         String[] stringArray2 = stringArray;
         this.Field1604 = new Class341(this);
-        this.Field1605 = a;
-        this.Field1606 = a2;
-        this.Field1607 = a3;
-        Class91.Method3647(new String[3]);
+        this.Field1605 = a2;
+        this.Field1606 = a3;
+        this.Field1607 = a4;
+        a.trash(new String[3]);
     }
 
-    public boolean Method1203(Class661 a) {
-        return this.Method1208() && this.Field1607.equals((Object)a);
+    public boolean Method1203(Class661 a2) {
+        return this.Method1208() && this.Field1607.equals((Object)a2);
     }
 
     public double Method1204() {
         String[] stringArray = Class321.Method1215();
         double d = 1.0 - (double)this.Field1604.Method288() / (double)this.Field1605 * this.Field1606;
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class321.Method1214(new String[1]);
         }
         return d;
@@ -54,8 +54,8 @@ public abstract class Class321 {
         return this.Field1606;
     }
 
-    public void Method1206(double a) {
-        this.Field1606 = a;
+    public void Method1206(double a2) {
+        this.Field1606 = a2;
     }
 
     public void Method1207() {
@@ -74,15 +74,15 @@ public abstract class Class321 {
         return this.Field1607;
     }
 
-    public void Method1211(Class661 a) {
-        if (this.Field1607 != a) {
-            this.Field1607 = a;
+    public void Method1211(Class661 a2) {
+        if (this.Field1607 != a2) {
+            this.Field1607 = a2;
             this.Field1604.Method289(System.currentTimeMillis() - ((long)this.Field1605 - Math.min((long)this.Field1605, (long)this.Field1604.Method288())));
         }
     }
 
-    public void Method1212(int a) {
-        this.Field1605 = a;
+    public void Method1212(int a2) {
+        this.Field1605 = a2;
     }
 
     protected boolean Method831() {
@@ -100,8 +100,8 @@ public abstract class Class321 {
             return 0.0;
         }
         if (this.Method831()) {
-            double a = Math.min((long)this.Field1605, (long)Math.max((long)0L, (long)((long)this.Field1605 - this.Field1604.Method288())));
-            return this.Method797(a) * this.Field1606;
+            double a2 = Math.min((long)this.Field1605, (long)Math.max((long)0L, (long)((long)this.Field1605 - this.Field1604.Method288())));
+            return this.Method797(a2) * this.Field1606;
         }
         return (1.0 - this.Method797(this.Field1604.Method288())) * this.Field1606;
     }

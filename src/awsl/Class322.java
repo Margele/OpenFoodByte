@@ -7,7 +7,7 @@
  */
 package awsl;
 
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class322 {
     double Field1609;
@@ -17,24 +17,24 @@ public class Class322 {
         boolean bl = Class322.Method1196();
         boolean bl2 = bl;
         this.Field1609 = 0.0;
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class322.Method1194(false);
         }
     }
 
-    public Class322(double a) {
+    public Class322(double a2) {
         boolean bl = Class322.Method1196();
         boolean bl2 = bl;
-        this.Field1609 = a;
-        Class91.Method3647(new String[3]);
+        this.Field1609 = a2;
+        a.trash(new String[3]);
     }
 
     public final double Method1191() {
         return this.Field1609;
     }
 
-    public final void Method1192(double a) {
-        this.Field1609 = a;
+    public final void Method1192(double a2) {
+        this.Field1609 = a2;
     }
 
     public final void Method1193() {

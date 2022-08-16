@@ -26,12 +26,12 @@ import awsl.Class241;
 import awsl.Class253;
 import awsl.Class267;
 import awsl.Class31;
-import awsl.Class91;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import obfuscate.a;
 
 public class Class224
 extends Class167 {
@@ -163,59 +163,59 @@ extends Class167 {
         }
     }
 
-    public void Method2213(Class167 a) {
-        Class124 a2;
-        int a3;
+    public void Method2213(Class167 a2) {
+        Class124 a3;
         int a4;
+        int a5;
         int n = Class15.Method3445();
-        Object[] a5 = new String[this.Field1247.Method1799()];
-        this.Field1247.toArray(a5);
-        int a6 = n;
-        a.Method1447(this.Field1242, this.Field1243, this.Field1244, this.Field1245, this.Field1246, (String[])a5);
+        Object[] a6 = new String[this.Field1247.Method1799()];
+        this.Field1247.toArray(a6);
+        int a7 = n;
+        a2.Method1447(this.Field1242, this.Field1243, this.Field1244, this.Field1245, this.Field1246, (String[])a6);
         if (this.Field1248 != null || this.Field1249 != null) {
-            a.Method1458(this.Field1248, this.Field1249);
+            a2.Method1458(this.Field1248, this.Field1249);
         }
         if (this.Field1250 != null) {
-            a.Method1453(this.Field1250, this.Field1251, this.Field1252);
+            a2.Method1453(this.Field1250, this.Field1251, this.Field1252);
         }
-        if ((a4 = 0) < (a3 = this.Field1253 == null ? 0 : this.Field1253.Method1799())) {
-            a2 = (Class124)this.Field1253.get(a4);
-            a2.Method646(a.Method1448(a2.Field973, true));
-            ++a4;
-            Class91.Method3647(new String[1]);
+        if ((a5 = 0) < (a4 = this.Field1253 == null ? 0 : this.Field1253.Method1799())) {
+            a3 = (Class124)this.Field1253.get(a5);
+            a3.Method646(a2.Method1448(a3.Field973, true));
+            ++a5;
+            a.trash(new String[1]);
         }
-        if ((a4 = 0) < (a3 = this.Field1254 == null ? 0 : this.Field1254.Method1799())) {
-            a2 = (Class124)this.Field1254.get(a4);
-            a2.Method646(a.Method1448(a2.Field973, false));
-            ++a4;
+        if ((a5 = 0) < (a4 = this.Field1254 == null ? 0 : this.Field1254.Method1799())) {
+            a3 = (Class124)this.Field1254.get(a5);
+            a3.Method646(a2.Method1448(a3.Field973, false));
+            ++a5;
         }
-        if ((a4 = 0) < (a3 = this.Field1255 == null ? 0 : this.Field1255.Method1799())) {
-            a2 = (Class126)this.Field1255.get(a4);
-            a2.Method646(a.Method1449(((Class126)a2).Field975, ((Class126)a2).Field976, ((Class126)a2).Field973, true));
-            ++a4;
+        if ((a5 = 0) < (a4 = this.Field1255 == null ? 0 : this.Field1255.Method1799())) {
+            a3 = (Class126)this.Field1255.get(a5);
+            a3.Method646(a2.Method1449(((Class126)a3).Field975, ((Class126)a3).Field976, ((Class126)a3).Field973, true));
+            ++a5;
         }
-        if ((a4 = 0) < (a3 = this.Field1256 == null ? 0 : this.Field1256.Method1799())) {
-            a2 = (Class126)this.Field1256.get(a4);
-            a2.Method646(a.Method1449(((Class126)a2).Field975, ((Class126)a2).Field976, ((Class126)a2).Field973, false));
-            ++a4;
+        if ((a5 = 0) < (a4 = this.Field1256 == null ? 0 : this.Field1256.Method1799())) {
+            a3 = (Class126)this.Field1256.get(a5);
+            a3.Method646(a2.Method1449(((Class126)a3).Field975, ((Class126)a3).Field976, ((Class126)a3).Field973, false));
+            ++a5;
         }
-        if ((a4 = 0) < (a3 = this.Field1257 == null ? 0 : this.Field1257.Method1799())) {
-            a.Method1459((Class136)this.Field1257.get(a4));
-            ++a4;
+        if ((a5 = 0) < (a4 = this.Field1257 == null ? 0 : this.Field1257.Method1799())) {
+            a2.Method1459((Class136)this.Field1257.get(a5));
+            ++a5;
         }
-        if ((a4 = 0) < this.Field1258.Method1799()) {
-            ((Class114)this.Field1258.get(a4)).Method130(a);
-            ++a4;
+        if ((a5 = 0) < this.Field1258.Method1799()) {
+            ((Class114)this.Field1258.get(a5)).Method130(a2);
+            ++a5;
         }
-        if ((a4 = 0) < this.Field1259.Method1799()) {
-            ((Class241)this.Field1259.get(a4)).Method2280(a);
-            ++a4;
+        if ((a5 = 0) < this.Field1259.Method1799()) {
+            ((Class241)this.Field1259.get(a5)).Method2280(a2);
+            ++a5;
         }
-        if ((a4 = 0) < this.Field1260.Method1799()) {
-            ((Class15)this.Field1260.get(a4)).Method3443(a);
-            ++a4;
+        if ((a5 = 0) < this.Field1260.Method1799()) {
+            ((Class15)this.Field1260.get(a5)).Method3443(a2);
+            ++a5;
         }
-        a.Method1460();
+        a2.Method1460();
     }
 
     private static IllegalStateException Method2214(IllegalStateException illegalStateException) {

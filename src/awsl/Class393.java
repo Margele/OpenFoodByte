@@ -7,8 +7,8 @@
  */
 package awsl;
 
-import awsl.Class91;
 import net.minecraft.util.ResourceLocation;
+import obfuscate.a;
 
 public class Class393 {
     public static ResourceLocation Field1937;
@@ -22,7 +22,7 @@ public class Class393 {
     public static ResourceLocation Field1945;
     public static ResourceLocation Field1946;
     public static ResourceLocation Field1947;
-    private static Class91[] Field1948;
+    private static a[] Field1948;
 
     static {
         Class393.Method1319(null);
@@ -39,11 +39,11 @@ public class Class393 {
         Field1947 = new ResourceLocation("textures/gui/container/inventory.png");
     }
 
-    public static void Method1319(Class91[] class91Array) {
-        Field1948 = class91Array;
+    public static void Method1319(a[] aArray) {
+        Field1948 = aArray;
     }
 
-    public static Class91[] Method1320() {
+    public static a[] Method1320() {
         return Field1948;
     }
 }

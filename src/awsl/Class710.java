@@ -14,9 +14,7 @@
  */
 package awsl;
 
-import awsl.Class281;
 import awsl.Class713;
-import awsl.Class91;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -24,6 +22,8 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.IChatComponent;
+import obfuscate.a;
+import trash.foodbyte.utils.ServerUtils;
 
 public class Class710
 extends GuiScreen {
@@ -54,41 +54,41 @@ extends GuiScreen {
         this.Field3075 = new GuiButton(1, this.width / 2 - 100, this.height / 2 + this.Field3074 / 2 + this.fontRendererObj.FONT_HEIGHT + 22, "Reconnect");
         this.buttonList.Method2530((Object)this.Field3075);
         int[] nArray2 = nArray;
-        Class91.Method3647(new String[1]);
+        a.trash(new String[1]);
     }
 
-    protected void Method1802(GuiButton a) throws IOException {
+    protected void Method1802(GuiButton a2) throws IOException {
         block1: {
-            if (a.id == 0) {
+            if (a2.id == 0) {
                 this.mc.displayGuiScreen(this.Field3073);
             }
-            if (a.id != 1) break block1;
-            Class281.Method3069();
+            if (a2.id != 1) break block1;
+            ServerUtils.displayMultiPlayer();
         }
     }
 
     public void Method1807() {
         ++this.Field3076;
         if (this.Field3076 > 60) {
-            Class281.Method3069();
+            ServerUtils.displayMultiPlayer();
         }
     }
 
-    public void Method1803(int a, int a2, float a3) {
+    public void Method1803(int a2, int a3, float a4) {
         Iterator iterator;
         int[] nArray = Class713.Method2054();
         this.drawDefaultBackground();
-        int[] a4 = nArray;
+        int[] a5 = nArray;
         this.drawCenteredString(this.fontRendererObj, this.Field3070, this.width / 2, this.height / 2 - this.Field3074 / 2 - this.fontRendererObj.FONT_HEIGHT * 2, 0xAAAAAA);
-        int a5 = this.height / 2 - this.Field3074 / 2;
+        int a6 = this.height / 2 - this.Field3074 / 2;
         if (this.Field3072 != null && (iterator = this.Field3072.Method1383()).Method932()) {
-            String a6 = (String)iterator.Method933();
-            this.drawCenteredString(this.fontRendererObj, a6, this.width / 2, a5, 0xFFFFFF);
-            a5 += this.fontRendererObj.FONT_HEIGHT;
+            String a7 = (String)iterator.Method933();
+            this.drawCenteredString(this.fontRendererObj, a7, this.width / 2, a6, 0xFFFFFF);
+            a6 += this.fontRendererObj.FONT_HEIGHT;
         }
-        super.Method1803(a, a2, a3);
+        super.Method1803(a2, a3, a4);
         this.Field3075.displayString = "Reconnect (" + (3 - this.Field3076 / 20) + ")";
-        if (Class91.Method3648() == null) {
+        if (a.trash() == null) {
             Class713.Method2053(new int[5]);
         }
     }

@@ -18,7 +18,7 @@ import awsl.Class267;
 import awsl.Class29;
 import awsl.Class31;
 import awsl.Class690;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class230
 extends Class167 {
@@ -98,46 +98,46 @@ extends Class167 {
     }
 
     @Override
-    public Class253 Method1450(int a, String a2, String a3, String a4, Object a5) {
+    public Class253 Method1450(int a2, String a3, String a4, String a5, Object a6) {
         String[] stringArray = Class690.Method2342();
-        if ((a & 0x1000) != 0) {
+        if ((a2 & 0x1000) != 0) {
             this.Field1286.Method2496("Synthetic");
         }
-        if ((a & 0x20000) != 0) {
+        if ((a2 & 0x20000) != 0) {
             this.Field1286.Method2496("Deprecated");
         }
-        this.Field1286.Method2496(a2);
         this.Field1286.Method2496(a3);
-        this.Field1286.Method2496("Signature");
         this.Field1286.Method2496(a4);
-        this.Field1286.Method2501(a5);
-        Class238 class238 = new Class238(this.Field1035.Method1450(a, a2, a3, a4, a5), this.Field1286);
-        if (Class91.Method3648() == null) {
+        this.Field1286.Method2496("Signature");
+        this.Field1286.Method2496(a5);
+        this.Field1286.Method2501(a6);
+        Class238 class238 = new Class238(this.Field1035.Method1450(a2, a3, a4, a5, a6), this.Field1286);
+        if (a.trash() == null) {
             Class690.Method2341(new String[1]);
         }
         return class238;
     }
 
     @Override
-    public Class267 Method1451(int a, String a2, String a3, String a4, String[] a5) {
-        String[] a6 = Class690.Method2342();
-        if ((a & 0x1000) != 0) {
+    public Class267 Method1451(int a2, String a3, String a4, String a5, String[] a6) {
+        String[] a7 = Class690.Method2342();
+        if ((a2 & 0x1000) != 0) {
             this.Field1286.Method2496("Synthetic");
         }
-        if ((a & 0x20000) != 0) {
+        if ((a2 & 0x20000) != 0) {
             this.Field1286.Method2496("Deprecated");
         }
-        this.Field1286.Method2496(a2);
         this.Field1286.Method2496(a3);
-        this.Field1286.Method2496("Signature");
         this.Field1286.Method2496(a4);
+        this.Field1286.Method2496("Signature");
+        this.Field1286.Method2496(a5);
         this.Field1286.Method2496("Exceptions");
-        int a7 = 0;
-        if (a7 < a5.length) {
-            this.Field1286.Method2498(a5[a7]);
-            ++a7;
-            Class91.Method3647(new String[4]);
+        int a8 = 0;
+        if (a8 < a6.length) {
+            this.Field1286.Method2498(a6[a8]);
+            ++a8;
+            a.trash(new String[4]);
         }
-        return new Class29(this.Field1035.Method1451(a, a2, a3, a4, a5), this.Field1286);
+        return new Class29(this.Field1035.Method1451(a2, a3, a4, a5, a6), this.Field1286);
     }
 }

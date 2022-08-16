@@ -23,7 +23,6 @@
 package trash.foodbyte.module.impl.combat;
 
 import awsl.Class305;
-import awsl.Class653;
 import eventapi.EventTarget;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
@@ -38,6 +37,7 @@ import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import trash.foodbyte.event.EventTick;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.combat.AntiBot;
@@ -62,17 +62,17 @@ extends Module {
     }
 
     @EventTarget
-    private void Method755(Class653 a) {
-        this.setDisplayTag(this.Field2607.Method2744().toString());
+    private void Method755(EventTick a) {
+        this.setDisplayTag(this.Field2607.getFloatValue().toString());
     }
 
     public boolean Method1187(Entity a) {
         block10: {
             block9: {
-                boolean a2 = this.Field2603.Method2509();
-                boolean a3 = this.Field2606.Method2509();
-                boolean a4 = this.Field2604.Method2509();
-                boolean a5 = this.Field2605.Method2509();
+                boolean a2 = this.Field2603.getBooleanValue();
+                boolean a3 = this.Field2606.getBooleanValue();
+                boolean a4 = this.Field2604.getBooleanValue();
+                boolean a5 = this.Field2605.getBooleanValue();
                 if (a.isInvisible()) {
                     return false;
                 }
@@ -86,7 +86,7 @@ extends Module {
             if (a instanceof EntityPlayer && Class305.Method698(a.getName())) {
                 return false;
             }
-            if (a instanceof EntityPlayer && AntiBot.Field2577.contains((Object)a)) {
+            if (a instanceof EntityPlayer && AntiBot.botList.contains((Object)a)) {
                 return false;
             }
             if (a instanceof EntityPlayer && Class305.Method704(a)) {

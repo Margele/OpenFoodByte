@@ -11,7 +11,7 @@ package awsl;
 
 import awsl.Class262;
 import awsl.Class278;
-import awsl.Class91;
+import obfuscate.a;
 
 public class Class277
 extends Class278 {
@@ -24,7 +24,7 @@ extends Class278 {
     public Class262 Method2817() {
         String string = Class277.Method2819();
         Class262 class262 = new Class262(this.Method2811(), this.Method2812(), this.Method2813());
-        Class91.Method3647(new String[5]);
+        a.trash(new String[5]);
         return class262;
     }
 
