@@ -18,13 +18,13 @@ public class Class622 extends Class619 {
 
    public float Method20(float a, float a) {
       Class598.Method86();
-      float a = 0.0F;
-      float a = 1.0F;
-      if (a <= this.Field2876) {
-         a += Math.abs(this.Field2874.Method20(a * a, a * a)) / a;
-         a *= 2.0F;
+      float var4 = 0.0F;
+      float var5 = 1.0F;
+      if (var5 <= this.Field2876) {
+         var4 += Math.abs(this.Field2874.Method20(var5 * a, var5 * a)) / var5;
+         var5 *= 2.0F;
       }
 
-      return a;
+      return var4;
    }
 }

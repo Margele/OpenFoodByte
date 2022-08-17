@@ -8,11 +8,11 @@ class Class27 extends Class267 {
       this.Field238 = a;
    }
 
-   public void Method1949(int a, String a, String a, String a3) {
+   public void Method1949(int a, String a, String a, String a) {
       this.Field238.Method2100(a, a);
    }
 
-   public void Method1954(int a, String a, String a, String a, boolean a4) {
+   public void Method1954(int a, String a, String a, String a, boolean a) {
       this.Field238.Method2100(a, a + a);
    }
 }

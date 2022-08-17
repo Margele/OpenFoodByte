@@ -15,47 +15,47 @@ public class Class292 extends Class290 {
    }
 
    public String Method2899() throws Class666 {
-      StringBuilder a = new StringBuilder();
+      StringBuilder var3 = new StringBuilder();
 
-      int a;
+      int var2;
       do {
          if (!this.Method2884()) {
             throw this.Method2895("Unclosed CDATA");
          }
 
-         char a = this.Method2885();
-         a.append(a);
-         a = a.length() - 3;
-      } while(a.charAt(a) != ']' || a.charAt(a + 1) != ']' || a.charAt(a + 2) != '>');
+         char var1 = this.Method2885();
+         var3.append(var1);
+         var2 = var3.length() - 3;
+      } while(var3.charAt(var2) != ']' || var3.charAt(var2 + 1) != ']' || var3.charAt(var2 + 2) != '>');
 
-      a.setLength(a);
-      return a.toString();
+      var3.setLength(var2);
+      return var3.toString();
    }
 
    public Object Method2900() throws Class666 {
-      char a;
+      char var1;
       do {
-         a = this.Method2885();
-      } while(Character.isWhitespace(a));
+         var1 = this.Method2885();
+      } while(Character.isWhitespace(var1));
 
       return null;
    }
 
    public Object Method2901(char a) throws Class666 {
-      StringBuilder a = new StringBuilder();
+      StringBuilder var2 = new StringBuilder();
 
       while(true) {
-         char a = this.Method2885();
-         if (!Character.isLetterOrDigit(a) && a != '#') {
-            if (a == ';') {
-               String a = a.toString();
-               return Method2902(a);
+         char var3 = this.Method2885();
+         if (!Character.isLetterOrDigit(var3) && var3 != '#') {
+            if (var3 == ';') {
+               String var4 = var2.toString();
+               return Method2902(var4);
             }
 
-            throw this.Method2895("Missing ';' in XML entity: &" + a);
+            throw this.Method2895("Missing ';' in XML entity: &" + var2);
          }
 
-         a.append(Character.toLowerCase(a));
+         var2.append(Character.toLowerCase(var3));
       }
    }
 
@@ -63,34 +63,34 @@ public class Class292 extends Class290 {
       if (a.isEmpty()) {
          return "";
       } else if (a.charAt(0) != '#') {
-         Character a = (Character)Field1560.Method2665(a);
+         Character var2 = (Character)Field1560.Method2665(a);
          return '&' + a + ';';
       } else {
-         int a;
+         int var1;
          if (a.charAt(1) != 'x' && a.charAt(1) != 'X') {
-            a = Integer.parseInt(a.substring(1));
+            var1 = Integer.parseInt(a.substring(1));
          } else {
-            a = Integer.parseInt(a.substring(2), 16);
+            var1 = Integer.parseInt(a.substring(2), 16);
          }
 
-         return new String(new int[]{a}, 0, 1);
+         return new String(new int[]{var1}, 0, 1);
       }
    }
 
    public Object Method2903() throws Class666 {
-      char a;
+      char var1;
       do {
-         a = this.Method2885();
-      } while(Character.isWhitespace(a));
+         var1 = this.Method2885();
+      } while(Character.isWhitespace(var1));
 
-      switch (a) {
+      switch (var1) {
          case '\u0000':
             throw this.Method2895("Misshaped meta tag");
          case '!':
             return Class296.Field1569;
          case '"':
          case '\'':
-            a = this.Method2885();
+            var1 = this.Method2885();
             throw this.Method2895("Unterminated string");
          case '/':
             return Class296.Field1575;
@@ -104,12 +104,12 @@ public class Class292 extends Class290 {
             return Class296.Field1573;
          default:
             while(true) {
-               a = this.Method2885();
-               if (Character.isWhitespace(a)) {
+               var1 = this.Method2885();
+               if (Character.isWhitespace(var1)) {
                   return Boolean.TRUE;
                }
 
-               switch (a) {
+               switch (var1) {
                   case '\u0000':
                      throw this.Method2895("Unterminated string");
                   case '!':
@@ -128,14 +128,14 @@ public class Class292 extends Class290 {
    }
 
    public Object Method2904() throws Class666 {
-      int[] a = Class666.Method3438();
+      int[] var1 = Class666.Method3438();
 
-      char a;
+      char var2;
       do {
-         a = this.Method2885();
-      } while(Character.isWhitespace(a));
+         var2 = this.Method2885();
+      } while(Character.isWhitespace(var2));
 
-      switch (a) {
+      switch (var2) {
          case '\u0000':
             throw this.Method2895("Misshaped element");
          case '!':
@@ -143,7 +143,7 @@ public class Class292 extends Class290 {
          case '"':
          case '\'':
             new StringBuilder();
-            a = this.Method2885();
+            var2 = this.Method2885();
             throw this.Method2895("Unterminated string");
          case '/':
             return Class296.Field1575;
@@ -156,18 +156,18 @@ public class Class292 extends Class290 {
          case '?':
             return Class296.Field1573;
          default:
-            StringBuilder a = new StringBuilder();
+            StringBuilder var4 = new StringBuilder();
 
             while(true) {
-               a.append(a);
-               a = this.Method2885();
-               if (Character.isWhitespace(a)) {
-                  return a.toString();
+               var4.append(var2);
+               var2 = this.Method2885();
+               if (Character.isWhitespace(var2)) {
+                  return var4.toString();
                }
 
-               switch (a) {
+               switch (var2) {
                   case '\u0000':
-                     return a.toString();
+                     return var4.toString();
                   case '!':
                   case '/':
                   case '=':
@@ -176,7 +176,7 @@ public class Class292 extends Class290 {
                   case '[':
                   case ']':
                      this.Method2880();
-                     return a.toString();
+                     return var4.toString();
                   case '"':
                   case '\'':
                   case '<':
@@ -187,27 +187,27 @@ public class Class292 extends Class290 {
    }
 
    public void Method2905(String a) {
-      byte a = 0;
+      byte var7 = 0;
       Class666.Method3438();
-      int a = a.length();
-      char[] a = new char[a];
-      int a = 0;
-      if (a < a) {
-         char a = this.Method2885();
+      int var8 = a.length();
+      char[] var9 = new char[var8];
+      int var5 = 0;
+      if (var5 < var8) {
+         char var4 = this.Method2885();
       } else {
-         boolean a = true;
-         a = 0;
-         if (a < a) {
-            if (a[a] != a.charAt(a)) {
-               a = false;
+         boolean var3 = true;
+         var5 = 0;
+         if (var5 < var8) {
+            if (var9[var7] != a.charAt(var5)) {
+               var3 = false;
             }
 
-            int a = a + 1;
-            if (a >= a) {
-               int var10000 = a - a;
+            int var6 = var7 + 1;
+            if (var6 >= var8) {
+               int var10000 = var6 - var8;
             }
 
-            ++a;
+            ++var5;
          }
 
       }

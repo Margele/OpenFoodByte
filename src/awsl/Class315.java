@@ -10,7 +10,7 @@ public class Class315 extends Class321 {
    }
 
    protected double Method797(double a) {
-      double a = a / (double)this.Field1605;
-      return 1.0 - (a - 1.0) * (a - 1.0);
+      double var3 = a / (double)this.Field1605;
+      return 1.0 - (var3 - 1.0) * (var3 - 1.0);
    }
 }

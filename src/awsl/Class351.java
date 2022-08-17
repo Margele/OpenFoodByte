@@ -36,18 +36,18 @@ public class Class351 {
    }
 
    public static void Method28(float a) {
-      ScaledResolution a = new ScaledResolution(Field1684);
-      int a = a.getScaleFactor();
+      ScaledResolution var2 = new ScaledResolution(Field1684);
+      int var3 = var2.getScaleFactor();
       Class348.Method371();
-      int a = a.getScaledWidth();
-      int a = a.getScaledHeight();
-      if (Field1686 != a || Field1687 != a || Field1688 != a || Field1685 == null || Field1683 == null) {
+      int var4 = var2.getScaledWidth();
+      int var5 = var2.getScaledHeight();
+      if (Field1686 != var3 || Field1687 != var4 || Field1688 != var5 || Field1685 == null || Field1683 == null) {
          Method26();
       }
 
-      Field1686 = a;
-      Field1687 = a;
-      Field1688 = a;
+      Field1686 = var3;
+      Field1687 = var4;
+      Field1688 = var5;
       Method27(a, 0.0F, 1.0F);
       Field1685.bindFramebuffer(true);
       Field1683.loadShaderGroup(ReflectionUtils.getRenderPartialTicks());

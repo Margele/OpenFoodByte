@@ -23,7 +23,7 @@ public class Class385 extends Class394 {
       this.Field1920 = "ModuleButton";
    }
 
-   public void Method419(int a, int a1) {
+   public void Method419(int a, int a) {
       this.Field1916 = !this.Field1888.isHideModule;
       if (GlobalModule.Field3155.getValue()) {
          this.Field1916 = true;
@@ -43,8 +43,8 @@ public class Class385 extends Class394 {
 
    }
 
-   public void Method412(int a, int a1) {
-      int a = (new Color(14013909)).getRGB();
+   public void Method412(int a, int a) {
+      int var3 = (new Color(14013909)).getRGB();
       this.Field1891.Method290(GlobalModule.INSTANCE.Field3190.Method1827(this.Field1888.getName() + "_setting"));
       if (this.Field1915) {
          RenderUtils.Method1103((float)this.Field1907, (float)this.Field1908, (float)this.Method1310(), (float)this.Field1910, Class681.Method2699(Class707.Method1829(), -250));
@@ -52,20 +52,20 @@ public class Class385 extends Class394 {
 
       Class565.Field2635.Method1217(this.Field1913, (float)(this.Field1907 + 12), (float)(this.Field1908 + this.Field1910 / 2) - Class565.Field2635.Method1227(this.Field1913) / 2.0F + 1.0F, this.Field1888.canUse() ? (new Color(7303023)).getRGB() : (this.Field1949 ? Class707.Method1832() : 16777215));
       if (this.Field1888.Method1031()) {
-         a = this.Field1890 ? Class681.Method2699(a, 30) : a;
-         float a = (float)this.Field1907 + (float)this.Field1909 - 6.5F;
-         float a = (float)this.Field1908 + (float)this.Field1910 / 2.0F;
+         var3 = this.Field1890 ? Class681.Method2699(var3, 30) : var3;
+         float var4 = (float)this.Field1907 + (float)this.Field1909 - 6.5F;
+         float var5 = (float)this.Field1908 + (float)this.Field1910 / 2.0F;
          GlStateManager.pushMatrix();
-         GlStateManager.translate(a, a, 0.0F);
+         GlStateManager.translate(var4, var5, 0.0F);
          GlStateManager.rotate((float)this.Field1891.Method292() * 90.0F, 0.0F, 0.0F, 1.0F);
-         RenderUtils.Method1085(-1.0, -2.0, 1.0, 0.0, 1.0F, a);
-         RenderUtils.Method1085(-1.0, 2.0, 1.0, 0.0, 1.0F, a);
-         GlStateManager.translate(-a, -a, 0.0F);
+         RenderUtils.Method1085(-1.0, -2.0, 1.0, 0.0, 1.0F, var3);
+         RenderUtils.Method1085(-1.0, 2.0, 1.0, 0.0, 1.0F, var3);
+         GlStateManager.translate(-var4, -var5, 0.0F);
          GlStateManager.popMatrix();
       }
 
-      int a = this.Field1888.getState() ? Class707.Method1832() : 16777215;
-      RenderUtils.Method1133(a);
+      int var6 = this.Field1888.getState() ? Class707.Method1832() : 16777215;
+      RenderUtils.Method1133(var6);
    }
 
    protected void Method425() {

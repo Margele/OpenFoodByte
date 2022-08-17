@@ -43,38 +43,38 @@ public class SecretAura extends Module {
 
    @EventTarget
    public void Method752(EventMotion a) {
-      int[] a = Class98.Method3639();
-      Vec3i a;
+      int[] var2 = Class98.Method3639();
+      Vec3i var3;
       Iterator var4;
-      BlockPos a;
+      BlockPos var5;
       if (a.isPre()) {
          if (mc.thePlayer == null || !ServerUtils.isPlayingSkyblockAndCleared() || !Field3130.getBooleanValue()) {
             return;
          }
 
-         a = new Vec3i(10, 10, 10);
-         var4 = BlockPos.getAllInBox((new BlockPos(mc.thePlayer.getPosition())).add(a), new BlockPos(mc.thePlayer.getPosition().subtract(a))).Method1383();
+         var3 = new Vec3i(10, 10, 10);
+         var4 = BlockPos.getAllInBox((new BlockPos(mc.thePlayer.getPosition())).add(var3), new BlockPos(mc.thePlayer.getPosition().subtract(var3))).Method1383();
          if (var4.Method932()) {
-            a = (BlockPos)var4.Method933();
-            if (this.Method2067(a) && mc.thePlayer.getDistance((double)a.getX(), (double)((float)a.getY() - mc.thePlayer.getEyeHeight()), (double)a.getZ()) < (double)Field3127.getFloatValue()) {
-               float[] a = Method2070(new Vec3((double)a.getX() + 0.5, (double)a.getY() + 0.5, (double)a.getZ() + 0.5));
-               EventMotion.pitch = a[1];
-               EventMotion.yaw = a[0];
+            var5 = (BlockPos)var4.Method933();
+            if (this.Method2067(var5) && mc.thePlayer.getDistance((double)var5.getX(), (double)((float)var5.getY() - mc.thePlayer.getEyeHeight()), (double)var5.getZ()) < (double)Field3127.getFloatValue()) {
+               float[] var6 = Method2070(new Vec3((double)var5.getX() + 0.5, (double)var5.getY() + 0.5, (double)var5.getZ() + 0.5));
+               EventMotion.pitch = var6[1];
+               EventMotion.yaw = var6[0];
             }
          }
       }
 
       if (mc.thePlayer != null && ServerUtils.isPlayingSkyblockAndCleared()) {
-         a = new Vec3i(10, 10, 10);
-         var4 = BlockPos.getAllInBox((new BlockPos(mc.thePlayer.getPosition())).add(a), new BlockPos(mc.thePlayer.getPosition().subtract(a))).Method1383();
+         var3 = new Vec3i(10, 10, 10);
+         var4 = BlockPos.getAllInBox((new BlockPos(mc.thePlayer.getPosition())).add(var3), new BlockPos(mc.thePlayer.getPosition().subtract(var3))).Method1383();
 
          while(var4.Method932()) {
-            a = (BlockPos)var4.Method933();
-            if (!this.Method2067(a) || !(mc.thePlayer.getDistance((double)a.getX(), (double)((float)a.getY() - mc.thePlayer.getEyeHeight()), (double)a.getZ()) < (double)Field3127.getFloatValue())) {
+            var5 = (BlockPos)var4.Method933();
+            if (!this.Method2067(var5) || !(mc.thePlayer.getDistance((double)var5.getX(), (double)((float)var5.getY() - mc.thePlayer.getEyeHeight()), (double)var5.getZ()) < (double)Field3127.getFloatValue())) {
                break;
             }
 
-            this.Method2069(a);
+            this.Method2069(var5);
             if (Field3130.getBooleanValue()) {
                break;
             }
@@ -84,29 +84,29 @@ public class SecretAura extends Module {
    }
 
    private boolean Method2067(BlockPos a) {
-      Block a = mc.theWorld.getBlockState(a).getBlock();
-      if (a == Blocks.skull) {
-         TileEntitySkull a = (TileEntitySkull)mc.theWorld.getTileEntity(a);
-         if (a.getSkullType() == 3 && a.getPlayerProfile() != null && a.getPlayerProfile().getProperties() != null) {
-            Property a = (Property)Method2068(a.getPlayerProfile().getProperties().get("textures"));
-            return a.getValue().equals("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkYjRhZGZhOWJmNDhmZjVkNDE3MDdhZTM0ZWE3OGJkMjM3MTY1OWZjZDhjZDg5MzQ3NDlhZjRjY2U5YiJ9fX0=") && (!Field3131.contains(a) || !Field3128.getBooleanValue());
+      Block var2 = mc.theWorld.getBlockState(a).getBlock();
+      if (var2 == Blocks.skull) {
+         TileEntitySkull var3 = (TileEntitySkull)mc.theWorld.getTileEntity(a);
+         if (var3.getSkullType() == 3 && var3.getPlayerProfile() != null && var3.getPlayerProfile().getProperties() != null) {
+            Property var4 = (Property)Method2068(var3.getPlayerProfile().getProperties().get("textures"));
+            return var4.getValue().equals("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkYjRhZGZhOWJmNDhmZjVkNDE3MDdhZTM0ZWE3OGJkMjM3MTY1OWZjZDhjZDg5MzQ3NDlhZjRjY2U5YiJ9fX0=") && (!Field3131.contains(a) || !Field3128.getBooleanValue());
          }
       }
 
-      return (a == Blocks.lever || a == Blocks.chest || a == Blocks.trapped_chest) && (!Field3131.contains(a) || !Field3128.getBooleanValue());
+      return (var2 == Blocks.lever || var2 == Blocks.chest || var2 == Blocks.trapped_chest) && (!Field3131.contains(a) || !Field3128.getBooleanValue());
    }
 
    private void Method2069(BlockPos a) {
-      for(int a = 0; a < 9; ++a) {
-         if (mc.thePlayer.inventory.getStackInSlot(a) != null && mc.thePlayer.inventory.getStackInSlot(a).getDisplayName().toLowerCase().contains("stonk".toLowerCase())) {
-            int a = mc.thePlayer.inventory.currentItem;
-            mc.thePlayer.inventory.currentItem = a;
+      for(int var2 = 0; var2 < 9; ++var2) {
+         if (mc.thePlayer.inventory.getStackInSlot(var2) != null && mc.thePlayer.inventory.getStackInSlot(var2).getDisplayName().toLowerCase().contains("stonk".toLowerCase())) {
+            int var3 = mc.thePlayer.inventory.currentItem;
+            mc.thePlayer.inventory.currentItem = var2;
             if (mc.theWorld.getBlockState(a).getBlock() == Blocks.lever && !Field3132) {
                mc.playerController.onPlayerRightClick(mc.thePlayer, mc.theWorld, mc.thePlayer.inventory.getCurrentItem(), a, EnumFacing.fromAngle((double)mc.thePlayer.rotationYaw), new Vec3(0.0, 0.0, 0.0));
             }
 
             mc.playerController.onPlayerRightClick(mc.thePlayer, mc.theWorld, mc.thePlayer.inventory.getCurrentItem(), a, EnumFacing.fromAngle((double)mc.thePlayer.rotationYaw), new Vec3(0.0, 0.0, 0.0));
-            mc.thePlayer.inventory.currentItem = a;
+            mc.thePlayer.inventory.currentItem = var3;
             Field3131.Method2530(a);
             return;
          }
@@ -139,12 +139,12 @@ public class SecretAura extends Module {
    }
 
    public static float[] Method2070(Vec3 a) {
-      double a = a.xCoord - mc.thePlayer.posX;
-      double a = a.yCoord - (mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight());
-      double a = a.zCoord - mc.thePlayer.posZ;
-      double a = (double)MathHelper.sqrt_double(a * a + a * a);
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI) - 90.0F;
-      float a = (float)(-(Math.atan2(a, a) * 180.0 / Math.PI));
-      return new float[]{mc.thePlayer.rotationYaw + MathHelper.wrapAngleTo180_float(a - mc.thePlayer.rotationYaw), mc.thePlayer.rotationPitch + MathHelper.wrapAngleTo180_float(a - mc.thePlayer.rotationPitch)};
+      double var1 = a.xCoord - mc.thePlayer.posX;
+      double var3 = a.yCoord - (mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight());
+      double var5 = a.zCoord - mc.thePlayer.posZ;
+      double var7 = (double)MathHelper.sqrt_double(var1 * var1 + var5 * var5);
+      float var9 = (float)(Math.atan2(var5, var1) * 180.0 / Math.PI) - 90.0F;
+      float var10 = (float)(-(Math.atan2(var3, var7) * 180.0 / Math.PI));
+      return new float[]{mc.thePlayer.rotationYaw + MathHelper.wrapAngleTo180_float(var9 - mc.thePlayer.rotationYaw), mc.thePlayer.rotationPitch + MathHelper.wrapAngleTo180_float(var10 - mc.thePlayer.rotationPitch)};
    }
 }

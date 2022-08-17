@@ -37,15 +37,15 @@ public class Experimentation extends Module {
    }
 
    public int Method2063(List a) {
-      int a = 0;
+      int var2 = 0;
 
-      for(int a = 9; a <= 44; ++a) {
-         if (((Slot)a.get(a)).getStack() != null && !((Slot)a.get(a)).getStack().getDisplayName().startsWith(" ") && ((Slot)a.get(a)).getStack().stackSize > a) {
-            a = ((Slot)a.get(a)).getStack().stackSize;
+      for(int var3 = 9; var3 <= 44; ++var3) {
+         if (((Slot)a.get(var3)).getStack() != null && !((Slot)a.get(var3)).getStack().getDisplayName().startsWith(" ") && ((Slot)a.get(var3)).getStack().stackSize > var2) {
+            var2 = ((Slot)a.get(var3)).getStack().stackSize;
          }
       }
 
-      return a;
+      return var2;
    }
 
    private static Exception Method263(Exception exception) {
@@ -857,15 +857,15 @@ public class Experimentation extends Module {
 
    @EventTarget
    public void Method1657(Class643 a) {
-      GuiContainer a = (GuiContainer)a.Field2911;
-      if (Class484.Field2234.equals(Class615.ISLAND) && a.inventorySlots instanceof ContainerChest) {
-         IInventory a = ((ContainerChest)a.inventorySlots).getLowerChestInventory();
-         Container a = a.inventorySlots;
-         String a = a.getDisplayName().getUnformattedText().toLowerCase().trim();
-         String a = a.getDisplayName().getUnformattedText();
-         int a = a.inventorySlots.inventorySlots.Method1799();
-         List a = a.inventorySlots.inventorySlots;
-         this.Method1656(a, a, a, a, a);
+      GuiContainer var2 = (GuiContainer)a.Field2911;
+      if (Class484.Field2234.equals(Class615.ISLAND) && var2.inventorySlots instanceof ContainerChest) {
+         IInventory var3 = ((ContainerChest)var2.inventorySlots).getLowerChestInventory();
+         Container var4 = var2.inventorySlots;
+         String var5 = var3.getDisplayName().getUnformattedText().toLowerCase().trim();
+         String var6 = var3.getDisplayName().getUnformattedText();
+         int var7 = var2.inventorySlots.inventorySlots.Method1799();
+         List var8 = var2.inventorySlots.inventorySlots;
+         this.Method1656(var4, var6, var7, var8, var3);
       }
 
    }

@@ -81,71 +81,71 @@ public class Class761 extends Class798 {
       return this.Field3341;
    }
 
-   protected int[] Method714(int a, int a, int[] a2, Rectangle a3) {
-      int[] a = new int[a * a];
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
+      int[] var6 = new int[a * a];
       boolean var7 = false;
       Class193.Method1269();
-      int a = 0;
-      float a = 0.1F;
-      float a = 0.3F;
-      int a = 0;
-      float a;
-      float a;
-      float a;
-      float a;
-      if (a < 20) {
-         a = 3.1415927F * a;
-         a = 3.1415927F * a;
-         a = (float)Math.sin((double)(2.0F * a));
-         a = (float)Math.sin((double)(2.0F * a));
-         float a = (float)((double)(this.Field3336 * a) + (double)(this.Field3337 * a) * Math.cos((double)(2.0F * a)) + (double)this.Field3338 * Math.sin((double)(4.0F * a)) + (double)this.Field3339 * Math.sin((double)(6.0F * a)) * Math.cos((double)(4.0F * a)) + (double)((float)this.Field3340 * a));
-         a = a >= 0.0F ? a - (float)((int)a) : a - (float)((int)a) + 1.0F;
-         float a = (float)((double)(this.Field3336 * a) + (double)(this.Field3337 * a) * Math.cos((double)(2.0F * a)) + (double)this.Field3338 * Math.sin((double)(4.0F * a)) + (double)this.Field3339 * Math.sin((double)(6.0F * a)) * Math.cos((double)(4.0F * a)) + (double)((float)this.Field3340 * a));
-         a = a >= 0.0F ? a - (float)((int)a) : a - (float)((int)a) + 1.0F;
-         a = a;
-         a = a;
-         ++a;
+      int var8 = 0;
+      float var9 = 0.1F;
+      float var10 = 0.3F;
+      int var11 = 0;
+      float var12;
+      float var13;
+      float var14;
+      float var15;
+      if (var11 < 20) {
+         var12 = 3.1415927F * var9;
+         var13 = 3.1415927F * var10;
+         var14 = (float)Math.sin((double)(2.0F * var12));
+         var15 = (float)Math.sin((double)(2.0F * var13));
+         float var16 = (float)((double)(this.Field3336 * var14) + (double)(this.Field3337 * var14) * Math.cos((double)(2.0F * var13)) + (double)this.Field3338 * Math.sin((double)(4.0F * var12)) + (double)this.Field3339 * Math.sin((double)(6.0F * var12)) * Math.cos((double)(4.0F * var13)) + (double)((float)this.Field3340 * var9));
+         var16 = var16 >= 0.0F ? var16 - (float)((int)var16) : var16 - (float)((int)var16) + 1.0F;
+         float var17 = (float)((double)(this.Field3336 * var15) + (double)(this.Field3337 * var15) * Math.cos((double)(2.0F * var12)) + (double)this.Field3338 * Math.sin((double)(4.0F * var13)) + (double)this.Field3339 * Math.sin((double)(6.0F * var13)) * Math.cos((double)(4.0F * var12)) + (double)((float)this.Field3340 * var10));
+         var17 = var17 >= 0.0F ? var17 - (float)((int)var17) : var17 - (float)((int)var17) + 1.0F;
+         var9 = var16;
+         var10 = var17;
+         ++var11;
       }
 
-      int a = 0;
-      if (a < this.Field3335) {
-         a = 3.1415927F * a;
-         a = 3.1415927F * a;
-         a = (float)((double)this.Field3336 * Math.sin((double)(2.0F * a)) + (double)this.Field3337 * Math.sin((double)(2.0F * a)) * Math.cos((double)(2.0F * a)) + (double)this.Field3338 * Math.sin((double)(4.0F * a)) + (double)this.Field3339 * Math.sin((double)(6.0F * a)) * Math.cos((double)(4.0F * a)) + (double)((float)this.Field3340 * a));
-         a = a >= 0.0F ? a - (float)((int)a) : a - (float)((int)a) + 1.0F;
-         a = (float)((double)this.Field3336 * Math.sin((double)(2.0F * a)) + (double)this.Field3337 * Math.sin((double)(2.0F * a)) * Math.cos((double)(2.0F * a)) + (double)this.Field3338 * Math.sin((double)(4.0F * a)) + (double)this.Field3339 * Math.sin((double)(6.0F * a)) * Math.cos((double)(4.0F * a)) + (double)((float)this.Field3340 * a));
-         a = a >= 0.0F ? a - (float)((int)a) : a - (float)((int)a) + 1.0F;
-         int a = (int)((float)a * a);
-         int a = (int)((float)a * a);
-         if (a < a && a < a) {
-            int var10001 = a * a + a;
-            int var10003 = a[a * a + a];
-            a[var10001] = a[a * a + a] + 1;
-            int a = var10003;
-            if (a > a) {
-               a = a;
+      byte var19 = 0;
+      if (var19 < this.Field3335) {
+         var12 = 3.1415927F * var9;
+         var13 = 3.1415927F * var10;
+         var14 = (float)((double)this.Field3336 * Math.sin((double)(2.0F * var12)) + (double)this.Field3337 * Math.sin((double)(2.0F * var12)) * Math.cos((double)(2.0F * var13)) + (double)this.Field3338 * Math.sin((double)(4.0F * var12)) + (double)this.Field3339 * Math.sin((double)(6.0F * var12)) * Math.cos((double)(4.0F * var13)) + (double)((float)this.Field3340 * var9));
+         var14 = var14 >= 0.0F ? var14 - (float)((int)var14) : var14 - (float)((int)var14) + 1.0F;
+         var15 = (float)((double)this.Field3336 * Math.sin((double)(2.0F * var13)) + (double)this.Field3337 * Math.sin((double)(2.0F * var13)) * Math.cos((double)(2.0F * var12)) + (double)this.Field3338 * Math.sin((double)(4.0F * var13)) + (double)this.Field3339 * Math.sin((double)(6.0F * var13)) * Math.cos((double)(4.0F * var12)) + (double)((float)this.Field3340 * var10));
+         var15 = var15 >= 0.0F ? var15 - (float)((int)var15) : var15 - (float)((int)var15) + 1.0F;
+         int var20 = (int)((float)a * var14);
+         int var21 = (int)((float)a * var15);
+         if (var20 < a && var21 < a) {
+            int var10001 = a * var21 + var20;
+            int var10003 = var6[a * var21 + var20];
+            var6[var10001] = var6[a * var21 + var20] + 1;
+            int var18 = var10003;
+            if (var18 > var8) {
+               var8 = var18;
             }
          }
 
-         a = a + 1;
+         var11 = var19 + 1;
       }
 
       if (this.Field3341 != null) {
-         a = 0;
-         a = 0.0F;
-         if (a < (float)a) {
-            a = 0.0F;
-            if (a < (float)a) {
-               a[a] = this.Field3341.Method283((float)a[a] / (float)a);
-               a = a + 1;
-               ++a;
+         var19 = 0;
+         var10 = 0.0F;
+         if (var10 < (float)a) {
+            var9 = 0.0F;
+            if (var9 < (float)a) {
+               var6[var19] = this.Field3341.Method283((float)var6[var19] / (float)var8);
+               var11 = var19 + 1;
+               ++var9;
             }
 
-            ++a;
+            ++var10;
          }
       }
 
-      return a;
+      return var6;
    }
 
    public String toString() {

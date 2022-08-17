@@ -28,15 +28,15 @@ public class Class285 {
 
    public void Method3096() {
       Method3102();
-      Block a = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208, this.Field1544.Field1209 + this.Field1545.Field1209);
+      Block var2 = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208, this.Field1544.Field1209 + this.Field1545.Field1209);
       Class216 var10000;
-      if (!(a instanceof BlockAir) && !(a instanceof BlockBush) && !(a instanceof BlockLiquid)) {
+      if (!(var2 instanceof BlockAir) && !(var2 instanceof BlockBush) && !(var2 instanceof BlockLiquid)) {
          var10000 = this.Field1545;
          var10000.Field1209 *= -0.8;
       }
 
-      Block a = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208 + this.Field1545.Field1208, this.Field1544.Field1209);
-      if (!(a instanceof BlockAir) && !(a instanceof BlockBush) && !(a instanceof BlockLiquid)) {
+      Block var3 = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208 + this.Field1545.Field1208, this.Field1544.Field1209);
+      if (!(var3 instanceof BlockAir) && !(var3 instanceof BlockBush) && !(var3 instanceof BlockLiquid)) {
          var10000 = this.Field1545;
          var10000.Field1207 *= 0.9990000128746033;
          var10000 = this.Field1545;
@@ -45,8 +45,8 @@ public class Class285 {
          var10000.Field1208 *= -0.6;
       }
 
-      Block a = PlayerUtils.getBlock(this.Field1544.Field1207 + this.Field1545.Field1207, this.Field1544.Field1208, this.Field1544.Field1209);
-      if (!(a instanceof BlockAir) && !(a instanceof BlockBush) && !(a instanceof BlockLiquid)) {
+      Block var4 = PlayerUtils.getBlock(this.Field1544.Field1207 + this.Field1545.Field1207, this.Field1544.Field1208, this.Field1544.Field1209);
+      if (!(var4 instanceof BlockAir) && !(var4 instanceof BlockBush) && !(var4 instanceof BlockLiquid)) {
          var10000 = this.Field1545;
          var10000.Field1207 *= -0.8;
       }
@@ -86,8 +86,8 @@ public class Class285 {
    }
 
    public boolean Method3099() {
-      Block a = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208 - 1.0E-5, this.Field1544.Field1209);
-      return !(a instanceof BlockAir) && !(a instanceof BlockBush) && !(a instanceof BlockLiquid);
+      Block var1 = PlayerUtils.getBlock(this.Field1544.Field1207, this.Field1544.Field1208 - 1.0E-5, this.Field1544.Field1209);
+      return !(var1 instanceof BlockAir) && !(var1 instanceof BlockBush) && !(var1 instanceof BlockLiquid);
    }
 
    public static void Method3100(int integer) {

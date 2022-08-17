@@ -811,7 +811,7 @@ public class Class469 implements Class422, Class45 {
       return Field2169[var2];
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    static {

@@ -18,11 +18,11 @@ public class Class359 extends Class360 {
    }
 
    public void Method181(ItemStack a, boolean a) {
-      int[] a = RenderUtils.trash();
+      int[] var3 = RenderUtils.trash();
       Class356.Method144(a).setBoolean(this.Field1703, a);
       if (Class356.Method145(a)) {
-         NBTTagCompound a = Class356.Method144(a);
-         a.removeTag(this.Field1703);
+         NBTTagCompound var4 = Class356.Method144(a);
+         var4.removeTag(this.Field1703);
          Class356.Method146(a);
       }
 
@@ -32,7 +32,7 @@ public class Class359 extends Class360 {
       return Class356.Method145(a) ? Class356.Method144(a).getByte(this.Field1703) : 0;
    }
 
-   Class359(String a, Class355 a1) {
+   Class359(String a, Class355 a) {
       this(a);
    }
 }

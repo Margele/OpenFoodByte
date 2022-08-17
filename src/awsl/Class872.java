@@ -39,24 +39,24 @@ public class Class872 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1270();
-      int a = a.getWidth();
-      int a = a.getHeight();
-      ColorModel a = a.getColorModel();
-      a = new BufferedImage(a, a.createCompatibleWritableRaster(this.Field3804, this.Field3805), a.isAlphaPremultiplied(), (Hashtable)null);
-      Graphics2D a = a.createGraphics();
-      int a = 0;
-      if (a < this.Field3805) {
-         int a = 0;
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
+      ColorModel var6 = a.getColorModel();
+      a = new BufferedImage(var6, var6.createCompatibleWritableRaster(this.Field3804, this.Field3805), var6.isAlphaPremultiplied(), (Hashtable)null);
+      Graphics2D var9 = a.createGraphics();
+      byte var7 = 0;
+      if (var7 < this.Field3805) {
+         byte var8 = 0;
          int var10000;
-         if (a < this.Field3804) {
-            a.drawImage(a, (BufferedImageOp)null, a, a);
-            var10000 = a + a;
+         if (var8 < this.Field3804) {
+            var9.drawImage(a, (BufferedImageOp)null, var8, var7);
+            var10000 = var8 + var4;
          }
 
-         var10000 = a + a;
+         var10000 = var7 + var5;
       }
 
-      a.dispose();
+      var9.dispose();
       return a;
    }
 

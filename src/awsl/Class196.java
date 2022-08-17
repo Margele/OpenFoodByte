@@ -27,128 +27,128 @@ public class Class196 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
+      int var3 = a.getWidth();
+      int var4 = a.getHeight();
       a = this.Method1263(a, (ColorModel)null);
-      int[] a = new int[a * a];
-      int[] a = new int[a * a];
-      this.Method104(a, 0, 0, a, a, a);
+      int[] var5 = new int[var3 * var4];
+      int[] var6 = new int[var3 * var4];
+      this.Method104(a, 0, 0, var3, var4, var5);
       if (this.Field1169) {
-         Class776.Method1727(a, 0, a.length);
+         Class776.Method1727(var5, 0, var5.length);
       }
 
-      for(int a = 0; a < this.Field1168; ++a) {
-         Method1278(a, a, a, a, this.Field1166);
-         Method1278(a, a, a, a, this.Field1167);
+      for(int var7 = 0; var7 < this.Field1168; ++var7) {
+         Method1278(var5, var6, var3, var4, this.Field1166);
+         Method1278(var6, var5, var4, var3, this.Field1167);
       }
 
-      Method1279(a, a, a, a, this.Field1166);
-      Method1279(a, a, a, a, this.Field1167);
+      Method1279(var5, var6, var3, var4, this.Field1166);
+      Method1279(var6, var5, var4, var3, this.Field1167);
       if (this.Field1169) {
-         Class776.Method1728(a, 0, a.length);
+         Class776.Method1728(var5, 0, var5.length);
       }
 
-      this.Method1267(a, 0, 0, a, a, a);
+      this.Method1267(a, 0, 0, var3, var4, var5);
       return a;
    }
 
    public static void Method1278(int[] a, int[] a, int a, int a, float a) {
-      int a = a - 1;
+      int var6 = a - 1;
       Class193.Method1269();
-      int a = (int)a;
-      int a = 2 * a + 1;
-      int[] a = new int[256 * a];
-      int a = 0;
-      if (a < 256 * a) {
-         a[a] = a / a;
-         ++a;
+      int var7 = (int)a;
+      int var8 = 2 * var7 + 1;
+      int[] var9 = new int[256 * var8];
+      int var10 = 0;
+      if (var10 < 256 * var8) {
+         var9[var10] = var10 / var8;
+         ++var10;
       }
 
-      int a = 0;
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         int a = 0;
-         int a = 0;
-         int a = 0;
-         int a = -a;
-         int a;
-         if (a <= a) {
-            a = a[a + Class776.Method1712(a, 0, a - 1)];
-            a += a >> 24 & 255;
-            a += a >> 16 & 255;
-            a += a >> 8 & 255;
-            a += a & 255;
-            ++a;
+      byte var22 = 0;
+      int var11 = 0;
+      if (var11 < a) {
+         int var13 = 0;
+         int var14 = 0;
+         int var15 = 0;
+         int var16 = 0;
+         int var17 = -var7;
+         int var18;
+         if (var17 <= var7) {
+            var18 = a[var22 + Class776.Method1712(var17, 0, a - 1)];
+            var13 += var18 >> 24 & 255;
+            var14 += var18 >> 16 & 255;
+            var15 += var18 >> 8 & 255;
+            var16 += var18 & 255;
+            ++var17;
          }
 
-         int a = 0;
+         byte var23 = 0;
          int var10000;
-         if (a < a) {
-            a[a] = a[a] << 24 | a[a] << 16 | a[a] << 8 | a[a];
-            a = a + a + 1;
-            if (a > a) {
-               a = a;
+         if (var23 < a) {
+            a[var11] = var9[var13] << 24 | var9[var14] << 16 | var9[var15] << 8 | var9[var16];
+            var18 = var23 + var7 + 1;
+            if (var18 > var6) {
+               var18 = var6;
             }
 
-            int a = a - a;
-            int a = 0;
-            int a = a[a + a];
-            int a = a[a + a];
-            var10000 = a + ((a >> 24 & 255) - (a >> 24 & 255));
-            var10000 = a + ((a & 16711680) - (a & 16711680) >> 16);
-            var10000 = a + ((a & '\uff00') - (a & '\uff00') >> 8);
-            var10000 = a + ((a & 255) - (a & 255));
-            int a = a + a;
-            a = a + 1;
+            int var19 = var23 - var7;
+            byte var24 = 0;
+            int var20 = a[var22 + var18];
+            int var21 = a[var22 + var24];
+            var10000 = var13 + ((var20 >> 24 & 255) - (var21 >> 24 & 255));
+            var10000 = var14 + ((var20 & 16711680) - (var21 & 16711680) >> 16);
+            var10000 = var15 + ((var20 & '\uff00') - (var21 & '\uff00') >> 8);
+            var10000 = var16 + ((var20 & 255) - (var21 & 255));
+            int var12 = var11 + a;
+            var17 = var23 + 1;
          }
 
-         var10000 = a + a;
-         ++a;
+         var10000 = var22 + a;
+         ++var11;
       }
 
    }
 
    public static void Method1279(int[] a, int[] a, int a, int a, float a) {
       a -= (float)((int)a);
-      float a = 1.0F / (1.0F + 2.0F * a);
-      int a = 0;
+      float var5 = 1.0F / (1.0F + 2.0F * a);
+      int var6 = 0;
 
-      for(int a = 0; a < a; ++a) {
-         a[a] = a[0];
-         int a = a + a;
+      for(int var7 = 0; var7 < a; ++var7) {
+         a[var7] = a[0];
+         int var8 = var7 + a;
 
-         for(int a = 1; a < a - 1; ++a) {
-            int a = a + a;
-            int a = a[a - 1];
-            int a = a[a];
-            int a = a[a + 1];
-            int a = a >> 24 & 255;
-            int a = a >> 16 & 255;
-            int a = a >> 8 & 255;
-            int a = a & 255;
-            int a = a >> 24 & 255;
-            int a = a >> 16 & 255;
-            int a = a >> 8 & 255;
-            int a = a & 255;
-            int a = a >> 24 & 255;
-            int a = a >> 16 & 255;
-            int a = a >> 8 & 255;
-            int a = a & 255;
-            a = a + (int)((float)(a + a) * a);
-            a = a + (int)((float)(a + a) * a);
-            a = a + (int)((float)(a + a) * a);
-            a = a + (int)((float)(a + a) * a);
-            a = (int)((float)a * a);
-            a = (int)((float)a * a);
-            a = (int)((float)a * a);
-            a = (int)((float)a * a);
-            a[a] = a << 24 | a << 16 | a << 8 | a;
-            a += a;
+         for(int var9 = 1; var9 < a - 1; ++var9) {
+            int var10 = var6 + var9;
+            int var11 = a[var10 - 1];
+            int var12 = a[var10];
+            int var13 = a[var10 + 1];
+            int var14 = var11 >> 24 & 255;
+            int var15 = var11 >> 16 & 255;
+            int var16 = var11 >> 8 & 255;
+            int var17 = var11 & 255;
+            int var18 = var12 >> 24 & 255;
+            int var19 = var12 >> 16 & 255;
+            int var20 = var12 >> 8 & 255;
+            int var21 = var12 & 255;
+            int var22 = var13 >> 24 & 255;
+            int var23 = var13 >> 16 & 255;
+            int var24 = var13 >> 8 & 255;
+            int var25 = var13 & 255;
+            var14 = var18 + (int)((float)(var14 + var22) * a);
+            var15 = var19 + (int)((float)(var15 + var23) * a);
+            var16 = var20 + (int)((float)(var16 + var24) * a);
+            var17 = var21 + (int)((float)(var17 + var25) * a);
+            var14 = (int)((float)var14 * var5);
+            var15 = (int)((float)var15 * var5);
+            var16 = (int)((float)var16 * var5);
+            var17 = (int)((float)var17 * var5);
+            a[var8] = var14 << 24 | var15 << 16 | var16 << 8 | var17;
+            var8 += a;
          }
 
-         a[a] = a[a - 1];
-         a += a;
+         a[var8] = a[a - 1];
+         var6 += a;
       }
 
    }

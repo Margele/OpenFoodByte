@@ -6,13 +6,13 @@ import io.netty.handler.codec.MessageToByteEncoder;
 
 public class Class695 extends MessageToByteEncoder {
    protected void Method2584(ChannelHandlerContext a, Class609 a, ByteBuf a) throws Exception {
-      Class234 a = new Class234(a);
-      int a = Class610.Method3753().Method3757(a);
-      if (a != 62 && a != 63) {
+      Class234 var4 = new Class234(a);
+      int var5 = Class610.Method3753().Method3757(a);
+      if (var5 != 62 && var5 != 63) {
       }
 
-      a.Method9(a);
-      a.Method688(a);
+      var4.Method9(var5);
+      a.Method688(var4);
    }
 
    protected void encode(ChannelHandlerContext channelHandlerContext, Object object, ByteBuf byteBuf) throws Exception {

@@ -41,56 +41,56 @@ public class Class849 extends Class798 {
       return this.Field3745;
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
       Class193.Method1269();
-      Class745 a = new Class745(a, a, a, 0, a);
-      int a;
-      if (a.Method1545() > 0) {
-         float a = 255.0F / (float)a.Method1545();
+      Class745 var6 = new Class745(a, a, a, 0, a);
+      int var7;
+      if (var6.Method1545() > 0) {
+         float var9 = 255.0F / (float)var6.Method1545();
          this.Field3741 = new int[3][256];
-         float a = this.Field3742 * 255.0F;
-         float a = this.Field3743 * 255.0F;
-         if (a == a) {
-            ++a;
+         float var10 = this.Field3742 * 255.0F;
+         float var11 = this.Field3743 * 255.0F;
+         if (var10 == var11) {
+            ++var11;
          }
 
-         a = 0;
-         if (a < 3) {
-            int a = 0;
-            if (a < 256) {
-               this.Field3741[a][a] = Class767.Method1687((int)(255.0F * (this.Field3744 + (this.Field3745 - this.Field3744) * ((float)a - a) / (a - a))));
-               ++a;
+         var7 = 0;
+         if (var7 < 3) {
+            int var8 = 0;
+            if (var8 < 256) {
+               this.Field3741[var7][var8] = Class767.Method1687((int)(255.0F * (this.Field3744 + (this.Field3745 - this.Field3744) * ((float)var8 - var10) / (var11 - var10))));
+               ++var8;
             }
 
-            ++a;
+            ++var7;
          }
       }
 
       this.Field3741 = (int[][])null;
-      int a = 0;
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         if (a < a) {
-            a[a] = this.Method3(a, a, a[a]);
-            a = a + 1;
-            ++a;
+      byte var12 = 0;
+      int var13 = 0;
+      if (var13 < a) {
+         int var14 = 0;
+         if (var14 < a) {
+            a[var12] = this.Method3(var14, var13, a[var12]);
+            var7 = var12 + 1;
+            ++var14;
          }
 
-         ++a;
+         ++var13;
       }
 
       this.Field3741 = (int[][])null;
       return a;
    }
 
-   public int Method3(int a, int a1, int a) {
+   public int Method3(int a, int a, int a) {
       if (this.Field3741 != null) {
-         int a = a & -16777216;
-         int a = this.Field3741[0][a >> 16 & 255];
-         int a = this.Field3741[1][a >> 8 & 255];
-         int a = this.Field3741[2][a & 255];
-         return a | a << 16 | a << 8 | a;
+         int var4 = a & -16777216;
+         int var5 = this.Field3741[0][a >> 16 & 255];
+         int var6 = this.Field3741[1][a >> 8 & 255];
+         int var7 = this.Field3741[2][a & 255];
+         return var4 | var5 << 16 | var6 << 8 | var7;
       } else {
          return a;
       }

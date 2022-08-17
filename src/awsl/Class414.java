@@ -34,11 +34,11 @@ public class Class414 {
       this.Field2003 = a;
       this.Field2002 = new ArrayList();
       Iterator var4 = Class446.Method2766(a.getName()).Method1383();
-      Class447 a;
+      Class447 var5;
       if (var4.Method932()) {
-         a = (Class447)var4.Method933();
-         if (a instanceof ModeValue) {
-            this.Field2002.Method2530(new Class424(this, (ModeValue)a));
+         var5 = (Class447)var4.Method933();
+         if (var5 instanceof ModeValue) {
+            this.Field2002.Method2530(new Class424(this, (ModeValue)var5));
          }
 
          a.trash(new String[3]);
@@ -46,43 +46,43 @@ public class Class414 {
 
       var4 = Class446.Method2766(a.getName()).Method1383();
       if (var4.Method932()) {
-         a = (Class447)var4.Method933();
-         if (a instanceof FloatValue) {
-            this.Field2002.Method2530(new Class423(this, (FloatValue)a));
+         var5 = (Class447)var4.Method933();
+         if (var5 instanceof FloatValue) {
+            this.Field2002.Method2530(new Class423(this, (FloatValue)var5));
          }
       }
 
       var4 = Class446.Method2766(a.getName()).Method1383();
       if (var4.Method932()) {
-         a = (Class447)var4.Method933();
-         if (a instanceof BooleanValue) {
-            this.Field2002.Method2530(new Class425(this, (BooleanValue)a));
+         var5 = (Class447)var4.Method933();
+         if (var5 instanceof BooleanValue) {
+            this.Field2002.Method2530(new Class425(this, (BooleanValue)var5));
          }
       }
 
    }
 
-   public void Method3568(int a, int a, float a2) {
-      Color a = Class416.Method2352();
-      int a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 150)).getRGB();
-      int a = -1052689;
+   public void Method3568(int a, int a, float a) {
+      Color var4 = Class416.Method2352();
+      int var5 = (new Color(var4.getRed(), var4.getGreen(), var4.getBlue(), 150)).getRGB();
+      int var6 = -1052689;
       if (this.Field2001.getState()) {
-         a = (new Color(0, 153, 255)).getRGB();
+         var6 = (new Color(0, 153, 255)).getRGB();
       }
 
       if (this.Method3571(a, a)) {
          RenderUtils.Method1105(this.Field2004 - 2.0, this.Field2005, this.Field2004 + this.Field2006 + 2.0, this.Field2005 + this.Field2007 + 1.0, 1427181841);
       }
 
-      Class565.Field2635.Method1222(this.Field2001.getName(), (float)(this.Field2004 + this.Field2006 / 2.0), (float)(this.Field2005 + 1.0), a);
+      Class565.Field2635.Method1222(this.Field2001.getName(), (float)(this.Field2004 + this.Field2006 / 2.0), (float)(this.Field2005 + 1.0), var6);
       if (this.Field2002 != null && this.Field2002.Method1799() > 0) {
-         String a = this.Field2008 ? "g" : "i";
-         Class565.Field2640.Method1217(a, (float)(this.Field2004 + this.Field2006 - (double)Class565.Field2640.Method1225(a)), (float)(this.Field2005 + 1.0), 16777215);
+         String var7 = this.Field2008 ? "g" : "i";
+         Class565.Field2640.Method1217(var7, (float)(this.Field2004 + this.Field2006 - (double)Class565.Field2640.Method1225(var7)), (float)(this.Field2005 + 1.0), 16777215);
       }
 
    }
 
-   public boolean Method3569(int a, int a, int a2) {
+   public boolean Method3569(int a, int a, int a) {
       if (!this.Method3571(a, a)) {
          return false;
       } else {

@@ -833,9 +833,9 @@ public class LegitSpeed extends Module {
       if (a < 0.0) {
          throw new IllegalArgumentException();
       } else {
-         BigDecimal a = new BigDecimal(a);
-         a = a.setScale((int)a, RoundingMode.HALF_UP);
-         return a.doubleValue();
+         BigDecimal var4 = new BigDecimal(a);
+         var4 = var4.setScale((int)a, RoundingMode.HALF_UP);
+         return var4.doubleValue();
       }
    }
 

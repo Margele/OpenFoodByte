@@ -32,29 +32,29 @@ final class Class256 extends Class253 {
       this.Field1403 = a.Method1504(a).Field1426;
    }
 
-   public Class148 Method2114(String a, boolean a1) {
+   public Class148 Method2114(String a, boolean a) {
       Class267.Method2862();
-      Class138 a = new Class138();
-      a.Method487(this.Field1398.Method1506(a)).Method487(0);
-      Class150 a = new Class150(this.Field1398, true, a, a, 2);
-      a.Field1016 = this.Field1404;
-      this.Field1404 = a;
-      a.Field1016 = this.Field1405;
-      this.Field1405 = a;
-      return a;
+      Class138 var4 = new Class138();
+      var4.Method487(this.Field1398.Method1506(a)).Method487(0);
+      Class150 var5 = new Class150(this.Field1398, true, var4, var4, 2);
+      var5.Field1016 = this.Field1404;
+      this.Field1404 = var5;
+      var5.Field1016 = this.Field1405;
+      this.Field1405 = var5;
+      return var5;
    }
 
-   public Class148 Method2115(int a, Class31 a, String a, boolean a3) {
-      Class138 a = new Class138();
-      Class150.Method1324(a, a, a);
+   public Class148 Method2115(int a, Class31 a, String a, boolean a) {
+      Class138 var6 = new Class138();
+      Class150.Method1324(a, a, var6);
       Class267.Method2862();
-      a.Method487(this.Field1398.Method1506(a)).Method487(0);
-      Class150 a = new Class150(this.Field1398, true, a, a, a.Field991 - 2);
-      a.Field1016 = this.Field1406;
-      this.Field1406 = a;
-      a.Field1016 = this.Field1407;
-      this.Field1407 = a;
-      return a;
+      var6.Method487(this.Field1398.Method1506(a)).Method487(0);
+      Class150 var7 = new Class150(this.Field1398, true, var6, var6, var6.Field991 - 2);
+      var7.Field1016 = this.Field1406;
+      this.Field1406 = var7;
+      var7.Field1016 = this.Field1407;
+      this.Field1407 = var7;
+      return var7;
    }
 
    public void Method2120(Class136 a) {
@@ -66,97 +66,97 @@ final class Class256 extends Class253 {
    }
 
    int Method2251() {
-      int a = 8;
+      int var1 = 8;
       if (this.Field1403 != 0) {
          this.Field1398.Method1506("ConstantValue");
-         a += 8;
+         var1 += 8;
       }
 
       if ((this.Field1399 & 4096) != 0 && ((this.Field1398.Field1080 & '\uffff') < 49 || (this.Field1399 & 262144) != 0)) {
          this.Field1398.Method1506("Synthetic");
-         a += 6;
+         var1 += 6;
       }
 
       if ((this.Field1399 & 131072) != 0) {
          this.Field1398.Method1506("Deprecated");
-         a += 6;
+         var1 += 6;
       }
 
       if (this.Field1402 != 0) {
          this.Field1398.Method1506("Signature");
-         a += 8;
+         var1 += 8;
       }
 
       if (this.Field1404 != null) {
          this.Field1398.Method1506("RuntimeVisibleAnnotations");
-         a += 8 + this.Field1404.Method1321();
+         var1 += 8 + this.Field1404.Method1321();
       }
 
       if (this.Field1405 != null) {
          this.Field1398.Method1506("RuntimeInvisibleAnnotations");
-         a += 8 + this.Field1405.Method1321();
+         var1 += 8 + this.Field1405.Method1321();
       }
 
       if (this.Field1406 != null) {
          this.Field1398.Method1506("RuntimeVisibleTypeAnnotations");
-         a += 8 + this.Field1406.Method1321();
+         var1 += 8 + this.Field1406.Method1321();
       }
 
       if (this.Field1407 != null) {
          this.Field1398.Method1506("RuntimeInvisibleTypeAnnotations");
-         a += 8 + this.Field1407.Method1321();
+         var1 += 8 + this.Field1407.Method1321();
       }
 
       if (this.Field1408 != null) {
-         a += this.Field1408.Method474(this.Field1398, (byte[])null, 0, -1, -1);
+         var1 += this.Field1408.Method474(this.Field1398, (byte[])null, 0, -1, -1);
       }
 
-      return a;
+      return var1;
    }
 
    void Method2252(Class138 a) {
       boolean var3 = true;
       Class267.Method2862();
-      int a = 393216 | (this.Field1399 & 262144) / 64;
-      a.Method487(this.Field1399 & ~a).Method487(this.Field1400).Method487(this.Field1401);
-      int a = 0;
+      int var4 = 393216 | (this.Field1399 & 262144) / 64;
+      a.Method487(this.Field1399 & ~var4).Method487(this.Field1400).Method487(this.Field1401);
+      int var5 = 0;
       if (this.Field1403 != 0) {
-         ++a;
+         ++var5;
       }
 
       if ((this.Field1399 & 4096) != 0 && ((this.Field1398.Field1080 & '\uffff') < 49 || (this.Field1399 & 262144) != 0)) {
-         ++a;
+         ++var5;
       }
 
       if ((this.Field1399 & 131072) != 0) {
-         ++a;
+         ++var5;
       }
 
       if (this.Field1402 != 0) {
-         ++a;
+         ++var5;
       }
 
       if (this.Field1404 != null) {
-         ++a;
+         ++var5;
       }
 
       if (this.Field1405 != null) {
-         ++a;
+         ++var5;
       }
 
       if (this.Field1406 != null) {
-         ++a;
+         ++var5;
       }
 
       if (this.Field1407 != null) {
-         ++a;
+         ++var5;
       }
 
       if (this.Field1408 != null) {
-         a += this.Field1408.Method473();
+         var5 += this.Field1408.Method473();
       }
 
-      a.Method487(a);
+      a.Method487(var5);
       if (this.Field1403 != 0) {
          a.Method487(this.Field1398.Method1506("ConstantValue"));
          a.Method489(2).Method487(this.Field1403);

@@ -24,25 +24,25 @@ class Class699 extends AbstractMap {
       if (a.Field3014 == a) {
          throw new RuntimeException("Recursive invocation of " + a);
       } else {
-         Class699 a = a.Field3013;
+         Class699 var5 = a.Field3013;
          this.Field3016 = new Class104();
          this.Field3016 = null;
-         a = null;
-         int a = 0;
+         var5 = null;
+         int var6 = 0;
          int var7 = class17.Field208.Method183();
-         if (a < var7) {
-            a a = class17.Field208.Method186(a);
-            if (a.Method0() == 8) {
-               Class104 a = (Class104)a;
-               Class104 a = new Class104();
-               this.Field3015.put(a, a);
+         if (var6 < var7) {
+            a var8 = class17.Field208.Method186(var6);
+            if (var8.Method0() == 8) {
+               Class104 var9 = (Class104)var8;
+               Class104 var10 = new Class104();
+               this.Field3015.put(var9, var10);
             }
 
-            if (this.Method2660(a) == this) {
-               a = null;
+            if (this.Method2660(var6) == this) {
+               var5 = null;
             }
 
-            ++a;
+            ++var6;
          }
 
       }
@@ -53,14 +53,14 @@ class Class699 extends AbstractMap {
          return null;
       } else {
          if (this.Field3017.Field227.get(a)) {
-            Class699 a = this.Field3013;
+            Class699 var3 = this.Field3013;
 
             while(true) {
-               if (a.Field3014.get(a)) {
+               if (var3.Field3014.get(a)) {
                   ;
                }
 
-               a = a.Field3013;
+               var3 = var3.Field3013;
             }
          }
 
@@ -69,8 +69,8 @@ class Class699 extends AbstractMap {
    }
 
    public Class104 Method2661(Class104 a) {
-      Class699 a = this.Method2660(this.Field3017.Field208.Method188(a));
-      return (Class104)a.Field3015.Method2665(a);
+      Class699 var2 = this.Method2660(this.Field3017.Field208.Method188(a));
+      return (Class104)var2.Field3015.Method2665(a);
    }
 
    public Class104 Method2662(Class104 a) {

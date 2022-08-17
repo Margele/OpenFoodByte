@@ -67,24 +67,24 @@ public class Class66 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       a = this.Method1263(a, (ColorModel)null);
-      int a = a.getWidth();
-      int a = a.getHeight();
-      int a = (int)(this.Field650 * (float)a);
-      int a = (int)(this.Field654 * (float)a);
-      Graphics2D a = a.createGraphics();
-      Shape a = a.getClip();
-      a.clipRect(0, 0, a, a);
-      a.drawRenderedImage(a, (AffineTransform)null);
-      a.setClip(a);
-      a.clipRect(0, a + a, a, a - a - a);
-      a.translate(0, 2 * a + a);
-      a.scale(1.0, -1.0);
-      a.drawRenderedImage(a, (AffineTransform)null);
-      a.setPaint(new GradientPaint(0.0F, 0.0F, new Color(1.0F, 0.0F, 0.0F, 0.0F), 0.0F, (float)a, new Color(0.0F, 1.0F, 0.0F, this.Field649)));
-      a.setComposite(AlphaComposite.getInstance(6));
-      a.fillRect(0, 0, a, a);
-      a.setClip(a);
-      a.dispose();
+      int var5 = a.getWidth();
+      int var6 = a.getHeight();
+      int var7 = (int)(this.Field650 * (float)var6);
+      int var8 = (int)(this.Field654 * (float)var6);
+      Graphics2D var9 = a.createGraphics();
+      Shape var4 = var9.getClip();
+      var9.clipRect(0, 0, var5, var7);
+      var9.drawRenderedImage(a, (AffineTransform)null);
+      var9.setClip(var4);
+      var9.clipRect(0, var7 + var8, var5, var6 - var7 - var8);
+      var9.translate(0, 2 * var7 + var8);
+      var9.scale(1.0, -1.0);
+      var9.drawRenderedImage(a, (AffineTransform)null);
+      var9.setPaint(new GradientPaint(0.0F, 0.0F, new Color(1.0F, 0.0F, 0.0F, 0.0F), 0.0F, (float)var7, new Color(0.0F, 1.0F, 0.0F, this.Field649)));
+      var9.setComposite(AlphaComposite.getInstance(6));
+      var9.fillRect(0, 0, var5, var7);
+      var9.setClip(var4);
+      var9.dispose();
       return a;
    }
 

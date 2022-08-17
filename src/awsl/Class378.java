@@ -47,11 +47,11 @@ public class Class378 extends Class379 {
    public void Method476() {
       this.Field1797.clear();
       this.Method478(this.Field1797);
-      int a = 4;
+      byte var1 = 4;
       this.Field1796 = 5;
-      this.Field1798 = this.Field1796 * a;
+      this.Field1798 = this.Field1796 * var1;
       this.Field1814 = 82.0F;
-      this.Field1815 = (float)(a * 16 + 16);
+      this.Field1815 = (float)(var1 * 16 + 16);
    }
 
    public void Method63() {
@@ -60,7 +60,7 @@ public class Class378 extends Class379 {
       Method450();
       RenderUtils.Method1103(this.Field1806, this.Field1807, this.Field1814, this.Field1812, GlobalModule.Field3143.Method2442());
       RenderUtils.Method1103(this.Field1806, this.Field1807 + this.Field1812, this.Field1814, this.Field1815, Field1833.getRGB());
-      boolean a = !this.Field1823.isEmpty();
+      boolean var2 = !this.Field1823.isEmpty();
       Class565.Field2638.Method1217(this.Field1823, this.Field1806 + this.Field1824, this.Field1807 + this.Field1825, Class681.WHITE.Field2962);
       Class565.Field2636.Method1217(this.Field1816, this.Field1806 + 3.0F + (float)8, this.Field1807 + this.Field1812 / 2.0F - Class565.Field2636.Field2625 / 2.0F, Class681.WHITE.Field2962);
       GlStateManager.enableDepth();
@@ -70,58 +70,58 @@ public class Class378 extends Class379 {
          this.Field1808.fontRendererObj.drawStringWithShadow(Method482(16556, 5550), this.Field1806 + this.Field1814 / 2.0F - (float)(this.Field1808.fontRendererObj.getStringWidth(Method482(16573, -6685)) / 2), this.Field1807 + 48.0F + 1.0F, -1);
          this.Field1808.fontRendererObj.drawStringWithShadow(Method482(16631, 12546), this.Field1806 + this.Field1814 / 2.0F - (float)(this.Field1808.fontRendererObj.getStringWidth(Method482(16550, -24143)) / 2), this.Field1807 + 60.0F + 1.0F, -1);
       } else {
-         int a = 13;
-         int a = (int)((this.Field1814 - (float)(this.Field1796 * 16 + 3)) / 2.0F);
-         int a = this.Field1792 / this.Field1798;
-         int a = (new Color(255, 150, 200, 255)).getRGB();
-         int a = (int)Math.ceil((double)(this.Field1797.size() / this.Field1798)) + 1;
-         int a = 16;
+         byte var3 = 13;
+         int var4 = (int)((this.Field1814 - (float)(this.Field1796 * 16 + 3)) / 2.0F);
+         int var5 = this.Field1792 / this.Field1798;
+         int var6 = (new Color(255, 150, 200, 255)).getRGB();
+         int var7 = (int)Math.ceil((double)(this.Field1797.size() / this.Field1798)) + 1;
+         byte var8 = 16;
          this.Field1794 = null;
          if (this.Field1797.size() > 0) {
             RenderHelper.enableGUIStandardItemLighting();
-            int a = Math.min(this.Field1797.size() - 1, a * this.Field1798);
-            if (a < Math.min(this.Field1797.size(), (a + 1) * this.Field1798)) {
-               int a = (int)(this.Field1806 + 1.0F + (float)a + (float)(a * (a % this.Field1796)));
-               int a = (int)(this.Field1807 + (float)a + (float)(a * (a % this.Field1798 / this.Field1796)));
-               ItemStack a = (ItemStack)this.Field1797.keySet().toArray()[a];
-               if (UHCFastCraft.Method2118(this.Field1802) > a && UHCFastCraft.Method2118(this.Field1802) < a + 16 && UHCFastCraft.Method2119(this.Field1802) > a && UHCFastCraft.Method2119(this.Field1802) < a + a) {
-                  RenderUtils.Method1103((float)a, (float)a, (float)a, (float)a, (new Color(150, 150, 150, 150)).getRGB());
-                  this.Field1794 = a;
+            int var9 = Math.min(this.Field1797.size() - 1, var5 * this.Field1798);
+            if (var9 < Math.min(this.Field1797.size(), (var5 + 1) * this.Field1798)) {
+               int var10 = (int)(this.Field1806 + 1.0F + (float)var4 + (float)(var8 * (var9 % this.Field1796)));
+               int var11 = (int)(this.Field1807 + (float)var3 + (float)(var8 * (var9 % this.Field1798 / this.Field1796)));
+               ItemStack var12 = (ItemStack)this.Field1797.keySet().toArray()[var9];
+               if (UHCFastCraft.Method2118(this.Field1802) > var10 && UHCFastCraft.Method2118(this.Field1802) < var10 + 16 && UHCFastCraft.Method2119(this.Field1802) > var11 && UHCFastCraft.Method2119(this.Field1802) < var11 + var8) {
+                  RenderUtils.Method1103((float)var10, (float)var11, (float)var8, (float)var8, (new Color(150, 150, 150, 150)).getRGB());
+                  this.Field1794 = var12;
                }
 
-               this.Field1808.getRenderItem().renderItemAndEffectIntoGUI(a, a, a);
-               this.Field1808.getRenderItem().renderItemOverlays(this.Field1808.fontRendererObj, a, a, a);
-               ++a;
+               this.Field1808.getRenderItem().renderItemAndEffectIntoGUI(var12, var10, var11);
+               this.Field1808.getRenderItem().renderItemOverlays(this.Field1808.fontRendererObj, var12, var10, var11);
+               ++var9;
             }
 
             RenderHelper.disableStandardItemLighting();
          }
 
          GlStateManager.disableDepth();
-         float a = this.Field1801.Method1295() + this.Field1801.Method1297() / 2.0F - 2.0F;
-         float a = this.Field1801.Method1296() + this.Field1801.Method1298() / 2.0F;
+         float var13 = this.Field1801.Method1295() + this.Field1801.Method1297() / 2.0F - 2.0F;
+         float var14 = this.Field1801.Method1296() + this.Field1801.Method1298() / 2.0F;
          this.Field1801 = new Class391(this.Field1806 + 2.0F, this.Field1807 + this.Field1815 - 2.0F, 12.0F, 12.0F);
          RenderUtils.Method1103(this.Field1801.Method1295(), this.Field1801.Method1296(), this.Field1801.Method1297(), this.Field1801.Method1298(), this.Field1791 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442());
          GlStateManager.pushMatrix();
-         GlStateManager.translate(a, a, 0.0F);
+         GlStateManager.translate(var13, var14, 0.0F);
          GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
          RenderUtils.Method1085(-3.0, -3.0, 1.0, 0.0, 1.0F, -1);
          RenderUtils.Method1085(-3.0, 3.0, 1.0, 0.0, 1.0F, -1);
-         GlStateManager.translate(-a, -a, 0.0F);
+         GlStateManager.translate(-var13, -var14, 0.0F);
          GlStateManager.popMatrix();
          this.Field1805 = new Class391(this.Field1806 + this.Field1814 - 14.0F, this.Field1807 + this.Field1815 - 2.0F, 12.0F, 12.0F);
          RenderUtils.Method1103(this.Field1805.Method1295(), this.Field1805.Method1296(), this.Field1805.Method1297(), this.Field1805.Method1298(), this.Field1803 ? Class681.Method2699(GlobalModule.Field3143.Method2442(), 15) : GlobalModule.Field3143.Method2442());
-         a = this.Field1805.Method1295() + this.Field1805.Method1297() / 2.0F + 2.0F;
-         a = this.Field1805.Method1296() + this.Field1805.Method1298() / 2.0F;
+         var13 = this.Field1805.Method1295() + this.Field1805.Method1297() / 2.0F + 2.0F;
+         var14 = this.Field1805.Method1296() + this.Field1805.Method1298() / 2.0F;
          GlStateManager.pushMatrix();
-         GlStateManager.translate(a, a, 0.0F);
+         GlStateManager.translate(var13, var14, 0.0F);
          GlStateManager.rotate(0.0F, 0.0F, 0.0F, 1.0F);
          RenderUtils.Method1085(-3.0, -3.0, 1.0, 0.0, 1.0F, -1);
          RenderUtils.Method1085(-3.0, 3.0, 1.0, 0.0, 1.0F, -1);
-         GlStateManager.translate(-a, -a, 0.0F);
+         GlStateManager.translate(-var13, -var14, 0.0F);
          GlStateManager.popMatrix();
-         String a = a + 1 + "/" + ((this.Field1797.size() - 1) / this.Field1798 + 1);
-         this.Field1808.fontRendererObj.drawStringWithShadow(a, this.Field1806 + this.Field1814 / 2.0F - (float)(this.Field1808.fontRendererObj.getStringWidth(a) / 2), this.Field1807 + this.Field1815 + 1.0F, -1);
+         String var15 = var5 + 1 + "/" + ((this.Field1797.size() - 1) / this.Field1798 + 1);
+         this.Field1808.fontRendererObj.drawStringWithShadow(var15, this.Field1806 + this.Field1814 / 2.0F - (float)(this.Field1808.fontRendererObj.getStringWidth(var15) / 2), this.Field1807 + this.Field1815 + 1.0F, -1);
          GlStateManager.enableDepth();
       }
    }
@@ -148,12 +148,12 @@ public class Class378 extends Class379 {
       super.Method64(a, a);
    }
 
-   public void Method479(int a, int a1, boolean a2) {
+   public void Method479(int a, int a, boolean a) {
       if (this.Field1795 && Mouse.isCreated()) {
          while(Mouse.next()) {
-            int a = Mouse.getEventDWheel();
-            int a = this.Field1792 / this.Field1798;
-            this.Field1792 = Math.max(0, (a - 1) * this.Field1798);
+            int var4 = Mouse.getEventDWheel();
+            int var5 = this.Field1792 / this.Field1798;
+            this.Field1792 = Math.max(0, (var5 - 1) * this.Field1798);
          }
       }
 
@@ -168,13 +168,13 @@ public class Class378 extends Class379 {
             Wrapper.INSTANCE.sendPacketNoEvent(new C01PacketChatMessage((String)this.Field1797.get(this.Field1794)));
          }
 
-         int a = this.Field1792 / this.Field1798;
+         int var4 = this.Field1792 / this.Field1798;
          if (this.Field1791) {
-            this.Field1792 = Math.max(0, (a - 1) * this.Field1798);
+            this.Field1792 = Math.max(0, (var4 - 1) * this.Field1798);
          }
 
          if (this.Field1803) {
-            this.Field1792 = Math.min(this.Field1797.size() - 1, (a + 1) * this.Field1798);
+            this.Field1792 = Math.min(this.Field1797.size() - 1, (var4 + 1) * this.Field1798);
          }
       }
 
@@ -183,14 +183,14 @@ public class Class378 extends Class379 {
 
    public boolean Method456(int a, int a, boolean a) {
       Class492.Method2239();
-      boolean a = false;
+      boolean var5 = false;
       if (this.Method458(a, a)) {
          if (!this.Field1793) {
-            a = true;
+            var5 = true;
          }
 
-         boolean a = RenderUtils.Method1096((float)a, (float)a, this.Field1806, this.Field1807, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812);
-         boolean a = RenderUtils.Method1096((float)a, (float)a, this.Field1806 + this.Field1814 - 8.0F, this.Field1807 + this.Field1812 + this.Field1815 - 8.0F, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812 + this.Field1815);
+         boolean var6 = RenderUtils.Method1096((float)a, (float)a, this.Field1806, this.Field1807, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812);
+         boolean var7 = RenderUtils.Method1096((float)a, (float)a, this.Field1806 + this.Field1814 - 8.0F, this.Field1807 + this.Field1812 + this.Field1815 - 8.0F, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812 + this.Field1815);
          if (!this.Field1793) {
             this.Field1811 = true;
             this.Field1827 = System.currentTimeMillis();
@@ -220,21 +220,21 @@ public class Class378 extends Class379 {
 
       this.Method457();
       this.Field1793 = a;
-      return a;
+      return var5;
    }
 
    public ItemStack Method481(String a) {
       try {
          a = a.replace('&', '§');
-         Item a = new Item();
-         String[] a = null;
-         int a = true;
-         int a = false;
-         int a = 0;
-         if (a <= Math.min(12, a.length() - 2)) {
-            a = a.substring(a).split(Pattern.quote(" "));
-            ResourceLocation a = new ResourceLocation(a[0]);
-            a = (Item)Item.itemRegistry.getObject(a);
+         Item var2 = new Item();
+         String[] var4 = null;
+         boolean var5 = true;
+         boolean var6 = false;
+         byte var7 = 0;
+         if (var7 <= Math.min(12, a.length() - 2)) {
+            var4 = a.substring(var7).split(Pattern.quote(" "));
+            ResourceLocation var8 = new ResourceLocation(var4[0]);
+            var2 = (Item)Item.itemRegistry.getObject(var8);
          }
 
          return null;
@@ -1038,14 +1038,14 @@ public class Class378 extends Class379 {
    }
 
    public Slot Method483(GuiContainer a) {
-      Slot a = null;
+      Slot var2 = null;
 
       try {
-         a = (Slot)ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.theSlot.getObfuscatedName()}).get(a);
+         var2 = (Slot)ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.theSlot.getObfuscatedName()}).get(a);
       } catch (Exception var4) {
       }
 
-      return a;
+      return var2;
    }
 
    public void Method457() {

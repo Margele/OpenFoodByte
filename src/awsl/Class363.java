@@ -80,14 +80,14 @@ public class Class363 {
    }
 
    public static void Method585(RenderManager a, float a) {
-      float a;
+      float var2;
       if (Perspective.Field2203) {
-         a = Perspective.Field2200;
+         var2 = Perspective.Field2200;
       } else {
-         a = a;
+         var2 = a;
       }
 
-      a.playerViewY = a;
+      a.playerViewY = var2;
    }
 
    public static boolean Method586() {
@@ -103,20 +103,20 @@ public class Class363 {
    }
 
    public static String Method589() {
-      String a = null;
+      String var0 = null;
       if (Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().theWorld != null) {
          Iterator var1 = Minecraft.getMinecraft().thePlayer.sendQueue.getPlayerInfoMap().Method1383();
 
          while(var1.Method932()) {
-            NetworkPlayerInfo a = (NetworkPlayerInfo)var1.Method933();
-            GameProfile a = a.getGameProfile();
-            if (a.getId() != null && a.getId().equals(Minecraft.getMinecraft().getSession().getProfile().getId()) && !a.getName().equalsIgnoreCase(Minecraft.getMinecraft().getSession().getProfile().getName())) {
-               a = a.getName();
+            NetworkPlayerInfo var2 = (NetworkPlayerInfo)var1.Method933();
+            GameProfile var3 = var2.getGameProfile();
+            if (var3.getId() != null && var3.getId().equals(Minecraft.getMinecraft().getSession().getProfile().getId()) && !var3.getName().equalsIgnoreCase(Minecraft.getMinecraft().getSession().getProfile().getName())) {
+               var0 = var3.getName();
             }
          }
       }
 
-      return a;
+      return var0;
    }
 
    public static void Method590() {
@@ -134,14 +134,14 @@ public class Class363 {
    }
 
    public static void Method593(RenderManager a, float a) {
-      float a;
+      float var2;
       if (Perspective.Field2203) {
-         a = Perspective.Field2201;
+         var2 = Perspective.Field2201;
       } else {
-         a = a;
+         var2 = a;
       }
 
-      a.playerViewX = a;
+      a.playerViewX = var2;
    }
 
    public static boolean Method594() {
@@ -169,8 +169,8 @@ public class Class363 {
             int var6 = var5.length;
 
             for(int var7 = 0; var7 < var6; ++var7) {
-               EnumFacing a = var5[var7];
-               if (Method584(a, a.offset(a), a, a)) {
+               EnumFacing var8 = var5[var7];
+               if (Method584(a, a.offset(var8), var8, a)) {
                   return Field1722 || Method584(a, a, a, a);
                }
             }
@@ -990,11 +990,11 @@ public class Class363 {
    }
 
    public static boolean Method602(EntityLivingBase a) {
-      NameTag a = (NameTag)ModuleManager.getModule(NameTag.class);
-      if (!a.Field2223.getBooleanValue()) {
+      NameTag var1 = (NameTag)ModuleManager.getModule(NameTag.class);
+      if (!var1.Field2223.getBooleanValue()) {
          return false;
       } else {
-         return a.getState() && a.Method965(a) && !AntiBot.botList.contains(a) && a != Field1715.thePlayer;
+         return var1.getState() && var1.Method965(a) && !AntiBot.botList.contains(a) && a != Field1715.thePlayer;
       }
    }
 
@@ -1008,87 +1008,87 @@ public class Class363 {
 
    public static void Method605(float a) {
       RenderUtils.trash();
-      Entity a = Field1715.getRenderViewEntity();
+      Entity var2 = Field1715.getRenderViewEntity();
       if (Field1715.theWorld != null) {
          Field1715.mcProfiler.startSection(Method598(-7091, 12151));
          Field1715.pointedEntity = null;
-         Reach a = (Reach)ModuleManager.getModule(Reach.class);
-         double a = a.getState() && !Field1715.playerController.extendedReach() ? (double)a.Method798() : (double)Field1715.playerController.getBlockReachDistance();
-         Field1715.objectMouseOver = a.rayTrace(a.getState() && !Field1715.playerController.extendedReach() ? (double)a.Field2488.getFloatValue() : a, a);
-         double a = a;
-         Vec3 a = a.getPositionEyes(a);
-         boolean a = false;
+         Reach var3 = (Reach)ModuleManager.getModule(Reach.class);
+         double var4 = var3.getState() && !Field1715.playerController.extendedReach() ? (double)var3.Method798() : (double)Field1715.playerController.getBlockReachDistance();
+         Field1715.objectMouseOver = var2.rayTrace(var3.getState() && !Field1715.playerController.extendedReach() ? (double)var3.Field2488.getFloatValue() : var4, a);
+         double var6 = var4;
+         Vec3 var8 = var2.getPositionEyes(a);
+         boolean var9 = false;
          if (Field1715.playerController.extendedReach()) {
-            a = 6.0;
-            a = 6.0;
+            var4 = 6.0;
+            var6 = 6.0;
          }
 
-         if (a > 3.0) {
-            a = true;
+         if (var4 > 3.0) {
+            var9 = true;
          }
 
          if (Field1715.objectMouseOver != null) {
-            a = Field1715.objectMouseOver.hitVec.distanceTo(a);
+            var6 = Field1715.objectMouseOver.hitVec.distanceTo(var8);
          }
 
-         if (a.getState() && !Field1715.playerController.extendedReach()) {
-            a = (double)a.Method276();
-            MovingObjectPosition a = a.rayTrace(a, a);
-            a = a.hitVec.distanceTo(a);
+         if (var3.getState() && !Field1715.playerController.extendedReach()) {
+            var6 = (double)var3.Method276();
+            MovingObjectPosition var10 = var2.rayTrace(var6, a);
+            var6 = var10.hitVec.distanceTo(var8);
          }
 
-         Vec3 a = a.getLook(a);
-         Vec3 a = a.addVector(a.xCoord * a, a.yCoord * a, a.zCoord * a);
+         Vec3 var25 = var2.getLook(a);
+         Vec3 var11 = var8.addVector(var25.xCoord * var4, var25.yCoord * var4, var25.zCoord * var4);
          Field1714 = null;
-         Vec3 a = null;
-         float a = 1.0F;
-         List a = Field1715.theWorld.getEntitiesInAABBexcluding(a, a.getEntityBoundingBox().addCoord(a.xCoord * a, a.yCoord * a, a.zCoord * a).expand((double)a, (double)a, (double)a), Predicates.and(EntitySelectors.NOT_SPECTATING, Class363::Method633));
-         double a = a;
-         Iterator var17 = a.Method1383();
+         Vec3 var12 = null;
+         float var13 = 1.0F;
+         List var14 = Field1715.theWorld.getEntitiesInAABBexcluding(var2, var2.getEntityBoundingBox().addCoord(var25.xCoord * var4, var25.yCoord * var4, var25.zCoord * var4).expand((double)var13, (double)var13, (double)var13), Predicates.and(EntitySelectors.NOT_SPECTATING, Class363::Method633));
+         double var15 = var6;
+         Iterator var17 = var14.Method1383();
          if (var17.Method932()) {
             label140: {
-               Entity a = (Entity)var17.Method933();
-               HitBox a = (HitBox)ModuleManager.getModule(HitBox.class);
-               float a = a.getState() && a.Method1187(a) ? a.Field2607.getFloatValue() : a.getCollisionBorderSize();
-               AxisAlignedBB a = a.getEntityBoundingBox().expand((double)a, (double)a, (double)a);
-               MovingObjectPosition a = a.calculateIntercept(a, a);
-               if (a.isVecInside(a)) {
-                  if (!(a >= 0.0)) {
+               Entity var18 = (Entity)var17.Method933();
+               HitBox var19 = (HitBox)ModuleManager.getModule(HitBox.class);
+               float var20 = var19.getState() && var19.Method1187(var18) ? var19.Field2607.getFloatValue() : var18.getCollisionBorderSize();
+               AxisAlignedBB var21 = var18.getEntityBoundingBox().expand((double)var20, (double)var20, (double)var20);
+               MovingObjectPosition var22 = var21.calculateIntercept(var8, var11);
+               if (var21.isVecInside(var8)) {
+                  if (!(var6 >= 0.0)) {
                      break label140;
                   }
 
-                  Field1714 = a;
-                  a = a;
-                  a = 0.0;
+                  Field1714 = var18;
+                  var12 = var8;
+                  var15 = 0.0;
                }
 
-               double a = a.distanceTo(a.hitVec);
-               if (a < a || a == 0.0) {
+               double var23 = var8.distanceTo(var22.hitVec);
+               if (var23 < var15 || var15 == 0.0) {
                   label132: {
-                     if (a == a.ridingEntity) {
-                        if (a != 0.0) {
+                     if (var18 == var2.ridingEntity) {
+                        if (var15 != 0.0) {
                            break label132;
                         }
 
-                        Field1714 = a;
-                        a = a.hitVec;
+                        Field1714 = var18;
+                        var12 = var22.hitVec;
                      }
 
-                     Field1714 = a;
-                     a = a.hitVec;
-                     a = a;
+                     Field1714 = var18;
+                     var12 = var22.hitVec;
+                     var15 = var23;
                   }
                }
             }
          }
 
-         if (Field1714 != null && a.distanceTo(a) > (a.getState() && !Field1715.playerController.extendedReach() ? (double)a.Method276() : 3.0)) {
+         if (Field1714 != null && var8.distanceTo(var12) > (var3.getState() && !Field1715.playerController.extendedReach() ? (double)var3.Method276() : 3.0)) {
             Field1714 = null;
-            Field1715.objectMouseOver = new MovingObjectPosition(MovingObjectType.MISS, a, (EnumFacing)null, new BlockPos(a));
+            Field1715.objectMouseOver = new MovingObjectPosition(MovingObjectType.MISS, var12, (EnumFacing)null, new BlockPos(var12));
          }
 
-         if (Field1714 != null && (a < a || Field1715.objectMouseOver == null)) {
-            Field1715.objectMouseOver = new MovingObjectPosition(Field1714, a);
+         if (Field1714 != null && (var15 < var6 || Field1715.objectMouseOver == null)) {
+            Field1715.objectMouseOver = new MovingObjectPosition(Field1714, var12);
             if (Field1714 instanceof EntityLivingBase || Field1714 instanceof EntityItemFrame) {
                Field1715.pointedEntity = Field1714;
             }
@@ -1100,45 +1100,45 @@ public class Class363 {
    }
 
    public static String Method606(NetworkPlayerInfo a) {
-      String a = "";
+      String var1 = "";
       if (a.getDisplayName() != null) {
-         a = a.getDisplayName().getFormattedText();
+         var1 = a.getDisplayName().getFormattedText();
       } else {
-         a = ScorePlayerTeam.formatPlayerName(a.getPlayerTeam(), a.getGameProfile().getName());
+         var1 = ScorePlayerTeam.formatPlayerName(a.getPlayerTeam(), a.getGameProfile().getName());
       }
 
       if (Objects.nonNull(GlobalModule.INSTANCE.balant) && !GlobalModule.INSTANCE.balant.Field2823.isEmpty() && PermissionManager.canUseFeature(Method598(-7104, -2384))) {
          Iterator var2 = GlobalModule.INSTANCE.balant.Field2823.Method1383();
 
          while(var2.Method932()) {
-            Class606 a = (Class606)var2.Method933();
-            if (a.getGameProfile().getName().equals(a.Field2841)) {
-               if (a.Field2847) {
+            Class606 var3 = (Class606)var2.Method933();
+            if (a.getGameProfile().getName().equals(var3.Field2841)) {
+               if (var3.Field2847) {
                   if (GlobalModule.INSTANCE.balant.Field2827.Method3740() >= 5) {
-                     if (a.Field2838.equalsIgnoreCase(Method598(-7096, -22628))) {
-                        a = a.replace(a.Field2841, a.Field2841 + Method598(-7095, 24177) + a.Field2840 + Method598(-7094, -8542).replace(a.Field2840, Method598(-7102, -30891) + a.Field2840));
-                     } else if (a.Field2838.equalsIgnoreCase(Method598(-7100, 764))) {
-                        a = a.replace(a.Field2841, a.Field2841 + Method598(-7103, 24277) + a.Field2840 + Method598(-7090, 17090).replace(a.Field2840, Method598(-7098, -20137) + a.Field2840));
+                     if (var3.Field2838.equalsIgnoreCase(Method598(-7096, -22628))) {
+                        var1 = var1.replace(var3.Field2841, var3.Field2841 + Method598(-7095, 24177) + var3.Field2840 + Method598(-7094, -8542).replace(var3.Field2840, Method598(-7102, -30891) + var3.Field2840));
+                     } else if (var3.Field2838.equalsIgnoreCase(Method598(-7100, 764))) {
+                        var1 = var1.replace(var3.Field2841, var3.Field2841 + Method598(-7103, 24277) + var3.Field2840 + Method598(-7090, 17090).replace(var3.Field2840, Method598(-7098, -20137) + var3.Field2840));
                      } else {
-                        a = a.replace(a.Field2841, a.Field2841 + Method598(-7101, 7617) + a.Field2840 + Method598(-7090, 17090).replace(a.Field2840, Method598(-7098, -20137) + a.Field2840));
+                        var1 = var1.replace(var3.Field2841, var3.Field2841 + Method598(-7101, 7617) + var3.Field2840 + Method598(-7090, 17090).replace(var3.Field2840, Method598(-7098, -20137) + var3.Field2840));
                      }
                   }
-               } else if (a.Field2838.equalsIgnoreCase(Method598(-7096, -22628))) {
-                  a = a.replace(a.Field2841, a.Field2841 + Method598(-7089, -348) + a.Field2840 + Method598(-7099, 20182));
-               } else if (a.Field2838.equalsIgnoreCase(Method598(-7085, -1233))) {
-                  a = a.replace(a.Field2841, a.Field2841 + Method598(-7092, -21155) + a.Field2840 + Method598(-7088, -22199));
+               } else if (var3.Field2838.equalsIgnoreCase(Method598(-7096, -22628))) {
+                  var1 = var1.replace(var3.Field2841, var3.Field2841 + Method598(-7089, -348) + var3.Field2840 + Method598(-7099, 20182));
+               } else if (var3.Field2838.equalsIgnoreCase(Method598(-7085, -1233))) {
+                  var1 = var1.replace(var3.Field2841, var3.Field2841 + Method598(-7092, -21155) + var3.Field2840 + Method598(-7088, -22199));
                } else {
-                  a = a.replace(a.Field2841, a.Field2841 + Method598(-7093, -20674) + a.Field2840 + Method598(-7088, -22199));
+                  var1 = var1.replace(var3.Field2841, var3.Field2841 + Method598(-7093, -20674) + var3.Field2840 + Method598(-7088, -22199));
                }
             }
          }
       }
 
       if (Method616()) {
-         a = a.replace(Field1715.thePlayer.getName(), Objects.nonNull(GlobalModule.fakeName) ? GlobalModule.fakeName : GlobalModule.Field3149);
+         var1 = var1.replace(Field1715.thePlayer.getName(), Objects.nonNull(GlobalModule.fakeName) ? GlobalModule.fakeName : GlobalModule.Field3149);
       }
 
-      return a;
+      return var1;
    }
 
    private static boolean Method607(Entity a) {
@@ -1177,15 +1177,15 @@ public class Class363 {
 
    public static void Method612() {
       GlStateManager.pushMatrix();
-      EventRender3D a = new EventRender3D(ReflectionUtils.getRenderPartialTicks());
-      EventManager.call(a);
+      EventRender3D var0 = new EventRender3D(ReflectionUtils.getRenderPartialTicks());
+      EventManager.call(var0);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GlStateManager.popMatrix();
    }
 
    public static boolean Method613() {
-      ItemRender a = (ItemRender)ModuleManager.getModule(ItemRender.class);
-      if (a.getState() && a.Field2374.isCurrentMode(Method598(-7097, -24298))) {
+      ItemRender var0 = (ItemRender)ModuleManager.getModule(ItemRender.class);
+      if (var0.getState() && var0.Field2374.isCurrentMode(Method598(-7097, -24298))) {
          GL11.glRotatef(-Field1715.getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(Field1715.gameSettings.thirdPersonView == 2 ? -Field1715.getRenderManager().playerViewX : Field1715.getRenderManager().playerViewX, 1.0F, 0.0F, 0.0F);
          GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
@@ -1224,15 +1224,15 @@ public class Class363 {
    }
 
    protected static float Method620(float a, float a, float a) {
-      float a;
-      for(a = a - a; a < -180.0F; a += 360.0F) {
+      float var3;
+      for(var3 = a - a; var3 < -180.0F; var3 += 360.0F) {
       }
 
-      while(a >= 180.0F) {
-         a -= 360.0F;
+      while(var3 >= 180.0F) {
+         var3 -= 360.0F;
       }
 
-      return a + a * a;
+      return a + a * var3;
    }
 
    public static boolean Method621() {
@@ -1240,105 +1240,105 @@ public class Class363 {
    }
 
    public static MovingObjectPosition Method622(float a) {
-      Entity a = Field1715.getRenderViewEntity();
-      MovingObjectPosition a = null;
+      Entity var1 = Field1715.getRenderViewEntity();
+      MovingObjectPosition var2 = null;
       if (Field1715.theWorld != null) {
          Field1715.pointedEntity = null;
-         Reach a = (Reach)ModuleManager.getModule(Reach.class);
-         double a = a.getState() && !Field1715.playerController.extendedReach() ? (double)a.Method798() : (double)Field1715.playerController.getBlockReachDistance();
-         Field1715.objectMouseOver = a.rayTrace(a.getState() && !Field1715.playerController.extendedReach() ? (double)a.Field2488.getFloatValue() : a, a);
-         double a = a;
-         Vec3 a = a.getPositionEyes(a);
-         boolean a = false;
+         Reach var3 = (Reach)ModuleManager.getModule(Reach.class);
+         double var4 = var3.getState() && !Field1715.playerController.extendedReach() ? (double)var3.Method798() : (double)Field1715.playerController.getBlockReachDistance();
+         Field1715.objectMouseOver = var1.rayTrace(var3.getState() && !Field1715.playerController.extendedReach() ? (double)var3.Field2488.getFloatValue() : var4, a);
+         double var6 = var4;
+         Vec3 var8 = var1.getPositionEyes(a);
+         boolean var9 = false;
          if (Field1715.playerController.extendedReach()) {
-            a = 6.0;
-            a = 6.0;
-         } else if (a > 3.0) {
-            a = true;
+            var4 = 6.0;
+            var6 = 6.0;
+         } else if (var4 > 3.0) {
+            var9 = true;
          }
 
          if (Field1715.objectMouseOver != null) {
-            a = Field1715.objectMouseOver.hitVec.distanceTo(a);
+            var6 = Field1715.objectMouseOver.hitVec.distanceTo(var8);
          }
 
-         if (a.getState() && !Field1715.playerController.extendedReach()) {
-            a = (double)a.Method276();
-            MovingObjectPosition a = a.rayTrace(a, a);
-            a = a.hitVec.distanceTo(a);
+         if (var3.getState() && !Field1715.playerController.extendedReach()) {
+            var6 = (double)var3.Method276();
+            MovingObjectPosition var10 = var1.rayTrace(var6, a);
+            var6 = var10.hitVec.distanceTo(var8);
          }
 
-         Vec3 a = a.getLook(a);
-         Vec3 a = a.addVector(a.xCoord * a, a.yCoord * a, a.zCoord * a);
-         Entity a = null;
-         Vec3 a = null;
-         float a = 1.0F;
-         List a = Field1715.theWorld.getEntitiesInAABBexcluding(a, a.getEntityBoundingBox().addCoord(a.xCoord * a, a.yCoord * a, a.zCoord * a).expand((double)a, (double)a, (double)a), Predicates.and(EntitySelectors.NOT_SPECTATING, Class363::Method607));
-         double a = a;
-         Iterator var18 = a.Method1383();
+         Vec3 var26 = var1.getLook(a);
+         Vec3 var11 = var8.addVector(var26.xCoord * var4, var26.yCoord * var4, var26.zCoord * var4);
+         Entity var12 = null;
+         Vec3 var13 = null;
+         float var14 = 1.0F;
+         List var15 = Field1715.theWorld.getEntitiesInAABBexcluding(var1, var1.getEntityBoundingBox().addCoord(var26.xCoord * var4, var26.yCoord * var4, var26.zCoord * var4).expand((double)var14, (double)var14, (double)var14), Predicates.and(EntitySelectors.NOT_SPECTATING, Class363::Method607));
+         double var16 = var6;
+         Iterator var18 = var15.Method1383();
 
          while(true) {
             while(var18.Method932()) {
-               Entity a = (Entity)var18.Method933();
-               HitBox a = (HitBox)ModuleManager.getModule(HitBox.class);
-               float a = a.Method1187(a) ? a.Field2607.getFloatValue() : a.getCollisionBorderSize();
-               AxisAlignedBB a = a.getEntityBoundingBox().expand((double)a, (double)a, (double)a);
-               MovingObjectPosition a = a.calculateIntercept(a, a);
-               if (a.isVecInside(a)) {
-                  if (a >= 0.0) {
-                     a = a;
-                     a = a;
-                     a = 0.0;
+               Entity var19 = (Entity)var18.Method933();
+               HitBox var20 = (HitBox)ModuleManager.getModule(HitBox.class);
+               float var21 = var20.Method1187(var19) ? var20.Field2607.getFloatValue() : var19.getCollisionBorderSize();
+               AxisAlignedBB var22 = var19.getEntityBoundingBox().expand((double)var21, (double)var21, (double)var21);
+               MovingObjectPosition var23 = var22.calculateIntercept(var8, var11);
+               if (var22.isVecInside(var8)) {
+                  if (var16 >= 0.0) {
+                     var12 = var19;
+                     var13 = var8;
+                     var16 = 0.0;
                   }
                } else {
-                  double a = a.distanceTo(a.hitVec);
-                  if (a < a || a == 0.0) {
-                     if (a == a.ridingEntity) {
-                        if (a == 0.0) {
-                           a = a;
-                           a = a.hitVec;
+                  double var24 = var8.distanceTo(var23.hitVec);
+                  if (var24 < var16 || var16 == 0.0) {
+                     if (var19 == var1.ridingEntity) {
+                        if (var16 == 0.0) {
+                           var12 = var19;
+                           var13 = var23.hitVec;
                         }
                      } else {
-                        a = a;
-                        a = a.hitVec;
-                        a = a;
+                        var12 = var19;
+                        var13 = var23.hitVec;
+                        var16 = var24;
                      }
                   }
                }
             }
 
-            if (a.distanceTo(a) > (a.getState() && !Field1715.playerController.extendedReach() ? (double)a.Method276() : 3.0)) {
-               a = null;
-               a = new MovingObjectPosition(MovingObjectType.MISS, a, (EnumFacing)null, new BlockPos(a));
+            if (var8.distanceTo(var13) > (var3.getState() && !Field1715.playerController.extendedReach() ? (double)var3.Method276() : 3.0)) {
+               var12 = null;
+               var2 = new MovingObjectPosition(MovingObjectType.MISS, var13, (EnumFacing)null, new BlockPos(var13));
             }
 
-            if (a < a || Field1715.objectMouseOver == null) {
-               a = new MovingObjectPosition(a, a);
-               if (a instanceof EntityLivingBase || a instanceof EntityItemFrame) {
-                  Field1715.pointedEntity = a;
+            if (var16 < var6 || Field1715.objectMouseOver == null) {
+               var2 = new MovingObjectPosition(var12, var13);
+               if (var12 instanceof EntityLivingBase || var12 instanceof EntityItemFrame) {
+                  Field1715.pointedEntity = var12;
                }
             }
             break;
          }
       }
 
-      return a;
+      return var2;
    }
 
    public static float Method623() {
-      float a = NoFov.Field2239.getFloatValue();
+      float var0 = NoFov.Field2239.getFloatValue();
       if (Field1715.thePlayer.isUsingItem() && Field1715.thePlayer.getItemInUse().getItem() == Items.bow && NoFov.Field2240.getBooleanValue()) {
-         int a = Field1715.thePlayer.getItemInUseDuration();
-         float a = (float)a / 20.0F;
-         if (a > 1.0F) {
-            a = 1.0F;
+         int var1 = Field1715.thePlayer.getItemInUseDuration();
+         float var2 = (float)var1 / 20.0F;
+         if (var2 > 1.0F) {
+            var2 = 1.0F;
          } else {
-            a *= a;
+            var2 *= var2;
          }
 
-         a *= 1.0F - a * 0.15F;
+         var0 *= 1.0F - var2 * 0.15F;
       }
 
-      return a;
+      return var0;
    }
 
    public static void Method624(int a, int a) {
@@ -1375,14 +1375,14 @@ public class Class363 {
 
    }
 
-   public static float Method629(float a, float a1, float a2, float a, int a4) {
-      float a = EventMotion.Field2892;
-      float a = EventMotion.Field2893;
-      float a = EventMotion.Field2894;
-      float a = EventMotion.Field2895;
-      a = Method620(a, a, a);
-      float a = Method620(a, a, a) - a;
-      float a = Method620(a, a, a);
+   public static float Method629(float a, float a, float a, float a, int a) {
+      float var5 = EventMotion.Field2892;
+      float var6 = EventMotion.Field2893;
+      float var7 = EventMotion.Field2894;
+      float var8 = EventMotion.Field2895;
+      a = Method620(var7, var5, a);
+      float var9 = Method620(var7, var5, a) - a;
+      float var10 = Method620(var8, var6, a);
       return a;
    }
 
@@ -1393,12 +1393,12 @@ public class Class363 {
          }
 
          Field1715.mouseHelper.mouseXYChange();
-         float a = Field1715.gameSettings.mouseSensitivity * 0.6F + 0.2F;
-         float a = a * a * a * 8.0F;
-         float a = (float)Field1715.mouseHelper.deltaX * a;
-         float a = (float)Field1715.mouseHelper.deltaY * a;
-         Perspective.Field2200 += a * 0.15F;
-         Perspective.Field2201 += a * 0.15F;
+         float var0 = Field1715.gameSettings.mouseSensitivity * 0.6F + 0.2F;
+         float var1 = var0 * var0 * var0 * 8.0F;
+         float var2 = (float)Field1715.mouseHelper.deltaX * var1;
+         float var3 = (float)Field1715.mouseHelper.deltaY * var1;
+         Perspective.Field2200 += var2 * 0.15F;
+         Perspective.Field2201 += var3 * 0.15F;
          if (Perspective.Field2201 > 90.0F) {
             Perspective.Field2201 = 90.0F;
          }
@@ -1412,9 +1412,9 @@ public class Class363 {
    }
 
    public static float Method631(Object a) {
-      Entity a = (Entity)a;
-      HitBox a = (HitBox)ModuleManager.getModule2(HitBox.class);
-      return a.Method1187(a) ? a.Field2607.getFloatValue() : 0.1F;
+      Entity var1 = (Entity)a;
+      HitBox var2 = (HitBox)ModuleManager.getModule2(HitBox.class);
+      return var2.Method1187(var1) ? var2.Field2607.getFloatValue() : 0.1F;
    }
 
    public static boolean Method632() {
@@ -1426,8 +1426,8 @@ public class Class363 {
    }
 
    public static void Method634(EntityLivingBase a, boolean a) {
-      Class645 a = new Class645(a, a);
-      EventManager.call(a);
+      Class645 var2 = new Class645(a, a);
+      EventManager.call(var2);
    }
 
    public static boolean Method635() {
@@ -1451,13 +1451,13 @@ public class Class363 {
    }
 
    public static String Method640(String a) {
-      String a = a;
+      String var1 = a;
       if (!Objects.isNull(Field1715.thePlayer) && Method616()) {
          if (Method616() && Objects.nonNull(a)) {
-            a = a.replace(Field1715.thePlayer.getName(), Objects.nonNull(GlobalModule.fakeName) ? GlobalModule.fakeName : GlobalModule.Field3149);
+            var1 = a.replace(Field1715.thePlayer.getName(), Objects.nonNull(GlobalModule.fakeName) ? GlobalModule.fakeName : GlobalModule.Field3149);
          }
 
-         return a;
+         return var1;
       } else {
          return a;
       }
@@ -1478,8 +1478,8 @@ public class Class363 {
 
    public static void Method643() {
       GlStateManager.pushMatrix();
-      EventRender2D a = new EventRender2D(ReflectionUtils.getRenderPartialTicks());
-      EventManager.call(a);
+      EventRender2D var0 = new EventRender2D(ReflectionUtils.getRenderPartialTicks());
+      EventManager.call(var0);
       GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
       GlStateManager.popMatrix();
    }

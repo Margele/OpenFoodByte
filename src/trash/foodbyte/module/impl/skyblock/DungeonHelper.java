@@ -34,28 +34,28 @@ public class DungeonHelper extends Module {
    @EventTarget
    public void Method1186(EventPacket a) {
       if (a.isRecieve() && Field3247.isCurrentMode(Method754(-11423, 31190)) && a.getPacket() instanceof S2FPacketSetSlot) {
-         S2FPacketSetSlot a = (S2FPacketSetSlot)a.getPacket();
+         S2FPacketSetSlot var2 = (S2FPacketSetSlot)a.getPacket();
          if (mc.currentScreen instanceof GuiChest) {
-            Container a = Minecraft.getMinecraft().thePlayer.openContainer;
-            ContainerChest a = (ContainerChest)a;
-            String a = a.getLowerChestInventory().getDisplayName().getUnformattedText().toLowerCase();
-            String a = a.getLowerChestInventory().getDisplayName().getUnformattedText();
-            boolean a = false;
-            if (a.contains(Method754(-11414, -11115))) {
-               int a = a.func_149173_d();
-               ItemStack a = a.getLowerChestInventory().getStackInSlot(a - 9 - 9);
-               short a;
-               if (mc.thePlayer.ticksExisted >= 3 && this.Field3240 != 0 && Item.getIdFromItem(a.getLowerChestInventory().getStackInSlot(this.Field3240).getItem()) == 155 && a.getLowerChestInventory().getStackInSlot(this.Field3240).getItemDamage() == 0) {
-                  a = mc.thePlayer.openContainer.getNextTransactionID(mc.thePlayer.inventory);
-                  Class747.Method1564(a);
+            Container var3 = Minecraft.getMinecraft().thePlayer.openContainer;
+            ContainerChest var4 = (ContainerChest)var3;
+            String var5 = var4.getLowerChestInventory().getDisplayName().getUnformattedText().toLowerCase();
+            String var6 = var4.getLowerChestInventory().getDisplayName().getUnformattedText();
+            boolean var7 = false;
+            if (var6.contains(Method754(-11414, -11115))) {
+               int var8 = var2.func_149173_d();
+               ItemStack var9 = var4.getLowerChestInventory().getStackInSlot(var8 - 9 - 9);
+               short var10;
+               if (mc.thePlayer.ticksExisted >= 3 && this.Field3240 != 0 && Item.getIdFromItem(var4.getLowerChestInventory().getStackInSlot(this.Field3240).getItem()) == 155 && var4.getLowerChestInventory().getStackInSlot(this.Field3240).getItemDamage() == 0) {
+                  var10 = mc.thePlayer.openContainer.getNextTransactionID(mc.thePlayer.inventory);
+                  Class747.Method1564(var8);
                   this.Field3240 = 0;
                }
 
-               if (Item.getIdFromItem(a.func_149174_e().getItem()) == 155 && a.func_149174_e().getItemDamage() == 0) {
-                  a = mc.thePlayer.openContainer.getNextTransactionID(mc.thePlayer.inventory);
-                  Class747.Method1564(a);
-                  if (Item.getIdFromItem(a.getItem()) == 35) {
-                     this.Field3240 = a;
+               if (Item.getIdFromItem(var2.func_149174_e().getItem()) == 155 && var2.func_149174_e().getItemDamage() == 0) {
+                  var10 = mc.thePlayer.openContainer.getNextTransactionID(mc.thePlayer.inventory);
+                  Class747.Method1564(var8);
+                  if (Item.getIdFromItem(var9.getItem()) == 35) {
+                     this.Field3240 = var8;
                   }
 
                   mc.thePlayer.ticksExisted = 0;
@@ -85,15 +85,15 @@ public class DungeonHelper extends Module {
 
    @EventTarget
    public void Method1657(Class643 a) {
-      GuiContainer a = (GuiContainer)a.Field2911;
-      if (a.inventorySlots instanceof ContainerChest) {
-         IInventory a = ((ContainerChest)a.inventorySlots).getLowerChestInventory();
-         Container a = a.inventorySlots;
-         String a = a.getDisplayName().getUnformattedText().toLowerCase().trim();
-         String a = a.getDisplayName().getUnformattedText();
-         int a = a.inventorySlots.inventorySlots.Method1799();
-         List a = a.inventorySlots.inventorySlots;
-         this.Method1656(a, a, a, a, a);
+      GuiContainer var2 = (GuiContainer)a.Field2911;
+      if (var2.inventorySlots instanceof ContainerChest) {
+         IInventory var3 = ((ContainerChest)var2.inventorySlots).getLowerChestInventory();
+         Container var4 = var2.inventorySlots;
+         String var5 = var3.getDisplayName().getUnformattedText().toLowerCase().trim();
+         String var6 = var3.getDisplayName().getUnformattedText();
+         int var7 = var2.inventorySlots.inventorySlots.Method1799();
+         List var8 = var2.inventorySlots.inventorySlots;
+         this.Method1656(var4, var6, var7, var8, var3);
          Class747.Method1565(0);
       }
 

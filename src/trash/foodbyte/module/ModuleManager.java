@@ -190,33 +190,33 @@ public class ModuleManager {
 
    public static ArrayList getModules() {
       Module.Method1041();
-      ArrayList a = new ArrayList();
+      ArrayList var1 = new ArrayList();
       Iterator var2 = modules.Method1383();
 
       while(var2.Method932()) {
-         Module a = (Module)var2.Method933();
-         if (a.getState()) {
-            a.Method2530(a);
+         Module var3 = (Module)var2.Method933();
+         if (var3.getState()) {
+            var1.Method2530(var3);
             break;
          }
       }
 
-      return a;
+      return var1;
    }
 
    public static Module getModule(String a) {
       Iterator var1 = modules.Method1383();
 
-      Module a;
+      Module var2;
       do {
          if (!var1.Method932()) {
             return null;
          }
 
-         a = (Module)var1.Method933();
-      } while(!a.getName().equalsIgnoreCase(a));
+         var2 = (Module)var1.Method933();
+      } while(!var2.getName().equalsIgnoreCase(a));
 
-      return a;
+      return var2;
    }
 
    public static ArrayList getAllModules() {
@@ -226,58 +226,58 @@ public class ModuleManager {
    public static Module getModule(Class a) {
       Iterator var1 = modules.Method1383();
 
-      Module a;
+      Module var2;
       do {
          if (!var1.Method932()) {
             return null;
          }
 
-         a = (Module)var1.Method933();
-      } while(a.getClass() != a);
+         var2 = (Module)var1.Method933();
+      } while(var2.getClass() != a);
 
-      return a;
+      return var2;
    }
 
    public static Module getModule2(Class a) {
       Iterator var1 = modules.Method1383();
 
-      Module a;
+      Module var2;
       do {
          if (!var1.Method932()) {
             return null;
          }
 
-         a = (Module)var1.Method933();
-      } while(a.getClass() != a);
+         var2 = (Module)var1.Method933();
+      } while(var2.getClass() != a);
 
-      return a;
+      return var2;
    }
 
    public static ArrayList getModulesNotRender() {
       Module.Method1041();
-      ArrayList a = new ArrayList();
+      ArrayList var1 = new ArrayList();
       Iterator var2 = modules.Method1383();
       if (var2.Method932()) {
-         Module a = (Module)var2.Method933();
-         if (a.getState() && a.Method1024() != Category.RENDER) {
-            a.Method2530(a);
+         Module var3 = (Module)var2.Method933();
+         if (var3.getState() && var3.Method1024() != Category.RENDER) {
+            var1.Method2530(var3);
          }
       }
 
-      return a;
+      return var1;
    }
 
    public static int Method2299(Category a) {
-      int a = 0;
+      int var2 = 0;
       Module.Method1041();
       Iterator var3 = modules.Method1383();
       if (var3.Method932()) {
-         Module a = (Module)var3.Method933();
-         if (a.Method1024() == a) {
-            ++a;
+         Module var4 = (Module)var3.Method933();
+         if (var4.Method1024() == a) {
+            ++var2;
          }
       }
 
-      return a;
+      return var2;
    }
 }

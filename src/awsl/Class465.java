@@ -9,7 +9,7 @@ public class Class465 implements Class422, Class45 {
    private static final String[] Field2160;
    private static final String[] Field2161;
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public String[] Method1360() {

@@ -35,10 +35,10 @@ class Class701 extends AbstractSet implements Iterator {
       if (this.Field3026 == null) {
          throw new NoSuchElementException();
       } else {
-         Object a = this.Field3026;
+         Object var1 = this.Field3026;
          this.Field3026 = this.Field3027;
          this.Field3027 = null;
-         return a;
+         return var1;
       }
    }
 
@@ -65,18 +65,18 @@ class Class701 extends AbstractSet implements Iterator {
             if (this.Field3027 == null && (this.Field3026 == a.Field3026 || this.Field3026 == a.Field3027)) {
                return a;
             } else {
-               HashSet a = new HashSet(4);
-               a.add(this.Field3026);
+               HashSet var2 = new HashSet(4);
+               var2.add(this.Field3026);
                if (this.Field3027 != null) {
-                  a.add(this.Field3027);
+                  var2.add(this.Field3027);
                }
 
-               a.add(a.Field3026);
+               var2.add(a.Field3026);
                if (a.Field3027 != null) {
-                  a.add(a.Field3027);
+                  var2.add(a.Field3027);
                }
 
-               return a;
+               return var2;
             }
          }
       } else {

@@ -132,25 +132,25 @@ public class Speed extends Module {
    }
 
    private float Method1779() {
-      double a = (Double)ReflectionsHelper.getFieldAsObject(mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosX.getObfuscatedName()});
-      double a = (Double)ReflectionsHelper.getFieldAsObject(mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosY.getObfuscatedName()}) + (double)mc.thePlayer.getEyeHeight();
-      double a = (Double)ReflectionsHelper.getFieldAsObject(mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosZ.getObfuscatedName()});
-      double a = mc.thePlayer.posX;
-      double a = mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight();
-      double a = mc.thePlayer.posZ;
-      double a = a - a;
-      double a = a - a;
-      double a = a - a;
-      double a = Math.sqrt(Math.pow(a, 2.0) + Math.pow(a, 2.0));
-      double a = Math.toDegrees(Math.atan2(a, a)) + 90.0;
-      double a = Math.toDegrees(Math.atan2(a, a));
-      return (float)a;
+      double var1 = (Double)ReflectionsHelper.getFieldAsObject(mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosX.getObfuscatedName()});
+      double var3 = (Double)ReflectionsHelper.getFieldAsObject(mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosY.getObfuscatedName()}) + (double)mc.thePlayer.getEyeHeight();
+      double var5 = (Double)ReflectionsHelper.getFieldAsObject(mc.thePlayer, new String[]{ObfuscatedField.lastReportedPosZ.getObfuscatedName()});
+      double var7 = mc.thePlayer.posX;
+      double var9 = mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight();
+      double var11 = mc.thePlayer.posZ;
+      double var13 = var1 - var7;
+      double var15 = var3 - var9;
+      double var17 = var5 - var11;
+      double var19 = Math.sqrt(Math.pow(var13, 2.0) + Math.pow(var17, 2.0));
+      double var21 = Math.toDegrees(Math.atan2(var17, var13)) + 90.0;
+      double var23 = Math.toDegrees(Math.atan2(var19, var15));
+      return (float)var21;
    }
 
    @EventTarget
    public void Method274(EventMove e) {
       if (this.Field2431.isCurrentMode("Hypixel") && e.isLocalPlayer()) {
-         double a = MoveUtils.getDefaultSpeed();
+         double var2 = MoveUtils.getDefaultSpeed();
          if (MoveUtils.isMoving()) {
             if (this.Field2434.getBooleanValue() && !MoveUtils.isReallyOnGround(0.0) && mc.thePlayer.ticksExisted > 5) {
                ReflectionUtils.setTimerSpeed(this.Field2432.getFloatValue() + MoveUtils.getRandomFloat());
@@ -163,7 +163,7 @@ public class Speed extends Module {
 
             switch (this.stage) {
                case 0:
-                  this.speed = a * 2.15;
+                  this.speed = var2 * 2.15;
                   break;
                case 1:
                   this.speed *= 0.58;
@@ -174,13 +174,13 @@ public class Speed extends Module {
                   this.speed = this.speed / 100.0 * 98.5;
                   break;
                case 4:
-                  this.speed = a * 1.2;
+                  this.speed = var2 * 1.2;
             }
 
             ++this.stage;
-            double[] a = MoveUtils.warp(this.Method276(), Math.max(a, this.speed));
-            e.setX(a[0]);
-            e.setZ(a[1]);
+            double[] var4 = MoveUtils.warp(this.Method276(), Math.max(var2, this.speed));
+            e.setX(var4[0]);
+            e.setZ(var4[1]);
          } else {
             ReflectionUtils.setTimerSpeed(1.0F);
             e.setX(mc.thePlayer.motionX = 0.0);
@@ -191,55 +191,55 @@ public class Speed extends Module {
    }
 
    public float Method276() {
-      float a = mc.thePlayer.rotationYaw;
+      float var1 = mc.thePlayer.rotationYaw;
       if (mc.thePlayer.moveForward < 0.0F) {
-         a += 180.0F;
+         var1 += 180.0F;
       }
 
-      float a = 1.0F;
+      float var2 = 1.0F;
       if (mc.thePlayer.moveForward < 0.0F) {
-         a = -0.5F;
+         var2 = -0.5F;
       } else if (mc.thePlayer.moveForward > 0.0F) {
-         a = 0.5F;
+         var2 = 0.5F;
       }
 
       if (mc.thePlayer.moveStrafing > 0.0F) {
-         a -= 90.0F * a;
+         var1 -= 90.0F * var2;
       }
 
       if (mc.thePlayer.moveStrafing < 0.0F) {
-         a += 90.0F * a;
+         var1 += 90.0F * var2;
       }
 
-      a = (float)((double)a * 0.017453292);
-      return a;
+      var1 = (float)((double)var1 * 0.017453292);
+      return var1;
    }
 
    private double Method1780() {
       Class167.Method1501();
       this.Field2440 = Math.toRadians((double)mc.thePlayer.rotationYaw);
-      boolean a = mc.thePlayer.moveForward > 0.0F;
-      boolean a = mc.thePlayer.moveForward < 0.0F;
-      boolean a = mc.thePlayer.moveStrafing > 0.0F;
-      boolean a = mc.thePlayer.moveStrafing < 0.0F;
+      boolean var2 = mc.thePlayer.moveForward > 0.0F;
+      boolean var3 = mc.thePlayer.moveForward < 0.0F;
+      boolean var4 = mc.thePlayer.moveStrafing > 0.0F;
+      boolean var5 = mc.thePlayer.moveStrafing < 0.0F;
       boolean var6 = true;
       boolean var7 = true;
-      double a = MathHelper.wrapAngleTo180_double((double)mc.thePlayer.rotationYaw);
+      double var8 = MathHelper.wrapAngleTo180_double((double)mc.thePlayer.rotationYaw);
       if (this.Field2440 == Double.NaN) {
-         this.Field2440 = a;
+         this.Field2440 = var8;
       }
 
-      double a = 45.0;
-      if (Math.abs(a - this.Field2440) > 45.0 && Math.abs(a - this.Field2440) < 315.0) {
-         if (a > this.Field2440) {
-            a += a;
+      double var10 = 45.0;
+      if (Math.abs(var8 - this.Field2440) > 45.0 && Math.abs(var8 - this.Field2440) < 315.0) {
+         if (var8 > this.Field2440) {
+            var8 += var10;
          }
 
-         a -= a;
+         var8 -= var10;
       }
 
-      this.Field2440 = a;
-      return Math.toRadians(a);
+      this.Field2440 = var8;
+      return Math.toRadians(var8);
    }
 
    public boolean Method713() {

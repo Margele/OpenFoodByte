@@ -12,27 +12,27 @@ import trash.foodbyte.utils.RenderUtils;
 
 public class Class356 {
    public static ItemStack Method131(ItemStack a) {
-      ItemStack a = new ItemStack(Blocks.chest);
-      NBTTagCompound a = a.getTagCompound();
-      a = new NBTTagCompound();
-      NBTTagCompound a = new NBTTagCompound();
-      NBTTagList a = new NBTTagList();
-      NBTTagCompound a = new NBTTagCompound();
-      a.setByte("Slot", (byte)0);
-      a.setByte("Count", (byte)a.stackSize);
-      a.setString("id", Method132(a.getItem()));
-      a.setShort("Damage", (short)a.getItemDamage());
+      ItemStack var1 = new ItemStack(Blocks.chest);
+      NBTTagCompound var2 = a.getTagCompound();
+      var2 = new NBTTagCompound();
+      NBTTagCompound var3 = new NBTTagCompound();
+      NBTTagList var4 = new NBTTagList();
+      NBTTagCompound var5 = new NBTTagCompound();
+      var5.setByte("Slot", (byte)0);
+      var5.setByte("Count", (byte)a.stackSize);
+      var5.setString("id", Method132(a.getItem()));
+      var5.setShort("Damage", (short)a.getItemDamage());
       if (a.getTagCompound() != null) {
-         a.setTag("tag", a.getTagCompound());
+         var5.setTag("tag", a.getTagCompound());
       }
 
-      a.appendTag(a);
-      a.setTag("Items", a);
-      a.setTag("BlockEntityTag", a);
-      a.setTagCompound(a);
-      Method134(a, "§7Pack");
-      Method134(a, a.getDisplayName());
-      return a;
+      var4.appendTag(var5);
+      var3.setTag("Items", var4);
+      var2.setTag("BlockEntityTag", var3);
+      var1.setTagCompound(var2);
+      Method134(var1, "§7Pack");
+      Method134(var1, a.getDisplayName());
+      return var1;
    }
 
    public static String Method132(Item a) {
@@ -40,37 +40,37 @@ public class Class356 {
    }
 
    public static ItemStack Method133(String a, String[] a) {
-      ItemStack a = new ItemStack(Items.paper);
+      ItemStack var3 = new ItemStack(Items.paper);
       RenderUtils.trash();
-      a.setStackDisplayName(a);
-      NBTTagList a = new NBTTagList();
+      var3.setStackDisplayName(a);
+      NBTTagList var4 = new NBTTagList();
       int var6 = a.length;
       int var7 = 0;
       if (var7 < var6) {
-         String a = a[var7];
-         a.appendTag(new NBTTagString(a));
+         String var8 = a[var7];
+         var4.appendTag(new NBTTagString(var8));
          ++var7;
       }
 
-      a.getTagCompound().getCompoundTag("display").setTag("Lore", a);
-      return a;
+      var3.getTagCompound().getCompoundTag("display").setTag("Lore", var4);
+      return var3;
    }
 
    public static void Method134(ItemStack a, String a) {
-      NBTTagList a = Method139(a);
-      a.appendTag(new NBTTagString(a));
+      NBTTagList var2 = Method139(a);
+      var2.appendTag(new NBTTagString(a));
    }
 
    public static void Method135(ItemStack a, int a) {
-      NBTTagList a = Method139(a);
-      if (a >= a.tagCount()) {
-         if (a.tagCount() == 0) {
+      NBTTagList var2 = Method139(a);
+      if (a >= var2.tagCount()) {
+         if (var2.tagCount() == 0) {
             Method137(a);
          }
 
       } else {
-         a.removeTag(a);
-         if (a.tagCount() == 0) {
+         var2.removeTag(a);
+         if (var2.tagCount() == 0) {
             Method137(a);
          }
 
@@ -79,18 +79,18 @@ public class Class356 {
 
    public static void Method136(ItemStack a, int a, String a) {
       RenderUtils.trash();
-      NBTTagList a = Method139(a);
-      if (a >= a.tagCount()) {
+      NBTTagList var4 = Method139(a);
+      if (a >= var4.tagCount()) {
          Method134(a, a);
       }
 
-      a.set(a, new NBTTagString(a));
+      var4.set(a, new NBTTagString(a));
    }
 
    public static void Method137(ItemStack a) {
-      NBTTagCompound a = Method141(a);
-      if (a.hasKey("Lore", 9)) {
-         a.removeTag("Lore");
+      NBTTagCompound var1 = Method141(a);
+      if (var1.hasKey("Lore", 9)) {
+         var1.removeTag("Lore");
       }
 
       Method143(a);
@@ -101,20 +101,20 @@ public class Class356 {
    }
 
    public static NBTTagList Method139(ItemStack a) {
-      NBTTagCompound a = Method141(a);
+      NBTTagCompound var1 = Method141(a);
       if (!Method138(a)) {
-         a.setTag("Lore", new NBTTagList());
+         var1.setTag("Lore", new NBTTagList());
       }
 
-      return a.getTagList("Lore", 8);
+      return var1.getTagList("Lore", 8);
    }
 
    @Nullable
    public static String Method140(ItemStack a, int a) {
       if (Method138(a)) {
-         NBTTagList a = Method139(a);
-         if (a < a.tagCount()) {
-            return a.getStringTagAt(a);
+         NBTTagList var2 = Method139(a);
+         if (a < var2.tagCount()) {
+            return var2.getStringTagAt(a);
          }
       }
 
@@ -170,11 +170,11 @@ public class Class356 {
    }
 
    private static void Method150(ItemStack a, String a, boolean a) {
-      int[] a = RenderUtils.trash();
+      int[] var3 = RenderUtils.trash();
       Method149(a).setBoolean(a, a);
       if (a.hasTagCompound()) {
-         NBTTagCompound a = Method149(a);
-         a.removeTag(a);
+         NBTTagCompound var4 = Method149(a);
+         var4.removeTag(a);
          Method151(a);
       }
 

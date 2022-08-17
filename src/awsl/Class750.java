@@ -12,7 +12,7 @@ public class Class750 extends Thread {
 
    public Class750() {
       if (!this.Method1616(Field3281)) {
-         Class752 a = new Class752(this, Field3281);
+         Class752 var1 = new Class752(this, Field3281);
          CompletableFuture.runAsync(Class750::Method1618);
       }
 
@@ -20,28 +20,28 @@ public class Class750 extends Thread {
    }
 
    public boolean Method1616(int a) {
-      boolean a = true;
+      boolean var2 = true;
 
       try {
-         a = this.Method1617("127.0.0.1", a);
+         var2 = this.Method1617("127.0.0.1", a);
       } catch (Exception var4) {
          var4.printStackTrace();
       }
 
-      return a;
+      return var2;
    }
 
    public boolean Method1617(String a, int a) throws UnknownHostException {
-      boolean a = false;
-      InetAddress a = InetAddress.getByName(a);
+      boolean var3 = false;
+      InetAddress var4 = InetAddress.getByName(a);
 
       try {
-         new Socket(a, a);
-         a = true;
+         new Socket(var4, a);
+         var3 = true;
       } catch (IOException var6) {
       }
 
-      return a;
+      return var3;
    }
 
    private static void Method1618(Class752 a) {

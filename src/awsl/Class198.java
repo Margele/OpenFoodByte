@@ -24,61 +24,61 @@ public class Class198 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1270();
-      int a = a.getWidth();
-      int a = a.getHeight();
-      int a = a.getType();
-      WritableRaster a = a.getRaster();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
+      int var6 = a.getType();
+      WritableRaster var7 = a.getRaster();
       a = this.Method1263(a, (ColorModel)null);
-      int[] a = new int[this.Field1175 * this.Field1175];
-      int a = 0;
-      if (a < a) {
-         int a = 0;
+      int[] var8 = new int[this.Field1175 * this.Field1175];
+      byte var9 = 0;
+      if (var9 < var5) {
+         byte var10 = 0;
          int var10000;
-         if (a < a) {
-            int a = Math.min(this.Field1175, a - a);
-            int a = Math.min(this.Field1175, a - a);
-            int a = a * a;
-            this.Method104(a, a, a, a, a, a);
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a;
-            int a;
-            if (a < a) {
-               a = 0;
-               if (a < a) {
-                  a = a[a];
-                  a += a >> 16 & 255;
-                  a += a >> 8 & 255;
-                  a += a & 255;
-                  ++a;
-                  ++a;
+         if (var10 < var4) {
+            int var11 = Math.min(this.Field1175, var4 - var10);
+            int var12 = Math.min(this.Field1175, var5 - var9);
+            int var13 = var11 * var12;
+            this.Method104(a, var10, var9, var11, var12, var8);
+            int var14 = 0;
+            int var15 = 0;
+            int var16 = 0;
+            int var18 = 0;
+            int var19 = 0;
+            int var17;
+            int var20;
+            if (var19 < var12) {
+               var20 = 0;
+               if (var20 < var11) {
+                  var17 = var8[var18];
+                  var14 += var17 >> 16 & 255;
+                  var15 += var17 >> 8 & 255;
+                  var16 += var17 & 255;
+                  ++var18;
+                  ++var20;
                }
 
-               ++a;
+               ++var19;
             }
 
-            a = a / a << 16 | a / a << 8 | a / a;
-            int a = 0;
-            int a = 0;
-            if (a < a) {
-               int a = 0;
-               if (a < a) {
-                  a[a] = a[a] & -16777216 | a;
-                  a = a + 1;
-                  a = a + 1;
+            var17 = var14 / var13 << 16 | var15 / var13 << 8 | var16 / var13;
+            byte var21 = 0;
+            byte var22 = 0;
+            if (var22 < var12) {
+               byte var23 = 0;
+               if (var23 < var11) {
+                  var8[var21] = var8[var21] & -16777216 | var17;
+                  var18 = var21 + 1;
+                  var20 = var23 + 1;
                }
 
-               a = a + 1;
+               var19 = var22 + 1;
             }
 
-            this.Method1267(a, a, a, a, a, a);
-            var10000 = a + this.Field1175;
+            this.Method1267(a, var10, var9, var11, var12, var8);
+            var10000 = var10 + this.Field1175;
          }
 
-         var10000 = a + this.Field1175;
+         var10000 = var9 + this.Field1175;
       }
 
       return a;

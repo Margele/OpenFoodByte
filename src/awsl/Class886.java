@@ -69,26 +69,26 @@ public class Class886 extends Class877 {
 
    protected void Method3439(int a, int a, float[] a) {
       Class193.Method1270();
-      float a = (float)a / this.Field3881;
-      float a = (float)a / this.Field3882;
-      float a;
-      float a;
+      float var5 = (float)a / this.Field3881;
+      float var6 = (float)a / this.Field3882;
+      float var7;
+      float var8;
       switch (this.Field3883) {
          case 0:
          default:
-            a = (float)Math.sin((double)a);
-            a = (float)Math.sin((double)a);
+            var7 = (float)Math.sin((double)var5);
+            var8 = (float)Math.sin((double)var6);
          case 1:
-            a = Class776.Method1714(a, 1.0F);
-            a = Class776.Method1714(a, 1.0F);
+            var7 = Class776.Method1714(var5, 1.0F);
+            var8 = Class776.Method1714(var6, 1.0F);
          case 2:
-            a = Class776.Method1716(a);
-            a = Class776.Method1716(a);
+            var7 = Class776.Method1716(var5);
+            var8 = Class776.Method1716(var6);
          case 3:
-            a = Class598.Method156(a);
-            a = Class598.Method156(a);
-            a[0] = (float)a + this.Field3879 * a;
-            a[1] = (float)a + this.Field3880 * a;
+            var7 = Class598.Method156(var5);
+            var8 = Class598.Method156(var6);
+            a[0] = (float)a + this.Field3879 * var7;
+            a[1] = (float)a + this.Field3880 * var8;
       }
    }
 

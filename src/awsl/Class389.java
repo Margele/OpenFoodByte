@@ -24,7 +24,7 @@ public class Class389 extends Class390 {
       this.Field1920 = "ColorSlider";
    }
 
-   public void Method419(int a, int a1) {
+   public void Method419(int a, int a) {
       this.Field1916 = !this.Field1905.Method2756();
    }
 
@@ -36,23 +36,23 @@ public class Class389 extends Class390 {
 
    }
 
-   public void Method412(int a, int a1) {
+   public void Method412(int a, int a) {
       Class390.Method1317();
       Class565.Field2636.Method1217(this.Field1913, (float)(this.Field1907 + 5), (float)(this.Field1908 + 1), 16777215);
-      float a = 0.0F;
-      if (a < (float)(this.Method1310() - 10)) {
-         int a = Color.getHSBColor(a / (float)(this.Method1310() - 10), 1.0F, 1.0F).getRGB();
-         RenderUtils.Method1103((float)(this.Field1907 + 5) + a, (float)(this.Field1908 + this.Field1910 - 8), 0.5F, 4.0F, a);
-         if ((float)a == (float)(this.Field1907 + 5) + a && this.Field1906) {
-            this.Field1905.Method2440(a);
+      float var4 = 0.0F;
+      if (var4 < (float)(this.Method1310() - 10)) {
+         int var5 = Color.getHSBColor(var4 / (float)(this.Method1310() - 10), 1.0F, 1.0F).getRGB();
+         RenderUtils.Method1103((float)(this.Field1907 + 5) + var4, (float)(this.Field1908 + this.Field1910 - 8), 0.5F, 4.0F, var5);
+         if ((float)a == (float)(this.Field1907 + 5) + var4 && this.Field1906) {
+            this.Field1905.Method2440(var5);
             GlobalModule.INSTANCE.fileManager.saveValues();
          }
 
-         if (this.Field1905.Method2442() == a) {
-            RenderUtils.Method1103((float)(this.Field1907 + 5) + a, (float)(this.Field1908 + this.Field1910 - 8), 0.5F, 4.0F, -1);
+         if (this.Field1905.Method2442() == var5) {
+            RenderUtils.Method1103((float)(this.Field1907 + 5) + var4, (float)(this.Field1908 + this.Field1910 - 8), 0.5F, 4.0F, -1);
          }
 
-         a += 0.5F;
+         var4 += 0.5F;
       }
 
    }

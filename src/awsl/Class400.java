@@ -17,9 +17,9 @@ public class Class400 implements Class422, Class45 {
    }
 
    public static boolean Method3603(Object a, boolean a) {
-      EventPacket a = new EventPacket(a, a);
-      EventManager.call(a);
-      return a.isCancelled();
+      EventPacket var2 = new EventPacket(a, a);
+      EventManager.call(var2);
+      return var2.isCancelled();
    }
 
    @Class628
@@ -818,7 +818,7 @@ public class Class400 implements Class422, Class45 {
       return Field1967[var2];
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    static {

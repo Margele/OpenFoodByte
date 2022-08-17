@@ -22,8 +22,8 @@ public class Class130 extends Class148 {
          throw new IllegalArgumentException("Invalid annotation value");
       } else {
          if (a instanceof b) {
-            int a = ((b)a).Method3217();
-            if (a == 11) {
+            int var3 = ((b)a).Method3217();
+            if (var3 == 11) {
                throw new IllegalArgumentException("Invalid annotation value");
             }
          }
@@ -35,7 +35,7 @@ public class Class130 extends Class148 {
       }
    }
 
-   public void Method398(String a, String a, String a2) {
+   public void Method398(String a, String a, String a) {
       this.Method402();
       this.Method403(a);
       Class39.Method3395(a, false);

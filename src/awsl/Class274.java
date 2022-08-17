@@ -17,12 +17,12 @@ public final class Class274 {
    }
 
    public static Color Method2777(Color a, float a) {
-      int a = a.getRed();
-      int a = a.getGreen();
-      int a = a.getBlue();
-      int a = a.getAlpha();
-      int a = (int)(1.0 / (1.0 - (double)a));
-      return new Color(a, a, a, a);
+      int var2 = a.getRed();
+      int var3 = a.getGreen();
+      int var4 = a.getBlue();
+      int var5 = a.getAlpha();
+      int var6 = (int)(1.0 / (1.0 - (double)a));
+      return new Color(var6, var6, var6, var5);
    }
 
    public static Color Method2778(Color a, double a) {
@@ -30,9 +30,9 @@ public final class Class274 {
    }
 
    public static int Method2779(float a, float a, float a) {
-      float a = 4500.0F;
-      float a = (float)(System.currentTimeMillis() % 4500L) / 4500.0F;
-      return Color.HSBtoRGB(a - a / 54.0F, a, a);
+      float var3 = 4500.0F;
+      float var4 = (float)(System.currentTimeMillis() % 4500L) / 4500.0F;
+      return Color.HSBtoRGB(var4 - a / 54.0F, a, a);
    }
 
    public static int Method2780(float a, float a, float a) {
@@ -40,26 +40,26 @@ public final class Class274 {
    }
 
    public Color Method2781(Color a, Color a, double a) {
-      float a = (float)System.currentTimeMillis();
-      a += (double)a;
-      double a;
-      int a;
+      float var5 = (float)System.currentTimeMillis();
+      a += (double)var5;
+      double var6;
+      int var8;
       if (a > 1.0) {
-         a = a % 1.0;
-         a = (int)a;
-         a = a % 2 == 0 ? a : 1.0 - a;
+         var6 = a % 1.0;
+         var8 = (int)a;
+         a = var8 % 2 == 0 ? var6 : 1.0 - var6;
       }
 
-      a = 1.0 - a;
-      a = (int)((double)a.getRed() * a + (double)a.getRed() * a);
-      int a = (int)((double)a.getGreen() * a + (double)a.getGreen() * a);
-      int a = (int)((double)a.getBlue() * a + (double)a.getBlue() * a);
-      return new Color(a, a, a);
+      var6 = 1.0 - a;
+      var8 = (int)((double)a.getRed() * var6 + (double)a.getRed() * a);
+      int var9 = (int)((double)a.getGreen() * var6 + (double)a.getGreen() * a);
+      int var10 = (int)((double)a.getBlue() * var6 + (double)a.getBlue() * a);
+      return new Color(var8, var9, var10);
    }
 
    public static int Method2782() {
-      float a = (float)(System.currentTimeMillis() % 10000L) / 10000.0F;
-      return Color.HSBtoRGB(a, 0.5F, 1.0F);
+      float var0 = (float)(System.currentTimeMillis() % 10000L) / 10000.0F;
+      return Color.HSBtoRGB(var0, 0.5F, 1.0F);
    }
 
    public static String Method2783(String a) {
@@ -67,74 +67,74 @@ public final class Class274 {
    }
 
    public static Color Method2784(Color a, Color a, double a) {
-      double a = 1.0 - a;
-      int a = (int)((double)a.getRed() * a + (double)a.getRed() * a);
-      int a = (int)((double)a.getGreen() * a + (double)a.getGreen() * a);
-      int a = (int)((double)a.getBlue() * a + (double)a.getBlue() * a);
-      return new Color(a, a, a);
+      double var4 = 1.0 - a;
+      int var6 = (int)((double)a.getRed() * a + (double)a.getRed() * var4);
+      int var7 = (int)((double)a.getGreen() * a + (double)a.getGreen() * var4);
+      int var8 = (int)((double)a.getBlue() * a + (double)a.getBlue() * var4);
+      return new Color(var6, var7, var8);
    }
 
-   public static Color Method2785(float[] a, Color[] a1, float a2) {
+   public static Color Method2785(float[] a, Color[] a, float a) {
       throw new IllegalArgumentException("Fractions can't be null");
    }
 
    public static int[] Method2786(float[] a, float a) {
-      int[] a = new int[2];
+      int[] var3 = new int[2];
 
-      int a;
-      for(a = 0; a < a.length && a[a] <= a; ++a) {
+      int var2;
+      for(var2 = 0; var2 < a.length && a[var2] <= a; ++var2) {
       }
 
-      if (a >= a.length) {
-         a = a.length - 1;
+      if (var2 >= a.length) {
+         var2 = a.length - 1;
       }
 
-      a[0] = a - 1;
-      a[1] = a;
-      return a;
+      var3[0] = var2 - 1;
+      var3[1] = var2;
+      return var3;
    }
 
    public static Color Method2787(Color a, Color a, double a) {
-      float a = (float)a;
-      float a = 1.0F - a;
-      float[] a = new float[3];
-      float[] a = new float[3];
+      float var5 = (float)a;
+      float var6 = 1.0F - var5;
+      float[] var7 = new float[3];
+      float[] var8 = new float[3];
       Class668.Method1270();
-      a.getColorComponents(a);
-      a.getColorComponents(a);
-      float a = a[0] * a + a[0] * a;
-      float a = a[1] * a + a[1] * a;
-      float a = a[2] * a + a[2] * a;
-      if (a < 0.0F) {
-         a = 0.0F;
+      a.getColorComponents(var7);
+      a.getColorComponents(var8);
+      float var9 = var7[0] * var5 + var8[0] * var6;
+      float var10 = var7[1] * var5 + var8[1] * var6;
+      float var11 = var7[2] * var5 + var8[2] * var6;
+      if (var9 < 0.0F) {
+         var9 = 0.0F;
       }
 
-      if (a > 255.0F) {
-         a = 255.0F;
+      if (var9 > 255.0F) {
+         var9 = 255.0F;
       }
 
-      if (a < 0.0F) {
-         a = 0.0F;
+      if (var10 < 0.0F) {
+         var10 = 0.0F;
       }
 
-      if (a > 255.0F) {
-         a = 255.0F;
+      if (var10 > 255.0F) {
+         var10 = 255.0F;
       }
 
-      if (a < 0.0F) {
-         a = 0.0F;
+      if (var11 < 0.0F) {
+         var11 = 0.0F;
       }
 
-      if (a > 255.0F) {
-         a = 255.0F;
+      if (var11 > 255.0F) {
+         var11 = 255.0F;
       }
 
-      Color a = null;
+      Color var12 = null;
 
       try {
-         a = new Color(a, a, a);
+         var12 = new Color(var9, var10, var11);
       } catch (IllegalArgumentException var15) {
-         NumberFormat a = NumberFormat.getNumberInstance();
+         NumberFormat var14 = NumberFormat.getNumberInstance();
          var15.printStackTrace();
       }
 
@@ -142,7 +142,7 @@ public final class Class274 {
          Class668.Method1268(false);
       }
 
-      return a;
+      return var12;
    }
 
    public static String Method2788(int a) {

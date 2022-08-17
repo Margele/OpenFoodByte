@@ -38,48 +38,48 @@ public class Class421 {
    }
 
    public void Method2385(int a, int a, float a) {
-      String[] a = Method2390();
+      String[] var4 = Method2390();
       if (this.Field2036) {
          if (this.Field2034) {
             this.Field2028 = this.Field2030 + (double)a;
             this.Field2029 = this.Field2031 + (double)a;
          }
 
-         Color a = Class416.Method2352().darker();
-         int a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 170)).getRGB();
+         Color var5 = Class416.Method2352().darker();
+         int var6 = (new Color(var5.getRed(), var5.getGreen(), var5.getBlue(), 170)).getRGB();
          RenderUtils.Method1105(this.Field2028 - 2.0, this.Field2029, this.Field2028 + this.Field2032 + 2.0, this.Field2029 + this.Field2033, (new Color(0, 155, 255)).getRGB());
          Class565.Field2635.Method1224(this.Field2027.substring(0, 1) + this.Field2027.toLowerCase().substring(1, this.Field2027.length()), (float)(this.Field2028 + this.Field2032 / 2.0), (float)(this.Field2029 + 1.0), -1052689);
-         double a;
-         int a;
+         double var7;
+         int var9;
          Iterator var10;
          if (this.Field2035 && !this.Field2037.isEmpty()) {
-            a = this.Field2029 + this.Field2033;
-            a = (new Color(0, 0, 0, 150)).getRGB();
+            var7 = this.Field2029 + this.Field2033;
+            var9 = (new Color(0, 0, 0, 150)).getRGB();
             var10 = this.Field2037.Method1383();
             if (var10.Method932()) {
-               Class414 a = (Class414)var10.Method933();
-               RenderUtils.Method1105(this.Field2028, a, this.Field2028 + this.Field2032, a + a.Field2007 + 1.0, a);
-               a.Field2004 = this.Field2028 + 2.0;
-               a.Field2005 = a;
-               a.Field2006 = this.Field2032 - 4.0;
-               a.Method3568(a, a, a);
-               a += a.Field2007 + 1.0;
+               Class414 var11 = (Class414)var10.Method933();
+               RenderUtils.Method1105(this.Field2028, var7, this.Field2028 + this.Field2032, var7 + var11.Field2007 + 1.0, var9);
+               var11.Field2004 = this.Field2028 + 2.0;
+               var11.Field2005 = var7;
+               var11.Field2006 = this.Field2032 - 4.0;
+               var11.Method3568(a, a, a);
+               var7 += var11.Field2007 + 1.0;
             }
 
-            RenderUtils.Method1105(this.Field2028, a + 1.0, this.Field2028 + this.Field2032, a + 1.0, a);
+            RenderUtils.Method1105(this.Field2028, var7 + 1.0, this.Field2028 + this.Field2032, var7 + 1.0, var9);
          }
 
          if (this.Field2035 && !this.Field2038.isEmpty()) {
-            a = this.Field2029 + this.Field2033;
-            a = (new Color(0, 0, 0, 150)).getRGB();
+            var7 = this.Field2029 + this.Field2033;
+            var9 = (new Color(0, 0, 0, 150)).getRGB();
             var10 = this.Field2038.Method1383();
             if (var10.Method932()) {
-               Class417 a = (Class417)var10.Method933();
-               a.Field2015 = this.Field2028 + 2.0;
-               a.Field2016 = a;
-               a.Field2017 = this.Field2032 - 4.0;
-               a.Method2376(a, a, a);
-               double var10000 = a + a.Field2018 + 1.0;
+               Class417 var12 = (Class417)var10.Method933();
+               var12.Field2015 = this.Field2028 + 2.0;
+               var12.Field2016 = var7;
+               var12.Field2017 = this.Field2032 - 4.0;
+               var12.Method2376(a, a, a);
+               double var10000 = var7 + var12.Field2018 + 1.0;
             }
          }
 
@@ -87,7 +87,7 @@ public class Class421 {
    }
 
    public boolean Method2386(int a, int a, int a) {
-      String[] a = Method2390();
+      String[] var4 = Method2390();
       if (!this.Field2036) {
          return false;
       } else if (this.Method2388(a, a)) {
@@ -101,16 +101,16 @@ public class Class421 {
          if (this.Field2035) {
             Iterator var5 = this.Field2037.Method1383();
             if (var5.Method932()) {
-               Class414 a = (Class414)var5.Method933();
-               if (a.Method3569(a, a, a)) {
+               Class414 var6 = (Class414)var5.Method933();
+               if (var6.Method3569(a, a, a)) {
                   return true;
                }
             }
 
             var5 = this.Field2038.Method1383();
             if (var5.Method932()) {
-               Class417 a = (Class417)var5.Method933();
-               if (a.Method2377(a, a, a)) {
+               Class417 var7 = (Class417)var5.Method933();
+               if (var7.Method2377(a, a, a)) {
                   return true;
                }
             }
@@ -120,7 +120,7 @@ public class Class421 {
       }
    }
 
-   public void Method2387(int a, int a1, int a2) {
+   public void Method2387(int a, int a, int a) {
       if (this.Field2036) {
          this.Field2034 = false;
       }

@@ -14,14 +14,14 @@ final class Class826 extends Class831 {
 
    public void Method3501(String a, Attributes a) {
       Class831.Method3658();
-      ArrayList a = (ArrayList)((HashMap)this.Field3667.Method1963()).Method2665(a);
-      String a = a.getValue("type");
-      if ("uninitialized".equals(a)) {
-         a.Method2530(this.Method3654(a.getValue("label")));
+      ArrayList var4 = (ArrayList)((HashMap)this.Field3667.Method1963()).Method2665(a);
+      String var5 = a.getValue("type");
+      if ("uninitialized".equals(var5)) {
+         var4.Method2530(this.Method3654(a.getValue("label")));
       }
 
-      Integer a = (Integer)Class730.Field3207.Method2665(a);
-      a.Method2530(a);
-      a.Method2530(a);
+      Integer var6 = (Integer)Class730.Field3207.Method2665(var5);
+      var4.Method2530(var5);
+      var4.Method2530(var6);
    }
 }

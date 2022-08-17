@@ -13,7 +13,7 @@ public class Class408 implements Class422, Class45 {
       return new String[]{Class673.GuiDisconnected.Method2340()};
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    private static String Method1357(int integer1, int integer2) {

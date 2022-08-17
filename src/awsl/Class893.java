@@ -78,25 +78,25 @@ public class Class893 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      float a = (float)a - this.Field3922;
+      float var5 = (float)a - this.Field3922;
       Class193.Method1269();
-      float a = (float)a - this.Field3923;
-      float a = a * a + a * a;
-      if (a > this.Field3921 || a == 0.0F) {
+      float var6 = (float)a - this.Field3923;
+      float var7 = var5 * var5 + var6 * var6;
+      if (var7 > this.Field3921 || var7 == 0.0F) {
          a[0] = (float)a;
          a[1] = (float)a;
       }
 
-      float a = (float)Math.sqrt((double)(a / this.Field3921));
-      float a = (float)Math.pow(Math.sin(1.5707963267948966 * (double)a), (double)(-this.Field3920));
-      a *= a;
-      a *= a;
-      float a = 1.0F - a;
-      float a = this.Field3916 * a * a;
-      float a = (float)Math.sin((double)a);
-      float a = (float)Math.cos((double)a);
-      a[0] = this.Field3922 + a * a - a * a;
-      a[1] = this.Field3923 + a * a + a * a;
+      float var8 = (float)Math.sqrt((double)(var7 / this.Field3921));
+      float var9 = (float)Math.pow(Math.sin(1.5707963267948966 * (double)var8), (double)(-this.Field3920));
+      var5 *= var9;
+      var6 *= var9;
+      float var10 = 1.0F - var8;
+      float var11 = this.Field3916 * var10 * var10;
+      float var12 = (float)Math.sin((double)var11);
+      float var13 = (float)Math.cos((double)var11);
+      a[0] = this.Field3922 + var13 * var5 - var12 * var6;
+      a[1] = this.Field3923 + var12 * var5 + var13 * var6;
    }
 
    public String toString() {

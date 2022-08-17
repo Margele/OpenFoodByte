@@ -34,95 +34,95 @@ public class ArmorHud extends Module {
 
    @EventTarget
    public void Method810(EventRender2D a) {
-      ScaledResolution a = new ScaledResolution(mc);
-      this.Method1558(a);
+      ScaledResolution var2 = new ScaledResolution(mc);
+      this.Method1558(var2);
    }
 
    private void Method1558(ScaledResolution a) {
       GL11.glPushMatrix();
       Class492.Method2239();
-      ArrayList a = new ArrayList();
-      boolean a = mc.thePlayer.isEntityAlive() && mc.thePlayer.isInsideOfMaterial(Material.water);
-      int a = a.getScaledWidth() / 2 - 6;
-      int a = a.getScaledHeight();
-      int a = 3;
-      ItemStack a = mc.thePlayer.inventory.armorInventory[a];
-      a.Method2530(a);
-      --a;
+      ArrayList var3 = new ArrayList();
+      boolean var4 = mc.thePlayer.isEntityAlive() && mc.thePlayer.isInsideOfMaterial(Material.water);
+      int var5 = a.getScaledWidth() / 2 - 6;
+      int var6 = a.getScaledHeight();
+      int var7 = 3;
+      ItemStack var8 = mc.thePlayer.inventory.armorInventory[var7];
+      var3.Method2530(var8);
+      --var7;
       if (mc.thePlayer.getCurrentEquippedItem() != null) {
-         a.Method2530(mc.thePlayer.getCurrentEquippedItem());
+         var3.Method2530(mc.thePlayer.getCurrentEquippedItem());
       }
 
-      Iterator var18 = a.Method1383();
+      Iterator var18 = var3.Method1383();
       if (var18.Method932()) {
-         a = (ItemStack)var18.Method933();
+         var8 = (ItemStack)var18.Method933();
          if (mc.theWorld != null) {
-            a += 16;
+            var5 += 16;
             RenderHelper.enableGUIStandardItemLighting();
-            mc.getRenderItem().renderItemAndEffectIntoGUI(a, a, a - 65);
-            mc.getRenderItem().renderItemOverlays(mc.fontRendererObj, a, a, a - 65);
+            mc.getRenderItem().renderItemAndEffectIntoGUI(var8, var5, var6 - 65);
+            mc.getRenderItem().renderItemOverlays(mc.fontRendererObj, var8, var5, var6 - 65);
             RenderHelper.disableStandardItemLighting();
-            int a = 1;
-            int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a);
-            int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a);
-            int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a);
-            Method1760("Sh" + this.Method1761(a) + a, a, a + a - 65);
-            a += 4;
-            Method1760("Fir" + this.Method1761(a) + a, a, a + a - 65);
-            a += 4;
-            Method1760("Kb" + this.Method1761(a) + a, a, a + a - 65);
-            if (!(a.getItem() instanceof ItemBook)) {
-               int a;
-               int a;
-               int a;
-               int a;
-               if (a.getItem() instanceof ItemTool) {
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.efficiency.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.silkTouch.effectId, a);
-                  Method1760("Ef" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("For" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Tou" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Unb" + this.Method1761(a) + a, a, a + a - 65);
+            int var9 = 1;
+            int var10 = EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, var8);
+            int var11 = EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, var8);
+            int var12 = EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, var8);
+            Method1760("Sh" + this.Method1761(var10) + var10, var5, var9 + var6 - 65);
+            var9 += 4;
+            Method1760("Fir" + this.Method1761(var11) + var11, var5, var9 + var6 - 65);
+            var9 += 4;
+            Method1760("Kb" + this.Method1761(var12) + var12, var5, var9 + var6 - 65);
+            if (!(var8.getItem() instanceof ItemBook)) {
+               int var13;
+               int var14;
+               int var15;
+               int var16;
+               if (var8.getItem() instanceof ItemTool) {
+                  var13 = EnchantmentHelper.getEnchantmentLevel(Enchantment.efficiency.effectId, var8);
+                  var14 = EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, var8);
+                  var15 = EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, var8);
+                  var16 = EnchantmentHelper.getEnchantmentLevel(Enchantment.silkTouch.effectId, var8);
+                  Method1760("Ef" + this.Method1761(var13) + var13, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("For" + this.Method1761(var14) + var14, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Tou" + this.Method1761(var16) + var16, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Unb" + this.Method1761(var15) + var15, var5, var9 + var6 - 65);
                }
 
-               if (a.getItem() instanceof ItemArmor) {
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.thorns.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.featherFalling.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a);
-                  int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.depthStrider.effectId, a);
-                  Method1760("Pr" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Th" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Dep" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Fea" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Unb" + this.Method1761(a) + a, a, a + a - 65);
+               if (var8.getItem() instanceof ItemArmor) {
+                  var13 = EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, var8);
+                  var14 = EnchantmentHelper.getEnchantmentLevel(Enchantment.thorns.effectId, var8);
+                  var15 = EnchantmentHelper.getEnchantmentLevel(Enchantment.featherFalling.effectId, var8);
+                  var16 = EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, var8);
+                  int var17 = EnchantmentHelper.getEnchantmentLevel(Enchantment.depthStrider.effectId, var8);
+                  Method1760("Pr" + this.Method1761(var13) + var13, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Th" + this.Method1761(var14) + var14, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Dep" + this.Method1761(var17) + var17, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Fea" + this.Method1761(var15) + var15, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Unb" + this.Method1761(var16) + var16, var5, var9 + var6 - 65);
                }
 
-               if (a.getItem() instanceof ItemBow) {
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, a);
-                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, a);
-                  Method1760("Pow" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Pun" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Fla" + this.Method1761(a) + a, a, a + a - 65);
-                  a += 4;
-                  Method1760("Inf" + this.Method1761(a) + a, a, a + a - 65);
+               if (var8.getItem() instanceof ItemBow) {
+                  var13 = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, var8);
+                  var14 = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, var8);
+                  var15 = EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, var8);
+                  var16 = EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, var8);
+                  Method1760("Pow" + this.Method1761(var13) + var13, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Pun" + this.Method1761(var14) + var14, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Fla" + this.Method1761(var15) + var15, var5, var9 + var6 - 65);
+                  var9 += 4;
+                  Method1760("Inf" + this.Method1761(var16) + var16, var5, var9 + var6 - 65);
                }
 
-               if (a.getRarity() == EnumRarity.EPIC) {
-                  Method1760("§6§nGod", a, a + a - 65);
+               if (var8.getRarity() == EnumRarity.EPIC) {
+                  Method1760("§6§nGod", var5, var9 + var6 - 65);
                }
             }
          }
@@ -142,14 +142,14 @@ public class ArmorHud extends Module {
    }
 
    private static void Method1760(String a, int a, int a) {
-      String a = a;
-      String[] a = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "m", "o", "r", "g"};
-      String[] var5 = a;
-      int var6 = a.length;
+      String var3 = a;
+      String[] var4 = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "m", "o", "r", "g"};
+      String[] var5 = var4;
+      int var6 = var4.length;
 
       for(int var7 = 0; var7 < var6; ++var7) {
-         String a = var5[var7];
-         a = a.replaceAll("§" + a, "");
+         String var8 = var5[var7];
+         a = a.replaceAll("§" + var8, "");
       }
 
       GlStateManager.pushMatrix();
@@ -160,7 +160,7 @@ public class ArmorHud extends Module {
       Minecraft.getMinecraft().fontRendererObj.drawString(a, a - 1, a * 2, 0);
       Minecraft.getMinecraft().fontRendererObj.drawString(a, a, a * 2 + 1, 0);
       Minecraft.getMinecraft().fontRendererObj.drawString(a, a, a * 2 - 1, 0);
-      Minecraft.getMinecraft().fontRendererObj.drawString(a, a, a * 2, Class681.Method1612(255));
+      Minecraft.getMinecraft().fontRendererObj.drawString(var3, a, a * 2, Class681.Method1612(255));
       GlStateManager.enableDepth();
       GlStateManager.popMatrix();
    }

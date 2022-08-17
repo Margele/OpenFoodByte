@@ -37,20 +37,20 @@ public class Class767 {
    }
 
    public static int Method1689(int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      return (a + a + a) / 3;
+      int var1 = a >> 16 & 255;
+      int var2 = a >> 8 & 255;
+      int var3 = a & 255;
+      return (var1 + var2 + var3) / 3;
    }
 
    public static boolean Method1690(int a, int a, int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      return Math.abs(a - a) <= a && Math.abs(a - a) <= a && Math.abs(a - a) <= a;
+      int var3 = a >> 16 & 255;
+      int var4 = a >> 8 & 255;
+      int var5 = a & 255;
+      int var6 = a >> 16 & 255;
+      int var7 = a >> 8 & 255;
+      int var8 = a & 255;
+      return Math.abs(var3 - var6) <= a && Math.abs(var4 - var7) <= a && Math.abs(var5 - var8) <= a;
    }
 
    public static int Method1691(int a, int a, int a) {
@@ -61,8 +61,8 @@ public class Class767 {
       return a & ~a | Method1693(a & a, a, a, a);
    }
 
-   public static int Method1693(int a, int a1, int a2, int a3) {
-      int a = Class193.Method1270();
+   public static int Method1693(int a, int a, int a, int a) {
+      boolean var4 = Class193.Method1270();
       return a;
    }
 }

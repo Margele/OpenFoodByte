@@ -18,34 +18,34 @@ public class Class446 {
    }
 
    public static ArrayList Method2764() {
-      ArrayList a = new ArrayList(Field2115);
-      a.addAll(Field2116);
-      return a;
+      ArrayList var0 = new ArrayList(Field2115);
+      var0.addAll(Field2116);
+      return var0;
    }
 
    public static Class447 Method2765(String a) {
       Iterator var1 = Method2764().Method1383();
 
-      Class447 a;
+      Class447 var2;
       do {
          if (!var1.Method932()) {
             return null;
          }
 
-         a = (Class447)var1.Method933();
-      } while(!a.Method2754().equalsIgnoreCase(a));
+         var2 = (Class447)var1.Method933();
+      } while(!var2.Method2754().equalsIgnoreCase(a));
 
-      return a;
+      return var2;
    }
 
    public static List Method2766(String a) {
-      ArrayList a = new ArrayList();
+      ArrayList var2 = new ArrayList();
       Class447.Method2759();
       Iterator var3 = Method2764().Method1383();
       if (var3.Method932()) {
-         Class447 a = (Class447)var3.Method933();
-         if (a.Method2755().equalsIgnoreCase(a)) {
-            a.Method2530(a);
+         Class447 var4 = (Class447)var3.Method933();
+         if (var4.Method2755().equalsIgnoreCase(a)) {
+            var2.Method2530(var4);
          }
       }
 
@@ -53,16 +53,16 @@ public class Class446 {
          Class447.Method2758(new String[4]);
       }
 
-      return a;
+      return var2;
    }
 
    public static Class447 Method2767(String a, String a) {
       Class447.Method2759();
       Iterator var3 = Method2764().Method1383();
       if (var3.Method932()) {
-         Class447 a = (Class447)var3.Method933();
-         if (a.Method2755().equalsIgnoreCase(a) && a.Method2754().equals(a)) {
-            return a;
+         Class447 var4 = (Class447)var3.Method933();
+         if (var4.Method2755().equalsIgnoreCase(a) && var4.Method2754().equals(a)) {
+            return var4;
          }
       }
 
@@ -71,17 +71,17 @@ public class Class446 {
 
    public static List Method2768(String a) {
       Class447.Method2759();
-      List a = new ArrayList();
+      ArrayList var2 = new ArrayList();
       Iterator var3 = Method2764().Method1383();
       if (var3.Method932()) {
-         Class447 a = (Class447)var3.Method933();
-         if (a.Method2755().equals(a)) {
-            a.Method2530(a);
+         Class447 var4 = (Class447)var3.Method933();
+         if (var4.Method2755().equals(a)) {
+            var2.Method2530(var4);
          }
 
          a.trash(new String[4]);
       }
 
-      return a;
+      return var2;
    }
 }

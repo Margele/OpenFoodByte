@@ -45,67 +45,67 @@ public class Class890 {
    }
 
    public int Method3548() throws TransformerException, IOException, SAXException {
-      ZipInputStream a = new ZipInputStream(this.Field3902);
-      ZipOutputStream a = new ZipOutputStream(this.Field3903);
+      ZipInputStream var2 = new ZipInputStream(this.Field3902);
+      ZipOutputStream var3 = new ZipOutputStream(this.Field3903);
       Class831.Method3658();
-      OutputStreamWriter a = new OutputStreamWriter(a);
+      OutputStreamWriter var4 = new OutputStreamWriter(var3);
       Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
-      TransformerFactory a = TransformerFactory.newInstance();
-      if (a.getFeature("http://javax.xml.transform.sax.SAXSource/feature") && a.getFeature("http://javax.xml.transform.sax.SAXResult/feature")) {
-         SAXTransformerFactory a = (SAXTransformerFactory)a;
-         Templates a = null;
+      TransformerFactory var5 = TransformerFactory.newInstance();
+      if (var5.getFeature("http://javax.xml.transform.sax.SAXSource/feature") && var5.getFeature("http://javax.xml.transform.sax.SAXResult/feature")) {
+         SAXTransformerFactory var6 = (SAXTransformerFactory)var5;
+         Templates var7 = null;
          if (this.Field3904 != null) {
-            a = a.newTemplates(this.Field3904);
+            var7 = var6.newTemplates(this.Field3904);
          }
 
-         Class674 a = this.Method3552(a);
-         ContentHandler a = null;
+         Class674 var8 = this.Method3552(var3);
+         Object var9 = null;
          switch (this.Field3901) {
             case 1:
-               a = new Class736(new Class892(a), a, false);
+               var9 = new Class736(new Class892(var3), var8, false);
                break;
             case 2:
-               a = new Class736(new Class676(a, true), a, true);
+               var9 = new Class736(new Class676(var4, true), var8, true);
                break;
             case 3:
-               ZipEntry a = new ZipEntry("classes.xml");
-               a.putNextEntry(a);
-               a = new Class738(a, false);
+               ZipEntry var10 = new ZipEntry("classes.xml");
+               var3.putNextEntry(var10);
+               var9 = new Class738(var4, false);
          }
 
-         ContentHandler a = new Class734("class", (ContentHandler)a, new Class682(a, a, (ContentHandler)a));
-         Class672 a = new Class680(a);
+         Class734 var15 = new Class734("class", (ContentHandler)var9, new Class682(var6, var7, (ContentHandler)var9));
+         Class680 var11 = new Class680(var15);
          if (this.Field3900 != 3) {
-            a.Method1635();
-            a.Method1633("", "classes", "classes", new AttributesImpl());
+            var15.Method1635();
+            var15.Method1633("", "classes", "classes", new AttributesImpl());
          }
 
-         int a = 0;
-         ZipEntry a;
-         if ((a = a.getNextEntry()) != null) {
-            this.Method3555(a.getName(), this.Field3905++);
-            if (this.Method3550(a)) {
-               this.Method3551(a, a, a);
+         int var12 = 0;
+         ZipEntry var13;
+         if ((var13 = var2.getNextEntry()) != null) {
+            this.Method3555(var13.getName(), this.Field3905++);
+            if (this.Method3550(var13)) {
+               this.Method3551(var2, var13, var11);
             }
 
-            OutputStream a = a.Method2334(this.Method3553(a));
-            this.Method3549(a, a);
-            a.Method2335();
-            ++a;
+            OutputStream var14 = var8.Method2334(this.Method3553(var13));
+            this.Method3549(var2, var14);
+            var8.Method2335();
+            ++var12;
          }
 
          if (this.Field3900 != 3) {
-            a.Method1634("", "classes", "classes");
-            a.Method1636();
+            var15.Method1634("", "classes", "classes");
+            var15.Method1636();
          }
 
          if (this.Field3901 == 3) {
-            a.closeEntry();
+            var3.closeEntry();
          }
 
-         a.flush();
-         a.close();
-         return a;
+         var3.flush();
+         var3.close();
+         return var12;
       } else {
          return 0;
       }
@@ -113,33 +113,33 @@ public class Class890 {
 
    private void Method3549(InputStream a, OutputStream a) throws IOException {
       if (this.Field3901 != 3) {
-         byte[] a = new byte[2048];
+         byte[] var3 = new byte[2048];
 
-         int a;
-         while((a = a.read(a)) != -1) {
-            a.write(a, 0, a);
+         int var4;
+         while((var4 = a.read(var3)) != -1) {
+            a.write(var3, 0, var4);
          }
 
       }
    }
 
    private boolean Method3550(ZipEntry a) {
-      String a = a.getName();
-      return this.Field3900 == 3 && a.equals("classes.xml") || a.endsWith(".class") || a.endsWith(".class.xml");
+      String var2 = a.getName();
+      return this.Field3900 == 3 && var2.equals("classes.xml") || var2.endsWith(".class") || var2.endsWith(".class.xml");
    }
 
    private void Method3551(ZipInputStream a, ZipEntry a, Class672 a) {
-      ContentHandler a = a.Method2326();
+      ContentHandler var4 = a.Method2326();
 
       try {
-         boolean a = this.Field3900 == 3;
+         boolean var5 = this.Field3900 == 3;
          if (this.Field3900 == 1) {
-            Class165 a = new Class165(Method3554(a, a));
-            a.Method1470(new Class228(a, a), 0);
+            Class165 var6 = new Class165(Method3554(a, a));
+            var6.Method1470(new Class228(var4, var5), 0);
          } else {
-            XMLReader a = XMLReaderFactory.createXMLReader();
-            a.setContentHandler(a);
-            a.parse(new InputSource(new Class691(a)));
+            XMLReader var8 = XMLReaderFactory.createXMLReader();
+            var8.setContentHandler(var4);
+            var8.parse(new InputSource(new Class691(a)));
          }
       } catch (Exception var7) {
          this.Method3555(a.getName(), 0);
@@ -153,37 +153,37 @@ public class Class890 {
    }
 
    private String Method3553(ZipEntry a) {
-      String a = a.getName();
+      String var2 = a.getName();
       if (this.Method3550(a)) {
          if (this.Field3900 != 1 && this.Field3901 == 1) {
-            a = a.substring(0, a.length() - 4);
+            var2 = var2.substring(0, var2.length() - 4);
          } else if (this.Field3900 == 1 && this.Field3901 != 1) {
-            a = a + ".xml";
+            var2 = var2 + ".xml";
          }
       }
 
-      return a;
+      return var2;
    }
 
    private static byte[] Method3554(InputStream a, ZipEntry a) throws IOException {
-      long a = a.getSize();
-      int a;
-      if (a > -1L) {
-         byte[] a = new byte[(int)a];
+      long var2 = a.getSize();
+      int var6;
+      if (var2 > -1L) {
+         byte[] var7 = new byte[(int)var2];
 
-         for(int a = 0; (a = a.Method2521(a, a, a.length - a)) > 0; a += a) {
+         for(int var8 = 0; (var6 = a.Method2521(var7, var8, var7.length - var8)) > 0; var8 += var6) {
          }
 
-         return a;
+         return var7;
       } else {
-         ByteArrayOutputStream a = new ByteArrayOutputStream();
-         byte[] a = new byte[4096];
+         ByteArrayOutputStream var4 = new ByteArrayOutputStream();
+         byte[] var5 = new byte[4096];
 
-         while((a = a.read(a)) != -1) {
-            a.write(a, 0, a);
+         while((var6 = a.read(var5)) != -1) {
+            var4.write(var5, 0, var6);
          }
 
-         return a.toByteArray();
+         return var4.toByteArray();
       }
    }
 
@@ -200,27 +200,27 @@ public class Class890 {
       if (a.length < 2) {
          Method3557();
       } else {
-         int a = Method3556(a[0]);
-         int a = Method3556(a[1]);
-         InputStream a = System.in;
+         int var1 = Method3556(a[0]);
+         int var2 = Method3556(a[1]);
+         InputStream var3 = System.in;
          new BufferedOutputStream(System.out);
-         Source a = null;
+         Object var5 = null;
 
-         for(int a = 2; a < a.length; ++a) {
-            if ("-in".equals(a[a])) {
-               ++a;
-               new FileInputStream(a[a]);
-            } else if ("-out".equals(a[a])) {
-               ++a;
-               new BufferedOutputStream(new FileOutputStream(a[a]));
+         for(int var6 = 2; var6 < a.length; ++var6) {
+            if ("-in".equals(a[var6])) {
+               ++var6;
+               new FileInputStream(a[var6]);
+            } else if ("-out".equals(a[var6])) {
+               ++var6;
+               new BufferedOutputStream(new FileOutputStream(a[var6]));
             } else {
-               if (!"-xslt".equals(a[a])) {
+               if (!"-xslt".equals(a[var6])) {
                   Method3557();
                   return;
                }
 
-               ++a;
-               new StreamSource(new FileInputStream(a[a]));
+               ++var6;
+               new StreamSource(new FileInputStream(a[var6]));
             }
          }
 

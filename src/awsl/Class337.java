@@ -28,16 +28,16 @@ public class Class337 {
    }
 
    public Class263 Method1182(Class262 a, Class262 a) {
-      Class263 a = new Class263(0.0F, 0.0F);
+      Class263 var4 = new Class263(0.0F, 0.0F);
       Class328.Method995();
       this.Field1629.Method2808(a.Method2811().floatValue() - a.Method2811().floatValue()).Method2809(a.Method2812().floatValue() + this.Field1632 - (a.Method2812().floatValue() + this.Field1632)).Method2810(a.Method2813().floatValue() - a.Method2813().floatValue());
-      double a = Math.hypot(this.Field1629.Method2811().doubleValue(), this.Field1629.Method2813().doubleValue());
-      float a = (float)Math.atan2((double)this.Field1629.Method2813().floatValue(), (double)this.Field1629.Method2811().floatValue());
-      float a = (float)Math.atan2((double)this.Field1629.Method2812().floatValue(), a);
-      float a = 57.29578F;
-      float a = a * a - 90.0F;
-      float a = -(a * a);
-      Class263 var10000 = a.Method2844(a).Method2845(a).Method2848();
+      double var5 = Math.hypot(this.Field1629.Method2811().doubleValue(), this.Field1629.Method2813().doubleValue());
+      float var7 = (float)Math.atan2((double)this.Field1629.Method2813().floatValue(), (double)this.Field1629.Method2811().floatValue());
+      float var8 = (float)Math.atan2((double)this.Field1629.Method2812().floatValue(), var5);
+      float var9 = 57.29578F;
+      float var10 = var7 * var9 - 90.0F;
+      float var11 = -(var8 * var9);
+      Class263 var10000 = var4.Method2844(var10).Method2845(var11).Method2848();
       a.trash(new String[1]);
       return var10000;
    }

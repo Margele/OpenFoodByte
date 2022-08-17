@@ -21,7 +21,7 @@ public class Class405 implements Class422, Class45 {
       Method1363();
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    private static String Method1357(int integer1, int integer2) {

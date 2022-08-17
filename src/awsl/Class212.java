@@ -49,10 +49,10 @@ public class Class212 {
    }
 
    public static void Method2541(int a, float a) {
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
-      GlStateManager.color(a, a, a, a);
+      float var2 = (float)(a >> 16 & 255) / 255.0F;
+      float var3 = (float)(a >> 8 & 255) / 255.0F;
+      float var4 = (float)(a & 255) / 255.0F;
+      GlStateManager.color(var2, var3, var4, a);
    }
 
    public static void Method2542(int a) {
@@ -77,51 +77,51 @@ public class Class212 {
       GL11.glDisable(3553);
       GL11.glEnable(2848);
       GL11.glBlendFunc(770, 771);
-      int a = 0;
+      int var1 = 0;
 
       try {
          Iterator var2 = a.Method1383();
 
          while(var2.Method932()) {
-            Class285 a = (Class285)var2.Method933();
-            ++a;
-            Class216 a = a.Method3098();
-            boolean a = true;
-            double a = a.Field1207 - ReflectionUtils.getRenderPosX();
-            double a = a.Field1208 - ReflectionUtils.getRenderPosY();
-            double a = a.Field1209 - ReflectionUtils.getRenderPosZ();
-            double a = Field1191.thePlayer.getDistance(a.Field1207, a.Field1208 - 1.0, a.Field1209);
-            int a = (int)(a * 4.0 + 10.0);
-            if (a > 350) {
-               a = 350;
+            Class285 var3 = (Class285)var2.Method933();
+            ++var1;
+            Class216 var4 = var3.Method3098();
+            boolean var5 = true;
+            double var6 = var4.Field1207 - ReflectionUtils.getRenderPosX();
+            double var8 = var4.Field1208 - ReflectionUtils.getRenderPosY();
+            double var10 = var4.Field1209 - ReflectionUtils.getRenderPosZ();
+            double var12 = Field1191.thePlayer.getDistance(var4.Field1207, var4.Field1208 - 1.0, var4.Field1209);
+            int var14 = (int)(var12 * 4.0 + 10.0);
+            if (var14 > 350) {
+               var14 = 350;
             }
 
-            if (!Method2549(new EntityEgg(Field1191.theWorld, a.Field1207, a.Field1208, a.Field1209))) {
-               a = false;
+            if (!Method2549(new EntityEgg(Field1191.theWorld, var4.Field1207, var4.Field1208, var4.Field1209))) {
+               var5 = false;
             }
 
-            if (a % 10 != 0 && a > 25.0) {
-               a = false;
+            if (var1 % 10 != 0 && var12 > 25.0) {
+               var5 = false;
             }
 
-            if (a % 3 == 0 && a > 15.0) {
-               a = false;
+            if (var1 % 3 == 0 && var12 > 15.0) {
+               var5 = false;
             }
 
             GL11.glPushMatrix();
-            GL11.glTranslated(a, a, a);
-            float a = 0.04F;
-            GL11.glScalef(-a, -a, -a);
+            GL11.glTranslated(var6, var8, var10);
+            float var15 = 0.04F;
+            GL11.glScalef(-var15, -var15, -var15);
             GL11.glRotated((double)(-Field1191.getRenderManager().playerViewY), 0.0, 1.0, 0.0);
             GL11.glRotated((double)Field1191.getRenderManager().playerViewX, Field1191.gameSettings.thirdPersonView == 2 ? -1.0 : 1.0, 0.0, 0.0);
-            Color a = Class272.Method2773((float)a / 5.0F, Class668.GENERAL);
-            Method2548(0, -3, 0.7, a.hashCode(), a);
-            if (a < 4.0) {
-               Method2548(0, -3, 1.4, (new Color(a.getRed(), a.getGreen(), a.getBlue(), 50)).hashCode(), a);
+            Color var16 = Class272.Method2773((float)var1 / 5.0F, Class668.GENERAL);
+            Method2548(0, -3, 0.7, var16.hashCode(), var14);
+            if (var12 < 4.0) {
+               Method2548(0, -3, 1.4, (new Color(var16.getRed(), var16.getGreen(), var16.getBlue(), 50)).hashCode(), var14);
             }
 
-            if (a < 20.0) {
-               Method2548(0, -3, 2.3, (new Color(a.getRed(), a.getGreen(), a.getBlue(), 30)).hashCode(), a);
+            if (var12 < 20.0) {
+               Method2548(0, -3, 2.3, (new Color(var16.getRed(), var16.getGreen(), var16.getBlue(), 30)).hashCode(), var14);
             }
 
             GL11.glScalef(0.8F, 0.8F, 0.8F);
@@ -137,34 +137,34 @@ public class Class212 {
    }
 
    public static void Method2547(int a, int a, double a, int a) {
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
-      GL11.glColor4f(a, a, a, a);
+      float var5 = (float)(a >> 24 & 255) / 255.0F;
+      float var6 = (float)(a >> 16 & 255) / 255.0F;
+      float var7 = (float)(a >> 8 & 255) / 255.0F;
+      float var8 = (float)(a & 255) / 255.0F;
+      GL11.glColor4f(var6, var7, var8, var5);
       GL11.glBegin(6);
 
-      for(int a = 0; a <= 18; ++a) {
-         double a = Math.sin((double)(a * 20) * Math.PI / 180.0) * a;
-         double a = Math.cos((double)(a * 20) * Math.PI / 180.0) * a;
-         GL11.glVertex2d((double)a + a, (double)a + a);
+      for(int var9 = 0; var9 <= 18; ++var9) {
+         double var10 = Math.sin((double)(var9 * 20) * Math.PI / 180.0) * a;
+         double var12 = Math.cos((double)(var9 * 20) * Math.PI / 180.0) * a;
+         GL11.glVertex2d((double)a + var10, (double)a + var12);
       }
 
       GL11.glEnd();
    }
 
    public static void Method2548(int a, int a, double a, int a, int a) {
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
-      GL11.glColor4f(a, a, a, a);
+      float var6 = (float)(a >> 24 & 255) / 255.0F;
+      float var7 = (float)(a >> 16 & 255) / 255.0F;
+      float var8 = (float)(a >> 8 & 255) / 255.0F;
+      float var9 = (float)(a & 255) / 255.0F;
+      GL11.glColor4f(var7, var8, var9, var6);
       GL11.glBegin(6);
 
-      for(int a = 0; a <= 360 / a; ++a) {
-         double a = Math.sin((double)(a * a) * Math.PI / 180.0) * a;
-         double a = Math.cos((double)(a * a) * Math.PI / 180.0) * a;
-         GL11.glVertex2d((double)a + a, (double)a + a);
+      for(int var10 = 0; var10 <= 360 / a; ++var10) {
+         double var11 = Math.sin((double)(var10 * a) * Math.PI / 180.0) * a;
+         double var13 = Math.cos((double)(var10 * a) * Math.PI / 180.0) * a;
+         GL11.glVertex2d((double)a + var11, (double)a + var13);
       }
 
       GL11.glEnd();
@@ -175,8 +175,8 @@ public class Class212 {
    }
 
    public static boolean Method2550(AxisAlignedBB a) {
-      Entity a = Wrapper.INSTANCE.getMinecraft().getRenderViewEntity();
-      Field1193.setPosition(a.posX, a.posY, a.posZ);
+      Entity var1 = Wrapper.INSTANCE.getMinecraft().getRenderViewEntity();
+      Field1193.setPosition(var1.posX, var1.posY, var1.posZ);
       return Field1193.isBoundingBoxInFrustum(a);
    }
 
@@ -196,7 +196,7 @@ public class Class212 {
       this.Method2558(a, a, a, 360);
    }
 
-   public static void Method2555(double a, double a, double a, double a, boolean a4, Color a) {
+   public static void Method2555(double a, double a, double a, double a, boolean a, Color a) {
       a /= 2.0;
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
@@ -209,9 +209,9 @@ public class Class212 {
       GL11.glEnable(2848);
       GL11.glBegin(6);
 
-      for(double a = 0.0; a <= a / 4.0; ++a) {
-         double a = a * 4.0 * 6.283185307179586 / 360.0;
-         GL11.glVertex2d(a + a * Math.cos(a) + a, a + a * Math.sin(a) + a);
+      for(double var10 = 0.0; var10 <= a / 4.0; ++var10) {
+         double var12 = var10 * 4.0 * 6.283185307179586 / 360.0;
+         GL11.glVertex2d(a + a * Math.cos(var12) + a, a + a * Math.sin(var12) + a);
       }
 
       GL11.glEnd();
@@ -237,7 +237,7 @@ public class Class212 {
    }
 
    public static void Method2559(float a, float a, float a, float a, float a, int a, float a, int a) {
-      String a = Method2566();
+      String var8 = Method2566();
       if (a == 16777215) {
          a = Class681.WHITE.Field2962;
       }
@@ -266,89 +266,89 @@ public class Class212 {
       Method2561();
       Method2542(a);
       GL11.glBegin(6);
-      float a = a + a;
-      float a = a + a;
-      GL11.glVertex2d((double)a, (double)a);
-      int a = (int)Math.min(Math.max(a, 10.0F), 90.0F);
-      int a = 0;
-      double a;
-      if (a < a + 1) {
-         a = 6.283185307179586 * (double)(a + 180) / (double)(a * 4);
-         GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-         ++a;
+      float var9 = a + a;
+      float var10 = a + a;
+      GL11.glVertex2d((double)var9, (double)var10);
+      int var11 = (int)Math.min(Math.max(a, 10.0F), 90.0F);
+      int var12 = 0;
+      double var13;
+      if (var12 < var11 + 1) {
+         var13 = 6.283185307179586 * (double)(var12 + 180) / (double)(var11 * 4);
+         GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+         ++var12;
          a.trash(new String[4]);
       }
 
       GL11.glEnd();
       GL11.glBegin(6);
-      a = a + a - a;
-      a = a + a;
-      GL11.glVertex2d((double)a, (double)a);
-      a = (int)Math.min(Math.max(a, 10.0F), 90.0F);
-      int a = 0;
-      if (a < a + 1) {
-         a = 6.283185307179586 * (double)(a + 90) / (double)(a * 4);
-         GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-         a = a + 1;
+      var9 = a + a - a;
+      var10 = a + a;
+      GL11.glVertex2d((double)var9, (double)var10);
+      var11 = (int)Math.min(Math.max(a, 10.0F), 90.0F);
+      byte var15 = 0;
+      if (var15 < var11 + 1) {
+         var13 = 6.283185307179586 * (double)(var15 + 90) / (double)(var11 * 4);
+         GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+         var12 = var15 + 1;
       }
 
       GL11.glEnd();
       GL11.glBegin(6);
-      a = a + a;
-      a = a + a - a;
-      GL11.glVertex2d((double)a, (double)a);
-      a = (int)Math.min(Math.max(a, 10.0F), 90.0F);
-      a = 0;
-      if (a < a + 1) {
-         a = 6.283185307179586 * (double)(a + 270) / (double)(a * 4);
-         GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-         a = a + 1;
+      var9 = a + a;
+      var10 = a + a - a;
+      GL11.glVertex2d((double)var9, (double)var10);
+      var11 = (int)Math.min(Math.max(a, 10.0F), 90.0F);
+      var15 = 0;
+      if (var15 < var11 + 1) {
+         var13 = 6.283185307179586 * (double)(var15 + 270) / (double)(var11 * 4);
+         GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+         var12 = var15 + 1;
       }
 
       GL11.glEnd();
       GL11.glBegin(6);
-      a = a + a - a;
-      a = a + a - a;
-      GL11.glVertex2d((double)a, (double)a);
-      a = (int)Math.min(Math.max(a, 10.0F), 90.0F);
-      a = 0;
-      if (a < a + 1) {
-         a = 6.283185307179586 * (double)a / (double)(a * 4);
-         GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-         a = a + 1;
+      var9 = a + a - a;
+      var10 = a + a - a;
+      GL11.glVertex2d((double)var9, (double)var10);
+      var11 = (int)Math.min(Math.max(a, 10.0F), 90.0F);
+      var15 = 0;
+      if (var15 < var11 + 1) {
+         var13 = 6.283185307179586 * (double)var15 / (double)(var11 * 4);
+         GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+         var12 = var15 + 1;
       }
 
       GL11.glEnd();
       Method2542(a);
       GL11.glLineWidth(a);
       GL11.glBegin(3);
-      a = a + a;
-      a = a + a;
-      a = (int)Math.min(Math.max(a, 10.0F), 90.0F);
-      a = 6.283185307179586 * (double)(a + 180) / (double)(a * 4);
-      GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-      a = a - 1;
+      var9 = a + a;
+      var10 = a + a;
+      var11 = (int)Math.min(Math.max(a, 10.0F), 90.0F);
+      var13 = 6.283185307179586 * (double)(var11 + 180) / (double)(var11 * 4);
+      GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+      var12 = var11 - 1;
       GL11.glVertex2d((double)(a + a), (double)a);
       GL11.glVertex2d((double)(a + a - a), (double)a);
-      a = a + a - a;
-      a = a + a;
-      a = 6.283185307179586 * (double)(a + 90) / (double)(a * 4);
-      GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-      a = a - 1;
+      var9 = a + a - a;
+      var10 = a + a;
+      var13 = 6.283185307179586 * (double)(var11 + 90) / (double)(var11 * 4);
+      GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+      var12 = var11 - 1;
       GL11.glVertex2d((double)(a + a), (double)(a + a));
       GL11.glVertex2d((double)(a + a), (double)(a + a - a));
-      a = a + a - a;
-      a = a + a - a;
-      a = 6.283185307179586 * (double)a / (double)(a * 4);
-      GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-      a = a - 1;
+      var9 = a + a - a;
+      var10 = a + a - a;
+      var13 = 6.283185307179586 * (double)var11 / (double)(var11 * 4);
+      GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+      var12 = var11 - 1;
       GL11.glVertex2d((double)(a + a - a), (double)(a + a));
       GL11.glVertex2d((double)(a + a), (double)(a + a));
-      a = a + a;
-      a = a + a - a;
-      a = 6.283185307179586 * (double)(a + 270) / (double)(a * 4);
-      GL11.glVertex2d((double)a + Math.sin(a) * (double)a, (double)a + Math.cos(a) * (double)a);
-      a = a - 1;
+      var9 = a + a;
+      var10 = a + a - a;
+      var13 = 6.283185307179586 * (double)(var11 + 270) / (double)(var11 * 4);
+      GL11.glVertex2d((double)var9 + Math.sin(var13) * (double)a, (double)var10 + Math.cos(var13) * (double)a);
+      var12 = var11 - 1;
       GL11.glVertex2d((double)a, (double)(a + a - a));
       GL11.glVertex2d((double)a, (double)(a + a));
       GL11.glEnd();
@@ -388,9 +388,9 @@ public class Class212 {
    }
 
    public static void Method2563(int a, int a, Slot a, int a) {
-      int a = a + a.xDisplayPosition;
-      int a = a + a.yDisplayPosition;
-      Method2559((float)a, (float)a, 16.0F, 16.0F, 1.0F, -1, 2.0F, a);
+      int var4 = a + a.xDisplayPosition;
+      int var5 = a + a.yDisplayPosition;
+      Method2559((float)var4, (float)var5, 16.0F, 16.0F, 1.0F, -1, 2.0F, a);
    }
 
    public static void Method2564(Slot a, Color a) {

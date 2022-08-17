@@ -64,31 +64,31 @@ public class Class197 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
-      a = new BufferedImage(a + this.Field1170 + this.Field1171, a + this.Field1172 + this.Field1173, a.getType());
-      Graphics2D a = a.createGraphics();
+      int var3 = a.getWidth();
+      int var4 = a.getHeight();
+      a = new BufferedImage(var3 + this.Field1170 + this.Field1171, var4 + this.Field1172 + this.Field1173, a.getType());
+      Graphics2D var5 = a.createGraphics();
       if (this.Field1174 != null) {
-         a.setPaint(this.Field1174);
+         var5.setPaint(this.Field1174);
          if (this.Field1170 > 0) {
-            a.fillRect(0, 0, this.Field1170, a);
+            var5.fillRect(0, 0, this.Field1170, var4);
          }
 
          if (this.Field1171 > 0) {
-            a.fillRect(a - this.Field1171, 0, this.Field1171, a);
+            var5.fillRect(var3 - this.Field1171, 0, this.Field1171, var4);
          }
 
          if (this.Field1172 > 0) {
-            a.fillRect(this.Field1170, 0, a - this.Field1170 - this.Field1171, this.Field1172);
+            var5.fillRect(this.Field1170, 0, var3 - this.Field1170 - this.Field1171, this.Field1172);
          }
 
          if (this.Field1173 > 0) {
-            a.fillRect(this.Field1170, a - this.Field1173, a - this.Field1170 - this.Field1171, this.Field1173);
+            var5.fillRect(this.Field1170, var4 - this.Field1173, var3 - this.Field1170 - this.Field1171, this.Field1173);
          }
       }
 
-      a.drawRenderedImage(a, AffineTransform.getTranslateInstance((double)this.Field1170, (double)this.Field1171));
-      a.dispose();
+      var5.drawRenderedImage(a, AffineTransform.getTranslateInstance((double)this.Field1170, (double)this.Field1171));
+      var5.dispose();
       return a;
    }
 

@@ -14,12 +14,12 @@ public class Class354 {
    public static final Class360 Field1701 = new Class359("Marker", (Class355)null);
 
    public static NBTTagCompound Method90(ItemStack a) {
-      NBTTagCompound a = Class356.Method144(a);
-      if (!a.hasKey("Pose", 10)) {
-         a.setTag("Pose", new NBTTagCompound());
+      NBTTagCompound var1 = Class356.Method144(a);
+      if (!var1.hasKey("Pose", 10)) {
+         var1.setTag("Pose", new NBTTagCompound());
       }
 
-      return a.getCompoundTag("Pose");
+      return var1.getCompoundTag("Pose");
    }
 
    public static boolean Method91(ItemStack a) {
@@ -36,16 +36,16 @@ public class Class354 {
 
    public static void Method93(ItemStack a, Class664 a, float a, float a, float a) {
       RenderUtils.trash();
-      NBTTagList a = Method100(a, a);
-      if (a.hasNoTags()) {
-         a.appendTag(new NBTTagFloat(a));
-         a.appendTag(new NBTTagFloat(a));
-         a.appendTag(new NBTTagFloat(a));
+      NBTTagList var6 = Method100(a, a);
+      if (var6.hasNoTags()) {
+         var6.appendTag(new NBTTagFloat(a));
+         var6.appendTag(new NBTTagFloat(a));
+         var6.appendTag(new NBTTagFloat(a));
       }
 
-      a.set(0, new NBTTagFloat(a));
-      a.set(1, new NBTTagFloat(a));
-      a.set(2, new NBTTagFloat(a));
+      var6.set(0, new NBTTagFloat(a));
+      var6.set(1, new NBTTagFloat(a));
+      var6.set(2, new NBTTagFloat(a));
    }
 
    public static void Method94(ItemStack a, Class664 a, float a) {
@@ -73,19 +73,19 @@ public class Class354 {
    }
 
    public static NBTTagList Method100(ItemStack a, Class664 a) {
-      NBTTagCompound a = Method90(a);
-      if (!a.hasKey(a.Method497(), 9)) {
-         a.setTag(a.Method497(), new NBTTagList());
+      NBTTagCompound var2 = Method90(a);
+      if (!var2.hasKey(a.Method497(), 9)) {
+         var2.setTag(a.Method497(), new NBTTagList());
       }
 
-      return a.getTagList(a.Method497(), 5);
+      return var2.getTagList(a.Method497(), 5);
    }
 
    public static float[] Method101(ItemStack a, Class664 a) {
       if (Method102(a, a)) {
-         NBTTagList a = Method100(a, a);
-         if (!a.hasNoTags()) {
-            return new float[]{a.getFloatAt(0), a.getFloatAt(1), a.getFloatAt(2)};
+         NBTTagList var2 = Method100(a, a);
+         if (!var2.hasNoTags()) {
+            return new float[]{var2.getFloatAt(0), var2.getFloatAt(1), var2.getFloatAt(2)};
          }
       }
 
@@ -98,8 +98,8 @@ public class Class354 {
 
    public static void Method103(ItemStack a, Class664 a) {
       if (Method102(a, a)) {
-         NBTTagList a = Method100(a, a);
-         if (a.hasNoTags() || a.getFloatAt(0) == 0.0F && a.getFloatAt(1) == 0.0F && a.getFloatAt(2) == 0.0F) {
+         NBTTagList var2 = Method100(a, a);
+         if (var2.hasNoTags() || var2.getFloatAt(0) == 0.0F && var2.getFloatAt(1) == 0.0F && var2.getFloatAt(2) == 0.0F) {
             Method90(a).removeTag(a.Method497());
          }
       }

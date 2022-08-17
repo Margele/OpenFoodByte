@@ -9,44 +9,44 @@ public abstract class Class119 extends Class193 {
    private static String Field951;
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
-      int a = a.getType();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
+      int var6 = a.getType();
       Class193.Method1270();
-      WritableRaster a = a.getRaster();
+      WritableRaster var7 = a.getRaster();
       a = this.Method1263(a, (ColorModel)null);
-      WritableRaster a = a.getRaster();
-      this.Method17(a, a);
-      int[] a = new int[a];
-      int a = 0;
-      if (a < a) {
-         int a;
-         if (a == 2) {
-            a.getDataElements(0, a, a, 1, a);
-            a = 0;
-            if (a < a) {
-               a[a] = this.Method3(a, a, a[a]);
-               ++a;
+      WritableRaster var8 = a.getRaster();
+      this.Method17(var4, var5);
+      int[] var9 = new int[var4];
+      int var10 = 0;
+      if (var10 < var5) {
+         int var11;
+         if (var6 == 2) {
+            var7.getDataElements(0, var10, var4, 1, var9);
+            var11 = 0;
+            if (var11 < var4) {
+               var9[var11] = this.Method3(var11, var10, var9[var11]);
+               ++var11;
             }
 
-            a.setDataElements(0, a, a, 1, a);
+            var8.setDataElements(0, var10, var4, 1, var9);
          }
 
-         a.getRGB(0, a, a, 1, a, 0, a);
-         int a = 0;
-         if (a < a) {
-            a[a] = this.Method3(a, a, a[a]);
-            a = a + 1;
+         a.getRGB(0, var10, var4, 1, var9, 0, var4);
+         byte var12 = 0;
+         if (var12 < var4) {
+            var9[var12] = this.Method3(var12, var10, var9[var12]);
+            var11 = var12 + 1;
          }
 
-         a.setRGB(0, a, a, 1, a, 0, a);
-         ++a;
+         a.setRGB(0, var10, var4, 1, var9, 0, var4);
+         ++var10;
       }
 
       return a;
    }
 
-   public void Method17(int a, int a1) {
+   public void Method17(int a, int a) {
    }
 
    public abstract int Method3(int integer1, int integer2, int integer3);

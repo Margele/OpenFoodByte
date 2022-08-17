@@ -19,7 +19,7 @@ final class Class738 extends DefaultHandler implements LexicalHandler {
       this.Field3230 = a;
    }
 
-   public final void Method1633(String a, String a1, String a, Attributes a) throws SAXException {
+   public final void Method1633(String a, String a, String a, Attributes a) throws SAXException {
       try {
          this.Method1653();
          this.Method1652();
@@ -40,7 +40,7 @@ final class Class738 extends DefaultHandler implements LexicalHandler {
       }
    }
 
-   public final void Method1634(String a, String a1, String a) throws SAXException {
+   public final void Method1634(String a, String a, String a) throws SAXException {
       this.Field3232 -= 2;
 
       try {
@@ -77,7 +77,7 @@ final class Class738 extends DefaultHandler implements LexicalHandler {
       }
    }
 
-   public final void Method1644(String a, String a1, String a2) throws SAXException {
+   public final void Method1644(String a, String a, String a) throws SAXException {
    }
 
    public final void Method1645() throws SAXException {
@@ -96,55 +96,55 @@ final class Class738 extends DefaultHandler implements LexicalHandler {
    }
 
    private final void Method1650(Attributes a) throws IOException {
-      StringBuffer a = new StringBuffer();
-      int a = a.getLength();
+      StringBuffer var2 = new StringBuffer();
+      int var3 = a.getLength();
 
-      for(int a = 0; a < a; ++a) {
-         a.append(' ').append(a.getLocalName(a)).append("=\"").append(Method1651(a.getValue(a))).append('"');
+      for(int var4 = 0; var4 < var3; ++var4) {
+         var2.append(' ').append(a.getLocalName(var4)).append("=\"").append(Method1651(a.getValue(var4))).append('"');
       }
 
-      this.Field3229.write(a.toString());
+      this.Field3229.write(var2.toString());
    }
 
    private static final String Method1651(String a) {
       Class831.Method3658();
-      StringBuffer a = new StringBuffer(a.length());
-      int a = 0;
-      if (a < a.length()) {
-         char a = a.charAt(a);
-         switch (a) {
+      StringBuffer var2 = new StringBuffer(a.length());
+      int var3 = 0;
+      if (var3 < a.length()) {
+         char var4 = a.charAt(var3);
+         switch (var4) {
             case '&':
-               a.append("&amp;");
+               var2.append("&amp;");
             case '<':
-               a.append("&lt;");
+               var2.append("&lt;");
             case '>':
-               a.append("&gt;");
+               var2.append("&gt;");
             case '"':
-               a.append("&quot;");
+               var2.append("&quot;");
             default:
-               if (a > 127) {
-                  a.append("&#").append(Integer.toString(a)).append(';');
+               if (var4 > 127) {
+                  var2.append("&#").append(Integer.toString(var4)).append(';');
                }
 
-               a.append(a);
-               ++a;
+               var2.append(var4);
+               ++var3;
          }
       }
 
-      return a.toString();
+      return var2.toString();
    }
 
    private final void Method1652() throws IOException {
-      int a = this.Field3232;
+      int var1 = this.Field3232;
 
       while(true) {
-         while(a <= Field3228.length) {
-            this.Field3229.write(Field3228, 0, a);
-            a = 0;
+         while(var1 <= Field3228.length) {
+            this.Field3229.write(Field3228, 0, var1);
+            var1 = 0;
          }
 
          this.Field3229.write(Field3228);
-         a -= Field3228.length;
+         var1 -= Field3228.length;
       }
    }
 

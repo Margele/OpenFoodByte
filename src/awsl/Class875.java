@@ -11,10 +11,10 @@ final class Class875 extends Class831 {
    }
 
    public final void Method3501(String a, Attributes a) {
-      Class264 a = this.Method3654(a.getValue("start"));
-      Class264 a = this.Method3654(a.getValue("end"));
-      Class264 a = this.Method3654(a.getValue("handler"));
-      String a = a.getValue("type");
-      this.Method3655().Method1960(a, a, a, a);
+      Class264 var3 = this.Method3654(a.getValue("start"));
+      Class264 var4 = this.Method3654(a.getValue("end"));
+      Class264 var5 = this.Method3654(a.getValue("handler"));
+      String var6 = a.getValue("type");
+      this.Method3655().Method1960(var3, var4, var5, var6);
    }
 }

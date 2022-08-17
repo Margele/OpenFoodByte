@@ -21,19 +21,19 @@ final class Class736 extends DefaultHandler {
    }
 
    public final void Method1633(String a, String a, String a, Attributes a) throws SAXException {
-      int[] a = Class831.Method3658();
+      int[] var5 = Class831.Method3658();
       if (this.Field3226) {
          this.Field3227.Method1633(a, a, a, a);
       }
 
       if (a.equals(this.Field3222)) {
-         String a = a.getValue("name");
-         if (a.length() == 0) {
+         String var6 = a.getValue("name");
+         if (var6.length() == 0) {
             throw new SAXException("Class element without name attribute.");
          }
 
          try {
-            this.Field3224.Method2334(this.Field3225 ? a + ".class.xml" : a + ".class");
+            this.Field3224.Method2334(this.Field3225 ? var6 + ".class.xml" : var6 + ".class");
          } catch (IOException var8) {
             throw new SAXException(var8.toString(), var8);
          }

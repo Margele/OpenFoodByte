@@ -64,8 +64,8 @@ public class Class692 implements IClassTransformer {
       int var3 = var2.length;
       int var4 = 0;
       if (var4 < var3) {
-         String a = var2[var4];
-         Field2987.put(a, a);
+         String var5 = var2[var4];
+         Field2987.put(var5, a);
          ++var4;
       }
 
@@ -75,25 +75,25 @@ public class Class692 implements IClassTransformer {
       return this.Method2514(a, a);
    }
 
-   public byte[] Method2514(String a, byte[] a1) {
+   public byte[] Method2514(String a, byte[] a) {
       return null;
    }
 
    private void Method2515(String a, Class169 a) {
       try {
-         File a = new File("fbbytecode");
-         File a = new File(a, a + ".class");
-         if (!a.exists()) {
+         File var3 = new File("fbbytecode");
+         File var4 = new File(var3, a + ".class");
+         if (!var3.exists()) {
             return;
          }
 
-         if (!a.exists()) {
-            a.createNewFile();
+         if (!var4.exists()) {
+            var4.createNewFile();
          }
 
-         FileOutputStream a = new FileOutputStream(a);
-         a.write(a.Method1503());
-         a.close();
+         FileOutputStream var5 = new FileOutputStream(var4);
+         var5.write(a.Method1503());
+         var5.close();
       } catch (IOException var6) {
          var6.printStackTrace();
       }

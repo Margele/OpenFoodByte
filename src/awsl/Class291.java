@@ -7,33 +7,33 @@ public class Class291 extends Class290 {
 
    public String Method2899() throws Class666 {
       Class666.Method3438();
-      StringBuilder a = new StringBuilder();
+      StringBuilder var4 = new StringBuilder();
 
-      char a;
+      char var2;
       do {
-         a = this.Method2885();
-      } while(Character.isWhitespace(a));
+         var2 = this.Method2885();
+      } while(Character.isWhitespace(var2));
 
-      if (a == '"' || a == '\'') {
-         char a = a;
-         a = this.Method2885();
-         if (a < ' ') {
+      if (var2 == '"' || var2 == '\'') {
+         char var3 = var2;
+         var2 = this.Method2885();
+         if (var2 < ' ') {
             throw this.Method2895("Unterminated string.");
          }
 
-         if (a == a) {
-            return a.toString();
+         if (var2 == var3) {
+            return var4.toString();
          }
 
-         a.append(a);
+         var4.append(var2);
       }
 
-      while(!Character.isWhitespace(a)) {
-         a.append(a);
-         a = this.Method2885();
+      while(!Character.isWhitespace(var2)) {
+         var4.append(var2);
+         var2 = this.Method2885();
       }
 
-      return a.toString();
+      return var4.toString();
    }
 
    private static Class666 Method2906(Class666 class666) {

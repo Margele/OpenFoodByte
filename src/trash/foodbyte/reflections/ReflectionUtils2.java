@@ -53,9 +53,9 @@ public class ReflectionUtils2 {
 
    public static boolean isHittingBlock() {
       try {
-         Field a = mc.playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
-         a.setAccessible(true);
-         return a.getBoolean(mc.playerController);
+         Field var0 = mc.playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
+         var0.setAccessible(true);
+         return var0.getBoolean(mc.playerController);
       } catch (Exception var1) {
          return false;
       }
@@ -72,126 +72,126 @@ public class ReflectionUtils2 {
    }
 
    public static float getTimerSpeed() {
-      Field a = null;
+      Field var0 = null;
 
       try {
-         a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
-         a.setAccessible(true);
+         var0 = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
+         var0.setAccessible(true);
       } catch (NoSuchFieldException var5) {
       }
 
-      Field a = null;
+      Field var1 = null;
 
       try {
-         a = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
+         var1 = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
       } catch (NoSuchFieldException var4) {
       }
 
       try {
-         a.setAccessible(true);
-         return a.getFloat(mc);
+         var1.setAccessible(true);
+         return var0.getFloat(mc);
       } catch (IllegalAccessException var3) {
          return 1.0F;
       }
    }
 
    public static void setTimerSpeed(float timerSpeed) {
-      Field a = null;
+      Field var1 = null;
 
       try {
-         a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
-         a.setAccessible(true);
+         var1 = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
+         var1.setAccessible(true);
       } catch (NoSuchFieldException var6) {
       }
 
-      Field a = null;
+      Field var2 = null;
 
       try {
-         a = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
+         var2 = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
       } catch (NoSuchFieldException var5) {
       }
 
       try {
-         a.setAccessible(true);
-         a.set(a.get(mc), timerSpeed);
+         var2.setAccessible(true);
+         var2.set(var1.get(mc), timerSpeed);
       } catch (IllegalAccessException var4) {
       }
 
    }
 
    public static float getRenderPartialTicks() {
-      Field a = null;
+      Field var0 = null;
 
       try {
-         a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
-         a.setAccessible(true);
+         var0 = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
+         var0.setAccessible(true);
       } catch (NoSuchFieldException var6) {
       }
 
-      Field a = null;
+      Field var1 = null;
 
       try {
-         a = Timer.class.getDeclaredField(ObfuscatedField.renderPartialTicks.getObfuscatedName());
+         var1 = Timer.class.getDeclaredField(ObfuscatedField.renderPartialTicks.getObfuscatedName());
       } catch (NoSuchFieldException var5) {
       }
 
-      float a = 0.0F;
+      float var2 = 0.0F;
 
       try {
-         a.setAccessible(true);
-         a = (Float)a.get(a.get(mc));
+         var1.setAccessible(true);
+         var2 = (Float)var1.get(var0.get(mc));
       } catch (IllegalAccessException var4) {
       }
 
-      return a;
+      return var2;
    }
 
    public static double getRenderPosX() {
-      Field a = null;
+      Field var0 = null;
 
       try {
-         a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosX.getObfuscatedName());
+         var0 = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosX.getObfuscatedName());
       } catch (NoSuchFieldException var3) {
       }
 
-      a.setAccessible(true);
+      var0.setAccessible(true);
 
       try {
-         return a.getDouble(mc.getRenderManager());
+         return var0.getDouble(mc.getRenderManager());
       } catch (IllegalAccessException var2) {
          return 0.0;
       }
    }
 
    public static double getRenderPosY() {
-      Field a = null;
+      Field var0 = null;
 
       try {
-         a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosY.getObfuscatedName());
+         var0 = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosY.getObfuscatedName());
       } catch (NoSuchFieldException var3) {
       }
 
-      a.setAccessible(true);
+      var0.setAccessible(true);
 
       try {
-         return a.getDouble(mc.getRenderManager());
+         return var0.getDouble(mc.getRenderManager());
       } catch (IllegalAccessException var2) {
          return 0.0;
       }
    }
 
    public static double getRenderPosZ() {
-      Field a = null;
+      Field var0 = null;
 
       try {
-         a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosZ.getObfuscatedName());
+         var0 = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosZ.getObfuscatedName());
       } catch (NoSuchFieldException var3) {
       }
 
-      a.setAccessible(true);
+      var0.setAccessible(true);
 
       try {
-         return a.getDouble(mc.getRenderManager());
+         return var0.getDouble(mc.getRenderManager());
       } catch (IllegalAccessException var2) {
          return 0.0;
       }
@@ -207,7 +207,7 @@ public class ReflectionUtils2 {
    }
 
    public static Method getMethod(Class clazz, String methodName, boolean cache) {
-      int[] a = RenderUtils.trash();
+      int[] var3 = RenderUtils.trash();
       if (ReflectionUtils2.cache.containsKey(format(clazz, methodName))) {
          return (Method)ReflectionUtils2.cache.Method2665(format(clazz, methodName));
       } else {
@@ -215,14 +215,14 @@ public class ReflectionUtils2 {
          int var5 = var4.length;
          int var6 = 0;
          if (var6 < var5) {
-            Method a = var4[var6];
-            if (a.getName().equals(methodName)) {
-               if (!a.isAccessible()) {
-                  a.setAccessible(true);
+            Method var7 = var4[var6];
+            if (var7.getName().equals(methodName)) {
+               if (!var7.isAccessible()) {
+                  var7.setAccessible(true);
                }
 
-               ReflectionUtils2.cache.put(format(clazz, methodName), a);
-               return a;
+               ReflectionUtils2.cache.put(format(clazz, methodName), var7);
+               return var7;
             }
 
             ++var6;
@@ -278,7 +278,7 @@ public class ReflectionUtils2 {
    }
 
    public static Field set(Class clazz, String name, boolean cache) {
-      int[] a = RenderUtils.trash();
+      int[] var3 = RenderUtils.trash();
       if (cache2.containsKey(format(clazz, name))) {
          return (Field)cache2.Method2665(format(clazz, name));
       } else {
@@ -286,14 +286,14 @@ public class ReflectionUtils2 {
          int var5 = var4.length;
          int var6 = 0;
          if (var6 < var5) {
-            Field a = var4[var6];
-            if (a.getName().equals(name)) {
-               if (!a.isAccessible()) {
-                  a.setAccessible(true);
+            Field var7 = var4[var6];
+            if (var7.getName().equals(name)) {
+               if (!var7.isAccessible()) {
+                  var7.setAccessible(true);
                }
 
-               cache2.put(format(clazz, name), a);
-               return a;
+               cache2.put(format(clazz, name), var7);
+               return var7;
             }
 
             ++var6;
@@ -314,9 +314,9 @@ public class ReflectionUtils2 {
 
    public static Ordering getOrdering() {
       try {
-         Field a = GuiPlayerTabOverlay.class.getField(ObfuscatedField.field_175252_a.getObfuscatedName());
-         a.setAccessible(true);
-         return (Ordering)a.get(new GuiPlayerTabOverlay(mc, mc.ingameGUI));
+         Field var0 = GuiPlayerTabOverlay.class.getField(ObfuscatedField.field_175252_a.getObfuscatedName());
+         var0.setAccessible(true);
+         return (Ordering)var0.get(new GuiPlayerTabOverlay(mc, mc.ingameGUI));
       } catch (Exception var1) {
          var1.printStackTrace();
          return null;
@@ -325,9 +325,9 @@ public class ReflectionUtils2 {
 
    public static void setupCameraTransform(float a, int b) {
       try {
-         Method a = mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.setupCameraTransform.getObfuscatedName(), Float.TYPE, Integer.TYPE);
-         a.setAccessible(true);
-         a.invoke(mc.entityRenderer, a, b);
+         Method var2 = mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.setupCameraTransform.getObfuscatedName(), Float.TYPE, Integer.TYPE);
+         var2.setAccessible(true);
+         var2.invoke(mc.entityRenderer, a, b);
       } catch (Exception var3) {
          var3.printStackTrace();
       }
@@ -336,9 +336,9 @@ public class ReflectionUtils2 {
 
    public static void orientCamera(float a) {
       try {
-         Method a = mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.orientCamera.getObfuscatedName(), Float.TYPE);
-         a.setAccessible(true);
-         a.invoke(mc.entityRenderer, a);
+         Method var1 = mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.orientCamera.getObfuscatedName(), Float.TYPE);
+         var1.setAccessible(true);
+         var1.invoke(mc.entityRenderer, a);
       } catch (Exception var2) {
          var2.printStackTrace();
       }
@@ -346,24 +346,24 @@ public class ReflectionUtils2 {
    }
 
    public static AxisAlignedBB craeteAxisAlignedBB(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
-      Class a = null;
+      Class var12 = null;
 
       try {
-         a = Class.forName("net.minecraft.util.AxisAlignedBB");
+         var12 = Class.forName("net.minecraft.util.AxisAlignedBB");
       } catch (ClassNotFoundException var17) {
       }
 
-      Constructor a = null;
+      Constructor var13 = null;
 
       try {
-         a = a.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE);
+         var13 = var12.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE);
       } catch (NoSuchMethodException var16) {
       }
 
-      a.setAccessible(true);
+      var13.setAccessible(true);
 
       try {
-         return (AxisAlignedBB)a.newInstance(minX, minY, minZ, maxX, maxY, maxZ);
+         return (AxisAlignedBB)var13.newInstance(minX, minY, minZ, maxX, maxY, maxZ);
       } catch (IllegalAccessException | InvocationTargetException | InstantiationException var15) {
          var15.printStackTrace();
          return null;
@@ -371,24 +371,24 @@ public class ReflectionUtils2 {
    }
 
    public static Vec3 createVec3(double x, double y, double z) {
-      Class a = null;
+      Class var6 = null;
 
       try {
-         a = Class.forName("net.minecraft.util.Vec3");
+         var6 = Class.forName("net.minecraft.util.Vec3");
       } catch (ClassNotFoundException var13) {
       }
 
-      Constructor a = null;
+      Constructor var7 = null;
 
       try {
-         a = a.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE);
+         var7 = var6.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE);
       } catch (NoSuchMethodException var12) {
       }
 
-      a.setAccessible(true);
+      var7.setAccessible(true);
 
       try {
-         return (Vec3)a.newInstance(x, y, z);
+         return (Vec3)var7.newInstance(x, y, z);
       } catch (InstantiationException var9) {
          var9.printStackTrace();
       } catch (IllegalAccessException var10) {
@@ -402,9 +402,9 @@ public class ReflectionUtils2 {
 
    public static void setRightClickDelayTimer(int rightClickDelayTimer) {
       try {
-         Field a = mc.getClass().getDeclaredField(ObfuscatedField.rightClickDelayTimer.getObfuscatedName());
-         a.setAccessible(true);
-         a.setInt(mc, rightClickDelayTimer);
+         Field var1 = mc.getClass().getDeclaredField(ObfuscatedField.rightClickDelayTimer.getObfuscatedName());
+         var1.setAccessible(true);
+         var1.setInt(mc, rightClickDelayTimer);
       } catch (ReflectiveOperationException var2) {
          throw new RuntimeException(var2);
       }
@@ -412,9 +412,9 @@ public class ReflectionUtils2 {
 
    public static void setLeftClickCounter(int leftClickCounter) {
       try {
-         Field a = mc.getClass().getDeclaredField(ObfuscatedField.leftClickCounter.getObfuscatedName());
-         a.setAccessible(true);
-         a.setInt(mc, leftClickCounter);
+         Field var1 = mc.getClass().getDeclaredField(ObfuscatedField.leftClickCounter.getObfuscatedName());
+         var1.setAccessible(true);
+         var1.setInt(mc, leftClickCounter);
       } catch (ReflectiveOperationException var2) {
          throw new RuntimeException(var2);
       }
@@ -422,9 +422,9 @@ public class ReflectionUtils2 {
 
    public static void clickMouse() {
       try {
-         Method a = mc.getClass().getDeclaredMethod(ObfuscatedMethods.clickMouse.getObfuscatedName());
-         a.setAccessible(true);
-         a.invoke(mc);
+         Method var0 = mc.getClass().getDeclaredMethod(ObfuscatedMethods.clickMouse.getObfuscatedName());
+         var0.setAccessible(true);
+         var0.invoke(mc);
       } catch (Exception var1) {
          var1.printStackTrace();
       }
@@ -433,35 +433,35 @@ public class ReflectionUtils2 {
 
    public static void setJumpTicks(int jumpTicks) {
       try {
-         Field a = EntityLivingBase.class.getDeclaredField(ObfuscatedField.jumpTicks.getObfuscatedName());
-         a.setAccessible(true);
-         a.setInt(mc.thePlayer, jumpTicks);
+         Field var1 = EntityLivingBase.class.getDeclaredField(ObfuscatedField.jumpTicks.getObfuscatedName());
+         var1.setAccessible(true);
+         var1.setInt(mc.thePlayer, jumpTicks);
       } catch (ReflectiveOperationException var2) {
          throw new RuntimeException(var2);
       }
    }
 
    public static AxisAlignedBB createAxisAlignedBB(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
-      Class a = null;
+      Class var12 = null;
 
       try {
-         a = Class.forName("net.minecraft.util.AxisAlignedBB");
+         var12 = Class.forName("net.minecraft.util.AxisAlignedBB");
       } catch (ClassNotFoundException var19) {
       }
 
-      Constructor a = null;
+      Constructor var13 = null;
 
       try {
          if (!trash) {
             throw new AssertionError();
          }
 
-         a = a.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE);
+         var13 = var12.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE);
       } catch (NoSuchMethodException var18) {
       }
 
       try {
-         return (AxisAlignedBB)a.newInstance(minX, minY, minZ, maxX, maxY, maxZ);
+         return (AxisAlignedBB)var13.newInstance(minX, minY, minZ, maxX, maxY, maxZ);
       } catch (InstantiationException var15) {
       } catch (IllegalAccessException var16) {
       } catch (InvocationTargetException var17) {
@@ -471,9 +471,9 @@ public class ReflectionUtils2 {
    }
 
    public static Class[] getInterfaces(Object object) {
-      Class a = object.getClass();
-      Class[] a = a.getInterfaces();
-      return a;
+      Class var1 = object.getClass();
+      Class[] var2 = var1.getInterfaces();
+      return var2;
    }
 
    public static boolean isMinecraftNull() {
@@ -486,26 +486,26 @@ public class ReflectionUtils2 {
 
    public static boolean isProning(EntityPlayer player) {
       try {
-         Class a = Class.forName("com.vicmatskiv.weaponlib.ClientEventHandler");
-         Method a = a.getDeclaredMethod("isProning");
-         return (Boolean)a.invoke(a, player);
+         Class var1 = Class.forName("com.vicmatskiv.weaponlib.ClientEventHandler");
+         Method var2 = var1.getDeclaredMethod("isProning");
+         return (Boolean)var2.invoke(var1, player);
       } catch (Exception var3) {
          return false;
       }
    }
 
    public static void setCurBlockDamageMP(int curBlockDamageMP) {
-      Field a = null;
+      Field var1 = null;
 
       try {
-         a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
+         var1 = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
       } catch (NoSuchFieldException var4) {
       }
 
-      a.setAccessible(true);
+      var1.setAccessible(true);
 
       try {
-         a.setInt(mc.playerController, curBlockDamageMP);
+         var1.setInt(mc.playerController, curBlockDamageMP);
       } catch (IllegalAccessException var3) {
          var3.printStackTrace();
       }
@@ -513,47 +513,47 @@ public class ReflectionUtils2 {
    }
 
    public static boolean isHittingBlock2() {
-      Field a = null;
+      Field var0 = null;
 
       try {
-         a = Minecraft.getMinecraft().playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
-         a.setAccessible(true);
-         return a.getBoolean(Minecraft.getMinecraft().playerController.getClass());
+         var0 = Minecraft.getMinecraft().playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
+         var0.setAccessible(true);
+         return var0.getBoolean(Minecraft.getMinecraft().playerController.getClass());
       } catch (Exception var2) {
          return false;
       }
    }
 
    public static void setBlockHitDelay(int blockHitDelay) {
-      Field a = null;
+      Field var1 = null;
 
       try {
-         a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.blockHitDelay.getObfuscatedName());
+         var1 = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.blockHitDelay.getObfuscatedName());
       } catch (NoSuchFieldException var4) {
          var4.printStackTrace();
       }
 
-      a.setAccessible(true);
+      var1.setAccessible(true);
 
       try {
-         a.setInt(mc.playerController, blockHitDelay);
+         var1.setInt(mc.playerController, blockHitDelay);
       } catch (IllegalAccessException var3) {
       }
 
    }
 
    public static float getCurBlockDamageMP() {
-      Field a = null;
+      Field var0 = null;
 
       try {
-         a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
+         var0 = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
       } catch (NoSuchFieldException var3) {
       }
 
-      a.setAccessible(true);
+      var0.setAccessible(true);
 
       try {
-         return a.getFloat(mc.playerController);
+         return var0.getFloat(mc.playerController);
       } catch (IllegalAccessException var2) {
          return 0.0F;
       }
@@ -569,28 +569,28 @@ public class ReflectionUtils2 {
 
    public static void pollMouseInputEvent(int a, boolean b) {
       try {
-         Field a = MouseEvent.class.getDeclaredField("button");
-         Field a = MouseEvent.class.getDeclaredField("buttonstate");
-         Field a = Mouse.class.getDeclaredField("buttons");
-         Field a = Mouse.class.getDeclaredField("eventButton");
-         Field a = Mouse.class.getDeclaredField("eventState");
-         MouseEvent a = new MouseEvent();
-         trash.foodbyte.event.MouseEvent a = new trash.foodbyte.event.MouseEvent();
-         a.setAccessible(true);
-         a.set(a, a);
-         a.setAccessible(true);
-         a.set(a, b);
-         a.setAccessible(true);
-         a.set((Object)null, a);
-         a.setAccessible(true);
-         a.set((Object)null, b);
+         Field var2 = MouseEvent.class.getDeclaredField("button");
+         Field var3 = MouseEvent.class.getDeclaredField("buttonstate");
+         Field var4 = Mouse.class.getDeclaredField("buttons");
+         Field var5 = Mouse.class.getDeclaredField("eventButton");
+         Field var6 = Mouse.class.getDeclaredField("eventState");
+         MouseEvent var7 = new MouseEvent();
+         trash.foodbyte.event.MouseEvent var8 = new trash.foodbyte.event.MouseEvent();
+         var2.setAccessible(true);
+         var2.set(var7, a);
+         var3.setAccessible(true);
+         var3.set(var7, b);
+         var5.setAccessible(true);
+         var5.set((Object)null, a);
+         var6.setAccessible(true);
+         var6.set((Object)null, b);
          MinecraftForge.EVENT_BUS.post(new InputEvent.MouseInputEvent());
-         MinecraftForge.EVENT_BUS.post(a);
-         EventManager.call(a);
-         a.setAccessible(true);
-         ByteBuffer a = (ByteBuffer)a.get((Object)null);
-         a.setAccessible(false);
-         a.put(a, (byte)1);
+         MinecraftForge.EVENT_BUS.post(var7);
+         EventManager.call(var8);
+         var4.setAccessible(true);
+         ByteBuffer var9 = (ByteBuffer)var4.get((Object)null);
+         var4.setAccessible(false);
+         var9.put(a, (byte)1);
       } catch (Exception var10) {
          var10.printStackTrace();
       }

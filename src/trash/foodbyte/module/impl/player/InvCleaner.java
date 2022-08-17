@@ -97,7 +97,7 @@ public class InvCleaner extends Module {
             Field2738 = -1;
          }
 
-         long a = this.Field2724.getFloatValue().longValue() * 50L;
+         long var2 = this.Field2724.getFloatValue().longValue() * 50L;
          if (!mc.thePlayer.isEntityAlive() || mc.currentScreen instanceof GuiGameOver) {
             this.Method1028();
             return;
@@ -108,20 +108,20 @@ public class InvCleaner extends Module {
             return;
          }
 
-         long a = AutoArmor.Field2462.getFloatValue().longValue() * 50L;
-         if (Field2729.isDelayComplete((double)a) && ModuleManager.getModule(AutoArmor.class).getState() && (!AutoArmor.Field2461.isCurrentMode("OpenInv") || mc.currentScreen instanceof GuiInventory) && mc.currentScreen != null && !(mc.currentScreen instanceof GuiInventory) && mc.currentScreen instanceof GuiChat) {
+         long var4 = AutoArmor.Field2462.getFloatValue().longValue() * 50L;
+         if (Field2729.isDelayComplete((double)var4) && ModuleManager.getModule(AutoArmor.class).getState() && (!AutoArmor.Field2461.isCurrentMode("OpenInv") || mc.currentScreen instanceof GuiInventory) && mc.currentScreen != null && !(mc.currentScreen instanceof GuiInventory) && mc.currentScreen instanceof GuiChat) {
          }
 
-         int a;
-         ItemStack a;
+         int var6;
+         ItemStack var7;
          if (ModuleManager.getModule(AutoArmor.class).getState()) {
-            for(a = 1; a < 5; ++a) {
-               if (mc.thePlayer.inventoryContainer.getSlot(4 + a).getHasStack()) {
-                  a = mc.thePlayer.inventoryContainer.getSlot(4 + a).getStack();
-                  if (!AutoArmor.Method239(a, a)) {
+            for(var6 = 1; var6 < 5; ++var6) {
+               if (mc.thePlayer.inventoryContainer.getSlot(4 + var6).getHasStack()) {
+                  var7 = mc.thePlayer.inventoryContainer.getSlot(4 + var6).getStack();
+                  if (!AutoArmor.Method239(var7, var6)) {
                      return;
                   }
-               } else if (this.Method257(a - 1)) {
+               } else if (this.Method257(var6 - 1)) {
                   return;
                }
             }
@@ -132,32 +132,32 @@ public class InvCleaner extends Module {
          }
 
          if (mc.currentScreen == null || mc.currentScreen instanceof GuiInventory || mc.currentScreen instanceof GuiChat) {
-            if (Field2729.isDelayComplete((double)a) && Field2738 >= 36) {
+            if (Field2729.isDelayComplete((double)var2) && Field2738 >= 36) {
                this.Method249(Field2738);
             }
 
-            if (Field2729.isDelayComplete((double)a) && Field2736 >= 36) {
+            if (Field2729.isDelayComplete((double)var2) && Field2736 >= 36) {
                this.Method250(Field2736);
             }
 
-            if (Field2729.isDelayComplete((double)a) && Field2737 >= 36) {
+            if (Field2729.isDelayComplete((double)var2) && Field2737 >= 36) {
                this.Method251(Field2737);
             }
 
-            if (Field2729.isDelayComplete((double)a)) {
-               for(a = 9; a < 45; ++a) {
-                  if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-                     a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-                     if (this.Method239(a, a)) {
-                        this.Method236(a);
+            if (Field2729.isDelayComplete((double)var2)) {
+               for(var6 = 9; var6 < 45; ++var6) {
+                  if (mc.thePlayer.inventoryContainer.getSlot(var6).getHasStack()) {
+                     var7 = mc.thePlayer.inventoryContainer.getSlot(var6).getStack();
+                     if (this.Method239(var7, var6)) {
+                        this.Method236(var6);
                         Field2729.reset();
-                        if (a > 0L) {
+                        if (var2 > 0L) {
                            break;
                         }
                      }
                   }
 
-                  if (a == 44 && this.Field2728.getBooleanValue()) {
+                  if (var6 == 44 && this.Field2728.getBooleanValue()) {
                      Wrapper.INSTANCE.sendPacket(new C0DPacketCloseWindow(0));
                      this.Method1028();
                   }
@@ -171,11 +171,11 @@ public class InvCleaner extends Module {
    }
 
    public void Method233(int a) {
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (this.Method237(a) && Method238(a) > 0.0F && a.getItem() instanceof ItemSword) {
-               this.Method235(a, a - 36);
+      for(int var2 = 9; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            if (this.Method237(var3) && Method238(var3) > 0.0F && var3.getItem() instanceof ItemSword) {
+               this.Method235(var2, a - 36);
                Field2729.reset();
                break;
             }
@@ -197,12 +197,12 @@ public class InvCleaner extends Module {
    }
 
    public boolean Method237(ItemStack a) {
-      float a = Method238(a);
+      float var2 = Method238(a);
 
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (Method238(a) > a && a.getItem() instanceof ItemSword) {
+      for(int var3 = 9; var3 < 45; ++var3) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var3).getHasStack()) {
+            ItemStack var4 = mc.thePlayer.inventoryContainer.getSlot(var3).getStack();
+            if (Method238(var4) > var2 && var4.getItem() instanceof ItemSword) {
                return false;
             }
          }
@@ -216,18 +216,18 @@ public class InvCleaner extends Module {
    }
 
    private static float Method238(ItemStack a) {
-      float a = 0.0F;
-      Item a = a.getItem();
-      if (a instanceof ItemTool) {
-         a += PlayerUtils.Method1590(a);
+      float var1 = 0.0F;
+      Item var2 = a.getItem();
+      if (var2 instanceof ItemTool) {
+         var1 += PlayerUtils.Method1590(a);
       }
 
-      if (a instanceof ItemSword) {
-         a += PlayerUtils.Method1590(a);
+      if (var2 instanceof ItemSword) {
+         var1 += PlayerUtils.Method1590(a);
       }
 
-      a += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.25F;
-      return a;
+      var1 += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.25F;
+      return var1;
    }
 
    public boolean Method239(ItemStack a, int a) {
@@ -240,32 +240,32 @@ public class InvCleaner extends Module {
 
    private boolean Method240(ItemStack a) {
       Class148.Method1445();
-      Item a = a.getItem();
-      int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a);
-      int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a);
-      int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a);
-      int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, a);
+      Item var3 = a.getItem();
+      int var4 = EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a);
+      int var5 = EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a);
+      int var6 = EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a);
+      int var7 = EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, a);
       if (a.getItem() instanceof ItemArmor) {
-         int a = 1;
-         if (a < 5) {
-            if (mc.thePlayer.inventoryContainer.getSlot(4 + a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(4 + a).getStack();
-               if (AutoArmor.Method239(a, a)) {
+         int var8 = 1;
+         if (var8 < 5) {
+            if (mc.thePlayer.inventoryContainer.getSlot(4 + var8).getHasStack()) {
+               ItemStack var9 = mc.thePlayer.inventoryContainer.getSlot(4 + var8).getStack();
+               if (AutoArmor.Method239(var9, var8)) {
                   ;
                }
             }
 
-            if (AutoArmor.Method239(a, a)) {
+            if (AutoArmor.Method239(a, var8)) {
                return false;
             }
 
-            ++a;
+            ++var8;
          }
       }
 
       if (a.getItem() instanceof ItemPotion && this.Method256(a)) {
          return true;
-      } else if (Item.getIdFromItem(a) == 326 && this.Method244() <= 1) {
+      } else if (Item.getIdFromItem(var3) == 326 && this.Method244() <= 1) {
          return false;
       } else if (a.getItem() instanceof ItemFishingRod && this.Method261(a)) {
          return false;
@@ -303,25 +303,25 @@ public class InvCleaner extends Module {
                      }
 
                      if (!a.getDisplayName().contains("Wither Skeleton Skull") && !a.getDisplayName().contains("Creeper Head") && !a.getDisplayName().contains("Skeleton Skull") && !a.getDisplayName().contains("Zombie Head")) {
-                        if (Item.getIdFromItem(a) == 397 && a.getItemDamage() == 3) {
+                        if (Item.getIdFromItem(var3) == 397 && a.getItemDamage() == 3) {
                            return false;
                         }
 
-                        if (Item.getIdFromItem(a) == 276 && (a >= 3 || a >= 1)) {
+                        if (Item.getIdFromItem(var3) == 276 && (var4 >= 3 || var5 >= 1)) {
                            return false;
                         }
 
                         if (a.getItem() instanceof ItemEnchantedBook) {
-                           NBTTagList a = Items.enchanted_book.getEnchantments(a);
-                           int a = 0;
-                           if (a < a.tagCount()) {
-                              int a = a.getCompoundTagAt(a).getShort("id");
-                              int a = a.getCompoundTagAt(a).getShort("lvl");
-                              if (a == Enchantment.sharpness.effectId && a >= 3 || a == Enchantment.fireAspect.effectId || a == Enchantment.efficiency.effectId && a >= 3 || a == Enchantment.fortune.effectId || a == Enchantment.featherFalling.effectId && a >= 3 || a == Enchantment.protection.effectId || a == Enchantment.punch.effectId || a == Enchantment.flame.effectId || a == Enchantment.infinity.effectId || a == Enchantment.depthStrider.effectId) {
+                           NBTTagList var12 = Items.enchanted_book.getEnchantments(a);
+                           int var13 = 0;
+                           if (var13 < var12.tagCount()) {
+                              short var10 = var12.getCompoundTagAt(var13).getShort("id");
+                              short var11 = var12.getCompoundTagAt(var13).getShort("lvl");
+                              if (var10 == Enchantment.sharpness.effectId && var11 >= 3 || var10 == Enchantment.fireAspect.effectId || var10 == Enchantment.efficiency.effectId && var11 >= 3 || var10 == Enchantment.fortune.effectId || var10 == Enchantment.featherFalling.effectId && var11 >= 3 || var10 == Enchantment.protection.effectId || var10 == Enchantment.punch.effectId || var10 == Enchantment.flame.effectId || var10 == Enchantment.infinity.effectId || var10 == Enchantment.depthStrider.effectId) {
                                  return false;
                               }
 
-                              ++a;
+                              ++var13;
                            }
 
                            return true;
@@ -331,15 +331,15 @@ public class InvCleaner extends Module {
                            return false;
                         }
 
-                        if (Item.getIdFromItem(a) == 263 && this.Method243() <= 64) {
+                        if (Item.getIdFromItem(var3) == 263 && this.Method243() <= 64) {
                            return false;
                         }
 
-                        if (Item.getIdFromItem(a) == 345 && this.Method247() <= 1) {
+                        if (Item.getIdFromItem(var3) == 345 && this.Method247() <= 1) {
                            return false;
                         }
 
-                        if (Item.getIdFromItem(a) == 265 && this.Method248() <= 64) {
+                        if (Item.getIdFromItem(var3) == 265 && this.Method248() <= 64) {
                            return false;
                         }
 
@@ -383,129 +383,129 @@ public class InvCleaner extends Module {
    }
 
    private int Method242() {
-      int a = 0;
+      int var1 = 0;
 
-      for(int a = 0; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (a.getItem() instanceof ItemBlock) {
-               a += a.stackSize;
+      for(int var2 = 0; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (var3.getItem() instanceof ItemBlock) {
+               var1 += var3.stackSize;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private int Method243() {
-      int a = 0;
+      int var1 = 0;
 
-      for(int a = 0; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (Item.getIdFromItem(a) == 263) {
-               a += a.stackSize;
+      for(int var2 = 0; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (Item.getIdFromItem(var4) == 263) {
+               var1 += var3.stackSize;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private int Method244() {
-      int a = 0;
+      int var1 = 0;
 
-      for(int a = 0; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (Item.getIdFromItem(a) == 326) {
-               a += a.stackSize;
+      for(int var2 = 0; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (Item.getIdFromItem(var4) == 326) {
+               var1 += var3.stackSize;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private int Method245() {
-      int a = 0;
+      int var1 = 0;
 
-      for(int a = 0; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (a instanceof ItemFishingRod) {
-               a += a.stackSize;
+      for(int var2 = 0; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (var4 instanceof ItemFishingRod) {
+               var1 += var3.stackSize;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private int Method246() {
-      int a = 0;
+      int var1 = 0;
 
-      for(int a = 0; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (a.getItem() instanceof ItemBow) {
-               a += a.stackSize;
+      for(int var2 = 0; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            if (var3.getItem() instanceof ItemBow) {
+               var1 += var3.stackSize;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private int Method247() {
-      int a = 0;
+      int var1 = 0;
 
-      for(int a = 0; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (Item.getIdFromItem(a) == 345) {
-               a += a.stackSize;
+      for(int var2 = 0; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (Item.getIdFromItem(var4) == 345) {
+               var1 += var3.stackSize;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private int Method248() {
-      int a = 0;
+      int var1 = 0;
 
-      for(int a = 0; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (Item.getIdFromItem(a) == 265) {
-               a += a.stackSize;
+      for(int var2 = 0; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (Item.getIdFromItem(var4) == 265) {
+               var1 += var3.stackSize;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private void Method249(int a) {
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (this.Method252(a) && Field2738 != a && !this.Method237(a)) {
+      for(int var2 = 9; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            if (this.Method252(var3) && Field2738 != var2 && !this.Method237(var3)) {
                if (!mc.thePlayer.inventoryContainer.getSlot(Field2738).getHasStack()) {
-                  this.Method235(a, Field2738 - 36);
+                  this.Method235(var2, Field2738 - 36);
                   Field2729.reset();
                   if (this.Field2724.getFloatValue().longValue() > 0L) {
                      return;
                   }
                } else if (!this.Method252(mc.thePlayer.inventoryContainer.getSlot(Field2738).getStack())) {
-                  this.Method235(a, Field2738 - 36);
+                  this.Method235(var2, Field2738 - 36);
                   Field2729.reset();
                   if (this.Field2724.getFloatValue().longValue() > 0L) {
                      return;
@@ -518,18 +518,18 @@ public class InvCleaner extends Module {
    }
 
    private void Method250(int a) {
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (this.Method253(a) && Field2736 != a && !this.Method237(a)) {
+      for(int var2 = 9; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            if (this.Method253(var3) && Field2736 != var2 && !this.Method237(var3)) {
                if (!mc.thePlayer.inventoryContainer.getSlot(Field2736).getHasStack()) {
-                  this.Method235(a, Field2736 - 36);
+                  this.Method235(var2, Field2736 - 36);
                   Field2729.reset();
                   if (this.Field2724.getFloatValue().longValue() > 0L) {
                      return;
                   }
                } else if (!this.Method253(mc.thePlayer.inventoryContainer.getSlot(Field2736).getStack())) {
-                  this.Method235(a, Field2736 - 36);
+                  this.Method235(var2, Field2736 - 36);
                   Field2729.reset();
                   if (this.Field2724.getFloatValue().longValue() > 0L) {
                      return;
@@ -542,18 +542,18 @@ public class InvCleaner extends Module {
    }
 
    private void Method251(int a) {
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (this.Method254(a) && Field2737 != a && !this.Method237(a)) {
+      for(int var2 = 9; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            if (this.Method254(var3) && Field2737 != var2 && !this.Method237(var3)) {
                if (!mc.thePlayer.inventoryContainer.getSlot(Field2737).getHasStack()) {
-                  this.Method235(a, Field2737 - 36);
+                  this.Method235(var2, Field2737 - 36);
                   Field2729.reset();
                   if (this.Field2724.getFloatValue().longValue() > 0L) {
                      return;
                   }
                } else if (!this.Method254(mc.thePlayer.inventoryContainer.getSlot(Field2737).getStack())) {
-                  this.Method235(a, Field2737 - 36);
+                  this.Method235(var2, Field2737 - 36);
                   Field2729.reset();
                   if (this.Field2724.getFloatValue().longValue() > 0L) {
                      return;
@@ -566,16 +566,16 @@ public class InvCleaner extends Module {
    }
 
    private boolean Method252(ItemStack a) {
-      Item a = a.getItem();
-      if (!(a instanceof ItemPickaxe)) {
+      Item var2 = a.getItem();
+      if (!(var2 instanceof ItemPickaxe)) {
          return false;
       } else {
-         float a = this.Method255(a);
+         float var3 = this.Method255(a);
 
-         for(int a = 9; a < 45; ++a) {
-            if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-               if (this.Method255(a) > a && a.getItem() instanceof ItemPickaxe) {
+         for(int var4 = 9; var4 < 45; ++var4) {
+            if (mc.thePlayer.inventoryContainer.getSlot(var4).getHasStack()) {
+               ItemStack var5 = mc.thePlayer.inventoryContainer.getSlot(var4).getStack();
+               if (this.Method255(var5) > var3 && var5.getItem() instanceof ItemPickaxe) {
                   return false;
                }
             }
@@ -586,16 +586,16 @@ public class InvCleaner extends Module {
    }
 
    private boolean Method253(ItemStack a) {
-      Item a = a.getItem();
-      if (!(a instanceof ItemSpade)) {
+      Item var2 = a.getItem();
+      if (!(var2 instanceof ItemSpade)) {
          return false;
       } else {
-         float a = this.Method255(a);
+         float var3 = this.Method255(a);
 
-         for(int a = 9; a < 45; ++a) {
-            if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-               if (this.Method255(a) > a && a.getItem() instanceof ItemSpade) {
+         for(int var4 = 9; var4 < 45; ++var4) {
+            if (mc.thePlayer.inventoryContainer.getSlot(var4).getHasStack()) {
+               ItemStack var5 = mc.thePlayer.inventoryContainer.getSlot(var4).getStack();
+               if (this.Method255(var5) > var3 && var5.getItem() instanceof ItemSpade) {
                   return false;
                }
             }
@@ -606,16 +606,16 @@ public class InvCleaner extends Module {
    }
 
    private boolean Method254(ItemStack a) {
-      Item a = a.getItem();
-      if (!(a instanceof ItemAxe)) {
+      Item var2 = a.getItem();
+      if (!(var2 instanceof ItemAxe)) {
          return false;
       } else {
-         float a = this.Method255(a);
+         float var3 = this.Method255(a);
 
-         for(int a = 9; a < 45; ++a) {
-            if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-               if (this.Method255(a) > a && a.getItem() instanceof ItemAxe && !this.Method237(a)) {
+         for(int var4 = 9; var4 < 45; ++var4) {
+            if (mc.thePlayer.inventoryContainer.getSlot(var4).getHasStack()) {
+               ItemStack var5 = mc.thePlayer.inventoryContainer.getSlot(var4).getStack();
+               if (this.Method255(var5) > var3 && var5.getItem() instanceof ItemAxe && !this.Method237(a)) {
                   return false;
                }
             }
@@ -626,53 +626,53 @@ public class InvCleaner extends Module {
    }
 
    private float Method255(ItemStack a) {
-      Item a = a.getItem();
-      if (!(a instanceof ItemTool)) {
+      Item var2 = a.getItem();
+      if (!(var2 instanceof ItemTool)) {
          return 0.0F;
       } else {
-         String a = a.getUnlocalizedName();
-         ItemTool a = (ItemTool)a;
-         float a = 1.0F;
-         if (a instanceof ItemPickaxe) {
-            a = a.getStrVsBlock(a, Blocks.stone);
-            if (a.toLowerCase().contains("gold")) {
-               a -= 5.0F;
+         String var3 = var2.getUnlocalizedName();
+         ItemTool var4 = (ItemTool)var2;
+         float var5 = 1.0F;
+         if (var2 instanceof ItemPickaxe) {
+            var5 = var4.getStrVsBlock(a, Blocks.stone);
+            if (var3.toLowerCase().contains("gold")) {
+               var5 -= 5.0F;
             }
-         } else if (a instanceof ItemSpade) {
-            a = a.getStrVsBlock(a, Blocks.dirt);
-            if (a.toLowerCase().contains("gold")) {
-               a -= 5.0F;
+         } else if (var2 instanceof ItemSpade) {
+            var5 = var4.getStrVsBlock(a, Blocks.dirt);
+            if (var3.toLowerCase().contains("gold")) {
+               var5 -= 5.0F;
             }
          } else {
-            if (!(a instanceof ItemAxe)) {
+            if (!(var2 instanceof ItemAxe)) {
                return 1.0F;
             }
 
-            a = a.getStrVsBlock(a, Blocks.log);
-            if (a.toLowerCase().contains("gold")) {
-               a -= 5.0F;
+            var5 = var4.getStrVsBlock(a, Blocks.log);
+            if (var3.toLowerCase().contains("gold")) {
+               var5 -= 5.0F;
             }
          }
 
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.efficiency.effectId, a) * 0.0075);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) / 100.0);
-         return a;
+         var5 = (float)((double)var5 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.efficiency.effectId, a) * 0.0075);
+         var5 = (float)((double)var5 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) / 100.0);
+         return var5;
       }
    }
 
    private boolean Method256(ItemStack a) {
       if (a.getItem() instanceof ItemPotion) {
-         ItemPotion a = (ItemPotion)a.getItem();
-         if (a.getEffects(a) == null) {
+         ItemPotion var2 = (ItemPotion)a.getItem();
+         if (var2.getEffects(a) == null) {
             return true;
          }
 
-         Iterator var3 = a.getEffects(a).Method1383();
+         Iterator var3 = var2.getEffects(a).Method1383();
 
          while(var3.Method932()) {
-            Object a = var3.Method933();
-            PotionEffect a = (PotionEffect)a;
-            if (a.getPotionID() == Potion.poison.getId() || a.getPotionID() == Potion.harm.getId() || a.getPotionID() == Potion.moveSlowdown.getId() || a.getPotionID() == Potion.weakness.getId()) {
+            Object var4 = var3.Method933();
+            PotionEffect var5 = (PotionEffect)var4;
+            if (var5.getPotionID() == Potion.poison.getId() || var5.getPotionID() == Potion.harm.getId() || var5.getPotionID() == Potion.moveSlowdown.getId() || var5.getPotionID() == Potion.weakness.getId()) {
                return true;
             }
          }
@@ -682,13 +682,13 @@ public class InvCleaner extends Module {
    }
 
    boolean Method257(int a) {
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (a instanceof ItemArmor) {
-               ItemArmor a = (ItemArmor)a;
-               if (a == a.armorType) {
+      for(int var2 = 9; var2 < 45; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (var4 instanceof ItemArmor) {
+               ItemArmor var5 = (ItemArmor)var4;
+               if (a == var5.armorType) {
                   return true;
                }
             }
@@ -699,21 +699,21 @@ public class InvCleaner extends Module {
    }
 
    public void Method258() {
-      for(int a = 1; a < 5; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(4 + a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(4 + a).getStack();
-            if (AutoArmor.Method239(a, a)) {
+      for(int var1 = 1; var1 < 5; ++var1) {
+         if (mc.thePlayer.inventoryContainer.getSlot(4 + var1).getHasStack()) {
+            ItemStack var2 = mc.thePlayer.inventoryContainer.getSlot(4 + var1).getStack();
+            if (AutoArmor.Method239(var2, var1)) {
                continue;
             }
 
-            this.Method236(4 + a);
+            this.Method236(4 + var1);
          }
 
-         for(int a = 9; a < 45; ++a) {
-            if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-               if (AutoArmor.Method239(a, a) && AutoArmor.Method238(a) > 0.0F) {
-                  this.Method234(a);
+         for(int var4 = 9; var4 < 45; ++var4) {
+            if (mc.thePlayer.inventoryContainer.getSlot(var4).getHasStack()) {
+               ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var4).getStack();
+               if (AutoArmor.Method239(var3, var1) && AutoArmor.Method238(var3) > 0.0F) {
+                  this.Method234(var4);
                   Field2729.reset();
                   if (this.Field2724.getFloatValue().longValue() > 0L) {
                      return;
@@ -726,12 +726,12 @@ public class InvCleaner extends Module {
    }
 
    public boolean Method259(ItemStack a) {
-      float a = Method260(a);
+      float var2 = Method260(a);
 
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (Method260(a) >= a && a.getItem() instanceof ItemBow && a != a) {
+      for(int var3 = 9; var3 < 45; ++var3) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var3).getHasStack()) {
+            ItemStack var4 = mc.thePlayer.inventoryContainer.getSlot(var3).getStack();
+            if (Method260(var4) >= var2 && var4.getItem() instanceof ItemBow && a != var4) {
                return false;
             }
          }
@@ -741,18 +741,18 @@ public class InvCleaner extends Module {
    }
 
    private static float Method260(ItemStack a) {
-      float a = 7.0F;
-      a += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, a) * 0.5F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, a) * 0.1F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) * 0.001F;
-      return a;
+      float var1 = 7.0F;
+      var1 += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, a) * 0.5F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, a) * 0.1F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) * 0.001F;
+      return var1;
    }
 
    public boolean Method261(ItemStack a) {
-      float a = Method262(a);
+      float var2 = Method262(a);
 
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (Method262(a) >= a && a.getUnlocalizedName().toLowerCase().contains("fish") && a != a) {
+      for(int var3 = 9; var3 < 45; ++var3) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var3).getHasStack()) {
+            ItemStack var4 = mc.thePlayer.inventoryContainer.getSlot(var3).getStack();
+            if (Method262(var4) >= var2 && var4.getUnlocalizedName().toLowerCase().contains("fish") && a != var4) {
                return false;
             }
          }
@@ -762,9 +762,9 @@ public class InvCleaner extends Module {
    }
 
    private static float Method262(ItemStack a) {
-      float a = 0.0F;
-      a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a) * 1.0);
-      return a;
+      float var1 = 0.0F;
+      var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a) * 1.0);
+      return var1;
    }
 
    private static Exception Method263(Exception exception) {

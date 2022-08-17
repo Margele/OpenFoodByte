@@ -15,12 +15,12 @@ public class Class57 extends Class37 {
    }
 
    public String Method3184(String a, String a, String a) {
-      String a = this.Method3183(a + '.' + a + a);
+      String var4 = this.Method3183(a + '.' + a + a);
       return a;
    }
 
-   public String Method3185(String a, String a, String a2) {
-      String a = this.Method3183(a + '.' + a);
+   public String Method3185(String a, String a, String a) {
+      String var4 = this.Method3183(a + '.' + a);
       return a;
    }
 

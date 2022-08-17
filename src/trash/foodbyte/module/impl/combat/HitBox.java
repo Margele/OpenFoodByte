@@ -42,10 +42,10 @@ public class HitBox extends Module {
    }
 
    public boolean Method1187(Entity a) {
-      boolean a = this.Field2603.getBooleanValue();
-      boolean a = this.Field2606.getBooleanValue();
-      boolean a = this.Field2604.getBooleanValue();
-      boolean a = this.Field2605.getBooleanValue();
+      boolean var2 = this.Field2603.getBooleanValue();
+      boolean var3 = this.Field2606.getBooleanValue();
+      boolean var4 = this.Field2604.getBooleanValue();
+      boolean var5 = this.Field2605.getBooleanValue();
       if (a.isInvisible()) {
          return false;
       } else if (a == mc.thePlayer) {

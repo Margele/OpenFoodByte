@@ -40,12 +40,12 @@ public class Class38 extends Class119 {
 
    public void Method164(float a) {
       this.Field304 = a;
-      float a = (float)Math.cos((double)a);
-      float a = (float)Math.sin((double)a);
-      this.Field309 = a;
-      this.Field310 = a;
-      this.Field311 = -a;
-      this.Field312 = a;
+      float var2 = (float)Math.cos((double)a);
+      float var3 = (float)Math.sin((double)a);
+      this.Field309 = var2;
+      this.Field310 = var3;
+      this.Field311 = -var3;
+      this.Field312 = var2;
    }
 
    public float Method165() {
@@ -85,28 +85,28 @@ public class Class38 extends Class119 {
    }
 
    public int Method3(int a, int a, int a) {
-      float a = this.Field309 * (float)a + this.Field310 * (float)a;
-      float a = this.Field311 * (float)a + this.Field312 * (float)a;
-      a /= this.Field302;
-      a /= this.Field302 * this.Field303;
-      float a = Class598.Method157(a, a);
+      float var5 = this.Field309 * (float)a + this.Field310 * (float)a;
+      float var6 = this.Field311 * (float)a + this.Field312 * (float)a;
+      var5 /= this.Field302;
+      var6 /= this.Field302 * this.Field303;
+      float var7 = Class598.Method157(var5, var6);
       Class193.Method1270();
-      a += 0.1F * this.Field306 * Class598.Method157(a * 0.05F, a * 20.0F);
-      a = a * 0.5F + 0.5F;
-      a *= this.Field305 * 50.0F;
-      a -= (float)((int)a);
-      a *= 1.0F - Class776.Method1708(this.Field308, 1.0F, a);
-      a += this.Field307 * Class598.Method157(a * this.Field302, a * 50.0F);
-      int a = a & -16777216;
+      var7 += 0.1F * this.Field306 * Class598.Method157(var5 * 0.05F, var6 * 20.0F);
+      var7 = var7 * 0.5F + 0.5F;
+      var7 *= this.Field305 * 50.0F;
+      var7 -= (float)((int)var7);
+      var7 *= 1.0F - Class776.Method1708(this.Field308, 1.0F, var7);
+      var7 += this.Field307 * Class598.Method157(var5 * this.Field302, var6 * 50.0F);
+      int var8 = a & -16777216;
       if (this.Field313 != null) {
-         this.Field313.Method283(a);
+         this.Field313.Method283(var7);
       }
 
-      int a = Class767.Method1687((int)(a * 255.0F));
-      int a = a << 16;
-      int a = a << 8;
-      a |= a | a | a;
-      return a;
+      int var9 = Class767.Method1687((int)(var7 * 255.0F));
+      int var10 = var9 << 16;
+      int var11 = var9 << 8;
+      var9 |= var8 | var10 | var11;
+      return var9;
    }
 
    public String toString() {

@@ -14,23 +14,23 @@ public class HideCommand extends Command {
    }
 
    public void onCommand(String[] commands) {
-      int a = GetDmgCommand.Method3599();
+      int var2 = GetDmgCommand.Method3599();
       if (commands.length != 2) {
          ChatUtils.addChatMessage(this.getHelp());
       } else {
-         boolean a = false;
+         boolean var3 = false;
          Iterator var4 = ModuleManager.getAllModules().Method1383();
          if (var4.Method932()) {
-            Module a = (Module)var4.Method933();
-            if (!commands[1].equalsIgnoreCase(a.getName())) {
+            Module var5 = (Module)var4.Method933();
+            if (!commands[1].equalsIgnoreCase(var5.getName())) {
                ;
             }
 
-            a.hide = !a.hide;
-            a = true;
-            ChatUtils.addChatMessage(a.getName() + " Module hide toggled!");
-            a.Method1038().Method1192(0.0);
-            a.Method1039().Method1192(0.0);
+            var5.hide = !var5.hide;
+            var3 = true;
+            ChatUtils.addChatMessage(var5.getName() + " Module hide toggled!");
+            var5.Method1038().Method1192(0.0);
+            var5.Method1039().Method1192(0.0);
             GlobalModule.INSTANCE.fileManager.saveHide();
          }
 

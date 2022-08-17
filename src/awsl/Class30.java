@@ -14,7 +14,7 @@ public class Class30 extends Class119 {
       this.Field251 = a;
    }
 
-   public int Method3(int a, int a1, int a) {
+   public int Method3(int a, int a, int a) {
       return a == this.Field250 ? this.Field251 : a;
    }
 }

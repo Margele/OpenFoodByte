@@ -68,24 +68,24 @@ public class Arrow extends Module {
 
    @EventTarget(3)
    public void Method810(EventRender2D a) {
-      String a = Class492.Method2239();
+      String var2 = Class492.Method2239();
       if (this.Field2390.getValue()) {
          Minecraft var10001 = mc;
-         float a = (float)(195 / Math.max(Minecraft.getDebugFPS() / 2, 1));
+         float var3 = (float)(195 / Math.max(Minecraft.getDebugFPS() / 2, 1));
          if ((float)this.Field2396 <= 60.0F || (float)this.Field2396 >= 255.0F) {
             this.Field2397 = !this.Field2397;
          }
 
          if (this.Field2397) {
-            this.Field2396 = (int)((float)this.Field2396 + a);
+            this.Field2396 = (int)((float)this.Field2396 + var3);
          }
 
-         this.Field2396 = (int)((float)this.Field2396 - a);
+         this.Field2396 = (int)((float)this.Field2396 - var3);
          this.Field2396 = (int)MathUtils.clamp((float)this.Field2396, 255.0F, 60.0F);
       }
 
       this.Field2396 = 255;
-      ScaledResolution a = new ScaledResolution(mc);
+      ScaledResolution var4 = new ScaledResolution(mc);
       mc.theWorld.loadedEntityList.forEach(this::Method1737);
    }
 
@@ -98,10 +98,10 @@ public class Arrow extends Module {
    }
 
    public boolean Method965(EntityLivingBase a) {
-      boolean a = this.Field2391.getBooleanValue();
-      boolean a = this.Field2394.getBooleanValue();
-      boolean a = this.Field2392.getBooleanValue();
-      boolean a = this.Field2393.getBooleanValue();
+      boolean var2 = this.Field2391.getBooleanValue();
+      boolean var3 = this.Field2394.getBooleanValue();
+      boolean var4 = this.Field2392.getBooleanValue();
+      boolean var5 = this.Field2393.getBooleanValue();
       if (a.isInvisible()) {
          return false;
       } else if (a == mc.thePlayer) {
@@ -122,37 +122,37 @@ public class Arrow extends Module {
    }
 
    private float Method1735(EntityLivingBase a) {
-      double a = a.posX - mc.thePlayer.posX;
-      double a = a.posZ - mc.thePlayer.posZ;
-      float a = (float)(-(Math.atan2(a, a) * 57.29577951308232));
-      return a;
+      double var2 = a.posX - mc.thePlayer.posX;
+      double var4 = a.posZ - mc.thePlayer.posZ;
+      float var6 = (float)(-(Math.atan2(var2, var4) * 57.29577951308232));
+      return var6;
    }
 
    private Color Method1736(EntityLivingBase a, int a) {
-      float a = mc.thePlayer.getDistanceToEntity(a);
-      float a = 40.0F;
-      float a = Math.max(0.0F, Math.min(a, a) / a);
-      Color a = new Color(Color.HSBtoRGB(a / 3.0F, 1.0F, 1.0F) | -16777216);
-      return new Color(a.getRed(), a.getGreen(), a.getBlue(), a);
+      float var3 = mc.thePlayer.getDistanceToEntity(a);
+      float var4 = 40.0F;
+      float var5 = Math.max(0.0F, Math.min(var3, var4) / var4);
+      Color var6 = new Color(Color.HSBtoRGB(var5 / 3.0F, 1.0F, 1.0F) | -16777216);
+      return new Color(var6.getRed(), var6.getGreen(), var6.getBlue(), a);
    }
 
    private void Method1737(ScaledResolution a, Entity a) {
       if (a instanceof EntityLivingBase && this.Method965((EntityLivingBase)a)) {
-         EntityLivingBase a = (EntityLivingBase)a;
-         Vec3 a = (Vec3)this.Field2395.Method2236().Method2665(a);
-         if (!RenderUtils.Method1143(a)) {
-            int a = a.getScaledWidth() / 2;
-            int a = a.getScaledHeight() / 2;
-            float a = this.Method1735(a) - mc.thePlayer.rotationYaw;
+         EntityLivingBase var3 = (EntityLivingBase)a;
+         Vec3 var4 = (Vec3)this.Field2395.Method2236().Method2665(var3);
+         if (!RenderUtils.Method1143(var3)) {
+            int var5 = a.getScaledWidth() / 2;
+            int var6 = a.getScaledHeight() / 2;
+            float var7 = this.Method1735(var3) - mc.thePlayer.rotationYaw;
             GL11.glPushMatrix();
-            GL11.glTranslatef((float)a, (float)a, 0.0F);
-            GL11.glRotatef(a, 0.0F, 0.0F, 1.0F);
-            GL11.glTranslatef((float)(-a), (float)(-a), 0.0F);
+            GL11.glTranslatef((float)var5, (float)var6, 0.0F);
+            GL11.glRotatef(var7, 0.0F, 0.0F, 1.0F);
+            GL11.glTranslatef((float)(-var5), (float)(-var6), 0.0F);
             GL11.glLineWidth(1.0F);
-            RenderUtils.Method1137((float)a, (float)a - this.Field2389.getFloatValue(), this.Field2388.getFloatValue(), 2.0F, 1.0F, this.Method1736(a, this.Field2396).getRGB());
-            GL11.glTranslatef((float)a, (float)a, 0.0F);
-            GL11.glRotatef(-a, 0.0F, 0.0F, 1.0F);
-            GL11.glTranslatef((float)(-a), (float)(-a), 0.0F);
+            RenderUtils.Method1137((float)var5, (float)var6 - this.Field2389.getFloatValue(), this.Field2388.getFloatValue(), 2.0F, 1.0F, this.Method1736(var3, this.Field2396).getRGB());
+            GL11.glTranslatef((float)var5, (float)var6, 0.0F);
+            GL11.glRotatef(-var7, 0.0F, 0.0F, 1.0F);
+            GL11.glTranslatef((float)(-var5), (float)(-var6), 0.0F);
             GL11.glPopMatrix();
          }
       }

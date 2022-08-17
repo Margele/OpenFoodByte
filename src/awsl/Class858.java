@@ -40,75 +40,75 @@ public class Class858 extends Class798 {
       return this.Field3755;
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
       Class193.Method1270();
-      int a = 0;
-      short[][] a = new short[3][a];
-      int[] a = new int[a * a];
-      short[] a = new short[256];
-      int a = (int)(this.Field3754 * 256.0F / this.Field3752);
-      int a = 0;
-      if (a < 256) {
-         a[a] = (short)Class767.Method1687((int)(255.0 * Math.floor((double)(this.Field3752 * (float)(a + a) / 256.0F)) / (double)(this.Field3752 - 1.0F) - (double)a));
-         ++a;
+      int var6 = 0;
+      short[][] var7 = new short[3][a];
+      int[] var8 = new int[a * a];
+      short[] var9 = new short[256];
+      int var10 = (int)(this.Field3754 * 256.0F / this.Field3752);
+      int var11 = 0;
+      if (var11 < 256) {
+         var9[var11] = (short)Class767.Method1687((int)(255.0 * Math.floor((double)(this.Field3752 * (float)(var11 + var10) / 256.0F)) / (double)(this.Field3752 - 1.0F) - (double)var10));
+         ++var11;
       }
 
-      int a = 0;
-      if (a < a) {
-         int a = a[a];
-         a[1][a] = (short)Class767.Method1689(a);
-         a = a + 1;
+      byte var27 = 0;
+      if (var27 < a) {
+         int var12 = a[var27];
+         var7[1][var27] = (short)Class767.Method1689(var12);
+         var11 = var27 + 1;
       }
 
-      a = 0;
-      if (a < a) {
-         boolean a = a < a - 1;
-         int a = a + a;
-         int a;
-         if (a < a - 1) {
-            a = 0;
-            if (a < a) {
-               int a = a[a++];
-               a[2][a] = (short)Class767.Method1689(a);
-               ++a;
+      var27 = 0;
+      if (var27 < a) {
+         boolean var28 = var27 < a - 1;
+         int var13 = var6 + a;
+         int var14;
+         if (var27 < a - 1) {
+            var14 = 0;
+            if (var14 < a) {
+               int var15 = a[var13++];
+               var7[2][var14] = (short)Class767.Method1689(var15);
+               ++var14;
             }
          }
 
-         int a = 0;
-         if (a < a) {
-            boolean a = a < a - 1;
-            int a = a - 1;
-            int a = a + 1;
-            int a = 0;
-            short a = a[0][a];
-            short a = a[0][a];
-            short a = a[1][a];
-            short a = a[1][a];
-            short a = a[a];
-            short a = a[a];
-            short a = a[a];
-            short a = a[a];
-            if (a != a || a != a || a != a || a != a) {
-               a = (int)(this.Field3753 * (float)(Math.abs(a - a) + Math.abs(a - a) + Math.abs(a - a) + Math.abs(a - a)));
-               if (a > 255) {
-                  a = 255;
+         byte var29 = 0;
+         if (var29 < a) {
+            boolean var30 = var29 < a - 1;
+            int var16 = var29 - 1;
+            int var17 = var29 + 1;
+            int var18 = 0;
+            short var19 = var7[0][var16];
+            short var20 = var7[0][var29];
+            short var21 = var7[1][var16];
+            short var22 = var7[1][var29];
+            short var23 = var9[var19];
+            short var24 = var9[var20];
+            short var25 = var9[var21];
+            short var26 = var9[var22];
+            if (var23 != var24 || var23 != var25 || var24 != var26 || var25 != var26) {
+               var18 = (int)(this.Field3753 * (float)(Math.abs(var19 - var20) + Math.abs(var19 - var21) + Math.abs(var20 - var22) + Math.abs(var21 - var22)));
+               if (var18 > 255) {
+                  var18 = 255;
                }
             }
 
-            a[a] = Class767.Method1693(a[a], this.Field3755, 1, a);
-            a[a] = a[a];
-            ++a;
-            a = a + 1;
+            var8[var6] = Class767.Method1693(a[var6], this.Field3755, 1, var18);
+            var8[var6] = a[var6];
+            ++var6;
+            var14 = var29 + 1;
          }
 
-         short[] a = a[0];
-         a[0] = a[1];
-         a[1] = a[2];
-         a[2] = a;
-         a = a + 1;
+         short[] var31 = var7[0];
+         var7[0] = var7[1];
+         var7[1] = var7[2];
+         var7[2] = var31;
+         var11 = var27 + 1;
       }
 
-      return a;
+      return var8;
    }
 
    public String toString() {

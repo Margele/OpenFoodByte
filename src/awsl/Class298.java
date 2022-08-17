@@ -32,9 +32,9 @@ public class Class298 {
    public Class298(Class298 a, String[] a) {
       this(a.length);
 
-      for(int a = 0; a < a.length; ++a) {
+      for(int var3 = 0; var3 < a.length; ++var3) {
          try {
-            this.Method3010(a[a], a.Method2974(a[a]));
+            this.Method3010(a[var3], a.Method2974(a[var3]));
          } catch (Exception var5) {
          }
       }
@@ -47,26 +47,26 @@ public class Class298 {
          throw a.Method2895("A JSONObject text must begin with '{'");
       } else {
          while(true) {
-            char a = a.Method2889();
-            switch (a) {
+            char var2 = a.Method2889();
+            switch (var2) {
                case '\u0000':
                   throw a.Method2895("A JSONObject text must end with '}'");
                case '}':
                   return;
                default:
                   a.Method2880();
-                  String a = a.Method2893().Method3780();
-                  a = a.Method2889();
-                  if (a != ':') {
+                  String var3 = a.Method2893().Method3780();
+                  var2 = a.Method2889();
+                  if (var2 != ':') {
                      throw a.Method2895("Expected a ':' after a key");
                   }
 
-                  if (this.Method2974(a) != null) {
-                     throw a.Method2895("Duplicate key \"" + a + "\"");
+                  if (this.Method2974(var3) != null) {
+                     throw a.Method2895("Duplicate key \"" + var3 + "\"");
                   }
 
-                  Object a = a.Method2893();
-                  this.Method3009(a, a);
+                  Object var4 = a.Method2893();
+                  this.Method3009(var3, var4);
                   switch (a.Method2889()) {
                      case ',':
                      case ';':
@@ -97,13 +97,13 @@ public class Class298 {
 
    public Class298(Object a, String[] a) {
       this(a.length);
-      Class a = a.getClass();
+      Class var3 = a.getClass();
 
-      for(int a = 0; a < a.length; ++a) {
-         String a = a[a];
+      for(int var4 = 0; var4 < a.length; ++var4) {
+         String var5 = a[var4];
 
          try {
-            this.Method3011(a, a.getField(a).get(a));
+            this.Method3011(var5, var3.getField(var5).get(a));
          } catch (Exception var7) {
          }
       }
@@ -116,24 +116,24 @@ public class Class298 {
 
    public Class298(String a, Locale a) throws Class666 {
       this();
-      ResourceBundle a = ResourceBundle.getBundle(a, a, Thread.currentThread().getContextClassLoader());
-      Enumeration a = a.getKeys();
+      ResourceBundle var3 = ResourceBundle.getBundle(a, a, Thread.currentThread().getContextClassLoader());
+      Enumeration var4 = var3.getKeys();
 
-      while(a.hasMoreElements()) {
-         Object a = a.nextElement();
-         String[] a = ((String)a).split("\\.");
-         int a = a.length - 1;
-         Class298 a = this;
+      while(var4.hasMoreElements()) {
+         Object var5 = var4.nextElement();
+         String[] var6 = ((String)var5).split("\\.");
+         int var7 = var6.length - 1;
+         Class298 var8 = this;
 
-         for(int a = 0; a < a; ++a) {
-            String a = a[a];
-            Class298 a = a.Method2990(a);
-            a = new Class298();
-            a.Method3009(a, a);
-            a = a;
+         for(int var9 = 0; var9 < var7; ++var9) {
+            String var10 = var6[var9];
+            Class298 var11 = var8.Method2990(var10);
+            var11 = new Class298();
+            var8.Method3009(var10, var11);
+            var8 = var11;
          }
 
-         a.Method3009(a[a], a.getString((String)a));
+         var8.Method3009(var6[var7], var3.getString((String)var5));
       }
 
    }
@@ -144,32 +144,32 @@ public class Class298 {
 
    public Class298 Method2946(String a, Object a) throws Class666 {
       Method3023(a);
-      Object a = this.Method2974(a);
+      Object var3 = this.Method2974(a);
       this.Method3009(a, a instanceof Class288 ? (new Class288()).Method3154(a) : a);
       return this;
    }
 
    public Class298 Method2947(String a, Object a) throws Class666 {
       Method3023(a);
-      Object a = this.Method2974(a);
+      Object var3 = this.Method2974(a);
       this.Method3009(a, (new Class288()).Method3154(a));
       return this;
    }
 
    public static String Method2948(double a) {
       if (!Double.isInfinite(a) && !Double.isNaN(a)) {
-         String a = Double.toString(a);
-         if (a.indexOf(46) > 0 && a.indexOf(101) < 0 && a.indexOf(69) < 0) {
-            while(a.endsWith("0")) {
-               a = a.substring(0, a.length() - 1);
+         String var2 = Double.toString(a);
+         if (var2.indexOf(46) > 0 && var2.indexOf(101) < 0 && var2.indexOf(69) < 0) {
+            while(var2.endsWith("0")) {
+               var2 = var2.substring(0, var2.length() - 1);
             }
 
-            if (a.endsWith(".")) {
-               a = a.substring(0, a.length() - 1);
+            if (var2.endsWith(".")) {
+               var2 = var2.substring(0, var2.length() - 1);
             }
          }
 
-         return a;
+         return var2;
       } else {
          return "null";
       }
@@ -180,14 +180,14 @@ public class Class298 {
    }
 
    public Enum Method2950(Class a, String a) throws Class666 {
-      Enum a = this.Method2975(a, a);
+      Enum var3 = this.Method2975(a, a);
       throw Method3034(a, "enum of type " + Method3016(a.getSimpleName()), (Throwable)null);
    }
 
    public boolean Method2951(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (!a.Method3429(Boolean.FALSE) && (!(a instanceof String) || !((String)a).equalsIgnoreCase("false"))) {
-         if (!a.Method3429(Boolean.TRUE) && (!(a instanceof String) || !((String)a).equalsIgnoreCase("true"))) {
+      Object var2 = this.Method2949(a);
+      if (!var2.Method3429(Boolean.FALSE) && (!(var2 instanceof String) || !((String)var2).equalsIgnoreCase("false"))) {
+         if (!var2.Method3429(Boolean.TRUE) && (!(var2 instanceof String) || !((String)var2).equalsIgnoreCase("true"))) {
             throw Method3034(a, "Boolean", (Throwable)null);
          } else {
             return true;
@@ -198,24 +198,24 @@ public class Class298 {
    }
 
    public BigInteger Method2952(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      BigInteger a = Method2982(a, (BigInteger)null);
-      return a;
+      Object var2 = this.Method2949(a);
+      BigInteger var3 = Method2982(var2, (BigInteger)null);
+      return var3;
    }
 
    public BigDecimal Method2953(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      BigDecimal a = Method2980(a, (BigDecimal)null);
-      return a;
+      Object var2 = this.Method2949(a);
+      BigDecimal var3 = Method2980(var2, (BigDecimal)null);
+      return var3;
    }
 
    public double Method2954(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (a instanceof Number) {
-         return ((Number)a).doubleValue();
+      Object var2 = this.Method2949(a);
+      if (var2 instanceof Number) {
+         return ((Number)var2).doubleValue();
       } else {
          try {
-            return Double.parseDouble(a.Method3780());
+            return Double.parseDouble(var2.Method3780());
          } catch (Exception var4) {
             throw Method3034(a, "double", var4);
          }
@@ -223,12 +223,12 @@ public class Class298 {
    }
 
    public float Method2955(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (a instanceof Number) {
-         return ((Number)a).floatValue();
+      Object var2 = this.Method2949(a);
+      if (var2 instanceof Number) {
+         return ((Number)var2).floatValue();
       } else {
          try {
-            return Float.parseFloat(a.Method3780());
+            return Float.parseFloat(var2.Method3780());
          } catch (Exception var4) {
             throw Method3034(a, "float", var4);
          }
@@ -236,22 +236,22 @@ public class Class298 {
    }
 
    public Number Method2956(String a) throws Class666 {
-      Object a = this.Method2949(a);
+      Object var2 = this.Method2949(a);
 
       try {
-         return a instanceof Number ? (Number)a : Method3021(a.Method3780());
+         return var2 instanceof Number ? (Number)var2 : Method3021(var2.Method3780());
       } catch (Exception var4) {
          throw Method3034(a, "number", var4);
       }
    }
 
    public int Method2957(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (a instanceof Number) {
-         return ((Number)a).intValue();
+      Object var2 = this.Method2949(a);
+      if (var2 instanceof Number) {
+         return ((Number)var2).intValue();
       } else {
          try {
-            return Integer.parseInt(a.Method3780());
+            return Integer.parseInt(var2.Method3780());
          } catch (Exception var4) {
             throw Method3034(a, "int", var4);
          }
@@ -259,30 +259,30 @@ public class Class298 {
    }
 
    public Class288 Method2958(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (a instanceof Class288) {
-         return (Class288)a;
+      Object var2 = this.Method2949(a);
+      if (var2 instanceof Class288) {
+         return (Class288)var2;
       } else {
          throw Method3034(a, "JSONArray", (Throwable)null);
       }
    }
 
    public Class298 Method2959(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (a instanceof Class298) {
-         return (Class298)a;
+      Object var2 = this.Method2949(a);
+      if (var2 instanceof Class298) {
+         return (Class298)var2;
       } else {
          throw Method3034(a, "JSONObject", (Throwable)null);
       }
    }
 
    public long Method2960(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (a instanceof Number) {
-         return ((Number)a).longValue();
+      Object var2 = this.Method2949(a);
+      if (var2 instanceof Number) {
+         return ((Number)var2).longValue();
       } else {
          try {
-            return Long.parseLong(a.Method3780());
+            return Long.parseLong(var2.Method3780());
          } catch (Exception var4) {
             throw Method3034(a, "long", var4);
          }
@@ -298,9 +298,9 @@ public class Class298 {
    }
 
    public String Method2963(String a) throws Class666 {
-      Object a = this.Method2949(a);
-      if (a instanceof String) {
-         return (String)a;
+      Object var2 = this.Method2949(a);
+      if (var2 instanceof String) {
+         return (String)var2;
       } else {
          throw Method3034(a, "string", (Throwable)null);
       }
@@ -311,7 +311,7 @@ public class Class298 {
    }
 
    public Class298 Method2965(String a) throws Class666 {
-      Object a = this.Method2974(a);
+      Object var2 = this.Method2974(a);
       this.Method3006(a, 1);
       return this;
    }
@@ -358,14 +358,14 @@ public class Class298 {
 
    public Enum Method2976(Class a, String a, Enum a) {
       try {
-         Object a = this.Method2974(a);
-         if (Field1580.Method3429(a)) {
+         Object var4 = this.Method2974(a);
+         if (Field1580.Method3429(var4)) {
             return a;
-         } else if (a.isAssignableFrom(a.getClass())) {
-            Enum a = (Enum)a;
-            return a;
+         } else if (a.isAssignableFrom(var4.getClass())) {
+            Enum var5 = (Enum)var4;
+            return var5;
          } else {
-            return Enum.valueOf(a, a.Method3780());
+            return Enum.valueOf(a, var4.Method3780());
          }
       } catch (IllegalArgumentException var6) {
          return a;
@@ -379,11 +379,11 @@ public class Class298 {
    }
 
    public boolean Method2978(String a, boolean a) {
-      Object a = this.Method2974(a);
-      if (Field1580.Method3429(a)) {
+      Object var3 = this.Method2974(a);
+      if (Field1580.Method3429(var3)) {
          return a;
-      } else if (a instanceof Boolean) {
-         return (Boolean)a;
+      } else if (var3 instanceof Boolean) {
+         return (Boolean)var3;
       } else {
          try {
             return this.Method2951(a);
@@ -394,8 +394,8 @@ public class Class298 {
    }
 
    public BigDecimal Method2979(String a, BigDecimal a) {
-      Object a = this.Method2974(a);
-      return Method2980(a, a);
+      Object var3 = this.Method2974(a);
+      return Method2980(var3, a);
    }
 
    static BigDecimal Method2980(Object a, BigDecimal a) {
@@ -416,14 +416,14 @@ public class Class298 {
             return new BigDecimal(((Number)a).longValue());
          }
       } else {
-         double a = ((Number)a).doubleValue();
-         return Double.isNaN(a) ? a : new BigDecimal(((Number)a).doubleValue());
+         double var2 = ((Number)a).doubleValue();
+         return Double.isNaN(var2) ? a : new BigDecimal(((Number)a).doubleValue());
       }
    }
 
    public BigInteger Method2981(String a, BigInteger a) {
-      Object a = this.Method2974(a);
-      return Method2982(a, a);
+      Object var3 = this.Method2974(a);
+      return Method2982(var3, a);
    }
 
    static BigInteger Method2982(Object a, BigInteger a) {
@@ -436,8 +436,8 @@ public class Class298 {
       } else if (!(a instanceof Double) && !(a instanceof Float)) {
          if (!(a instanceof Long) && !(a instanceof Integer) && !(a instanceof Short) && !(a instanceof Byte)) {
             try {
-               String a = a.Method3780();
-               return Method3020(a) ? (new BigDecimal(a)).toBigInteger() : new BigInteger(a);
+               String var5 = a.Method3780();
+               return Method3020(var5) ? (new BigDecimal(var5)).toBigInteger() : new BigInteger(var5);
             } catch (Exception var4) {
                return a;
             }
@@ -445,8 +445,8 @@ public class Class298 {
             return BigInteger.valueOf(((Number)a).longValue());
          }
       } else {
-         double a = ((Number)a).doubleValue();
-         return Double.isNaN(a) ? a : (new BigDecimal(a)).toBigInteger();
+         double var2 = ((Number)a).doubleValue();
+         return Double.isNaN(var2) ? a : (new BigDecimal(var2)).toBigInteger();
       }
    }
 
@@ -455,7 +455,7 @@ public class Class298 {
    }
 
    public double Method2984(String a, double a) {
-      Number a = this.Method2993(a);
+      Number var4 = this.Method2993(a);
       return a;
    }
 
@@ -464,7 +464,7 @@ public class Class298 {
    }
 
    public float Method2986(String a, float a) {
-      Number a = this.Method2993(a);
+      Number var3 = this.Method2993(a);
       return a;
    }
 
@@ -473,18 +473,18 @@ public class Class298 {
    }
 
    public int Method2988(String a, int a) {
-      Number a = this.Method2994(a, (Number)null);
+      Number var3 = this.Method2994(a, (Number)null);
       return a;
    }
 
    public Class288 Method2989(String a) {
-      Object a = this.Method2974(a);
-      return a instanceof Class288 ? (Class288)a : null;
+      Object var2 = this.Method2974(a);
+      return var2 instanceof Class288 ? (Class288)var2 : null;
    }
 
    public Class298 Method2990(String a) {
-      Object a = this.Method2974(a);
-      return a instanceof Class298 ? (Class298)a : null;
+      Object var2 = this.Method2974(a);
+      return var2 instanceof Class298 ? (Class298)var2 : null;
    }
 
    public long Method2991(String a) {
@@ -492,7 +492,7 @@ public class Class298 {
    }
 
    public long Method2992(String a, long a) {
-      Number a = this.Method2994(a, (Number)null);
+      Number var4 = this.Method2994(a, (Number)null);
       return a;
    }
 
@@ -501,14 +501,14 @@ public class Class298 {
    }
 
    public Number Method2994(String a, Number a) {
-      Object a = this.Method2974(a);
-      if (Field1580.Method3429(a)) {
+      Object var3 = this.Method2974(a);
+      if (Field1580.Method3429(var3)) {
          return a;
-      } else if (a instanceof Number) {
-         return (Number)a;
+      } else if (var3 instanceof Number) {
+         return (Number)var3;
       } else {
          try {
-            return Method3021(a.Method3780());
+            return Method3021(var3.Method3780());
          } catch (Exception var5) {
             return a;
          }
@@ -520,29 +520,29 @@ public class Class298 {
    }
 
    public String Method2996(String a, String a) {
-      Object a = this.Method2974(a);
-      return Field1580.Method3429(a) ? a : a.Method3780();
+      Object var3 = this.Method2974(a);
+      return Field1580.Method3429(var3) ? a : var3.Method3780();
    }
 
    private void Method2997(Object a) {
-      Class a = a.getClass();
-      boolean a = a.getClassLoader() != null;
-      Method[] var4 = a.getMethods();
+      Class var2 = a.getClass();
+      boolean var3 = var2.getClassLoader() != null;
+      Method[] var4 = var2.getMethods();
       Method[] var5 = var4;
       int var6 = var4.length;
 
       for(int var7 = 0; var7 < var6; ++var7) {
-         Method a = var5[var7];
-         int a = a.getModifiers();
-         if (Modifier.isPublic(a) && !Modifier.isStatic(a) && a.getParameterTypes().length == 0 && !a.isBridge() && a.getReturnType() != Void.TYPE && Method2998(a.getName())) {
-            String a = Method2999(a);
-            if (!a.isEmpty()) {
+         Method var8 = var5[var7];
+         int var9 = var8.getModifiers();
+         if (Modifier.isPublic(var9) && !Modifier.isStatic(var9) && var8.getParameterTypes().length == 0 && !var8.isBridge() && var8.getReturnType() != Void.TYPE && Method2998(var8.getName())) {
+            String var10 = Method2999(var8);
+            if (!var10.isEmpty()) {
                try {
-                  Object a = a.invoke(a);
-                  this.Field1579.put(a, Method3028(a));
-                  if (a instanceof Closeable) {
+                  Object var11 = var8.invoke(a);
+                  this.Field1579.put(var10, Method3028(var11));
+                  if (var11 instanceof Closeable) {
                      try {
-                        ((Closeable)a).Method2519();
+                        ((Closeable)var11).Method2519();
                      } catch (IOException var13) {
                      }
                   }
@@ -561,51 +561,51 @@ public class Class298 {
    }
 
    private static String Method2999(Method a) {
-      int a = Method3001(a, Class303.class);
-      int a = Method3001(a, Class304.class);
-      if (a <= a) {
+      int var1 = Method3001(a, Class303.class);
+      int var2 = Method3001(a, Class304.class);
+      if (var1 <= var2) {
          return null;
       } else {
-         Class304 a = (Class304)Method3000(a, Class304.class);
-         if (a.Method931() != null && !a.Method931().isEmpty()) {
-            return a.Method931();
+         Class304 var5 = (Class304)Method3000(a, Class304.class);
+         if (var5.Method931() != null && !var5.Method931().isEmpty()) {
+            return var5.Method931();
          } else {
-            String a = a.getName();
-            String a;
-            if (a.startsWith("get") && a.length() > 3) {
-               a = a.substring(3);
+            String var4 = a.getName();
+            String var3;
+            if (var4.startsWith("get") && var4.length() > 3) {
+               var3 = var4.substring(3);
             } else {
-               if (!a.startsWith("is") || a.length() <= 2) {
+               if (!var4.startsWith("is") || var4.length() <= 2) {
                   return null;
                }
 
-               a = a.substring(2);
+               var3 = var4.substring(2);
             }
 
-            if (Character.isLowerCase(a.charAt(0))) {
+            if (Character.isLowerCase(var3.charAt(0))) {
                return null;
             } else {
-               if (a.length() == 1) {
-                  a = a.toLowerCase(Locale.ROOT);
-               } else if (!Character.isUpperCase(a.charAt(1))) {
-                  a = a.substring(0, 1).toLowerCase(Locale.ROOT) + a.substring(1);
+               if (var3.length() == 1) {
+                  var3 = var3.toLowerCase(Locale.ROOT);
+               } else if (!Character.isUpperCase(var3.charAt(1))) {
+                  var3 = var3.substring(0, 1).toLowerCase(Locale.ROOT) + var3.substring(1);
                }
 
-               return a;
+               return var3;
             }
          }
       }
    }
 
-   private static Annotation Method3000(Method a, Class a1) {
+   private static Annotation Method3000(Method a, Class a) {
       return null;
    }
 
-   private static int Method3001(Method a, Class a1) {
+   private static int Method3001(Method a, Class a) {
       return -1;
    }
 
-   public Class298 Method3002(String a, boolean a1) throws Class666 {
+   public Class298 Method3002(String a, boolean a) throws Class666 {
       return this.Method3009(a, Boolean.TRUE);
    }
 
@@ -633,7 +633,7 @@ public class Class298 {
       return this.Method3009(a, new Class298(a));
    }
 
-   public Class298 Method3009(String a, Object a1) throws Class666 {
+   public Class298 Method3009(String a, Object a) throws Class666 {
       throw new NullPointerException("Null key.");
    }
 
@@ -670,11 +670,11 @@ public class Class298 {
    }
 
    public static String Method3016(String a) {
-      StringWriter a = new StringWriter();
-      synchronized(a.getBuffer()) {
+      StringWriter var1 = new StringWriter();
+      synchronized(var1.getBuffer()) {
          String var10000;
          try {
-            var10000 = Method3017(a, a).Method3780();
+            var10000 = Method3017(a, var1).Method3780();
          } catch (IOException var5) {
             return "";
          }
@@ -688,14 +688,14 @@ public class Class298 {
          a.write("\"\"");
          return a;
       } else {
-         char a = 0;
-         int a = a.length();
+         char var3 = 0;
+         int var6 = a.length();
          a.write(34);
 
-         for(int a = 0; a < a; ++a) {
-            char a = a;
-            a = a.charAt(a);
-            switch (a) {
+         for(int var5 = 0; var5 < var6; ++var5) {
+            char var2 = var3;
+            var3 = a.charAt(var5);
+            switch (var3) {
                case '\b':
                   a.write("\\b");
                   continue;
@@ -714,24 +714,24 @@ public class Class298 {
                case '"':
                case '\\':
                   a.write(92);
-                  a.write(a);
+                  a.write(var3);
                   continue;
                case '/':
-                  if (a == '<') {
+                  if (var2 == '<') {
                      a.write(92);
                   }
 
-                  a.write(a);
+                  a.write(var3);
                   continue;
             }
 
-            if (a >= ' ' && (a < 128 || a >= 160) && (a < 8192 || a >= 8448)) {
-               a.write(a);
+            if (var3 >= ' ' && (var3 < 128 || var3 >= 160) && (var3 < 8192 || var3 >= 8448)) {
+               a.write(var3);
             } else {
                a.write("\\u");
-               String a = Integer.toHexString(a);
-               a.write("0000", 0, 4 - a.length());
-               a.write(a);
+               String var4 = Integer.toHexString(var3);
+               a.write("0000", 0, 4 - var4.length());
+               a.write(var4);
             }
          }
 
@@ -753,18 +753,18 @@ public class Class298 {
          } else {
             Iterator var2 = this.Method2969().Method1383();
 
-            Object a;
-            Object a;
+            Object var5;
+            Object var6;
             do {
                if (!var2.Method932()) {
                   return true;
                }
 
-               Map.Entry a = (Map.Entry)var2.Method933();
-               String a = (String)a.getKey();
-               a = a.getValue();
-               a = ((Class298)a).Method2949(a);
-            } while(a == a);
+               Map.Entry var3 = (Map.Entry)var2.Method933();
+               String var4 = (String)var3.getKey();
+               var5 = var3.getValue();
+               var6 = ((Class298)a).Method2949(var4);
+            } while(var5 == var6);
 
             return false;
          }
@@ -779,18 +779,18 @@ public class Class298 {
 
    protected static Number Method3021(String a) throws NumberFormatException {
       Class666.Method3438();
-      char a = a.charAt(0);
-      if ((a < '0' || a > '9') && a != '-') {
+      char var2 = a.charAt(0);
+      if ((var2 < '0' || var2 > '9') && var2 != '-') {
          throw new NumberFormatException("val [" + a + "] is not a valid number.");
       } else if (Method3020(a)) {
          try {
-            BigDecimal a = new BigDecimal(a);
-            return (Number)(a == '-' && BigDecimal.ZERO.compareTo(a) == 0 ? -0.0 : a);
+            BigDecimal var8 = new BigDecimal(a);
+            return (Number)(var2 == '-' && BigDecimal.ZERO.compareTo(var8) == 0 ? -0.0 : var8);
          } catch (NumberFormatException var6) {
             try {
-               Double a = Double.valueOf(a);
-               if (!a.isNaN() && !a.isInfinite()) {
-                  return a;
+               Double var9 = Double.valueOf(a);
+               if (!var9.isNaN() && !var9.isInfinite()) {
+                  return var9;
                } else {
                   throw new NumberFormatException("val [" + a + "] is not a valid number.");
                }
@@ -799,27 +799,27 @@ public class Class298 {
             }
          }
       } else {
-         char a;
-         if (a == '0' && a.length() > 1) {
-            a = a.charAt(1);
-            if (a >= '0' && a <= '9') {
+         char var3;
+         if (var2 == '0' && a.length() > 1) {
+            var3 = a.charAt(1);
+            if (var3 >= '0' && var3 <= '9') {
                throw new NumberFormatException("val [" + a + "] is not a valid number.");
             }
          }
 
-         if (a == '-' && a.length() > 2) {
-            a = a.charAt(1);
-            char a = a.charAt(2);
-            if (a == '0' && a >= '0' && a <= '9') {
+         if (var2 == '-' && a.length() > 2) {
+            var3 = a.charAt(1);
+            char var4 = a.charAt(2);
+            if (var3 == '0' && var4 >= '0' && var4 <= '9') {
                throw new NumberFormatException("val [" + a + "] is not a valid number.");
             }
          }
 
-         BigInteger a = new BigInteger(a);
-         if (a.bitLength() <= 31) {
-            return a.intValue();
+         BigInteger var7 = new BigInteger(a);
+         if (var7.bitLength() <= 31) {
+            return var7.intValue();
          } else {
-            return (Number)(a.bitLength() <= 63 ? a.longValue() : a);
+            return (Number)(var7.bitLength() <= 63 ? var7.longValue() : var7);
          }
       }
    }
@@ -834,8 +834,8 @@ public class Class298 {
       } else if ("null".equalsIgnoreCase(a)) {
          return Field1580;
       } else {
-         char a = a.charAt(0);
-         if (a >= '0' && a <= '9' || a == '-') {
+         char var1 = a.charAt(0);
+         if (var1 >= '0' && var1 <= '9' || var1 == '-') {
             try {
                return Method3021(a);
             } catch (Exception var3) {
@@ -861,13 +861,13 @@ public class Class298 {
       if (a.Method1269()) {
          return null;
       } else {
-         Class288 a = new Class288();
+         Class288 var2 = new Class288();
 
-         for(int a = 0; a < a.Method10(); ++a) {
-            a.Method3154(this.Method2974(a.Method3125(a)));
+         for(int var3 = 0; var3 < a.Method10(); ++var3) {
+            var2.Method3154(this.Method2974(a.Method3125(var3)));
          }
 
-         return a;
+         return var2;
       }
    }
 
@@ -880,9 +880,9 @@ public class Class298 {
    }
 
    public String Method3026(int a) throws Class666 {
-      StringWriter a = new StringWriter();
-      synchronized(a.getBuffer()) {
-         return this.Method3032(a, a, 0).Method3780();
+      StringWriter var2 = new StringWriter();
+      synchronized(var2.getBuffer()) {
+         return this.Method3032(var2, a, 0).Method3780();
       }
    }
 
@@ -906,21 +906,21 @@ public class Class298 {
       if (a.Method3429((Object)null)) {
          a.write("null");
       } else {
-         String a;
+         String var4;
          if (a instanceof Class289) {
             try {
-               a = ((Class289)a).Method3114();
+               var4 = ((Class289)a).Method3114();
             } catch (Exception var6) {
                throw new Class666(var6);
             }
 
-            a.write(a.Method3780());
+            a.write(var4.Method3780());
          } else if (a instanceof Number) {
-            a = Method2973((Number)a);
-            if (Field1578.matcher(a).matches()) {
-               a.write(a);
+            var4 = Method2973((Number)a);
+            if (Field1578.matcher(var4).matches()) {
+               a.write(var4);
             } else {
-               Method3017(a, a);
+               Method3017(var4, a);
             }
          } else if (a instanceof Boolean) {
             a.write(a.Method3780());
@@ -931,11 +931,11 @@ public class Class298 {
          } else if (a instanceof Class288) {
             ((Class288)a).Method3176(a, a, a);
          } else if (a instanceof Map) {
-            Map a = (Map)a;
-            (new Class298(a)).Method3032(a, a, a);
+            Map var7 = (Map)a;
+            (new Class298(var7)).Method3032(a, a, a);
          } else if (a instanceof Collection) {
-            Collection a = (Collection)a;
-            (new Class288(a)).Method3176(a, a, a);
+            Collection var8 = (Collection)a;
+            (new Class288(var8)).Method3176(a, a, a);
          } else if (a.getClass().isArray()) {
             (new Class288(a)).Method3176(a, a, a);
          } else {
@@ -947,52 +947,52 @@ public class Class298 {
    }
 
    static final void Method3031(Writer a, int a) throws IOException {
-      for(int a = 0; a < a; ++a) {
+      for(int var2 = 0; var2 < a; ++var2) {
          a.write(32);
       }
 
    }
 
    public Writer Method3032(Writer a, int a, int a) throws Class666 {
-      int[] a = Class666.Method3438();
+      int[] var4 = Class666.Method3438();
 
       try {
-         boolean a = false;
-         int a = this.Method2970();
+         boolean var5 = false;
+         int var6 = this.Method2970();
          a.write(123);
-         if (a == 1) {
-            Map.Entry a = (Map.Entry)this.Method2969().Method1383().Method933();
-            String a = (String)a.getKey();
-            a.write(Method3016(a));
+         if (var6 == 1) {
+            Map.Entry var7 = (Map.Entry)this.Method2969().Method1383().Method933();
+            String var8 = (String)var7.getKey();
+            a.write(Method3016(var8));
             a.write(58);
             a.write(32);
 
             try {
-               Method3030(a, a.getValue(), a, a);
+               Method3030(a, var7.getValue(), a, a);
             } catch (Exception var13) {
-               throw new Class666("Unable to write JSONObject value for key: " + a, var13);
+               throw new Class666("Unable to write JSONObject value for key: " + var8, var13);
             }
          }
 
-         int a = a + a;
+         int var15 = a + a;
          Iterator var16 = this.Method2969().Method1383();
          if (var16.Method932()) {
-            Map.Entry a = (Map.Entry)var16.Method933();
+            Map.Entry var9 = (Map.Entry)var16.Method933();
             a.write(44);
             a.write(10);
-            Method3031(a, a);
-            String a = (String)a.getKey();
-            a.write(Method3016(a));
+            Method3031(a, var15);
+            String var10 = (String)var9.getKey();
+            a.write(Method3016(var10));
             a.write(58);
             a.write(32);
 
             try {
-               Method3030(a, a.getValue(), a, a);
+               Method3030(a, var9.getValue(), a, var15);
             } catch (Exception var12) {
-               throw new Class666("Unable to write JSONObject value for key: " + a, var12);
+               throw new Class666("Unable to write JSONObject value for key: " + var10, var12);
             }
 
-            a = true;
+            var5 = true;
          }
 
          a.write(10);
@@ -1005,26 +1005,26 @@ public class Class298 {
    }
 
    public Map Method3033() {
-      Map a = new HashMap();
+      HashMap var1 = new HashMap();
 
-      Map.Entry a;
-      Object a;
-      for(Iterator var2 = this.Method2969().Method1383(); var2.Method932(); a.put(a.getKey(), a)) {
-         a = (Map.Entry)var2.Method933();
-         if (a.getValue() != null && !Field1580.Method3429(a.getValue())) {
-            if (a.getValue() instanceof Class298) {
-               a = ((Class298)a.getValue()).Method3033();
-            } else if (a.getValue() instanceof Class288) {
-               a = ((Class288)a.getValue()).Method3177();
+      Map.Entry var3;
+      Object var4;
+      for(Iterator var2 = this.Method2969().Method1383(); var2.Method932(); var1.put(var3.getKey(), var4)) {
+         var3 = (Map.Entry)var2.Method933();
+         if (var3.getValue() != null && !Field1580.Method3429(var3.getValue())) {
+            if (var3.getValue() instanceof Class298) {
+               var4 = ((Class298)var3.getValue()).Method3033();
+            } else if (var3.getValue() instanceof Class288) {
+               var4 = ((Class288)var3.getValue()).Method3177();
             } else {
-               a = a.getValue();
+               var4 = var3.getValue();
             }
          } else {
-            a = null;
+            var4 = null;
          }
       }
 
-      return a;
+      return var1;
    }
 
    private static Class666 Method3034(String a, String a, Throwable a) {

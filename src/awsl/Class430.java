@@ -812,7 +812,7 @@ public class Class430 implements Class422, Class45 {
       return Field2063[var2];
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public String[] Method1360() {

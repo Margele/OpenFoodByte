@@ -81,20 +81,20 @@ public class Class895 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      double a = (double)((float)a - this.Field3966);
-      double a = (double)((float)a - this.Field3967);
-      double a = Math.sqrt(a * a + a * a);
-      double a = Math.atan2(a, a) - (double)this.Field3960 - (double)this.Field3961;
-      a = (double)Class776.Method1716((float)(a / Math.PI * (double)this.Field3964 * 0.5));
+      double var4 = (double)((float)a - this.Field3966);
+      double var6 = (double)((float)a - this.Field3967);
+      double var8 = Math.sqrt(var4 * var4 + var6 * var6);
+      double var10 = Math.atan2(var6, var4) - (double)this.Field3960 - (double)this.Field3961;
+      var10 = (double)Class776.Method1716((float)(var10 / Math.PI * (double)this.Field3964 * 0.5));
       if (this.Field3965 != 0.0F) {
-         double a = Math.cos(a);
-         double a = (double)this.Field3965 / a;
-         a = a * (double)Class776.Method1716((float)(a / a));
+         double var12 = Math.cos(var10);
+         double var14 = (double)this.Field3965 / var12;
+         var8 = var14 * (double)Class776.Method1716((float)(var8 / var14));
       }
 
-      a += (double)this.Field3960;
-      a[0] = (float)((double)this.Field3966 + a * Math.cos(a));
-      a[1] = (float)((double)this.Field3967 + a * Math.sin(a));
+      var10 += (double)this.Field3960;
+      a[0] = (float)((double)this.Field3966 + var8 * Math.cos(var10));
+      a[1] = (float)((double)this.Field3967 + var8 * Math.sin(var10));
    }
 
    public String toString() {

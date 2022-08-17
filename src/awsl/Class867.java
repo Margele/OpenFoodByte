@@ -86,13 +86,13 @@ public class Class867 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      float a = (float)a - this.Field3789;
-      float a = (float)a - this.Field3790;
-      float a = (float)Math.atan2((double)(-a), (double)(-a)) + this.Field3785;
-      float a = (float)Math.sqrt((double)(a * a + a * a));
-      a = Class776.Method1714(a, 6.2831855F);
-      a[0] = this.Field3791 * a / (this.Field3786 + 1.0E-5F);
-      a[1] = this.Field3792 * (1.0F - (a - this.Field3783) / (this.Field3784 + 1.0E-5F));
+      float var4 = (float)a - this.Field3789;
+      float var5 = (float)a - this.Field3790;
+      float var6 = (float)Math.atan2((double)(-var5), (double)(-var4)) + this.Field3785;
+      float var7 = (float)Math.sqrt((double)(var4 * var4 + var5 * var5));
+      var6 = Class776.Method1714(var6, 6.2831855F);
+      a[0] = this.Field3791 * var6 / (this.Field3786 + 1.0E-5F);
+      a[1] = this.Field3792 * (1.0F - (var7 - this.Field3783) / (this.Field3784 + 1.0E-5F));
    }
 
    public String toString() {

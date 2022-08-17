@@ -11,11 +11,11 @@ public final class Class273 extends Class253 {
       a.Method2394("field", a);
    }
 
-   public Class148 Method2114(String a, boolean a1) {
+   public Class148 Method2114(String a, boolean a) {
       return new Class134(this.Field1475, "annotation", 1, (String)null, a);
    }
 
-   public Class148 Method2115(int a, Class31 a, String a, boolean a3) {
+   public Class148 Method2115(int a, Class31 a, String a, boolean a) {
       return new Class134(this.Field1475, "typeAnnotation", 1, (String)null, a, a, a);
    }
 

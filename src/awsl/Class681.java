@@ -52,42 +52,42 @@ public enum Class681 {
    }
 
    public static int Method2696(int a, int a, int a, int a) {
-      int a = 0;
-      a |= a << 24;
-      a |= a << 16;
-      a |= a << 8;
-      a |= a;
-      return a;
+      int var4 = 0;
+      var4 |= a << 24;
+      var4 |= a << 16;
+      var4 |= a << 8;
+      var4 |= a;
+      return var4;
    }
 
    public static Color Method2697(int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      int a = a >> 24 & 255;
-      return new Color(a, a, a, a);
+      int var1 = a >> 16 & 255;
+      int var2 = a >> 8 & 255;
+      int var3 = a & 255;
+      int var4 = a >> 24 & 255;
+      return new Color(var1, var2, var3, var4);
    }
 
    public static Color Method2698(int a, int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      return new Color(a, a, a, a);
+      int var2 = a >> 16 & 255;
+      int var3 = a >> 8 & 255;
+      int var4 = a & 255;
+      return new Color(var2, var3, var4, a);
    }
 
    public static int Method2699(int a, int a) {
-      float a = (float)(a >> 24 & 255);
-      float a = Math.max((float)(a >> 16 & 255) - (float)(a >> 16 & 255) / (100.0F / (float)a), 0.0F);
-      float a = Math.max((float)(a >> 8 & 255) - (float)(a >> 8 & 255) / (100.0F / (float)a), 0.0F);
-      float a = Math.max((float)(a & 255) - (float)(a & 255) / (100.0F / (float)a), 0.0F);
-      return (int)((float)(((int)a << 24) + ((int)a << 16) + ((int)a << 8)) + a);
+      float var2 = (float)(a >> 24 & 255);
+      float var3 = Math.max((float)(a >> 16 & 255) - (float)(a >> 16 & 255) / (100.0F / (float)a), 0.0F);
+      float var4 = Math.max((float)(a >> 8 & 255) - (float)(a >> 8 & 255) / (100.0F / (float)a), 0.0F);
+      float var5 = Math.max((float)(a & 255) - (float)(a & 255) / (100.0F / (float)a), 0.0F);
+      return (int)((float)(((int)var2 << 24) + ((int)var3 << 16) + ((int)var4 << 8)) + var5);
    }
 
    public static int Method900(int a, float a) {
-      Color a = new Color(a);
-      float a = 0.003921569F * (float)a.getRed();
-      float a = 0.003921569F * (float)a.getGreen();
-      float a = 0.003921569F * (float)a.getBlue();
-      return (new Color(a, a, a, a)).getRGB();
+      Color var2 = new Color(a);
+      float var3 = 0.003921569F * (float)var2.getRed();
+      float var4 = 0.003921569F * (float)var2.getGreen();
+      float var5 = 0.003921569F * (float)var2.getBlue();
+      return (new Color(var3, var4, var5, a)).getRGB();
    }
 }

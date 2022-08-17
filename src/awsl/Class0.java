@@ -21,182 +21,182 @@ public class Class0 extends Class267 {
       super(a, a);
       this.Field1 = new int[40];
       this.Field2 = new Object[20];
-      b[] a = b.Method3211(a);
+      b[] var5 = b.Method3211(a);
       this.Field4 = (8 & a) == 0 ? 1 : 0;
 
-      for(int a = 0; a < a.length; ++a) {
-         this.Field4 += a[a].Method3233();
+      for(int var6 = 0; var6 < var5.length; ++var6) {
+         this.Field4 += var5[var6].Method3233();
       }
 
       this.Field3 = this.Field4;
    }
 
    public void Method1840(int a, int a) {
-      b a;
+      b var3;
       switch (a) {
          case 21:
          case 54:
-            a = b.Field577;
+            var3 = b.Field577;
             break;
          case 22:
          case 55:
-            a = b.Field579;
+            var3 = b.Field579;
             break;
          case 23:
          case 56:
-            a = b.Field578;
+            var3 = b.Field578;
             break;
          case 24:
          case 57:
-            a = b.Field580;
+            var3 = b.Field580;
             break;
          default:
-            a = Field0;
+            var3 = Field0;
       }
 
-      this.Field1460.Method1840(a, this.Method1850(a, a));
+      this.Field1460.Method1840(a, this.Method1850(a, var3));
    }
 
    public void Method1841(int a, int a) {
       this.Field1460.Method1841(this.Method1850(a, b.Field577), a);
    }
 
-   public void Method1842(int a, int a1) {
+   public void Method1842(int a, int a) {
       this.Field1460.Method1842(a, this.Field4);
    }
 
    public void Method1843(String a, String a, String a, Class264 a, Class264 a, int a) {
-      int a = this.Method1850(a, b.Method3204(a));
-      this.Field1460.Method1843(a, a, a, a, a, a);
+      int var7 = this.Method1850(a, b.Method3204(a));
+      this.Field1460.Method1843(a, a, a, a, a, var7);
    }
 
    public Class148 Method1844(int a, Class31 a, Class264[] a, Class264[] a, int[] a, String a, boolean a) {
-      b a = b.Method3204(a);
-      int[] a = new int[a.length];
+      b var8 = b.Method3204(a);
+      int[] var9 = new int[a.length];
 
-      for(int a = 0; a < a.length; ++a) {
-         a[a] = this.Method1850(a[a], a);
+      for(int var10 = 0; var10 < var9.length; ++var10) {
+         var9[var10] = this.Method1850(a[var10], var8);
       }
 
-      return this.Field1460.Method1844(a, a, a, a, a, a, a);
+      return this.Field1460.Method1844(a, a, a, a, var9, a, a);
    }
 
    public void Method1845(int a, int a, Object[] a, int a, Object[] a) {
-      int a = Class37.Method3383();
+      boolean var6 = Class37.Method3383();
       if (a != -1) {
          throw new IllegalStateException("ClassReader.accept() should be called with EXPAND_FRAMES flag");
       } else if (!this.Field5) {
          this.Field1460.Method1845(a, a, a, a, a);
       } else {
-         Object[] a = new Object[this.Field2.length];
-         System.arraycopy(this.Field2, 0, a, 0, a.length);
+         Object[] var7 = new Object[this.Field2.length];
+         System.arraycopy(this.Field2, 0, var7, 0, var7.length);
          this.Method1847(this.Field2);
-         int a = 0;
-         int a = 0;
-         if (a < a) {
-            Object a = a[a];
-            int a = a != Class45.Field400 && a != Class45.Field399 ? 1 : 2;
-            if (a != Class45.Field396) {
-               b a = Field0;
-               if (a == Class45.Field397) {
-                  a = b.Field577;
+         int var8 = 0;
+         int var9 = 0;
+         if (var9 < a) {
+            Object var10 = a[var9];
+            int var11 = var10 != Class45.Field400 && var10 != Class45.Field399 ? 1 : 2;
+            if (var10 != Class45.Field396) {
+               b var12 = Field0;
+               if (var10 == Class45.Field397) {
+                  var12 = b.Field577;
                }
 
-               if (a == Class45.Field398) {
-                  a = b.Field578;
+               if (var10 == Class45.Field398) {
+                  var12 = b.Field578;
                }
 
-               if (a == Class45.Field400) {
-                  a = b.Field579;
+               if (var10 == Class45.Field400) {
+                  var12 = b.Field579;
                }
 
-               if (a == Class45.Field399) {
-                  a = b.Field580;
+               if (var10 == Class45.Field399) {
+                  var12 = b.Field580;
                }
 
-               if (a instanceof String) {
-                  a = b.Method3205((String)a);
+               if (var10 instanceof String) {
+                  var12 = b.Method3205((String)var10);
                }
 
-               this.Method1849(this.Method1850(a, a), a);
+               this.Method1849(this.Method1850(var8, var12), var10);
             }
 
-            int var10000 = a + a;
-            ++a;
+            int var10000 = var8 + var11;
+            ++var9;
          }
 
-         a = 0;
-         a = 0;
-         int a = 0;
-         if (a < this.Field2.length) {
+         var8 = 0;
+         var9 = 0;
+         int var13 = 0;
+         if (var8 < this.Field2.length) {
             label71: {
-               Object a = this.Field2[a++];
-               if (a != Class45.Field396) {
-                  this.Field2[a] = a;
-                  a = a + 1;
-                  if (a != Class45.Field400 && a != Class45.Field399) {
+               Object var14 = this.Field2[var8++];
+               if (var14 != Class45.Field396) {
+                  this.Field2[var13] = var14;
+                  var9 = var13 + 1;
+                  if (var14 != Class45.Field400 && var14 != Class45.Field399) {
                      break label71;
                   }
 
-                  ++a;
+                  ++var8;
                }
 
-               this.Field2[a] = Class45.Field396;
+               this.Field2[var13] = Class45.Field396;
             }
 
-            ++a;
+            ++var13;
          }
 
-         this.Field1460.Method1845(a, a, this.Field2, a, a);
-         this.Field2 = a;
+         this.Field1460.Method1845(a, var9, this.Field2, a, a);
+         this.Field2 = var7;
       }
    }
 
    public int Method1846(b a) {
-      Object a;
+      Object var2;
       switch (a.Method3217()) {
          case 1:
          case 2:
          case 3:
          case 4:
          case 5:
-            a = Class45.Field397;
+            var2 = Class45.Field397;
             break;
          case 6:
-            a = Class45.Field398;
+            var2 = Class45.Field398;
             break;
          case 7:
-            a = Class45.Field400;
+            var2 = Class45.Field400;
             break;
          case 8:
-            a = Class45.Field399;
+            var2 = Class45.Field399;
             break;
          case 9:
-            a = a.Method3225();
+            var2 = a.Method3225();
             break;
          default:
-            a = a.Method3221();
+            var2 = a.Method3221();
       }
 
-      int a = this.Method1851(a);
-      this.Method1848(a, a);
-      this.Method1849(a, a);
+      int var3 = this.Method1851(a);
+      this.Method1848(var3, a);
+      this.Method1849(var3, var2);
       this.Field5 = true;
-      return a;
+      return var3;
    }
 
    protected void Method1847(Object[] a) {
    }
 
-   protected void Method1848(int a, b a1) {
+   protected void Method1848(int a, b a) {
    }
 
    private void Method1849(int a, Object a) {
-      int a = this.Field2.length;
-      if (a >= a) {
-         Object[] a = new Object[Math.max(2 * a, a + 1)];
-         System.arraycopy(this.Field2, 0, a, 0, a);
-         this.Field2 = a;
+      int var3 = this.Field2.length;
+      if (a >= var3) {
+         Object[] var4 = new Object[Math.max(2 * var3, a + 1)];
+         System.arraycopy(this.Field2, 0, var4, 0, var3);
+         this.Field2 = var4;
       }
 
       this.Field2[a] = a;
@@ -206,30 +206,30 @@ public class Class0 extends Class267 {
       if (a + a.Method3233() <= this.Field3) {
          return a;
       } else {
-         int a = 2 * a + a.Method3233() - 1;
-         int a = this.Field1.length;
-         if (a >= a) {
-            int[] a = new int[Math.max(2 * a, a + 1)];
-            System.arraycopy(this.Field1, 0, a, 0, a);
-            this.Field1 = a;
+         int var3 = 2 * a + a.Method3233() - 1;
+         int var4 = this.Field1.length;
+         if (var3 >= var4) {
+            int[] var5 = new int[Math.max(2 * var4, var3 + 1)];
+            System.arraycopy(this.Field1, 0, var5, 0, var4);
+            this.Field1 = var5;
          }
 
-         int a = this.Field1[a];
-         a = this.Method1851(a);
-         this.Method1848(a, a);
-         this.Field1[a] = a + 1;
-         if (a != a) {
+         int var6 = this.Field1[var3];
+         var6 = this.Method1851(a);
+         this.Method1848(var6, a);
+         this.Field1[var3] = var6 + 1;
+         if (var6 != a) {
             this.Field5 = true;
          }
 
-         return a;
+         return var6;
       }
    }
 
    protected int Method1851(b a) {
-      int a = this.Field4;
+      int var2 = this.Field4;
       this.Field4 += a.Method3233();
-      return a;
+      return var2;
    }
 
    private static IllegalStateException Method1852(IllegalStateException illegalStateException) {

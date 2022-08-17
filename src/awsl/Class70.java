@@ -82,36 +82,36 @@ public class Class70 extends Class193 {
    }
 
    private int Method1612(int a) {
-      int a = 1;
+      int var3 = 1;
       Class193.Method1269();
-      int a = 0;
-      if (a < a) {
-         a *= 2;
-         ++a;
+      int var4 = 0;
+      if (var3 < a) {
+         var3 *= 2;
+         ++var4;
       }
 
-      return a;
+      return var4;
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = Class193.Method1270();
+      boolean var3 = Class193.Method1270();
       a = this.Method1263(a, (ColorModel)null);
-      float a = (float)a.getWidth() * this.Field680;
-      float a = (float)a.getHeight() * this.Field681;
-      float a = (float)Math.sqrt((double)(a * a + a * a));
-      float a = (float)((double)this.Field682 * Math.cos((double)this.Field683));
-      float a = (float)((double)this.Field682 * -Math.sin((double)this.Field683));
-      float a = this.Field685;
-      float a = this.Field684;
-      float a = this.Field682 + Math.abs(this.Field684 * a) + this.Field685 * a;
-      int a = this.Method1612((int)a);
-      float var10000 = a / a;
-      var10000 = a / a;
-      var10000 = a / a;
-      var10000 = a / a;
-      Graphics2D a = a.createGraphics();
-      a.drawRenderedImage(a, (AffineTransform)null);
-      a.dispose();
+      float var5 = (float)a.getWidth() * this.Field680;
+      float var6 = (float)a.getHeight() * this.Field681;
+      float var7 = (float)Math.sqrt((double)(var5 * var5 + var6 * var6));
+      float var8 = (float)((double)this.Field682 * Math.cos((double)this.Field683));
+      float var9 = (float)((double)this.Field682 * -Math.sin((double)this.Field683));
+      float var10 = this.Field685;
+      float var11 = this.Field684;
+      float var12 = this.Field682 + Math.abs(this.Field684 * var7) + this.Field685 * var7;
+      int var13 = this.Method1612((int)var12);
+      float var10000 = var8 / var12;
+      var10000 = var9 / var12;
+      var10000 = var10 / var12;
+      var10000 = var11 / var12;
+      Graphics2D var14 = a.createGraphics();
+      var14.drawRenderedImage(a, (AffineTransform)null);
+      var14.dispose();
       return a;
    }
 

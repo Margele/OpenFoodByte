@@ -22,9 +22,9 @@ public class Class244 extends Class253 {
 
    public Class148 Method2115(int a, Class31 a, String a, boolean a) {
       this.Method2288();
-      int a = a >>> 24;
-      if (a != 19) {
-         throw new IllegalArgumentException("Invalid type reference sort 0x" + Integer.toHexString(a));
+      int var5 = a >>> 24;
+      if (var5 != 19) {
+         throw new IllegalArgumentException("Invalid type reference sort 0x" + Integer.toHexString(var5));
       } else {
          Class225.Method2200(a, a);
          Class39.Method3395(a, false);

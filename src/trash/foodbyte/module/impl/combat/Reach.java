@@ -37,15 +37,15 @@ public class Reach extends Module {
    }
 
    public float Method276() {
-      float a = this.Field2487.getFloatValue();
-      float a = this.Field2486.getFloatValue();
-      return (float)((double)a + this.Field2490.nextDouble() * (double)(a - a));
+      float var1 = this.Field2487.getFloatValue();
+      float var2 = this.Field2486.getFloatValue();
+      return (float)((double)var2 + this.Field2490.nextDouble() * (double)(var1 - var2));
    }
 
    public float Method798() {
-      float a = this.Method276();
-      float a = this.Field2488.getFloatValue();
-      return Math.max(a, a);
+      float var1 = this.Method276();
+      float var2 = this.Field2488.getFloatValue();
+      return Math.max(var1, var2);
    }
 
    @EventTarget
@@ -56,11 +56,11 @@ public class Reach extends Module {
    @EventTarget
    private void Method747(EventEntityTick a) {
       if (a.getEntity().equals(mc.thePlayer) && this.Field2489.getBooleanValue()) {
-         double a = 3.4;
-         Object[] a = this.Method926(a, 0.0, 0.0F);
+         double var2 = 3.4;
+         Object[] var4 = this.Method926(var2, 0.0, 0.0F);
          if (mc.gameSettings.keyBindAttack.isKeyDown() && this.Field2491.isDelayComplete(100.0) && mc.objectMouseOver.typeOfHit == MovingObjectType.BLOCK) {
-            mc.objectMouseOver = new MovingObjectPosition((Entity)a[0], (Vec3)a[1]);
-            mc.pointedEntity = (Entity)a[0];
+            mc.objectMouseOver = new MovingObjectPosition((Entity)var4[0], (Vec3)var4[1]);
+            mc.pointedEntity = (Entity)var4[0];
             mc.thePlayer.swingItem();
             mc.playerController.attackEntity(mc.thePlayer, mc.objectMouseOver.entityHit);
             this.Field2491.reset();
@@ -69,64 +69,64 @@ public class Reach extends Module {
 
    }
 
-   public Object[] Method926(double a, double a, float a2) {
-      Entity a = mc.getRenderViewEntity();
+   public Object[] Method926(double a, double a, float a) {
+      Entity var7 = mc.getRenderViewEntity();
       b.trash();
-      Entity a = null;
+      Entity var8 = null;
       if (mc.theWorld == null) {
          return null;
       } else {
          mc.mcProfiler.startSection("pick");
-         Vec3 a = a.getPositionEyes(0.0F);
-         Vec3 a = a.getLook(0.0F);
-         Vec3 a = a.addVector(a.xCoord * a, a.yCoord * a, a.zCoord * a);
-         Vec3 a = null;
-         float a = 1.0F;
-         List a = mc.theWorld.getEntitiesWithinAABBExcludingEntity(a, a.getEntityBoundingBox().addCoord(a.xCoord * a, a.yCoord * a, a.zCoord * a).expand(1.0, 1.0, 1.0));
-         double a = a;
-         int a = 0;
-         if (a < a.Method1799()) {
-            Entity a = (Entity)a.get(a);
-            if (a.canBeCollidedWith()) {
+         Vec3 var9 = var7.getPositionEyes(0.0F);
+         Vec3 var10 = var7.getLook(0.0F);
+         Vec3 var11 = var9.addVector(var10.xCoord * a, var10.yCoord * a, var10.zCoord * a);
+         Vec3 var12 = null;
+         float var13 = 1.0F;
+         List var14 = mc.theWorld.getEntitiesWithinAABBExcludingEntity(var7, var7.getEntityBoundingBox().addCoord(var10.xCoord * a, var10.yCoord * a, var10.zCoord * a).expand(1.0, 1.0, 1.0));
+         double var15 = a;
+         int var17 = 0;
+         if (var17 < var14.Method1799()) {
+            Entity var18 = (Entity)var14.get(var17);
+            if (var18.canBeCollidedWith()) {
                label58: {
-                  HitBox a = (HitBox)ModuleManager.getModule(HitBox.class);
-                  float a = a.Method1187(a) ? a.Field2607.getFloatValue() : a.getCollisionBorderSize();
-                  AxisAlignedBB a = a.getEntityBoundingBox().expand((double)a, (double)a, (double)a);
-                  a = a.expand(a, a, a);
-                  MovingObjectPosition a = a.calculateIntercept(a, a);
-                  if (a.isVecInside(a)) {
+                  HitBox var19 = (HitBox)ModuleManager.getModule(HitBox.class);
+                  float var20 = var19.Method1187(var18) ? var19.Field2607.getFloatValue() : var18.getCollisionBorderSize();
+                  AxisAlignedBB var21 = var18.getEntityBoundingBox().expand((double)var20, (double)var20, (double)var20);
+                  var21 = var21.expand(a, a, a);
+                  MovingObjectPosition var22 = var21.calculateIntercept(var9, var11);
+                  if (var21.isVecInside(var9)) {
                      if (!(0.0 < a) && a != 0.0) {
                         break label58;
                      }
 
-                     a = a;
-                     a = 0.0;
+                     var8 = var18;
+                     var15 = 0.0;
                   }
 
-                  double a = a.distanceTo(a.hitVec);
-                  if (a < a || a == 0.0) {
+                  double var23 = var9.distanceTo(var22.hitVec);
+                  if (var23 < var15 || var15 == 0.0) {
                      label62: {
-                        if (a == a.ridingEntity) {
-                           if (a != 0.0) {
+                        if (var18 == var7.ridingEntity) {
+                           if (var15 != 0.0) {
                               break label62;
                            }
 
-                           a = a.hitVec;
+                           var12 = var22.hitVec;
                         }
 
-                        a = a;
-                        a = a.hitVec;
-                        a = a;
+                        var8 = var18;
+                        var12 = var22.hitVec;
+                        var15 = var23;
                      }
                   }
                }
             }
 
-            ++a;
+            ++var17;
          }
 
-         if (a < a && !(a instanceof EntityLivingBase) && !(a instanceof EntityItemFrame)) {
-            a = null;
+         if (var15 < a && !(var8 instanceof EntityLivingBase) && !(var8 instanceof EntityItemFrame)) {
+            var8 = null;
          }
 
          mc.mcProfiler.endSection();

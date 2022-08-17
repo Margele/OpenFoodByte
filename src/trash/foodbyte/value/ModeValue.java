@@ -20,17 +20,17 @@ public class ModeValue extends Class447 {
       this.Field2119 = a;
    }
 
-   public ModeValue(String a, String a, String a, boolean a3, String[] a) {
+   public ModeValue(String a, String a, String a, boolean a, String[] a) {
       this.Field2091 = new Class333(1.0F, 0.05F);
       this.Field2117 = a;
       this.Field2118 = a;
       this.Field2120 = a;
-      ArrayList a = new ArrayList(Arrays.asList(a));
-      if (!a.contains(a)) {
-         a.Method2530(a);
+      ArrayList var6 = new ArrayList(Arrays.asList(a));
+      if (!var6.contains(a)) {
+         var6.Method2530(a);
       }
 
-      this.Field2092 = (String[])a.toArray(new String[0]);
+      this.Field2092 = (String[])var6.toArray(new String[0]);
       Class446.Method2762(this);
    }
 
@@ -43,12 +43,12 @@ public class ModeValue extends Class447 {
 
    public void Method2721(String a) {
       BooleanValue.Method2512();
-      ArrayList a = new ArrayList(Arrays.asList(this.Field2092));
-      if (!a.contains(a)) {
-         a.Method2530(a);
+      ArrayList var3 = new ArrayList(Arrays.asList(this.Field2092));
+      if (!var3.contains(a)) {
+         var3.Method2530(a);
       }
 
-      this.Field2092 = (String[])a.toArray(new String[0]);
+      this.Field2092 = (String[])var3.toArray(new String[0]);
       if (a.trash() == null) {
          BooleanValue.Method2511(new int[3]);
       }
@@ -57,9 +57,9 @@ public class ModeValue extends Class447 {
 
    public void Method2722(String a) {
       BooleanValue.Method2512();
-      ArrayList a = new ArrayList(Arrays.asList(this.Field2092));
-      a.removeIf(ModeValue::Method2729);
-      this.Field2092 = (String[])a.toArray(new String[0]);
+      ArrayList var3 = new ArrayList(Arrays.asList(this.Field2092));
+      var3.removeIf(ModeValue::Method2729);
+      this.Field2092 = (String[])var3.toArray(new String[0]);
       a.trash(new String[5]);
    }
 

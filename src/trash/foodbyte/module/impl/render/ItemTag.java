@@ -44,7 +44,7 @@ public class ItemTag extends Module {
 
    @EventTarget
    public void Method802(EventRender3D a) {
-      String a = Class492.Method2239();
+      String var2 = Class492.Method2239();
       if (this.Field2237.getBooleanValue()) {
          GL11.glEnable(32823);
          GL11.glPolygonOffset(1.0F, -1000000.0F);
@@ -52,18 +52,18 @@ public class ItemTag extends Module {
 
       Iterator var3 = mc.theWorld.loadedEntityList.Method1383();
       if (var3.Method932()) {
-         Object a = var3.Method933();
-         Entity a = (Entity)a;
-         if (a instanceof EntityItem) {
-            EntityItem a = (EntityItem)a;
-            double a = (double)ReflectionUtils.getRenderPartialTicks();
-            double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-            double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-            double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-            String a = this.Method2286(a.getEntityItem());
-            String a = this.Field2235.getBooleanValue() ? " §rx" + a.getEntityItem().stackSize : "";
-            if (this.Method237(a.getEntityItem())) {
-               this.Method2287(a, a + a, a, a, a, this.Field2238.getFloatValue().intValue());
+         Object var4 = var3.Method933();
+         Entity var5 = (Entity)var4;
+         if (var5 instanceof EntityItem) {
+            EntityItem var6 = (EntityItem)var5;
+            double var7 = (double)ReflectionUtils.getRenderPartialTicks();
+            double var9 = var6.lastTickPosX + (var6.posX - var6.lastTickPosX) * var7 - ReflectionUtils.getRenderPosX();
+            double var11 = var6.lastTickPosY + (var6.posY - var6.lastTickPosY) * var7 - ReflectionUtils.getRenderPosY();
+            double var13 = var6.lastTickPosZ + (var6.posZ - var6.lastTickPosZ) * var7 - ReflectionUtils.getRenderPosZ();
+            String var15 = this.Method2286(var6.getEntityItem());
+            String var16 = this.Field2235.getBooleanValue() ? " §rx" + var6.getEntityItem().stackSize : "";
+            if (this.Method237(var6.getEntityItem())) {
+               this.Method2287(var6, var15 + var16, var9, var11, var13, this.Field2238.getFloatValue().intValue());
             }
          }
       }
@@ -77,9 +77,9 @@ public class ItemTag extends Module {
 
    private boolean Method237(ItemStack a) {
       if (this.Field2236.getBooleanValue()) {
-         Item a = a.getItem();
-         int a = Item.getIdFromItem(a);
-         if (!a.hasDisplayName() && a != Item.getIdFromItem(Items.golden_apple) && (a != Item.getIdFromItem(Items.skull) || a.getItemDamage() != 3) && a != Item.getIdFromItem(Items.enchanted_book) && a != Item.getIdFromItem(Items.diamond_sword) && a != Item.getIdFromItem(Items.diamond_helmet) && a != Item.getIdFromItem(Items.diamond_chestplate) && a != Item.getIdFromItem(Items.diamond_leggings) && a != Item.getIdFromItem(Items.diamond_boots) && a != Item.getIdFromItem(Items.tnt_minecart) && a != Item.getIdFromItem(Items.saddle) && a != Item.getIdFromItem(Items.ender_pearl) && a != Item.getIdFromItem(Items.ender_eye) && a != Item.getIdFromItem(Items.fire_charge) && a != Item.getIdFromItem(Items.slime_ball) && a != Item.getIdFromItem(Items.potionitem) && a != Item.getIdFromItem(Items.magma_cream) && a != Item.getIdFromItem(Items.golden_carrot) && a != Item.getIdFromItem(Items.diamond) && a != Item.getIdFromItem(Items.blaze_rod) && a != Item.getIdFromItem(Items.gold_ingot) && a != Item.getIdFromItem(Items.iron_ingot) && a != Item.getIdFromItem(Items.clock) && a != 338 && a != 145 && a != 84 && a != 111) {
+         Item var2 = a.getItem();
+         int var3 = Item.getIdFromItem(var2);
+         if (!a.hasDisplayName() && var3 != Item.getIdFromItem(Items.golden_apple) && (var3 != Item.getIdFromItem(Items.skull) || a.getItemDamage() != 3) && var3 != Item.getIdFromItem(Items.enchanted_book) && var3 != Item.getIdFromItem(Items.diamond_sword) && var3 != Item.getIdFromItem(Items.diamond_helmet) && var3 != Item.getIdFromItem(Items.diamond_chestplate) && var3 != Item.getIdFromItem(Items.diamond_leggings) && var3 != Item.getIdFromItem(Items.diamond_boots) && var3 != Item.getIdFromItem(Items.tnt_minecart) && var3 != Item.getIdFromItem(Items.saddle) && var3 != Item.getIdFromItem(Items.ender_pearl) && var3 != Item.getIdFromItem(Items.ender_eye) && var3 != Item.getIdFromItem(Items.fire_charge) && var3 != Item.getIdFromItem(Items.slime_ball) && var3 != Item.getIdFromItem(Items.potionitem) && var3 != Item.getIdFromItem(Items.magma_cream) && var3 != Item.getIdFromItem(Items.golden_carrot) && var3 != Item.getIdFromItem(Items.diamond) && var3 != Item.getIdFromItem(Items.blaze_rod) && var3 != Item.getIdFromItem(Items.gold_ingot) && var3 != Item.getIdFromItem(Items.iron_ingot) && var3 != Item.getIdFromItem(Items.clock) && var3 != 338 && var3 != 145 && var3 != 84 && var3 != 111) {
             return false;
          }
       }
@@ -89,85 +89,85 @@ public class ItemTag extends Module {
 
    private String Method2286(ItemStack a) {
       Class492.Method2239();
-      Item a = a.getItem();
-      int a = Item.getIdFromItem(a);
-      String a = "";
-      if (a == Item.getIdFromItem(Items.golden_apple) && a.getRarity() == EnumRarity.EPIC) {
+      Item var3 = a.getItem();
+      int var4 = Item.getIdFromItem(var3);
+      String var5 = "";
+      if (var4 == Item.getIdFromItem(Items.golden_apple) && a.getRarity() == EnumRarity.EPIC) {
          return "§6§lNotch";
       } else {
-         if (a == Item.getIdFromItem(Items.diamond) || a == Item.getIdFromItem(Items.diamond_sword) || a == Item.getIdFromItem(Items.diamond_helmet) || a == Item.getIdFromItem(Items.diamond_chestplate) || a == Item.getIdFromItem(Items.diamond_leggings) || a == Item.getIdFromItem(Items.diamond_boots)) {
-            a = "§b";
+         if (var4 == Item.getIdFromItem(Items.diamond) || var4 == Item.getIdFromItem(Items.diamond_sword) || var4 == Item.getIdFromItem(Items.diamond_helmet) || var4 == Item.getIdFromItem(Items.diamond_chestplate) || var4 == Item.getIdFromItem(Items.diamond_leggings) || var4 == Item.getIdFromItem(Items.diamond_boots)) {
+            var5 = "§b";
          }
 
-         if (a == Item.getIdFromItem(Items.blaze_rod)) {
-            a = "§6";
+         if (var4 == Item.getIdFromItem(Items.blaze_rod)) {
+            var5 = "§6";
          }
 
-         if (a == Item.getIdFromItem(Items.potionitem)) {
-            a = "§7";
+         if (var4 == Item.getIdFromItem(Items.potionitem)) {
+            var5 = "§7";
          }
 
-         int a;
-         int a;
+         int var7;
+         int var8;
          if (a.getItem() instanceof ItemEnchantedBook) {
-            NBTTagList a = Items.enchanted_book.getEnchantments(a);
-            a = 0;
-            if (a < a.tagCount()) {
-               a = a.getCompoundTagAt(a).getShort("id");
-               int a = a.getCompoundTagAt(a).getShort("lvl");
-               if (a == Enchantment.sharpness.effectId && a >= 1 || a == Enchantment.fireAspect.effectId || a == Enchantment.efficiency.effectId && a >= 3 || a == Enchantment.fortune.effectId || a == Enchantment.featherFalling.effectId && a >= 3 || a == Enchantment.protection.effectId || a == Enchantment.punch.effectId || a == Enchantment.flame.effectId || a == Enchantment.infinity.effectId || a == Enchantment.depthStrider.effectId) {
-                  a = "§9";
+            NBTTagList var6 = Items.enchanted_book.getEnchantments(a);
+            var7 = 0;
+            if (var7 < var6.tagCount()) {
+               var8 = var6.getCompoundTagAt(var7).getShort("id");
+               short var9 = var6.getCompoundTagAt(var7).getShort("lvl");
+               if (var8 == Enchantment.sharpness.effectId && var9 >= 1 || var8 == Enchantment.fireAspect.effectId || var8 == Enchantment.efficiency.effectId && var9 >= 3 || var8 == Enchantment.fortune.effectId || var8 == Enchantment.featherFalling.effectId && var9 >= 3 || var8 == Enchantment.protection.effectId || var8 == Enchantment.punch.effectId || var8 == Enchantment.flame.effectId || var8 == Enchantment.infinity.effectId || var8 == Enchantment.depthStrider.effectId) {
+                  var5 = "§9";
                }
 
-               ++a;
+               ++var7;
             }
          }
 
-         if (a == Item.getIdFromItem(Items.diamond_sword)) {
-            int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a);
-            a = EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a);
-            a = EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a);
-            if (a == 1) {
-               a = "§7";
+         if (var4 == Item.getIdFromItem(Items.diamond_sword)) {
+            int var10 = EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a);
+            var7 = EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a);
+            var8 = EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a);
+            if (var10 == 1) {
+               var5 = "§7";
             }
 
-            if (a == 2) {
-               a = "§8";
+            if (var10 == 2) {
+               var5 = "§8";
             }
 
-            if (a == 3) {
-               a = "§e";
+            if (var10 == 3) {
+               var5 = "§e";
             }
 
-            if (a >= 4) {
-               a = "§c";
+            if (var10 >= 4) {
+               var5 = "§c";
             }
 
-            if (a >= 1) {
-               a = "§4";
+            if (var7 >= 1) {
+               var5 = "§4";
             }
 
-            if (a >= 1 && a >= 3) {
-               a = "§4§n";
+            if (var7 >= 1 && var10 >= 3) {
+               var5 = "§4§n";
             }
          }
 
-         if (a == Item.getIdFromItem(Items.ender_pearl) || a == Item.getIdFromItem(Items.ender_eye) || a == Item.getIdFromItem(Items.magma_cream)) {
-            a = "§c§l";
+         if (var4 == Item.getIdFromItem(Items.ender_pearl) || var4 == Item.getIdFromItem(Items.ender_eye) || var4 == Item.getIdFromItem(Items.magma_cream)) {
+            var5 = "§c§l";
          }
 
-         String a = Pattern.compile("(?i)§[0-9A-FK-OR]").matcher(a.getDisplayName()).replaceAll("");
-         return a + a.getDisplayName();
+         String var11 = Pattern.compile("(?i)§[0-9A-FK-OR]").matcher(a.getDisplayName()).replaceAll("");
+         return var5 + a.getDisplayName();
       }
    }
 
    protected void Method2287(EntityItem a, String a, double a, double a, double a, int a) {
       Class492.Method2239();
-      double a = a.getDistanceSqToEntity(mc.getRenderManager().livingPlayer);
-      if (a <= (double)(a * a)) {
-         FontRenderer a = mc.fontRendererObj;
-         float a = 1.6F;
-         float a = 0.016666668F * a;
+      double var11 = a.getDistanceSqToEntity(mc.getRenderManager().livingPlayer);
+      if (var11 <= (double)(a * a)) {
+         FontRenderer var13 = mc.fontRendererObj;
+         float var14 = 1.6F;
+         float var15 = 0.016666668F * var14;
          GlStateManager.pushMatrix();
          GlStateManager.translate((float)a + 0.0F, (float)a + a.height + 0.5F, (float)a);
          GL11.glNormal3f(0.0F, 1.0F, 0.0F);
@@ -178,27 +178,27 @@ public class ItemTag extends Module {
 
          GL11.glRotatef(-mc.getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(mc.gameSettings.thirdPersonView == 2 ? -mc.getRenderManager().playerViewX : mc.getRenderManager().playerViewX, 1.0F, 0.0F, 0.0F);
-         GlStateManager.scale(-a, -a, a);
+         GlStateManager.scale(-var15, -var15, var15);
          GlStateManager.depthMask(false);
          GlStateManager.disableDepth();
          GlStateManager.enableBlend();
          GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
-         Tessellator a = Tessellator.getInstance();
-         WorldRenderer a = a.getWorldRenderer();
-         int a = -2;
-         int a = a.getStringWidth(a) / 2;
+         Tessellator var16 = Tessellator.getInstance();
+         WorldRenderer var17 = var16.getWorldRenderer();
+         byte var18 = -2;
+         int var19 = var13.getStringWidth(a) / 2;
          GlStateManager.disableTexture2D();
-         a.begin(7, DefaultVertexFormats.POSITION_COLOR);
-         a.pos((double)(-a - 1), (double)(-1 + a), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
-         a.pos((double)(-a - 1), (double)(8 + a), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
-         a.pos((double)(a + 1), (double)(8 + a), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
-         a.pos((double)(a + 1), (double)(-1 + a), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
-         a.draw();
+         var17.begin(7, DefaultVertexFormats.POSITION_COLOR);
+         var17.pos((double)(-var19 - 1), (double)(-1 + var18), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+         var17.pos((double)(-var19 - 1), (double)(8 + var18), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+         var17.pos((double)(var19 + 1), (double)(8 + var18), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+         var17.pos((double)(var19 + 1), (double)(-1 + var18), 0.0).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+         var16.draw();
          GlStateManager.enableTexture2D();
-         a.drawString(a, -a.getStringWidth(a) / 2, a, 553648127);
+         var13.drawString(a, -var13.getStringWidth(a) / 2, var18, 553648127);
          GlStateManager.enableDepth();
          GlStateManager.depthMask(true);
-         a.drawString(a, -a.getStringWidth(a) / 2, a, -1);
+         var13.drawString(a, -var13.getStringWidth(a) / 2, var18, -1);
          GlStateManager.disableBlend();
          GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
          GlStateManager.popMatrix();

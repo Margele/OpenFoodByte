@@ -14,10 +14,10 @@ import net.minecraft.util.Vec3;
 
 public class RotationUtils {
    public static float[] getRotation2(EntityLivingBase a) {
-      double a = a.posX;
-      double a = a.posZ;
-      double a = a.posY + (double)(a.getEyeHeight() / 2.0F);
-      return Method1166(a, a, a);
+      double var1 = a.posX;
+      double var3 = a.posZ;
+      double var5 = a.posY + (double)(a.getEyeHeight() / 2.0F);
+      return Method1166(var1, var3, var5);
    }
 
    public static float[] Method1164(Entity a) {
@@ -25,64 +25,64 @@ public class RotationUtils {
    }
 
    public static float[] Method1165(Entity a) {
-      double a = a.posX - a.lastTickPosX;
-      double a = a.posZ - a.lastTickPosZ;
-      double a = (double)Minecraft.getMinecraft().thePlayer.getDistanceToEntity(a);
-      a -= a % 0.8;
-      double a = 1.0;
-      double a = 1.0;
-      boolean a = a.isSprinting();
-      a = a / 0.8 * a * 1.25;
-      a = a / 0.8 * a * 1.25;
-      double a = a.posX + a - Minecraft.getMinecraft().thePlayer.posX;
-      double a = a.posZ + a - Minecraft.getMinecraft().thePlayer.posZ;
-      double a = Minecraft.getMinecraft().thePlayer.posY + (double)Minecraft.getMinecraft().thePlayer.getEyeHeight() - (a.posY + (double)a.getEyeHeight());
-      double a = (double)Minecraft.getMinecraft().thePlayer.getDistanceToEntity(a);
-      float a = (float)Math.toDegrees(Math.atan2(a, a)) - 90.0F;
-      float a = (float)Math.toDegrees(Math.atan2(a, a));
-      return new float[]{a, a};
+      double var1 = a.posX - a.lastTickPosX;
+      double var3 = a.posZ - a.lastTickPosZ;
+      double var5 = (double)Minecraft.getMinecraft().thePlayer.getDistanceToEntity(a);
+      var5 -= var5 % 0.8;
+      double var7 = 1.0;
+      double var9 = 1.0;
+      boolean var11 = a.isSprinting();
+      var7 = var5 / 0.8 * var1 * 1.25;
+      var9 = var5 / 0.8 * var3 * 1.25;
+      double var12 = a.posX + var7 - Minecraft.getMinecraft().thePlayer.posX;
+      double var14 = a.posZ + var9 - Minecraft.getMinecraft().thePlayer.posZ;
+      double var16 = Minecraft.getMinecraft().thePlayer.posY + (double)Minecraft.getMinecraft().thePlayer.getEyeHeight() - (a.posY + (double)a.getEyeHeight());
+      double var18 = (double)Minecraft.getMinecraft().thePlayer.getDistanceToEntity(a);
+      float var20 = (float)Math.toDegrees(Math.atan2(var14, var12)) - 90.0F;
+      float var21 = (float)Math.toDegrees(Math.atan2(var16, var18));
+      return new float[]{var20, var21};
    }
 
    public static float[] Method1166(double a, double a, double a) {
-      double a = a - Minecraft.getMinecraft().thePlayer.posX;
-      double a = a - Minecraft.getMinecraft().thePlayer.posZ;
-      double a = a - Minecraft.getMinecraft().thePlayer.posY - 0.6;
-      double a = (double)MathHelper.sqrt_double(a * a + a * a);
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI) - 90.0F;
-      float a = (float)(-(Math.atan2(a, a) * 180.0 / Math.PI));
-      return new float[]{a, a};
+      double var6 = a - Minecraft.getMinecraft().thePlayer.posX;
+      double var8 = a - Minecraft.getMinecraft().thePlayer.posZ;
+      double var10 = a - Minecraft.getMinecraft().thePlayer.posY - 0.6;
+      double var12 = (double)MathHelper.sqrt_double(var6 * var6 + var8 * var8);
+      float var14 = (float)(Math.atan2(var8, var6) * 180.0 / Math.PI) - 90.0F;
+      float var15 = (float)(-(Math.atan2(var10, var12) * 180.0 / Math.PI));
+      return new float[]{var14, var15};
    }
 
    public static float Method1167(float a, float a, float a) {
-      float a = 0.006F;
-      float a = a * a * a * a - a * (a * a * a + 2.0F * a * a * a);
-      return (float)Math.toDegrees(Math.atan(((double)(a * a) - Math.sqrt((double)a)) / (double)(a * a)));
+      float var3 = 0.006F;
+      float var4 = a * a * a * a - var3 * (var3 * a * a + 2.0F * a * a * a);
+      return (float)Math.toDegrees(Math.atan(((double)(a * a) - Math.sqrt((double)var4)) / (double)(var3 * a)));
    }
 
    public static float Method1168(double a, double a) {
       RenderUtils.trash();
-      double a = a - Minecraft.getMinecraft().thePlayer.posX;
-      double a = a - Minecraft.getMinecraft().thePlayer.posZ;
-      double a;
-      if (a < 0.0 && a < 0.0) {
-         a = 90.0 + Math.toDegrees(Math.atan(a / a));
+      double var5 = a - Minecraft.getMinecraft().thePlayer.posX;
+      double var7 = a - Minecraft.getMinecraft().thePlayer.posZ;
+      double var9;
+      if (var7 < 0.0 && var5 < 0.0) {
+         var9 = 90.0 + Math.toDegrees(Math.atan(var7 / var5));
       }
 
-      if (a < 0.0 && a > 0.0) {
-         a = -90.0 + Math.toDegrees(Math.atan(a / a));
+      if (var7 < 0.0 && var5 > 0.0) {
+         var9 = -90.0 + Math.toDegrees(Math.atan(var7 / var5));
       }
 
-      a = Math.toDegrees(-Math.atan(a / a));
-      return MathHelper.wrapAngleTo180_float(-(Minecraft.getMinecraft().thePlayer.rotationYaw - (float)a));
+      var9 = Math.toDegrees(-Math.atan(var5 / var7));
+      return MathHelper.wrapAngleTo180_float(-(Minecraft.getMinecraft().thePlayer.rotationYaw - (float)var9));
    }
 
    public static float Method1169(Entity a, double a) {
-      double a = a.posX - Minecraft.getMinecraft().thePlayer.posX;
-      double a = a.posZ - Minecraft.getMinecraft().thePlayer.posZ;
-      double a = a - 2.2 + (double)a.getEyeHeight() - Minecraft.getMinecraft().thePlayer.posY;
-      double a = (double)MathHelper.sqrt_double(a * a + a * a);
-      double a = -Math.toDegrees(Math.atan(a / a));
-      return -MathHelper.wrapAngleTo180_float(Minecraft.getMinecraft().thePlayer.rotationPitch - (float)a) - 2.5F;
+      double var3 = a.posX - Minecraft.getMinecraft().thePlayer.posX;
+      double var5 = a.posZ - Minecraft.getMinecraft().thePlayer.posZ;
+      double var7 = a - 2.2 + (double)a.getEyeHeight() - Minecraft.getMinecraft().thePlayer.posY;
+      double var9 = (double)MathHelper.sqrt_double(var3 * var3 + var5 * var5);
+      double var11 = -Math.toDegrees(Math.atan(var7 / var9));
+      return -MathHelper.wrapAngleTo180_float(Minecraft.getMinecraft().thePlayer.rotationPitch - (float)var11) - 2.5F;
    }
 
    public static float Method1170(float a) {
@@ -99,34 +99,34 @@ public class RotationUtils {
    }
 
    public static float Method1171(float a, float a) {
-      float a = Math.abs(a - a) % 360.0F;
-      if (a > 180.0F) {
-         a = 360.0F - a;
+      float var2 = Math.abs(a - a) % 360.0F;
+      if (var2 > 180.0F) {
+         var2 = 360.0F - var2;
       }
 
-      return a;
+      return var2;
    }
 
    public static Vec3 Method1172() {
-      EntityPlayerSP a = Minecraft.getMinecraft().thePlayer;
-      float a = 0.017453292F;
-      float a = 3.1415927F;
-      float a = MathHelper.cos(-a.rotationYaw * a - a);
-      float a = MathHelper.sin(-a.rotationYaw * a - a);
-      float a = -MathHelper.cos(-a.rotationPitch * a);
-      float a = MathHelper.sin(-a.rotationPitch * a);
-      return new Vec3((double)(a * a), (double)a, (double)(a * a));
+      EntityPlayerSP var0 = Minecraft.getMinecraft().thePlayer;
+      float var1 = 0.017453292F;
+      float var2 = 3.1415927F;
+      float var3 = MathHelper.cos(-var0.rotationYaw * var1 - var2);
+      float var4 = MathHelper.sin(-var0.rotationYaw * var1 - var2);
+      float var5 = -MathHelper.cos(-var0.rotationPitch * var1);
+      float var6 = MathHelper.sin(-var0.rotationPitch * var1);
+      return new Vec3((double)(var4 * var5), (double)var6, (double)(var3 * var5));
    }
 
    public static float[] Method1173(double a, double a, double a) {
-      EntityPlayerSP a = Minecraft.getMinecraft().thePlayer;
-      double a = a - a.posX;
-      double a = a - (a.posY + (double)a.getEyeHeight());
-      double a = a - a.posZ;
-      double a = (double)MathHelper.sqrt_double(a * a + a * a);
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI) - 90.0F;
-      float a = (float)(-(Math.atan2(a, a) * 180.0 / Math.PI));
-      return new float[]{a, a};
+      EntityPlayerSP var6 = Minecraft.getMinecraft().thePlayer;
+      double var7 = a - var6.posX;
+      double var9 = a - (var6.posY + (double)var6.getEyeHeight());
+      double var11 = a - var6.posZ;
+      double var13 = (double)MathHelper.sqrt_double(var7 * var7 + var11 * var11);
+      float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
+      float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
+      return new float[]{var15, var16};
    }
 
    public static float[] Method1174(EntityLivingBase a) {
@@ -139,34 +139,34 @@ public class RotationUtils {
 
    public static boolean Method1176(BlockPos a, BlockPos a) {
       RenderUtils.trash();
-      int a = a.getX();
-      int a = a.getY();
-      int a = a.getZ();
-      int a = a.getX();
-      int a = a.getY();
-      int a = a.getZ();
-      double a = (double)(a - a);
-      double a = (double)(a - a);
-      double a = (double)(a - a);
-      double a = (double)a;
-      double a = (double)a;
-      double a = (double)a;
-      double a = 0.1;
-      int a = (int)Math.max(Math.abs(a), Math.max(Math.abs(a), Math.abs(a))) * 4;
-      int a = 0;
-      if (a < a - 1) {
-         a += a / (double)a;
-         a += a / (double)a;
-         a += a / (double)a;
-         if (a != (double)a || a != (double)a || a != (double)a) {
-            BlockPos a = new BlockPos(a, a, a);
-            Block a = Minecraft.getMinecraft().theWorld.getBlockState(a).getBlock();
-            if (a.getMaterial() != Material.air && a.getMaterial() != Material.water && !(a instanceof BlockVine) && !(a instanceof BlockLadder)) {
+      int var3 = a.getX();
+      int var4 = a.getY();
+      int var5 = a.getZ();
+      int var6 = a.getX();
+      int var7 = a.getY();
+      int var8 = a.getZ();
+      double var9 = (double)(var6 - var3);
+      double var11 = (double)(var7 - var4);
+      double var13 = (double)(var8 - var5);
+      double var15 = (double)var3;
+      double var17 = (double)var4;
+      double var19 = (double)var5;
+      double var21 = 0.1;
+      int var23 = (int)Math.max(Math.abs(var9), Math.max(Math.abs(var11), Math.abs(var13))) * 4;
+      int var24 = 0;
+      if (var24 < var23 - 1) {
+         var15 += var9 / (double)var23;
+         var17 += var11 / (double)var23;
+         var19 += var13 / (double)var23;
+         if (var15 != (double)var6 || var17 != (double)var7 || var19 != (double)var8) {
+            BlockPos var25 = new BlockPos(var15, var17, var19);
+            Block var26 = Minecraft.getMinecraft().theWorld.getBlockState(var25).getBlock();
+            if (var26.getMaterial() != Material.air && var26.getMaterial() != Material.water && !(var26 instanceof BlockVine) && !(var26 instanceof BlockLadder)) {
                return true;
             }
          }
 
-         ++a;
+         ++var24;
       }
 
       return false;

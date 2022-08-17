@@ -112,41 +112,41 @@ public class Class85 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = Class193.Method1269();
+      boolean var3 = Class193.Method1269();
       a = this.Method1263(a, (ColorModel)null);
-      float a = (float)a.getWidth() * this.Field725;
-      float a = (float)a.getHeight() * this.Field726;
-      float a = (float)Math.sqrt((double)(a * a + a * a));
-      float a = (float)((double)this.Field727 * Math.cos((double)this.Field728));
-      float a = (float)((double)this.Field727 * -Math.sin((double)this.Field728));
-      float a = (float)Math.exp((double)this.Field730);
-      float a = this.Field729;
-      Graphics2D a;
+      float var4 = (float)a.getWidth() * this.Field725;
+      float var5 = (float)a.getHeight() * this.Field726;
+      float var6 = (float)Math.sqrt((double)(var4 * var4 + var5 * var5));
+      float var7 = (float)((double)this.Field727 * Math.cos((double)this.Field728));
+      float var8 = (float)((double)this.Field727 * -Math.sin((double)this.Field728));
+      float var9 = (float)Math.exp((double)this.Field730);
+      float var10 = this.Field729;
+      Graphics2D var11;
       if (this.Field733 == 0) {
-         a = a.createGraphics();
-         a.drawRenderedImage(a, (AffineTransform)null);
-         a.dispose();
+         var11 = a.createGraphics();
+         var11.drawRenderedImage(a, (AffineTransform)null);
+         var11.dispose();
          return a;
       } else {
-         a = a.createGraphics();
-         a.drawImage(a, (AffineTransform)null, (ImageObserver)null);
-         int a = 0;
-         if (a < this.Field733) {
-            a.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            a.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-            a.setComposite(AlphaComposite.getInstance(3, Class776.Method1717((float)a / (float)(this.Field733 - 1), this.Field731, this.Field732)));
-            a.translate((double)(a + a), (double)(a + a));
-            a.scale((double)a, (double)a);
+         var11 = a.createGraphics();
+         var11.drawImage(a, (AffineTransform)null, (ImageObserver)null);
+         int var12 = 0;
+         if (var12 < this.Field733) {
+            var11.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            var11.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+            var11.setComposite(AlphaComposite.getInstance(3, Class776.Method1717((float)var12 / (float)(this.Field733 - 1), this.Field731, this.Field732)));
+            var11.translate((double)(var4 + var7), (double)(var5 + var8));
+            var11.scale((double)var9, (double)var9);
             if (this.Field729 != 0.0F) {
-               a.rotate((double)a);
+               var11.rotate((double)var10);
             }
 
-            a.translate((double)(-a), (double)(-a));
-            a.drawImage(a, (AffineTransform)null, (ImageObserver)null);
-            ++a;
+            var11.translate((double)(-var4), (double)(-var5));
+            var11.drawImage(a, (AffineTransform)null, (ImageObserver)null);
+            ++var12;
          }
 
-         a.dispose();
+         var11.dispose();
          return a;
       }
    }

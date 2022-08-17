@@ -11,8 +11,8 @@ final class Class870 extends Class831 {
    }
 
    public void Method3501(String a, Attributes a) {
-      String a = a.getValue("file");
-      String a = a.getValue("debug");
-      this.Field3802.Field3202.Method1458(a, a);
+      String var3 = a.getValue("file");
+      String var4 = a.getValue("debug");
+      this.Field3802.Field3202.Method1458(var3, var4);
    }
 }

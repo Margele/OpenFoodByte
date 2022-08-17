@@ -25,7 +25,7 @@ public class Class360 {
       return a.hasTagCompound() ? a.getTagCompound().getByte(this.Field1703) : 0;
    }
 
-   Class360(String a, Class355 a1) {
+   Class360(String a, Class355 a) {
       this(a);
    }
 }

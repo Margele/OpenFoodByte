@@ -18,17 +18,17 @@ public class Class377 extends Class390 {
       this.Field1920 = "Label";
    }
 
-   public void Method412(int a, int a1) {
-      int a = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
-      RenderUtils.Method1103((float)this.Field1907, (float)this.Field1908, (float)a, (float)this.Field1910, Class707.Method1829());
+   public void Method412(int a, int a) {
+      int var3 = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
+      RenderUtils.Method1103((float)this.Field1907, (float)this.Field1908, (float)var3, (float)this.Field1910, Class707.Method1829());
       Class565.Field2636.Method1217(this.Field1913, (float)(this.Field1907 + 5), (float)this.Field1908 + ((float)(this.Field1910 / 2) - Class565.Field2636.Method1227(this.Field1913) / 2.0F) + 0.0F, 16777215);
-      float a = (float)this.Field1909 - Class565.Field2636.Method1225(this.Field1913) - 8.0F;
-      if (a > 2.0F) {
+      float var4 = (float)this.Field1909 - Class565.Field2636.Method1225(this.Field1913) - 8.0F;
+      if (var4 > 2.0F) {
          float var5 = 0.5F;
       }
 
    }
 
-   public void Method413(int a, int a1, boolean a2) {
+   public void Method413(int a, int a, boolean a) {
    }
 }

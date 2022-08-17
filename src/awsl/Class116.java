@@ -35,7 +35,7 @@ public class Class116 {
    }
 
    public boolean Method187(a a) {
-      for(a a = this.Field913; a != a; a = a.Field800) {
+      for(a var2 = this.Field913; var2 != a; var2 = var2.Field800) {
       }
 
       return true;
@@ -50,11 +50,11 @@ public class Class116 {
    }
 
    public void Method189(Class267 a) {
-      a a = this.Field913;
+      a var2 = this.Field913;
 
       while(true) {
-         a.Method1(a);
-         a = a.Field800;
+         var2.Method1(a);
+         var2 = var2.Field800;
       }
    }
 
@@ -67,31 +67,31 @@ public class Class116 {
    }
 
    public a[] Method192() {
-      int a = 0;
-      a a = this.Field913;
-      a[] a = new a[this.Field912];
+      int var1 = 0;
+      a var2 = this.Field913;
+      a[] var3 = new a[this.Field912];
 
       while(true) {
-         a[a] = a;
-         a.Field801 = a++;
-         a = a.Field800;
+         var3[var1] = var2;
+         var2.Field801 = var1++;
+         var2 = var2.Field800;
       }
    }
 
    public void Method193(a a, a a) {
       Class15.Method3445();
-      a a = a.Field800;
-      a.Field800 = a;
-      a.Field799 = a;
+      a var4 = a.Field800;
+      a.Field800 = var4;
+      var4.Field799 = a;
       this.Field914 = a;
-      a a = a.Field799;
-      a.Field799 = a;
-      a.Field800 = a;
+      a var5 = a.Field799;
+      a.Field799 = var5;
+      var5.Field800 = a;
       this.Field913 = a;
       if (this.Field915 != null) {
-         int a = a.Field801;
-         this.Field915[a] = a;
-         a.Field801 = a;
+         int var6 = a.Field801;
+         this.Field915[var6] = a;
+         a.Field801 = var6;
       }
 
       a.Field801 = 0;
@@ -122,9 +122,9 @@ public class Class116 {
             this.Field913 = a.Field913;
             this.Field914 = a.Field914;
          } else {
-            a a = a.Field913;
-            this.Field914.Field800 = a;
-            a.Field799 = this.Field914;
+            a var2 = a.Field913;
+            this.Field914.Field800 = var2;
+            var2.Field799 = this.Field914;
             this.Field914 = a.Field914;
          }
 
@@ -155,9 +155,9 @@ public class Class116 {
             this.Field913 = a.Field913;
             this.Field914 = a.Field914;
          } else {
-            a a = a.Field914;
-            this.Field913.Field799 = a;
-            a.Field800 = this.Field913;
+            a var2 = a.Field914;
+            this.Field913.Field799 = var2;
+            var2.Field800 = this.Field913;
             this.Field913 = a.Field913;
          }
 
@@ -168,10 +168,10 @@ public class Class116 {
 
    public void Method198(a a, a a) {
       ++this.Field912;
-      a a = a.Field800;
+      a var3 = a.Field800;
       this.Field914 = a;
       a.Field800 = a;
-      a.Field800 = a;
+      a.Field800 = var3;
       a.Field799 = a;
       this.Field915 = null;
       a.Field801 = 0;
@@ -180,13 +180,13 @@ public class Class116 {
    public void Method199(a a, Class116 a) {
       if (a.Field912 != 0) {
          this.Field912 += a.Field912;
-         a a = a.Field913;
-         a a = a.Field914;
-         a a = a.Field800;
-         this.Field914 = a;
-         a.Field800 = a;
-         a.Field800 = a;
-         a.Field799 = a;
+         a var3 = a.Field913;
+         a var4 = a.Field914;
+         a var5 = a.Field800;
+         this.Field914 = var4;
+         a.Field800 = var3;
+         var4.Field800 = var5;
+         var3.Field799 = a;
          this.Field915 = null;
          a.Method203(false);
       }
@@ -194,11 +194,11 @@ public class Class116 {
 
    public void Method200(a a, a a) {
       ++this.Field912;
-      a a = a.Field799;
+      a var3 = a.Field799;
       this.Field913 = a;
       a.Field799 = a;
       a.Field800 = a;
-      a.Field799 = a;
+      a.Field799 = var3;
       this.Field915 = null;
       a.Field801 = 0;
    }
@@ -206,13 +206,13 @@ public class Class116 {
    public void Method201(a a, Class116 a) {
       if (a.Field912 != 0) {
          this.Field912 += a.Field912;
-         a a = a.Field913;
-         a a = a.Field914;
-         a a = a.Field799;
-         this.Field913 = a;
-         a.Field799 = a;
-         a.Field800 = a;
-         a.Field799 = a;
+         a var3 = a.Field913;
+         a var4 = a.Field914;
+         a var5 = a.Field799;
+         this.Field913 = var3;
+         a.Field799 = var4;
+         var4.Field800 = a;
+         var3.Field799 = var5;
          this.Field915 = null;
          a.Method203(false);
       }
@@ -220,8 +220,8 @@ public class Class116 {
 
    public void Method202(a a) {
       --this.Field912;
-      a a = a.Field800;
-      a a = a.Field799;
+      a var2 = a.Field800;
+      a var3 = a.Field799;
       this.Field913 = null;
       this.Field914 = null;
       this.Field915 = null;
@@ -231,14 +231,14 @@ public class Class116 {
    }
 
    void Method203(boolean a) {
-      a a = this.Field913;
+      a var2 = this.Field913;
 
       while(true) {
-         a a = a.Field800;
-         a.Field801 = -1;
-         a.Field799 = null;
-         a.Field800 = null;
-         a = a;
+         a var3 = var2.Field800;
+         var2.Field801 = -1;
+         var2.Field799 = null;
+         var2.Field800 = null;
+         var2 = var3;
       }
    }
 
@@ -247,14 +247,14 @@ public class Class116 {
    }
 
    public void Method205() {
-      a a = this.Field913;
+      a var1 = this.Field913;
 
       while(true) {
-         if (a instanceof Class104) {
-            ((Class104)a).Method304();
+         if (var1 instanceof Class104) {
+            ((Class104)var1).Method304();
          }
 
-         a = a.Field800;
+         var1 = var1.Field800;
       }
    }
 

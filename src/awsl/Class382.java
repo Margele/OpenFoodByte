@@ -18,7 +18,7 @@ public class Class382 extends Class390 {
       this.Field1920 = "Checkbox";
    }
 
-   public void Method419(int a, int a1) {
+   public void Method419(int a, int a) {
       this.Field1916 = !this.Field1884.Method2756();
    }
 
@@ -32,8 +32,8 @@ public class Class382 extends Class390 {
 
    }
 
-   public void Method412(int a, int a1) {
-      int a = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
+   public void Method412(int a, int a) {
+      int var3 = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
       Class565.Field2636.Method1217(this.Field1913, (float)(this.Field1907 + 18), (float)this.Field1908 + 2.0F, 16777215);
       RenderUtils.Method1103((float)(this.Field1907 + 5), (float)(this.Field1908 + 2), 8.0F, 8.0F, this.Field1915 ? Class681.Method2699(Class707.Method1832(), 30) : Class707.Method1832());
       if (this.Field1885.Method292() > 0.0) {

@@ -43,12 +43,12 @@ public class RodAimbot extends Module {
    public void Method1762(MouseEvent a) {
       if (a.eventButton == 1 && a.eventButtonState && mc.currentScreen == null && this.Field2419 != null && mc.thePlayer.getCurrentEquippedItem() != null && mc.thePlayer.getCurrentEquippedItem().getItem() instanceof ItemFishingRod && mc.thePlayer.fishEntity == null) {
          a.Method2300(true);
-         double a = this.Field2419.posX - 0.5;
-         double a = this.Field2419.posY;
-         double a = this.Field2419.posZ - 0.5;
-         Class338 a = new Class338(a + (this.Field2419.posX - this.Field2419.lastTickPosX) * 10.0, a + (double)(this.Field2419.getEyeHeight() / 2.0F), a + (this.Field2419.posZ - this.Field2419.lastTickPosZ) * 10.0);
-         float[] a = Method1764(a);
-         Wrapper.INSTANCE.sendPacket(new C03PacketPlayer.C05PacketPlayerLook(a[0], a[1], mc.thePlayer.onGround));
+         double var2 = this.Field2419.posX - 0.5;
+         double var4 = this.Field2419.posY;
+         double var6 = this.Field2419.posZ - 0.5;
+         Class338 var8 = new Class338(var2 + (this.Field2419.posX - this.Field2419.lastTickPosX) * 10.0, var4 + (double)(this.Field2419.getEyeHeight() / 2.0F), var6 + (this.Field2419.posZ - this.Field2419.lastTickPosZ) * 10.0);
+         float[] var9 = Method1764(var8);
+         Wrapper.INSTANCE.sendPacket(new C03PacketPlayer.C05PacketPlayerLook(var9[0], var9[1], mc.thePlayer.onGround));
          mc.playerController.sendUseItem(mc.thePlayer, mc.theWorld, mc.thePlayer.getHeldItem());
          Wrapper.INSTANCE.sendPacket(new C03PacketPlayer.C05PacketPlayerLook(mc.thePlayer.rotationYaw, mc.thePlayer.rotationPitch, mc.thePlayer.onGround));
       }
@@ -57,40 +57,40 @@ public class RodAimbot extends Module {
 
    public static EntityLivingBase Method1763(float a) {
       Class148.Method1444();
-      EntityLivingBase a = null;
+      EntityLivingBase var2 = null;
       Iterator var4 = mc.theWorld.loadedEntityList.Method1383();
 
       while(var4.Method932()) {
-         Object a = var4.Method933();
-         if (Method1766(a) && !(a instanceof EntityPlayerSP)) {
-            EntityLivingBase a = (EntityLivingBase)a;
-            if (!(a instanceof EntityPlayer) || AntiBot.botList.contains(a) || Class305.Method704(a)) {
+         Object var5 = var4.Method933();
+         if (Method1766(var5) && !(var5 instanceof EntityPlayerSP)) {
+            EntityLivingBase var6 = (EntityLivingBase)var5;
+            if (!(var6 instanceof EntityPlayer) || AntiBot.botList.contains(var6) || Class305.Method704(var6)) {
                continue;
             }
 
-            if (Class305.Method697(a)) {
+            if (Class305.Method697(var6)) {
                ;
             }
 
-            if (mc.thePlayer.getDistanceToEntity(a) < a) {
-               float a = mc.thePlayer.getDistanceToEntity(a);
-               a = a;
+            if (mc.thePlayer.getDistanceToEntity(var6) < a) {
+               float var3 = mc.thePlayer.getDistanceToEntity(var6);
+               var2 = var6;
             }
          }
       }
 
-      return a;
+      return var2;
    }
 
    public static float[] Method1764(Class338 a) {
       Class148.Method1445();
-      double a = a.Field1633 + 0.5 - mc.thePlayer.posX;
-      double a = a.Field1634 + 0.5 - (mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight());
-      double a = a.Field1635 + 0.5 - mc.thePlayer.posZ;
-      double a = (double)Method1765(a * a + a * a);
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI) - 90.0F;
-      float a = (float)(-(Math.atan2(a, a) * 180.0 / Math.PI));
-      float[] var10000 = new float[]{mc.thePlayer.rotationYaw + Method1671(a - mc.thePlayer.rotationYaw), mc.thePlayer.rotationPitch + Method1671(a - mc.thePlayer.rotationPitch)};
+      double var2 = a.Field1633 + 0.5 - mc.thePlayer.posX;
+      double var4 = a.Field1634 + 0.5 - (mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight());
+      double var6 = a.Field1635 + 0.5 - mc.thePlayer.posZ;
+      double var8 = (double)Method1765(var2 * var2 + var6 * var6);
+      float var10 = (float)(Math.atan2(var6, var2) * 180.0 / Math.PI) - 90.0F;
+      float var11 = (float)(-(Math.atan2(var4, var8) * 180.0 / Math.PI));
+      float[] var10000 = new float[]{mc.thePlayer.rotationYaw + Method1671(var10 - mc.thePlayer.rotationYaw), mc.thePlayer.rotationPitch + Method1671(var11 - mc.thePlayer.rotationPitch)};
       a.trash(new String[5]);
       return var10000;
    }

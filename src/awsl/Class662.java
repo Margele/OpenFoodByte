@@ -29,12 +29,12 @@ public enum Class662 {
    }
 
    public static Color Method2400(Color a, int a, int a) {
-      float[] a = new float[3];
-      Color.RGBtoHSB(a.getRed(), a.getGreen(), a.getBlue(), a);
-      float a = Math.abs(((float)(System.currentTimeMillis() % 2000L) / 1000.0F + (float)a / (float)a * 2.0F) % 2.0F - 1.0F);
-      a = 0.5F + 0.5F * a;
-      a[2] = a % 2.0F;
-      return new Color(Color.HSBtoRGB(a[0], a[1], a[2]));
+      float[] var3 = new float[3];
+      Color.RGBtoHSB(a.getRed(), a.getGreen(), a.getBlue(), var3);
+      float var4 = Math.abs(((float)(System.currentTimeMillis() % 2000L) / 1000.0F + (float)a / (float)a * 2.0F) % 2.0F - 1.0F);
+      var4 = 0.5F + 0.5F * var4;
+      var3[2] = var4 % 2.0F;
+      return new Color(Color.HSBtoRGB(var3[0], var3[1], var3[2]));
    }
 
    public Color Method2401() {

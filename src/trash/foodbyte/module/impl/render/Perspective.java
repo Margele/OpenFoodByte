@@ -39,7 +39,7 @@ public class Perspective extends Module {
       }
 
       if (this.Field2196.getBooleanValue() && mc.theWorld != null) {
-         boolean a = Keyboard.isKeyDown(this.Method1020());
+         boolean var2 = Keyboard.isKeyDown(this.Method1020());
          if (mc.currentScreen != null) {
             this.setState(false);
          }

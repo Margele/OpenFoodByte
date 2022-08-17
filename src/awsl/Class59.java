@@ -12,8 +12,8 @@ final class Class59 extends Class57 {
    }
 
    public String Method3183(String a) {
-      String a = super.Method3183(a);
+      String var2 = super.Method3183(a);
       this.Field625.remove(a);
-      return a;
+      return var2;
    }
 }

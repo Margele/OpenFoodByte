@@ -17,19 +17,19 @@ public class Class562 implements Class609 {
 
    public void Method687(Class234 a) {
       int var10000 = Method906();
-      List a = new ArrayList();
-      int a = var10000;
-      int a = a.readInt();
-      int a = 0;
-      if (a < a) {
-         a.Method2530(a.Method2092());
-         ++a;
+      ArrayList var3 = new ArrayList();
+      int var2 = var10000;
+      int var4 = a.readInt();
+      int var5 = 0;
+      if (var5 < var4) {
+         var3.Method2530(a.Method2092());
+         ++var5;
       }
 
-      (this.Field2623 = new ArrayList()).addAll(a);
+      (this.Field2623 = new ArrayList()).addAll(var3);
       if (a.trash() == null) {
-         ++a;
-         Method1189(a);
+         ++var2;
+         Method1189(var2);
       }
 
    }
@@ -37,11 +37,11 @@ public class Class562 implements Class609 {
    public void Method688(Class234 a) {
       Method906();
       a.writeInt(this.Method845().Method1799());
-      int a = 0;
-      if (a < this.Method845().Method1799()) {
-         Class606 a = (Class606)this.Method845().get(a);
-         a.Method2093(a);
-         ++a;
+      int var3 = 0;
+      if (var3 < this.Method845().Method1799()) {
+         Class606 var4 = (Class606)this.Method845().get(var3);
+         a.Method2093(var4);
+         ++var3;
       }
 
    }

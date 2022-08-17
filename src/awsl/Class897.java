@@ -50,12 +50,12 @@ public class Class897 extends Class877 {
       Class193.Method1269();
       this.Field3976 = new float[256];
       this.Field3977 = new float[256];
-      int a = 0;
-      if (a < 256) {
-         float a = 6.2831855F * (float)a / 256.0F * this.Field3981;
-         this.Field3976[a] = (float)((double)(-this.Field3979) * Math.sin((double)a));
-         this.Field3977[a] = (float)((double)this.Field3979 * Math.cos((double)a));
-         ++a;
+      int var2 = 0;
+      if (var2 < 256) {
+         float var3 = 6.2831855F * (float)var2 / 256.0F * this.Field3981;
+         this.Field3976[var2] = (float)((double)(-this.Field3979) * Math.sin((double)var3));
+         this.Field3977[var2] = (float)((double)this.Field3979 * Math.cos((double)var3));
+         ++var2;
       }
 
    }
@@ -65,9 +65,9 @@ public class Class897 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      int a = this.Method1614(a, a);
-      a[0] = (float)a + this.Field3976[a];
-      a[1] = (float)a + this.Field3977[a];
+      int var4 = this.Method1614(a, a);
+      a[0] = (float)a + this.Field3976[var4];
+      a[1] = (float)a + this.Field3977[var4];
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {

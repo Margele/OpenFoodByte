@@ -27,10 +27,10 @@ public class Class338 {
    }
 
    public double Method223(Vec3 a) {
-      double a = a.xCoord - this.Field1633;
-      double a = a.yCoord - this.Field1634;
-      double a = a.zCoord - this.Field1635;
-      return (double)MathHelper.sqrt_double(a * a + a * a + a * a);
+      double var2 = a.xCoord - this.Field1633;
+      double var4 = a.yCoord - this.Field1634;
+      double var6 = a.zCoord - this.Field1635;
+      return (double)MathHelper.sqrt_double(var2 * var2 + var4 * var4 + var6 * var6);
    }
 
    public Class338 Method224(double a, double a, double a) {

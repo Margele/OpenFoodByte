@@ -57,19 +57,19 @@ public class Class207 {
    }
 
    public boolean Method2429(Object a) {
-      String[] a = Method2434();
+      String[] var2 = Method2434();
       if (a == this) {
          return true;
       } else if (!(a instanceof Class207)) {
          return false;
       } else {
-         Class207 a = (Class207)a;
-         if (!a.Method2430(this)) {
+         Class207 var3 = (Class207)a;
+         if (!var3.Method2430(this)) {
             return false;
          } else {
-            Object a = this.Method2419();
-            Object a = a.Method2419();
-            if (a.Method3429(a)) {
+            String var4 = this.Method2419();
+            String var5 = var3.Method2419();
+            if (var4.Method3429(var5)) {
                ;
             }
 
@@ -83,19 +83,19 @@ public class Class207 {
    }
 
    public int Method2431() {
-      int a = true;
-      int a = 1;
-      Object a = this.Method2419();
-      a = a * 59 + 43;
+      boolean var1 = true;
+      int var2 = 1;
+      String var3 = this.Method2419();
+      var2 = var2 * 59 + 43;
       List var4 = this.Method2420();
-      a = a * 59 + 43;
+      var2 = var2 * 59 + 43;
       List var5 = this.Method2421();
-      a = a * 59 + 43;
+      var2 = var2 * 59 + 43;
       HashMap var6 = this.Method2422();
-      a = a * 59 + 43;
+      var2 = var2 * 59 + 43;
       List var7 = this.Method2423();
-      a = a * 59 + 43;
-      return a;
+      var2 = var2 * 59 + 43;
+      return var2;
    }
 
    public String Method2432() {

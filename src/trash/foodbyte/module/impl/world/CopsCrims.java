@@ -62,61 +62,61 @@ public class CopsCrims extends Module {
 
    @EventTarget
    private void Method712(EventMotion a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (a.isPre()) {
          if (this.Field2313.getBooleanValue()) {
             this.Field2315 = mc.thePlayer.rotationPitch;
             this.Field2316 = mc.thePlayer.rotationYaw;
          }
 
-         double a = Double.NEGATIVE_INFINITY;
+         double var3 = Double.NEGATIVE_INFINITY;
          this.Field2319 = null;
          Iterator var5 = mc.theWorld.playerEntities.Method1383();
-         Object a;
-         EntityPlayer a;
+         Object var6;
+         EntityPlayer var7;
          if (var5.Method932()) {
-            a = var5.Method933();
-            a = (EntityPlayer)a;
-            if (!a.equals(mc.thePlayer) && !Class305.Method698(a.getName()) && a.ticksExisted >= 40 && !a.isInvisible() && mc.thePlayer.canEntityBeSeen(a) && !Class305.Method704(a) && this.Method817(a, this.Field2308.getFloatValue())) {
+            var6 = var5.Method933();
+            var7 = (EntityPlayer)var6;
+            if (!var7.equals(mc.thePlayer) && !Class305.Method698(var7.getName()) && var7.ticksExisted >= 40 && !var7.isInvisible() && mc.thePlayer.canEntityBeSeen(var7) && !Class305.Method704(var7) && this.Method817(var7, this.Field2308.getFloatValue())) {
                if (this.Field2319 == null) {
-                  this.Field2319 = a;
-                  a = this.Method1667(a);
+                  this.Field2319 = var7;
+                  var3 = this.Method1667(var7);
                }
 
-               if (this.Method1667(a) <= a) {
+               if (this.Method1667(var7) <= var3) {
                   ;
                }
 
-               this.Field2319 = a;
-               this.Method1667(a);
+               this.Field2319 = var7;
+               this.Method1667(var7);
             }
          }
 
          var5 = this.Field2321.keySet().Method1383();
          if (var5.Method932()) {
-            EntityPlayer a = (EntityPlayer)var5.Method933();
-            if (!mc.theWorld.playerEntities.contains(a)) {
-               this.Field2321.remove(a);
+            EntityPlayer var13 = (EntityPlayer)var5.Method933();
+            if (!mc.theWorld.playerEntities.contains(var13)) {
+               this.Field2321.remove(var13);
             }
          }
 
          var5 = mc.theWorld.playerEntities.Method1383();
          if (var5.Method932()) {
-            a = var5.Method933();
-            a = (EntityPlayer)a;
-            this.Field2321.putIfAbsent(a, new ArrayList());
-            List a = (List)this.Field2321.Method2665(a);
-            a.Method2530(new Vec3(a.posX, a.posY, a.posZ));
-            if (a.Method1799() > this.Field2320) {
-               int a = 0;
-               Iterator var10 = (new ArrayList(a)).Method1383();
+            var6 = var5.Method933();
+            var7 = (EntityPlayer)var6;
+            this.Field2321.putIfAbsent(var7, new ArrayList());
+            List var8 = (List)this.Field2321.Method2665(var7);
+            var8.Method2530(new Vec3(var7.posX, var7.posY, var7.posZ));
+            if (var8.Method1799() > this.Field2320) {
+               int var9 = 0;
+               Iterator var10 = (new ArrayList(var8)).Method1383();
                if (var10.Method932()) {
-                  Vec3 a = (Vec3)var10.Method933();
-                  if (a < a.Method1799() - this.Field2320) {
-                     a.remove(a.get(a));
+                  Vec3 var11 = (Vec3)var10.Method933();
+                  if (var9 < var8.Method1799() - this.Field2320) {
+                     var8.remove(var8.get(var9));
                   }
 
-                  ++a;
+                  ++var9;
                }
             }
          }
@@ -127,50 +127,50 @@ public class CopsCrims extends Module {
             }
 
             ++this.Field2318;
-            Entity a = this.Method1668(this.Field2319);
-            float a = 0.0F;
+            Entity var12 = this.Method1668(this.Field2319);
+            float var14 = 0.0F;
             if (this.Field2306.isCurrentMode("Head")) {
-               a = -0.2F;
+               var14 = -0.2F;
             }
 
             if (this.Field2306.isCurrentMode("Neck")) {
-               a = 0.1F;
+               var14 = 0.1F;
             }
 
             if (this.Field2306.isCurrentMode("Chest")) {
-               a = 0.4F;
+               var14 = 0.4F;
             }
 
             if (this.Field2306.isCurrentMode("Jimmies")) {
-               a = 0.85F;
+               var14 = 0.85F;
             }
 
             if (this.Field2306.isCurrentMode("Legs")) {
-               a = 1.0F;
+               var14 = 1.0F;
             }
 
             if (this.Field2306.isCurrentMode("Feet")) {
-               a = 1.5F;
+               var14 = 1.5F;
             }
 
             label110: {
-               float[] a = this.Method1670(mc.thePlayer, a.posX, a.posY + (double)this.Field2319.getEyeHeight() - (double)a, a.posZ);
+               float[] var15 = this.Method1670(mc.thePlayer, var12.posX, var12.posY + (double)this.Field2319.getEyeHeight() - (double)var14, var12.posZ);
                if (this.Field2312.getBooleanValue()) {
-                  mc.thePlayer.rotationYaw = a[0];
-                  mc.thePlayer.rotationPitch = a[1] + this.Field2310.getFloatValue() * (float)this.Field2317;
+                  mc.thePlayer.rotationYaw = var15[0];
+                  mc.thePlayer.rotationPitch = var15[1] + this.Field2310.getFloatValue() * (float)this.Field2317;
                   if (this.Field2317 >= 10) {
-                     mc.thePlayer.rotationYaw = a[0] - this.Field2309.getFloatValue() * (float)this.Field2317;
+                     mc.thePlayer.rotationYaw = var15[0] - this.Field2309.getFloatValue() * (float)this.Field2317;
                   }
 
                   if (this.Field2317 < 20) {
                      break label110;
                   }
 
-                  mc.thePlayer.rotationYaw = a[0] + this.Field2309.getFloatValue() * (float)this.Field2317;
+                  mc.thePlayer.rotationYaw = var15[0] + this.Field2309.getFloatValue() * (float)this.Field2317;
                }
 
-               mc.thePlayer.rotationYaw = a[0];
-               mc.thePlayer.rotationPitch = a[1];
+               mc.thePlayer.rotationYaw = var15[0];
+               mc.thePlayer.rotationPitch = var15[1];
             }
 
             if ((float)this.Field2318 >= this.Field2307.getFloatValue()) {
@@ -201,57 +201,57 @@ public class CopsCrims extends Module {
    }
 
    public double Method1667(EntityPlayer a) {
-      double a = (double)(-mc.thePlayer.getDistanceToEntity(a));
+      double var2 = (double)(-mc.thePlayer.getDistanceToEntity(a));
       if (a.lastTickPosX == a.posX && a.lastTickPosY == a.posY && a.lastTickPosZ == a.posZ) {
-         a += 200.0;
+         var2 += 200.0;
       }
 
-      a -= (double)(a.getDistanceToEntity(mc.thePlayer) / 5.0F);
-      return a;
+      var2 -= (double)(a.getDistanceToEntity(mc.thePlayer) / 5.0F);
+      return var2;
    }
 
    private Entity Method1668(EntityPlayer a) {
-      int a = (int)Math.ceil((double)mc.getNetHandler().getPlayerInfo(mc.thePlayer.getUniqueID()).getResponseTime() / 50.0);
-      return this.Method1669(a, a);
+      int var2 = (int)Math.ceil((double)mc.getNetHandler().getPlayerInfo(mc.thePlayer.getUniqueID()).getResponseTime() / 50.0);
+      return this.Method1669(a, var2);
    }
 
    public Entity Method1669(EntityPlayer a, int a) {
       if (this.Field2321.containsKey(a)) {
-         List a = (List)this.Field2321.Method2665(a);
-         if (a.Method1799() > 1) {
-            Vec3 a = (Vec3)a.get(0);
-            List a = new ArrayList();
-            Vec3 a = a;
+         List var3 = (List)this.Field2321.Method2665(a);
+         if (var3.Method1799() > 1) {
+            Vec3 var4 = (Vec3)var3.get(0);
+            ArrayList var5 = new ArrayList();
+            Vec3 var6 = var4;
 
-            Vec3 a;
-            for(Iterator var7 = a.Method1383(); var7.Method932(); a = a) {
-               a = (Vec3)var7.Method933();
-               a.Method2530(new Vec3(a.xCoord - a.xCoord, a.yCoord - a.yCoord, a.zCoord - a.zCoord));
+            Vec3 var8;
+            for(Iterator var7 = var3.Method1383(); var7.Method932(); var6 = var8) {
+               var8 = (Vec3)var7.Method933();
+               var5.Method2530(new Vec3(var8.xCoord - var6.xCoord, var8.yCoord - var6.yCoord, var8.zCoord - var6.zCoord));
             }
 
-            double a = 0.0;
-            double a = 0.0;
-            double a = 0.0;
+            double var15 = 0.0;
+            double var9 = 0.0;
+            double var11 = 0.0;
 
-            Vec3 a;
-            for(Iterator var13 = a.Method1383(); var13.Method932(); a += a.zCoord) {
-               a = (Vec3)var13.Method933();
-               a += a.xCoord;
-               a += a.yCoord;
+            Vec3 var14;
+            for(Iterator var13 = var5.Method1383(); var13.Method932(); var11 += var14.zCoord) {
+               var14 = (Vec3)var13.Method933();
+               var15 += var14.xCoord;
+               var9 += var14.yCoord;
             }
 
-            a /= (double)a.Method1799();
-            a /= (double)a.Method1799();
-            a /= (double)a.Method1799();
-            EntityPlayer a = new EntityOtherPlayerMP(mc.theWorld, a.getGameProfile());
-            a.noClip = false;
-            a.setPosition(a.posX, a.posY, a.posZ);
+            var15 /= (double)var5.Method1799();
+            var9 /= (double)var5.Method1799();
+            var11 /= (double)var5.Method1799();
+            EntityOtherPlayerMP var16 = new EntityOtherPlayerMP(mc.theWorld, a.getGameProfile());
+            var16.noClip = false;
+            var16.setPosition(a.posX, a.posY, a.posZ);
 
-            for(int a = 0; a < a; ++a) {
-               a.moveEntity(a, a, a);
+            for(int var17 = 0; var17 < a; ++var17) {
+               var16.moveEntity(var15, var9, var11);
             }
 
-            return a;
+            return var16;
          }
       }
 
@@ -259,23 +259,23 @@ public class CopsCrims extends Module {
    }
 
    private final float[] Method1670(Entity a, double a, double a, double a) {
-      double a = a - a.posX;
-      double a = a - a.posY - (double)a.getEyeHeight() - 0.1;
-      double a = a - a.posZ;
-      double a;
-      if (a < 0.0 && a < 0.0) {
-         a = 90.0 + Math.toDegrees(Math.atan(a / a));
-      } else if (a < 0.0 && a > 0.0) {
-         a = -90.0 + Math.toDegrees(Math.atan(a / a));
+      double var8 = a - a.posX;
+      double var10 = a - a.posY - (double)a.getEyeHeight() - 0.1;
+      double var12 = a - a.posZ;
+      double var14;
+      if (var12 < 0.0 && var8 < 0.0) {
+         var14 = 90.0 + Math.toDegrees(Math.atan(var12 / var8));
+      } else if (var12 < 0.0 && var8 > 0.0) {
+         var14 = -90.0 + Math.toDegrees(Math.atan(var12 / var8));
       } else {
-         a = Math.toDegrees(-Math.atan(a / a));
+         var14 = Math.toDegrees(-Math.atan(var8 / var12));
       }
 
-      double a = Math.sqrt(a * a + a * a);
-      double a = -Math.toDegrees(Math.atan(a / a));
-      a = (double)Method1671((float)a);
-      a = (double)Method1671((float)a);
-      return new float[]{(float)a, (float)a};
+      double var16 = Math.sqrt(var8 * var8 + var12 * var12);
+      double var18 = -Math.toDegrees(Math.atan(var10 / var16));
+      var14 = (double)Method1671((float)var14);
+      var18 = (double)Method1671((float)var18);
+      return new float[]{(float)var14, (float)var18};
    }
 
    private static float Method1671(float a) {
@@ -291,17 +291,17 @@ public class CopsCrims extends Module {
 
    public boolean Method817(EntityLivingBase a, float a) {
       a = (float)((double)a * 0.5);
-      double a = (((double)mc.thePlayer.rotationYaw - this.Method818(a)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
-      return a > 0.0 && a < (double)a || (double)(-a) < a && a < 0.0;
+      double var3 = (((double)mc.thePlayer.rotationYaw - this.Method818(a)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
+      return var3 > 0.0 && var3 < (double)a || (double)(-a) < var3 && var3 < 0.0;
    }
 
    public double[] Method818(EntityLivingBase a) {
-      double a = a.posX - mc.thePlayer.posX;
-      double a = a.posY - mc.thePlayer.posY;
-      double a = a.posZ - mc.thePlayer.posZ;
-      a /= (double)mc.thePlayer.getDistanceToEntity(a);
-      double a = -(Math.atan2(a, a) * 57.29577951308232);
-      double a = -(Math.asin(a) * 57.29577951308232);
-      return new double[]{a, a};
+      double var2 = a.posX - mc.thePlayer.posX;
+      double var4 = a.posY - mc.thePlayer.posY;
+      double var6 = a.posZ - mc.thePlayer.posZ;
+      var4 /= (double)mc.thePlayer.getDistanceToEntity(a);
+      double var8 = -(Math.atan2(var2, var6) * 57.29577951308232);
+      double var10 = -(Math.asin(var4) * 57.29577951308232);
+      return new double[]{var8, var10};
    }
 }

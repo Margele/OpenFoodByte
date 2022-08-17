@@ -14,23 +14,23 @@ public class Class811 extends Class809 {
    }
 
    public Class782 Method3362(a a, Class782 a) throws Class731 {
-      Class782 a;
+      Class782 var3;
       switch (a.Method3640()) {
          case 21:
          case 54:
-            a = Class782.Field3514;
+            var3 = Class782.Field3514;
             break;
          case 22:
          case 55:
-            a = Class782.Field3516;
+            var3 = Class782.Field3516;
             break;
          case 23:
          case 56:
-            a = Class782.Field3515;
+            var3 = Class782.Field3515;
             break;
          case 24:
          case 57:
-            a = Class782.Field3517;
+            var3 = Class782.Field3517;
             break;
          case 25:
             if (!a.Method862()) {
@@ -76,15 +76,15 @@ public class Class811 extends Class809 {
             return a;
       }
 
-      if (!a.Method3429(a)) {
-         throw new Class731(a, (String)null, a, a);
+      if (!var3.Method3429(a)) {
+         throw new Class731(a, (String)null, var3, a);
       } else {
          return a;
       }
    }
 
    public Class782 Method3363(a a, Class782 a) throws Class731 {
-      Class782 a;
+      Class782 var3;
       switch (a.Method3640()) {
          case 116:
          case 132:
@@ -105,28 +105,28 @@ public class Class811 extends Class809 {
          case 172:
          case 188:
          case 189:
-            a = Class782.Field3514;
+            var3 = Class782.Field3514;
             break;
          case 117:
          case 136:
          case 137:
          case 138:
          case 173:
-            a = Class782.Field3516;
+            var3 = Class782.Field3516;
             break;
          case 118:
          case 139:
          case 140:
          case 141:
          case 174:
-            a = Class782.Field3515;
+            var3 = Class782.Field3515;
             break;
          case 119:
          case 142:
          case 143:
          case 144:
          case 175:
-            a = Class782.Field3517;
+            var3 = Class782.Field3517;
             break;
          case 120:
          case 121:
@@ -182,10 +182,10 @@ public class Class811 extends Class809 {
 
             return super.Method3363(a, a);
          case 179:
-            a = this.Method3360(b.Method3204(((Class93)a).Field809));
+            var3 = this.Method3360(b.Method3204(((Class93)a).Field809));
             break;
          case 180:
-            a = this.Method3360(b.Method3205(((Class93)a).Field807));
+            var3 = this.Method3360(b.Method3205(((Class93)a).Field807));
             break;
          case 190:
             if (!this.Method3660(a)) {
@@ -201,46 +201,46 @@ public class Class811 extends Class809 {
             return super.Method3363(a, a);
       }
 
-      if (!this.Method3662(a, a)) {
-         throw new Class731(a, (String)null, a, a);
+      if (!this.Method3662(a, var3)) {
+         throw new Class731(a, (String)null, var3, a);
       } else {
          return super.Method3363(a, a);
       }
    }
 
-   public Class782 Method3364(a a, Class782 a, Class782 a2) throws Class731 {
-      int[] a = Class786.Method917();
-      Class782 a;
-      Class782 a;
+   public Class782 Method3364(a a, Class782 a, Class782 a) throws Class731 {
+      int[] var4 = Class786.Method917();
+      Class782 var5;
+      Class782 var6;
       switch (a.Method3640()) {
          case 46:
-            a = this.Method3360(b.Method3204("[I"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[I"));
+            var6 = Class782.Field3514;
          case 51:
             if (this.Method3662(a, this.Method3360(b.Method3204("[Z")))) {
-               a = this.Method3360(b.Method3204("[Z"));
+               var5 = this.Method3360(b.Method3204("[Z"));
             }
 
-            a = this.Method3360(b.Method3204("[B"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[B"));
+            var6 = Class782.Field3514;
          case 52:
-            a = this.Method3360(b.Method3204("[C"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[C"));
+            var6 = Class782.Field3514;
          case 53:
-            a = this.Method3360(b.Method3204("[S"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[S"));
+            var6 = Class782.Field3514;
          case 47:
-            a = this.Method3360(b.Method3204("[J"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[J"));
+            var6 = Class782.Field3514;
          case 48:
-            a = this.Method3360(b.Method3204("[F"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[F"));
+            var6 = Class782.Field3514;
          case 49:
-            a = this.Method3360(b.Method3204("[D"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[D"));
+            var6 = Class782.Field3514;
          case 50:
-            a = this.Method3360(b.Method3204("[Ljava/lang/Object;"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[Ljava/lang/Object;"));
+            var6 = Class782.Field3514;
          case 96:
          case 100:
          case 104:
@@ -258,8 +258,8 @@ public class Class811 extends Class809 {
          case 162:
          case 163:
          case 164:
-            a = Class782.Field3514;
-            a = Class782.Field3514;
+            var5 = Class782.Field3514;
+            var6 = Class782.Field3514;
          case 98:
          case 102:
          case 106:
@@ -267,8 +267,8 @@ public class Class811 extends Class809 {
          case 114:
          case 149:
          case 150:
-            a = Class782.Field3515;
-            a = Class782.Field3515;
+            var5 = Class782.Field3515;
+            var6 = Class782.Field3515;
          case 97:
          case 101:
          case 105:
@@ -278,13 +278,13 @@ public class Class811 extends Class809 {
          case 129:
          case 131:
          case 148:
-            a = Class782.Field3516;
-            a = Class782.Field3516;
+            var5 = Class782.Field3516;
+            var6 = Class782.Field3516;
          case 121:
          case 123:
          case 125:
-            a = Class782.Field3516;
-            a = Class782.Field3514;
+            var5 = Class782.Field3516;
+            var6 = Class782.Field3514;
          case 99:
          case 103:
          case 107:
@@ -292,16 +292,16 @@ public class Class811 extends Class809 {
          case 115:
          case 151:
          case 152:
-            a = Class782.Field3517;
-            a = Class782.Field3517;
+            var5 = Class782.Field3517;
+            var6 = Class782.Field3517;
          case 165:
          case 166:
-            a = Class782.Field3518;
-            a = Class782.Field3518;
+            var5 = Class782.Field3518;
+            var6 = Class782.Field3518;
          case 181:
-            Class93 a = (Class93)a;
-            this.Method3360(b.Method3205(a.Field807));
-            this.Method3360(b.Method3204(a.Field809));
+            Class93 var7 = (Class93)a;
+            this.Method3360(b.Method3205(var7.Field807));
+            this.Method3360(b.Method3204(var7.Field809));
          case 54:
          case 55:
          case 56:
@@ -390,88 +390,88 @@ public class Class811 extends Class809 {
    }
 
    public Class782 Method3365(a a, Class782 a, Class782 a, Class782 a) throws Class731 {
-      Class782 a;
-      Class782 a;
+      Class782 var5;
+      Class782 var6;
       switch (a.Method3640()) {
          case 79:
-            a = this.Method3360(b.Method3204("[I"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[I"));
+            var6 = Class782.Field3514;
             break;
          case 80:
-            a = this.Method3360(b.Method3204("[J"));
-            a = Class782.Field3516;
+            var5 = this.Method3360(b.Method3204("[J"));
+            var6 = Class782.Field3516;
             break;
          case 81:
-            a = this.Method3360(b.Method3204("[F"));
-            a = Class782.Field3515;
+            var5 = this.Method3360(b.Method3204("[F"));
+            var6 = Class782.Field3515;
             break;
          case 82:
-            a = this.Method3360(b.Method3204("[D"));
-            a = Class782.Field3517;
+            var5 = this.Method3360(b.Method3204("[D"));
+            var6 = Class782.Field3517;
             break;
          case 83:
-            a = a;
-            a = Class782.Field3518;
+            var5 = a;
+            var6 = Class782.Field3518;
             break;
          case 84:
             if (this.Method3662(a, this.Method3360(b.Method3204("[Z")))) {
-               a = this.Method3360(b.Method3204("[Z"));
+               var5 = this.Method3360(b.Method3204("[Z"));
             } else {
-               a = this.Method3360(b.Method3204("[B"));
+               var5 = this.Method3360(b.Method3204("[B"));
             }
 
-            a = Class782.Field3514;
+            var6 = Class782.Field3514;
             break;
          case 85:
-            a = this.Method3360(b.Method3204("[C"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[C"));
+            var6 = Class782.Field3514;
             break;
          case 86:
-            a = this.Method3360(b.Method3204("[S"));
-            a = Class782.Field3514;
+            var5 = this.Method3360(b.Method3204("[S"));
+            var6 = Class782.Field3514;
             break;
          default:
             throw new Error("Internal error.");
       }
 
-      if (!this.Method3662(a, a)) {
-         throw new Class731(a, "First argument", "a " + a + " array reference", a);
+      if (!this.Method3662(a, var5)) {
+         throw new Class731(a, "First argument", "a " + var5 + " array reference", a);
       } else if (!Class782.Field3514.Method863(a)) {
          throw new Class731(a, "Second argument", Class782.Field3514, a);
-      } else if (!this.Method3662(a, a)) {
-         throw new Class731(a, "Third argument", a, a);
+      } else if (!this.Method3662(a, var6)) {
+         throw new Class731(a, "Third argument", var6, a);
       } else {
          return null;
       }
    }
 
    public Class782 Method3366(a a, List a) throws Class731 {
-      int a = a.Method3640();
-      int a;
-      if (a == 197) {
-         for(a = 0; a < a.Method1799(); ++a) {
-            if (!Class782.Field3514.Method863(a.get(a))) {
-               throw new Class731(a, (String)null, Class782.Field3514, (Class797)a.get(a));
+      int var3 = a.Method3640();
+      int var4;
+      if (var3 == 197) {
+         for(var4 = 0; var4 < a.Method1799(); ++var4) {
+            if (!Class782.Field3514.Method863(a.get(var4))) {
+               throw new Class731(a, (String)null, Class782.Field3514, (Class797)a.get(var4));
             }
          }
       } else {
-         a = 0;
-         int a = 0;
-         if (a != 184 && a != 186) {
-            b a = b.Method3205(((Class98)a).Field824);
-            if (!this.Method3662((Class782)a.get(a++), this.Method3360(a))) {
-               throw new Class731(a, "Method owner", this.Method3360(a), (Class797)a.get(0));
+         var4 = 0;
+         int var5 = 0;
+         if (var3 != 184 && var3 != 186) {
+            b var6 = b.Method3205(((Class98)a).Field824);
+            if (!this.Method3662((Class782)a.get(var4++), this.Method3360(var6))) {
+               throw new Class731(a, "Method owner", this.Method3360(var6), (Class797)a.get(0));
             }
          }
 
-         String a = a == 186 ? ((Class88)a).Field760 : ((Class98)a).Field826;
-         b[] a = b.Method3211(a);
+         String var10 = var3 == 186 ? ((Class88)a).Field760 : ((Class98)a).Field826;
+         b[] var7 = b.Method3211(var10);
 
-         while(a < a.Method1799()) {
-            Class782 a = this.Method3360(a[a++]);
-            Class782 a = (Class782)a.get(a++);
-            if (!this.Method3662(a, a)) {
-               throw new Class731(a, "Argument " + a, a, a);
+         while(var4 < a.Method1799()) {
+            Class782 var8 = this.Method3360(var7[var5++]);
+            Class782 var9 = (Class782)a.get(var4++);
+            if (!this.Method3662(var9, var8)) {
+               throw new Class731(a, "Argument " + var5, var8, var9);
             }
          }
       }

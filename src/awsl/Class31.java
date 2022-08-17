@@ -26,67 +26,67 @@ public class Class31 {
    }
 
    public static Class31 Method3435(String a) {
-      String[] a = Class267.Method2862();
+      String[] var1 = Class267.Method2862();
       if (a.length() == 0) {
          return null;
       } else {
-         int a = a.length();
-         Class138 a = new Class138(a);
-         a.Method485(0);
-         int a = 0;
-         if (a < a) {
-            char a = a.charAt(a++);
-            if (a == '[') {
-               a.Method486(0, 0);
+         int var2 = a.length();
+         Class138 var3 = new Class138(var2);
+         var3.Method485(0);
+         int var4 = 0;
+         if (var4 < var2) {
+            char var5 = a.charAt(var4++);
+            if (var5 == '[') {
+               var3.Method486(0, 0);
             }
 
-            if (a == '.') {
-               a.Method486(1, 0);
+            if (var5 == '.') {
+               var3.Method486(1, 0);
             }
 
-            if (a == '*') {
-               a.Method486(2, 0);
+            if (var5 == '*') {
+               var3.Method486(2, 0);
             }
 
-            if (a >= '0' && a <= '9') {
-               int a = a - 48;
-               if (a < a && (a = a.charAt(a)) >= '0' && a <= '9') {
-                  a = a * 10 + a - 48;
-                  ++a;
+            if (var5 >= '0' && var5 <= '9') {
+               int var6 = var5 - 48;
+               if (var4 < var2 && (var5 = a.charAt(var4)) >= '0' && var5 <= '9') {
+                  var6 = var6 * 10 + var5 - 48;
+                  ++var4;
                }
 
-               a.Method486(3, a);
+               var3.Method486(3, var6);
             }
          }
 
-         a.Field990[0] = (byte)(a.Field991 / 2);
-         return new Class31(a.Field990, 0);
+         var3.Field990[0] = (byte)(var3.Field991 / 2);
+         return new Class31(var3.Field990, 0);
       }
    }
 
    public String Method3436() {
-      int a = this.Method3432();
-      StringBuilder a = new StringBuilder(a * 2);
+      int var1 = this.Method3432();
+      StringBuilder var2 = new StringBuilder(var1 * 2);
 
-      for(int a = 0; a < a; ++a) {
-         switch (this.Method3433(a)) {
+      for(int var3 = 0; var3 < var1; ++var3) {
+         switch (this.Method3433(var3)) {
             case 0:
-               a.append('[');
+               var2.append('[');
                break;
             case 1:
-               a.append('.');
+               var2.append('.');
                break;
             case 2:
-               a.append('*');
+               var2.append('*');
                break;
             case 3:
-               a.append(this.Method3434(a));
+               var2.append(this.Method3434(var3));
                break;
             default:
-               a.append('_');
+               var2.append('_');
          }
       }
 
-      return a.toString();
+      return var2.toString();
    }
 }

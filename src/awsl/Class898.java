@@ -21,10 +21,10 @@ public class Class898 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      float a = this.Field3982.Method20((float)a, (float)a);
-      float a = this.Field3983.Method20((float)a, (float)a);
-      a[0] = a * (float)this.Field3820.width;
-      a[1] = a * (float)this.Field3820.height;
+      float var4 = this.Field3982.Method20((float)a, (float)a);
+      float var5 = this.Field3983.Method20((float)a, (float)a);
+      a[0] = var4 * (float)this.Field3820.width;
+      a[1] = var5 * (float)this.Field3820.height;
    }
 
    public String toString() {

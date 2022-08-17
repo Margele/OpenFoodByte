@@ -25,13 +25,13 @@ public class Class305 {
    }
 
    public static boolean Method697(Entity a) {
-      int a = Method710();
+      boolean var1 = Method710();
       if (a instanceof EntityPlayer) {
          Iterator var2 = Field1584.Method1383();
          if (var2.Method932()) {
-            Object a = var2.Method933();
-            Class309 a = (Class309)a;
-            if (a.Method748().equalsIgnoreCase(a.getName())) {
+            Object var3 = var2.Method933();
+            Class309 var4 = (Class309)var3;
+            if (var4.Method748().equalsIgnoreCase(a.getName())) {
                return true;
             }
          }
@@ -45,9 +45,9 @@ public class Class305 {
          Iterator var1 = Field1584.Method1383();
 
          while(var1.Method932()) {
-            Object a = var1.Method933();
-            Class309 a = (Class309)a;
-            if (a.Method748().equalsIgnoreCase(a)) {
+            Object var2 = var1.Method933();
+            Class309 var3 = (Class309)var2;
+            if (var3.Method748().equalsIgnoreCase(a)) {
                return true;
             }
          }
@@ -59,27 +59,27 @@ public class Class305 {
    public static Class309 Method699(String a) {
       Iterator var1 = Field1584.Method1383();
 
-      Class309 a;
+      Class309 var3;
       do {
          if (!var1.Method932()) {
             return null;
          }
 
-         Object a = var1.Method933();
-         a = (Class309)a;
-      } while(!a.Method748().equalsIgnoreCase(a));
+         Object var2 = var1.Method933();
+         var3 = (Class309)var2;
+      } while(!var3.Method748().equalsIgnoreCase(a));
 
-      return a;
+      return var3;
    }
 
    public static boolean Method700(Entity a) {
-      int a = Method711();
+      boolean var1 = Method711();
       if (a instanceof EntityPlayer) {
          Iterator var2 = Field1585.Method1383();
          if (var2.Method932()) {
-            Object a = var2.Method933();
-            Class307 a = (Class307)a;
-            if (a.Method744().equalsIgnoreCase(a.getName())) {
+            Object var3 = var2.Method933();
+            Class307 var4 = (Class307)var3;
+            if (var4.Method744().equalsIgnoreCase(a.getName())) {
                return true;
             }
          }
@@ -91,15 +91,15 @@ public class Class305 {
    public static boolean Method701(String a) {
       Iterator var1 = Field1585.Method1383();
 
-      Class307 a;
+      Class307 var3;
       do {
          if (!var1.Method932()) {
             return false;
          }
 
-         Object a = var1.Method933();
-         a = (Class307)a;
-      } while(!a.Method744().equalsIgnoreCase(a));
+         Object var2 = var1.Method933();
+         var3 = (Class307)var2;
+      } while(!var3.Method744().equalsIgnoreCase(a));
 
       return true;
    }
@@ -107,17 +107,17 @@ public class Class305 {
    public static Class307 Method702(String a) {
       Iterator var1 = Field1585.Method1383();
 
-      Class307 a;
+      Class307 var3;
       do {
          if (!var1.Method932()) {
             return null;
          }
 
-         Object a = var1.Method933();
-         a = (Class307)a;
-      } while(!a.Method744().equalsIgnoreCase(a));
+         Object var2 = var1.Method933();
+         var3 = (Class307)var2;
+      } while(!var3.Method744().equalsIgnoreCase(a));
 
-      return a;
+      return var3;
    }
 
    public static boolean Method703(EntityPlayer a) {
@@ -129,16 +129,16 @@ public class Class305 {
    }
 
    public static boolean Method705(Entity a) {
-      int a = Method711();
+      boolean var1 = Method711();
       if (GlobalModule.INSTANCE.balant.Field2827.Method3740() >= 5) {
          return false;
       } else {
          if (!GlobalModule.INSTANCE.balant.Field2823.isEmpty()) {
             Iterator var2 = GlobalModule.INSTANCE.balant.Field2823.Method1383();
             if (var2.Method932()) {
-               Class606 a = (Class606)var2.Method933();
-               if (a.getName().equals(a.Field2841)) {
-                  return a.Field2848;
+               Class606 var3 = (Class606)var2.Method933();
+               if (a.getName().equals(var3.Field2841)) {
+                  return var3.Field2848;
                }
             }
          }
@@ -170,25 +170,25 @@ public class Class305 {
    }
 
    public static int Method707(Entity a) {
-      int a = 16777215;
-      String a;
-      ScorePlayerTeam a;
-      if (a instanceof EntityPlayer && (a = (ScorePlayerTeam)((EntityPlayer)a).getTeam()) != null && (a = FontRenderer.getFormatFromString(a.getColorPrefix())).length() >= 2) {
-         if (!"0123456789abcdef".contains(String.valueOf(a.charAt(1)))) {
-            return a;
+      int var3 = 16777215;
+      String var1;
+      ScorePlayerTeam var2;
+      if (a instanceof EntityPlayer && (var2 = (ScorePlayerTeam)((EntityPlayer)a).getTeam()) != null && (var1 = FontRenderer.getFormatFromString(var2.getColorPrefix())).length() >= 2) {
+         if (!"0123456789abcdef".contains(String.valueOf(var1.charAt(1)))) {
+            return var3;
          }
 
-         a = Minecraft.getMinecraft().fontRendererObj.getColorCode(a.charAt(1));
+         var3 = Minecraft.getMinecraft().fontRendererObj.getColorCode(var1.charAt(1));
       }
 
-      return a;
+      return var3;
    }
 
    public static String Method708() {
       Method710();
-      NetworkPlayerInfo a = Minecraft.getMinecraft().getNetHandler().getPlayerInfo(Minecraft.getMinecraft().getSession().getProfile().getId());
+      NetworkPlayerInfo var1 = Minecraft.getMinecraft().getNetHandler().getPlayerInfo(Minecraft.getMinecraft().getSession().getProfile().getId());
       if (Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().theWorld != null) {
-         return a.getDisplayName() != null ? a.getDisplayName().getFormattedText() : ScorePlayerTeam.formatPlayerName(a.getPlayerTeam(), a.getGameProfile().getName());
+         return var1.getDisplayName() != null ? var1.getDisplayName().getFormattedText() : ScorePlayerTeam.formatPlayerName(var1.getPlayerTeam(), var1.getGameProfile().getName());
       } else {
          a.trash(new String[5]);
          return "NULL";

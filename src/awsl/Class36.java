@@ -33,52 +33,52 @@ public class Class36 {
    }
 
    public static Class36 Method3422(String a, boolean a) throws IllegalArgumentException {
-      int a = a.indexOf(32);
-      int a = a.indexOf(40, a) + 1;
-      int a = a.indexOf(41, a);
-      if (a != -1 && a != -1 && a != -1) {
-         String a = a.substring(0, a);
-         String a = a.substring(a + 1, a - 1).trim();
-         StringBuilder a = new StringBuilder();
-         a.append('(');
+      int var2 = a.indexOf(32);
+      int var3 = a.indexOf(40, var2) + 1;
+      int var4 = a.indexOf(41, var3);
+      if (var2 != -1 && var3 != -1 && var4 != -1) {
+         String var5 = a.substring(0, var2);
+         String var6 = a.substring(var2 + 1, var3 - 1).trim();
+         StringBuilder var7 = new StringBuilder();
+         var7.append('(');
 
-         int a;
+         int var8;
          do {
-            a = a.indexOf(44, a);
-            String a;
-            if (a == -1) {
-               a = Method3423(a.substring(a, a).trim(), a);
+            var8 = a.indexOf(44, var3);
+            String var9;
+            if (var8 == -1) {
+               var9 = Method3423(a.substring(var3, var4).trim(), a);
             } else {
-               a = Method3423(a.substring(a, a).trim(), a);
-               a = a + 1;
+               var9 = Method3423(a.substring(var3, var8).trim(), a);
+               var3 = var8 + 1;
             }
 
-            a.append(a);
-         } while(a != -1);
+            var7.append(var9);
+         } while(var8 != -1);
 
-         a.append(')');
-         a.append(Method3423(a, a));
-         return new Class36(a, a.toString());
+         var7.append(')');
+         var7.append(Method3423(var5, a));
+         return new Class36(var6, var7.toString());
       } else {
          throw new IllegalArgumentException();
       }
    }
 
-   private static String Method3423(String a, boolean a1) {
+   private static String Method3423(String a, boolean a) {
       if ("".equals(a)) {
          return a;
       } else {
-         StringBuilder a = new StringBuilder();
-         int a = 0;
+         StringBuilder var2 = new StringBuilder();
+         int var3 = 0;
 
-         while((a = a.indexOf("[]", a) + 1) > 0) {
-            a.append('[');
+         while((var3 = a.indexOf("[]", var3) + 1) > 0) {
+            var2.append('[');
          }
 
-         String a = a.substring(0, a.length() - a.length() * 2);
-         String a = (String)Field300.Method2665(a);
-         a.append(a);
-         return a.toString();
+         String var4 = a.substring(0, a.length() - var2.length() * 2);
+         String var5 = (String)Field300.Method2665(var4);
+         var2.append(var5);
+         return var2.toString();
       }
    }
 
@@ -106,8 +106,8 @@ public class Class36 {
       if (!(a instanceof Class36)) {
          return false;
       } else {
-         Class36 a = (Class36)a;
-         return this.Field298.equals(a.Field298) && this.Field299.equals(a.Field299);
+         Class36 var2 = (Class36)a;
+         return this.Field298.equals(var2.Field298) && this.Field299.equals(var2.Field299);
       }
    }
 

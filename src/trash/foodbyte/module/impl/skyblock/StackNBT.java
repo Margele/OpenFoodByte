@@ -34,67 +34,67 @@ public class StackNBT extends Module {
 
    @EventTarget
    public void Method1626(EventTickUpdate a) {
-      int[] a = Class98.Method3639();
+      int[] var2 = Class98.Method3639();
       if (Wrapper.INSTANCE.getThePlayer() != null) {
-         boolean a = Keyboard.isKeyDown(15);
+         boolean var3 = Keyboard.isKeyDown(15);
          if (!this.Field3137) {
             this.Field3137 = true;
             if (mc.currentScreen instanceof GuiContainer) {
-               GuiContainer a = (GuiContainer)mc.currentScreen;
-               ItemStack a = null;
-               if (this.Method1993(a) != null) {
-                  a = this.Method1993(a).getStack();
+               GuiContainer var4 = (GuiContainer)mc.currentScreen;
+               ItemStack var5 = null;
+               if (this.Method1993(var4) != null) {
+                  var5 = this.Method1993(var4).getStack();
                }
 
-               if (a.getTagCompound() != null) {
-                  ChatUtils.addChatMessageNoPrefix(a.getDisplayName());
-                  NBTTagCompound a = a.getTagCompound();
-                  NBTTagList a = Class356.Method139(a);
-                  int a = 0;
-                  if (a < a.tagCount()) {
-                     System.err.println(a.get(a));
-                     ++a;
+               if (var5.getTagCompound() != null) {
+                  ChatUtils.addChatMessageNoPrefix(var5.getDisplayName());
+                  NBTTagCompound var6 = var5.getTagCompound();
+                  NBTTagList var7 = Class356.Method139(var5);
+                  int var8 = 0;
+                  if (var8 < var7.tagCount()) {
+                     System.err.println(var7.get(var8));
+                     ++var8;
                   }
 
-                  int a = 0;
-                  if (a < a.tagCount()) {
-                     if (a.get(a).toString().contains("Category") || a.get(a).toString().contains("Max Crafts")) {
-                        a.removeTag(a);
+                  byte var10 = 0;
+                  if (var10 < var7.tagCount()) {
+                     if (var7.get(var10).toString().contains("Category") || var7.get(var10).toString().contains("Max Crafts")) {
+                        var7.removeTag(var10);
                      }
 
-                     a = a + 1;
+                     var8 = var10 + 1;
                   }
 
-                  a = 0;
-                  if (a < a.tagCount()) {
-                     if (a.get(a).toString().contains("Category") || a.get(a).toString().contains("Max Crafts")) {
-                        a.removeTag(a);
+                  var10 = 0;
+                  if (var10 < var7.tagCount()) {
+                     if (var7.get(var10).toString().contains("Category") || var7.get(var10).toString().contains("Max Crafts")) {
+                        var7.removeTag(var10);
                      }
 
-                     a = a + 1;
+                     var8 = var10 + 1;
                   }
 
-                  a = 0;
-                  int a = 0;
-                  if (a < a.tagCount()) {
-                     if (a.get(a).toString().equals("\"\"")) {
-                        a = a + 1;
-                        if (a >= 2) {
-                           a.removeTag(a);
+                  var10 = 0;
+                  int var9 = 0;
+                  if (var9 < var7.tagCount()) {
+                     if (var7.get(var9).toString().equals("\"\"")) {
+                        var8 = var10 + 1;
+                        if (var8 >= 2) {
+                           var7.removeTag(var9);
                         }
                      }
 
-                     ++a;
+                     ++var9;
                   }
 
-                  String a = this.Method1992(a.getItem()) + " " + a.stackSize + " " + a.getItemDamage() + " " + a.getTagCompound().toString();
-                  a = a.replace("§aClick to view recipe!", "§dClick to craft!");
-                  Wrapper.INSTANCE.setClipboard(a);
+                  String var11 = this.Method1992(var5.getItem()) + " " + var5.stackSize + " " + var5.getItemDamage() + " " + var5.getTagCompound().toString();
+                  var11 = var11.replace("§aClick to view recipe!", "§dClick to craft!");
+                  Wrapper.INSTANCE.setClipboard(var11);
                }
             }
          }
 
-         this.Field3137 = a;
+         this.Field3137 = var3;
       }
 
    }
@@ -104,13 +104,13 @@ public class StackNBT extends Module {
    }
 
    public Slot Method1993(GuiContainer a) {
-      Slot a = null;
+      Slot var2 = null;
 
       try {
-         a = (Slot)ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.theSlot.getObfuscatedName()}).get(a);
+         var2 = (Slot)ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.theSlot.getObfuscatedName()}).get(a);
       } catch (Exception var4) {
       }
 
-      return a;
+      return var2;
    }
 }

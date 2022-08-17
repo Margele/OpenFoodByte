@@ -26,14 +26,14 @@ public final class Class697 extends Thread {
    }
 
    private Session Method2636(String a, String a) {
-      YggdrasilAuthenticationService a = new YggdrasilAuthenticationService(Proxy.NO_PROXY, "");
-      YggdrasilUserAuthentication a = (YggdrasilUserAuthentication)a.createUserAuthentication(Agent.MINECRAFT);
-      a.setUsername(a);
-      a.setPassword(a);
+      YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, "");
+      YggdrasilUserAuthentication var4 = (YggdrasilUserAuthentication)var3.createUserAuthentication(Agent.MINECRAFT);
+      var4.setUsername(a);
+      var4.setPassword(a);
 
       try {
-         a.logIn();
-         return new Session(a.getSelectedProfile().getName(), a.getSelectedProfile().getId().toString(), a.getAuthenticatedToken(), "mojang");
+         var4.logIn();
+         return new Session(var4.getSelectedProfile().getName(), var4.getSelectedProfile().getId().toString(), var4.getAuthenticatedToken(), "mojang");
       } catch (AuthenticationException var6) {
          var6.printStackTrace();
          return null;
@@ -45,7 +45,7 @@ public final class Class697 extends Thread {
    }
 
    public void Method1339() {
-      String a = AltLogin.Method1809();
+      String var1 = AltLogin.Method1809();
       if (this.Field3009.equals("")) {
          ReflectionUtils.setUsername(this.Field3011);
          this.Field3010 = "Logged in. (§a" + this.Field3011 + "§r - cracked name)";
@@ -53,12 +53,12 @@ public final class Class697 extends Thread {
       } else {
          this.Field3010 = "Logging in...";
          AltLogin.Field3049 = this.Field3010;
-         Session a = this.Method2636(this.Field3011, this.Field3009);
+         Session var2 = this.Method2636(this.Field3011, this.Field3009);
          this.Field3010 = "§cLogin failed!";
          AltLogin.Field3049 = this.Field3010;
-         this.Field3010 = "Logged in. (§a" + a.getUsername() + "§r - Premium Account)";
+         this.Field3010 = "Logged in. (§a" + var2.getUsername() + "§r - Premium Account)";
          AltLogin.Field3049 = this.Field3010;
-         ReflectionUtils.setSession(a);
+         ReflectionUtils.setSession(var2);
          if (a.trash() == null) {
             AltLogin.Method1808("EHLwQ");
          }

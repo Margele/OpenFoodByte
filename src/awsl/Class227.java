@@ -36,15 +36,15 @@ public final class Class227 extends Class167 {
    }
 
    public Class148 Method1448(String a, boolean a) {
-      Class801 a = this.Field1276.Method3248(a, a);
-      Class148 a = this.Field1035 == null ? null : this.Field1035.Method1448(a, a);
-      return new Class132(a, a);
+      Class801 var3 = this.Field1276.Method3248(a, a);
+      Class148 var4 = this.Field1035 == null ? null : this.Field1035.Method1448(a, a);
+      return new Class132(var4, var3);
    }
 
    public Class148 Method1449(int a, Class31 a, String a, boolean a) {
-      Class801 a = this.Field1276.Method3249(a, a, a, a);
-      Class148 a = this.Field1035 == null ? null : this.Field1035.Method1449(a, a, a, a);
-      return new Class132(a, a);
+      Class801 var5 = this.Field1276.Method3249(a, a, a, a);
+      Class148 var6 = this.Field1035 == null ? null : this.Field1035.Method1449(a, a, a, a);
+      return new Class132(var6, var5);
    }
 
    public void Method1459(Class136 a) {
@@ -58,15 +58,15 @@ public final class Class227 extends Class167 {
    }
 
    public Class253 Method1450(int a, String a, String a, String a, Object a) {
-      Class801 a = this.Field1276.Method3252(a, a, a, a, a);
-      Class253 a = this.Field1035 == null ? null : this.Field1035.Method1450(a, a, a, a, a);
-      return new Class270(a, a);
+      Class801 var6 = this.Field1276.Method3252(a, a, a, a, a);
+      Class253 var7 = this.Field1035 == null ? null : this.Field1035.Method1450(a, a, a, a, a);
+      return new Class270(var7, var6);
    }
 
    public Class267 Method1451(int a, String a, String a, String a, String[] a) {
-      Class801 a = this.Field1276.Method3253(a, a, a, a, a);
-      Class267 a = this.Field1035 == null ? null : this.Field1035.Method1451(a, a, a, a, a);
-      return new Class41(a, a);
+      Class801 var6 = this.Field1276.Method3253(a, a, a, a, a);
+      Class267 var7 = this.Field1035 == null ? null : this.Field1035.Method1451(a, a, a, a, a);
+      return new Class41(var7, var6);
    }
 
    public void Method1460() {

@@ -74,33 +74,33 @@ public class Class880 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = Class193.Method1269();
+      boolean var3 = Class193.Method1269();
       a = this.Method1263(a, (ColorModel)null);
-      int a = a.getWidth();
-      int a = a.getHeight();
-      int a = (int)(this.Field3839 * (float)a * (float)a / 100.0F);
-      float a = this.Field3843 * (float)a;
-      Random a = new Random((long)this.Field3845);
-      Graphics2D a = a.createGraphics();
-      a.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-      a.setColor(new Color(this.Field3844));
-      a.setStroke(new BasicStroke(this.Field3842));
-      int a = 0;
-      if (a < a) {
-         float a = (float)a * a.nextFloat();
-         float a = (float)a * a.nextFloat();
-         float a = this.Field3840 + 6.2831855F * this.Field3841 * (a.nextFloat() - 0.5F);
-         float a = (float)Math.sin((double)a) * a;
-         float a = (float)Math.cos((double)a) * a;
-         float a = a - a;
-         float a = a - a;
-         float a = a + a;
-         float a = a + a;
-         a.drawLine((int)a, (int)a, (int)a, (int)a);
-         ++a;
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
+      int var6 = (int)(this.Field3839 * (float)var4 * (float)var5 / 100.0F);
+      float var7 = this.Field3843 * (float)var4;
+      Random var8 = new Random((long)this.Field3845);
+      Graphics2D var9 = a.createGraphics();
+      var9.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+      var9.setColor(new Color(this.Field3844));
+      var9.setStroke(new BasicStroke(this.Field3842));
+      int var10 = 0;
+      if (var10 < var6) {
+         float var11 = (float)var4 * var8.nextFloat();
+         float var12 = (float)var5 * var8.nextFloat();
+         float var13 = this.Field3840 + 6.2831855F * this.Field3841 * (var8.nextFloat() - 0.5F);
+         float var14 = (float)Math.sin((double)var13) * var7;
+         float var15 = (float)Math.cos((double)var13) * var7;
+         float var16 = var11 - var15;
+         float var17 = var12 - var14;
+         float var18 = var11 + var15;
+         float var19 = var12 + var14;
+         var9.drawLine((int)var16, (int)var17, (int)var18, (int)var19);
+         ++var10;
       }
 
-      a.dispose();
+      var9.dispose();
       return a;
    }
 

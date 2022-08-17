@@ -32,23 +32,23 @@ public class Command {
       return this.help;
    }
 
-   public static String Method1663(String[] a, String a, int a2, int a) {
-      int a = Method1665();
-      int a = 0;
+   public static String Method1663(String[] a, String a, int a, int a) {
+      int var4 = Method1665();
+      byte var7 = 0;
       if (a > a.length) {
          a = a.length;
       }
 
-      StringBuilder a = new StringBuilder();
-      if (a < a) {
-         a.append(a[a]).append(a);
-         int var6 = a + 1;
+      StringBuilder var5 = new StringBuilder();
+      if (var7 < a) {
+         var5.append(a[var7]).append(a);
+         int var6 = var7 + 1;
       }
 
-      String var10000 = a.substring(0, a.toString().length() - 1);
+      String var10000 = var5.substring(0, var5.toString().length() - 1);
       if (a.trash() == null) {
-         ++a;
-         Method1664(a);
+         ++var4;
+         Method1664(var4);
       }
 
       return var10000;

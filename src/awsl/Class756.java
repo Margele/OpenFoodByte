@@ -62,46 +62,46 @@ public class Class756 extends Class798 {
       a.width *= this.Field3300;
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
       Class193.Method1270();
-      int[] a = new int[a * a];
+      int[] var6 = new int[a * a];
       if (this.Field3301 != null) {
-         int[] a = this.Method104(this.Field3301, 0, 0, a, a, (int[])null);
-         this.Method1742(a, a, a, this.Field3298, this.Field3299, a, a, this.Field3302);
+         int[] var7 = this.Method104(this.Field3301, 0, 0, a, a, (int[])null);
+         this.Method1742(a, var7, var6, this.Field3298, this.Field3299, a, a, this.Field3302);
       }
 
       if (this.Field3300 <= 1) {
-         this.Field3298.Method1794(a, a, a, this.Field3298, this.Field3299, a);
+         this.Field3298.Method1794(a, a, a, this.Field3298, this.Field3299, var6);
       }
 
-      Class702 a = new Class702(this.Field3298.Field3030, this.Field3298.Field3031, a, a);
-      int a = 0;
-      if (a < this.Field3300) {
-         float a = (float)a / (float)(this.Field3300 - 1);
-         this.Field3298.Method1793(a, this.Field3299, a);
-         this.Field3298.Method1794(a, a, a, this.Field3298, a, a);
-         ++a;
+      Class702 var10 = new Class702(this.Field3298.Field3030, this.Field3298.Field3031, a, a);
+      int var8 = 0;
+      if (var8 < this.Field3300) {
+         float var9 = (float)var8 / (float)(this.Field3300 - 1);
+         this.Field3298.Method1793(var9, this.Field3299, var10);
+         this.Field3298.Method1794(a, a, a, this.Field3298, var10, var6);
+         ++var8;
       }
 
-      return a;
+      return var6;
    }
 
    public void Method1742(int[] a, int[] a, int[] a, Class702 a, Class702 a, int a, int a, float a) {
-      Class702 a = new Class702(a.Field3030, a.Field3031, a, a);
-      a.Method1793(a, a, a);
-      a.Method1794(a, a, a, a, a, a);
-      int[] a = new int[a * a];
-      a.Method1794(a, a, a, a, a, a);
-      this.Method1278(a, a, a, a, a);
+      Class702 var9 = new Class702(a.Field3030, a.Field3031, a, a);
+      a.Method1793(a, a, var9);
+      a.Method1794(a, a, a, a, var9, a);
+      int[] var10 = new int[a * a];
+      a.Method1794(a, a, a, a, var9, var10);
+      this.Method1278(a, var10, a, a, a);
    }
 
    public void Method1278(int[] a, int[] a, int a, int a, float a) {
-      int a = 0;
+      int var6 = 0;
 
-      for(int a = 0; a < a; ++a) {
-         for(int a = 0; a < a; ++a) {
-            a[a] = Class776.Method1719(a, a[a], a[a]);
-            ++a;
+      for(int var7 = 0; var7 < a; ++var7) {
+         for(int var8 = 0; var8 < a; ++var8) {
+            a[var6] = Class776.Method1719(a, a[var6], a[var6]);
+            ++var6;
          }
       }
 

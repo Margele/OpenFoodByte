@@ -20,7 +20,7 @@ public class Class467 implements Class422, Class45 {
       Method1363();
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public String[] Method1360() {

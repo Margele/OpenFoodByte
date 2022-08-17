@@ -28,22 +28,22 @@ public class Class426 {
       this.Field2052 = this.Field2047.Field2006 + 10.0;
       Method2315();
       this.Field2053 = 15.0;
-      String a = this.Field2048.Method2754();
-      String a;
-      double a;
+      String var2 = this.Field2048.Method2754();
+      String var4;
+      double var7;
       if (this.Field2048 instanceof ModeValue) {
          label45: {
             if (this.Field2055) {
                this.Field2053 = 25.0;
-               int a = 0;
-               if (a < ((ModeValue)this.Field2048).Method2728().length) {
-                  a = ((ModeValue)this.Field2048).Method2728()[a];
-                  if (((ModeValue)this.Field2048).isCurrentMode(a)) {
+               int var3 = 0;
+               if (var3 < ((ModeValue)this.Field2048).Method2728().length) {
+                  var4 = ((ModeValue)this.Field2048).Method2728()[var3];
+                  if (((ModeValue)this.Field2048).isCurrentMode(var4)) {
                      ;
                   }
 
                   this.Field2053 += (double)(Class565.Field2637.Field2625 - 5.0F);
-                  ++a;
+                  ++var3;
                }
 
                if (((ModeValue)this.Field2048).Method2728().length <= 1) {
@@ -57,27 +57,27 @@ public class Class426 {
          }
 
          this.Field2054 = this.Field2048.Method2754();
-         a = this.Field2050 + this.Field2052 - (double)((int)Class565.Field2637.Method1225(((ModeValue)this.Field2048).getMode()));
-         if (a < this.Field2050 + 33.0) {
-            this.Field2052 += this.Field2050 + 33.0 - a;
+         var7 = this.Field2050 + this.Field2052 - (double)((int)Class565.Field2637.Method1225(((ModeValue)this.Field2048).getMode()));
+         if (var7 < this.Field2050 + 33.0) {
+            this.Field2052 += this.Field2050 + 33.0 - var7;
          }
       }
 
       if (this.Field2048 instanceof FloatValue) {
-         this.Field2054 = a.substring(0, 1).toUpperCase() + a.substring(1, a.length());
-         String a = "" + (double)Math.round((double)((FloatValue)this.Field2048).getFloatValue() * 100.0) / 100.0;
-         a = "" + (double)Math.round((double)((FloatValue)this.Field2048).Method2751() * 100.0) / 100.0;
-         double a = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054) - (double)Class565.Field2637.Method1225(a) - 4.0;
-         if (a < this.Field2050) {
-            this.Field2052 += this.Field2050 - a + 1.0;
+         this.Field2054 = var2.substring(0, 1).toUpperCase() + var2.substring(1, var2.length());
+         String var8 = "" + (double)Math.round((double)((FloatValue)this.Field2048).getFloatValue() * 100.0) / 100.0;
+         var4 = "" + (double)Math.round((double)((FloatValue)this.Field2048).Method2751() * 100.0) / 100.0;
+         double var5 = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054) - (double)Class565.Field2637.Method1225(var4) - 4.0;
+         if (var5 < this.Field2050) {
+            this.Field2052 += this.Field2050 - var5 + 1.0;
          }
       }
 
       if (this.Field2048 instanceof BooleanValue) {
-         this.Field2054 = a.substring(0, 1).toUpperCase() + a.substring(1, a.length());
-         a = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054);
-         if (a < this.Field2050 + 13.0) {
-            this.Field2052 += this.Field2050 + 13.0 - a + 1.0;
+         this.Field2054 = var2.substring(0, 1).toUpperCase() + var2.substring(1, var2.length());
+         var7 = this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(this.Field2054);
+         if (var7 < this.Field2050 + 13.0) {
+            this.Field2052 += this.Field2050 + 13.0 - var7 + 1.0;
          }
       }
 
@@ -87,14 +87,14 @@ public class Class426 {
 
    }
 
-   public void Method2310(int a, int a1, float a2) {
+   public void Method2310(int a, int a, float a) {
    }
 
-   public boolean Method2311(int a, int a, int a2) {
+   public boolean Method2311(int a, int a, int a) {
       return this.Method2313(a, a);
    }
 
-   public void Method2312(int a, int a1, int a2) {
+   public void Method2312(int a, int a, int a) {
    }
 
    public boolean Method2313(int a, int a) {

@@ -76,34 +76,34 @@ public class ChestStealer extends Module {
 
    public void Method273(EventPacket a) {
       if (a.getPacket() instanceof S2DPacketOpenWindow) {
-         S2DPacketOpenWindow a = (S2DPacketOpenWindow)a.getPacket();
+         S2DPacketOpenWindow var2 = (S2DPacketOpenWindow)a.getPacket();
          String[] var3 = this.Field2675;
          int var4 = var3.length;
 
          for(int var5 = 0; var5 < var4; ++var5) {
-            String a = var3[var5];
-            if (a.getWindowTitle().getUnformattedText().toLowerCase().contains(a)) {
+            String var6 = var3[var5];
+            if (var2.getWindowTitle().getUnformattedText().toLowerCase().contains(var6)) {
                this.Field2678 = false;
                return;
             }
          }
 
-         this.Field2678 = a.getGuiId().equals("minecraft:chest");
+         this.Field2678 = var2.getGuiId().equals("minecraft:chest");
          if (this.Field2678) {
-            this.Field2680 = a.getSlotCount();
-            this.Field2681 = a.getWindowId();
+            this.Field2680 = var2.getSlotCount();
+            this.Field2681 = var2.getWindowId();
             this.Field2682.clear();
             this.Field2679 = false;
          }
       }
 
       if (this.Field2678 && a.getPacket() instanceof S30PacketWindowItems) {
-         S30PacketWindowItems a = (S30PacketWindowItems)a.getPacket();
-         if (a.func_148911_c() == this.Field2681 && !this.Field2679) {
-            for(int a = 0; a < this.Field2680; ++a) {
-               ItemStack a = a.getItemStacks()[a];
-               if (!this.Method1068(a, a)) {
-                  this.Field2682.Method2530(a);
+         S30PacketWindowItems var7 = (S30PacketWindowItems)a.getPacket();
+         if (var7.func_148911_c() == this.Field2681 && !this.Field2679) {
+            for(int var8 = 0; var8 < this.Field2680; ++var8) {
+               ItemStack var9 = var7.getItemStacks()[var8];
+               if (!this.Method1068(var9, var7)) {
+                  this.Field2682.Method2530(var8);
                }
             }
 
@@ -133,86 +133,86 @@ public class ChestStealer extends Module {
 
    @EventTarget
    public void Method712(EventMotion a) {
-      int a = Class148.Method1445();
+      int var2 = Class148.Method1445();
       if (!a.isPost()) {
          if (this.Method713()) {
             if (mc.currentScreen instanceof GuiChest) {
-               Container a = mc.thePlayer.openContainer;
-               ContainerChest a = (ContainerChest)a;
-               String a = a.getLowerChestInventory().getDisplayName().getUnformattedText().toLowerCase();
-               String a = a.getLowerChestInventory().getDisplayName().getUnformattedText();
-               if (a.equalsIgnoreCase("low") || StatCollector.translateToLocal("container.chest").equalsIgnoreCase(a) || StatCollector.translateToLocal("container.chestDouble").equalsIgnoreCase(a)) {
-                  String[] a = new String[]{"menu", "selector", "game", "gui", "server", "inventory", "play", "teleporter", "shop", "melee", "armor", "block", "castle", "mini", "warp", "teleport", "user", "team", "tool", "sure", "trade", "cancel", "accept", "soul", "book", "recipe", "profile", "tele", "port", "map", "kit", "select", "lobby", "vault", "lock"};
-                  int var9 = a.length;
-                  int a = 0;
-                  if (a < var9) {
-                     String a = a[a];
-                     if (a.contains(a)) {
+               Container var3 = mc.thePlayer.openContainer;
+               ContainerChest var4 = (ContainerChest)var3;
+               String var5 = var4.getLowerChestInventory().getDisplayName().getUnformattedText().toLowerCase();
+               String var6 = var4.getLowerChestInventory().getDisplayName().getUnformattedText();
+               if (var5.equalsIgnoreCase("low") || StatCollector.translateToLocal("container.chest").equalsIgnoreCase(var6) || StatCollector.translateToLocal("container.chestDouble").equalsIgnoreCase(var6)) {
+                  String[] var7 = new String[]{"menu", "selector", "game", "gui", "server", "inventory", "play", "teleporter", "shop", "melee", "armor", "block", "castle", "mini", "warp", "teleport", "user", "team", "tool", "sure", "trade", "cancel", "accept", "soul", "book", "recipe", "profile", "tele", "port", "map", "kit", "select", "lobby", "vault", "lock"};
+                  int var9 = var7.length;
+                  int var10 = 0;
+                  if (var10 < var9) {
+                     String var11 = var7[var10];
+                     if (var5.contains(var11)) {
                         return;
                      }
 
-                     ++a;
+                     ++var10;
                   }
 
                   this.Field2678 = true;
-                  boolean a = true;
-                  ItemStack[] a;
-                  a = (a = mc.thePlayer.inventory.mainInventory).length;
-                  int a = 0;
-                  if (a < a) {
-                     ItemStack a = a[a];
-                     a = false;
-                     ++a;
+                  boolean var8 = true;
+                  ItemStack[] var16;
+                  var10 = (var16 = mc.thePlayer.inventory.mainInventory).length;
+                  int var17 = 0;
+                  if (var17 < var10) {
+                     ItemStack var12 = var16[var17];
+                     var8 = false;
+                     ++var17;
                   }
 
-                  boolean a = false;
-                  int a = a.getLowerChestInventory().getSizeInventory() + 1;
-                  if (a > -1) {
-                     ItemStack a = a.getLowerChestInventory().getStackInSlot(a);
-                     if (!this.Method1068(a, (S30PacketWindowItems)null)) {
-                        a = true;
+                  boolean var18 = false;
+                  int var19 = var4.getLowerChestInventory().getSizeInventory() + 1;
+                  if (var19 > -1) {
+                     ItemStack var13 = var4.getLowerChestInventory().getStackInSlot(var19);
+                     if (!this.Method1068(var13, (S30PacketWindowItems)null)) {
+                        var18 = true;
                      }
 
-                     --a;
+                     --var19;
                   }
 
-                  List a = new ArrayList();
-                  int a = a.getLowerChestInventory().getSizeInventory() + 1;
-                  if (a > -1) {
-                     ItemStack a = a.getLowerChestInventory().getStackInSlot(a);
-                     if (!this.Method1068(a, (S30PacketWindowItems)null)) {
-                        a.Method2530(a);
+                  ArrayList var20 = new ArrayList();
+                  int var21 = var4.getLowerChestInventory().getSizeInventory() + 1;
+                  if (var21 > -1) {
+                     ItemStack var14 = var4.getLowerChestInventory().getStackInSlot(var21);
+                     if (!this.Method1068(var14, (S30PacketWindowItems)null)) {
+                        var20.Method2530(var21);
                      }
 
-                     --a;
+                     --var21;
                   }
 
-                  Collections.shuffle(a);
-                  Iterator var22 = a.Method1383();
+                  Collections.shuffle(var20);
+                  Iterator var22 = var20.Method1383();
                   if (var22.Method932()) {
-                     int a = (Integer)var22.Method933();
-                     ItemStack a = a.getLowerChestInventory().getStackInSlot(a);
-                     if (a.getItem() instanceof ItemSword) {
-                        a.set(0, a);
+                     int var23 = (Integer)var22.Method933();
+                     ItemStack var15 = var4.getLowerChestInventory().getStackInSlot(var23);
+                     if (var15.getItem() instanceof ItemSword) {
+                        var20.set(0, var23);
                      }
 
-                     if (a.getItem() instanceof ItemArmor) {
-                        a.set(0, a);
+                     if (var15.getItem() instanceof ItemArmor) {
+                        var20.set(0, var23);
                      }
 
-                     if (a.getItem() instanceof ItemAppleGold) {
-                        a.set(0, a);
+                     if (var15.getItem() instanceof ItemAppleGold) {
+                        var20.set(0, var23);
                      }
                   }
 
-                  var22 = a.Method1383();
+                  var22 = var20.Method1383();
                   if (var22.Method932()) {
-                     Integer a = (Integer)var22.Method933();
-                     int a = 50 * this.Field2687.getFloatValue().intValue();
-                     if (this.Field2688.getBooleanValue() || this.Field2677.isDelayComplete((double)a)) {
-                        mc.playerController.windowClick(a.windowId, a, 1, this.Field2689.getBooleanValue() ? 0 : 1, mc.thePlayer);
+                     Integer var24 = (Integer)var22.Method933();
+                     int var25 = 50 * this.Field2687.getFloatValue().intValue();
+                     if (this.Field2688.getBooleanValue() || this.Field2677.isDelayComplete((double)var25)) {
+                        mc.playerController.windowClick(var4.windowId, var24, 1, this.Field2689.getBooleanValue() ? 0 : 1, mc.thePlayer);
                         if (this.Field2689.getValue()) {
-                           mc.playerController.windowClick(a.windowId, -999, 0, 0, mc.thePlayer);
+                           mc.playerController.windowClick(var4.windowId, -999, 0, 0, mc.thePlayer);
                         }
 
                         this.Field2677.reset();
@@ -228,13 +228,13 @@ public class ChestStealer extends Module {
    }
 
    private EnumFacing Method1067(BlockPos a) {
-      EnumFacing a = null;
+      EnumFacing var2 = null;
       if (!mc.theWorld.getBlockState(a.add(0, 1, 0)).getBlock().isBlockNormalCube()) {
-         a = EnumFacing.UP;
+         var2 = EnumFacing.UP;
       }
 
-      MovingObjectPosition a = mc.theWorld.rayTraceBlocks(new Vec3(mc.thePlayer.posX, mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight(), mc.thePlayer.posZ), new Vec3((double)a.getX() + 0.5, (double)a.getY(), (double)a.getZ() + 0.5));
-      return a.sideHit;
+      MovingObjectPosition var3 = mc.theWorld.rayTraceBlocks(new Vec3(mc.thePlayer.posX, mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight(), mc.thePlayer.posZ), new Vec3((double)a.getX() + 0.5, (double)a.getY(), (double)a.getZ() + 0.5));
+      return var3.sideHit;
    }
 
    private boolean Method1068(ItemStack a, S30PacketWindowItems a) {
@@ -244,23 +244,23 @@ public class ChestStealer extends Module {
          return true;
       } else {
          if (a.getItem() instanceof ItemSword) {
-            ItemStack a = null;
-            float a = -1.0F;
+            ItemStack var3 = null;
+            float var4 = -1.0F;
 
-            for(int a = 9; a < 45; ++a) {
-               if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-                  ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-                  if (a.getItem() instanceof ItemSword && a.getItem() instanceof ItemSword && a < Method255(a)) {
-                     a = Method255(a);
-                     a = a;
+            for(int var5 = 9; var5 < 45; ++var5) {
+               if (mc.thePlayer.inventoryContainer.getSlot(var5).getHasStack()) {
+                  ItemStack var6 = mc.thePlayer.inventoryContainer.getSlot(var5).getStack();
+                  if (var6.getItem() instanceof ItemSword && a.getItem() instanceof ItemSword && var4 < Method255(var6)) {
+                     var4 = Method255(var6);
+                     var3 = var6;
                   }
                }
             }
 
-            if (a.getItem() instanceof ItemSword && a.getItem() instanceof ItemSword) {
-               float a = Method255(a);
-               float a = Method255(a);
-               return a <= a;
+            if (var3.getItem() instanceof ItemSword && a.getItem() instanceof ItemSword) {
+               float var7 = Method255(var3);
+               float var8 = Method255(a);
+               return var8 <= var7;
             }
          }
 
@@ -268,29 +268,29 @@ public class ChestStealer extends Module {
       }
    }
 
-   private boolean Method1069(ItemStack a, S30PacketWindowItems a1) {
+   private boolean Method1069(ItemStack a, S30PacketWindowItems a) {
       if (this.Field2685.isCurrentMode("SkyWars")) {
          if (a.getItem() instanceof ItemArmor) {
             return this.Method1070(a, a.getUnlocalizedName()) ? this.Method1072(a, a.getUnlocalizedName()) : true;
          } else {
             if (a.getItem() instanceof ItemFishingRod) {
-               ItemStack a = null;
-               float a = -1.0F;
+               ItemStack var3 = null;
+               float var4 = -1.0F;
 
-               for(int a = 9; a < 45; ++a) {
-                  if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-                     ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-                     if (a.getItem() instanceof ItemFishingRod && a.getItem() instanceof ItemFishingRod && a < Method260(a)) {
-                        a = Method260(a);
-                        a = a;
+               for(int var5 = 9; var5 < 45; ++var5) {
+                  if (mc.thePlayer.inventoryContainer.getSlot(var5).getHasStack()) {
+                     ItemStack var6 = mc.thePlayer.inventoryContainer.getSlot(var5).getStack();
+                     if (var6.getItem() instanceof ItemFishingRod && a.getItem() instanceof ItemFishingRod && var4 < Method260(var6)) {
+                        var4 = Method260(var6);
+                        var3 = var6;
                      }
                   }
                }
 
-               if (a.getItem() instanceof ItemFishingRod && a.getItem() instanceof ItemFishingRod) {
-                  float a = Method260(a);
-                  float a = Method260(a);
-                  return a <= a;
+               if (var3.getItem() instanceof ItemFishingRod && a.getItem() instanceof ItemFishingRod) {
+                  float var7 = Method260(var3);
+                  float var8 = Method260(a);
+                  return var8 <= var7;
                }
             }
 
@@ -304,21 +304,21 @@ public class ChestStealer extends Module {
    }
 
    public boolean Method1070(ItemStack a, String a) {
-      float a = this.Method238(a);
-      String a = "";
+      float var3 = this.Method238(a);
+      String var4 = "";
       if (a.contains("helmet")) {
-         a = "helmet";
+         var4 = "helmet";
       } else if (a.contains("chestplate")) {
-         a = "chestplate";
+         var4 = "chestplate";
       } else if (a.contains("leggings")) {
-         a = "leggings";
+         var4 = "leggings";
       } else if (a.contains("boots")) {
-         a = "boots";
+         var4 = "boots";
       }
 
-      for(int a = ((ContainerChest)mc.thePlayer.openContainer).getLowerChestInventory().getSizeInventory() + 1; a > -1; --a) {
-         ItemStack a = ((ContainerChest)mc.thePlayer.openContainer).getLowerChestInventory().getStackInSlot(a);
-         if (this.Method238(a) > a && a.getUnlocalizedName().contains(a)) {
+      for(int var5 = ((ContainerChest)mc.thePlayer.openContainer).getLowerChestInventory().getSizeInventory() + 1; var5 > -1; --var5) {
+         ItemStack var6 = ((ContainerChest)mc.thePlayer.openContainer).getLowerChestInventory().getStackInSlot(var5);
+         if (this.Method238(var6) > var3 && var6.getUnlocalizedName().contains(var4)) {
             return false;
          }
       }
@@ -327,24 +327,24 @@ public class ChestStealer extends Module {
    }
 
    public boolean Method1071(ItemStack a, String a, ItemStack[] a) {
-      float a = this.Method238(a);
-      String a = "";
+      float var4 = this.Method238(a);
+      String var5 = "";
       if (a.contains("helmet")) {
-         a = "helmet";
+         var5 = "helmet";
       } else if (a.contains("chestplate")) {
-         a = "chestplate";
+         var5 = "chestplate";
       } else if (a.contains("leggings")) {
-         a = "leggings";
+         var5 = "leggings";
       } else if (a.contains("boots")) {
-         a = "boots";
+         var5 = "boots";
       }
 
       ItemStack[] var6 = a;
       int var7 = a.length;
 
       for(int var8 = 0; var8 < var7; ++var8) {
-         ItemStack a = var6[var8];
-         if (this.Method238(a) > a && a.getUnlocalizedName().contains(a)) {
+         ItemStack var9 = var6[var8];
+         if (this.Method238(var9) > var4 && var9.getUnlocalizedName().contains(var5)) {
             return false;
          }
       }
@@ -353,29 +353,29 @@ public class ChestStealer extends Module {
    }
 
    public boolean Method1072(ItemStack a, String a) {
-      float a = this.Method238(a);
-      int a = -1;
-      String a = "";
+      float var3 = this.Method238(a);
+      byte var4 = -1;
+      String var5 = "";
       if (a.contains("helmet")) {
-         a = 3;
-         a = "helmet";
+         var4 = 3;
+         var5 = "helmet";
       } else if (a.contains("chestplate")) {
-         a = 2;
-         a = "chestplate";
+         var4 = 2;
+         var5 = "chestplate";
       } else if (a.contains("leggings")) {
-         a = 1;
-         a = "leggings";
+         var4 = 1;
+         var5 = "leggings";
       } else if (a.contains("boots")) {
-         a = 0;
-         a = "boots";
+         var4 = 0;
+         var5 = "boots";
       }
 
-      ItemStack a = mc.thePlayer.inventory.armorItemInSlot(a);
+      ItemStack var6 = mc.thePlayer.inventory.armorItemInSlot(var4);
 
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (this.Method238(a) >= a && a.getUnlocalizedName().contains(a)) {
+      for(int var7 = 9; var7 < 45; ++var7) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var7).getHasStack()) {
+            ItemStack var8 = mc.thePlayer.inventoryContainer.getSlot(var7).getStack();
+            if (this.Method238(var8) >= var3 && var8.getUnlocalizedName().contains(var5)) {
                return true;
             }
          }
@@ -385,36 +385,36 @@ public class ChestStealer extends Module {
    }
 
    public float Method238(ItemStack a) {
-      float a = 0.0F;
+      float var2 = 0.0F;
       if (a.getItem() instanceof ItemArmor) {
-         ItemArmor a = (ItemArmor)a.getItem();
-         a = (float)((double)a + (double)a.damageReduceAmount + (double)((100 - a.damageReduceAmount) * EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a)) * 0.0075);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.depthStrider.effectId, a) / 45.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.featherFalling.effectId, a) / 40.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.blastProtection.effectId, a) / 100.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireProtection.effectId, a) / 100.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.thorns.effectId, a) / 100.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) / 50.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.projectileProtection.effectId, a) / 100.0);
-         a = a.getDisplayName().toLowerCase().contains("§abarbarian chestplate") ? 10.76F : a;
-         a = a.getDisplayName().toLowerCase().contains("§6exodus") ? 5.91F : a;
-         a = a.getDisplayName().toLowerCase().contains("§ashoes of vidar") ? 5.91F : a;
-         a = a.getDisplayName().toLowerCase().contains("§ahermes' boots") ? 5.91F : a;
+         ItemArmor var3 = (ItemArmor)a.getItem();
+         var2 = (float)((double)var2 + (double)var3.damageReduceAmount + (double)((100 - var3.damageReduceAmount) * EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a)) * 0.0075);
+         var2 = (float)((double)var2 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.depthStrider.effectId, a) / 45.0);
+         var2 = (float)((double)var2 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.featherFalling.effectId, a) / 40.0);
+         var2 = (float)((double)var2 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.blastProtection.effectId, a) / 100.0);
+         var2 = (float)((double)var2 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireProtection.effectId, a) / 100.0);
+         var2 = (float)((double)var2 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.thorns.effectId, a) / 100.0);
+         var2 = (float)((double)var2 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) / 50.0);
+         var2 = (float)((double)var2 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.projectileProtection.effectId, a) / 100.0);
+         var2 = a.getDisplayName().toLowerCase().contains("§abarbarian chestplate") ? 10.76F : var2;
+         var2 = a.getDisplayName().toLowerCase().contains("§6exodus") ? 5.91F : var2;
+         var2 = a.getDisplayName().toLowerCase().contains("§ashoes of vidar") ? 5.91F : var2;
+         var2 = a.getDisplayName().toLowerCase().contains("§ahermes' boots") ? 5.91F : var2;
       }
 
-      return a;
+      return var2;
    }
 
    private boolean Method237(ItemStack a) {
       if (a.getItem() instanceof ItemPotion) {
-         ItemPotion a = (ItemPotion)a.getItem();
+         ItemPotion var2 = (ItemPotion)a.getItem();
          if (ItemPotion.isSplash(a.getItemDamage())) {
-            Iterator var3 = a.getEffects(a).Method1383();
+            Iterator var3 = var2.getEffects(a).Method1383();
 
             while(var3.Method932()) {
-               Object a = var3.Method933();
-               PotionEffect a = (PotionEffect)a;
-               if (a.getPotionID() == Potion.poison.getId() || a.getPotionID() == Potion.harm.getId() || a.getPotionID() == Potion.moveSlowdown.getId() || a.getPotionID() == Potion.weakness.getId()) {
+               Object var4 = var3.Method933();
+               PotionEffect var5 = (PotionEffect)var4;
+               if (var5.getPotionID() == Potion.poison.getId() || var5.getPotionID() == Potion.harm.getId() || var5.getPotionID() == Potion.moveSlowdown.getId() || var5.getPotionID() == Potion.weakness.getId()) {
                   return true;
                }
             }
@@ -425,23 +425,23 @@ public class ChestStealer extends Module {
    }
 
    private static float Method255(ItemStack a) {
-      float a = 0.0F;
-      Item a = a.getItem();
-      if (a instanceof ItemTool) {
-         a += PlayerUtils.Method1590(a);
+      float var1 = 0.0F;
+      Item var2 = a.getItem();
+      if (var2 instanceof ItemTool) {
+         var1 += PlayerUtils.Method1590(a);
       }
 
-      if (a instanceof ItemSword) {
-         a += PlayerUtils.Method1590(a);
+      if (var2 instanceof ItemSword) {
+         var1 += PlayerUtils.Method1590(a);
       }
 
-      a += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.5F;
-      return a;
+      var1 += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.5F;
+      return var1;
    }
 
    private static float Method260(ItemStack a) {
-      float a = 0.0F;
-      a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a) * 1.0);
-      return a;
+      float var1 = 0.0F;
+      var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a) * 1.0);
+      return var1;
    }
 }

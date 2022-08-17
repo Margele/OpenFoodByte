@@ -38,12 +38,12 @@ public class Class812 extends Class877 {
 
    public void Method164(float a) {
       this.Field3630 = a;
-      float a = (float)Math.cos((double)a);
-      float a = (float)Math.sin((double)a);
-      this.Field3634 = a;
-      this.Field3635 = a;
-      this.Field3636 = -a;
-      this.Field3637 = a;
+      float var2 = (float)Math.cos((double)a);
+      float var3 = (float)Math.sin((double)a);
+      this.Field3634 = var2;
+      this.Field3635 = var3;
+      this.Field3636 = -var3;
+      this.Field3637 = var2;
    }
 
    public float Method165() {
@@ -67,18 +67,18 @@ public class Class812 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      float a = this.Field3634 * (float)a + this.Field3635 * (float)a;
-      float a = this.Field3636 * (float)a + this.Field3637 * (float)a;
-      a /= this.Field3628;
+      float var5 = this.Field3634 * (float)a + this.Field3635 * (float)a;
+      float var6 = this.Field3636 * (float)a + this.Field3637 * (float)a;
+      var5 /= this.Field3628;
       Class193.Method1269();
-      a /= this.Field3628 * this.Field3629;
+      var6 /= this.Field3628 * this.Field3629;
       if (this.Field3632 == 1.0F) {
-         a[0] = (float)a + this.Field3631 * Class598.Method158(a + 0.5F, a, this.Field3633);
-         a[1] = (float)a + this.Field3631 * Class598.Method158(a, a + 0.5F, this.Field3633);
+         a[0] = (float)a + this.Field3631 * Class598.Method158(var5 + 0.5F, var6, this.Field3633);
+         a[1] = (float)a + this.Field3631 * Class598.Method158(var5, var6 + 0.5F, this.Field3633);
       }
 
-      a[0] = (float)a + this.Field3631 * Class598.Method154(a + 0.5F, a, this.Field3632, this.Field3633);
-      a[1] = (float)a + this.Field3631 * Class598.Method154(a, a + 0.5F, this.Field3632, this.Field3633);
+      a[0] = (float)a + this.Field3631 * Class598.Method154(var5 + 0.5F, var6, this.Field3632, this.Field3633);
+      a[1] = (float)a + this.Field3631 * Class598.Method154(var5, var6 + 0.5F, this.Field3632, this.Field3633);
    }
 
    public String toString() {

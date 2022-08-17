@@ -87,9 +87,9 @@ public class Class716 extends GuiChat {
             this.Field3109.textboxKeyTyped(a, a);
          }
       } else {
-         String a = this.Field3109.getText().trim();
-         if (a.length() > 0) {
-            this.sendChatMessage(a);
+         String var3 = this.Field3109.getText().trim();
+         if (var3.length() > 0) {
+            this.sendChatMessage(var3);
          }
 
          this.mc.displayGuiScreen((GuiScreen)null);
@@ -99,38 +99,38 @@ public class Class716 extends GuiChat {
 
    public void Method1822() throws IOException {
       super.Method1822();
-      int a = Mouse.getEventDWheel();
-      if (a > 1) {
-         a = 1;
+      int var1 = Mouse.getEventDWheel();
+      if (var1 > 1) {
+         var1 = 1;
       }
 
-      if (a < -1) {
-         a = -1;
+      if (var1 < -1) {
+         var1 = -1;
       }
 
       if (!isShiftKeyDown()) {
-         a *= 7;
+         var1 *= 7;
       }
 
-      this.mc.ingameGUI.getChatGUI().scroll(a);
+      this.mc.ingameGUI.getChatGUI().scroll(var1);
    }
 
    protected void Method1805(int a, int a, int a) throws IOException {
-      IChatComponent a = this.mc.ingameGUI.getChatGUI().getChatComponent(Mouse.getX(), Mouse.getY());
-      if (!this.handleComponentClick(a)) {
+      IChatComponent var4 = this.mc.ingameGUI.getChatGUI().getChatComponent(Mouse.getX(), Mouse.getY());
+      if (!this.handleComponentClick(var4)) {
          this.Field3109.mouseClicked(a, a, a);
          super.Method1805(a, a, a);
       }
    }
 
-   public void Method2058(String a, boolean a1) {
+   public void Method2058(String a, boolean a) {
       this.Field3109.setText(a);
    }
 
    public void Method2059() {
-      String a;
+      String var4;
       label32: {
-         int[] a = Class713.Method2054();
+         int[] var1 = Class713.Method2054();
          if (this.Field3105) {
             this.Field3109.deleteFromCursor(this.Field3109.func_146197_a(-1, this.Field3109.getCursorPosition(), false) - this.Field3109.getCursorPosition());
             if (this.Field3107 < this.Field3108.Method1799()) {
@@ -140,33 +140,33 @@ public class Class716 extends GuiChat {
             this.Field3107 = 0;
          }
 
-         int a = this.Field3109.func_146197_a(-1, this.Field3109.getCursorPosition(), false);
+         int var2 = this.Field3109.func_146197_a(-1, this.Field3109.getCursorPosition(), false);
          this.Field3108.clear();
          this.Field3107 = 0;
-         String a = this.Field3109.getText().substring(a).toLowerCase();
-         a = this.Field3109.getText().substring(0, this.Field3109.getCursorPosition());
-         this.Method2060(a, a);
+         String var3 = this.Field3109.getText().substring(var2).toLowerCase();
+         var4 = this.Field3109.getText().substring(0, this.Field3109.getCursorPosition());
+         this.Method2060(var4, var3);
          if (this.Field3108.isEmpty()) {
             return;
          }
 
          this.Field3105 = true;
-         this.Field3109.deleteFromCursor(a - this.Field3109.getCursorPosition());
+         this.Field3109.deleteFromCursor(var2 - this.Field3109.getCursorPosition());
       }
 
       if (this.Field3108.Method1799() > 1) {
-         StringBuilder a = new StringBuilder();
+         StringBuilder var5 = new StringBuilder();
          Iterator var6 = this.Field3108.Method1383();
          if (var6.Method932()) {
-            a = (String)var6.Method933();
-            if (a.length() > 0) {
-               a.append(", ");
+            var4 = (String)var6.Method933();
+            if (var5.length() > 0) {
+               var5.append(", ");
             }
 
-            a.append(a);
+            var5.append(var4);
          }
 
-         this.mc.ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(new ChatComponentText(a.toString()), 1);
+         this.mc.ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(new ChatComponentText(var5.toString()), 1);
       }
 
       this.Field3109.writeText(EnumChatFormatting.getTextWithoutFormattingCodes((String)this.Field3108.get(this.Field3107++)));
@@ -175,32 +175,32 @@ public class Class716 extends GuiChat {
    private void Method2060(String a, String a) {
       if (a.length() >= 1) {
          ClientCommandHandler.instance.autoComplete(a, a);
-         BlockPos a = null;
+         BlockPos var3 = null;
          if (this.mc.objectMouseOver != null && this.mc.objectMouseOver.typeOfHit == MovingObjectType.BLOCK) {
-            a = this.mc.objectMouseOver.getBlockPos();
+            var3 = this.mc.objectMouseOver.getBlockPos();
          }
 
-         Wrapper.INSTANCE.sendPacket(new C14PacketTabComplete(a, a));
+         Wrapper.INSTANCE.sendPacket(new C14PacketTabComplete(a, var3));
          this.Field3106 = true;
       }
 
    }
 
    public void Method2061(int a) {
-      int a = this.Field3104 + a;
-      int a = this.mc.ingameGUI.getChatGUI().getSentMessages().Method1799();
-      a = MathHelper.clamp_int(a, 0, a);
-      if (a != this.Field3104) {
-         if (a == a) {
-            this.Field3104 = a;
+      int var2 = this.Field3104 + a;
+      int var3 = this.mc.ingameGUI.getChatGUI().getSentMessages().Method1799();
+      var2 = MathHelper.clamp_int(var2, 0, var3);
+      if (var2 != this.Field3104) {
+         if (var2 == var3) {
+            this.Field3104 = var3;
             this.Field3109.setText(this.Field3103);
          } else {
-            if (this.Field3104 == a) {
+            if (this.Field3104 == var3) {
                this.Field3103 = this.Field3109.getText();
             }
 
-            this.Field3109.setText((String)this.mc.ingameGUI.getChatGUI().getSentMessages().get(a));
-            this.Field3104 = a;
+            this.Field3109.setText((String)this.mc.ingameGUI.getChatGUI().getSentMessages().get(var2));
+            this.Field3104 = var2;
          }
       }
 
@@ -209,38 +209,38 @@ public class Class716 extends GuiChat {
    public void Method1803(int a, int a, float a) {
       drawRect(2, this.height - 14, this.width - 2, this.height - 2, Integer.MIN_VALUE);
       this.Field3109.drawTextBox();
-      IChatComponent a = this.mc.ingameGUI.getChatGUI().getChatComponent(Mouse.getX(), Mouse.getY());
-      if (a.getChatStyle().getChatHoverEvent() != null) {
-         this.handleComponentHover(a, a, a);
+      IChatComponent var4 = this.mc.ingameGUI.getChatGUI().getChatComponent(Mouse.getX(), Mouse.getY());
+      if (var4.getChatStyle().getChatHoverEvent() != null) {
+         this.handleComponentHover(var4, a, a);
       }
 
       super.Method1803(a, a, a);
    }
 
    public void Method2062(String[] a) {
-      int[] a = Class713.Method2054();
+      int[] var2 = Class713.Method2054();
       if (this.Field3106) {
          this.Field3105 = false;
          this.Field3108.clear();
-         String[] a = ClientCommandHandler.instance.latestAutoComplete;
-         a = (String[])ObjectArrays.concat(a, a, String.class);
+         String[] var3 = ClientCommandHandler.instance.latestAutoComplete;
+         a = (String[])ObjectArrays.concat(var3, a, String.class);
          int var5 = a.length;
          int var6 = 0;
          if (var6 < var5) {
-            String a = a[var6];
-            if (a.length() > 0) {
-               this.Field3108.Method2530(a);
+            String var7 = a[var6];
+            if (var7.length() > 0) {
+               this.Field3108.Method2530(var7);
             }
 
             ++var6;
          }
 
-         String a = this.Field3109.getText().substring(this.Field3109.func_146197_a(-1, this.Field3109.getCursorPosition(), false));
-         String a = StringUtils.getCommonPrefix(a);
-         a = EnumChatFormatting.getTextWithoutFormattingCodes(a);
-         if (a.length() > 0 && !a.equalsIgnoreCase(a)) {
+         String var4 = this.Field3109.getText().substring(this.Field3109.func_146197_a(-1, this.Field3109.getCursorPosition(), false));
+         String var8 = StringUtils.getCommonPrefix(a);
+         var8 = EnumChatFormatting.getTextWithoutFormattingCodes(var8);
+         if (var8.length() > 0 && !var4.equalsIgnoreCase(var8)) {
             this.Field3109.deleteFromCursor(this.Field3109.func_146197_a(-1, this.Field3109.getCursorPosition(), false) - this.Field3109.getCursorPosition());
-            this.Field3109.writeText(a);
+            this.Field3109.writeText(var8);
          }
 
          if (this.Field3108.Method1799() > 0) {

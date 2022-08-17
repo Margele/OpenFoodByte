@@ -27,132 +27,132 @@ public final class Class134 extends Class148 {
       this(a, a, a, a, a, a, a, -1, (Class31)null, (String[])null, (String[])null, (int[])null);
    }
 
-   protected Class134(int a, Class663 a, String a, int a3, String a, String a, int a, int a, Class31 a, String[] a, String[] a, int[] a) {
+   protected Class134(int a, Class663 a, String a, int a, String a, String a, int a, int a, Class31 a, String[] a, String[] a, int[] a) {
       super(a);
       this.Field983 = a;
       this.Field984 = a;
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "name", "name", "", a);
-      a.addAttribute("", "visible", "visible", "", "true");
+      AttributesImpl var13 = new AttributesImpl();
+      var13.addAttribute("", "name", "name", "", a);
+      var13.addAttribute("", "visible", "visible", "", "true");
       if (a != -1) {
-         a.addAttribute("", "parameter", "parameter", "", Integer.toString(a));
+         var13.addAttribute("", "parameter", "parameter", "", Integer.toString(a));
       }
 
-      a.addAttribute("", "desc", "desc", "", a);
+      var13.addAttribute("", "desc", "desc", "", a);
       if (a != -1) {
-         a.addAttribute("", "typeRef", "typeRef", "", Integer.toString(a));
+         var13.addAttribute("", "typeRef", "typeRef", "", Integer.toString(a));
       }
 
-      a.addAttribute("", "typePath", "typePath", "", a.Method3436());
-      StringBuffer a = new StringBuffer(a[0]);
+      var13.addAttribute("", "typePath", "typePath", "", a.Method3436());
+      StringBuffer var14 = new StringBuffer(a[0]);
 
-      int a;
-      for(a = 1; a < a.length; ++a) {
-         a.append(" ").append(a[a]);
+      int var15;
+      for(var15 = 1; var15 < a.length; ++var15) {
+         var14.append(" ").append(a[var15]);
       }
 
-      a.addAttribute("", "start", "start", "", a.toString());
-      a = new StringBuffer(a[0]);
+      var13.addAttribute("", "start", "start", "", var14.toString());
+      var14 = new StringBuffer(a[0]);
 
-      for(a = 1; a < a.length; ++a) {
-         a.append(" ").append(a[a]);
+      for(var15 = 1; var15 < a.length; ++var15) {
+         var14.append(" ").append(a[var15]);
       }
 
-      a.addAttribute("", "end", "end", "", a.toString());
-      a = new StringBuffer();
-      a.append(a[0]);
+      var13.addAttribute("", "end", "end", "", var14.toString());
+      var14 = new StringBuffer();
+      var14.append(a[0]);
 
-      for(a = 1; a < a.length; ++a) {
-         a.append(" ").append(a[a]);
+      for(var15 = 1; var15 < a.length; ++var15) {
+         var14.append(" ").append(a[var15]);
       }
 
-      a.addAttribute("", "index", "index", "", a.toString());
-      a.Method2394(a, a);
+      var13.addAttribute("", "index", "index", "", var14.toString());
+      a.Method2394(a, var13);
    }
 
    public void Method397(String a, Object a) {
       Class831.Method3658();
-      Class a = a.getClass();
-      if (a.isArray()) {
-         Class148 a = this.Method400(a);
-         int a;
+      Class var4 = a.getClass();
+      if (var4.isArray()) {
+         Class148 var5 = this.Method400(a);
+         int var7;
          if (a instanceof byte[]) {
-            byte[] a = (byte[])((byte[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, new Byte(a[a]));
-               ++a;
+            byte[] var6 = (byte[])((byte[])a);
+            var7 = 0;
+            if (var7 < var6.length) {
+               var5.Method397((String)null, new Byte(var6[var7]));
+               ++var7;
             }
          }
 
-         byte a;
+         byte var12;
          if (a instanceof char[]) {
-            char[] a = (char[])((char[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, new Character(a[a]));
-               a = a + 1;
+            char[] var8 = (char[])((char[])a);
+            var12 = 0;
+            if (var12 < var8.length) {
+               var5.Method397((String)null, new Character(var8[var12]));
+               var7 = var12 + 1;
             }
          }
 
          if (a instanceof short[]) {
-            short[] a = (short[])((short[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, new Short(a[a]));
-               a = a + 1;
+            short[] var9 = (short[])((short[])a);
+            var12 = 0;
+            if (var12 < var9.length) {
+               var5.Method397((String)null, new Short(var9[var12]));
+               var7 = var12 + 1;
             }
          }
 
          if (a instanceof boolean[]) {
-            boolean[] a = (boolean[])((boolean[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, a[a]);
-               a = a + 1;
+            boolean[] var10 = (boolean[])((boolean[])a);
+            var12 = 0;
+            if (var12 < var10.length) {
+               var5.Method397((String)null, var10[var12]);
+               var7 = var12 + 1;
             }
          }
 
          if (a instanceof int[]) {
-            int[] a = (int[])((int[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, new Integer(a[a]));
-               a = a + 1;
+            int[] var11 = (int[])((int[])a);
+            var12 = 0;
+            if (var12 < var11.length) {
+               var5.Method397((String)null, new Integer(var11[var12]));
+               var7 = var12 + 1;
             }
          }
 
          if (a instanceof long[]) {
-            long[] a = (long[])((long[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, new Long(a[a]));
-               a = a + 1;
+            long[] var13 = (long[])((long[])a);
+            var12 = 0;
+            if (var12 < var13.length) {
+               var5.Method397((String)null, new Long(var13[var12]));
+               var7 = var12 + 1;
             }
          }
 
          if (a instanceof float[]) {
-            float[] a = (float[])((float[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, new Float(a[a]));
-               a = a + 1;
+            float[] var14 = (float[])((float[])a);
+            var12 = 0;
+            if (var12 < var14.length) {
+               var5.Method397((String)null, new Float(var14[var12]));
+               var7 = var12 + 1;
             }
          }
 
          if (a instanceof double[]) {
-            double[] a = (double[])((double[])a);
-            a = 0;
-            if (a < a.length) {
-               a.Method397((String)null, new Double(a[a]));
-               a = a + 1;
+            double[] var15 = (double[])((double[])a);
+            var12 = 0;
+            if (var12 < var15.length) {
+               var5.Method397((String)null, new Double(var15[var12]));
+               var7 = var12 + 1;
             }
          }
 
-         a.Method401();
+         var5.Method401();
       }
 
-      this.Method449("annotationValue", a, b.Method3229(a), a.Method3780());
+      this.Method449("annotationValue", a, b.Method3229(var4), a.Method3780());
    }
 
    public void Method398(String a, String a, String a) {
@@ -172,10 +172,10 @@ public final class Class134 extends Class148 {
    }
 
    private void Method449(String a, String a, String a, String a) {
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "name", "name", "", a);
-      a.addAttribute("", "desc", "desc", "", a);
-      a.addAttribute("", "value", "value", "", Class228.Method2071(a));
-      this.Field983.Method2396(a, a);
+      AttributesImpl var5 = new AttributesImpl();
+      var5.addAttribute("", "name", "name", "", a);
+      var5.addAttribute("", "desc", "desc", "", a);
+      var5.addAttribute("", "value", "value", "", Class228.Method2071(a));
+      this.Field983.Method2396(a, var5);
    }
 }

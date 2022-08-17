@@ -29,28 +29,28 @@ public class MCF extends Module {
 
    @EventTarget
    public void Method755(EventTick a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (mc.objectMouseOver != null && mc.objectMouseOver.entityHit instanceof EntityPlayer) {
-         EntityLivingBase a = (EntityLivingBase)mc.objectMouseOver.entityHit;
-         String a = mc.objectMouseOver.entityHit.getName();
+         EntityLivingBase var3 = (EntityLivingBase)mc.objectMouseOver.entityHit;
+         String var4 = mc.objectMouseOver.entityHit.getName();
          if (this.Field2303.Method582()) {
-            ChatUtils.debug("Team: " + a.getName());
-            ChatUtils.debug("Team: " + a.getTeam().isSameTeam(mc.thePlayer.getTeam()));
-            if (Class305.Method697(a)) {
-               int a = 0;
-               if (a < Class305.Method695().Method1799()) {
-                  Class309 a = (Class309)Class305.Method695().get(a);
-                  if (a.Method748().equalsIgnoreCase(a)) {
-                     Class305.Method695().remove(a);
-                     GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("Friend", "Remove " + a, Types.WARNING));
+            ChatUtils.debug("Team: " + var3.getName());
+            ChatUtils.debug("Team: " + var3.getTeam().isSameTeam(mc.thePlayer.getTeam()));
+            if (Class305.Method697(var3)) {
+               int var5 = 0;
+               if (var5 < Class305.Method695().Method1799()) {
+                  Class309 var6 = (Class309)Class305.Method695().get(var5);
+                  if (var6.Method748().equalsIgnoreCase(var4)) {
+                     Class305.Method695().remove(var5);
+                     GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("Friend", "Remove " + var4, Types.WARNING));
                   }
 
-                  ++a;
+                  ++var5;
                }
             }
 
-            Class305.Method695().Method2530(new Class309(a, a));
-            GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("Friend", "Add " + a, Types.SUCCESS));
+            Class305.Method695().Method2530(new Class309(var4, var4));
+            GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("Friend", "Add " + var4, Types.SUCCESS));
             GlobalModule.INSTANCE.fileManager.saveFriends();
          }
       }

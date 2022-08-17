@@ -11,9 +11,9 @@ final class Class851 extends Class831 {
       this.Field3747 = a;
    }
 
-   public final void Method3501(String a, Attributes a1) throws SAXException {
+   public final void Method3501(String a, Attributes a) throws SAXException {
       Class831.Method3658();
-      Class807 a = (Class807)Class730.Field3206.Method2665(a);
+      Class807 var4 = (Class807)Class730.Field3206.Method2665(a);
       throw new SAXException("Invalid element: " + a + " at " + this.Field3747.Field3201);
    }
 

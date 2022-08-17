@@ -27,18 +27,18 @@ public class MathUtils {
    }
 
    public static double getRandomDouble(double min, double max) {
-      double a = max - min;
-      double a = random.nextDouble() * a;
-      if (a > max) {
-         a = max;
+      double var4 = max - min;
+      double var6 = random.nextDouble() * var4;
+      if (var6 > max) {
+         var6 = max;
       }
 
-      double a = a + min;
-      if (a > max) {
-         a = max;
+      double var8 = var6 + min;
+      if (var8 > max) {
+         var8 = max;
       }
 
-      return a;
+      return var8;
    }
 
    public static float Method546(float a, float a, float a) {
@@ -94,8 +94,8 @@ public class MathUtils {
    }
 
    public static double round(double origin, double scale) {
-      double a = 1.0 / scale;
-      return (double)Math.round(origin * a) / a;
+      double var4 = 1.0 / scale;
+      return (double)Math.round(origin * var4) / var4;
    }
 
    public static boolean isInfinite(Double num) {
@@ -123,74 +123,74 @@ public class MathUtils {
    }
 
    public static void setSpeed(double speed) {
-      double a = (double)mc.thePlayer.movementInput.moveForward;
+      double var3 = (double)mc.thePlayer.movementInput.moveForward;
       RenderUtils.trash();
-      double a = (double)mc.thePlayer.movementInput.moveStrafe;
-      float a = mc.thePlayer.rotationYaw;
-      if (a == 0.0 && a == 0.0) {
+      double var5 = (double)mc.thePlayer.movementInput.moveStrafe;
+      float var7 = mc.thePlayer.rotationYaw;
+      if (var3 == 0.0 && var5 == 0.0) {
          mc.thePlayer.motionX = 0.0;
          mc.thePlayer.motionZ = 0.0;
       }
 
-      if (a != 0.0) {
-         if (a > 0.0) {
-            a += (float)(a > 0.0 ? -45 : 45);
+      if (var3 != 0.0) {
+         if (var5 > 0.0) {
+            var7 += (float)(var3 > 0.0 ? -45 : 45);
          }
 
-         if (a < 0.0) {
-            a += (float)(a > 0.0 ? 45 : -45);
+         if (var5 < 0.0) {
+            var7 += (float)(var3 > 0.0 ? 45 : -45);
          }
 
-         a = 0.0;
-         if (a > 0.0) {
-            a = 1.0;
+         var5 = 0.0;
+         if (var3 > 0.0) {
+            var3 = 1.0;
          }
 
-         if (a < 0.0) {
-            a = -1.0;
+         if (var3 < 0.0) {
+            var3 = -1.0;
          }
       }
 
-      mc.thePlayer.motionX = a * speed * Math.cos(Math.toRadians((double)(a + 90.0F))) + a * speed * Math.sin(Math.toRadians((double)(a + 90.0F)));
-      mc.thePlayer.motionZ = a * speed * Math.sin(Math.toRadians((double)(a + 90.0F))) - a * speed * Math.cos(Math.toRadians((double)(a + 90.0F)));
+      mc.thePlayer.motionX = var3 * speed * Math.cos(Math.toRadians((double)(var7 + 90.0F))) + var5 * speed * Math.sin(Math.toRadians((double)(var7 + 90.0F)));
+      mc.thePlayer.motionZ = var3 * speed * Math.sin(Math.toRadians((double)(var7 + 90.0F))) - var5 * speed * Math.cos(Math.toRadians((double)(var7 + 90.0F)));
    }
 
    public static double getDefaultSpeed3() {
-      double a = 0.2873;
+      double var0 = 0.2873;
       if (Minecraft.getMinecraft().thePlayer.isPotionActive(Potion.moveSpeed)) {
-         int a = Minecraft.getMinecraft().thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
-         a *= 1.0 + 0.2 * (double)(a + 1);
+         int var2 = Minecraft.getMinecraft().thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
+         var0 *= 1.0 + 0.2 * (double)(var2 + 1);
       }
 
-      return a;
+      return var0;
    }
 
    public static boolean isInBound(double expand) {
-      AxisAlignedBB a = new AxisAlignedBB(mc.thePlayer.posX - 0.3, mc.thePlayer.posY + 2.0, mc.thePlayer.posZ + 0.3, mc.thePlayer.posX + 0.3, mc.thePlayer.posY + 3.0, mc.thePlayer.posZ - 0.3);
-      if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, a.offset(0.3 + expand, 0.0, 0.0)).isEmpty()) {
+      AxisAlignedBB var2 = new AxisAlignedBB(mc.thePlayer.posX - 0.3, mc.thePlayer.posY + 2.0, mc.thePlayer.posZ + 0.3, mc.thePlayer.posX + 0.3, mc.thePlayer.posY + 3.0, mc.thePlayer.posZ - 0.3);
+      if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, var2.offset(0.3 + expand, 0.0, 0.0)).isEmpty()) {
          return true;
-      } else if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, a.offset(-0.3 - expand, 0.0, 0.0)).isEmpty()) {
+      } else if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, var2.offset(-0.3 - expand, 0.0, 0.0)).isEmpty()) {
          return true;
-      } else if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, a.offset(0.0, 0.0, 0.3 + expand)).isEmpty()) {
+      } else if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, var2.offset(0.0, 0.0, 0.3 + expand)).isEmpty()) {
          return true;
       } else {
-         return !mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, a.offset(0.0, 0.0, -0.3 - expand)).isEmpty();
+         return !mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, var2.offset(0.0, 0.0, -0.3 - expand)).isEmpty();
       }
    }
 
    public static float[] getRotationToBlock(BlockPos block, EnumFacing facing) {
-      double a = (double)block.getX() + 0.5 - mc.thePlayer.posX + (double)facing.getFrontOffsetX() / 2.0;
-      double a = (double)block.getZ() + 0.5 - mc.thePlayer.posZ + (double)facing.getFrontOffsetZ() / 2.0;
-      double a = (double)block.getY() + 0.5;
-      double a = mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight() - a;
-      double a = (double)MathHelper.sqrt_double(a * a + a * a);
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI) - 90.0F;
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI);
-      if (a < 0.0F) {
-         a += 360.0F;
+      double var2 = (double)block.getX() + 0.5 - mc.thePlayer.posX + (double)facing.getFrontOffsetX() / 2.0;
+      double var4 = (double)block.getZ() + 0.5 - mc.thePlayer.posZ + (double)facing.getFrontOffsetZ() / 2.0;
+      double var6 = (double)block.getY() + 0.5;
+      double var8 = mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight() - var6;
+      double var10 = (double)MathHelper.sqrt_double(var2 * var2 + var4 * var4);
+      float var12 = (float)(Math.atan2(var4, var2) * 180.0 / Math.PI) - 90.0F;
+      float var13 = (float)(Math.atan2(var8, var10) * 180.0 / Math.PI);
+      if (var12 < 0.0F) {
+         var12 += 360.0F;
       }
 
-      return new float[]{a, a};
+      return new float[]{var12, var13};
    }
 
    public static float[] parseRotations(float[] rotation) {
@@ -215,42 +215,42 @@ public class MathUtils {
    }
 
    public static double getDefaultSpeed() {
-      double a = 0.2873;
+      double var0 = 0.2873;
       if (mc.thePlayer.isPotionActive(Potion.moveSpeed)) {
-         int a = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
-         a *= 1.0 + 0.2 * (double)(a + 1);
+         int var2 = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
+         var0 *= 1.0 + 0.2 * (double)(var2 + 1);
       }
 
-      return a;
+      return var0;
    }
 
    public static double getDefaultSpeed2() {
-      double a = 0.272;
+      double var0 = 0.272;
       if (mc.thePlayer.isPotionActive(Potion.moveSpeed)) {
-         int a = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
-         a *= 1.0 + 0.2 * (double)a;
+         int var2 = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
+         var0 *= 1.0 + 0.2 * (double)var2;
       }
 
-      return a;
+      return var0;
    }
 
    public static double getRandomDouble2(double min, double max) {
-      Random a = new Random();
-      double a = max - min;
-      double a = a.nextDouble() * a;
-      if (a > max) {
-         a = max;
+      Random var4 = new Random();
+      double var5 = max - min;
+      double var7 = var4.nextDouble() * var5;
+      if (var7 > max) {
+         var7 = max;
       }
 
-      double a = a + min;
-      if (a > max) {
-         a = max;
+      double var9 = var7 + min;
+      if (var9 > max) {
+         var9 = max;
       }
 
-      return a;
+      return var9;
    }
 
-   public static double trash(double a, int a1) {
+   public static double trash(double a, int a) {
       throw new IllegalArgumentException();
    }
 
@@ -271,17 +271,17 @@ public class MathUtils {
    }
 
    public static double floor(double a, double a) {
-      double a = a / 2.0;
-      double a = StrictMath.floor(a / a) * a;
-      return a >= a + a ? (new BigDecimal(StrictMath.ceil(a / a) * a, MathContext.DECIMAL64)).stripTrailingZeros().doubleValue() : (new BigDecimal(a, MathContext.DECIMAL64)).stripTrailingZeros().doubleValue();
+      double var4 = a / 2.0;
+      double var6 = StrictMath.floor(a / a) * a;
+      return a >= var6 + var4 ? (new BigDecimal(StrictMath.ceil(a / a) * a, MathContext.DECIMAL64)).stripTrailingZeros().doubleValue() : (new BigDecimal(var6, MathContext.DECIMAL64)).stripTrailingZeros().doubleValue();
    }
 
    public static int getRandomDouble(int min, int max) {
-      double a = getRandomDouble2((double)min, (double)max);
-      a = 20.0 / a;
-      a = (double)Math.round(Math.max(a, 1.0));
-      int a = (int)a * 50;
-      return a;
+      double var2 = getRandomDouble2((double)min, (double)max);
+      var2 = 20.0 / var2;
+      var2 = (double)Math.round(Math.max(var2, 1.0));
+      int var4 = (int)var2 * 50;
+      return var4;
    }
 
    public static Double getMid(double a, double a, double a) {

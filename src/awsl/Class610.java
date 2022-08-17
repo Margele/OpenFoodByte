@@ -62,10 +62,10 @@ public class Class610 {
       Class234.Method1269();
       Iterator var3 = this.Field2856.Method2663().Method1383();
       if (var3.Method932()) {
-         Map.Entry a = (Map.Entry)var3.Method933();
-         Class a = (Class)a.getValue();
-         if (a.isInstance(a)) {
-            return (Integer)a.getKey();
+         Map.Entry var4 = (Map.Entry)var3.Method933();
+         Class var5 = (Class)var4.getValue();
+         if (var5.isInstance(a)) {
+            return (Integer)var4.getKey();
          }
       }
 

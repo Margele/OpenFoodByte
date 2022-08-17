@@ -125,18 +125,18 @@ public class KillAura extends Module {
    }
 
    private void Method942(EntityLivingBase a) {
-      double a = (double)ReflectionUtils.getRenderPartialTicks();
-      double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-      double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-      double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-      this.Method964(a, a, a + (double)a.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0F)) / 10.0, a);
+      double var2 = (double)ReflectionUtils.getRenderPartialTicks();
+      double var4 = a.lastTickPosX + (a.posX - a.lastTickPosX) * var2 - ReflectionUtils.getRenderPosX();
+      double var6 = a.lastTickPosY + (a.posY - a.lastTickPosY) * var2 - ReflectionUtils.getRenderPosY();
+      double var8 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * var2 - ReflectionUtils.getRenderPosZ();
+      this.Method964(a, var4, var6 + (double)a.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0F)) / 10.0, var8);
    }
 
    private void Method943() {
       mc.thePlayer.swingItem();
       mc.playerController.attackEntity(mc.thePlayer, this.Method958(target));
       if ((double)mc.thePlayer.getDistanceToEntity(target) <= (double)(this.Field2505.getFloatValue() + target.width / 2.0F)) {
-         for(int a = 0; (double)a < (double)this.Field2499.getFloatValue(); ++a) {
+         for(int var1 = 0; (double)var1 < (double)this.Field2499.getFloatValue(); ++var1) {
             mc.effectRenderer.emitParticleAtEntity(target, EnumParticleTypes.CRIT_MAGIC);
          }
       }
@@ -144,14 +144,14 @@ public class KillAura extends Module {
    }
 
    private float[] Method944(Entity a, EntityPlayerSP a) {
-      double a = a.posX - a.posX;
-      double a = a.posY + (double)a.height - (a.posY + (double)a.height);
-      double a = a.posZ - a.posZ;
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI) - 90.0F;
-      float a = (float)(Math.atan2(a, (double)a.getDistanceToEntity(a)) * 180.0 / Math.PI);
-      float a = a.rotationYaw + MathHelper.wrapAngleTo180_float(a - a.rotationYaw);
-      float a = a.rotationPitch + MathHelper.wrapAngleTo180_float(a - a.rotationPitch);
-      return new float[]{a, -a};
+      double var3 = a.posX - a.posX;
+      double var5 = a.posY + (double)a.height - (a.posY + (double)a.height);
+      double var7 = a.posZ - a.posZ;
+      float var9 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
+      float var10 = (float)(Math.atan2(var5, (double)a.getDistanceToEntity(a)) * 180.0 / Math.PI);
+      float var11 = a.rotationYaw + MathHelper.wrapAngleTo180_float(var9 - a.rotationYaw);
+      float var12 = a.rotationPitch + MathHelper.wrapAngleTo180_float(var10 - a.rotationPitch);
+      return new float[]{var11, -var12};
    }
 
    public static void Method945(float a) {
@@ -169,17 +169,17 @@ public class KillAura extends Module {
    }
 
    private void Method946() {
-      int a = this.Field2504.isCurrentMode(Method754(7679, -635)) ? 4 : this.Field2513.getFloatValue().intValue();
+      int var1 = this.Field2504.isCurrentMode(Method754(7679, -635)) ? 4 : this.Field2513.getFloatValue().intValue();
       Iterator var2 = mc.theWorld.getLoadedEntityList().Method1383();
 
       while(var2.Method932()) {
-         Entity a = (Entity)var2.Method933();
-         EntityLivingBase a;
-         if (a instanceof EntityLivingBase && this.Method965(a = (EntityLivingBase)a) && !Field2528.contains(a)) {
-            Field2528.Method2530(a);
+         Entity var3 = (Entity)var2.Method933();
+         EntityLivingBase var4;
+         if (var3 instanceof EntityLivingBase && this.Method965(var4 = (EntityLivingBase)var3) && !Field2528.contains(var4)) {
+            Field2528.Method2530(var4);
          }
 
-         if (Field2528.Method1799() >= a) {
+         if (Field2528.Method1799() >= var1) {
             break;
          }
       }
@@ -244,13 +244,13 @@ public class KillAura extends Module {
    }
 
    public double[] Method818(EntityLivingBase a) {
-      double a = a.posX - mc.thePlayer.posX;
-      double a = a.posY - mc.thePlayer.posY;
-      double a = a.posZ - mc.thePlayer.posZ;
-      a /= (double)mc.thePlayer.getDistanceToEntity(a);
-      double a = -(Math.atan2(a, a) * 57.29577951308232);
-      double a = -(Math.asin(a) * 57.29577951308232);
-      return new double[]{a, a};
+      double var2 = a.posX - mc.thePlayer.posX;
+      double var4 = a.posY - mc.thePlayer.posY;
+      double var6 = a.posZ - mc.thePlayer.posZ;
+      var4 /= (double)mc.thePlayer.getDistanceToEntity(a);
+      double var8 = -(Math.atan2(var2, var6) * 57.29577951308232);
+      double var10 = -(Math.asin(var4) * 57.29577951308232);
+      return new double[]{var8, var10};
    }
 
    private void Method951() {
@@ -259,38 +259,38 @@ public class KillAura extends Module {
    }
 
    public void Method952(EntityLivingBase a) {
-      double a = (double)ReflectionUtils.getRenderPartialTicks();
-      double a = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosX + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posX - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-      double a = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosY + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posY - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-      double a = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosZ + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posZ - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-      double a = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().maxX - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().minX;
-      double a = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().maxY - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().minY + 0.25;
-      float a = 0.0F;
-      float a = 0.5F;
-      float a = 1.0F;
-      float a = 0.4F;
-      float a = 0.0F;
-      float a = 0.5F;
-      float a = 1.0F;
+      double var2 = (double)ReflectionUtils.getRenderPartialTicks();
+      double var4 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosX + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posX - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosX) * var2 - ReflectionUtils.getRenderPosX();
+      double var6 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosY + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posY - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosY) * var2 - ReflectionUtils.getRenderPosY();
+      double var8 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosZ + (((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).posZ - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).lastTickPosZ) * var2 - ReflectionUtils.getRenderPosZ();
+      double var10 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().maxX - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().minX;
+      double var12 = ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().maxY - ((Entity)(a instanceof EntityDragon ? ((EntityDragon)a).dragonPartBody : a)).getEntityBoundingBox().minY + 0.25;
+      float var14 = 0.0F;
+      float var15 = 0.5F;
+      float var16 = 1.0F;
+      float var17 = 0.4F;
+      float var18 = 0.0F;
+      float var19 = 0.5F;
+      float var20 = 1.0F;
       if (this.Method958(a).hurtResistantTime > 0) {
-         a = 1.0F;
-         a = 0.0F;
-         a = 0.0F;
-         a = 1.0F;
-         a = 0.0F;
-         a = 0.0F;
+         var14 = 1.0F;
+         var16 = 0.0F;
+         var15 = 0.0F;
+         var18 = 1.0F;
+         var19 = 0.0F;
+         var20 = 0.0F;
       } else {
-         a = 0.0F;
-         a = 1.0F;
-         a = 0.5F;
-         a = 0.0F;
-         a = 0.5F;
-         a = 1.0F;
+         var14 = 0.0F;
+         var16 = 1.0F;
+         var15 = 0.5F;
+         var18 = 0.0F;
+         var19 = 0.5F;
+         var20 = 1.0F;
       }
 
-      float a = 1.0F;
-      float a = 1.0F;
-      RenderUtils.Method1120(a, a + a, a, a / 1.5, 0.1, a, a, a, a, a, a, a, 1.0F, 1.0F);
+      float var21 = 1.0F;
+      float var22 = 1.0F;
+      RenderUtils.Method1120(var4, var6 + var12, var8, var10 / 1.5, 0.1, var14, var15, var16, var17, var18, var19, var20, 1.0F, 1.0F);
    }
 
    public void onDisable() {
@@ -1145,19 +1145,19 @@ public class KillAura extends Module {
    }
 
    public float[] Method954(EntityLivingBase a) {
-      double a = Minecraft.getMinecraft().thePlayer.posX;
-      double a = Minecraft.getMinecraft().thePlayer.posY + (double)Minecraft.getMinecraft().thePlayer.getEyeHeight();
-      double a = Minecraft.getMinecraft().thePlayer.posZ;
-      double a = target.posX;
-      double a = target.posY + (double)(target.height / 2.0F);
-      double a = target.posZ;
-      double a = a - a;
-      double a = a - a;
-      double a = a - a;
-      double a = Math.sqrt(Math.pow(a, 2.0) + Math.pow(a, 2.0));
-      float a = (float)(Math.toDegrees(Math.atan2(a, a)) + 90.0);
-      float a = (float)Math.toDegrees(Math.atan2(a, a));
-      return new float[]{(float)((double)a + ((new Random()).nextBoolean() ? Math.random() : -Math.random())), (float)((double)(90.0F - a) + ((new Random()).nextBoolean() ? Math.random() : -Math.random()))};
+      double var2 = Minecraft.getMinecraft().thePlayer.posX;
+      double var4 = Minecraft.getMinecraft().thePlayer.posY + (double)Minecraft.getMinecraft().thePlayer.getEyeHeight();
+      double var6 = Minecraft.getMinecraft().thePlayer.posZ;
+      double var8 = target.posX;
+      double var10 = target.posY + (double)(target.height / 2.0F);
+      double var12 = target.posZ;
+      double var14 = var2 - var8;
+      double var16 = var4 - var10;
+      double var18 = var6 - var12;
+      double var20 = Math.sqrt(Math.pow(var14, 2.0) + Math.pow(var18, 2.0));
+      float var22 = (float)(Math.toDegrees(Math.atan2(var18, var14)) + 90.0);
+      float var23 = (float)Math.toDegrees(Math.atan2(var20, var16));
+      return new float[]{(float)((double)var22 + ((new Random()).nextBoolean() ? Math.random() : -Math.random())), (float)((double)(90.0F - var23) + ((new Random()).nextBoolean() ? Math.random() : -Math.random()))};
    }
 
    @EventTarget
@@ -1251,10 +1251,10 @@ public class KillAura extends Module {
    }
 
    public float Method956(Entity a) {
-      float a = (float)(mc.thePlayer.posX - a.posX);
-      float a = (float)(mc.thePlayer.posY - a.posY);
-      float a = (float)(mc.thePlayer.posZ - a.posZ);
-      return MathHelper.sqrt_float(a * a + a * a);
+      float var2 = (float)(mc.thePlayer.posX - a.posX);
+      float var3 = (float)(mc.thePlayer.posY - a.posY);
+      float var4 = (float)(mc.thePlayer.posZ - a.posZ);
+      return MathHelper.sqrt_float(var2 * var2 + var4 * var4);
    }
 
    private void Method957(EntityLivingBase a) {
@@ -1296,11 +1296,11 @@ public class KillAura extends Module {
          this.Method946();
          this.Method814();
          if (target != null) {
-            float[] a = this.Method954(target);
+            float[] var2 = this.Method954(target);
             if (mc.thePlayer.getDistanceToEntity(target) <= this.Field2505.getFloatValue() + target.width / 2.0F) {
-               float[] a = this.Method954(target);
-               float[] a = new float[]{this.Field2496[0], this.Field2496[1]};
-               this.Field2496 = this.Method968(a, a);
+               float[] var3 = this.Method954(target);
+               float[] var4 = new float[]{this.Field2496[0], this.Field2496[1]};
+               this.Field2496 = this.Method968(var3, var4);
                if (this.Field2518.getBooleanValue()) {
                   a.setYaw(this.Field2496[0]);
                }
@@ -1322,18 +1322,18 @@ public class KillAura extends Module {
       if (!(a instanceof EntityDragon)) {
          return a;
       } else {
-         EntityDragon a = (EntityDragon)a;
-         List a = new CopyOnWriteArrayList();
-         EntityDragonPart[] var4 = a.dragonPartArray;
+         EntityDragon var2 = (EntityDragon)a;
+         CopyOnWriteArrayList var3 = new CopyOnWriteArrayList();
+         EntityDragonPart[] var4 = var2.dragonPartArray;
          int var5 = var4.length;
 
          for(int var6 = 0; var6 < var5; ++var6) {
-            EntityDragonPart a = var4[var6];
-            a.Method2530(a);
+            EntityDragonPart var7 = var4[var6];
+            var3.Method2530(var7);
          }
 
-         a.sort(Comparator.comparingDouble(KillAura::Method962));
-         return (Entity)a.get(0);
+         var3.sort(Comparator.comparingDouble(KillAura::Method962));
+         return (Entity)var3.get(0);
       }
    }
 
@@ -1365,26 +1365,26 @@ public class KillAura extends Module {
    }
 
    public void Method963(EntityLivingBase a) {
-      double a = (double)ReflectionUtils.getRenderPartialTicks();
-      double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-      double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-      double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-      Color a = new Color(0, 153, 255, 80);
+      double var2 = (double)ReflectionUtils.getRenderPartialTicks();
+      double var4 = a.lastTickPosX + (a.posX - a.lastTickPosX) * var2 - ReflectionUtils.getRenderPosX();
+      double var6 = a.lastTickPosY + (a.posY - a.lastTickPosY) * var2 - ReflectionUtils.getRenderPosY();
+      double var8 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * var2 - ReflectionUtils.getRenderPosZ();
+      Color var10 = new Color(0, 153, 255, 80);
       if (a.hurtTime > 0) {
-         a = new Color(255, 0, 0, 80);
+         var10 = new Color(255, 0, 0, 80);
       }
 
-      RenderUtils.Method1122(a, a, a, (double)a.width / 1.2, (double)a.height + 0.2, (float)a.getRed() / 255.0F, (float)a.getGreen() / 255.0F, (float)a.getBlue() / 255.0F, (float)a.getAlpha() / 255.0F);
+      RenderUtils.Method1122(var4, var6, var8, (double)a.width / 1.2, (double)a.height + 0.2, (float)var10.getRed() / 255.0F, (float)var10.getGreen() / 255.0F, (float)var10.getBlue() / 255.0F, (float)var10.getAlpha() / 255.0F);
    }
 
    public boolean Method817(EntityLivingBase a, float a) {
       a = (float)((double)a * 0.5);
-      double a = (((double)mc.thePlayer.rotationYaw - this.Method818(a)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
-      return a > 0.0 && a < (double)a || (double)(-a) < a && a < 0.0;
+      double var3 = (((double)mc.thePlayer.rotationYaw - this.Method818(a)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
+      return var3 > 0.0 && var3 < (double)a || (double)(-a) < var3 && var3 < 0.0;
    }
 
    public void Method964(EntityLivingBase a, double a, double a, double a) {
-      Cylinder a = new Cylinder();
+      Cylinder var8 = new Cylinder();
       GL11.glPushMatrix();
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
@@ -1401,8 +1401,8 @@ public class KillAura extends Module {
       RenderUtils.Method1125(new Color(0, 153, 255, 150));
       Method945(0.1F);
       GL11.glRotatef(-90.0F, 1.0F, 0.0F, 0.0F);
-      a.setDrawStyle(100011);
-      a.draw(0.0F, 0.2F, 0.5F, 3, 300);
+      var8.setDrawStyle(100011);
+      var8.draw(0.0F, 0.2F, 0.5F, 3, 300);
       Method258();
       GL11.glDepthMask(true);
       GL11.glEnable(2929);
@@ -1427,8 +1427,8 @@ public class KillAura extends Module {
       RenderUtils.Method1125(new Color(0, 153, 255, 150));
       Method945(0.1F);
       GL11.glRotatef(-90.0F, 1.0F, 0.0F, 0.0F);
-      a.setDrawStyle(100011);
-      a.draw(0.0F, 0.2F, 0.0F, 3, 300);
+      var8.setDrawStyle(100011);
+      var8.draw(0.0F, 0.2F, 0.0F, 3, 300);
       Method258();
       GL11.glDepthMask(true);
       GL11.glEnable(2929);
@@ -1452,11 +1452,11 @@ public class KillAura extends Module {
    }
 
    private float[] Method968(float[] a, float[] a) {
-      float[] a = new float[]{a[0] - a[0], a[1] - a[1]};
-      a = MathUtils.parseRotations(a);
-      a[0] = a[0] - a[0] / 100.0F * (this.Field2517.getFloatValue() / 2.0F);
-      a[1] = a[1] - a[1] / 100.0F * (this.Field2517.getFloatValue() / 2.0F);
-      return a;
+      float[] var3 = new float[]{a[0] - a[0], a[1] - a[1]};
+      var3 = MathUtils.parseRotations(var3);
+      var3[0] = a[0] - var3[0] / 100.0F * (this.Field2517.getFloatValue() / 2.0F);
+      var3[1] = a[1] - var3[1] / 100.0F * (this.Field2517.getFloatValue() / 2.0F);
+      return var3;
    }
 
    static {
@@ -1503,16 +1503,16 @@ public class KillAura extends Module {
    }
 
    private static int Method969(EntityLivingBase a, EntityLivingBase a) {
-      float[] a = RotationUtils.getRotation2(a);
-      float[] a = RotationUtils.getRotation2(a);
-      return (int)(mc.thePlayer.rotationYaw - a[0] - (mc.thePlayer.rotationYaw - a[0]));
+      float[] var2 = RotationUtils.getRotation2(a);
+      float[] var3 = RotationUtils.getRotation2(a);
+      return (int)(mc.thePlayer.rotationYaw - var2[0] - (mc.thePlayer.rotationYaw - var3[0]));
    }
 
    private void Method970() {
-      int a = this.Field2530.getFloatValue().intValue();
-      int a = this.Field2529.getFloatValue().intValue();
-      int a = MathUtils.getRandomDouble(a, a);
-      if (mc.thePlayer.getDistanceToEntity(target) <= this.Field2505.getFloatValue() + target.width / 2.0F && this.Field2510.Method211((long)(a - 20 + this.Field2532.nextInt(50)))) {
+      int var1 = this.Field2530.getFloatValue().intValue();
+      int var2 = this.Field2529.getFloatValue().intValue();
+      int var3 = MathUtils.getRandomDouble(var2, var1);
+      if (mc.thePlayer.getDistanceToEntity(target) <= this.Field2505.getFloatValue() + target.width / 2.0F && this.Field2510.Method211((long)(var3 - 20 + this.Field2532.nextInt(50)))) {
          this.Field2510.reset();
          if (!mc.thePlayer.isBlocking() && mc.thePlayer.getHeldItem() != null && mc.thePlayer.getHeldItem().getItem() instanceof ItemSword) {
          }
@@ -1544,17 +1544,17 @@ public class KillAura extends Module {
       Iterator var1 = Field2528.Method1383();
 
       while(var1.Method932()) {
-         EntityLivingBase a = (EntityLivingBase)var1.Method933();
-         if (!this.Method965(a)) {
-            Field2528.remove(a);
+         EntityLivingBase var2 = (EntityLivingBase)var1.Method933();
+         if (!this.Method965(var2)) {
+            Field2528.remove(var2);
          }
       }
 
    }
 
    public static int Method972(double a, double a) {
-      Random a = new Random();
-      return (int)(a + a.nextDouble() * (a - a));
+      Random var4 = new Random();
+      return (int)(a + var4.nextDouble() * (a - a));
    }
 
    private void Method973(EntityLivingBase a) {
@@ -1563,10 +1563,10 @@ public class KillAura extends Module {
    }
 
    private double Method812(EntityLivingBase a) {
-      float[] a = RotationUtils.getRotation(a);
-      float a = (float)((int)a[0]);
-      float a = mc.thePlayer.rotationYaw > a ? mc.thePlayer.rotationYaw - a : a - mc.thePlayer.rotationYaw;
-      return (double)a;
+      float[] var2 = RotationUtils.getRotation(a);
+      float var3 = (float)((int)var2[0]);
+      float var4 = mc.thePlayer.rotationYaw > var3 ? mc.thePlayer.rotationYaw - var3 : var3 - mc.thePlayer.rotationYaw;
+      return (double)var4;
    }
 
    @EventTarget
@@ -1577,11 +1577,11 @@ public class KillAura extends Module {
                Field2528.forEach(this::Method942);
             }
          } else if (target != null) {
-            double a = (double)ReflectionUtils.getRenderPartialTicks();
-            double a = target.lastTickPosX + (target.posX - target.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-            double a = target.lastTickPosY + (target.posY - target.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-            double a = target.lastTickPosZ + (target.posZ - target.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-            this.Method964(target, a, a + (double)target.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0F)) / 10.0, a);
+            double var2 = (double)ReflectionUtils.getRenderPartialTicks();
+            double var4 = target.lastTickPosX + (target.posX - target.lastTickPosX) * var2 - ReflectionUtils.getRenderPosX();
+            double var6 = target.lastTickPosY + (target.posY - target.lastTickPosY) * var2 - ReflectionUtils.getRenderPosY();
+            double var8 = target.lastTickPosZ + (target.posZ - target.lastTickPosZ) * var2 - ReflectionUtils.getRenderPosZ();
+            this.Method964(target, var4, var6 + (double)target.getEyeHeight() + 0.5 + Math.sin((double)((float)(System.currentTimeMillis() % 1000000L) / 333.0F)) / 10.0, var8);
          }
       }
 

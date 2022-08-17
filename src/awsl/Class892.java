@@ -11,7 +11,7 @@ final class Class892 implements Class672 {
    }
 
    public final ContentHandler Method2326() {
-      Class169 a = new Class169(1);
-      return new Class732(this, a, a);
+      Class169 var1 = new Class169(1);
+      return new Class732(this, var1, var1);
    }
 }

@@ -109,8 +109,8 @@ public abstract class Class267 {
    @Deprecated
    public void Method1953(int a, String a, String a, String a) {
       if (this.Field1459 >= 327680) {
-         boolean a = a == 185;
-         this.Method1954(a, a, a, a, a);
+         boolean var5 = a == 185;
+         this.Method1954(a, a, a, a, var5);
       } else {
          if (this.Field1460 != null) {
             this.Field1460.Method1953(a, a, a, a);

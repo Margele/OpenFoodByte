@@ -33,20 +33,20 @@ public class Class728 extends CreativeTabs {
    }
 
    public static ItemStack Method1997(String a) {
-      int a = Method1999();
+      int var1 = Method1999();
 
       try {
          a = a.replace('&', '§');
-         Item a = new Item();
-         String[] a = null;
-         int a = true;
-         int a = false;
-         int a = 0;
-         if (a <= Math.min(12, a.length() - 2)) {
-            a = a.substring(a).split(Pattern.quote(" "));
-            ResourceLocation a = new ResourceLocation(a[0]);
-            a = (Item)Item.itemRegistry.getObject(a);
-            ++a;
+         Item var2 = new Item();
+         String[] var4 = null;
+         boolean var5 = true;
+         boolean var6 = false;
+         int var7 = 0;
+         if (var7 <= Math.min(12, a.length() - 2)) {
+            var4 = a.substring(var7).split(Pattern.quote(" "));
+            ResourceLocation var8 = new ResourceLocation(var4[0]);
+            var2 = (Item)Item.itemRegistry.getObject(var8);
+            ++var7;
          }
 
          return null;

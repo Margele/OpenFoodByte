@@ -23,15 +23,15 @@ public final class Class132 extends Class148 {
    }
 
    public Class148 Method399(String a, String a) {
-      Class801 a = this.Field982.Method3257(a, a);
-      Class148 a = this.Field1006 == null ? null : this.Field1006.Method399(a, a);
-      return new Class132(a, a);
+      Class801 var3 = this.Field982.Method3257(a, a);
+      Class148 var4 = this.Field1006 == null ? null : this.Field1006.Method399(a, a);
+      return new Class132(var4, var3);
    }
 
    public Class148 Method400(String a) {
-      Class801 a = this.Field982.Method3258(a);
-      Class148 a = this.Field1006 == null ? null : this.Field1006.Method400(a);
-      return new Class132(a, a);
+      Class801 var2 = this.Field982.Method3258(a);
+      Class148 var3 = this.Field1006 == null ? null : this.Field1006.Method400(a);
+      return new Class132(var3, var2);
    }
 
    public void Method401() {

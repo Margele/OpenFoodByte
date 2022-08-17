@@ -9,17 +9,17 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Class358 {
    public static GameProfile Method209(ItemStack a) {
-      GameProfile a = null;
+      GameProfile var1 = null;
       if (a.hasTagCompound()) {
-         NBTTagCompound a = a.getTagCompound();
-         if (a.hasKey("SkullOwner", 10)) {
-            a = NBTUtil.readGameProfileFromNBT(a.getCompoundTag("SkullOwner"));
-         } else if (a.hasKey("SkullOwner", 8) && !StringUtils.isBlank(a.getString("SkullOwner"))) {
-            a = new GameProfile((UUID)null, a.getString("SkullOwner"));
+         NBTTagCompound var2 = a.getTagCompound();
+         if (var2.hasKey("SkullOwner", 10)) {
+            var1 = NBTUtil.readGameProfileFromNBT(var2.getCompoundTag("SkullOwner"));
+         } else if (var2.hasKey("SkullOwner", 8) && !StringUtils.isBlank(var2.getString("SkullOwner"))) {
+            var1 = new GameProfile((UUID)null, var2.getString("SkullOwner"));
          }
       }
 
-      return a;
+      return var1;
    }
 
    public static void Method210(ItemStack a, String a) {

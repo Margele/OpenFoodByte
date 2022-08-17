@@ -21,20 +21,20 @@ public class Class229 extends Class167 {
    }
 
    public Class267 Method1451(int a, String a, String a, String a, String[] a) {
-      int a = Class37.Method3382();
+      boolean var6 = Class37.Method3382();
       if ("<clinit>".equals(a)) {
-         int a = 10;
-         String a = this.Field1284 + this.Field1285++;
-         this.Field1035.Method1451(a, a, a, a, a);
+         byte var8 = 10;
+         String var9 = this.Field1284 + this.Field1285++;
+         this.Field1035.Method1451(var8, var9, a, a, a);
          if (this.Field1283 == null) {
-            this.Field1283 = this.Field1035.Method1451(a, a, a, (String)null, (String[])null);
+            this.Field1283 = this.Field1035.Method1451(var8, a, a, (String)null, (String[])null);
          }
 
-         this.Field1283.Method1954(184, this.Field1282, a, a, false);
+         this.Field1283.Method1954(184, this.Field1282, var9, a, false);
       }
 
-      Class267 a = this.Field1035.Method1451(a, a, a, a, a);
-      return a;
+      Class267 var7 = this.Field1035.Method1451(a, a, a, a, a);
+      return var7;
    }
 
    public void Method1460() {

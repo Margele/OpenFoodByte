@@ -43,55 +43,55 @@ public class Class75 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1270();
-      int a = a.getWidth();
-      int a = a.getHeight();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
       a = this.Method1263(a, (ColorModel)null);
       if (this.Field696 == null) {
          return a;
       } else {
-         int a = this.Field696.getWidth();
-         int a = this.Field696.getHeight();
-         float a = 255.0F * this.Field693;
-         int[] a = new int[a];
-         int[] a = new int[a];
-         int a = 0;
-         if (a < a) {
-            this.Method104(a, 0, a, a, 1, a);
-            this.Method104(this.Field696, 0, a % a, a, 1, a);
-            int a = 0;
-            if (a < a) {
-               int a = a[a % a];
-               int a = a[a];
+         int var6 = this.Field696.getWidth();
+         int var7 = this.Field696.getHeight();
+         float var8 = 255.0F * this.Field693;
+         int[] var9 = new int[var4];
+         int[] var10 = new int[var6];
+         int var11 = 0;
+         if (var11 < var5) {
+            this.Method104(a, 0, var11, var4, 1, var9);
+            this.Method104(this.Field696, 0, var11 % var7, var6, 1, var10);
+            int var12 = 0;
+            if (var12 < var4) {
+               int var13 = var10[var12 % var6];
+               int var14 = var9[var12];
                if (this.Field694) {
-                  a ^= 16777215;
+                  var13 ^= 16777215;
                }
 
-               int a;
-               int a;
-               int a;
+               int var15;
+               int var16;
+               int var18;
                if (this.Field695) {
-                  a = Class767.Method1689(a);
-                  a = Class767.Method1689(a);
-                  float a = 1.0F - Class776.Method1708((float)a - a, (float)a + a, (float)a);
-                  a = (int)(255.0F * a);
-                  a[a] = a & -16777216 | a << 16 | a << 8 | a;
+                  var15 = Class767.Method1689(var13);
+                  var16 = Class767.Method1689(var14);
+                  float var17 = 1.0F - Class776.Method1708((float)var16 - var8, (float)var16 + var8, (float)var15);
+                  var18 = (int)(255.0F * var17);
+                  var9[var12] = var14 & -16777216 | var18 << 16 | var18 << 8 | var18;
                }
 
-               a = a >> 16 & 255;
-               a = a >> 8 & 255;
-               int a = a & 255;
-               a = a >> 16 & 255;
-               int a = a >> 8 & 255;
-               int a = a & 255;
-               int a = (int)(255.0F * (1.0F - Class776.Method1708((float)a - a, (float)a + a, (float)a)));
-               int a = (int)(255.0F * (1.0F - Class776.Method1708((float)a - a, (float)a + a, (float)a)));
-               int a = (int)(255.0F * (1.0F - Class776.Method1708((float)a - a, (float)a + a, (float)a)));
-               a[a] = a & -16777216 | a << 16 | a << 8 | a;
-               ++a;
+               var15 = var14 >> 16 & 255;
+               var16 = var14 >> 8 & 255;
+               int var24 = var14 & 255;
+               var18 = var13 >> 16 & 255;
+               int var19 = var13 >> 8 & 255;
+               int var20 = var13 & 255;
+               int var21 = (int)(255.0F * (1.0F - Class776.Method1708((float)var15 - var8, (float)var15 + var8, (float)var18)));
+               int var22 = (int)(255.0F * (1.0F - Class776.Method1708((float)var16 - var8, (float)var16 + var8, (float)var19)));
+               int var23 = (int)(255.0F * (1.0F - Class776.Method1708((float)var24 - var8, (float)var24 + var8, (float)var20)));
+               var9[var12] = var14 & -16777216 | var21 << 16 | var22 << 8 | var23;
+               ++var12;
             }
 
-            this.Method1267(a, 0, a, a, 1, a);
-            ++a;
+            this.Method1267(a, 0, var11, var4, 1, var9);
+            ++var11;
          }
 
          return a;

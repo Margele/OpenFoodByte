@@ -25,9 +25,9 @@ public class Class398 implements Class422, Class45 {
          Iterator var0 = ModuleManager.getAllModules().Method1383();
 
          while(var0.Method932()) {
-            Module a = (Module)var0.Method933();
-            if (a.Method1020() == (Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 256 : Keyboard.getEventKey()) && Minecraft.getMinecraft().currentScreen == null) {
-               a.setState(!a.getState());
+            Module var1 = (Module)var0.Method933();
+            if (var1.Method1020() == (Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 256 : Keyboard.getEventKey()) && Minecraft.getMinecraft().currentScreen == null) {
+               var1.setState(!var1.getState());
             }
          }
       }
@@ -39,9 +39,9 @@ public class Class398 implements Class422, Class45 {
    }
 
    public static void Method1366() {
-      ScaledResolution a = new ScaledResolution(Minecraft.getMinecraft());
+      ScaledResolution var0 = new ScaledResolution(Minecraft.getMinecraft());
       if (Objects.nonNull(GlobalModule.INSTANCE)) {
-         GlobalModule.INSTANCE.getNotificationManager().Method2730(a, false, 2);
+         GlobalModule.INSTANCE.getNotificationManager().Method2730(var0, false, 2);
       }
 
    }
@@ -53,7 +53,7 @@ public class Class398 implements Class422, Class45 {
    @Class628
    public native void Method1362(Class15 class15, String string);
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public static void Method1368() {
@@ -863,9 +863,9 @@ public class Class398 implements Class422, Class45 {
 
    public static void Method1370() {
       if (Keyboard.getEventKeyState()) {
-         int a = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 256 : Keyboard.getEventKey();
-         Class632 a = new Class632(a);
-         EventManager.call(a);
+         int var0 = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() + 256 : Keyboard.getEventKey();
+         Class632 var1 = new Class632(var0);
+         EventManager.call(var1);
       }
 
    }
@@ -876,10 +876,10 @@ public class Class398 implements Class422, Class45 {
    }
 
    public static void Method1372() {
-      long a = Sys.getTime() * 1000L / Sys.getTimerResolution();
-      int a = (int)(a - Field1963);
-      Field1963 = a;
-      GlobalModule.Field3185 = (float)a;
+      long var0 = Sys.getTime() * 1000L / Sys.getTimerResolution();
+      int var2 = (int)(var0 - Field1963);
+      Field1963 = var0;
+      GlobalModule.Field3185 = (float)var2;
    }
 
    public static void Method1373() {
@@ -894,8 +894,8 @@ public class Class398 implements Class422, Class45 {
    }
 
    public static void Method1374(float a, boolean a) {
-      Class648 a = new Class648(a, a);
-      EventManager.call(a);
+      Class648 var2 = new Class648(a, a);
+      EventManager.call(var2);
    }
 
    public void Method1359(Class15 a, String a) {
@@ -907,9 +907,9 @@ public class Class398 implements Class422, Class45 {
    }
 
    public static boolean Method1376() {
-      MouseEvent a = new MouseEvent();
-      EventManager.call(a);
-      return a.Method2241();
+      MouseEvent var0 = new MouseEvent();
+      EventManager.call(var0);
+      return var0.Method2241();
    }
 
    // $FF: synthetic method

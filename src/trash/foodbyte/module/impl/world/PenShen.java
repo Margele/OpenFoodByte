@@ -35,10 +35,10 @@ public class PenShen extends Module {
 
    @EventTarget
    public void Method755(EventTick a) {
-      Random a = new Random();
+      Random var2 = new Random();
       if (this.Field2275.Method211((long)(1000.0F * this.Field2276.getFloatValueCast()))) {
-         String a = (String)this.Field2278.get(a.nextInt(this.Field2278.Method1799()));
-         mc.thePlayer.sendChatMessage((!this.Field2277.getBooleanValue() ? "" : "[" + GlobalModule.clientName + "] ") + a);
+         String var3 = (String)this.Field2278.get(var2.nextInt(this.Field2278.Method1799()));
+         mc.thePlayer.sendChatMessage((!this.Field2277.getBooleanValue() ? "" : "[" + GlobalModule.clientName + "] ") + var3);
          this.Field2275.reset();
       }
 
@@ -48,31 +48,31 @@ public class PenShen extends Module {
       Class448.trash();
       this.Field2278.clear();
 
-      InputStream a;
-      BufferedReader a;
-      String a;
+      InputStream var2;
+      BufferedReader var3;
+      String var4;
       try {
-         a = Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("minecraft:FoodByte/penshen/800.txt")).getInputStream();
-         a = new BufferedReader(new InputStreamReader(a, StandardCharsets.UTF_8));
-         a = "";
-         if ((a = a.readLine()) != null) {
-            this.Field2278.Method2530(a);
+         var2 = Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("minecraft:FoodByte/penshen/800.txt")).getInputStream();
+         var3 = new BufferedReader(new InputStreamReader(var2, StandardCharsets.UTF_8));
+         var4 = "";
+         if ((var4 = var3.readLine()) != null) {
+            this.Field2278.Method2530(var4);
          }
 
-         a.close();
+         var3.close();
       } catch (Exception var6) {
          var6.printStackTrace();
       }
 
       try {
-         a = Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("minecraft:FoodByte/penshen/gaosuzhi.txt")).getInputStream();
-         a = new BufferedReader(new InputStreamReader(a, StandardCharsets.UTF_8));
-         a = "";
-         if ((a = a.readLine()) != null) {
-            this.Field2278.Method2530(a);
+         var2 = Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("minecraft:FoodByte/penshen/gaosuzhi.txt")).getInputStream();
+         var3 = new BufferedReader(new InputStreamReader(var2, StandardCharsets.UTF_8));
+         var4 = "";
+         if ((var4 = var3.readLine()) != null) {
+            this.Field2278.Method2530(var4);
          }
 
-         a.close();
+         var3.close();
       } catch (Exception var5) {
       }
 

@@ -54,30 +54,30 @@ public class Class123 extends Class119 {
 
    public void Method56(float a) {
       this.Field968 = a;
-      float a = (float)Math.cos((double)a);
-      float a = (float)Math.sin((double)a);
-      this.Field969 = a;
-      this.Field970 = a;
-      this.Field971 = -a;
-      this.Field972 = a;
+      float var2 = (float)Math.cos((double)a);
+      float var3 = (float)Math.sin((double)a);
+      this.Field969 = var2;
+      this.Field970 = var3;
+      this.Field971 = -var3;
+      this.Field972 = var2;
    }
 
    public float Method57() {
       return this.Field968;
    }
 
-   public int Method3(int a, int a, int a2) {
-      float a = (this.Field969 * (float)a + this.Field970 * (float)a) / (float)this.Field963;
-      float a = (this.Field971 * (float)a + this.Field972 * (float)a) / (float)this.Field964;
-      float a = (int)(a + 100000.0F) % 2 != (int)(a + 100000.0F) % 2 ? 1.0F : 0.0F;
+   public int Method3(int a, int a, int a) {
+      float var4 = (this.Field969 * (float)a + this.Field970 * (float)a) / (float)this.Field963;
+      float var5 = (this.Field971 * (float)a + this.Field972 * (float)a) / (float)this.Field964;
+      float var6 = (int)(var4 + 100000.0F) % 2 != (int)(var5 + 100000.0F) % 2 ? 1.0F : 0.0F;
       if (this.Field967 != 0) {
-         float a = (float)this.Field967 / 100.0F;
-         float a = Class776.Method1707(0.0F, a, 1.0F - a, 1.0F, Class776.Method1714(a, 1.0F));
-         float a = Class776.Method1707(0.0F, a, 1.0F - a, 1.0F, Class776.Method1714(a, 1.0F));
-         a *= a * a;
+         float var7 = (float)this.Field967 / 100.0F;
+         float var8 = Class776.Method1707(0.0F, var7, 1.0F - var7, 1.0F, Class776.Method1714(var4, 1.0F));
+         float var9 = Class776.Method1707(0.0F, var7, 1.0F - var7, 1.0F, Class776.Method1714(var5, 1.0F));
+         var6 *= var8 * var9;
       }
 
-      return Class776.Method1719(a, this.Field965, this.Field966);
+      return Class776.Method1719(var6, this.Field965, this.Field966);
    }
 
    public String toString() {

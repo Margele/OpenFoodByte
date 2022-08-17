@@ -23,40 +23,40 @@ public class Class225 extends Class167 {
          System.err.println("Verifies the given class.");
          System.err.println("Usage: CheckClassAdapter <fully qualified class name or class file name>");
       } else {
-         Class165 a;
+         Class165 var1;
          if (a[0].endsWith(".class")) {
-            a = new Class165(new FileInputStream(a[0]));
+            var1 = new Class165(new FileInputStream(a[0]));
          } else {
-            a = new Class165(a[0]);
+            var1 = new Class165(a[0]);
          }
 
-         Method2193(a, false, new PrintWriter(System.err));
+         Method2193(var1, false, new PrintWriter(System.err));
       }
    }
 
-   public static void Method2192(Class165 a, ClassLoader a, boolean a2, PrintWriter a) {
-      Class224 a = new Class224();
-      a.Method1470(new Class225(a, false), 2);
-      b a = a.Field1246 == null ? null : b.Method3205(a.Field1246);
-      List a = a.Field1260;
-      List a = new ArrayList();
-      Iterator a = a.Field1247.Method1383();
+   public static void Method2192(Class165 a, ClassLoader a, boolean a, PrintWriter a) {
+      Class224 var4 = new Class224();
+      a.Method1470(new Class225(var4, false), 2);
+      b var5 = var4.Field1246 == null ? null : b.Method3205(var4.Field1246);
+      List var6 = var4.Field1260;
+      ArrayList var7 = new ArrayList();
+      Iterator var8 = var4.Field1247.Method1383();
 
-      while(a.Method932()) {
-         a.Method2530(b.Method3205((String)a.Method933()));
+      while(var8.Method932()) {
+         var7.Method2530(b.Method3205((String)var8.Method933()));
       }
 
-      for(int a = 0; a < a.Method1799(); ++a) {
-         Class15 a = (Class15)a.get(a);
-         Class813 a = new Class813(b.Method3205(a.Field1244), a, a, (a.Field1243 & 512) != 0);
-         Class780 a = new Class780(a);
-         a.Method3672(a);
+      for(int var14 = 0; var14 < var6.Method1799(); ++var14) {
+         Class15 var9 = (Class15)var6.get(var14);
+         Class813 var10 = new Class813(b.Method3205(var4.Field1244), var5, var7, (var4.Field1243 & 512) != 0);
+         Class780 var11 = new Class780(var10);
+         var10.Method3672(a);
 
          try {
-            a.Method847(a.Field1244, a);
+            var11.Method847(var4.Field1244, var9);
          } catch (Exception var13) {
             var13.printStackTrace(a);
-            Method2194(a, a, a);
+            Method2194(var9, var11, a);
          }
       }
 
@@ -68,42 +68,42 @@ public class Class225 extends Class167 {
    }
 
    static void Method2194(Class15 a, Class780 a, PrintWriter a) {
-      Class784[] a = a.Method849();
-      Class804 a = new Class804();
-      Class41 a = new Class41(a);
+      Class784[] var3 = a.Method849();
+      Class804 var4 = new Class804();
+      Class41 var5 = new Class41(var4);
       a.println(a.Field195 + a.Field196);
 
-      int a;
-      for(a = 0; a < a.Field208.Method183(); ++a) {
-         a.Field208.Method186(a).Method1(a);
-         StringBuilder a = new StringBuilder();
-         Class784 a = a[a];
-         a.append('?');
+      int var6;
+      for(var6 = 0; var6 < a.Field208.Method183(); ++var6) {
+         a.Field208.Method186(var6).Method1(var5);
+         StringBuilder var7 = new StringBuilder();
+         Class784 var8 = var3[var6];
+         var7.append('?');
 
-         while(a.length() < a.Field210 + a.Field211 + 1) {
-            a.append(' ');
+         while(var7.length() < a.Field210 + a.Field211 + 1) {
+            var7.append(' ');
          }
 
-         a.print(Integer.toString(a + 100000).substring(1));
-         a.print(" " + a + " : " + a.Field3580.get(a.Field3580.Method1799() - 1));
+         a.print(Integer.toString(var6 + 100000).substring(1));
+         a.print(" " + var7 + " : " + var4.Field3580.get(var4.Field3580.Method1799() - 1));
       }
 
-      for(a = 0; a < a.Field209.Method1799(); ++a) {
-         ((Class794)a.Field209.get(a)).Method796(a);
-         a.print(" " + a.Field3580.get(a.Field3580.Method1799() - 1));
+      for(var6 = 0; var6 < a.Field209.Method1799(); ++var6) {
+         ((Class794)a.Field209.get(var6)).Method796(var5);
+         a.print(" " + var4.Field3580.get(var4.Field3580.Method1799() - 1));
       }
 
       a.println();
    }
 
    private static String Method2071(String a) {
-      int a = a.lastIndexOf(47);
-      int a = a.length();
-      if (a.charAt(a - 1) == ';') {
-         --a;
+      int var1 = a.lastIndexOf(47);
+      int var2 = a.length();
+      if (a.charAt(var2 - 1) == ';') {
+         --var2;
       }
 
-      return a == -1 ? a : a.substring(a + 1, a);
+      return var1 == -1 ? a : a.substring(var1 + 1, var2);
    }
 
    public Class225(Class167 a) {
@@ -142,8 +142,8 @@ public class Class225 extends Class167 {
             if ((a & 512) != 0 && !"java/lang/Object".equals(a)) {
                throw new IllegalArgumentException("The super class name of interfaces must be 'java/lang/Object'");
             } else {
-               for(int a = 0; a < a.length; ++a) {
-                  Class39.Method3393(a[a], "interface name at index " + a);
+               for(int var7 = 0; var7 < a.length; ++var7) {
+                  Class39.Method3393(a[var7], "interface name at index " + var7);
                }
 
                this.Field1261 = a;
@@ -163,7 +163,7 @@ public class Class225 extends Class167 {
       }
    }
 
-   public void Method1453(String a, String a1, String a2) {
+   public void Method1453(String a, String a, String a) {
       this.Method2195();
       if (this.Field1264) {
          throw new IllegalStateException("visitOuterClass can be called only once.");
@@ -178,12 +178,12 @@ public class Class225 extends Class167 {
       Class39.Method3393(a, "class name");
       Class39.Method3393(a, "outer class name");
 
-      int a;
-      for(a = 0; a < a.length() && Character.isDigit(a.charAt(a)); ++a) {
+      int var5;
+      for(var5 = 0; var5 < a.length() && Character.isDigit(a.charAt(var5)); ++var5) {
       }
 
-      if (a < a.length()) {
-         Class39.Method3391(a, a, -1, "inner class name");
+      if (var5 < a.length()) {
+         Class39.Method3391(a, var5, -1, "inner class name");
       }
 
       Method2196(a, 30239);
@@ -197,8 +197,8 @@ public class Class225 extends Class167 {
       Class39.Method3395(a, false);
       Method2199(a);
       Class39.Method3387(a);
-      Class253 a = super.Method1450(a, a, a, a, a);
-      return new Class244(a);
+      Class253 var6 = super.Method1450(a, a, a, a, a);
+      return new Class244(var6);
    }
 
    public Class267 Method1451(int a, String a, String a, String a, String[] a) {
@@ -211,19 +211,19 @@ public class Class225 extends Class167 {
       Class39.Method1873(a);
       Method2198(a);
 
-      for(int a = 0; a < a.length; ++a) {
-         Class39.Method3393(a[a], "exception name at index " + a);
+      for(int var6 = 0; var6 < a.length; ++var6) {
+         Class39.Method3393(a[var6], "exception name at index " + var6);
       }
 
-      Class39 a;
+      Class39 var7;
       if (this.Field1267) {
-         a = new Class39(a, a, a, super.Method1451(a, a, a, a, a), this.Field1266);
+         var7 = new Class39(a, a, a, super.Method1451(a, a, a, a, a), this.Field1266);
       } else {
-         a = new Class39(super.Method1451(a, a, a, a, a), this.Field1266);
+         var7 = new Class39(super.Method1451(a, a, a, a, a), this.Field1266);
       }
 
-      a.Field314 = this.Field1261;
-      return a;
+      var7.Field314 = this.Field1261;
+      return var7;
    }
 
    public Class148 Method1448(String a, boolean a) {
@@ -234,9 +234,9 @@ public class Class225 extends Class167 {
 
    public Class148 Method1449(int a, Class31 a, String a, boolean a) {
       this.Method2195();
-      int a = a >>> 24;
-      if (a != 17 && a != 16) {
-         throw new IllegalArgumentException("Invalid type reference sort 0x" + Integer.toHexString(a));
+      int var5 = a >>> 24;
+      if (var5 != 17 && var5 != 16) {
+         throw new IllegalArgumentException("Invalid type reference sort 0x" + Integer.toHexString(var5));
       } else {
          Method2200(a, a);
          Class39.Method3395(a, false);
@@ -267,15 +267,15 @@ public class Class225 extends Class167 {
       if ((a & ~a) != 0) {
          throw new IllegalArgumentException("Invalid access flags: " + a);
       } else {
-         int a = (a & 1) == 0 ? 0 : 1;
-         int a = (a & 2) == 0 ? 0 : 1;
-         int a = (a & 4) == 0 ? 0 : 1;
-         if (a + a + a > 1) {
+         int var2 = (a & 1) == 0 ? 0 : 1;
+         int var3 = (a & 2) == 0 ? 0 : 1;
+         int var4 = (a & 4) == 0 ? 0 : 1;
+         if (var2 + var3 + var4 > 1) {
             throw new IllegalArgumentException("public private and protected are mutually exclusive: " + a);
          } else {
-            int a = (a & 16) == 0 ? 0 : 1;
-            int a = (a & 1024) == 0 ? 0 : 1;
-            if (a + a > 1) {
+            int var5 = (a & 16) == 0 ? 0 : 1;
+            int var6 = (a & 1024) == 0 ? 0 : 1;
+            if (var5 + var6 > 1) {
                throw new IllegalArgumentException("final and abstract are mutually exclusive: " + a);
             }
          }
@@ -283,65 +283,65 @@ public class Class225 extends Class167 {
    }
 
    public static void Method2197(String a) {
-      int a = 0;
+      int var1 = 0;
       if (Method2210(a, 0) == '<') {
-         a = Method1527(a, a);
+         var1 = Method1527(a, var1);
       }
 
-      for(a = Method2203(a, a); Method2210(a, a) == 'L'; a = Method2203(a, a)) {
+      for(var1 = Method2203(a, var1); Method2210(a, var1) == 'L'; var1 = Method2203(a, var1)) {
       }
 
-      if (a != a.length()) {
-         throw new IllegalArgumentException(a + ": error at index " + a);
+      if (var1 != a.length()) {
+         throw new IllegalArgumentException(a + ": error at index " + var1);
       }
    }
 
    public static void Method2198(String a) {
-      int a = 0;
+      int var1 = 0;
       if (Method2210(a, 0) == '<') {
-         a = Method1527(a, a);
+         var1 = Method1527(a, var1);
       }
 
-      for(a = Method2209('(', a, a); "ZCBSIFJDL[T".indexOf(Method2210(a, a)) != -1; a = Method2207(a, a)) {
+      for(var1 = Method2209('(', a, var1); "ZCBSIFJDL[T".indexOf(Method2210(a, var1)) != -1; var1 = Method2207(a, var1)) {
       }
 
-      a = Method2209(')', a, a);
-      if (Method2210(a, a) == 'V') {
-         ++a;
+      var1 = Method2209(')', a, var1);
+      if (Method2210(a, var1) == 'V') {
+         ++var1;
       } else {
-         a = Method2207(a, a);
+         var1 = Method2207(a, var1);
       }
 
-      while(Method2210(a, a) == '^') {
-         ++a;
-         if (Method2210(a, a) == 'L') {
-            a = Method2203(a, a);
+      while(Method2210(a, var1) == '^') {
+         ++var1;
+         if (Method2210(a, var1) == 'L') {
+            var1 = Method2203(a, var1);
          } else {
-            a = Method2206(a, a);
+            var1 = Method2206(a, var1);
          }
       }
 
-      if (a != a.length()) {
-         throw new IllegalArgumentException(a + ": error at index " + a);
+      if (var1 != a.length()) {
+         throw new IllegalArgumentException(a + ": error at index " + var1);
       }
    }
 
    public static void Method2199(String a) {
-      int a = Method2202(a, 0);
-      if (a != a.length()) {
-         throw new IllegalArgumentException(a + ": error at index " + a);
+      int var1 = Method2202(a, 0);
+      if (var1 != a.length()) {
+         throw new IllegalArgumentException(a + ": error at index " + var1);
       }
    }
 
-   static void Method2200(int a, Class31 a1) {
+   static void Method2200(int a, Class31 a) {
       Class801.Method3300();
-      int a = false;
-      int a;
+      boolean var3 = false;
+      int var6;
       switch (a >>> 24) {
          case 0:
          case 1:
          case 22:
-            a = -65536;
+            var6 = -65536;
          case 19:
          case 20:
          case 21:
@@ -351,19 +351,19 @@ public class Class225 extends Class167 {
          case 68:
          case 69:
          case 70:
-            a = -16777216;
+            var6 = -16777216;
          case 16:
          case 17:
          case 18:
          case 23:
          case 66:
-            a = true;
+            var3 = true;
          case 71:
          case 72:
          case 73:
          case 74:
          case 75:
-            a = -16776961;
+            var6 = -16776961;
          case 2:
          case 3:
          case 4:
@@ -480,11 +480,11 @@ public class Class225 extends Class167 {
    }
 
    private static int Method2205(String a, int a) {
-      char a = Method2210(a, a);
-      if (a == '*') {
+      char var2 = Method2210(a, a);
+      if (var2 == '*') {
          return a + 1;
       } else {
-         if (a == '+' || a == '-') {
+         if (var2 == '+' || var2 == '-') {
             ++a;
          }
 

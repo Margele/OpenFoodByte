@@ -931,23 +931,23 @@ public class Class604 {
          this.Field2818.Method216(4500);
       }
 
-      String a;
+      String var3;
       if (a.getPacket() instanceof S40PacketDisconnect) {
-         S40PacketDisconnect a = (S40PacketDisconnect)a.getPacket();
-         if (((IChatComponent)a.getReason().getSiblings().get(8)).getUnformattedText() != null && ((IChatComponent)a.getReason().getSiblings().get(8)).getUnformattedText().startsWith("#") && ((IChatComponent)a.getReason().getSiblings().get(4)).getUnformattedText().startsWith(Method3700(-29511, -28728))) {
-            a = ((IChatComponent)a.getReason().getSiblings().get(8)).getUnformattedText().replace("\n", "");
-            String a = Minecraft.getMinecraft().getSession().getProfile().getId().toString().replace("-", "");
-            this.Method3711(new Class542(a, a, Method3700(-29510, 30625)));
+         S40PacketDisconnect var2 = (S40PacketDisconnect)a.getPacket();
+         if (((IChatComponent)var2.getReason().getSiblings().get(8)).getUnformattedText() != null && ((IChatComponent)var2.getReason().getSiblings().get(8)).getUnformattedText().startsWith("#") && ((IChatComponent)var2.getReason().getSiblings().get(4)).getUnformattedText().startsWith(Method3700(-29511, -28728))) {
+            var3 = ((IChatComponent)var2.getReason().getSiblings().get(8)).getUnformattedText().replace("\n", "");
+            String var4 = Minecraft.getMinecraft().getSession().getProfile().getId().toString().replace("-", "");
+            this.Method3711(new Class542(var4, var3, Method3700(-29510, 30625)));
          }
       }
 
       if (a.getPacket() instanceof C01PacketChatMessage) {
-         C01PacketChatMessage a = (C01PacketChatMessage)a.getPacket();
-         a = a.getMessage();
-         if (a.toLowerCase().startsWith(Method3700(-29513, 29937))) {
-            String[] a = a.split(" ");
-            if (a.length >= 3) {
-               this.Method3711(new Class550(a[1]));
+         C01PacketChatMessage var5 = (C01PacketChatMessage)a.getPacket();
+         var3 = var5.getMessage();
+         if (var3.toLowerCase().startsWith(Method3700(-29513, 29937))) {
+            String[] var6 = var3.split(" ");
+            if (var6.length >= 3) {
+               this.Method3711(new Class550(var6[1]));
             }
          }
       }
@@ -956,7 +956,7 @@ public class Class604 {
 
    @EventTarget
    public void Method3705(EventTickUpdate a) {
-      int a = Method3707();
+      int var2 = Method3707();
       if (!Objects.nonNull(this.Field2834) || !this.Field2834.isOpen() && !this.Field2834.isWritable()) {
          if (this.Field2818.isDelayComplete((double)this.Field2835) && !this.Field2829) {
             this.Field2818.reset();
@@ -966,26 +966,26 @@ public class Class604 {
       } else {
          if (this.Field2818.isDelayComplete(5000.0)) {
             this.Field2818.reset();
-            String a = Minecraft.getMinecraft().getSession().getUsername();
+            String var3 = Minecraft.getMinecraft().getSession().getUsername();
             if (Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().theWorld != null) {
                Iterator var4 = Minecraft.getMinecraft().thePlayer.sendQueue.getPlayerInfoMap().Method1383();
                if (var4.Method932()) {
-                  NetworkPlayerInfo a = (NetworkPlayerInfo)var4.Method933();
-                  GameProfile a = a.getGameProfile();
-                  if (a.getId() != null && a.getId().equals(Minecraft.getMinecraft().getSession().getProfile().getId())) {
-                     if (a.getName().equalsIgnoreCase(Minecraft.getMinecraft().getSession().getProfile().getName())) {
+                  NetworkPlayerInfo var5 = (NetworkPlayerInfo)var4.Method933();
+                  GameProfile var6 = var5.getGameProfile();
+                  if (var6.getId() != null && var6.getId().equals(Minecraft.getMinecraft().getSession().getProfile().getId())) {
+                     if (var6.getName().equalsIgnoreCase(Minecraft.getMinecraft().getSession().getProfile().getName())) {
                         ;
                      }
 
-                     a = a.getName();
+                     var3 = var6.getName();
                   }
                }
             }
 
-            if (!this.Field2820.equals(a)) {
-               this.Field2820 = a;
+            if (!this.Field2820.equals(var3)) {
+               this.Field2820 = var3;
                this.Field2827.Field2842 = Minecraft.getMinecraft().getSession().getUsername();
-               this.Field2827.Field2841 = a;
+               this.Field2827.Field2841 = var3;
                this.Field2827.Field2844 = System.currentTimeMillis();
                System.err.println(Method3700(-29508, 17997) + this.Field2820);
                ChatUtils.debug(Method3700(-29517, -13501) + this.Field2820);
@@ -996,8 +996,8 @@ public class Class604 {
          if (this.Field2826.isDelayComplete(8.64E7)) {
             this.Field2826.reset();
             if (Wrapper.INSTANCE.getMinecraft().thePlayer != null) {
-               ScoreObjective a = Wrapper.INSTANCE.getMinecraft().theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-               this.Method3711(new Class540(ServerPacketHandler.currentServer.name(), ServerUtils.format(a.getDisplayName())));
+               ScoreObjective var7 = Wrapper.INSTANCE.getMinecraft().theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+               this.Method3711(new Class540(ServerPacketHandler.currentServer.name(), ServerUtils.format(var7.getDisplayName())));
                if (Wrapper.INSTANCE.getMinecraft().isSingleplayer()) {
                   this.Method3711(new Class540(Method3700(-29514, -8869), Method3700(-29520, -19348)));
                }

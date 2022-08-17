@@ -86,8 +86,8 @@ public abstract class Class321 {
       } else if (this.Method1208()) {
          return 0.0;
       } else if (this.Method831()) {
-         double a = (double)Math.min((long)this.Field1605, Math.max(0L, (long)this.Field1605 - this.Field1604.Method288()));
-         return this.Method797(a) * this.Field1606;
+         double var1 = (double)Math.min((long)this.Field1605, Math.max(0L, (long)this.Field1605 - this.Field1604.Method288()));
+         return this.Method797(var1) * this.Field1606;
       } else {
          return (1.0 - this.Method797((double)this.Field1604.Method288())) * this.Field1606;
       }

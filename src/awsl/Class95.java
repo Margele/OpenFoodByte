@@ -62,39 +62,39 @@ public class Class95 extends a {
 
    public a Method2(Map a) {
       Class15.Method3445();
-      Class95 a = new Class95();
-      a.Field814 = this.Field814;
-      int a;
-      Object a;
+      Class95 var3 = new Class95();
+      var3.Field814 = this.Field814;
+      int var4;
+      Object var5;
       if (this.Field815 != null) {
-         a.Field815 = new ArrayList();
-         a = 0;
-         if (a < this.Field815.Method1799()) {
-            a = this.Field815.get(a);
-            if (a instanceof Class104) {
-               a = a.Method2665(a);
+         var3.Field815 = new ArrayList();
+         var4 = 0;
+         if (var4 < this.Field815.Method1799()) {
+            var5 = this.Field815.get(var4);
+            if (var5 instanceof Class104) {
+               var5 = a.Method2665(var5);
             }
 
-            a.Field815.Method2530(a);
-            ++a;
+            var3.Field815.Method2530(var5);
+            ++var4;
          }
       }
 
       if (this.Field816 != null) {
-         a.Field816 = new ArrayList();
-         int a = 0;
-         if (a < this.Field816.Method1799()) {
-            a = this.Field816.get(a);
-            if (a instanceof Class104) {
-               a = a.Method2665(a);
+         var3.Field816 = new ArrayList();
+         byte var6 = 0;
+         if (var6 < this.Field816.Method1799()) {
+            var5 = this.Field816.get(var6);
+            if (var5 instanceof Class104) {
+               var5 = a.Method2665(var5);
             }
 
-            a.Field816.Method2530(a);
-            a = a + 1;
+            var3.Field816.Method2530(var5);
+            var4 = var6 + 1;
          }
       }
 
-      return a;
+      return var3;
    }
 
    private static List Method3636(int a, Object[] a) {
@@ -102,17 +102,17 @@ public class Class95 extends a {
    }
 
    private static Object[] Method3637(List a) {
-      Object[] a = new Object[a.Method1799()];
+      Object[] var1 = new Object[a.Method1799()];
 
-      for(int a = 0; a < a.length; ++a) {
-         Object a = a.get(a);
-         if (a instanceof Class104) {
-            a = ((Class104)a).Method303();
+      for(int var2 = 0; var2 < var1.length; ++var2) {
+         Object var3 = a.get(var2);
+         if (var3 instanceof Class104) {
+            var3 = ((Class104)var3).Method303();
          }
 
-         a[a] = a;
+         var1[var2] = var3;
       }
 
-      return a;
+      return var1;
    }
 }

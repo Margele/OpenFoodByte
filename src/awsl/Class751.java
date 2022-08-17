@@ -31,47 +31,47 @@ public class Class751 implements BufferedImageOp {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1270();
-      int a = a.getWidth();
-      int a = a.getHeight();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
       a = this.Method1263(a, (ColorModel)null);
-      int[] a = new int[a];
-      int[] a = new int[a];
+      int[] var6 = new int[var4];
+      int[] var7 = new int[var4];
       this.Field3288 = new Random(0L);
-      int a = this.Field3285 & -16777216;
-      int a = this.Field3285 >> 16 & 255;
-      int a = this.Field3285 >> 8 & 255;
-      int a = this.Field3285 & 255;
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         if (a < a) {
-            int a = a;
-            int a = a;
-            int a = a;
-            int a;
+      int var8 = this.Field3285 & -16777216;
+      int var9 = this.Field3285 >> 16 & 255;
+      int var10 = this.Field3285 >> 8 & 255;
+      int var11 = this.Field3285 & 255;
+      int var12 = 0;
+      if (var12 < var5) {
+         int var13 = 0;
+         if (var13 < var4) {
+            int var14 = var9;
+            int var15 = var10;
+            int var16 = var11;
+            int var17;
             if (this.Field3286 != 0.0F) {
-               a = (int)((double)(255.0F * this.Field3286) * Math.sin((double)a / (double)a * Math.PI));
-               a = a + a;
-               a = a + a;
-               a = a + a;
+               var17 = (int)((double)(255.0F * this.Field3286) * Math.sin((double)var13 / (double)var4 * Math.PI));
+               var14 = var9 + var17;
+               var15 = var10 + var17;
+               var16 = var11 + var17;
             }
 
             if (this.Field3287) {
-               a = (int)(255.0F * (2.0F * this.Field3288.nextFloat() - 1.0F) * this.Field3284);
-               a[a] = a | Method1613(a + a) << 16 | Method1613(a + a) << 8 | Method1613(a + a);
+               var17 = (int)(255.0F * (2.0F * this.Field3288.nextFloat() - 1.0F) * this.Field3284);
+               var6[var13] = var8 | Method1613(var14 + var17) << 16 | Method1613(var15 + var17) << 8 | Method1613(var16 + var17);
             }
 
-            a[a] = a | this.Method1612(a) << 16 | this.Method1612(a) << 8 | this.Method1612(a);
-            ++a;
+            var6[var13] = var8 | this.Method1612(var14) << 16 | this.Method1612(var15) << 8 | this.Method1612(var16);
+            ++var13;
          }
 
          if (this.Field3283 != 0) {
-            this.Method1615(a, a, a, this.Field3283);
-            this.Method1267(a, 0, a, a, 1, a);
+            this.Method1615(var6, var7, var4, this.Field3283);
+            this.Method1267(a, 0, var12, var4, 1, var7);
          }
 
-         this.Method1267(a, 0, a, a, 1, a);
-         ++a;
+         this.Method1267(a, 0, var12, var4, 1, var6);
+         ++var12;
       }
 
       return a;
@@ -79,8 +79,8 @@ public class Class751 implements BufferedImageOp {
 
    private int Method1612(int a) {
       a += (int)(255.0F * (2.0F * this.Field3288.nextFloat() - 1.0F) * this.Field3284);
-      int a = 0;
-      return a;
+      byte var2 = 0;
+      return var2;
    }
 
    private static int Method1613(int a) {
@@ -88,41 +88,41 @@ public class Class751 implements BufferedImageOp {
    }
 
    private static int Method1614(int a, int a) {
-      int a = a / a;
-      a -= a * a;
+      int var2 = a / a;
+      a -= var2 * a;
       return a + a;
    }
 
    public void Method1615(int[] a, int[] a, int a, int a) {
-      int a = a - 1;
-      int a = 2 * a + 1;
-      int a = 0;
-      int a = 0;
-      int a = 0;
+      int var5 = a - 1;
+      int var6 = 2 * a + 1;
+      int var7 = 0;
+      int var8 = 0;
+      int var9 = 0;
 
-      int a;
-      int a;
-      for(a = -a; a <= a; ++a) {
-         a = a[Method1614(a, a)];
-         a += a >> 16 & 255;
-         a += a >> 8 & 255;
-         a += a & 255;
+      int var10;
+      int var11;
+      for(var10 = -a; var10 <= a; ++var10) {
+         var11 = a[Method1614(var10, a)];
+         var7 += var11 >> 16 & 255;
+         var8 += var11 >> 8 & 255;
+         var9 += var11 & 255;
       }
 
-      for(a = 0; a < a; ++a) {
-         a[a] = -16777216 | a / a << 16 | a / a << 8 | a / a;
-         a = a + a + 1;
-         if (a > a) {
-            a = Method1614(a, a);
+      for(var10 = 0; var10 < a; ++var10) {
+         a[var10] = -16777216 | var7 / var6 << 16 | var8 / var6 << 8 | var9 / var6;
+         var11 = var10 + a + 1;
+         if (var11 > var5) {
+            var11 = Method1614(var11, a);
          }
 
-         int a = a - a;
-         a = Method1614(a, a);
-         int a = a[a];
-         int a = a[a];
-         a += (a & 16711680) - (a & 16711680) >> 16;
-         a += (a & '\uff00') - (a & '\uff00') >> 8;
-         a += (a & 255) - (a & 255);
+         int var12 = var10 - a;
+         var12 = Method1614(var12, a);
+         int var13 = a[var11];
+         int var14 = a[var12];
+         var7 += (var13 & 16711680) - (var14 & 16711680) >> 16;
+         var8 += (var13 & '\uff00') - (var14 & '\uff00') >> 8;
+         var9 += (var13 & 255) - (var14 & 255);
       }
 
    }
@@ -176,10 +176,10 @@ public class Class751 implements BufferedImageOp {
       return new Rectangle(0, 0, a.getWidth(), a.getHeight());
    }
 
-   public Point2D Method1265(Point2D a, Point2D a1) {
-      Point2D a = new Point2D.Double();
-      a.setLocation(a.getX(), a.getY());
-      return a;
+   public Point2D Method1265(Point2D a, Point2D a) {
+      Point2D.Double var3 = new Point2D.Double();
+      var3.setLocation(a.getX(), a.getY());
+      return var3;
    }
 
    public RenderingHints Method1266() {
@@ -187,8 +187,8 @@ public class Class751 implements BufferedImageOp {
    }
 
    private void Method1267(BufferedImage a, int a, int a, int a, int a, int[] a) {
-      int a = a.getType();
-      if (a != 2 && a != 1) {
+      int var7 = a.getType();
+      if (var7 != 2 && var7 != 1) {
          a.setRGB(a, a, a, a, a, 0, a);
       } else {
          a.getRaster().setDataElements(a, a, a, a, a);

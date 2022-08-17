@@ -43,30 +43,30 @@ public class ChatTranslator extends Module {
 
    @EventTarget(0)
    public void Method273(EventPacket a) {
-      String a;
-      String a;
+      String var3;
+      String var4;
       if (a.isSend() && a.getPacket() instanceof C01PacketChatMessage) {
-         C01PacketChatMessage a = (C01PacketChatMessage)a.getPacket();
-         if (Field2178.getValue() && a.getMessage().contains("fy-")) {
+         C01PacketChatMessage var2 = (C01PacketChatMessage)a.getPacket();
+         if (Field2178.getValue() && var2.getMessage().contains("fy-")) {
             a.setCancelled(true);
-            a = Method2087(a.getMessage(), "", "fy-");
-            a = Method2087(a.getMessage(), "fy-", "");
-            this.Method2086(a, a);
+            var3 = Method2087(var2.getMessage(), "", "fy-");
+            var4 = Method2087(var2.getMessage(), "fy-", "");
+            this.Method2086(var3, var4);
          }
       }
 
       if (a.isRecieve() && a.getPacket() instanceof S02PacketChat) {
-         S02PacketChat a = (S02PacketChat)a.getPacket();
-         a = a.getChatComponent().getUnformattedText();
-         if (this.Method2088(a.getChatComponent())) {
-            a = Method2087(a.getChatComponent().getFormattedText(), "", ":");
-            String a = Method2087(a, ": ", "");
-            if (!this.Field2182.containsKey(a)) {
-               this.Method2085(a, a);
+         S02PacketChat var6 = (S02PacketChat)a.getPacket();
+         var3 = var6.getChatComponent().getUnformattedText();
+         if (this.Method2088(var6.getChatComponent())) {
+            var4 = Method2087(var6.getChatComponent().getFormattedText(), "", ":");
+            String var5 = Method2087(var3, ": ", "");
+            if (!this.Field2182.containsKey(var5)) {
+               this.Method2085(var4, var5);
             } else {
                a.setCancelled(true);
-               Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessage(a.getChatComponent());
-               ChatUtils.addChatMessageNoPrefix("§8[CT] " + a + ": §3" + (String)this.Field2182.getOrDefault(a, a));
+               Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessage(var6.getChatComponent());
+               ChatUtils.addChatMessageNoPrefix("§8[CT] " + var4 + ": §3" + (String)this.Field2182.getOrDefault(var5, var5));
             }
          }
       }
@@ -87,16 +87,16 @@ public class ChatTranslator extends Module {
    }
 
    private String Method2083(String a) {
-      JsonObject a;
+      JsonObject var4;
       switch (Field2176.getMode()) {
          case "Google":
-            a = (new JsonParser()).parse(a).getAsJsonObject();
-            return a.get("sentences").getAsJsonArray().get(0).getAsJsonObject().get("trans").getAsString();
+            var4 = (new JsonParser()).parse(a).getAsJsonObject();
+            return var4.get("sentences").getAsJsonArray().get(0).getAsJsonObject().get("trans").getAsString();
          case "Bing":
             return a.replace("<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">", "").replace("</string>", "");
          case "YouDao":
-            a = (new JsonParser()).parse(a).getAsJsonObject();
-            return a.get("translateResult").getAsJsonArray().get(0).getAsJsonArray().get(0).getAsJsonObject().get("tgt").getAsString();
+            var4 = (new JsonParser()).parse(a).getAsJsonObject();
+            return var4.get("translateResult").getAsJsonArray().get(0).getAsJsonArray().get(0).getAsJsonObject().get("tgt").getAsString();
          default:
             return "WRONG VALUE";
       }
@@ -111,66 +111,66 @@ public class ChatTranslator extends Module {
    }
 
    public static String Method2087(String a, String a, String a) {
-      String a = "";
-      int a;
+      String var3 = "";
+      int var4;
       if (a.isEmpty()) {
-         a = 0;
+         var4 = 0;
       } else {
-         a = a.indexOf(a);
-         if (a > -1) {
-            a += a.length();
+         var4 = a.indexOf(a);
+         if (var4 > -1) {
+            var4 += a.length();
          } else {
-            a = 0;
+            var4 = 0;
          }
       }
 
-      int a = a.indexOf(a, a);
+      int var5 = a.indexOf(a, var4);
       if (a.isEmpty()) {
-         a = a.length();
+         var5 = a.length();
       }
 
-      a = a.substring(a, a);
-      return a;
+      var3 = a.substring(var4, var5);
+      return var3;
    }
 
    private boolean Method2088(IChatComponent a) {
-      String a = a.getFormattedText();
-      if (Field2179.getValue() && a.startsWith("§r§9") && a.contains(":") && a.contains(">")) {
+      String var2 = a.getFormattedText();
+      if (Field2179.getValue() && var2.startsWith("§r§9") && var2.contains(":") && var2.contains(">")) {
          return true;
-      } else if (Field2181.getValue() && a.startsWith("§r§2Guild") && a.contains(":") && a.contains(">")) {
+      } else if (Field2181.getValue() && var2.startsWith("§r§2Guild") && var2.contains(":") && var2.contains(">")) {
          return true;
       } else {
-         return Field2180.getValue() && a.startsWith("§d") && a.contains(":") && (a.contains("From") || a.contains("To"));
+         return Field2180.getValue() && var2.startsWith("§d") && var2.contains(":") && (var2.contains("From") || var2.contains("To"));
       }
    }
 
    private void Method2089(String a, String a) {
-      a[] a = Class448.trash();
+      a[] var3 = Class448.trash();
 
       try {
-         CloseableHttpClient a = HttpClients.createDefault();
-         URL a = new URL(this.Method2082(a));
-         URI a = new URI(a.getProtocol(), a.getUserInfo(), a.getHost(), a.getPort(), a.getPath(), a.getQuery(), a.getRef());
-         String a = a.toString();
-         HttpGet a = new HttpGet(a);
-         a.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
-         String a = "null";
+         CloseableHttpClient var4 = HttpClients.createDefault();
+         URL var5 = new URL(this.Method2082(a));
+         URI var6 = new URI(var5.getProtocol(), var5.getUserInfo(), var5.getHost(), var5.getPort(), var5.getPath(), var5.getQuery(), var5.getRef());
+         String var7 = var6.toString();
+         HttpGet var8 = new HttpGet(var7);
+         var8.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
+         String var9 = "null";
 
          try {
-            CloseableHttpResponse a = a.execute(a);
+            CloseableHttpResponse var10 = var4.execute(var8);
             Throwable var11 = null;
 
             try {
-               a = IOUtils.toString(a.getEntity().getContent(), StandardCharsets.UTF_8);
+               var9 = IOUtils.toString(var10.getEntity().getContent(), StandardCharsets.UTF_8);
             } catch (Throwable var22) {
                var11 = var22;
                throw var22;
             } finally {
                try {
-                  a.close();
+                  var10.close();
                } catch (Throwable var21) {
                   var11.addSuppressed(var21);
-                  a.close();
+                  var10.close();
                }
 
             }
@@ -178,9 +178,9 @@ public class ChatTranslator extends Module {
             var24.printStackTrace();
          }
 
-         String a = this.Method2083(a);
-         Wrapper.INSTANCE.sendPacket(new C01PacketChatMessage(a + a));
-         this.Field2182.put(a, a + a);
+         String var26 = this.Method2083(var9);
+         Wrapper.INSTANCE.sendPacket(new C01PacketChatMessage(a + var26));
+         this.Field2182.put(a, a + var26);
       } catch (Exception var25) {
          var25.printStackTrace();
          Wrapper.INSTANCE.sendPacket(new C01PacketChatMessage(a + a));
@@ -189,32 +189,32 @@ public class ChatTranslator extends Module {
    }
 
    private void Method2090(String a, String a) {
-      a[] a = Class448.trash();
+      a[] var3 = Class448.trash();
 
       try {
-         CloseableHttpClient a = HttpClients.createDefault();
-         URL a = new URL(this.Method2082(a));
-         URI a = new URI(a.getProtocol(), a.getUserInfo(), a.getHost(), a.getPort(), a.getPath(), a.getQuery(), a.getRef());
-         String a = a.toString();
-         HttpGet a = new HttpGet(a);
-         a.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
-         String a = "null";
+         CloseableHttpClient var4 = HttpClients.createDefault();
+         URL var5 = new URL(this.Method2082(a));
+         URI var6 = new URI(var5.getProtocol(), var5.getUserInfo(), var5.getHost(), var5.getPort(), var5.getPath(), var5.getQuery(), var5.getRef());
+         String var7 = var6.toString();
+         HttpGet var8 = new HttpGet(var7);
+         var8.setHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36");
+         String var9 = "null";
 
          try {
-            CloseableHttpResponse a = a.execute(a);
+            CloseableHttpResponse var10 = var4.execute(var8);
             Throwable var11 = null;
 
             try {
-               a = IOUtils.toString(a.getEntity().getContent(), StandardCharsets.UTF_8);
+               var9 = IOUtils.toString(var10.getEntity().getContent(), StandardCharsets.UTF_8);
             } catch (Throwable var22) {
                var11 = var22;
                throw var22;
             } finally {
                try {
-                  a.close();
+                  var10.close();
                } catch (Throwable var21) {
                   var11.addSuppressed(var21);
-                  a.close();
+                  var10.close();
                }
 
             }
@@ -222,9 +222,9 @@ public class ChatTranslator extends Module {
             var24.printStackTrace();
          }
 
-         String a = this.Method2083(a);
-         ChatUtils.addChatMessageNoPrefix("§8[CT] " + a + ": §3" + a);
-         this.Field2182.put(a, a);
+         String var26 = this.Method2083(var9);
+         ChatUtils.addChatMessageNoPrefix("§8[CT] " + a + ": §3" + var26);
+         this.Field2182.put(a, var26);
       } catch (Exception var25) {
          var25.printStackTrace();
          ChatUtils.addChatMessageNoPrefix(a);

@@ -55,22 +55,22 @@ public abstract class a {
    public abstract void Method1(Class267 class267);
 
    protected final void Method3643(Class267 a) {
-      int a = Class15.Method1984();
-      int a = this.Field797 == null ? 0 : this.Field797.Method1799();
-      int a = 0;
-      Class126 a;
-      if (a < a) {
-         a = (Class126)this.Field797.get(a);
-         a.Method646(a.Method1973(a.Field975, a.Field976, a.Field973, true));
-         ++a;
+      int var2 = Class15.Method1984();
+      int var3 = this.Field797 == null ? 0 : this.Field797.Method1799();
+      int var4 = 0;
+      Class126 var5;
+      if (var4 < var3) {
+         var5 = (Class126)this.Field797.get(var4);
+         var5.Method646(a.Method1973(var5.Field975, var5.Field976, var5.Field973, true));
+         ++var4;
       }
 
-      a = this.Field798 == null ? 0 : this.Field798.Method1799();
-      int a = 0;
-      if (a < a) {
-         a = (Class126)this.Field798.get(a);
-         a.Method646(a.Method1973(a.Field975, a.Field976, a.Field973, false));
-         a = a + 1;
+      var3 = this.Field798 == null ? 0 : this.Field798.Method1799();
+      byte var6 = 0;
+      if (var6 < var3) {
+         var5 = (Class126)this.Field798.get(var6);
+         var5.Method646(a.Method1973(var5.Field975, var5.Field976, var5.Field973, false));
+         var4 = var6 + 1;
       }
 
    }
@@ -82,41 +82,41 @@ public abstract class a {
    }
 
    static Class104[] Method3645(List a, Map a) {
-      Class104[] a = new Class104[a.Method1799()];
+      Class104[] var2 = new Class104[a.Method1799()];
 
-      for(int a = 0; a < a.length; ++a) {
-         a[a] = (Class104)a.Method2665(a.get(a));
+      for(int var3 = 0; var3 < var2.length; ++var3) {
+         var2[var3] = (Class104)a.Method2665(a.get(var3));
       }
 
-      return a;
+      return var2;
    }
 
    protected final a Method3646(a a) {
-      int a = Class15.Method3445();
-      int a;
-      Class126 a;
-      Class126 a;
+      int var2 = Class15.Method3445();
+      int var3;
+      Class126 var4;
+      Class126 var5;
       if (a.Field797 != null) {
          this.Field797 = new ArrayList();
-         a = 0;
-         if (a < a.Field797.Method1799()) {
-            a = (Class126)a.Field797.get(a);
-            a = new Class126(a.Field975, a.Field976, a.Field973);
-            a.Method646(a);
-            this.Field797.Method2530(a);
-            ++a;
+         var3 = 0;
+         if (var3 < a.Field797.Method1799()) {
+            var4 = (Class126)a.Field797.get(var3);
+            var5 = new Class126(var4.Field975, var4.Field976, var4.Field973);
+            var4.Method646(var5);
+            this.Field797.Method2530(var5);
+            ++var3;
          }
       }
 
       if (a.Field798 != null) {
          this.Field798 = new ArrayList();
-         int a = 0;
-         if (a < a.Field798.Method1799()) {
-            a = (Class126)a.Field798.get(a);
-            a = new Class126(a.Field975, a.Field976, a.Field973);
-            a.Method646(a);
-            this.Field798.Method2530(a);
-            a = a + 1;
+         byte var6 = 0;
+         if (var6 < a.Field798.Method1799()) {
+            var4 = (Class126)a.Field798.get(var6);
+            var5 = new Class126(var4.Field975, var4.Field976, var4.Field973);
+            var4.Method646(var5);
+            this.Field798.Method2530(var5);
+            var3 = var6 + 1;
          }
       }
 

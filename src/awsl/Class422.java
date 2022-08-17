@@ -12,8 +12,8 @@ public interface Class422 {
       Class119.Method497();
       int var6 = 0;
       if (var6 < var5) {
-         String a = a[var6];
-         if (a.equals(a)) {
+         String var7 = a[var6];
+         if (a.equals(var7)) {
             return true;
          }
 

@@ -25,49 +25,49 @@ public class Rank {
          default:
             Iterator var1 = Field2632.Method1383();
 
-            String a;
+            String var3;
             do {
                if (!var1.Method932()) {
                   return "";
                }
 
-               a = (String)var1.Method933();
-            } while(!a.contains(a));
+               var3 = (String)var1.Method933();
+            } while(!var3.contains(a));
 
-            return a.split(":")[1];
+            return var3.split(":")[1];
       }
    }
 
    public static String Method1198(String a) {
-      String[] a = a.split(" ");
-      StringBuilder a = new StringBuilder();
+      String[] var1 = a.split(" ");
+      StringBuilder var2 = new StringBuilder();
 
-      for(int a = 1; a < a.length; ++a) {
-         a.append(a[a]).append(" ");
+      for(int var3 = 1; var3 < var1.length; ++var3) {
+         var2.append(var1[var3]).append(" ");
       }
 
-      return a.toString();
+      return var2.toString();
    }
 
    public static String Method1199(long a) {
-      long a = 1471228928L;
-      long a = 86400000L;
-      long a = 3600000L;
-      long a = 60000L;
-      long a = 1000L;
+      long var3 = 1471228928L;
+      long var5 = 86400000L;
+      long var7 = 3600000L;
+      long var9 = 60000L;
+      long var11 = 1000L;
       Method1202();
-      long a = a - System.currentTimeMillis();
-      long a = a / a;
-      long a = a / a;
-      long a = a % a / a;
-      long a = a % a % a / a;
-      long a = a % a % a % a / a;
-      String a = a <= 0L ? "" : a + "y ";
-      String a = a <= 0L ? "" : a + "d ";
-      String a = a <= 0L ? "" : a + "h ";
-      String a = a <= 0L ? "" : a + "m ";
-      String a = a <= 0L ? "" : a + "s";
-      String var10000 = a + a + a + a + a;
+      long var13 = a - System.currentTimeMillis();
+      long var15 = var13 / var3;
+      long var17 = var13 / var5;
+      long var19 = var13 % var5 / var7;
+      long var21 = var13 % var5 % var7 / var9;
+      long var23 = var13 % var5 % var7 % var9 / var11;
+      String var25 = var15 <= 0L ? "" : var15 + "y ";
+      String var26 = var17 <= 0L ? "" : var17 + "d ";
+      String var27 = var19 <= 0L ? "" : var19 + "h ";
+      String var28 = var21 <= 0L ? "" : var21 + "m ";
+      String var29 = var23 <= 0L ? "" : var23 + "s";
+      String var10000 = var25 + var26 + var27 + var28 + var29;
       a.trash(new String[2]);
       return var10000;
    }

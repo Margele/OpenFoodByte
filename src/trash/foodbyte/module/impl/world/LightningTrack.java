@@ -66,16 +66,16 @@ public class LightningTrack extends Module {
       Method1658();
    }
 
-   protected void Method2248(Class260 a, double a1, double a, double a, double a, Entity a5) {
-      float a = (float)(a.Method2837() - (double)((float)a) + 0.5);
-      float a = (float)(a.Method2838() - (double)((float)a) + 1.0);
-      float a = (float)(a.Method2839() - (double)((float)a) + 0.5);
-      double a = Math.sqrt((double)(a * a + a * a + a * a));
-      if (a <= 20.0) {
+   protected void Method2248(Class260 a, double a, double a, double a, double a, Entity a) {
+      float var11 = (float)(a.Method2837() - (double)((float)a) + 0.5);
+      float var12 = (float)(a.Method2838() - (double)((float)a) + 1.0);
+      float var13 = (float)(a.Method2839() - (double)((float)a) + 0.5);
+      double var14 = Math.sqrt((double)(var11 * var11 + var12 * var12 + var13 * var13));
+      if (var14 <= 20.0) {
          this.Field2299.remove(a);
       }
 
-      FontRenderer a = mc.fontRendererObj;
+      FontRenderer var16 = mc.fontRendererObj;
    }
 
    public LightningTrack() {
@@ -99,56 +99,56 @@ public class LightningTrack extends Module {
    }
 
    public static String Method2254(String a, String a, String a) {
-      String a = "";
-      int a;
+      String var3 = "";
+      int var4;
       if (a.isEmpty()) {
-         a = 0;
+         var4 = 0;
       } else {
-         a = a.indexOf(a);
-         if (a > -1) {
-            a += a.length();
+         var4 = a.indexOf(a);
+         if (var4 > -1) {
+            var4 += a.length();
          } else {
-            a = 0;
+            var4 = 0;
          }
       }
 
-      int a = a.indexOf(a, a);
+      int var5 = a.indexOf(a, var4);
       if (a.isEmpty()) {
-         a = a.length();
+         var5 = a.length();
       }
 
-      a = a.substring(a, a);
-      return a;
+      var3 = a.substring(var4, var5);
+      return var3;
    }
 
    @EventTarget
    public void Method273(EventPacket a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (!a.isSend()) {
-         float a;
-         float a;
-         float a;
-         float a;
-         float a;
-         float a;
-         float a;
+         float var4;
+         float var5;
+         float var6;
+         float var7;
+         float var8;
+         float var9;
+         float var10;
          if (this.Field2293.isCurrentMode(Method754(-22783, -13597)) && a.packet instanceof S2CPacketSpawnGlobalEntity) {
-            S2CPacketSpawnGlobalEntity a = (S2CPacketSpawnGlobalEntity)a.packet;
-            if (a.func_149053_g() == 1) {
-               a = (float)((double)a.func_149051_d() / 32.0);
-               a = (float)((double)a.func_149050_e() / 32.0);
-               a = (float)((double)a.func_149049_f() / 32.0);
-               a = (float)(mc.thePlayer.posX - (double)a);
-               a = (float)(mc.thePlayer.posY - (double)a);
-               a = (float)(mc.thePlayer.posZ - (double)a);
-               a = MathHelper.sqrt_float(a * a + a * a + a * a);
+            S2CPacketSpawnGlobalEntity var3 = (S2CPacketSpawnGlobalEntity)a.packet;
+            if (var3.func_149053_g() == 1) {
+               var4 = (float)((double)var3.func_149051_d() / 32.0);
+               var5 = (float)((double)var3.func_149050_e() / 32.0);
+               var6 = (float)((double)var3.func_149049_f() / 32.0);
+               var7 = (float)(mc.thePlayer.posX - (double)var4);
+               var8 = (float)(mc.thePlayer.posY - (double)var5);
+               var9 = (float)(mc.thePlayer.posZ - (double)var6);
+               var10 = MathHelper.sqrt_float(var7 * var7 + var8 * var8 + var9 * var9);
                ++this.Field2298;
                if (GlobalModule.INSTANCE.balant != null && PermissionManager.canUseModule(Method754(-22745, 6737))) {
-                  Method2253(Method754(-22776, 5493) + this.Field2298 + Method754(-22727, 29040) + (int)a + Method754(-22773, 13712) + (int)a + Method754(-22782, -17792) + (int)a + Method754(-22774, -11077) + (int)a, Method754(-22778, -19916), Method754(-22752, -27254), new ClickEvent(Action.SUGGEST_COMMAND, Method754(-22750, 13738) + a + " " + GlobalModule.Field3162.getFloatValue() + " " + a));
+                  Method2253(Method754(-22776, 5493) + this.Field2298 + Method754(-22727, 29040) + (int)var10 + Method754(-22773, 13712) + (int)var4 + Method754(-22782, -17792) + (int)var5 + Method754(-22774, -11077) + (int)var6, Method754(-22778, -19916), Method754(-22752, -27254), new ClickEvent(Action.SUGGEST_COMMAND, Method754(-22750, 13738) + var4 + " " + GlobalModule.Field3162.getFloatValue() + " " + var6));
                }
 
-               ChatUtils.addChatMessage(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)a + Method754(-22732, -12008) + (int)a + Method754(-22749, 1978) + (int)a + Method754(-22770, -1221) + (int)a);
-               this.Field2299.Method2530(new Class260(Method754(-22784, 16527) + this.Field2298 + Method754(-22769, -7971), (double)a, (double)a, (double)a, Method754(-22777, 8564), 0));
+               ChatUtils.addChatMessage(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)var10 + Method754(-22732, -12008) + (int)var4 + Method754(-22749, 1978) + (int)var5 + Method754(-22770, -1221) + (int)var6);
+               this.Field2299.Method2530(new Class260(Method754(-22784, 16527) + this.Field2298 + Method754(-22769, -7971), (double)var4, (double)var5, (double)var6, Method754(-22777, 8564), 0));
                if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
                   this.Field2299.remove(0);
                }
@@ -156,22 +156,22 @@ public class LightningTrack extends Module {
          }
 
          if (this.Field2293.isCurrentMode(Method754(-22725, -23162)) && a.getPacket() instanceof S29PacketSoundEffect) {
-            S29PacketSoundEffect a = (S29PacketSoundEffect)a.getPacket();
-            if (a.getSoundName().equals(Method754(-22726, -11947))) {
-               a = (float)a.getX();
-               a = (float)a.getY();
-               a = (float)a.getZ();
-               a = (float)(mc.thePlayer.posX - (double)a);
-               a = (float)(mc.thePlayer.posY - (double)a);
-               a = (float)(mc.thePlayer.posZ - (double)a);
-               a = MathHelper.sqrt_float(a * a + a * a + a * a);
+            S29PacketSoundEffect var11 = (S29PacketSoundEffect)a.getPacket();
+            if (var11.getSoundName().equals(Method754(-22726, -11947))) {
+               var4 = (float)var11.getX();
+               var5 = (float)var11.getY();
+               var6 = (float)var11.getZ();
+               var7 = (float)(mc.thePlayer.posX - (double)var4);
+               var8 = (float)(mc.thePlayer.posY - (double)var5);
+               var9 = (float)(mc.thePlayer.posZ - (double)var6);
+               var10 = MathHelper.sqrt_float(var7 * var7 + var8 * var8 + var9 * var9);
                ++this.Field2298;
                if (GlobalModule.INSTANCE.balant != null && PermissionManager.canUseModule(Method754(-22740, 31221))) {
-                  Method2253(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)a + Method754(-22732, -12008) + (int)a + Method754(-22749, 1978) + (int)a + Method754(-22770, -1221) + (int)a, Method754(-22735, -29438), Method754(-22772, -20661), new ClickEvent(Action.SUGGEST_COMMAND, Method754(-22739, 20426) + a + " " + GlobalModule.Field3162.getFloatValue() + " " + a));
+                  Method2253(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)var10 + Method754(-22732, -12008) + (int)var4 + Method754(-22749, 1978) + (int)var5 + Method754(-22770, -1221) + (int)var6, Method754(-22735, -29438), Method754(-22772, -20661), new ClickEvent(Action.SUGGEST_COMMAND, Method754(-22739, 20426) + var4 + " " + GlobalModule.Field3162.getFloatValue() + " " + var6));
                }
 
-               ChatUtils.addChatMessage(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)a + Method754(-22732, -12008) + (int)a + Method754(-22749, 1978) + (int)a + Method754(-22770, -1221) + (int)a);
-               this.Field2299.Method2530(new Class260(Method754(-22784, 16527) + this.Field2298 + Method754(-22724, -32110), (double)a, (double)a, (double)a, Method754(-22736, 24329), 0));
+               ChatUtils.addChatMessage(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)var10 + Method754(-22732, -12008) + (int)var4 + Method754(-22749, 1978) + (int)var5 + Method754(-22770, -1221) + (int)var6);
+               this.Field2299.Method2530(new Class260(Method754(-22784, 16527) + this.Field2298 + Method754(-22724, -32110), (double)var4, (double)var5, (double)var6, Method754(-22736, 24329), 0));
                if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
                   this.Field2299.remove(0);
                }
@@ -192,48 +192,48 @@ public class LightningTrack extends Module {
    }
 
    private void Method2250(EventRender3D a, Class260 a) {
-      Entity a = Minecraft.getMinecraft().getRenderViewEntity();
-      float a = a.Method3523();
-      double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a;
-      double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a;
-      double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a;
-      this.Method2248(a, 12.0, a, a, a, a);
+      Entity var3 = Minecraft.getMinecraft().getRenderViewEntity();
+      float var4 = a.Method3523();
+      double var5 = var3.lastTickPosX + (var3.posX - var3.lastTickPosX) * (double)var4;
+      double var7 = var3.lastTickPosY + (var3.posY - var3.lastTickPosY) * (double)var4;
+      double var9 = var3.lastTickPosZ + (var3.posZ - var3.lastTickPosZ) * (double)var4;
+      this.Method2248(a, 12.0, var5, var7, var9, var3);
       RenderHelper.disableStandardItemLighting();
       GlStateManager.enableDepth();
       GlStateManager.depthMask(true);
    }
 
    private void Method2249(EventRender2D a, Class260 a) {
-      a[] a = Class448.trash();
+      a[] var3 = Class448.trash();
       if (!this.Method1734(new Vec3(a.Method2837(), a.Method2838(), a.Method2839()))) {
-         double a = a.Method2837();
-         double a = a.Method2838();
-         double a = a.Method2839();
-         AxisAlignedBB a = (new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94)).offset(a - ReflectionUtils.getRenderPosX(), a - ReflectionUtils.getRenderPosY(), a - ReflectionUtils.getRenderPosZ());
-         List a = Arrays.asList(new Vector3d(a + a.minX - a.maxX + 0.5, a, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a + a.maxY - a.minY, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a + a.maxY - a.minY, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a + a.maxY - a.minY, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a + a.maxY - a.minY, a + a.maxZ - a.minZ - 0.5));
+         double var4 = a.Method2837();
+         double var6 = a.Method2838();
+         double var8 = a.Method2839();
+         AxisAlignedBB var10 = (new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94)).offset(var4 - ReflectionUtils.getRenderPosX(), var6 - ReflectionUtils.getRenderPosY(), var8 - ReflectionUtils.getRenderPosZ());
+         List var11 = Arrays.asList(new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6, var8 + var10.maxZ - var10.minZ - 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6, var8 + var10.maxZ - var10.minZ - 0.5), new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6 + var10.maxY - var10.minY, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6 + var10.maxY - var10.minY, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6 + var10.maxY - var10.minY, var8 + var10.maxZ - var10.minZ - 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6 + var10.maxY - var10.minY, var8 + var10.maxZ - var10.minZ - 0.5));
          ReflectionUtils.setupCameraTransform(a.Field2923, 0);
-         Vector4d a = null;
-         Iterator var13 = a.Method1383();
+         Vector4d var12 = null;
+         Iterator var13 = var11.Method1383();
          if (var13.Method932()) {
-            Vector3d a = (Vector3d)var13.Method933();
-            a = RenderUtils.Method1136(a.x - mc.getRenderManager().viewerPosX, a.y - mc.getRenderManager().viewerPosY, a.z - mc.getRenderManager().viewerPosZ);
-            if (a.z >= 0.0 && a.z < 1.0) {
-               a = new Vector4d(a.x, a.y, a.z, 0.0);
-               a.x = Math.min(a.x, a.x);
-               a.y = Math.min(a.y, a.y);
-               a.z = Math.max(a.x, a.z);
-               a.w = Math.max(a.y, a.w);
+            Vector3d var14 = (Vector3d)var13.Method933();
+            var14 = RenderUtils.Method1136(var14.x - mc.getRenderManager().viewerPosX, var14.y - mc.getRenderManager().viewerPosY, var14.z - mc.getRenderManager().viewerPosZ);
+            if (var14.z >= 0.0 && var14.z < 1.0) {
+               var12 = new Vector4d(var14.x, var14.y, var14.z, 0.0);
+               var12.x = Math.min(var14.x, var12.x);
+               var12.y = Math.min(var14.y, var12.y);
+               var12.z = Math.max(var14.x, var12.z);
+               var12.w = Math.max(var14.y, var12.w);
             }
          }
 
          mc.entityRenderer.setupOverlayRendering();
          GL11.glPushMatrix();
-         float a = (float)a.x;
-         float a = (float)a.z;
-         float a = (float)a.y;
-         String a = "[" + Math.round(mc.thePlayer.getDistance(a.Method2837(), a.Method2838(), a.Method2839())) + Method754(-22723, 27692) + a.Method2835() + Method754(-22722, -24056) + (int)a.Method2837() + "," + (int)a.Method2838() + "," + (int)a.Method2839() + "]";
-         RenderUtils.Method1103(a + (a - a) / 2.0F - Class565.Field2637.Method1225(a) / 2.0F - 1.0F, a - (float)mc.fontRendererObj.FONT_HEIGHT + 8.0F, Class565.Field2637.Method1225(a) + 2.0F, (float)mc.fontRendererObj.FONT_HEIGHT, (new Color(0, 0, 0, 120)).getRGB());
-         Class565.Field2637.Method1217(a, a + (a - a) / 2.0F - Class565.Field2637.Method1225(a) / 2.0F, a - (float)(mc.fontRendererObj.FONT_HEIGHT / 2), -1);
+         float var17 = (float)var12.x;
+         float var18 = (float)var12.z;
+         float var15 = (float)var12.y;
+         String var16 = "[" + Math.round(mc.thePlayer.getDistance(a.Method2837(), a.Method2838(), a.Method2839())) + Method754(-22723, 27692) + a.Method2835() + Method754(-22722, -24056) + (int)a.Method2837() + "," + (int)a.Method2838() + "," + (int)a.Method2839() + "]";
+         RenderUtils.Method1103(var17 + (var18 - var17) / 2.0F - Class565.Field2637.Method1225(var16) / 2.0F - 1.0F, var15 - (float)mc.fontRendererObj.FONT_HEIGHT + 8.0F, Class565.Field2637.Method1225(var16) + 2.0F, (float)mc.fontRendererObj.FONT_HEIGHT, (new Color(0, 0, 0, 120)).getRGB());
+         Class565.Field2637.Method1217(var16, var17 + (var18 - var17) / 2.0F - Class565.Field2637.Method1225(var16) / 2.0F, var15 - (float)(mc.fontRendererObj.FONT_HEIGHT / 2), -1);
          GL11.glPopMatrix();
       }
 

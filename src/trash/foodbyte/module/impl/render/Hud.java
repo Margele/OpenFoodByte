@@ -49,48 +49,48 @@ public class Hud extends Module {
    }
 
    public void Method1558(ScaledResolution a) {
-      double a = 0.0;
+      double var3 = 0.0;
       Class492.Method2239();
-      double a = (double)a.getScaledWidth();
-      ArrayList a = new ArrayList(ModuleManager.getAllModules());
-      a.sort(Comparator.comparingDouble(Hud::Method1560));
-      Iterator var8 = a.Method1383();
+      double var5 = (double)a.getScaledWidth();
+      ArrayList var7 = new ArrayList(ModuleManager.getAllModules());
+      var7.sort(Comparator.comparingDouble(Hud::Method1560));
+      Iterator var8 = var7.Method1383();
 
       while(var8.Method932()) {
-         Module a = (Module)var8.Method933();
-         if (a != ModuleManager.getModule(ClickGui.class) && !a.hide) {
-            String a = a.Method1016().isEmpty() ? a.Method1023() : String.format("%s%s", a.Method1023(), a.Method1016());
-            double a = (double)(Class565.Field2637.Method1225(a.Method1016().isEmpty() ? a.Method1023() : String.format("%s%s", a.Method1023(), a.Method1016())) + 2.0F + (float)(Field2363.isCurrentMode("Normal") ? -1 : 0));
-            double a = (double)(Class565.Field2637.Field2625 - 4.0F);
-            if (a.getState()) {
-               a.Method1034(a - this.Field2373.Method998(a.Method1038(), 0.0, a, 0.3));
-               a.Method1035(a - this.Field2373.Method998(a.Method1039(), 0.0, a, 0.3));
+         Module var9 = (Module)var8.Method933();
+         if (var9 != ModuleManager.getModule(ClickGui.class) && !var9.hide) {
+            String var10 = var9.Method1016().isEmpty() ? var9.Method1023() : String.format("%s%s", var9.Method1023(), var9.Method1016());
+            double var11 = (double)(Class565.Field2637.Method1225(var9.Method1016().isEmpty() ? var9.Method1023() : String.format("%s%s", var9.Method1023(), var9.Method1016())) + 2.0F + (float)(Field2363.isCurrentMode("Normal") ? -1 : 0));
+            double var13 = (double)(Class565.Field2637.Field2625 - 4.0F);
+            if (var9.getState()) {
+               var9.Method1034(var11 - this.Field2373.Method998(var9.Method1038(), 0.0, var11, 0.3));
+               var9.Method1035(var13 - this.Field2373.Method998(var9.Method1039(), 0.0, var13, 0.3));
             }
 
-            a.Method1034(this.Field2373.Method998(a.Method1038(), 0.0, a, 0.3));
-            a.Method1035(this.Field2373.Method998(a.Method1039(), 0.0, a, 0.3));
-            a.Method1034(MathHelper.clamp_double(a.Method1036(), 0.0, a));
-            a.Method1035(MathHelper.clamp_double(a.Method1037(), 0.0, a));
-            if (!a.getState() && (a.Method1036() == 0.0 || a.Method1036() == a)) {
+            var9.Method1034(this.Field2373.Method998(var9.Method1038(), 0.0, var11, 0.3));
+            var9.Method1035(this.Field2373.Method998(var9.Method1039(), 0.0, var13, 0.3));
+            var9.Method1034(MathHelper.clamp_double(var9.Method1036(), 0.0, var11));
+            var9.Method1035(MathHelper.clamp_double(var9.Method1037(), 0.0, var13));
+            if (!var9.getState() && (var9.Method1036() == 0.0 || var9.Method1036() == var11)) {
                break;
             }
 
-            int a = Field2372.getBooleanValue() ? Method1559((int)(a * (double)Field2368.getFloatValue().intValue())) : Class662.Method2400(new Color(Field2364.Method2444().getRGB()), 20, a.indexOf(a) * 2 + 10).getRGB();
+            int var15 = Field2372.getBooleanValue() ? Method1559((int)(var3 * (double)Field2368.getFloatValue().intValue())) : Class662.Method2400(new Color(Field2364.Method2444().getRGB()), 20, var7.indexOf(var9) * 2 + 10).getRGB();
             if (Field2364.Method2453() != 0) {
-               RenderUtils.Method1105(a - a + a.Method1036() - 1.0, a, a + a + a.Method1036(), a + a, (new Color(0, 0, 0, Field2364.Method2453())).getRGB());
+               RenderUtils.Method1105(var5 - var11 + var9.Method1036() - 1.0, var3, var5 + var11 + var9.Method1036(), var3 + var13, (new Color(0, 0, 0, Field2364.Method2453())).getRGB());
             }
 
             if (Field2363.isCurrentMode("Side") || Field2363.isCurrentMode("All")) {
-               RenderUtils.Method1105(a + a.Method1036() - 1.0, a, a + a.Method1036(), a + a, a);
+               RenderUtils.Method1105(var5 + var9.Method1036() - 1.0, var3, var5 + var9.Method1036(), var3 + var13, var15);
             }
 
-            double a = a < (double)(a.getScaledWidth() / 2) ? 2.0 : 0.0;
+            double var16 = var5 < (double)(a.getScaledWidth() / 2) ? 2.0 : 0.0;
             if (Field2371.getBooleanValue()) {
-               Class565.Field2637.Method1220(a, (float)(a - a + a.Method1036() + a), (float)a - 1.0F, a);
+               Class565.Field2637.Method1220(var10, (float)(var5 - var11 + var9.Method1036() + var16), (float)var3 - 1.0F, var15);
             }
 
-            Class565.Field2637.Method1217(a, (float)(a - a + a.Method1036() + a), (float)a - 1.0F, a);
-            double var10000 = a + (a - a.Method1037());
+            Class565.Field2637.Method1217(var10, (float)(var5 - var11 + var9.Method1036() + var16), (float)var3 - 1.0F, var15);
+            double var10000 = var3 + (var13 - var9.Method1037());
             break;
          }
       }
@@ -98,19 +98,19 @@ public class Hud extends Module {
    }
 
    public static int Method1559(int a) {
-      float a = Field2365.getFloatValue();
+      float var1 = Field2365.getFloatValue();
 
-      float a;
-      for(a = (float)(System.currentTimeMillis() % (long)((int)a)) + (float)(a / 2); a > a; a -= a) {
+      float var2;
+      for(var2 = (float)(System.currentTimeMillis() % (long)((int)var1)) + (float)(a / 2); var2 > var1; var2 -= var1) {
       }
 
-      a /= a;
-      if ((double)a > 0.5) {
-         a = 0.5F - a - 0.5F;
+      var2 /= var1;
+      if ((double)var2 > 0.5) {
+         var2 = 0.5F - var2 - 0.5F;
       }
 
-      a += 0.5F;
-      return Color.HSBtoRGB(a, Field2366.getFloatValue(), Field2367.getFloatValue());
+      var2 += 0.5F;
+      return Color.HSBtoRGB(var2, Field2366.getFloatValue(), Field2367.getFloatValue());
    }
 
    public void onEnable() {

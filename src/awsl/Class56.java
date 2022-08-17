@@ -49,10 +49,10 @@ public class Class56 extends Class119 {
       return this.Field609;
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = Class767.Method1689(a);
-      float a = Class776.Method1708((float)this.Field606, (float)this.Field607, (float)a);
-      return a & -16777216 | Class776.Method1719(a, this.Field609, this.Field608) & 16777215;
+   public int Method3(int a, int a, int a) {
+      int var4 = Class767.Method1689(a);
+      float var5 = Class776.Method1708((float)this.Field606, (float)this.Field607, (float)var4);
+      return a & -16777216 | Class776.Method1719(var5, this.Field609, this.Field608) & 16777215;
    }
 
    public String toString() {

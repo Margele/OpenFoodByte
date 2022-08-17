@@ -20,10 +20,10 @@ final class Class860 extends Class831 {
    }
 
    public final void Method3514(String a) {
-      ArrayList a = (ArrayList)this.Field3757.Method1964();
-      Class279 a = (Class279)this.Field3757.Method1964();
-      String a = (String)this.Field3757.Method1964();
-      String a = (String)this.Field3757.Method1964();
-      this.Method3655().Method1956(a, a, a, a.toArray());
+      ArrayList var2 = (ArrayList)this.Field3757.Method1964();
+      Class279 var3 = (Class279)this.Field3757.Method1964();
+      String var4 = (String)this.Field3757.Method1964();
+      String var5 = (String)this.Field3757.Method1964();
+      this.Method3655().Method1956(var5, var4, var3, var2.toArray());
    }
 }

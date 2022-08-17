@@ -35,8 +35,8 @@ public final class Class279 {
       } else if (!(a instanceof Class279)) {
          return false;
       } else {
-         Class279 a = (Class279)a;
-         return this.Field1519 == a.Field1519 && this.Field1520.equals(a.Field1520) && this.Field1521.equals(a.Field1521) && this.Field1522.equals(a.Field1522);
+         Class279 var2 = (Class279)a;
+         return this.Field1519 == var2.Field1519 && this.Field1520.equals(var2.Field1520) && this.Field1521.equals(var2.Field1521) && this.Field1522.equals(var2.Field1522);
       }
    }
 

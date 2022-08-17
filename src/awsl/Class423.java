@@ -20,31 +20,31 @@ public class Class423 extends Class426 {
       super.Method2308();
    }
 
-   public void Method2310(int a, int a, float a2) {
-      String a = "" + (double)Math.round((double)this.Field2042.getFloatValue() * 100.0) / 100.0;
+   public void Method2310(int a, int a, float a) {
+      String var5 = "" + (double)Math.round((double)this.Field2042.getFloatValue() * 100.0) / 100.0;
       RenderUtils.Method1105(this.Field2050, this.Field2051, this.Field2050 + this.Field2052, this.Field2051 + this.Field2053, (new Color(0, 0, 0, 150)).getRGB());
       Class565.Field2637.Method1217(this.Field2054, (float)(this.Field2050 + 2.0), (float)(this.Field2051 + 0.0), -1);
       Method2409();
-      Class565.Field2637.Method1217(a, (float)(this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(a) - 1.0), (float)(this.Field2051 + 0.0), -1);
+      Class565.Field2637.Method1217(var5, (float)(this.Field2050 + this.Field2052 - (double)Class565.Field2637.Method1225(var5) - 1.0), (float)(this.Field2051 + 0.0), -1);
       this.Field2050 += 2.0;
       this.Field2052 -= 4.0;
       boolean var10000 = this.Method2407(a, a) || this.Field2041;
-      Color a = Class416.Method2352();
-      int a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 250)).getRGB();
-      int a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 255)).getRGB();
-      double a = ((double)this.Field2042.getFloatValue() - (double)this.Field2042.Method2750()) / ((double)this.Field2042.Method2751() - (double)this.Field2042.Method2750());
+      Color var7 = Class416.Method2352();
+      int var8 = (new Color(var7.getRed(), var7.getGreen(), var7.getBlue(), 250)).getRGB();
+      int var9 = (new Color(var7.getRed(), var7.getGreen(), var7.getBlue(), 255)).getRGB();
+      double var10 = ((double)this.Field2042.getFloatValue() - (double)this.Field2042.Method2750()) / ((double)this.Field2042.Method2751() - (double)this.Field2042.Method2750());
       RenderUtils.Method1105(this.Field2050, this.Field2051 + 12.0, this.Field2050 + this.Field2052, this.Field2051 + 13.5, (new Color(0, 0, 0, 80)).getRGB());
-      RenderUtils.Method1105(this.Field2050, this.Field2051 + 12.0, this.Field2050 + a * this.Field2052, this.Field2051 + 13.5, a);
-      if (a > 0.0 && a < 1.0) {
-         RenderUtils.Method1105(this.Field2050 + a * this.Field2052 - 1.0, this.Field2051 + 12.0, this.Field2050 + Math.min(a * this.Field2052, this.Field2052), this.Field2051 + 13.5, a);
+      RenderUtils.Method1105(this.Field2050, this.Field2051 + 12.0, this.Field2050 + var10 * this.Field2052, this.Field2051 + 13.5, var8);
+      if (var10 > 0.0 && var10 < 1.0) {
+         RenderUtils.Method1105(this.Field2050 + var10 * this.Field2052 - 1.0, this.Field2051 + 12.0, this.Field2050 + Math.min(var10 * this.Field2052, this.Field2052), this.Field2051 + 13.5, var9);
       }
 
       if (this.Field2041) {
-         double a = (double)this.Field2042.Method2751() - (double)this.Field2042.Method2750();
-         double a = (double)this.Field2042.Method2750() + MathHelper.clamp_double(((double)a - this.Field2050) / this.Field2052, 0.0, 1.0) * a;
-         a = (double)Math.round(a * (1.0 / (double)this.Field2042.Method2752())) / (1.0 / (double)this.Field2042.Method2752());
-         a = (double)((float)Math.round(a * 100.0) / 100.0F);
-         this.Field2042.Method2745((float)a);
+         double var12 = (double)this.Field2042.Method2751() - (double)this.Field2042.Method2750();
+         double var14 = (double)this.Field2042.Method2750() + MathHelper.clamp_double(((double)a - this.Field2050) / this.Field2052, 0.0, 1.0) * var12;
+         var14 = (double)Math.round(var14 * (1.0 / (double)this.Field2042.Method2752())) / (1.0 / (double)this.Field2042.Method2752());
+         var14 = (double)((float)Math.round(var14 * 100.0) / 100.0F);
+         this.Field2042.Method2745((float)var14);
       }
 
       a.trash(new String[2]);
@@ -54,7 +54,7 @@ public class Class423 extends Class426 {
       return this.Method2407(a, a) ? (this.Field2041 = true) : super.Method2311(a, a, a);
    }
 
-   public void Method2312(int a, int a1, int a2) {
+   public void Method2312(int a, int a, int a) {
       this.Field2041 = false;
       GlobalModule.INSTANCE.fileManager.saveValues();
    }

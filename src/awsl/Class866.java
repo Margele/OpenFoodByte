@@ -42,72 +42,72 @@ public class Class866 extends Class877 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
       this.Field3780 = (float)a.getWidth();
       Class193.Method1269();
       this.Field3781 = (float)a.getHeight();
-      int a = a.getType();
-      this.Field3821 = new Rectangle(0, 0, a, a);
-      this.Field3820 = new Rectangle(0, 0, a, a);
+      int var6 = a.getType();
+      this.Field3821 = new Rectangle(0, 0, var4, var5);
+      this.Field3820 = new Rectangle(0, 0, var4, var5);
       this.Method834(this.Field3820);
-      ColorModel a = a.getColorModel();
-      a = new BufferedImage(a, a.createCompatibleWritableRaster(this.Field3820.width, this.Field3820.height), a.isAlphaPremultiplied(), (Hashtable)null);
-      WritableRaster a = a.getRaster();
-      int[] a = this.Method104(a, 0, 0, a, a, (int[])null);
+      ColorModel var7 = a.getColorModel();
+      a = new BufferedImage(var7, var7.createCompatibleWritableRaster(this.Field3820.width, this.Field3820.height), var7.isAlphaPremultiplied(), (Hashtable)null);
+      WritableRaster var35 = a.getRaster();
+      int[] var8 = this.Method104(a, 0, 0, var4, var5, (int[])null);
       if (this.Field3819 == 0) {
-         return this.Method3589(a, a, a, a, this.Field3820);
+         return this.Method3589(a, var4, var5, var8, this.Field3820);
       } else {
-         int a = a - 1;
-         int a = a - 1;
-         int a = this.Field3820.width;
-         int a = this.Field3820.height;
-         int a = false;
-         int[] a = new int[a];
-         int a = this.Field3820.x;
-         int a = this.Field3820.y;
-         float[] a = new float[4];
-         int a = 0;
-         if (a < a) {
-            int a = 0;
-            if (a < a) {
-               this.Method3439(a + a, a + a, a);
-               int a = (int)Math.floor((double)a[0]);
-               int a = (int)Math.floor((double)a[1]);
-               float a = a[0] - (float)a;
-               float a = a[1] - (float)a;
-               int a;
-               if (a < a && a < a) {
-                  a = a * a + a;
-                  int var10000 = a[a];
-                  var10000 = a[a + 1];
-                  var10000 = a[a + a];
-                  var10000 = a[a + a + 1];
+         int var11 = var4 - 1;
+         int var12 = var5 - 1;
+         int var13 = this.Field3820.width;
+         int var14 = this.Field3820.height;
+         boolean var17 = false;
+         int[] var18 = new int[var13];
+         int var15 = this.Field3820.x;
+         int var16 = this.Field3820.y;
+         float[] var19 = new float[4];
+         int var20 = 0;
+         if (var20 < var14) {
+            int var21 = 0;
+            if (var21 < var13) {
+               this.Method3439(var15 + var21, var16 + var20, var19);
+               int var22 = (int)Math.floor((double)var19[0]);
+               int var23 = (int)Math.floor((double)var19[1]);
+               float var24 = var19[0] - (float)var22;
+               float var25 = var19[1] - (float)var23;
+               int var30;
+               if (var22 < var11 && var23 < var12) {
+                  var30 = var4 * var23 + var22;
+                  int var10000 = var8[var30];
+                  var10000 = var8[var30 + 1];
+                  var10000 = var8[var30 + var4];
+                  var10000 = var8[var30 + var4 + 1];
                }
 
-               int a = this.Method3495(a, a, a, a, a);
-               int a = this.Method3495(a, a + 1, a, a, a);
-               int a = this.Method3495(a, a, a + 1, a, a);
-               int a = this.Method3495(a, a + 1, a + 1, a, a);
-               a = Class776.Method1720(a, a, a, a, a, a);
-               int a = a >> 16 & 255;
-               int a = a >> 8 & 255;
-               int a = a & 255;
-               float a = a[2];
-               a = (int)((float)a * a);
-               a = (int)((float)a * a);
-               a = (int)((float)a * a);
-               a = a & -16777216 | a << 16 | a << 8 | a;
-               if (a[3] != 0.0F) {
-                  a[a] = Class767.Method1691(a, a[a * a + a], 1);
+               int var26 = this.Method3495(var8, var22, var23, var4, var5);
+               int var27 = this.Method3495(var8, var22 + 1, var23, var4, var5);
+               int var28 = this.Method3495(var8, var22, var23 + 1, var4, var5);
+               int var29 = this.Method3495(var8, var22 + 1, var23 + 1, var4, var5);
+               var30 = Class776.Method1720(var24, var25, var26, var27, var28, var29);
+               int var31 = var30 >> 16 & 255;
+               int var32 = var30 >> 8 & 255;
+               int var33 = var30 & 255;
+               float var34 = var19[2];
+               var31 = (int)((float)var31 * var34);
+               var32 = (int)((float)var32 * var34);
+               var33 = (int)((float)var33 * var34);
+               var30 = var30 & -16777216 | var31 << 16 | var32 << 8 | var33;
+               if (var19[3] != 0.0F) {
+                  var18[var21] = Class767.Method1691(var30, var8[var4 * var20 + var21], 1);
                }
 
-               a[a] = a;
-               ++a;
+               var18[var21] = var30;
+               ++var21;
             }
 
-            this.Method1267(a, 0, a, this.Field3820.width, 1, a);
-            ++a;
+            this.Method1267(a, 0, var20, this.Field3820.width, 1, var18);
+            ++var20;
          }
 
          return a;
@@ -131,38 +131,38 @@ public class Class866 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      float a = this.Field3779;
-      float a = (float)a;
-      float a = (float)a;
-      float a = (float)Math.sin((double)this.Field3778);
-      float a = (float)Math.cos((double)this.Field3778);
-      float var10000 = a * this.Field3780;
-      float a = a * (float)Math.sqrt((double)(this.Field3780 * this.Field3780 + this.Field3781 * this.Field3781));
-      float a = a < 0.0F ? this.Field3780 : 0.0F;
-      float a = a < 0.0F ? this.Field3781 : 0.0F;
-      a -= a;
-      a -= a;
-      float a = a * a + a * a;
-      float a = -a * a + a * a;
-      boolean a = a < a;
-      boolean a = a > a * 2.0F;
+      float var4 = this.Field3779;
+      float var5 = (float)a;
+      float var6 = (float)a;
+      float var7 = (float)Math.sin((double)this.Field3778);
+      float var8 = (float)Math.cos((double)this.Field3778);
+      float var10000 = var4 * this.Field3780;
+      float var9 = var4 * (float)Math.sqrt((double)(this.Field3780 * this.Field3780 + this.Field3781 * this.Field3781));
+      float var10 = var8 < 0.0F ? this.Field3780 : 0.0F;
+      float var11 = var7 < 0.0F ? this.Field3781 : 0.0F;
+      var5 -= var10;
+      var6 -= var11;
+      float var12 = var5 * var8 + var6 * var7;
+      float var13 = -var5 * var7 + var6 * var8;
+      boolean var14 = var12 < var9;
+      boolean var15 = var12 > var9 * 2.0F;
       boolean var16 = true;
-      a = a > a * 2.0F ? a : 2.0F * a - a;
-      a = a * a - a * a;
-      a = a * a + a * a;
-      a += a;
-      a += a;
+      var12 = var12 > var9 * 2.0F ? var12 : 2.0F * var9 - var12;
+      var5 = var12 * var8 - var13 * var7;
+      var6 = var12 * var7 + var13 * var8;
+      var5 += var10;
+      var6 += var11;
       boolean var19;
-      if (!(a < 0.0F) && !(a < 0.0F) && !(a >= this.Field3780) && !(a >= this.Field3781)) {
+      if (!(var5 < 0.0F) && !(var6 < 0.0F) && !(var5 >= this.Field3780) && !(var6 >= this.Field3781)) {
          var19 = false;
       } else {
          var19 = true;
       }
 
-      a = (float)a;
-      a = (float)a;
-      float a = 1.9F * (1.0F - (float)Math.cos(Math.exp((double)((a - a) / this.Field3782))));
-      a[2] = 1.0F - a;
+      var5 = (float)a;
+      var6 = (float)a;
+      float var18 = 1.9F * (1.0F - (float)Math.cos(Math.exp((double)((var12 - var9) / this.Field3782))));
+      a[2] = 1.0F - var18;
       a[0] = a[1] = -1.0F;
       a[3] = 1.0F;
    }

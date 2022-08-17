@@ -23,12 +23,12 @@ public class Class65 extends Class63 {
    }
 
    public void Method3622(String a) {
-      String a = this.Field647.Method3374(this.Field648) + '$';
+      String var3 = this.Field647.Method3374(this.Field648) + '$';
       Class37.Method3383();
       this.Field648 = this.Field648 + '$' + a;
-      String a = this.Field647.Method3374(this.Field648);
-      int a = a.startsWith(a) ? a.length() : a.lastIndexOf(36) + 1;
-      this.Field646.Method3622(a.substring(a));
+      String var4 = this.Field647.Method3374(this.Field648);
+      int var5 = var4.startsWith(var3) ? var3.length() : var4.lastIndexOf(36) + 1;
+      this.Field646.Method3622(var4.substring(var5));
       if (a.trash() == null) {
          Class37.Method3381(false);
       }

@@ -59,21 +59,21 @@ public class FastBreak extends Module {
 
    @EventTarget
    private void Method1543(Class636 a) {
-      Block a;
+      Block var2;
       if (Field2322.isCurrentMode("FastPacket")) {
-         a = mc.theWorld.getBlockState(a.Method3583()).getBlock();
-         int a = Block.getIdFromBlock(a);
-         PlayerControllerMP a = mc.playerController;
+         var2 = mc.theWorld.getBlockState(a.Method3583()).getBlock();
+         int var3 = Block.getIdFromBlock(var2);
+         PlayerControllerMP var4 = mc.playerController;
          ReflectionUtils.setBlockHitDelay(0);
-         if (a != 7) {
+         if (var3 != 7) {
             Wrapper.INSTANCE.sendPacket(new C07PacketPlayerDigging(Action.STOP_DESTROY_BLOCK, a.Method3583(), a.Method3585()));
             Wrapper.INSTANCE.sendPacket(new C07PacketPlayerDigging(Action.STOP_DESTROY_BLOCK, a.Method3583(), a.Method3585()));
          }
       }
 
       if (this.Field2325.getValue()) {
-         a = mc.theWorld.getBlockState(a.Method3583()).getBlock();
-         if (a == Blocks.bed) {
+         var2 = mc.theWorld.getBlockState(a.Method3583()).getBlock();
+         if (var2 == Blocks.bed) {
             if (ReflectionUtils.getCurBlockDamageMP() > 0.1F) {
                mc.theWorld.setBlockState(a.Method3583(), Blocks.air.getDefaultState(), 11);
                Wrapper.INSTANCE.sendPacketNoEvent(new C07PacketPlayerDigging(Action.STOP_DESTROY_BLOCK, a.Method3583(), a.Method3585()));
@@ -87,19 +87,19 @@ public class FastBreak extends Module {
 
    @EventTarget
    public void Method273(EventPacket a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (!a.isRecieve()) {
          if (Field2322.isCurrentMode("Packet")) {
             if (a.packet instanceof C07PacketPlayerDigging && !mc.playerController.extendedReach() && mc.playerController != null) {
-               C07PacketPlayerDigging a = (C07PacketPlayerDigging)a.packet;
-               if (a.getStatus() == Action.START_DESTROY_BLOCK) {
+               C07PacketPlayerDigging var3 = (C07PacketPlayerDigging)a.packet;
+               if (var3.getStatus() == Action.START_DESTROY_BLOCK) {
                   this.Field2326 = true;
-                  this.Field2328 = a.getPosition();
-                  this.Field2329 = a.getFacing();
+                  this.Field2328 = var3.getPosition();
+                  this.Field2329 = var3.getFacing();
                   this.Field2327 = 0.0F;
                }
 
-               if (a.getStatus() == Action.ABORT_DESTROY_BLOCK || a.getStatus() == Action.STOP_DESTROY_BLOCK) {
+               if (var3.getStatus() == Action.ABORT_DESTROY_BLOCK || var3.getStatus() == Action.STOP_DESTROY_BLOCK) {
                   this.Field2326 = false;
                   this.Field2328 = null;
                   this.Field2329 = null;
@@ -112,15 +112,15 @@ public class FastBreak extends Module {
 
    @EventTarget
    public void Method803(EventUpdate a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (Field2322.isCurrentMode("Packet")) {
          if (mc.playerController.extendedReach()) {
             ReflectionUtils.setBlockHitDelay(0);
          }
 
          if (this.Field2326) {
-            Block a = mc.theWorld.getBlockState(this.Field2328).getBlock();
-            this.Field2327 += (float)((double)a.getPlayerRelativeBlockHardness(mc.thePlayer, mc.theWorld, this.Field2328) * (double)this.Field2324.getFloatValueCast());
+            Block var3 = mc.theWorld.getBlockState(this.Field2328).getBlock();
+            this.Field2327 += (float)((double)var3.getPlayerRelativeBlockHardness(mc.thePlayer, mc.theWorld, this.Field2328) * (double)this.Field2324.getFloatValueCast());
             if (this.Field2327 >= 1.0F) {
                mc.theWorld.setBlockState(this.Field2328, Blocks.air.getDefaultState(), 11);
                Wrapper.INSTANCE.sendPacketNoEvent(new C07PacketPlayerDigging(Action.STOP_DESTROY_BLOCK, this.Field2328, this.Field2329));

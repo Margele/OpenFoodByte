@@ -28,11 +28,11 @@ public class Class395 extends Class390 {
 
    public void Method412(int a, int a) {
       if (this.Field1952) {
-         float a = (float)this.Field1907;
-         float a = Math.min((float)(this.Field1919.Field1851 + (this.Field1919.Field1853 - this.Field1919.Field1876) + this.Field1919.Field1876), (float)(this.Field1910 + this.Field1908));
-         float a = (float)this.Field1909;
-         float a = (float)Math.min(this.Field1908 + this.Field1910 - (this.Field1919.Field1851 + this.Field1919.Field1876), this.Field1910);
-         if (!(a <= 0.0F) && !((float)this.Field1910 <= 1.0F)) {
+         float var3 = (float)this.Field1907;
+         float var4 = Math.min((float)(this.Field1919.Field1851 + (this.Field1919.Field1853 - this.Field1919.Field1876) + this.Field1919.Field1876), (float)(this.Field1910 + this.Field1908));
+         float var5 = (float)this.Field1909;
+         float var6 = (float)Math.min(this.Field1908 + this.Field1910 - (this.Field1919.Field1851 + this.Field1919.Field1876), this.Field1910);
+         if (!(var6 <= 0.0F) && !((float)this.Field1910 <= 1.0F)) {
             RenderUtils.Method1108((double)this.Field1907 + 3.5, (double)this.Field1908 + 0.5, (double)(this.Field1907 + this.Method1310()) - 3.5, (double)(this.Field1908 + this.Field1951) - 0.5, 0.5, 1, (new Color(255, 255, 255, 80)).getRGB());
             this.Field1950.stream().filter(Class395::Method1354).forEach(Class395::Method1353);
          }
@@ -59,18 +59,18 @@ public class Class395 extends Class390 {
    public void Method411(int a, int a) {
       Class390.Method1317();
       super.Method411(a, a);
-      int a = this.Field1908;
-      int a = this.Field1907;
+      int var4 = this.Field1908;
+      int var5 = this.Field1907;
       Iterator var6 = this.Field1950.Method1383();
 
       while(var6.Method932()) {
-         Class390 a = (Class390)var6.Method933();
-         a.Method419(a, a);
-         if (a.Field1916) {
-            a.Method411(a, a);
-            a.Field1908 = a;
-            a.Field1907 = a;
-            int var10000 = (int)((float)a + (float)a.Field1910);
+         Class390 var7 = (Class390)var6.Method933();
+         var7.Method419(a, a);
+         if (var7.Field1916) {
+            var7.Method411(a, a);
+            var7.Field1908 = var4;
+            var7.Field1907 = var5;
+            int var10000 = (int)((float)var4 + (float)var7.Field1910);
             break;
          }
       }

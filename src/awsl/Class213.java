@@ -48,20 +48,20 @@ public class Class213 extends Class167 {
    }
 
    public Class267 Method1451(int a, String a, String a, String a, String[] a) {
-      int a = Class37.Method3382();
+      boolean var6 = Class37.Method3382();
       if (this.Field1195) {
          if ("<clinit>".equals(a)) {
             this.Field1201 = true;
          }
 
-         int a = a & 3391;
+         int var7 = a & 3391;
          if ((a & 2) == 0) {
             if ("<init>".equals(a)) {
-               this.Field1202.Method2530(new Class61(a, a, a));
+               this.Field1202.Method2530(new Class61(a, var7, a));
             }
 
             if (!"<clinit>".equals(a)) {
-               this.Field1203.Method2530(new Class61(a, a, a));
+               this.Field1203.Method2530(new Class61(a, var7, a));
             }
          }
       }
@@ -77,8 +77,8 @@ public class Class213 extends Class167 {
          }
 
          if ((a & 2) == 0 || (a & 136) == 0) {
-            int a = a & 223;
-            this.Field1200.Method2530(new Class61(a, a, a));
+            int var6 = a & 223;
+            this.Field1200.Method2530(new Class61(a, var6, a));
          }
       }
 
@@ -110,47 +110,47 @@ public class Class213 extends Class167 {
    }
 
    protected void Method2618(long a) {
-      Class253 a = super.Method1450(24, "serialVersionUID", "J", (String)null, new Long(a));
-      a.Method2121();
+      Class253 var3 = super.Method1450(24, "serialVersionUID", "J", (String)null, new Long(a));
+      var3.Method2121();
    }
 
    protected long Method2619() throws IOException {
-      DataOutputStream a = null;
+      DataOutputStream var3 = null;
       Class37.Method3383();
-      long a = 0L;
+      long var4 = 0L;
 
       try {
-         ByteArrayOutputStream a = new ByteArrayOutputStream();
-         a = new DataOutputStream(a);
-         a.writeUTF(this.Field1198.replace('/', '.'));
-         a.writeInt(this.Field1197 & 1553);
+         ByteArrayOutputStream var2 = new ByteArrayOutputStream();
+         var3 = new DataOutputStream(var2);
+         var3.writeUTF(this.Field1198.replace('/', '.'));
+         var3.writeInt(this.Field1197 & 1553);
          Arrays.sort(this.Field1199);
-         int a = 0;
-         if (a < this.Field1199.length) {
-            a.writeUTF(this.Field1199[a].replace('/', '.'));
-            ++a;
+         int var6 = 0;
+         if (var6 < this.Field1199.length) {
+            var3.writeUTF(this.Field1199[var6].replace('/', '.'));
+            ++var6;
             a.trash(new String[1]);
          }
 
-         Method2621(this.Field1200, a, false);
+         Method2621(this.Field1200, var3, false);
          if (this.Field1201) {
-            a.writeUTF("<clinit>");
-            a.writeInt(8);
-            a.writeUTF("()V");
+            var3.writeUTF("<clinit>");
+            var3.writeInt(8);
+            var3.writeUTF("()V");
          }
 
-         Method2621(this.Field1202, a, true);
-         Method2621(this.Field1203, a, true);
-         a.flush();
-         byte[] a = this.Method2620(a.toByteArray());
-         int a = Math.min(a.length, 8) - 1;
-         a = a << 8 | (long)(a[a] & 255);
-         --a;
+         Method2621(this.Field1202, var3, true);
+         Method2621(this.Field1203, var3, true);
+         var3.flush();
+         byte[] var11 = this.Method2620(var2.toByteArray());
+         int var7 = Math.min(var11.length, 8) - 1;
+         var4 = var4 << 8 | (long)(var11[var7] & 255);
+         --var7;
       } finally {
-         a.close();
+         var3.close();
       }
 
-      return a;
+      return var4;
    }
 
    protected byte[] Method2620(byte[] a) {
@@ -161,15 +161,15 @@ public class Class213 extends Class167 {
       }
    }
 
-   private static void Method2621(Collection a, DataOutput a, boolean a2) throws IOException {
-      int a = a.Method1799();
-      Class61[] a = (Class61[])a.toArray(new Class61[a]);
-      Arrays.sort(a);
+   private static void Method2621(Collection a, DataOutput a, boolean a) throws IOException {
+      int var3 = a.Method1799();
+      Class61[] var4 = (Class61[])a.toArray(new Class61[var3]);
+      Arrays.sort(var4);
 
-      for(int a = 0; a < a; ++a) {
-         a.writeUTF(a[a].Field627);
-         a.writeInt(a[a].Field628);
-         a.writeUTF(a[a].Field629.replace('/', '.'));
+      for(int var5 = 0; var5 < var3; ++var5) {
+         a.writeUTF(var4[var5].Field627);
+         a.writeInt(var4[var5].Field628);
+         a.writeUTF(var4[var5].Field629.replace('/', '.'));
       }
 
    }

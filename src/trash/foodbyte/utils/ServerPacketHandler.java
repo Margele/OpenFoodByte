@@ -50,26 +50,26 @@ public class ServerPacketHandler {
 
       while(true) {
          while(true) {
-            Class379 a;
+            Class379 var3;
             do {
                if (!var2.Method932()) {
                   return;
                }
 
-               a = (Class379)var2.Method933();
-               if ("Radar".equals(a.Field1813)) {
-                  if (((Radar)ModuleManager.getModule2(Radar.class)).getState() && a.Field1826) {
-                     a.Method462();
-                  } else if (!((Radar)ModuleManager.getModule2(Radar.class)).getState() && !a.Field1826) {
-                     a.Method461();
+               var3 = (Class379)var2.Method933();
+               if ("Radar".equals(var3.Field1813)) {
+                  if (((Radar)ModuleManager.getModule2(Radar.class)).getState() && var3.Field1826) {
+                     var3.Method462();
+                  } else if (!((Radar)ModuleManager.getModule2(Radar.class)).getState() && !var3.Field1826) {
+                     var3.Method461();
                   }
                }
-            } while(!"PlayerInventory".equals(a.Field1813));
+            } while(!"PlayerInventory".equals(var3.Field1813));
 
-            if (((Inventory)ModuleManager.getModule2(Inventory.class)).getState() && a.Field1826) {
-               a.Method462();
-            } else if (!((Inventory)ModuleManager.getModule2(Inventory.class)).getState() && !a.Field1826) {
-               a.Method461();
+            if (((Inventory)ModuleManager.getModule2(Inventory.class)).getState() && var3.Field1826) {
+               var3.Method462();
+            } else if (!((Inventory)ModuleManager.getModule2(Inventory.class)).getState() && !var3.Field1826) {
+               var3.Method461();
             }
          }
       }
@@ -81,43 +81,43 @@ public class ServerPacketHandler {
 
    @EventTarget
    public void onPacket(EventPacket event) {
-      String[] a = EventPacket.trash();
+      String[] var2 = EventPacket.trash();
       if (event.isSend()) {
          if (GlobalModule.Field3140.getValue() && !this.mc.isSingleplayer()) {
             if (event.getPacket() instanceof FMLProxyPacket) {
-               FMLProxyPacket a = (FMLProxyPacket)event.getPacket();
+               FMLProxyPacket var3 = (FMLProxyPacket)event.getPacket();
                event.setCancelled(true);
             }
 
             if (event.getPacket() instanceof C17PacketCustomPayload) {
-               C17PacketCustomPayload a = (C17PacketCustomPayload)event.getPacket();
-               if (a.getChannelName().equalsIgnoreCase("MC|Brand")) {
+               C17PacketCustomPayload var9 = (C17PacketCustomPayload)event.getPacket();
+               if (var9.getChannelName().equalsIgnoreCase("MC|Brand")) {
                   event.setCancelled(true);
                   Wrapper.INSTANCE.sendPacketNoEvent(new C17PacketCustomPayload("MC|Brand", (new PacketBuffer(Unpooled.buffer())).writeString("vanilla")));
                }
             }
          }
 
-         C02PacketUseEntity a;
+         C02PacketUseEntity var10;
          if (event.getPacket() instanceof C02PacketUseEntity) {
-            a = (C02PacketUseEntity)event.getPacket();
-            if (a.getAction() == Action.INTERACT && a.getEntityFromWorld(this.mc.theWorld) instanceof EntityHorse && this.mc.thePlayer.getHeldItem() == null) {
-               EntityHorse a = (EntityHorse)a.getEntityFromWorld(this.mc.theWorld);
-               double a = a.getHorseJumpStrength();
-               double a = a.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue();
-               ChatUtils.addChatMessage("Horse JumpStrength = §c" + (new BigDecimal(a)).setScale(2, 4).doubleValue() + " §7- §fSpeed = §c" + (new BigDecimal(a)).setScale(2, 4).doubleValue());
+            var10 = (C02PacketUseEntity)event.getPacket();
+            if (var10.getAction() == Action.INTERACT && var10.getEntityFromWorld(this.mc.theWorld) instanceof EntityHorse && this.mc.thePlayer.getHeldItem() == null) {
+               EntityHorse var4 = (EntityHorse)var10.getEntityFromWorld(this.mc.theWorld);
+               double var5 = var4.getHorseJumpStrength();
+               double var7 = var4.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue();
+               ChatUtils.addChatMessage("Horse JumpStrength = §c" + (new BigDecimal(var5)).setScale(2, 4).doubleValue() + " §7- §fSpeed = §c" + (new BigDecimal(var7)).setScale(2, 4).doubleValue());
             }
          }
 
          if (event.getPacket() instanceof C02PacketUseEntity) {
-            a = (C02PacketUseEntity)event.getPacket();
-            if (a.getAction() == Action.ATTACK && a.getEntityFromWorld(this.mc.theWorld) instanceof EntityPlayer) {
-               EntityPlayer a = (EntityPlayer)a.getEntityFromWorld(this.mc.theWorld);
-               if (Class305.Method705(a) && Method1260(a)) {
+            var10 = (C02PacketUseEntity)event.getPacket();
+            if (var10.getAction() == Action.ATTACK && var10.getEntityFromWorld(this.mc.theWorld) instanceof EntityPlayer) {
+               EntityPlayer var12 = (EntityPlayer)var10.getEntityFromWorld(this.mc.theWorld);
+               if (Class305.Method705(var12) && Method1260(var12)) {
                   event.setCancelled(true);
                }
 
-               if (Method1261(a) && a.isSneaking() && this.mc.thePlayer.getHeldItem() != null) {
+               if (Method1261(var12) && var12.isSneaking() && this.mc.thePlayer.getHeldItem() != null) {
                   event.setCancelled(true);
                }
             }
@@ -137,48 +137,48 @@ public class ServerPacketHandler {
          }
 
          if (event.getPacket() instanceof S3DPacketDisplayScoreboard) {
-            S3DPacketDisplayScoreboard a = (S3DPacketDisplayScoreboard)event.getPacket();
-            String a = a.func_149370_d();
-            int a = a.func_149371_c();
-            if (a == 1) {
-               ChatUtils.debug("计分板:" + a);
-               if (a.equalsIgnoreCase("SBScoreboard")) {
+            S3DPacketDisplayScoreboard var11 = (S3DPacketDisplayScoreboard)event.getPacket();
+            String var13 = var11.func_149370_d();
+            int var14 = var11.func_149371_c();
+            if (var14 == 1) {
+               ChatUtils.debug("计分板:" + var13);
+               if (var13.equalsIgnoreCase("SBScoreboard")) {
                   currentServer = Servers.SB;
                }
 
-               if (a.equalsIgnoreCase("Mw")) {
+               if (var13.equalsIgnoreCase("Mw")) {
                   currentServer = Servers.MW;
                }
 
-               if (a.equalsIgnoreCase("§e§lHYPIXEL")) {
+               if (var13.equalsIgnoreCase("§e§lHYPIXEL")) {
                   currentServer = Servers.UHC;
                }
 
-               if (a.equalsIgnoreCase("SForeboard")) {
+               if (var13.equalsIgnoreCase("SForeboard")) {
                   currentServer = Servers.SW;
                }
 
-               if (a.equalsIgnoreCase("BForeboard")) {
+               if (var13.equalsIgnoreCase("BForeboard")) {
                   currentServer = Servers.BW;
                }
 
-               if (a.equalsIgnoreCase("PreScoreboard")) {
+               if (var13.equalsIgnoreCase("PreScoreboard")) {
                   currentServer = Servers.PRE;
                }
 
-               if (a.equalsIgnoreCase("Duels")) {
+               if (var13.equalsIgnoreCase("Duels")) {
                   currentServer = Servers.DUELS;
                }
 
-               if (a.equalsIgnoreCase("Pit")) {
+               if (var13.equalsIgnoreCase("Pit")) {
                   currentServer = Servers.PIT;
                }
 
-               if (a.equalsIgnoreCase("Blitz SG")) {
+               if (var13.equalsIgnoreCase("Blitz SG")) {
                   currentServer = Servers.SG;
                }
 
-               if (a.equalsIgnoreCase("MurderMystery")) {
+               if (var13.equalsIgnoreCase("MurderMystery")) {
                   currentServer = Servers.MM;
                }
 
@@ -197,9 +197,9 @@ public class ServerPacketHandler {
          Iterator var1 = GlobalModule.INSTANCE.balant.Field2823.Method1383();
 
          while(var1.Method932()) {
-            Class606 a = (Class606)var1.Method933();
-            if (a.getName().equals(a.Field2841)) {
-               return a.Method3740() >= 5;
+            Class606 var2 = (Class606)var1.Method933();
+            if (a.getName().equals(var2.Field2841)) {
+               return var2.Method3740() >= 5;
             }
          }
       }
@@ -215,16 +215,16 @@ public class ServerPacketHandler {
             Iterator var1 = GlobalModule.INSTANCE.balant.Field2823.Method1383();
 
             while(var1.Method932()) {
-               Class606 a = (Class606)var1.Method933();
-               if (a.getName().equals(a.Field2841)) {
-                  if (a.Field2848) {
-                     ++a.Field2852;
-                     if (a.Field2852 >= 100) {
+               Class606 var2 = (Class606)var1.Method933();
+               if (a.getName().equals(var2.Field2841)) {
+                  if (var2.Field2848) {
+                     ++var2.Field2852;
+                     if (var2.Field2852 >= 100) {
                         return false;
                      }
                   }
 
-                  return a.Field2848;
+                  return var2.Field2848;
                }
             }
          }

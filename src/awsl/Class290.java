@@ -98,13 +98,13 @@ public class Class290 {
    }
 
    public char Method2885() throws Class666 {
-      int a;
+      int var1;
       if (this.Field1558) {
          this.Field1558 = false;
-         a = this.Field1556;
+         var1 = this.Field1556;
       } else {
          try {
-            a = this.Field1557.read();
+            var1 = this.Field1557.read();
          } catch (IOException var3) {
             throw new Class666(var3);
          }
@@ -134,11 +134,11 @@ public class Class290 {
    }
 
    public char Method2887(char a) throws Class666 {
-      char a = this.Method2885();
-      if (a != a) {
-         throw this.Method2895("Expected '" + a + "' and instead saw '" + a + "'");
+      char var2 = this.Method2885();
+      if (var2 != a) {
+         throw this.Method2895("Expected '" + a + "' and instead saw '" + var2 + "'");
       } else {
-         return a;
+         return var2;
       }
    }
 
@@ -147,97 +147,97 @@ public class Class290 {
    }
 
    public char Method2889() throws Class666 {
-      char a;
+      char var1;
       do {
-         a = this.Method2885();
-      } while(a <= ' ');
+         var1 = this.Method2885();
+      } while(var1 <= ' ');
 
-      return a;
+      return var1;
    }
 
    public String Method2890(char a) throws Class666 {
       Class666.Method3438();
-      StringBuilder a = new StringBuilder();
+      StringBuilder var4 = new StringBuilder();
 
       while(true) {
-         char a = this.Method2885();
-         switch (a) {
+         char var3 = this.Method2885();
+         switch (var3) {
             case '\u0000':
             case '\n':
             case '\r':
                throw this.Method2895("Unterminated string");
             case '\\':
-               a = this.Method2885();
-               switch (a) {
+               var3 = this.Method2885();
+               switch (var3) {
                   case '"':
                   case '\'':
                   case '/':
                   case '\\':
-                     a.append(a);
+                     var4.append(var3);
                   default:
                      throw this.Method2895("Illegal escape.");
                   case 'b':
-                     a.append('\b');
+                     var4.append('\b');
                   case 't':
-                     a.append('\t');
+                     var4.append('\t');
                   case 'n':
-                     a.append('\n');
+                     var4.append('\n');
                   case 'f':
-                     a.append('\f');
+                     var4.append('\f');
                   case 'r':
-                     a.append('\r');
+                     var4.append('\r');
                   case 'u':
                      try {
-                        a.append((char)Integer.parseInt(this.Method2888(4), 16));
+                        var4.append((char)Integer.parseInt(this.Method2888(4), 16));
                         continue;
                      } catch (NumberFormatException var6) {
                         throw this.Method2896("Illegal escape.", var6);
                      }
                }
             default:
-               if (a == a) {
-                  return a.toString();
+               if (var3 == a) {
+                  return var4.toString();
                }
 
-               a.append(a);
+               var4.append(var3);
          }
       }
    }
 
    public String Method2891(char a) throws Class666 {
-      StringBuilder a = new StringBuilder();
+      StringBuilder var2 = new StringBuilder();
 
       while(true) {
-         char a = this.Method2885();
-         if (a == a || a == '\n' || a == '\r') {
+         char var3 = this.Method2885();
+         if (var3 == a || var3 == '\n' || var3 == '\r') {
             this.Method2880();
-            return a.toString().trim();
+            return var2.toString().trim();
          }
 
-         a.append(a);
+         var2.append(var3);
       }
    }
 
    public String Method2892(String a) throws Class666 {
-      StringBuilder a = new StringBuilder();
+      StringBuilder var3 = new StringBuilder();
 
       while(true) {
-         char a = this.Method2885();
-         if (a.indexOf(a) >= 0 || a == '\n' || a == '\r') {
+         char var2 = this.Method2885();
+         if (a.indexOf(var2) >= 0 || var2 == '\n' || var2 == '\r') {
             this.Method2880();
-            return a.toString().trim();
+            return var3.toString().trim();
          }
 
-         a.append(a);
+         var3.append(var2);
       }
    }
 
    public Object Method2893() throws Class666 {
-      char a = this.Method2889();
-      switch (a) {
+      char var1 = this.Method2889();
+      switch (var1) {
          case '"':
          case '\'':
-            return this.Method2890(a);
+            return this.Method2890(var1);
          case '[':
             this.Method2880();
             return new Class288(this);
@@ -245,35 +245,35 @@ public class Class290 {
             this.Method2880();
             return new Class298(this);
          default:
-            StringBuilder a;
-            for(a = new StringBuilder(); a >= ' ' && ",:]}/\\\"[{;=#".indexOf(a) < 0; a = this.Method2885()) {
-               a.append(a);
+            StringBuilder var3;
+            for(var3 = new StringBuilder(); var1 >= ' ' && ",:]}/\\\"[{;=#".indexOf(var1) < 0; var1 = this.Method2885()) {
+               var3.append(var1);
             }
 
             if (!this.Field1553) {
                this.Method2880();
             }
 
-            String a = a.toString().trim();
-            if ("".equals(a)) {
+            String var2 = var3.toString().trim();
+            if ("".equals(var2)) {
                throw this.Method2895("Missing value");
             } else {
-               return Class298.Method3022(a);
+               return Class298.Method3022(var2);
             }
       }
    }
 
    public char Method2894(char a) throws Class666 {
       try {
-         long a = this.Field1554;
-         long a = this.Field1552;
-         long a = this.Field1555;
+         long var3 = this.Field1554;
+         long var5 = this.Field1552;
+         long var7 = this.Field1555;
          this.Field1557.mark(1000000);
-         char a = this.Method2885();
+         char var2 = this.Method2885();
          this.Field1557.reset();
-         this.Field1554 = a;
-         this.Field1552 = a;
-         this.Field1555 = a;
+         this.Field1554 = var3;
+         this.Field1552 = var5;
+         this.Field1555 = var7;
          return '\u0000';
       } catch (IOException var9) {
          throw new Class666(var9);

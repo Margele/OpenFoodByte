@@ -84,14 +84,14 @@ public class Class784 {
    }
 
    public void Method895(a a, Class786 a) throws Class731 {
-      int[] a = Class786.Method917();
-      Class797 a;
-      Class797 a;
-      Class797 a;
-      ArrayList a;
-      int a;
-      String a;
-      int a;
+      int[] var3 = Class786.Method917();
+      Class797 var4;
+      Class797 var5;
+      Class797 var6;
+      ArrayList var8;
+      int var9;
+      String var10;
+      int var11;
       switch (a.Method3640()) {
          case 0:
          case 1:
@@ -127,24 +127,24 @@ public class Class784 {
          case 51:
          case 52:
          case 53:
-            a = this.Method893();
-            a = this.Method893();
-            this.Method894(a.Method911(a, a, a));
+            var5 = this.Method893();
+            var4 = this.Method893();
+            this.Method894(a.Method911(a, var4, var5));
          case 54:
          case 55:
          case 56:
          case 57:
          case 58:
-            a = a.Method909(a, this.Method893());
-            a = ((Class112)a).Field877;
-            this.Method889(a, a);
-            if (a.Method806() == 2) {
-               this.Method889(a + 1, a.Method907((b)null));
+            var4 = a.Method909(a, this.Method893());
+            var9 = ((Class112)a).Field877;
+            this.Method889(var9, var4);
+            if (var4.Method806() == 2) {
+               this.Method889(var9 + 1, a.Method907((b)null));
             }
 
-            Class797 a = this.Method888(a - 1);
-            if (a.Method806() == 2) {
-               this.Method889(a - 1, a.Method907((b)null));
+            Class797 var13 = this.Method888(var9 - 1);
+            if (var13.Method806() == 2) {
+               this.Method889(var9 - 1, a.Method907((b)null));
             }
          case 79:
          case 80:
@@ -154,10 +154,10 @@ public class Class784 {
          case 84:
          case 85:
          case 86:
-            a = this.Method893();
-            a = this.Method893();
-            a = this.Method893();
-            a.Method912(a, a, a, a);
+            var6 = this.Method893();
+            var5 = this.Method893();
+            var4 = this.Method893();
+            a.Method912(a, var4, var5, var6);
          case 87:
             if (this.Method893().Method806() == 2) {
                throw new Class731(a, "Illegal use of POP");
@@ -214,146 +214,146 @@ public class Class784 {
             }
             break;
          case 89:
-            a = this.Method893();
-            if (a.Method806() != 1) {
+            var4 = this.Method893();
+            if (var4.Method806() != 1) {
                throw new Class731(a, "Illegal use of DUP");
             }
 
-            this.Method894(a);
-            this.Method894(a.Method909(a, a));
+            this.Method894(var4);
+            this.Method894(a.Method909(a, var4));
          case 90:
-            a = this.Method893();
-            a = this.Method893();
-            if (a.Method806() != 1 || a.Method806() != 1) {
+            var4 = this.Method893();
+            var5 = this.Method893();
+            if (var4.Method806() != 1 || var5.Method806() != 1) {
                throw new Class731(a, "Illegal use of DUP_X1");
             }
 
-            this.Method894(a.Method909(a, a));
-            this.Method894(a);
-            this.Method894(a);
+            this.Method894(a.Method909(a, var4));
+            this.Method894(var5);
+            this.Method894(var4);
          case 91:
-            a = this.Method893();
-            if (a.Method806() == 1) {
-               a = this.Method893();
-               if (a.Method806() == 1) {
-                  a = this.Method893();
-                  if (a.Method806() != 1) {
+            var4 = this.Method893();
+            if (var4.Method806() == 1) {
+               var5 = this.Method893();
+               if (var5.Method806() == 1) {
+                  var6 = this.Method893();
+                  if (var6.Method806() != 1) {
                      throw new Class731(a, "Illegal use of DUP_X2");
                   }
 
-                  this.Method894(a.Method909(a, a));
-                  this.Method894(a);
-                  this.Method894(a);
-                  this.Method894(a);
+                  this.Method894(a.Method909(a, var4));
+                  this.Method894(var6);
+                  this.Method894(var5);
+                  this.Method894(var4);
                }
 
-               this.Method894(a.Method909(a, a));
-               this.Method894(a);
-               this.Method894(a);
+               this.Method894(a.Method909(a, var4));
+               this.Method894(var5);
+               this.Method894(var4);
             }
 
             throw new Class731(a, "Illegal use of DUP_X2");
          case 92:
-            a = this.Method893();
-            if (a.Method806() == 1) {
-               a = this.Method893();
-               if (a.Method806() != 1) {
+            var4 = this.Method893();
+            if (var4.Method806() == 1) {
+               var5 = this.Method893();
+               if (var5.Method806() != 1) {
                   throw new Class731(a, "Illegal use of DUP2");
                }
 
-               this.Method894(a);
-               this.Method894(a);
-               this.Method894(a.Method909(a, a));
-               this.Method894(a.Method909(a, a));
+               this.Method894(var5);
+               this.Method894(var4);
+               this.Method894(a.Method909(a, var5));
+               this.Method894(a.Method909(a, var4));
             }
 
-            this.Method894(a);
-            this.Method894(a.Method909(a, a));
+            this.Method894(var4);
+            this.Method894(a.Method909(a, var4));
             break;
          case 93:
-            a = this.Method893();
-            if (a.Method806() == 1) {
-               a = this.Method893();
-               if (a.Method806() != 1) {
+            var4 = this.Method893();
+            if (var4.Method806() == 1) {
+               var5 = this.Method893();
+               if (var5.Method806() != 1) {
                   throw new Class731(a, "Illegal use of DUP2_X1");
                }
 
-               a = this.Method893();
-               if (a.Method806() != 1) {
+               var6 = this.Method893();
+               if (var6.Method806() != 1) {
                   throw new Class731(a, "Illegal use of DUP2_X1");
                }
 
-               this.Method894(a.Method909(a, a));
-               this.Method894(a.Method909(a, a));
-               this.Method894(a);
-               this.Method894(a);
-               this.Method894(a);
+               this.Method894(a.Method909(a, var5));
+               this.Method894(a.Method909(a, var4));
+               this.Method894(var6);
+               this.Method894(var5);
+               this.Method894(var4);
             }
 
-            a = this.Method893();
-            if (a.Method806() == 1) {
-               this.Method894(a.Method909(a, a));
-               this.Method894(a);
-               this.Method894(a);
+            var5 = this.Method893();
+            if (var5.Method806() == 1) {
+               this.Method894(a.Method909(a, var4));
+               this.Method894(var5);
+               this.Method894(var4);
             }
 
             throw new Class731(a, "Illegal use of DUP2_X1");
          case 94:
-            a = this.Method893();
-            if (a.Method806() == 1) {
-               a = this.Method893();
-               if (a.Method806() != 1) {
+            var4 = this.Method893();
+            if (var4.Method806() == 1) {
+               var5 = this.Method893();
+               if (var5.Method806() != 1) {
                   throw new Class731(a, "Illegal use of DUP2_X2");
                }
 
-               a = this.Method893();
-               if (a.Method806() == 1) {
-                  Class797 a = this.Method893();
-                  if (a.Method806() != 1) {
+               var6 = this.Method893();
+               if (var6.Method806() == 1) {
+                  Class797 var7 = this.Method893();
+                  if (var7.Method806() != 1) {
                      throw new Class731(a, "Illegal use of DUP2_X2");
                   }
 
-                  this.Method894(a.Method909(a, a));
-                  this.Method894(a.Method909(a, a));
-                  this.Method894(a);
-                  this.Method894(a);
-                  this.Method894(a);
-                  this.Method894(a);
+                  this.Method894(a.Method909(a, var5));
+                  this.Method894(a.Method909(a, var4));
+                  this.Method894(var7);
+                  this.Method894(var6);
+                  this.Method894(var5);
+                  this.Method894(var4);
                }
 
-               this.Method894(a.Method909(a, a));
-               this.Method894(a.Method909(a, a));
-               this.Method894(a);
-               this.Method894(a);
-               this.Method894(a);
+               this.Method894(a.Method909(a, var5));
+               this.Method894(a.Method909(a, var4));
+               this.Method894(var6);
+               this.Method894(var5);
+               this.Method894(var4);
             }
 
-            a = this.Method893();
-            if (a.Method806() == 1) {
-               a = this.Method893();
-               if (a.Method806() != 1) {
+            var5 = this.Method893();
+            if (var5.Method806() == 1) {
+               var6 = this.Method893();
+               if (var6.Method806() != 1) {
                   throw new Class731(a, "Illegal use of DUP2_X2");
                }
 
-               this.Method894(a.Method909(a, a));
-               this.Method894(a);
-               this.Method894(a);
-               this.Method894(a);
+               this.Method894(a.Method909(a, var4));
+               this.Method894(var6);
+               this.Method894(var5);
+               this.Method894(var4);
             }
 
-            this.Method894(a.Method909(a, a));
-            this.Method894(a);
-            this.Method894(a);
+            this.Method894(a.Method909(a, var4));
+            this.Method894(var5);
+            this.Method894(var4);
             throw new Class731(a, "Illegal use of DUP2_X2");
          case 95:
-            a = this.Method893();
-            a = this.Method893();
-            if (a.Method806() != 1 || a.Method806() != 1) {
+            var5 = this.Method893();
+            var4 = this.Method893();
+            if (var4.Method806() != 1 || var5.Method806() != 1) {
                throw new Class731(a, "Illegal use of SWAP");
             }
 
-            this.Method894(a.Method909(a, a));
-            this.Method894(a.Method909(a, a));
+            this.Method894(a.Method909(a, var5));
+            this.Method894(a.Method909(a, var4));
          case 96:
          case 97:
          case 98:
@@ -374,9 +374,9 @@ public class Class784 {
          case 113:
          case 114:
          case 115:
-            a = this.Method893();
-            a = this.Method893();
-            this.Method894(a.Method911(a, a, a));
+            var5 = this.Method893();
+            var4 = this.Method893();
+            this.Method894(a.Method911(a, var4, var5));
          case 116:
          case 117:
          case 118:
@@ -394,12 +394,12 @@ public class Class784 {
          case 129:
          case 130:
          case 131:
-            a = this.Method893();
-            a = this.Method893();
-            this.Method894(a.Method911(a, a, a));
+            var5 = this.Method893();
+            var4 = this.Method893();
+            this.Method894(a.Method911(a, var4, var5));
          case 132:
-            a = ((Class82)a).Field712;
-            this.Method889(a, a.Method910(a, this.Method888(a)));
+            var9 = ((Class82)a).Field712;
+            this.Method889(var9, a.Method910(a, this.Method888(var9)));
          case 133:
          case 134:
          case 135:
@@ -421,9 +421,9 @@ public class Class784 {
          case 150:
          case 151:
          case 152:
-            a = this.Method893();
-            a = this.Method893();
-            this.Method894(a.Method911(a, a, a));
+            var5 = this.Method893();
+            var4 = this.Method893();
+            this.Method894(a.Method911(a, var4, var5));
          case 153:
          case 154:
          case 155:
@@ -439,9 +439,9 @@ public class Class784 {
          case 164:
          case 165:
          case 166:
-            a = this.Method893();
-            a = this.Method893();
-            a.Method911(a, a, a);
+            var5 = this.Method893();
+            var4 = this.Method893();
+            a.Method911(a, var4, var5);
          case 167:
          case 168:
             this.Method894(a.Method908(a));
@@ -454,9 +454,9 @@ public class Class784 {
          case 174:
          case 175:
          case 176:
-            a = this.Method893();
-            a.Method910(a, a);
-            a.Method914(a, a, this.Field3532);
+            var4 = this.Method893();
+            a.Method910(a, var4);
+            a.Method914(a, var4, this.Field3532);
          case 177:
             if (this.Field3532 != null) {
                throw new Class731(a, "Incompatible return type");
@@ -469,38 +469,38 @@ public class Class784 {
          case 180:
             this.Method894(a.Method910(a, this.Method893()));
          case 181:
-            a = this.Method893();
-            a = this.Method893();
-            a.Method911(a, a, a);
+            var5 = this.Method893();
+            var4 = this.Method893();
+            a.Method911(a, var4, var5);
          case 182:
          case 183:
          case 184:
          case 185:
-            a = new ArrayList();
-            a = ((Class98)a).Field826;
-            a = b.Method3211(a).length;
-            a.add(0, this.Method893());
-            --a;
+            var8 = new ArrayList();
+            var10 = ((Class98)a).Field826;
+            var11 = b.Method3211(var10).length;
+            var8.add(0, this.Method893());
+            --var11;
             if (a.Method3640() != 184) {
-               a.add(0, this.Method893());
+               var8.add(0, this.Method893());
             }
 
-            if (b.Method3213(a) == b.Field572) {
-               a.Method913(a, a);
+            if (b.Method3213(var10) == b.Field572) {
+               a.Method913(a, var8);
             }
 
-            this.Method894(a.Method913(a, a));
+            this.Method894(a.Method913(a, var8));
          case 186:
-            a = new ArrayList();
-            a = ((Class88)a).Field760;
-            a = b.Method3211(a).length;
-            a.add(0, this.Method893());
-            --a;
-            if (b.Method3213(a) == b.Field572) {
-               a.Method913(a, a);
+            var8 = new ArrayList();
+            var10 = ((Class88)a).Field760;
+            var11 = b.Method3211(var10).length;
+            var8.add(0, this.Method893());
+            --var11;
+            if (b.Method3213(var10) == b.Field572) {
+               a.Method913(a, var8);
             }
 
-            this.Method894(a.Method913(a, a));
+            this.Method894(a.Method913(a, var8));
          case 187:
             this.Method894(a.Method908(a));
          case 188:
@@ -516,11 +516,11 @@ public class Class784 {
          case 195:
             a.Method910(a, this.Method893());
          case 197:
-            a = new ArrayList();
-            int a = ((Class120)a).Field953;
-            a.add(0, this.Method893());
-            --a;
-            this.Method894(a.Method913(a, a));
+            var8 = new ArrayList();
+            int var12 = ((Class120)a).Field953;
+            var8.add(0, this.Method893());
+            --var12;
+            this.Method894(a.Method913(a, var8));
          case 198:
          case 199:
             a.Method910(a, this.Method893());
@@ -533,48 +533,48 @@ public class Class784 {
       if (this.Field3535 != a.Field3535) {
          throw new Class731((a)null, "Incompatible stack heights");
       } else {
-         boolean a = false;
+         boolean var3 = false;
 
-         for(int a = 0; a < this.Field3534 + this.Field3535; ++a) {
-            Class797 a = a.Method915(this.Field3533[a], a.Field3533[a]);
-            if (!a.Method3429(this.Field3533[a])) {
-               this.Field3533[a] = a;
-               a = true;
+         for(int var4 = 0; var4 < this.Field3534 + this.Field3535; ++var4) {
+            Class797 var5 = a.Method915(this.Field3533[var4], a.Field3533[var4]);
+            if (!var5.Method3429(this.Field3533[var4])) {
+               this.Field3533[var4] = var5;
+               var3 = true;
             }
          }
 
-         return a;
+         return var3;
       }
    }
 
    public boolean Method897(Class784 a, boolean[] a) {
-      boolean a = false;
+      boolean var3 = false;
 
-      for(int a = 0; a < this.Field3534; ++a) {
-         if (!a[a] && !this.Field3533[a].Method3429(a.Field3533[a])) {
-            this.Field3533[a] = a.Field3533[a];
-            a = true;
+      for(int var4 = 0; var4 < this.Field3534; ++var4) {
+         if (!a[var4] && !this.Field3533[var4].Method3429(a.Field3533[var4])) {
+            this.Field3533[var4] = a.Field3533[var4];
+            var3 = true;
          }
       }
 
-      return a;
+      return var3;
    }
 
    public String Method898() {
-      StringBuilder a = new StringBuilder();
+      StringBuilder var1 = new StringBuilder();
 
-      int a;
-      for(a = 0; a < this.Method886(); ++a) {
-         a.append(this.Method888(a));
+      int var2;
+      for(var2 = 0; var2 < this.Method886(); ++var2) {
+         var1.append(this.Method888(var2));
       }
 
-      a.append(' ');
+      var1.append(' ');
 
-      for(a = 0; a < this.Method890(); ++a) {
-         a.append(this.Method891(a).Method3780());
+      for(var2 = 0; var2 < this.Method890(); ++var2) {
+         var1.append(this.Method891(var2).Method3780());
       }
 
-      return a.toString();
+      return var1.toString();
    }
 
    private static Exception Method899(Exception exception) {

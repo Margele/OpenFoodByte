@@ -8,8 +8,8 @@ class Class258 {
    int Field1414;
    Class258 Field1415;
 
-   static Class258 Method2257(Class258 a, Class264 a1, Class264 a2) {
-      String[] a = Class267.Method2862();
+   static Class258 Method2257(Class258 a, Class264 a, Class264 a) {
+      String[] var3 = Class267.Method2862();
       return null;
    }
 }

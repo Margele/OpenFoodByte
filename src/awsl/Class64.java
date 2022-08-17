@@ -74,99 +74,99 @@ public class Class64 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1269();
-      int a = a.getWidth();
-      int a = a.getHeight();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
       a = this.Method1263(a, (ColorModel)null);
-      int[] a = new int[a * a];
-      int[] a = new int[a * a];
-      this.Method104(a, 0, 0, a, a, a);
-      float a = (float)Math.sin((double)this.Field639);
-      float a = (float)Math.cos((double)this.Field639);
-      int a = a / 2;
-      int a = a / 2;
-      int a = 0;
-      float a = (float)Math.sqrt((double)(a * a + a * a));
-      float a = (float)((double)this.Field641 * Math.cos((double)this.Field639));
-      float a = (float)((double)this.Field641 * -Math.sin((double)this.Field639));
-      float a = this.Field641 + Math.abs(this.Field643 * a) + this.Field642 * a;
-      int a = (int)a;
-      AffineTransform a = new AffineTransform();
-      Point2D.Float a = new Point2D.Float();
+      int[] var6 = new int[var4 * var5];
+      int[] var7 = new int[var4 * var5];
+      this.Method104(a, 0, 0, var4, var5, var6);
+      float var8 = (float)Math.sin((double)this.Field639);
+      float var9 = (float)Math.cos((double)this.Field639);
+      int var11 = var4 / 2;
+      int var12 = var5 / 2;
+      int var13 = 0;
+      float var14 = (float)Math.sqrt((double)(var11 * var11 + var12 * var12));
+      float var15 = (float)((double)this.Field641 * Math.cos((double)this.Field639));
+      float var16 = (float)((double)this.Field641 * -Math.sin((double)this.Field639));
+      float var17 = this.Field641 + Math.abs(this.Field643 * var14) + this.Field642 * var14;
+      int var18 = (int)var17;
+      AffineTransform var19 = new AffineTransform();
+      Point2D.Float var20 = new Point2D.Float();
       if (this.Field645) {
-         Class776.Method1727(a, 0, a.length);
+         Class776.Method1727(var6, 0, var6.length);
       }
 
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         if (a < a) {
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            if (a < a) {
+      int var21 = 0;
+      if (var21 < var5) {
+         int var22 = 0;
+         if (var22 < var4) {
+            int var23 = 0;
+            int var24 = 0;
+            int var25 = 0;
+            int var26 = 0;
+            int var27 = 0;
+            int var28 = 0;
+            if (var28 < var18) {
                label49: {
-                  float a = (float)a / (float)a;
-                  a.x = (float)a;
-                  a.y = (float)a;
-                  a.setToIdentity();
-                  a.translate((double)((float)a + a * a), (double)((float)a + a * a));
-                  float a = 1.0F - this.Field642 * a;
-                  a.scale((double)a, (double)a);
+                  float var31 = (float)var28 / (float)var18;
+                  var20.x = (float)var22;
+                  var20.y = (float)var21;
+                  var19.setToIdentity();
+                  var19.translate((double)((float)var11 + var31 * var15), (double)((float)var12 + var31 * var16));
+                  float var32 = 1.0F - this.Field642 * var31;
+                  var19.scale((double)var32, (double)var32);
                   if (this.Field643 != 0.0F) {
-                     a.rotate((double)(-this.Field643 * a));
+                     var19.rotate((double)(-this.Field643 * var31));
                   }
 
-                  a.translate((double)(-a), (double)(-a));
-                  a.transform(a, a);
-                  int a = (int)a.x;
-                  int a = (int)a.y;
-                  if (a >= a) {
+                  var19.translate((double)(-var11), (double)(-var12));
+                  var19.transform(var20, var20);
+                  int var29 = (int)var20.x;
+                  int var30 = (int)var20.y;
+                  if (var29 >= var4) {
                      if (!this.Field644) {
                         break label49;
                      }
 
-                     a = Class776.Method1715(a, a);
+                     var29 = Class776.Method1715(var29, var4);
                   }
 
-                  if (a >= a) {
+                  if (var30 >= var5) {
                      if (!this.Field644) {
                         break label49;
                      }
 
-                     a = Class776.Method1715(a, a);
+                     var30 = Class776.Method1715(var30, var5);
                   }
 
-                  ++a;
-                  int a = a[a * a + a];
-                  a += a >> 24 & 255;
-                  a += a >> 16 & 255;
-                  a += a >> 8 & 255;
-                  a += a & 255;
-                  ++a;
+                  ++var27;
+                  int var33 = var6[var30 * var4 + var29];
+                  var23 += var33 >> 24 & 255;
+                  var24 += var33 >> 16 & 255;
+                  var25 += var33 >> 8 & 255;
+                  var26 += var33 & 255;
+                  ++var28;
                }
             }
 
-            a[a] = a[a];
-            a = Class767.Method1687(a / a);
-            a = Class767.Method1687(a / a);
-            a = Class767.Method1687(a / a);
-            a = Class767.Method1687(a / a);
-            a[a] = a << 24 | a << 16 | a << 8 | a;
-            ++a;
-            ++a;
+            var7[var13] = var6[var13];
+            var23 = Class767.Method1687(var23 / var27);
+            var24 = Class767.Method1687(var24 / var27);
+            var25 = Class767.Method1687(var25 / var27);
+            var26 = Class767.Method1687(var26 / var27);
+            var7[var13] = var23 << 24 | var24 << 16 | var25 << 8 | var26;
+            ++var13;
+            ++var22;
          }
 
-         ++a;
+         ++var21;
       }
 
       if (this.Field645) {
-         Class776.Method1728(a, 0, a.length);
+         Class776.Method1728(var7, 0, var6.length);
       }
 
-      this.Method1267(a, 0, 0, a, a, a);
+      this.Method1267(a, 0, 0, var4, var5, var7);
       return a;
    }
 

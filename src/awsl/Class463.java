@@ -9,7 +9,7 @@ public class Class463 implements Class422, Class45 {
    @Class628
    public native void Method1362(Class15 class15, String string);
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public void Method1359(Class15 a, String a) {

@@ -82,9 +82,9 @@ public class GlobalModule {
 
    public void Method2002() {
       try {
-         Class a = Class.forName(Method2008(-7744, 7575));
-         ConcurrentHashMap a = (ConcurrentHashMap)ReflectionHelper.getPrivateValue(EventBus.class, MinecraftForge.EVENT_BUS, 1);
-         a.keySet().forEach(this::Method2010);
+         Class var1 = Class.forName(Method2008(-7744, 7575));
+         ConcurrentHashMap var2 = (ConcurrentHashMap)ReflectionHelper.getPrivateValue(EventBus.class, MinecraftForge.EVENT_BUS, 1);
+         var2.keySet().forEach(this::Method2010);
          if (this.Field3179 != null) {
             Class372.Method406(this.Field3179);
             this.Field3179 = null;

@@ -34,41 +34,41 @@ public class Class887 extends Class877 {
    }
 
    protected void Method834(Rectangle a) {
-      int a = Class193.Method1270();
+      boolean var2 = Class193.Method1270();
       if (this.Field3887) {
-         Point a = new Point(0, 0);
-         int a = Integer.MAX_VALUE;
-         int a = Integer.MAX_VALUE;
-         int a = Integer.MIN_VALUE;
-         int a = Integer.MIN_VALUE;
-         int a = a.width;
-         int a = a.height;
-         int a = a.x;
-         int a = a.y;
-         int a = 0;
-         if (a < 4) {
-            switch (a) {
+         Point var3 = new Point(0, 0);
+         int var4 = Integer.MAX_VALUE;
+         int var5 = Integer.MAX_VALUE;
+         int var6 = Integer.MIN_VALUE;
+         int var7 = Integer.MIN_VALUE;
+         int var8 = a.width;
+         int var9 = a.height;
+         int var10 = a.x;
+         int var11 = a.y;
+         int var12 = 0;
+         if (var12 < 4) {
+            switch (var12) {
                case 0:
-                  this.Method3567(a, a, a);
+                  this.Method3567(var10, var11, var3);
                case 1:
-                  this.Method3567(a + a, a, a);
+                  this.Method3567(var10 + var8, var11, var3);
                case 2:
-                  this.Method3567(a, a + a, a);
+                  this.Method3567(var10, var11 + var9, var3);
                case 3:
-                  this.Method3567(a + a, a + a, a);
+                  this.Method3567(var10 + var8, var11 + var9, var3);
                default:
-                  a = Math.min(a, a.x);
-                  a = Math.min(a, a.y);
-                  a = Math.max(a, a.x);
-                  a = Math.max(a, a.y);
-                  ++a;
+                  var4 = Math.min(var4, var3.x);
+                  var5 = Math.min(var5, var3.y);
+                  var6 = Math.max(var6, var3.x);
+                  var7 = Math.max(var7, var3.y);
+                  ++var12;
             }
          }
 
-         a.x = a;
-         a.y = a;
-         a.width = a - a.x;
-         a.height = a - a.y;
+         a.x = var4;
+         a.y = var5;
+         a.width = var6 - a.x;
+         a.height = var7 - a.y;
       }
 
    }

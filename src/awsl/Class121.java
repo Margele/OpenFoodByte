@@ -27,18 +27,18 @@ public class Class121 extends Class119 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      float a = (1.0F - this.Field954) * (1.0F + this.Field955);
-      this.Field956 = a - this.Field955;
-      this.Field957 = a;
+      float var3 = (1.0F - this.Field954) * (1.0F + this.Field955);
+      this.Field956 = var3 - this.Field955;
+      this.Field957 = var3;
       this.Field958 = new Random(0L);
       return super.Method62(a, a);
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = a >> 24 & 255;
-      float a = this.Field958.nextFloat();
-      float a = Class776.Method1708(this.Field956, this.Field957, a);
-      return (int)((float)a * a) << 24 | a & 16777215;
+   public int Method3(int a, int a, int a) {
+      int var4 = a >> 24 & 255;
+      float var5 = this.Field958.nextFloat();
+      float var6 = Class776.Method1708(this.Field956, this.Field957, var5);
+      return (int)((float)var4 * var6) << 24 | a & 16777215;
    }
 
    public String toString() {

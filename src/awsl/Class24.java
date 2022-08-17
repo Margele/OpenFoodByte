@@ -20,11 +20,11 @@ public class Class24 extends Class119 {
       return this.Field236;
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      a = (a + a + a) / 3;
+   public int Method3(int a, int a, int a) {
+      int var4 = a >> 16 & 255;
+      int var5 = a >> 8 & 255;
+      int var6 = a & 255;
+      a = (var4 + var5 + var6) / 3;
       return this.Field236.Method283((float)a / 255.0F);
    }
 

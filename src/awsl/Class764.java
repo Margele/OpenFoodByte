@@ -22,10 +22,10 @@ class Class764 {
 
    public void Method1776(PrintStream a, int a) {
       Class193.Method1269();
-      int a = 0;
-      if (a < a) {
+      int var4 = 0;
+      if (var4 < a) {
          System.out.print(' ');
-         ++a;
+         ++var4;
       }
 
       if (this.Field3385 == 0) {
@@ -33,13 +33,13 @@ class Class764 {
       }
 
       System.out.println(this.Field3389 + ": count=" + this.Field3385 + " red=" + this.Field3386 / this.Field3385 + " green=" + this.Field3387 / this.Field3385 + " blue=" + this.Field3388 / this.Field3385);
-      int a = 0;
-      if (a < 8) {
-         if (this.Field3383[a] != null) {
-            this.Field3383[a].Method1776(a, a + 2);
+      byte var5 = 0;
+      if (var5 < 8) {
+         if (this.Field3383[var5] != null) {
+            this.Field3383[var5].Method1776(a, a + 2);
          }
 
-         a = a + 1;
+         var4 = var5 + 1;
       }
 
    }

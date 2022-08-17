@@ -57,7 +57,7 @@ public class Class15 extends Class267 {
       this.Field196 = a;
       this.Field197 = a;
       this.Field198 = new ArrayList(0);
-      boolean a = (a & 1024) != 0;
+      boolean var7 = (a & 1024) != 0;
       this.Field212 = new ArrayList(5);
       this.Field209 = new ArrayList();
       this.Field198.addAll(Arrays.asList(a));
@@ -76,39 +76,39 @@ public class Class15 extends Class267 {
       return new Class124(new Class688(this, 0));
    }
 
-   public Class148 Method1969(String a, boolean a1) {
-      Class124 a = new Class124(a);
+   public Class148 Method1969(String a, boolean a) {
+      Class124 var3 = new Class124(a);
       if (this.Field200 == null) {
          this.Field200 = new ArrayList(1);
       }
 
-      this.Field200.Method2530(a);
-      return a;
+      this.Field200.Method2530(var3);
+      return var3;
    }
 
-   public Class148 Method1970(int a, Class31 a, String a, boolean a3) {
-      Class126 a = new Class126(a, a, a);
+   public Class148 Method1970(int a, Class31 a, String a, boolean a) {
+      Class126 var5 = new Class126(a, a, a);
       if (this.Field202 == null) {
          this.Field202 = new ArrayList(1);
       }
 
-      this.Field202.Method2530(a);
-      return a;
+      this.Field202.Method2530(var5);
+      return var5;
    }
 
-   public Class148 Method1971(int a, String a, boolean a2) {
-      Class124 a = new Class124(a);
+   public Class148 Method1971(int a, String a, boolean a) {
+      Class124 var4 = new Class124(a);
       if (this.Field206 == null) {
-         int a = b.Method3211(this.Field196).length;
-         this.Field206 = (List[])(new List[a]);
+         int var5 = b.Method3211(this.Field196).length;
+         this.Field206 = (List[])(new List[var5]);
       }
 
       if (this.Field206[a] == null) {
          this.Field206[a] = new ArrayList(1);
       }
 
-      this.Field206[a].Method2530(a);
-      return a;
+      this.Field206[a].Method2530(var4);
+      return var4;
    }
 
    public void Method1980(Class136 a) {
@@ -122,7 +122,7 @@ public class Class15 extends Class267 {
    public void Method1652() {
    }
 
-   public void Method1845(int a, int a, Object[] a2, int a, Object[] a4) {
+   public void Method1845(int a, int a, Object[] a, int a, Object[] a) {
       this.Field208.Method194(new Class95(a, a, (Object[])null, a, (Object[])null));
    }
 
@@ -196,47 +196,47 @@ public class Class15 extends Class267 {
       this.Field208.Method194(new Class120(a, a));
    }
 
-   public Class148 Method1973(int a, Class31 a, String a, boolean a3) {
-      a a;
-      for(a = this.Field208.Method185(); a.Method3640() == -1; a = a.Method3641()) {
+   public Class148 Method1973(int a, Class31 a, String a, boolean a) {
+      a var5;
+      for(var5 = this.Field208.Method185(); var5.Method3640() == -1; var5 = var5.Method3641()) {
       }
 
-      Class126 a = new Class126(a, a, a);
-      if (a.Field797 == null) {
-         a.Field797 = new ArrayList(1);
+      Class126 var6 = new Class126(a, a, a);
+      if (var5.Field797 == null) {
+         var5.Field797 = new ArrayList(1);
       }
 
-      a.Field797.Method2530(a);
-      return a;
+      var5.Field797.Method2530(var6);
+      return var6;
    }
 
    public void Method1960(Class264 a, Class264 a, Class264 a, String a) {
       this.Field209.Method2530(new Class794(this.Method3440(a), this.Method3440(a), this.Method3440(a), a));
    }
 
-   public Class148 Method1974(int a, Class31 a, String a, boolean a3) {
-      Class794 a = (Class794)this.Field209.get((a & 16776960) >> 8);
-      Class126 a = new Class126(a, a, a);
-      if (a.Field3563 == null) {
-         a.Field3563 = new ArrayList(1);
+   public Class148 Method1974(int a, Class31 a, String a, boolean a) {
+      Class794 var5 = (Class794)this.Field209.get((a & 16776960) >> 8);
+      Class126 var6 = new Class126(a, a, a);
+      if (var5.Field3563 == null) {
+         var5.Field3563 = new ArrayList(1);
       }
 
-      a.Field3563.Method2530(a);
-      return a;
+      var5.Field3563.Method2530(var6);
+      return var6;
    }
 
    public void Method1843(String a, String a, String a, Class264 a, Class264 a, int a) {
       this.Field212.Method2530(new Class790(a, a, a, this.Method3440(a), this.Method3440(a), a));
    }
 
-   public Class148 Method1844(int a, Class31 a, Class264[] a, Class264[] a, int[] a, String a, boolean a6) {
-      Class128 a = new Class128(a, a, this.Method3441(a), this.Method3441(a), a, a);
+   public Class148 Method1844(int a, Class31 a, Class264[] a, Class264[] a, int[] a, String a, boolean a) {
+      Class128 var8 = new Class128(a, a, this.Method3441(a), this.Method3441(a), a, a);
       if (this.Field213 == null) {
          this.Field213 = new ArrayList(1);
       }
 
-      this.Field213.Method2530(a);
-      return a;
+      this.Field213.Method2530(var8);
+      return var8;
    }
 
    public void Method1981(int a, Class264 a) {
@@ -260,28 +260,28 @@ public class Class15 extends Class267 {
    }
 
    private Class104[] Method3441(Class264[] a) {
-      Class104[] a = new Class104[a.length];
+      Class104[] var2 = new Class104[a.length];
 
-      for(int a = 0; a < a.length; ++a) {
-         a[a] = this.Method3440(a[a]);
+      for(int var3 = 0; var3 < a.length; ++var3) {
+         var2[var3] = this.Method3440(a[var3]);
       }
 
-      return a;
+      return var2;
    }
 
    private Object[] Method3442(Object[] a) {
-      Object[] a = new Object[a.length];
+      Object[] var2 = new Object[a.length];
 
-      for(int a = 0; a < a.length; ++a) {
-         Object a = a[a];
-         if (a instanceof Class264) {
-            a = this.Method3440((Class264)a);
+      for(int var3 = 0; var3 < a.length; ++var3) {
+         Object var4 = a[var3];
+         if (var4 instanceof Class264) {
+            var4 = this.Method3440((Class264)var4);
          }
 
-         a[a] = a;
+         var2[var3] = var4;
       }
 
-      return a;
+      return var2;
    }
 
    public void Method1869(int a) {
@@ -294,33 +294,33 @@ public class Class15 extends Class267 {
             throw new RuntimeException();
          }
 
-         int a = this.Field209 == null ? 0 : this.Field209.Method1799();
+         int var2 = this.Field209 == null ? 0 : this.Field209.Method1799();
 
-         int a;
-         for(a = 0; a < a; ++a) {
-            Class794 a = (Class794)this.Field209.get(a);
-            if (a.Field3563 != null && a.Field3563.Method1799() > 0) {
+         int var3;
+         for(var3 = 0; var3 < var2; ++var3) {
+            Class794 var4 = (Class794)this.Field209.get(var3);
+            if (var4.Field3563 != null && var4.Field3563.Method1799() > 0) {
                throw new RuntimeException();
             }
 
-            if (a.Field3564 != null && a.Field3564.Method1799() > 0) {
+            if (var4.Field3564 != null && var4.Field3564.Method1799() > 0) {
                throw new RuntimeException();
             }
          }
 
-         for(a = 0; a < this.Field208.Method183(); ++a) {
-            a a = this.Field208.Method186(a);
-            if (a.Field797 != null && a.Field797.Method1799() > 0) {
+         for(var3 = 0; var3 < this.Field208.Method183(); ++var3) {
+            a var6 = this.Field208.Method186(var3);
+            if (var6.Field797 != null && var6.Field797.Method1799() > 0) {
                throw new RuntimeException();
             }
 
-            if (a.Field798 != null && a.Field798.Method1799() > 0) {
+            if (var6.Field798 != null && var6.Field798.Method1799() > 0) {
                throw new RuntimeException();
             }
 
-            if (a instanceof Class98) {
-               boolean a = ((Class98)a).Field827;
-               if (a != (a.Field796 == 185)) {
+            if (var6 instanceof Class98) {
+               boolean var5 = ((Class98)var6).Field827;
+               if (var5 != (var6.Field796 == 185)) {
                   throw new RuntimeException();
                }
             }
@@ -338,134 +338,134 @@ public class Class15 extends Class267 {
    }
 
    public void Method3443(Class167 a) {
-      String[] a = new String[this.Field198.Method1799()];
-      this.Field198.toArray(a);
-      Class267 a = a.Method1451(this.Field194, this.Field195, this.Field196, this.Field197, a);
-      this.Method3444(a);
+      String[] var2 = new String[this.Field198.Method1799()];
+      this.Field198.toArray(var2);
+      Class267 var3 = a.Method1451(this.Field194, this.Field195, this.Field196, this.Field197, var2);
+      this.Method3444(var3);
    }
 
    public void Method3444(Class267 a) {
-      int a = Method1984();
-      int a = this.Field199 == null ? 0 : this.Field199.Method1799();
-      int a = 0;
-      if (a < a) {
-         Class792 a = (Class792)this.Field199.get(a);
-         a.Method1979(a.Field3556, a.Field3557);
-         ++a;
+      int var2 = Method1984();
+      int var5 = this.Field199 == null ? 0 : this.Field199.Method1799();
+      int var3 = 0;
+      if (var3 < var5) {
+         Class792 var6 = (Class792)this.Field199.get(var3);
+         a.Method1979(var6.Field3556, var6.Field3557);
+         ++var3;
       }
 
       if (this.Field205 != null) {
-         Class148 a = a.Method1968();
-         Class124.Method647(a, (String)null, this.Field205);
-         a.Method401();
+         Class148 var10 = a.Method1968();
+         Class124.Method647(var10, (String)null, this.Field205);
+         var10.Method401();
       }
 
-      a = this.Field200 == null ? 0 : this.Field200.Method1799();
-      int a = 0;
-      Class124 a;
-      if (a < a) {
-         a = (Class124)this.Field200.get(a);
-         a.Method646(a.Method1969(a.Field973, true));
-         a = a + 1;
+      var5 = this.Field200 == null ? 0 : this.Field200.Method1799();
+      byte var8 = 0;
+      Class124 var11;
+      if (var8 < var5) {
+         var11 = (Class124)this.Field200.get(var8);
+         var11.Method646(a.Method1969(var11.Field973, true));
+         var3 = var8 + 1;
       }
 
-      a = this.Field201 == null ? 0 : this.Field201.Method1799();
-      a = 0;
-      if (a < a) {
-         a = (Class124)this.Field201.get(a);
-         a.Method646(a.Method1969(a.Field973, false));
-         a = a + 1;
+      var5 = this.Field201 == null ? 0 : this.Field201.Method1799();
+      var8 = 0;
+      if (var8 < var5) {
+         var11 = (Class124)this.Field201.get(var8);
+         var11.Method646(a.Method1969(var11.Field973, false));
+         var3 = var8 + 1;
       }
 
-      a = this.Field202 == null ? 0 : this.Field202.Method1799();
-      a = 0;
-      Class126 a;
-      if (a < a) {
-         a = (Class126)this.Field202.get(a);
-         a.Method646(a.Method1970(a.Field975, a.Field976, a.Field973, true));
-         a = a + 1;
+      var5 = this.Field202 == null ? 0 : this.Field202.Method1799();
+      var8 = 0;
+      Class126 var12;
+      if (var8 < var5) {
+         var12 = (Class126)this.Field202.get(var8);
+         var12.Method646(a.Method1970(var12.Field975, var12.Field976, var12.Field973, true));
+         var3 = var8 + 1;
       }
 
-      a = this.Field203 == null ? 0 : this.Field203.Method1799();
-      a = 0;
-      if (a < a) {
-         a = (Class126)this.Field203.get(a);
-         a.Method646(a.Method1970(a.Field975, a.Field976, a.Field973, false));
-         a = a + 1;
+      var5 = this.Field203 == null ? 0 : this.Field203.Method1799();
+      var8 = 0;
+      if (var8 < var5) {
+         var12 = (Class126)this.Field203.get(var8);
+         var12.Method646(a.Method1970(var12.Field975, var12.Field976, var12.Field973, false));
+         var3 = var8 + 1;
       }
 
-      a = this.Field206 == null ? 0 : this.Field206.length;
-      a = 0;
-      int a;
-      Class124 a;
-      List a;
-      if (a < a) {
-         a = this.Field206[a];
-         a = 0;
-         if (a < a.Method1799()) {
-            a = (Class124)a.get(a);
-            a.Method646(a.Method1971(a, a.Field973, true));
-            ++a;
+      var5 = this.Field206 == null ? 0 : this.Field206.length;
+      var8 = 0;
+      int var4;
+      Class124 var7;
+      List var13;
+      if (var8 < var5) {
+         var13 = this.Field206[var8];
+         var4 = 0;
+         if (var4 < var13.Method1799()) {
+            var7 = (Class124)var13.get(var4);
+            var7.Method646(a.Method1971(var8, var7.Field973, true));
+            ++var4;
          }
 
-         a = a + 1;
+         var3 = var8 + 1;
       }
 
-      a = this.Field207 == null ? 0 : this.Field207.length;
-      a = 0;
-      if (a < a) {
-         a = this.Field207[a];
-         byte a = 0;
-         if (a < a.Method1799()) {
-            a = (Class124)a.get(a);
-            a.Method646(a.Method1971(a, a.Field973, false));
-            a = a + 1;
+      var5 = this.Field207 == null ? 0 : this.Field207.length;
+      var8 = 0;
+      if (var8 < var5) {
+         var13 = this.Field207[var8];
+         byte var9 = 0;
+         if (var9 < var13.Method1799()) {
+            var7 = (Class124)var13.get(var9);
+            var7.Method646(a.Method1971(var8, var7.Field973, false));
+            var4 = var9 + 1;
          }
 
-         a = a + 1;
+         var3 = var8 + 1;
       }
 
       if (this.Field215) {
          this.Field208.Method205();
       }
 
-      a = this.Field204 == null ? 0 : this.Field204.Method1799();
-      a = 0;
-      if (a < a) {
-         a.Method1980((Class136)this.Field204.get(a));
-         a = a + 1;
+      var5 = this.Field204 == null ? 0 : this.Field204.Method1799();
+      var8 = 0;
+      if (var8 < var5) {
+         a.Method1980((Class136)this.Field204.get(var8));
+         var3 = var8 + 1;
       }
 
       if (this.Field208.Method183() > 0) {
          a.Method1652();
-         a = this.Field209 == null ? 0 : this.Field209.Method1799();
-         a = 0;
-         if (a < a) {
-            ((Class794)this.Field209.get(a)).Method795(a);
-            ((Class794)this.Field209.get(a)).Method796(a);
-            a = a + 1;
+         var5 = this.Field209 == null ? 0 : this.Field209.Method1799();
+         var8 = 0;
+         if (var8 < var5) {
+            ((Class794)this.Field209.get(var8)).Method795(var8);
+            ((Class794)this.Field209.get(var8)).Method796(a);
+            var3 = var8 + 1;
          }
 
          this.Field208.Method189(a);
-         a = this.Field212 == null ? 0 : this.Field212.Method1799();
-         a = 0;
-         if (a < a) {
-            ((Class790)this.Field212.get(a)).Method751(a);
-            a = a + 1;
+         var5 = this.Field212 == null ? 0 : this.Field212.Method1799();
+         var8 = 0;
+         if (var8 < var5) {
+            ((Class790)this.Field212.get(var8)).Method751(a);
+            var3 = var8 + 1;
          }
 
-         a = this.Field213 == null ? 0 : this.Field213.Method1799();
-         a = 0;
-         if (a < a) {
-            ((Class128)this.Field213.get(a)).Method679(a, true);
-            a = a + 1;
+         var5 = this.Field213 == null ? 0 : this.Field213.Method1799();
+         var8 = 0;
+         if (var8 < var5) {
+            ((Class128)this.Field213.get(var8)).Method679(a, true);
+            var3 = var8 + 1;
          }
 
-         a = this.Field214 == null ? 0 : this.Field214.Method1799();
-         a = 0;
-         if (a < a) {
-            ((Class128)this.Field214.get(a)).Method679(a, false);
-            a = a + 1;
+         var5 = this.Field214 == null ? 0 : this.Field214.Method1799();
+         var8 = 0;
+         if (var8 < var5) {
+            ((Class128)this.Field214.get(var8)).Method679(a, false);
+            var3 = var8 + 1;
          }
 
          a.Method1842(this.Field210, this.Field211);
@@ -474,8 +474,8 @@ public class Class15 extends Class267 {
 
       a.Method1653();
       if (a.trash() == null) {
-         ++a;
-         Method1880(a);
+         ++var2;
+         Method1880(var2);
       }
 
    }

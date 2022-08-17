@@ -12,8 +12,8 @@ final class Class817 extends Class831 {
    }
 
    public void Method3501(String a, Attributes a) throws SAXException {
-      Class148 a = (Class148)this.Field3654.Method1963();
-      a.Method397(a.getValue("name"), this.Method3651(a.getValue("desc"), a.getValue("value")));
+      Class148 var3 = (Class148)this.Field3654.Method1963();
+      var3.Method397(a.getValue("name"), this.Method3651(a.getValue("desc"), a.getValue("value")));
    }
 
    private static SAXException Method3677(SAXException sAXException) {

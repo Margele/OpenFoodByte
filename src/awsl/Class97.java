@@ -44,13 +44,13 @@ public class Class97 extends Class119 {
       return this.Field822;
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = a & -16777216;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
+   public int Method3(int a, int a, int a) {
+      int var5 = a & -16777216;
+      int var6 = a >> 16 & 255;
+      int var7 = a >> 8 & 255;
+      int var8 = a & 255;
       Class193.Method1270();
-      Color.RGBtoHSB(a, a, a, this.Field823);
+      Color.RGBtoHSB(var6, var7, var8, this.Field823);
       float[] var10000 = this.Field823;
       var10000[0] += this.Field820;
       if (this.Field823[0] < 0.0F) {
@@ -79,7 +79,7 @@ public class Class97 extends Class119 {
       }
 
       a = Color.HSBtoRGB(this.Field823[0], this.Field823[1], this.Field823[2]);
-      return a | a & 16777215;
+      return var5 | a & 16777215;
    }
 
    public String toString() {

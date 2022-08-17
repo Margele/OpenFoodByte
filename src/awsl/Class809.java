@@ -43,34 +43,34 @@ public class Class809 extends Class786 implements Class45 {
          case 17:
             return Class782.Field3514;
          case 18:
-            Object a = ((Class106)a).Field850;
-            if (a instanceof Integer) {
+            Object var2 = ((Class106)a).Field850;
+            if (var2 instanceof Integer) {
                return Class782.Field3514;
-            } else if (a instanceof Float) {
+            } else if (var2 instanceof Float) {
                return Class782.Field3515;
-            } else if (a instanceof Long) {
+            } else if (var2 instanceof Long) {
                return Class782.Field3516;
-            } else if (a instanceof Double) {
+            } else if (var2 instanceof Double) {
                return Class782.Field3517;
-            } else if (a instanceof String) {
+            } else if (var2 instanceof String) {
                return this.Method3360(b.Method3205("java/lang/String"));
-            } else if (a instanceof b) {
-               int a = ((b)a).Method3217();
-               if (a != 10 && a != 9) {
-                  if (a == 11) {
+            } else if (var2 instanceof b) {
+               int var3 = ((b)var2).Method3217();
+               if (var3 != 10 && var3 != 9) {
+                  if (var3 == 11) {
                      return this.Method3360(b.Method3205("java/lang/invoke/MethodType"));
                   }
 
-                  throw new IllegalArgumentException("Illegal LDC constant " + a);
+                  throw new IllegalArgumentException("Illegal LDC constant " + var2);
                }
 
                return this.Method3360(b.Method3205("java/lang/Class"));
             } else {
-               if (a instanceof Class279) {
+               if (var2 instanceof Class279) {
                   return this.Method3360(b.Method3205("java/lang/invoke/MethodHandle"));
                }
 
-               throw new IllegalArgumentException("Illegal LDC constant " + a);
+               throw new IllegalArgumentException("Illegal LDC constant " + var2);
             }
          case 168:
             return Class782.Field3519;
@@ -87,8 +87,8 @@ public class Class809 extends Class786 implements Class45 {
       return a;
    }
 
-   public Class782 Method3363(a a, Class782 a1) throws Class731 {
-      String a;
+   public Class782 Method3363(a a, Class782 a) throws Class731 {
+      String var3;
       switch (a.Method3640()) {
          case 116:
          case 132:
@@ -194,15 +194,15 @@ public class Class809 extends Class786 implements Class45 {
                   throw new Class731(a, "Invalid array type");
             }
          case 189:
-            a = ((Class110)a).Field871;
-            return this.Method3360(b.Method3204("[" + b.Method3205(a)));
+            var3 = ((Class110)a).Field871;
+            return this.Method3360(b.Method3204("[" + b.Method3205(var3)));
          case 190:
             return Class782.Field3514;
          case 191:
             return null;
          case 192:
-            a = ((Class110)a).Field871;
-            return this.Method3360(b.Method3205(a));
+            var3 = ((Class110)a).Field871;
+            return this.Method3360(b.Method3205(var3));
          case 193:
             return Class782.Field3514;
          case 194:
@@ -213,7 +213,7 @@ public class Class809 extends Class786 implements Class45 {
       }
    }
 
-   public Class782 Method3364(a a, Class782 a1, Class782 a2) throws Class731 {
+   public Class782 Method3364(a a, Class782 a, Class782 a) throws Class731 {
       switch (a.Method3640()) {
          case 46:
          case 51:
@@ -363,20 +363,20 @@ public class Class809 extends Class786 implements Class45 {
       }
    }
 
-   public Class782 Method3365(a a, Class782 a1, Class782 a2, Class782 a3) throws Class731 {
+   public Class782 Method3365(a a, Class782 a, Class782 a, Class782 a) throws Class731 {
       return null;
    }
 
-   public Class782 Method3366(a a, List a1) throws Class731 {
-      int a = a.Method3640();
-      if (a == 197) {
+   public Class782 Method3366(a a, List a) throws Class731 {
+      int var3 = a.Method3640();
+      if (var3 == 197) {
          return this.Method3360(b.Method3204(((Class120)a).Field952));
       } else {
-         return a == 186 ? this.Method3360(b.Method3213(((Class88)a).Field760)) : this.Method3360(b.Method3213(((Class98)a).Field826));
+         return var3 == 186 ? this.Method3360(b.Method3213(((Class88)a).Field760)) : this.Method3360(b.Method3213(((Class98)a).Field826));
       }
    }
 
-   public void Method3367(a a, Class782 a1, Class782 a2) throws Class731 {
+   public void Method3367(a a, Class782 a, Class782 a) throws Class731 {
    }
 
    public Class782 Method3368(Class782 a, Class782 a) {

@@ -75,14 +75,14 @@ public class NameTag extends Module {
 
    @EventTarget(3)
    public void Method802(EventRender3D a) {
-      List a = mc.theWorld.getLoadedEntityList();
-      a.sort(Comparator.comparingDouble(NameTag::Method2246));
-      Collections.reverse(a);
-      Iterator var3 = a.Method1383();
+      List var2 = mc.theWorld.getLoadedEntityList();
+      var2.sort(Comparator.comparingDouble(NameTag::Method2246));
+      Collections.reverse(var2);
+      Iterator var3 = var2.Method1383();
 
       while(true) {
-         Entity a;
-         EntityLivingBase a;
+         Entity var4;
+         EntityLivingBase var5;
          do {
             do {
                do {
@@ -90,138 +90,138 @@ public class NameTag extends Module {
                      return;
                   }
 
-                  a = (Entity)var3.Method933();
-               } while(!(a instanceof EntityLivingBase));
-            } while(a instanceof EntityPlayerSP);
+                  var4 = (Entity)var3.Method933();
+               } while(!(var4 instanceof EntityLivingBase));
+            } while(var4 instanceof EntityPlayerSP);
 
-            a = (EntityLivingBase)a;
-         } while(AntiBot.botList.contains(a) && !Class305.Method697(a) && !this.Field2232.getValue());
+            var5 = (EntityLivingBase)var4;
+         } while(AntiBot.botList.contains(var4) && !Class305.Method697(var5) && !this.Field2232.getValue());
 
-         if (this.Method965(a)) {
-            double a = (double)ReflectionUtils.getRenderPartialTicks();
-            double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-            double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-            double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-            this.Method2282(a, a.getName(), a, a, a);
+         if (this.Method965(var5)) {
+            double var6 = (double)ReflectionUtils.getRenderPartialTicks();
+            double var8 = var5.lastTickPosX + (var5.posX - var5.lastTickPosX) * var6 - ReflectionUtils.getRenderPosX();
+            double var10 = var5.lastTickPosY + (var5.posY - var5.lastTickPosY) * var6 - ReflectionUtils.getRenderPosY();
+            double var12 = var5.lastTickPosZ + (var5.posZ - var5.lastTickPosZ) * var6 - ReflectionUtils.getRenderPosZ();
+            this.Method2282(var5, var5.getName(), var8, var10, var12);
          }
       }
    }
 
    private void Method2282(EntityLivingBase a, String a, double a, double a, double a) {
-      ScaledResolution a = new ScaledResolution(mc);
-      FontRenderer a = mc.fontRendererObj;
+      ScaledResolution var10 = new ScaledResolution(mc);
+      FontRenderer var11 = mc.fontRendererObj;
       Class492.Method2239();
-      float a = mc.thePlayer.getDistanceToEntity(a) / 6.0F;
-      if (a < 1.0F) {
-         a = 1.0F;
+      float var12 = mc.thePlayer.getDistanceToEntity(a) / 6.0F;
+      if (var12 < 1.0F) {
+         var12 = 1.0F;
       }
 
       a += a.isSneaking() ? 0.5 : 0.7;
-      float a = a * this.Field2233.getFloatValueCast();
-      a /= 100.0F;
+      float var13 = var12 * this.Field2233.getFloatValueCast();
+      var13 /= 100.0F;
       a = a.getDisplayName().getFormattedText();
-      String a = "";
+      String var15 = "";
       if (AntiBot.botList.contains(a)) {
-         a = "§8[BOT] ";
+         var15 = "§8[BOT] ";
       }
 
-      a = "";
-      String a = "";
+      var15 = "";
+      String var16 = "";
       if (Class305.Method704(a)) {
-         a = "§a[T] ";
+         var16 = "§a[T] ";
       }
 
-      a = "";
-      String a = "";
+      var16 = "";
+      String var17 = "";
       if (Class305.Method697(a)) {
-         a = "§b[F] ";
+         var17 = "§b[F] ";
       }
 
-      String a = "";
+      String var18 = "";
       if (MurderMystery.Field2300.contains(a)) {
-         a = EnumChatFormatting.RED + "[Murder] ";
+         var18 = EnumChatFormatting.RED + "[Murder] ";
       }
 
       if (MurderMystery.Field2301.contains(a)) {
-         a = EnumChatFormatting.BLUE + "[Good] ";
+         var18 = EnumChatFormatting.BLUE + "[Good] ";
       }
 
-      String a = "";
+      String var19 = "";
       if (Class305.Method700(a)) {
-         a = EnumChatFormatting.RED + "[Target] ";
+         var19 = EnumChatFormatting.RED + "[Target] ";
       }
 
-      String a = "";
+      String var20 = "";
       if (mc.getNetHandler().getPlayerInfo(a.getUniqueID()) != null) {
-         a = " Ping-" + mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime();
+         var20 = " Ping-" + mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime();
       }
 
-      String a = "";
+      String var21 = "";
       if (!GlobalModule.INSTANCE.balant.Field2823.isEmpty() && PermissionManager.canUseFeature("nametag")) {
          Iterator var22 = GlobalModule.INSTANCE.balant.Field2823.Method1383();
          if (var22.Method932()) {
-            Class606 a = (Class606)var22.Method933();
-            if (a.getName().equals(a.Field2841)) {
-               if (a.Field2838.equalsIgnoreCase("FoodByte")) {
-                  a = "§7(§d" + a.Field2840 + "§7)§r";
+            Class606 var23 = (Class606)var22.Method933();
+            if (a.getName().equals(var23.Field2841)) {
+               if (var23.Field2838.equalsIgnoreCase("FoodByte")) {
+                  var21 = "§7(§d" + var23.Field2840 + "§7)§r";
                }
 
-               if (a.Field2838.equalsIgnoreCase("PowerX")) {
-                  a = "§7(§b" + a.Field2840 + "§7)§r";
+               if (var23.Field2838.equalsIgnoreCase("PowerX")) {
+                  var21 = "§7(§b" + var23.Field2840 + "§7)§r";
                }
 
-               a = "§7(§2" + a.Field2840 + "§7)§r";
-               if (a.Field2847) {
+               var21 = "§7(§2" + var23.Field2840 + "§7)§r";
+               if (var23.Field2847) {
                   if (GlobalModule.INSTANCE.balant.Field2827.Method3740() >= 5) {
-                     if (a.Field2838.equalsIgnoreCase("FoodByte")) {
-                        a = ("§7[§d" + a.Field2840 + "§7]§r").replace(a.Field2840, "§o" + a.Field2840);
+                     if (var23.Field2838.equalsIgnoreCase("FoodByte")) {
+                        var21 = ("§7[§d" + var23.Field2840 + "§7]§r").replace(var23.Field2840, "§o" + var23.Field2840);
                      }
 
-                     if (a.Field2838.equalsIgnoreCase("PowerX")) {
-                        a = ("§7[§b" + a.Field2840 + "§7]§r").replace(a.Field2840, "§o" + a.Field2840);
+                     if (var23.Field2838.equalsIgnoreCase("PowerX")) {
+                        var21 = ("§7[§b" + var23.Field2840 + "§7]§r").replace(var23.Field2840, "§o" + var23.Field2840);
                      }
 
-                     a = ("§7[§2" + a.Field2840 + "§7]§r").replace(a.Field2840, "§o" + a.Field2840);
+                     var21 = ("§7[§2" + var23.Field2840 + "§7]§r").replace(var23.Field2840, "§o" + var23.Field2840);
                   }
 
-                  a = "";
+                  var21 = "";
                }
             }
          }
       }
 
-      String a = a + a + a + (Class305.Method697(a) ? a : a) + a;
-      double a = (double)a.getHealth();
-      BigDecimal a = BigDecimal.valueOf((double)a.getHealth());
-      a = a.setScale(1, RoundingMode.HALF_UP);
-      double a = a.doubleValue();
-      double a = BigDecimal.valueOf((double)a.getAbsorptionAmount()).setScale(1, RoundingMode.HALF_UP).doubleValue();
-      String a;
-      if (a > 20.0) {
-         a = " §b";
+      String var47 = var15 + var18 + var19 + (Class305.Method697(a) ? a : a) + var21;
+      double var48 = (double)a.getHealth();
+      BigDecimal var25 = BigDecimal.valueOf((double)a.getHealth());
+      var25 = var25.setScale(1, RoundingMode.HALF_UP);
+      double var26 = var25.doubleValue();
+      double var28 = BigDecimal.valueOf((double)a.getAbsorptionAmount()).setScale(1, RoundingMode.HALF_UP).doubleValue();
+      String var30;
+      if (var26 > 20.0) {
+         var30 = " §b";
       }
 
-      if (a >= 10.0) {
-         a = " §a";
+      if (var26 >= 10.0) {
+         var30 = " §a";
       }
 
-      if (a >= 3.0) {
-         a = " §e";
+      if (var26 >= 3.0) {
+         var30 = " §e";
       }
 
-      a = " §4";
-      String a = "";
+      var30 = " §4";
+      String var31 = "";
       if (this.Field2224.getValue()) {
-         a = a + String.valueOf(a) + (a > 0.0 ? " §6" + a : "");
+         var31 = var30 + String.valueOf(var26) + (var28 > 0.0 ? " §6" + var28 : "");
       }
 
-      a = "";
-      String a = "";
+      var31 = "";
+      String var32 = "";
       if (this.Field2225.getValue()) {
-         a = "§a[§6" + (int)a.getDistanceToEntity(mc.thePlayer) + "§a]§r ";
+         var32 = "§a[§6" + (int)a.getDistanceToEntity(mc.thePlayer) + "§a]§r ";
       }
 
-      a = "";
+      var32 = "";
       GL11.glPushMatrix();
       GL11.glTranslatef((float)a, (float)a + a.height / 1.25F, (float)a);
       GL11.glNormal3f(0.0F, 1.0F, 0.0F);
@@ -232,120 +232,120 @@ public class NameTag extends Module {
 
       GL11.glRotatef(-mc.getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
       GL11.glRotatef(mc.gameSettings.thirdPersonView == 2 ? -mc.getRenderManager().playerViewX : mc.getRenderManager().playerViewX, 1.0F, 0.0F, 0.0F);
-      GL11.glScalef(-a, -a, a);
+      GL11.glScalef(-var13, -var13, var13);
       GL11.glDisable(2929);
-      int a = a.getScaledHeight() / 2;
-      int a = a.getScaledHeight() / 2;
+      int var33 = var10.getScaledHeight() / 2;
+      int var34 = var10.getScaledHeight() / 2;
       GL11.glBlendFunc(770, 771);
-      String a = a + a + a;
-      int a = (int)((float)a.getStringWidth(a) / 2.0F);
-      int a = (new Color(0, 0, 0, 0)).getRGB();
+      String var35 = var32 + var47 + var31;
+      int var36 = (int)((float)var11.getStringWidth(var35) / 2.0F);
+      int var37 = (new Color(0, 0, 0, 0)).getRGB();
       if (Class305.Method700(a)) {
-         a = (new Color(255, 0, 0, 150)).getRGB();
+         var37 = (new Color(255, 0, 0, 150)).getRGB();
       }
 
       if (Class305.Method697(a)) {
-         a = (new Color(0, 190, 255, 120)).getRGB();
+         var37 = (new Color(0, 190, 255, 120)).getRGB();
       }
 
       if (Class305.Method704(a)) {
-         a = (new Color(0, 255, 0, 120)).getRGB();
+         var37 = (new Color(0, 255, 0, 120)).getRGB();
       }
 
-      RenderUtils.Method1108((double)(-a) - 2.0, -15.0, (double)(a + 1), -4.0, 0.5, (new Color(0, 0, 0, 80)).getRGB(), a);
+      RenderUtils.Method1108((double)(-var36) - 2.0, -15.0, (double)(var36 + 1), -4.0, 0.5, (new Color(0, 0, 0, 80)).getRGB(), var37);
       GL11.glDepthMask(false);
-      a.drawString(a, (int)((float)(-a.getStringWidth(a)) / 2.0F), a.FONT_HEIGHT - 22, 16777215);
+      var11.drawString(var35, (int)((float)(-var11.getStringWidth(var35)) / 2.0F), var11.FONT_HEIGHT - 22, 16777215);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glDepthMask(true);
       GL11.glScaled(0.6000000238418579, 0.6000000238418579, 0.6000000238418579);
       GL11.glScaled(1.0, 1.0, 1.0);
-      int a = (new Color(188, 0, 0)).getRGB();
+      int var38 = (new Color(188, 0, 0)).getRGB();
       if (a.getHealth() > 20.0F) {
-         a = -65292;
+         var38 = -65292;
       }
 
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glScaled(1.5, 1.5, 1.5);
-      int a = 0;
-      int a;
+      byte var39 = 0;
+      int var55;
       if (this.Field2226.getBooleanValue() && a instanceof EntityPlayer) {
-         int a = 0;
+         int var40 = 0;
          ItemStack[] var41 = ((EntityPlayer)a).inventory.armorInventory;
          int var42 = var41.length;
          int var43 = 0;
          if (var43 < var42) {
-            ItemStack a = var41[var43];
-            a -= 10;
+            ItemStack var44 = var41[var43];
+            var40 -= 10;
             ++var43;
          }
 
          if (a.getHeldItem() != null) {
-            a -= 8;
-            ItemStack a = a.getHeldItem().copy();
-            if (a.hasEffect() && (a.getItem() instanceof ItemTool || a.getItem() instanceof ItemArmor)) {
-               a.stackSize = 1;
+            var40 -= 8;
+            ItemStack var49 = a.getHeldItem().copy();
+            if (var49.hasEffect() && (var49.getItem() instanceof ItemTool || var49.getItem() instanceof ItemArmor)) {
+               var49.stackSize = 1;
             }
 
-            this.Method2283(a, a, -36);
-            a += 20;
+            this.Method2283(var49, var40, -36);
+            var40 += 20;
          }
 
          ItemStack[] var51 = ((EntityPlayer)a).inventory.armorInventory;
          var43 = var51.length;
-         a = 0;
-         if (a < var43) {
-            ItemStack a = var51[a];
-            ItemStack a = a.copy();
-            if (a.hasEffect() && (a.getItem() instanceof ItemTool || a.getItem() instanceof ItemArmor)) {
-               a.stackSize = 1;
+         var55 = 0;
+         if (var55 < var43) {
+            ItemStack var45 = var51[var55];
+            ItemStack var46 = var45.copy();
+            if (var46.hasEffect() && (var46.getItem() instanceof ItemTool || var46.getItem() instanceof ItemArmor)) {
+               var46.stackSize = 1;
             }
 
-            this.Method2283(a, a, -36);
-            a += 20;
-            ++a;
+            this.Method2283(var46, var40, -36);
+            var40 += 20;
+            ++var55;
          }
 
-         a = 35;
+         var39 = 35;
       }
 
       if (!this.Field2226.getBooleanValue() && a instanceof EntityPlayer) {
-         a = 35;
+         var39 = 35;
       }
 
       if (this.Field2227.getBooleanValue() && a instanceof EntityPlayer) {
-         Collection a = a.getActivePotionEffects();
-         if (!a.isEmpty()) {
+         Collection var52 = a.getActivePotionEffects();
+         if (!var52.isEmpty()) {
             GL11.glScaled(0.5, 0.5, 0.5);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.9F);
-            int a = 0;
+            int var50 = 0;
             Iterator var53 = a.getActivePotionEffects().Method1383();
-            PotionEffect a;
+            PotionEffect var54;
             if (var53.Method932()) {
-               a = (PotionEffect)var53.Method933();
-               a -= 10;
+               var54 = (PotionEffect)var53.Method933();
+               var50 -= 10;
             }
 
             var53 = a.getActivePotionEffects().Method1383();
             if (var53.Method932()) {
-               a = (PotionEffect)var53.Method933();
-               a = a.getDuration();
-               if (a >= 300) {
+               var54 = (PotionEffect)var53.Method933();
+               var55 = var54.getDuration();
+               if (var55 >= 300) {
                   GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
                }
 
-               if (a >= 150) {
+               if (var55 >= 150) {
                   GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.4F);
                }
 
                GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.2F);
-               Potion a = Potion.potionTypes[a.getPotionID()];
-               if (a.hasStatusIcon()) {
-                  int a = a.getStatusIconIndex();
+               Potion var56 = Potion.potionTypes[var54.getPotionID()];
+               if (var56.hasStatusIcon()) {
+                  int var57 = var56.getStatusIconIndex();
                   mc.getTextureManager().bindTexture(Class393.Field1947);
-                  RenderUtils.Method1142(a, -90 + a, a % 8 * 18, 198 + a / 8 * 18, 18, 18);
+                  RenderUtils.Method1142(var50, -90 + var39, var57 % 8 * 18, 198 + var57 / 8 * 18, 18, 18);
                }
 
-               a += 20;
+               var50 += 20;
             }
          }
       }
@@ -356,10 +356,10 @@ public class NameTag extends Module {
    }
 
    public boolean Method965(EntityLivingBase a) {
-      boolean a = this.Field2228.getBooleanValue();
-      boolean a = this.Field2231.getBooleanValue();
-      boolean a = this.Field2229.getBooleanValue();
-      boolean a = this.Field2230.getBooleanValue();
+      boolean var2 = this.Field2228.getBooleanValue();
+      boolean var3 = this.Field2231.getBooleanValue();
+      boolean var4 = this.Field2229.getBooleanValue();
+      boolean var5 = this.Field2230.getBooleanValue();
       if (a.isInvisible()) {
          return false;
       } else if (a == mc.thePlayer.ridingEntity) {
@@ -394,7 +394,7 @@ public class NameTag extends Module {
       GlStateManager.enableAlpha();
       GlStateManager.disableBlend();
       GlStateManager.disableLighting();
-      double a = 0.5;
+      double var4 = 0.5;
       GlStateManager.scale(0.5, 0.5, 0.5);
       GlStateManager.disableDepth();
       this.Method2285(a, a, a - 17);
@@ -406,16 +406,16 @@ public class NameTag extends Module {
 
    public static void Method2284(float a, float a, float a, float a, float a, int a, int a) {
       Method2109(a, a, a, a, a);
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
+      float var7 = (float)(a >> 24 & 255) / 255.0F;
+      float var8 = (float)(a >> 16 & 255) / 255.0F;
+      float var9 = (float)(a >> 8 & 255) / 255.0F;
+      float var10 = (float)(a & 255) / 255.0F;
       GL11.glEnable(3042);
       GL11.glDisable(3553);
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(2848);
       GL11.glPushMatrix();
-      GL11.glColor4f(a, a, a, a);
+      GL11.glColor4f(var8, var9, var10, var7);
       GL11.glLineWidth(a);
       GL11.glBegin(1);
       GL11.glVertex2d((double)a, (double)a);
@@ -434,16 +434,16 @@ public class NameTag extends Module {
    }
 
    public static void Method2109(float a, float a, float a, float a, int a) {
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
+      float var5 = (float)(a >> 24 & 255) / 255.0F;
+      float var6 = (float)(a >> 16 & 255) / 255.0F;
+      float var7 = (float)(a >> 8 & 255) / 255.0F;
+      float var8 = (float)(a & 255) / 255.0F;
       GL11.glEnable(3042);
       GL11.glDisable(3553);
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(2848);
       GL11.glPushMatrix();
-      GL11.glColor4f(a, a, a, a);
+      GL11.glColor4f(var6, var7, var8, var5);
       GL11.glBegin(7);
       GL11.glVertex2d((double)a, (double)a);
       GL11.glVertex2d((double)a, (double)a);
@@ -457,23 +457,23 @@ public class NameTag extends Module {
    }
 
    private void Method2285(ItemStack a, int a, int a) {
-      NBTTagList a = a.getEnchantmentTagList();
-      int a = a;
-      if (a.tagCount() >= 6) {
+      NBTTagList var4 = a.getEnchantmentTagList();
+      int var5 = a;
+      if (var4.tagCount() >= 6) {
          mc.fontRendererObj.drawStringWithShadow("god", (float)(a * 2), (float)(a - 22), 16711680);
       } else {
-         for(int a = 0; a < a.tagCount(); ++a) {
-            short a = a.getCompoundTagAt(a).getShort("id");
-            short a = a.getCompoundTagAt(a).getShort("lvl");
-            Enchantment a = Enchantment.getEnchantmentById(a);
-            String a = ((Enchantment)Objects.requireNonNull(a)).getTranslatedName(a).substring(0, 1).toLowerCase();
-            a = a + a;
-            mc.fontRendererObj.drawStringWithShadow(a, (float)(a * 2), (float)a, 14537190);
-            a -= 10;
+         for(int var6 = 0; var6 < var4.tagCount(); ++var6) {
+            short var7 = var4.getCompoundTagAt(var6).getShort("id");
+            short var8 = var4.getCompoundTagAt(var6).getShort("lvl");
+            Enchantment var9 = Enchantment.getEnchantmentById(var7);
+            String var10 = ((Enchantment)Objects.requireNonNull(var9)).getTranslatedName(var8).substring(0, 1).toLowerCase();
+            var10 = var10 + var8;
+            mc.fontRendererObj.drawStringWithShadow(var10, (float)(a * 2), (float)var5, 14537190);
+            var5 -= 10;
          }
 
          if (a.getItem() == Items.golden_apple && a.getMetadata() == 1) {
-            mc.fontRendererObj.drawStringWithShadow("op", (float)(a * 2), (float)(a - 22), 16711680);
+            mc.fontRendererObj.drawStringWithShadow("op", (float)(a * 2), (float)(var5 - 22), 16711680);
          }
 
       }

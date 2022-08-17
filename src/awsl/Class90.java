@@ -150,7 +150,7 @@ public final class Class90 extends Class63 {
 
    public void Method3621(String a) {
       if ("java/lang/Object".equals(a)) {
-         boolean a = this.Field777 % 2 != 0 || this.Field773;
+         boolean var2 = this.Field777 % 2 != 0 || this.Field773;
          this.Field769.append(this.Field779).append(a.replace('/', '.'));
       } else {
          this.Field769.append(this.Field779).append(a.replace('/', '.'));

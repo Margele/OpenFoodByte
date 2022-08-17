@@ -88,7 +88,7 @@ public class Class379 {
    }
 
    public void Method63() {
-      a[] a = Method467();
+      a[] var1 = Method467();
       if (PlayerUtils.Method1587()) {
          Field1831.Field1617 = 153.0F;
          Field1830.reset();
@@ -106,7 +106,7 @@ public class Class379 {
 
       RenderUtils.Method1103(this.Field1806, this.Field1807, this.Field1814, this.Field1812, Class681.Method900(GlobalModule.Field3143.Method2442(), 0.6F));
       RenderUtils.Method1103(this.Field1806, this.Field1807 + this.Field1812, this.Field1814, this.Field1815, Field1833.getRGB());
-      boolean a = !this.Field1823.isEmpty();
+      boolean var2 = !this.Field1823.isEmpty();
       Class565.Field2638.Method1217(this.Field1823, this.Field1806 + this.Field1824, this.Field1807 + this.Field1825, Class681.WHITE.Field2962);
       Class565.Field2636.Method1217(this.Field1816, this.Field1806 + 3.0F + (float)8, this.Field1807 + this.Field1812 / 2.0F - Class565.Field2636.Field2625 / 2.0F, Class681.WHITE.Field2962);
       if (this.Field1808.currentScreen instanceof GuiChat) {
@@ -122,9 +122,9 @@ public class Class379 {
       if (this.Field1817 && this.Field1808.currentScreen instanceof GuiChat) {
          Class565.Field2639.Method1217("L", this.Field1806 + this.Field1814 - 8.0F, this.Field1807 + this.Field1812 + this.Field1815 - 8.0F, Class681.Method900(Class681.GREY.Field2962, 0.6F));
          if (this.Field1822) {
-            String a = (int)this.Field1814 + ", " + (int)this.Field1815;
-            RenderUtils.Method1104(this.Field1806 + this.Field1814 + 2.0F, this.Field1807 + this.Field1812 + this.Field1815 - 12.0F, this.Field1806 + this.Field1814 + 2.0F + Class565.Field2635.Method1225(a) + 4.0F, this.Field1807 + this.Field1812 + this.Field1815, -2013265920);
-            Class565.Field2635.Method1217(a, this.Field1806 + this.Field1814 + 4.0F, this.Field1807 + this.Field1812 + this.Field1815 - 12.0F + 1.0F, Class681.WHITE.Field2962);
+            String var1 = (int)this.Field1814 + ", " + (int)this.Field1815;
+            RenderUtils.Method1104(this.Field1806 + this.Field1814 + 2.0F, this.Field1807 + this.Field1812 + this.Field1815 - 12.0F, this.Field1806 + this.Field1814 + 2.0F + Class565.Field2635.Method1225(var1) + 4.0F, this.Field1807 + this.Field1812 + this.Field1815, -2013265920);
+            Class565.Field2635.Method1217(var1, this.Field1806 + this.Field1814 + 4.0F, this.Field1807 + this.Field1812 + this.Field1815 - 12.0F + 1.0F, Class681.WHITE.Field2962);
          }
       }
 
@@ -133,7 +133,7 @@ public class Class379 {
    public void Method452() {
    }
 
-   public void Method453(int a, int a, int a2) {
+   public void Method453(int a, int a, int a) {
       if (RenderUtils.Method1096((float)a, (float)a, this.Field1806, this.Field1807, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812) && !this.Field1822) {
          this.Field1811 = true;
          this.Field1827 = System.currentTimeMillis();
@@ -150,7 +150,7 @@ public class Class379 {
 
    }
 
-   public void Method454(int a, int a1, int a2) {
+   public void Method454(int a, int a, int a) {
       if (this.Field1811) {
          this.Field1811 = false;
       }
@@ -189,19 +189,19 @@ public class Class379 {
 
    }
 
-   public void Method455(int a, int a1, int a2, long a3) {
+   public void Method455(int a, int a, int a, long a) {
    }
 
    public boolean Method456(int a, int a, boolean a) {
       Method467();
-      boolean a = false;
+      boolean var5 = false;
       if (this.Method458(a, a)) {
          if (!this.Field1829) {
-            a = true;
+            var5 = true;
          }
 
-         boolean a = RenderUtils.Method1096((float)a, (float)a, this.Field1806, this.Field1807, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812);
-         boolean a = RenderUtils.Method1096((float)a, (float)a, this.Field1806 + this.Field1814 - 8.0F, this.Field1807 + this.Field1812 + this.Field1815 - 8.0F, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812 + this.Field1815);
+         boolean var6 = RenderUtils.Method1096((float)a, (float)a, this.Field1806, this.Field1807, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812);
+         boolean var7 = RenderUtils.Method1096((float)a, (float)a, this.Field1806 + this.Field1814 - 8.0F, this.Field1807 + this.Field1812 + this.Field1815 - 8.0F, this.Field1806 + this.Field1814, this.Field1807 + this.Field1812 + this.Field1815);
          if (!this.Field1829) {
             this.Field1811 = true;
             this.Field1827 = System.currentTimeMillis();
@@ -230,7 +230,7 @@ public class Class379 {
 
       this.Method457();
       this.Field1829 = a;
-      return a;
+      return var5;
    }
 
    public void Method457() {

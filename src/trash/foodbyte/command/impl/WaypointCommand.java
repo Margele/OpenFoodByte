@@ -14,7 +14,7 @@ public class WaypointCommand extends Command {
    }
 
    public void onCommand(String[] commands) {
-      int a = GetDmgCommand.Method3598();
+      int var2 = GetDmgCommand.Method3598();
       if (Minecraft.getMinecraft().isSingleplayer()) {
          ChatUtils.addChatMessage("Waypoints cannot be used in singleplayer!");
       } else {
@@ -70,7 +70,7 @@ public class WaypointCommand extends Command {
                   }
             }
 
-            String a;
+            String var5;
             switch (var4) {
                case 0:
                   ChatUtils.addChatMessage("Add Name X Y Z");
@@ -101,14 +101,14 @@ public class WaypointCommand extends Command {
                         break;
                      }
 
-                     a = commands[2].replaceAll("&", "§");
-                     if (!GlobalModule.INSTANCE.Method2009().Method2268(a, Minecraft.getMinecraft().getCurrentServerData().serverIP)) {
-                        ChatUtils.addChatMessage("Waypoint " + a + " [" + commands[3] + ", " + commands[4] + ", " + commands[5] + "] has been added.");
-                        GlobalModule.INSTANCE.Method2009().Method2266(a, Double.valueOf(commands[3]), Double.valueOf(commands[4]), Double.valueOf(commands[5]), Minecraft.getMinecraft().getCurrentServerData().serverIP, Minecraft.getMinecraft().thePlayer.dimension);
+                     var5 = commands[2].replaceAll("&", "§");
+                     if (!GlobalModule.INSTANCE.Method2009().Method2268(var5, Minecraft.getMinecraft().getCurrentServerData().serverIP)) {
+                        ChatUtils.addChatMessage("Waypoint " + var5 + " [" + commands[3] + ", " + commands[4] + ", " + commands[5] + "] has been added.");
+                        GlobalModule.INSTANCE.Method2009().Method2266(var5, Double.valueOf(commands[3]), Double.valueOf(commands[4]), Double.valueOf(commands[5]), Minecraft.getMinecraft().getCurrentServerData().serverIP, Minecraft.getMinecraft().thePlayer.dimension);
                         GlobalModule.INSTANCE.Method2009().Method2259();
                      }
 
-                     ChatUtils.addChatMessage(a + " is already a waypoint!");
+                     ChatUtils.addChatMessage(var5 + " is already a waypoint!");
                   }
 
                   if (commands.length == 3) {
@@ -124,14 +124,14 @@ public class WaypointCommand extends Command {
                   ChatUtils.addChatMessage("Either one of the needed variables is null or is a string/number!");
                case 6:
                case 7:
-                  a = commands[2].replaceAll("&", "§");
-                  if (GlobalModule.INSTANCE.Method2009().Method2268(a, Minecraft.getMinecraft().getCurrentServerData().serverIP)) {
-                     ChatUtils.addChatMessage(a + " has been removed from your waypoints!");
-                     GlobalModule.INSTANCE.Method2009().Method2267(a, Minecraft.getMinecraft().getCurrentServerData().serverIP);
+                  var5 = commands[2].replaceAll("&", "§");
+                  if (GlobalModule.INSTANCE.Method2009().Method2268(var5, Minecraft.getMinecraft().getCurrentServerData().serverIP)) {
+                     ChatUtils.addChatMessage(var5 + " has been removed from your waypoints!");
+                     GlobalModule.INSTANCE.Method2009().Method2267(var5, Minecraft.getMinecraft().getCurrentServerData().serverIP);
                      GlobalModule.INSTANCE.Method2009().Method2259();
                   }
 
-                  ChatUtils.addChatMessage(a + " is not a waypoint!");
+                  ChatUtils.addChatMessage(var5 + " is not a waypoint!");
             }
          }
 

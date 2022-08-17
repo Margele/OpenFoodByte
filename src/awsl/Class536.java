@@ -15,27 +15,27 @@ public class Class536 implements Class609 {
    }
 
    public void Method687(Class234 a) {
-      List a = new ArrayList();
-      int a = a.readInt();
+      ArrayList var3 = new ArrayList();
+      int var4 = a.readInt();
       Class562.Method1190();
-      int a = 0;
-      if (a < a) {
-         a.Method2530(a.Method497());
-         ++a;
+      int var5 = 0;
+      if (var5 < var4) {
+         var3.Method2530(a.Method497());
+         ++var5;
          a.trash(new String[3]);
       }
 
-      (this.Field2473 = new ArrayList()).addAll(a);
+      (this.Field2473 = new ArrayList()).addAll(var3);
    }
 
    public void Method688(Class234 a) {
       Class562.Method906();
       a.writeInt(this.Method845().Method1799());
-      int a = 0;
-      if (a < this.Method845().Method1799()) {
-         String a = (String)this.Method845().get(a);
-         a.Method496(a);
-         ++a;
+      int var3 = 0;
+      if (var3 < this.Method845().Method1799()) {
+         String var4 = (String)this.Method845().get(var3);
+         a.Method496(var4);
+         ++var3;
       }
 
    }

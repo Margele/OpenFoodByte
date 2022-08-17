@@ -35,8 +35,8 @@ public final class Notification {
       this.Field2102 = a;
       this.Field2104 = Math.max(Class565.Field2634.Method1225(a), Class565.Field2637.Method1225(a)) + 4.0F;
       this.Field2105 = 22.0F;
-      ScaledResolution a = Method2736();
-      this.Field2103 = new Class438(this, (double)a.getScaledWidth(), (double)((float)a.getScaledHeight() - this.Field2105 - 2.0F));
+      ScaledResolution var6 = Method2736();
+      this.Field2103 = new Class438(this, (double)var6.getScaledWidth(), (double)((float)var6.getScaledHeight() - this.Field2105 - 2.0F));
       this.Field2106 = a;
       this.Field2107 = a.Method10();
       this.Field2108 = new Class440(this);
@@ -56,66 +56,66 @@ public final class Notification {
 
    public void Method2734(ScaledResolution a, int a, int a) {
       Method2742();
-      int a = a.getScaledWidth();
-      int a = a.getScaledHeight();
-      float a = (float)a - (this.Field2105 + 2.0F) * (float)a - (float)a;
-      float a = (float)a - this.Field2104;
+      int var5 = a.getScaledWidth();
+      int var6 = a.getScaledHeight();
+      float var7 = (float)var6 - (this.Field2105 + 2.0F) * (float)a - (float)a;
+      float var8 = (float)var5 - this.Field2104;
       if (this.Field2108.Method2716(this.Field2106)) {
-         this.Field2103.Method2666((double)a, (double)a);
+         this.Field2103.Method2666((double)var8, (double)var6);
          a.trash(new String[5]);
       }
 
-      this.Field2103.Method2666((double)a, (double)a);
-      float a = (float)this.Field2103.Method2667();
-      float a = (float)this.Field2103.Method2669();
-      if (a >= (float)a) {
+      this.Field2103.Method2666((double)var8, (double)var7);
+      float var9 = (float)this.Field2103.Method2667();
+      float var10 = (float)this.Field2103.Method2669();
+      if (var10 >= (float)var6) {
          this.Field2109 = true;
       } else {
-         Class348.Method364(a, a, this.Field2104, this.Field2105, true);
+         Class348.Method364(var9, var10, this.Field2104, this.Field2105, true);
          GL11.glEnable(3089);
-         Method2735(a, (int)a, (int)a, MathHelper.ceiling_float_int(this.Field2104), (int)this.Field2105);
-         RenderUtils.Method1103((float)((int)a), (float)((int)a), (float)((int)this.Field2104), (float)((int)this.Field2105), 2013265920);
-         double a = (double)(System.currentTimeMillis() - this.Field2108.Method2715()) / (double)this.Field2106 * (double)this.Field2104;
-         RenderUtils.Method1103((float)((int)a), (float)((int)a + (int)this.Field2105 - 1), (float)((int)this.Field2104), (float)((int)this.Field2105), Method2740(this.Field2107, 0.4F));
-         RenderUtils.Method1103((float)((int)a), (float)((int)a + (int)this.Field2105 - 1), (float)((int)a), (float)((int)this.Field2105), this.Field2107);
+         Method2735(a, (int)var9, (int)var10, MathHelper.ceiling_float_int(this.Field2104), (int)this.Field2105);
+         RenderUtils.Method1103((float)((int)var8), (float)((int)var10), (float)((int)this.Field2104), (float)((int)this.Field2105), 2013265920);
+         double var11 = (double)(System.currentTimeMillis() - this.Field2108.Method2715()) / (double)this.Field2106 * (double)this.Field2104;
+         RenderUtils.Method1103((float)((int)var8), (float)((int)var10 + (int)this.Field2105 - 1), (float)((int)this.Field2104), (float)((int)this.Field2105), Method2740(this.Field2107, 0.4F));
+         RenderUtils.Method1103((float)((int)var8), (float)((int)var10 + (int)this.Field2105 - 1), (float)((int)var11), (float)((int)this.Field2105), this.Field2107);
          if (this.Field2102 != null && this.Field2102.length() > 0) {
-            Class565.Field2634.Method1217(this.Field2101, (float)((int)a + 2), (float)((int)a + 1), -1);
-            Class565.Field2637.Method1217(this.Field2102, (float)((int)a + 2), (float)((int)a + 8), -1);
+            Class565.Field2634.Method1217(this.Field2101, (float)((int)var8 + 2), (float)((int)var10 + 1), -1);
+            Class565.Field2637.Method1217(this.Field2102, (float)((int)var8 + 2), (float)((int)var10 + 8), -1);
          }
 
-         Class565.Field2637.Method1217(this.Field2101, (float)((int)a + 2), (float)((int)a + 4), -1);
+         Class565.Field2637.Method1217(this.Field2101, (float)((int)var8 + 2), (float)((int)var10 + 4), -1);
          GL11.glDisable(3089);
       }
    }
 
    public static void Method2735(ScaledResolution a, int a, int a, int a, int a) {
-      int a = a.getScaleFactor();
-      GL11.glScissor(a * a, (a.getScaledHeight() - (a + a)) * a, a * a, a * a);
+      int var5 = a.getScaleFactor();
+      GL11.glScissor(a * var5, (a.getScaledHeight() - (a + a)) * var5, a * var5, a * var5);
    }
 
    public static ScaledResolution Method2736() {
-      int a = Display.getWidth();
-      int a = Display.getHeight();
-      int a = Field2100.gameSettings.guiScale;
-      if (a == Field2110 && a == Field2111 && a == Field2112) {
+      int var0 = Display.getWidth();
+      int var1 = Display.getHeight();
+      int var2 = Field2100.gameSettings.guiScale;
+      if (var0 == Field2110 && var1 == Field2111 && var2 == Field2112) {
          return Field2113;
       } else {
-         Field2110 = a;
-         Field2111 = a;
-         Field2112 = a;
+         Field2110 = var0;
+         Field2111 = var1;
+         Field2112 = var2;
          return Field2113 = new ScaledResolution(Field2100);
       }
    }
 
    public static void Method2737(float a, float a, float a, float a, int a) {
       Method2742();
-      int a = a >> 24 & 255;
-      boolean a = a < 255;
+      int var6 = a >> 24 & 255;
+      boolean var7 = var6 < 255;
       GL11.glDisable(3553);
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
       GlStateManager.enableBlend();
-      GL11.glColor4ub((byte)(a >> 16 & 255), (byte)(a >> 8 & 255), (byte)(a & 255), (byte)a);
+      GL11.glColor4ub((byte)(a >> 16 & 255), (byte)(a >> 8 & 255), (byte)(a & 255), (byte)var6);
       GL11.glColor3ub((byte)(a >> 16 & 255), (byte)(a >> 8 & 255), (byte)(a & 255));
       GL11.glBegin(7);
       GL11.glVertex2f(a, a);
@@ -133,12 +133,12 @@ public final class Notification {
    }
 
    public static void Method2738(double a, double a, double a, double a, int a) {
-      int a = a >> 24 & 255;
-      boolean a = a < 255;
+      int var9 = a >> 24 & 255;
+      boolean var10 = var9 < 255;
       GL11.glDisable(3553);
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
-      GL11.glColor4ub((byte)(a >> 16 & 255), (byte)(a >> 8 & 255), (byte)(a & 255), (byte)a);
+      GL11.glColor4ub((byte)(a >> 16 & 255), (byte)(a >> 8 & 255), (byte)(a & 255), (byte)var9);
       GL11.glBegin(7);
       GL11.glVertex2d(a, a);
       GL11.glVertex2d(a, a);
@@ -154,11 +154,11 @@ public final class Notification {
    }
 
    public static int Method2740(int a, float a) {
-      int a = (int)((float)(a >> 16 & 255) * a);
-      int a = (int)((float)(a >> 8 & 255) * a);
-      int a = (int)((float)(a & 255) * a);
-      int a = a >> 24 & 255;
-      return (a & 255) << 16 | (a & 255) << 8 | a & 255 | (a & 255) << 24;
+      int var2 = (int)((float)(a >> 16 & 255) * a);
+      int var3 = (int)((float)(a >> 8 & 255) * a);
+      int var4 = (int)((float)(a & 255) * a);
+      int var5 = a >> 24 & 255;
+      return (var2 & 255) << 16 | (var3 & 255) << 8 | var4 & 255 | (var5 & 255) << 24;
    }
 
    static {

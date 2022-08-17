@@ -25,8 +25,8 @@ public class Class830 extends Class833 {
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       this.Method11(1);
       a = super.Method62(a, a);
-      Class62 a = new Class60(this);
-      return a.Method62(a, a);
+      Class60 var3 = new Class60(this);
+      return var3.Method62(a, a);
    }
 
    public String toString() {

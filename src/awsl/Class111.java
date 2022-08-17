@@ -52,23 +52,23 @@ public class Class111 extends Class119 {
       return super.Method62(a, a);
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = a >> 24 & 255;
+   public int Method3(int a, int a, int a) {
+      int var5 = a >> 24 & 255;
       Class193.Method1270();
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      if (a == 255) {
+      int var6 = a >> 16 & 255;
+      int var7 = a >> 8 & 255;
+      int var8 = a & 255;
+      if (var5 == 255) {
          return -1;
       } else {
-         float a = Class776.Method1708(this.Field875, this.Field876, (float)a);
-         a = (int)(a * 255.0F);
-         int a = 0;
-         if (a > 255) {
-            a = 255;
+         float var9 = Class776.Method1708(this.Field875, this.Field876, (float)var5);
+         var5 = (int)(var9 * 255.0F);
+         short var10 = 0;
+         if (var10 > 255) {
+            var10 = 255;
          }
 
-         return a << 24 | 16777215;
+         return var10 << 24 | 16777215;
       }
    }
 

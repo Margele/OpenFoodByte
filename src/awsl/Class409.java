@@ -814,7 +814,7 @@ public class Class409 implements Class422, Class45 {
       Method2168();
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public static void Method3546(Object a) {

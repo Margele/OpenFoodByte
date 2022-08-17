@@ -7,7 +7,7 @@ public class Class648 implements Event {
    private final Type Field2916;
    public float Field2917;
 
-   public Class648(float a, boolean a1) {
+   public Class648(float a, boolean a) {
       this.Field2916 = Type.PRE;
       this.Field2917 = a;
    }

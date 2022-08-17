@@ -13,21 +13,21 @@ final class Class873 extends Class831 {
    }
 
    public final void Method3501(String a, Attributes a) {
-      HashMap a = new HashMap();
-      a.put("min", a.getValue("min"));
-      a.put("max", a.getValue("max"));
-      a.put("dflt", a.getValue("dflt"));
-      a.put("labels", new ArrayList());
-      this.Field3808.Method1950(a);
+      HashMap var3 = new HashMap();
+      var3.put("min", a.getValue("min"));
+      var3.put("max", a.getValue("max"));
+      var3.put("dflt", a.getValue("dflt"));
+      var3.put("labels", new ArrayList());
+      this.Field3808.Method1950(var3);
    }
 
    public final void Method3514(String a) {
-      HashMap a = (HashMap)this.Field3808.Method1964();
-      int a = Integer.parseInt((String)a.Method2665("min"));
-      int a = Integer.parseInt((String)a.Method2665("max"));
-      Class264 a = this.Method3654(a.Method2665("dflt"));
-      ArrayList a = (ArrayList)a.Method2665("labels");
-      Class264[] a = (Class264[])a.toArray(new Class264[a.Method1799()]);
-      this.Method3655().Method1959(a, a, a, a);
+      HashMap var2 = (HashMap)this.Field3808.Method1964();
+      int var3 = Integer.parseInt((String)var2.Method2665("min"));
+      int var4 = Integer.parseInt((String)var2.Method2665("max"));
+      Class264 var5 = this.Method3654(var2.Method2665("dflt"));
+      ArrayList var6 = (ArrayList)var2.Method2665("labels");
+      Class264[] var7 = (Class264[])var6.toArray(new Class264[var6.Method1799()]);
+      this.Method3655().Method1959(var3, var4, var5, var7);
    }
 }

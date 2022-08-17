@@ -9,7 +9,7 @@ public final class Class176 extends Class236 {
       super(a);
    }
 
-   public CompositeContext Method1356(ColorModel a, ColorModel a, RenderingHints a2) {
+   public CompositeContext Method1356(ColorModel a, ColorModel a, RenderingHints a) {
       return new Class139(this.Field1299, a, a);
    }
 }

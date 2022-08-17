@@ -13,7 +13,7 @@ public class FloatValue extends Class447 {
    public boolean Field2098;
    private static int Field2099;
 
-   public FloatValue(String a, String a, float a, float a, float a, float a, boolean a6) {
+   public FloatValue(String a, String a, float a, float a, float a, float a, boolean a) {
       this.Field2093 = new Class333(1.0F);
       this.Field2117 = a;
       this.Field2118 = a;
@@ -45,7 +45,7 @@ public class FloatValue extends Class447 {
       this.Field2119 = a;
    }
 
-   public FloatValue(String a, String a, double a, double a, double a, double a, boolean a6) {
+   public FloatValue(String a, String a, double a, double a, double a, double a, boolean a) {
       this.Field2093 = new Class333(1.0F);
       this.Field2117 = a;
       this.Field2118 = a;

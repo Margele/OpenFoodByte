@@ -6,7 +6,7 @@ public class Class401 implements Class422 {
    private static final String[] Field1969;
    private static final String[] Field1970;
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public static void Method3602(int a, int a) {

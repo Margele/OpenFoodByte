@@ -50,7 +50,7 @@ public class AntiBot extends Module {
    public void onUpdate(EventUpdate event) {
       this.setDisplayTag(this.mode.getMode());
       b.trash();
-      boolean a = this.remove.getBooleanValue();
+      boolean var3 = this.remove.getBooleanValue();
       if (!botList2.isEmpty() && this.timer2.isDelayComplete(1000.0)) {
          if (this.info.getValue()) {
             if (botList2.Method1799() == 1) {
@@ -70,103 +70,103 @@ public class AntiBot extends Module {
       }
 
       Iterator var4;
-      EntityPlayer a;
-      String a;
+      EntityPlayer var6;
+      String var7;
       if (this.mode.isCurrentMode("Hypixel")) {
          var4 = mc.theWorld.getLoadedEntityList().Method1383();
          if (var4.Method932()) {
-            Object a = var4.Method933();
-            if (a instanceof EntityPlayer) {
-               a = (EntityPlayer)a;
-               if (a != mc.thePlayer && !botList.contains(a)) {
+            Object var5 = var4.Method933();
+            if (var5 instanceof EntityPlayer) {
+               var6 = (EntityPlayer)var5;
+               if (var6 != mc.thePlayer && !botList.contains(var6)) {
                   label202: {
-                     a = a.getDisplayName().getFormattedText();
-                     String a = a.getCustomNameTag();
-                     String a = a.getName();
-                     if (a.isInvisible() && a.startsWith("§r§c") && a.endsWith("§r")) {
-                        double a = Math.abs(a.posX - mc.thePlayer.posX);
-                        double a = Math.abs(a.posY - mc.thePlayer.posY);
-                        double a = Math.abs(a.posZ - mc.thePlayer.posZ);
-                        double a = Math.sqrt(a * a + a * a);
-                        if (a < 13.0 && a > 10.0 && a < 3.0) {
-                           List a = this.getTabPlayer();
-                           if (!a.contains(a)) {
+                     var7 = var6.getDisplayName().getFormattedText();
+                     String var8 = var6.getCustomNameTag();
+                     String var9 = var6.getName();
+                     if (var6.isInvisible() && var7.startsWith("§r§c") && var7.endsWith("§r")) {
+                        double var10 = Math.abs(var6.posX - mc.thePlayer.posX);
+                        double var12 = Math.abs(var6.posY - mc.thePlayer.posY);
+                        double var14 = Math.abs(var6.posZ - mc.thePlayer.posZ);
+                        double var16 = Math.sqrt(var10 * var10 + var14 * var14);
+                        if (var12 < 13.0 && var12 > 10.0 && var16 < 3.0) {
+                           List var18 = this.getTabPlayer();
+                           if (!var18.contains(var6)) {
                               this.timer2.reset();
-                              botList2.Method2530(a);
-                              mc.theWorld.removeEntity(a);
-                              botList.Method2530(a);
+                              botList2.Method2530(var6);
+                              mc.theWorld.removeEntity(var6);
+                              botList.Method2530(var6);
                            }
                         }
                      }
 
-                     if (ServerUtils.isSinglePlayer(Servers.PRE) && a.isInvisible() && a.startsWith("§r") && a.getHealth() < 20.0F) {
+                     if (ServerUtils.isSinglePlayer(Servers.PRE) && var6.isInvisible() && var7.startsWith("§r") && var6.getHealth() < 20.0F) {
                         this.timer2.reset();
-                        botList2.Method2530(a);
-                        mc.theWorld.removeEntity(a);
-                        botList.Method2530(a);
+                        botList2.Method2530(var6);
+                        mc.theWorld.removeEntity(var6);
+                        botList.Method2530(var6);
                      }
 
-                     if (!a.startsWith("§r§") && a.endsWith("§r") && (mc.getNetHandler().getPlayerInfo(a.getUniqueID()) == null || mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() > 20 || mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() == 0)) {
+                     if (!var7.startsWith("§r§") && var7.endsWith("§r") && (mc.getNetHandler().getPlayerInfo(var6.getUniqueID()) == null || mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() > 20 || mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() == 0)) {
                         if (!ServerUtils.isSinglePlayer(Servers.UHC)) {
-                           if (ServerUtils.isCleared() && a.getEyeHeight() <= 0.2F) {
-                              botList.Method2530(a);
+                           if (ServerUtils.isCleared() && var6.getEyeHeight() <= 0.2F) {
+                              botList.Method2530(var6);
                            }
 
                            if (ServerUtils.isCleared()) {
                               break label202;
                            }
 
-                           botList.Method2530(a);
+                           botList.Method2530(var6);
                         }
 
                         if (mc.playerController.getCurrentGameType() != GameType.ADVENTURE) {
                            break label202;
                         }
 
-                        botList.Method2530(a);
+                        botList.Method2530(var6);
                      }
 
-                     if (ServerUtils.isSinglePlayer(Servers.MM) && a.startsWith("§r§") && a.endsWith("§r") && a.getEyeHeight() <= 0.2F && Objects.isNull(mc.getNetHandler().getPlayerInfo(a.getUniqueID()))) {
-                        botList.Method2530(a);
+                     if (ServerUtils.isSinglePlayer(Servers.MM) && var7.startsWith("§r§") && var7.endsWith("§r") && var6.getEyeHeight() <= 0.2F && Objects.isNull(mc.getNetHandler().getPlayerInfo(var6.getUniqueID()))) {
+                        botList.Method2530(var6);
                      }
 
-                     if (a.isInvisible() && a.startsWith("§r§c") && a.endsWith("§r") && (Objects.isNull(mc.getNetHandler().getPlayerInfo(a.getUniqueID())) || mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() > 20 || mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() == 0)) {
+                     if (var6.isInvisible() && var7.startsWith("§r§c") && var7.endsWith("§r") && (Objects.isNull(mc.getNetHandler().getPlayerInfo(var6.getUniqueID())) || mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() > 20 || mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() == 0)) {
                         this.timer2.reset();
-                        botList2.Method2530(a);
-                        mc.theWorld.removeEntity(a);
-                        botList.Method2530(a);
+                        botList2.Method2530(var6);
+                        mc.theWorld.removeEntity(var6);
+                        botList.Method2530(var6);
                      }
 
-                     if (a.isInvisible() && a.startsWith("§c") && (Objects.isNull(mc.getNetHandler().getPlayerInfo(a.getUniqueID())) || mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() > 20 || mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() == 0)) {
+                     if (var6.isInvisible() && var9.startsWith("§c") && (Objects.isNull(mc.getNetHandler().getPlayerInfo(var6.getUniqueID())) || mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() > 20 || mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() == 0)) {
                         this.timer2.reset();
-                        botList2.Method2530(a);
-                        mc.theWorld.removeEntity(a);
-                        botList.Method2530(a);
+                        botList2.Method2530(var6);
+                        mc.theWorld.removeEntity(var6);
+                        botList.Method2530(var6);
                      }
 
-                     if (a.contains("[NPC]")) {
-                        botList.Method2530(a);
+                     if (var7.contains("[NPC]")) {
+                        botList.Method2530(var6);
                      }
 
-                     if (!a.contains("§c") && !a.equalsIgnoreCase("")) {
+                     if (!var7.contains("§c") && !var8.equalsIgnoreCase("")) {
                         if (ServerUtils.isSinglePlayer(Servers.SB)) {
                            break label202;
                         }
 
-                        botList.Method2530(a);
+                        botList.Method2530(var6);
                      }
 
-                     if (!a.isInvisible() && a.startsWith("§r§c") && a.endsWith("§r") && mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() > 20) {
-                        ChatUtils.debug("名字: " + a);
-                        ChatUtils.debug("全名: " + a);
-                        ChatUtils.debug("隐身: " + a.isInvisible());
-                        ChatUtils.debug("距离: " + mc.thePlayer.getDistanceToEntity(a));
-                        ChatUtils.debug("ResponseTime:" + mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime());
-                        if (a.posY > mc.thePlayer.posY && (double)mc.thePlayer.getDistanceToEntity(a) <= 6.0 && !a.startsWith("§r§c[§fYOUTUBE§c]") && !a.startsWith("§r§c[ADMIN]")) {
-                           ChatUtils.addChatMessage("检测 " + a + " - GameMaster Bot!");
-                           mc.theWorld.removeEntity(a);
+                     if (!var6.isInvisible() && var7.startsWith("§r§c") && var7.endsWith("§r") && mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() > 20) {
+                        ChatUtils.debug("名字: " + var9);
+                        ChatUtils.debug("全名: " + var7);
+                        ChatUtils.debug("隐身: " + var6.isInvisible());
+                        ChatUtils.debug("距离: " + mc.thePlayer.getDistanceToEntity(var6));
+                        ChatUtils.debug("ResponseTime:" + mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime());
+                        if (var6.posY > mc.thePlayer.posY && (double)mc.thePlayer.getDistanceToEntity(var6) <= 6.0 && !var7.startsWith("§r§c[§fYOUTUBE§c]") && !var7.startsWith("§r§c[ADMIN]")) {
+                           ChatUtils.addChatMessage("检测 " + var7 + " - GameMaster Bot!");
+                           mc.theWorld.removeEntity(var6);
                            ChatUtils.addChatMessage("已清除Bot!");
-                           botList.Method2530(a);
+                           botList.Method2530(var6);
                         }
                      }
                   }
@@ -179,21 +179,21 @@ public class AntiBot extends Module {
          var4 = mc.theWorld.getLoadedEntityList().Method1383();
 
          while(var4.Method932()) {
-            Entity a = (Entity)var4.Method933();
-            if (a != mc.thePlayer) {
-               if (a instanceof EntityPlayer) {
-                  a = (EntityPlayer)a;
-                  if (!botList.contains(a)) {
-                     a = a.getDisplayName().getFormattedText();
-                     if (a.isSprinting()) {
-                        ChatUtils.debug(a.getEntityId() + "");
-                        ChatUtils.debug(a.ticksExisted + "");
-                        ChatUtils.debug(mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() + "");
+            Entity var19 = (Entity)var4.Method933();
+            if (var19 != mc.thePlayer) {
+               if (var19 instanceof EntityPlayer) {
+                  var6 = (EntityPlayer)var19;
+                  if (!botList.contains(var6)) {
+                     var7 = var6.getDisplayName().getFormattedText();
+                     if (var6.isSprinting()) {
+                        ChatUtils.debug(var19.getEntityId() + "");
+                        ChatUtils.debug(var19.ticksExisted + "");
+                        ChatUtils.debug(mc.getNetHandler().getPlayerInfo(var6.getUniqueID()).getResponseTime() + "");
                         if (this.info.getValue()) {
-                           ChatUtils.addChatMessage(" Add " + a.getDisplayName().getFormattedText() + " Bot");
+                           ChatUtils.addChatMessage(" Add " + var19.getDisplayName().getFormattedText() + " Bot");
                         }
 
-                        botList.Method2530(a);
+                        botList.Method2530(var6);
                      }
                   }
                }
@@ -211,13 +211,13 @@ public class AntiBot extends Module {
          Iterator var2 = mc.theWorld.getLoadedEntityList().Method1383();
 
          while(var2.Method932()) {
-            Entity a = (Entity)var2.Method933();
-            if (a != mc.thePlayer && a instanceof EntityPlayer && mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime() > 20) {
+            Entity var3 = (Entity)var2.Method933();
+            if (var3 != mc.thePlayer && var3 instanceof EntityPlayer && mc.getNetHandler().getPlayerInfo(var3.getUniqueID()).getResponseTime() > 20) {
                if (this.info.getValue()) {
-                  ChatUtils.addChatMessage(" Kill " + a.getDisplayName().getFormattedText() + " Bot");
+                  ChatUtils.addChatMessage(" Kill " + var3.getDisplayName().getFormattedText() + " Bot");
                }
 
-               mc.theWorld.removeEntity(a);
+               mc.theWorld.removeEntity(var3);
             }
          }
       }
@@ -225,15 +225,15 @@ public class AntiBot extends Module {
    }
 
    public List getTabPlayer() {
-      Collection a = mc.thePlayer.sendQueue.getPlayerInfoMap();
-      ArrayList a = new ArrayList();
-      Iterator var3 = a.Method1383();
+      Collection var1 = mc.thePlayer.sendQueue.getPlayerInfoMap();
+      ArrayList var2 = new ArrayList();
+      Iterator var3 = var1.Method1383();
 
       while(var3.Method932()) {
-         NetworkPlayerInfo a = (NetworkPlayerInfo)var3.Method933();
-         a.Method2530(mc.theWorld.getPlayerEntityByName(a.getGameProfile().getName()));
+         NetworkPlayerInfo var4 = (NetworkPlayerInfo)var3.Method933();
+         var2.Method2530(mc.theWorld.getPlayerEntityByName(var4.getGameProfile().getName()));
       }
 
-      return a;
+      return var2;
    }
 }

@@ -14,7 +14,7 @@ public class Class396 extends Class397 {
       this.Field1920 = "Slider";
    }
 
-   public void Method419(int a, int a1) {
+   public void Method419(int a, int a) {
       this.Field1916 = !this.Field1954.Method2756();
    }
 

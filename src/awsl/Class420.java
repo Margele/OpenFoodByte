@@ -25,12 +25,12 @@ class Class420 extends Class421 {
       Class421.Method2390();
       Iterator var2 = ModuleManager.getAllModules().Method1383();
       if (var2.Method932()) {
-         Module a = (Module)var2.Method933();
-         if (!a.Method1024().equals(this.Field2025)) {
+         Module var3 = (Module)var2.Method933();
+         if (!var3.Method1024().equals(this.Field2025)) {
             ;
          }
 
-         this.Field2037.Method2530(new Class414(a, this));
+         this.Field2037.Method2530(new Class414(var3, this));
       }
 
    }

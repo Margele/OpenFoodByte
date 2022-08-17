@@ -46,39 +46,39 @@ public class LobbyGift extends Module {
       Class448.trash();
       Iterator var3 = mc.theWorld.loadedTileEntityList.Method1383();
       if (var3.Method932()) {
-         TileEntity a = (TileEntity)var3.Method933();
-         if (a instanceof TileEntitySkull && this.Field2289.getValue() && ((TileEntitySkull)a).getSkullType() == 3) {
-            NBTTagCompound a = new NBTTagCompound();
-            a.writeToNBT(a);
-            String a = a.getCompoundTag("Owner").getString("Name");
-            String a = a.getCompoundTag("Owner").getCompoundTag("Properties").toString();
-            if (this.Method2256(a, a)) {
-               BlockPos a = a.getPos();
-               if (mc.objectMouseOver != null && mc.objectMouseOver.typeOfHit == MovingObjectType.BLOCK && a.getX() == mc.objectMouseOver.getBlockPos().getX() && a.getY() == mc.objectMouseOver.getBlockPos().getY() && a.getZ() == mc.objectMouseOver.getBlockPos().getZ() && (this.Field2287.Method582() || this.Field2288.Method582()) && !Field2291.contains(a)) {
-                  Field2291.Method2530(a);
+         TileEntity var4 = (TileEntity)var3.Method933();
+         if (var4 instanceof TileEntitySkull && this.Field2289.getValue() && ((TileEntitySkull)var4).getSkullType() == 3) {
+            NBTTagCompound var5 = new NBTTagCompound();
+            var4.writeToNBT(var5);
+            String var6 = var5.getCompoundTag("Owner").getString("Name");
+            String var7 = var5.getCompoundTag("Owner").getCompoundTag("Properties").toString();
+            if (this.Method2256(var6, var7)) {
+               BlockPos var8 = var4.getPos();
+               if (mc.objectMouseOver != null && mc.objectMouseOver.typeOfHit == MovingObjectType.BLOCK && var8.getX() == mc.objectMouseOver.getBlockPos().getX() && var8.getY() == mc.objectMouseOver.getBlockPos().getY() && var8.getZ() == mc.objectMouseOver.getBlockPos().getZ() && (this.Field2287.Method582() || this.Field2288.Method582()) && !Field2291.contains(var8)) {
+                  Field2291.Method2530(var8);
                }
 
                GL11.glPushMatrix();
                RenderUtils.Method1126(2.0F);
                GL11.glDisable(2848);
-               TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
+               TileEntityRendererDispatcher.instance.renderTileEntity(var4, a.Field2922, -1);
                RenderUtils.Method1129();
-               TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
+               TileEntityRendererDispatcher.instance.renderTileEntity(var4, a.Field2922, -1);
                RenderUtils.Method1130();
-               TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
-               if (!Field2291.contains(a)) {
-                  if (a.equalsIgnoreCase("§item")) {
+               TileEntityRendererDispatcher.instance.renderTileEntity(var4, a.Field2922, -1);
+               if (!Field2291.contains(var8)) {
+                  if (var6.equalsIgnoreCase("§item")) {
                      RenderUtils.Method1131((new Color(255, 0, 0)).getRGB());
                   }
 
                   RenderUtils.Method1131((new Color(255, 170, 0)).getRGB());
                }
 
-               if (Field2291.contains(a)) {
+               if (Field2291.contains(var8)) {
                   RenderUtils.Method1131((new Color(0, 255, 0)).getRGB());
                }
 
-               TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
+               TileEntityRendererDispatcher.instance.renderTileEntity(var4, a.Field2922, -1);
                RenderUtils.Method1132();
                RenderHelper.disableStandardItemLighting();
                GlStateManager.disableBlend();
@@ -91,23 +91,23 @@ public class LobbyGift extends Module {
    }
 
    public void Method2245(Entity a, Color a) {
-      float a = ReflectionUtils.getRenderPartialTicks();
-      double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a - ReflectionUtils.getRenderPosX();
-      double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a - ReflectionUtils.getRenderPosY();
-      double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a - ReflectionUtils.getRenderPosZ();
-      double a = (double)a.width / 1.5;
-      double a = a.getEntityBoundingBox().maxY - a.getEntityBoundingBox().minY;
+      float var4 = ReflectionUtils.getRenderPartialTicks();
+      double var5 = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)var4 - ReflectionUtils.getRenderPosX();
+      double var7 = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)var4 - ReflectionUtils.getRenderPosY();
+      double var9 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)var4 - ReflectionUtils.getRenderPosZ();
+      double var11 = (double)a.width / 1.5;
+      double var13 = a.getEntityBoundingBox().maxY - a.getEntityBoundingBox().minY;
       GL11.glPushMatrix();
       RenderUtils.Method1126(2.0F);
       GL11.glDisable(2848);
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var5 - var11, var7, var9 - var11, var5 + var11, var7 + var13, var9 + var11));
       RenderUtils.Method1129();
       Class448.trash();
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var5 - var11, var7, var9 - var11, var5 + var11, var7 + var13, var9 + var11));
       RenderUtils.Method1130();
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var5 - var11, var7, var9 - var11, var5 + var11, var7 + var13, var9 + var11));
       RenderUtils.Method1131(a.getRGB());
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var5 - var11, var7, var9 - var11, var5 + var11, var7 + var13, var9 + var11));
       RenderUtils.Method1132();
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glPopMatrix();

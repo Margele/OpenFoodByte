@@ -53,47 +53,47 @@ public class Class81 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
+      int var4 = a.getWidth();
       Class193.Method1269();
-      int a = a.getHeight();
-      int a = a.getType();
-      WritableRaster a = a.getRaster();
+      int var5 = a.getHeight();
+      int var6 = a.getType();
+      WritableRaster var7 = a.getRaster();
       a = this.Method1263(a, (ColorModel)null);
-      WritableRaster a = a.getRaster();
+      WritableRaster var8 = a.getRaster();
       if (this.Field710 != null && this.Field711 != null) {
-         float[] a = null;
-         float[] a = null;
-         int[] a = null;
-         int[] a = null;
-         int[] a = null;
-         int a = 0;
-         if (a < a) {
-            int[] a = this.Method104(a, 0, a, a, 1, (int[])a);
-            int[] a = this.Method104(this.Field710, 0, a, a, 1, (int[])a);
-            int[] a = this.Method104(this.Field711, 0, a, a, 1, (int[])a);
-            int a = 0;
-            if (a < a) {
-               int a = a[a];
-               int a = a[a];
-               int a = a[a];
-               int a = a >> 16 & 255;
-               int a = a >> 8 & 255;
-               int a = a & 255;
-               int a = a >> 16 & 255;
-               int a = a >> 8 & 255;
-               int a = a & 255;
-               float[] a = Color.RGBtoHSB(a, a, a, (float[])a);
-               float[] a = Color.RGBtoHSB(a, a, a, (float[])a);
-               if (Math.abs(a[0] - a[0]) < this.Field707 && Math.abs(a[1] - a[1]) < this.Field708 && Math.abs(a[2] - a[2]) < this.Field709) {
-                  a[a] = a;
+         Object var9 = null;
+         Object var10 = null;
+         Object var11 = null;
+         Object var12 = null;
+         Object var13 = null;
+         int var14 = 0;
+         if (var14 < var5) {
+            int[] var27 = this.Method104(a, 0, var14, var4, 1, (int[])var11);
+            int[] var28 = this.Method104(this.Field710, 0, var14, var4, 1, (int[])var12);
+            int[] var29 = this.Method104(this.Field711, 0, var14, var4, 1, (int[])var13);
+            int var15 = 0;
+            if (var15 < var4) {
+               int var16 = var27[var15];
+               int var17 = var28[var15];
+               int var18 = var29[var15];
+               int var19 = var16 >> 16 & 255;
+               int var20 = var16 >> 8 & 255;
+               int var21 = var16 & 255;
+               int var22 = var18 >> 16 & 255;
+               int var23 = var18 >> 8 & 255;
+               int var24 = var18 & 255;
+               float[] var25 = Color.RGBtoHSB(var19, var21, var20, (float[])var9);
+               float[] var26 = Color.RGBtoHSB(var22, var24, var23, (float[])var10);
+               if (Math.abs(var25[0] - var26[0]) < this.Field707 && Math.abs(var25[1] - var26[1]) < this.Field708 && Math.abs(var25[2] - var26[2]) < this.Field709) {
+                  var27[var15] = var17;
                }
 
-               a[a] = a;
-               ++a;
+               var27[var15] = var16;
+               ++var15;
             }
 
-            this.Method1267(a, 0, a, a, 1, a);
-            ++a;
+            this.Method1267(a, 0, var14, var4, 1, var27);
+            ++var14;
          }
       }
 

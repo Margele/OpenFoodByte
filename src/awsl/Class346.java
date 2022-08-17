@@ -14,11 +14,11 @@ public class Class346 {
       Minecraft.getMinecraft().addScheduledTask(Class346::Method309);
    }
 
-   private static void Method306(AbstractClientPlayer a, ResourceLocation a1) {
-      NetworkPlayerInfo a = null;
+   private static void Method306(AbstractClientPlayer a, ResourceLocation a) {
+      NetworkPlayerInfo var2 = null;
 
       try {
-         a = Field1660.invoke(a);
+         var2 = Field1660.invoke(a);
       } catch (Throwable var4) {
          System.out.println("Could not get player info!");
       }
@@ -30,11 +30,11 @@ public class Class346 {
       Method308(a, a);
    }
 
-   private static void Method308(AbstractClientPlayer a, ResourceLocation a1) {
-      NetworkPlayerInfo a = null;
+   private static void Method308(AbstractClientPlayer a, ResourceLocation a) {
+      NetworkPlayerInfo var2 = null;
 
       try {
-         a = Field1660.invoke(a);
+         var2 = Field1660.invoke(a);
       } catch (Throwable var4) {
          System.out.println("Could not get player info!");
       }

@@ -40,14 +40,14 @@ public class Radar extends Module {
 
    @EventTarget
    public void Method810(EventRender2D a) {
-      String a = Class492.Method2239();
+      String var2 = Class492.Method2239();
       if (!Class352.Field1690.contains(this.Field2222)) {
          GlobalModule.INSTANCE.Field3168.Method69(this.Field2222);
       }
 
       if (!mc.gameSettings.showDebugInfo) {
-         int a = (int)MathUtils.Method547((float)Mouse.getX(), 0.0F, (float)Display.getWidth(), 0.0F, (float)RenderUtils.Method1076());
-         int a = (int)MathUtils.Method547((float)(Display.getHeight() - Mouse.getY()), 0.0F, (float)Display.getHeight(), 0.0F, (float)RenderUtils.Method1077());
+         int var3 = (int)MathUtils.Method547((float)Mouse.getX(), 0.0F, (float)Display.getWidth(), 0.0F, (float)RenderUtils.Method1076());
+         int var4 = (int)MathUtils.Method547((float)(Display.getHeight() - Mouse.getY()), 0.0F, (float)Display.getHeight(), 0.0F, (float)RenderUtils.Method1077());
          if (mc.currentScreen instanceof GuiChat && this.Field2222.Field1811 || this.Field2222.Field1822) {
             this.Field2216.Method2747(this.Field2222.Field1806);
             this.Field2217.Method2747(this.Field2222.Field1807);

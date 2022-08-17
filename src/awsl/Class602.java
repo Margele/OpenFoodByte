@@ -34,84 +34,84 @@ public class Class602 extends Class599 {
    }
 
    public void Method3691(Class586 a) {
-      float a = a.Field2758 * 0.5F;
-      float a = (float)Math.cos((double)a);
-      float a = (float)Math.sin((double)a);
-      this.Field2813 = a.Field2755 * a;
-      this.Field2814 = a.Field2756 * a;
-      this.Field2815 = a.Field2757 * a;
-      this.Field2816 = a;
+      float var2 = a.Field2758 * 0.5F;
+      float var3 = (float)Math.cos((double)var2);
+      float var4 = (float)Math.sin((double)var2);
+      this.Field2813 = a.Field2755 * var4;
+      this.Field2814 = a.Field2756 * var4;
+      this.Field2815 = a.Field2757 * var4;
+      this.Field2816 = var3;
    }
 
    public void Method3690() {
-      float a = 1.0F / (this.Field2813 * this.Field2813 + this.Field2814 * this.Field2814 + this.Field2815 * this.Field2815 + this.Field2816 * this.Field2816);
-      this.Field2813 *= a;
-      this.Field2814 *= a;
-      this.Field2815 *= a;
-      this.Field2816 *= a;
+      float var1 = 1.0F / (this.Field2813 * this.Field2813 + this.Field2814 * this.Field2814 + this.Field2815 * this.Field2815 + this.Field2816 * this.Field2816);
+      this.Field2813 *= var1;
+      this.Field2814 *= var1;
+      this.Field2815 *= var1;
+      this.Field2816 *= var1;
    }
 
    public void Method3692(Class587 a) {
       Class599.Method129();
-      float a = a.Field2759 + a.Field2764 + a.Field2769;
-      float a;
-      if ((double)a > 0.0) {
-         a = (float)Math.sqrt((double)(a + 1.0F));
-         this.Field2816 = a / 2.0F;
-         a = 0.5F / a;
-         this.Field2813 = (a.Field2765 - a.Field2768) * a;
-         this.Field2814 = (a.Field2767 - a.Field2761) * a;
-         this.Field2815 = (a.Field2760 - a.Field2763) * a;
+      float var5 = a.Field2759 + a.Field2764 + a.Field2769;
+      float var3;
+      if ((double)var5 > 0.0) {
+         var3 = (float)Math.sqrt((double)(var5 + 1.0F));
+         this.Field2816 = var3 / 2.0F;
+         var3 = 0.5F / var3;
+         this.Field2813 = (a.Field2765 - a.Field2768) * var3;
+         this.Field2814 = (a.Field2767 - a.Field2761) * var3;
+         this.Field2815 = (a.Field2760 - a.Field2763) * var3;
       }
 
-      byte a;
+      byte var4;
       label35: {
-         a = 0;
+         var4 = 0;
          if (a.Field2764 > a.Field2759) {
-            a = 1;
+            var4 = 1;
             if (!(a.Field2769 > a.Field2764)) {
                break label35;
             }
 
-            a = 2;
+            var4 = 2;
          }
 
          if (a.Field2769 > a.Field2759) {
-            a = 2;
+            var4 = 2;
          }
       }
 
-      switch (a) {
+      switch (var4) {
          case 0:
-            a = (float)Math.sqrt((double)(a.Field2759 - (a.Field2764 + a.Field2769) + 1.0F));
-            this.Field2813 = a * 0.5F;
-            if ((double)a != 0.0) {
-               a = 0.5F / a;
+            var3 = (float)Math.sqrt((double)(a.Field2759 - (a.Field2764 + a.Field2769) + 1.0F));
+            this.Field2813 = var3 * 0.5F;
+            if ((double)var3 != 0.0) {
+               var3 = 0.5F / var3;
             }
 
-            this.Field2816 = (a.Field2765 - a.Field2768) * a;
-            this.Field2814 = (a.Field2760 + a.Field2763) * a;
-            this.Field2815 = (a.Field2761 + a.Field2767) * a;
+            this.Field2816 = (a.Field2765 - a.Field2768) * var3;
+            this.Field2814 = (a.Field2760 + a.Field2763) * var3;
+            this.Field2815 = (a.Field2761 + a.Field2767) * var3;
          case 1:
-            a = (float)Math.sqrt((double)(a.Field2764 - (a.Field2769 + a.Field2759) + 1.0F));
-            this.Field2814 = a * 0.5F;
-            if ((double)a != 0.0) {
-               a = 0.5F / a;
+            var3 = (float)Math.sqrt((double)(a.Field2764 - (a.Field2769 + a.Field2759) + 1.0F));
+            this.Field2814 = var3 * 0.5F;
+            if ((double)var3 != 0.0) {
+               var3 = 0.5F / var3;
             }
 
-            this.Field2816 = (a.Field2767 - a.Field2761) * a;
-            this.Field2815 = (a.Field2765 + a.Field2768) * a;
-            this.Field2813 = (a.Field2763 + a.Field2760) * a;
+            this.Field2816 = (a.Field2767 - a.Field2761) * var3;
+            this.Field2815 = (a.Field2765 + a.Field2768) * var3;
+            this.Field2813 = (a.Field2763 + a.Field2760) * var3;
          case 2:
-            a = (float)Math.sqrt((double)(a.Field2759 - (a.Field2764 + a.Field2769) + 1.0F));
-            this.Field2815 = a * 0.5F;
-            if ((double)a != 0.0) {
-               a = 0.5F / a;
+            var3 = (float)Math.sqrt((double)(a.Field2759 - (a.Field2764 + a.Field2769) + 1.0F));
+            this.Field2815 = var3 * 0.5F;
+            if ((double)var3 != 0.0) {
+               var3 = 0.5F / var3;
             }
 
-            this.Field2816 = (a.Field2760 - a.Field2763) * a;
-            this.Field2813 = (a.Field2767 + a.Field2761) * a;
-            this.Field2814 = (a.Field2768 + a.Field2765) * a;
+            this.Field2816 = (a.Field2760 - a.Field2763) * var3;
+            this.Field2813 = (a.Field2767 + a.Field2761) * var3;
+            this.Field2814 = (a.Field2768 + a.Field2765) * var3;
          default:
       }
    }

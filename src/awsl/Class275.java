@@ -10,9 +10,9 @@ public class Class275 {
       this.Field1477 = a;
    }
 
-   public void Method2806(float a, float a1) {
-      String a = this.Field1477.getName();
-      String a = (double)Math.round(this.Field1477.getHealth() * 10.0F) / 10.0 + " hp";
+   public void Method2806(float a, float a) {
+      String var3 = this.Field1477.getName();
+      String var4 = (double)Math.round(this.Field1477.getHealth() * 10.0F) / 10.0 + " hp";
    }
 
    public void Method2807(EntityPlayer a) {

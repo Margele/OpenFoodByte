@@ -45,14 +45,14 @@ public class Waypoints extends Module {
 
    }
 
-   protected void Method2248(Class260 a, double a1, double a, double a, double a, Entity a5) {
-      float a = (float)(a.Method2837() - (double)((float)a) + 0.5);
-      float a = (float)(a.Method2838() - (double)((float)a) + 1.0);
-      float a = (float)(a.Method2839() - (double)((float)a) + 0.5);
+   protected void Method2248(Class260 a, double a, double a, double a, double a, Entity a) {
+      float var12 = (float)(a.Method2837() - (double)((float)a) + 0.5);
+      float var13 = (float)(a.Method2838() - (double)((float)a) + 1.0);
+      float var14 = (float)(a.Method2839() - (double)((float)a) + 0.5);
       Class448.trash();
-      double a = Math.sqrt((double)(a * a + a * a + a * a));
-      RenderManager a = Minecraft.getMinecraft().getRenderManager();
-      FontRenderer a = mc.fontRendererObj;
+      double var15 = Math.sqrt((double)(var12 * var12 + var13 * var13 + var14 * var14));
+      RenderManager var17 = Minecraft.getMinecraft().getRenderManager();
+      FontRenderer var18 = mc.fontRendererObj;
    }
 
    public void Method810(EventRender2D a) {
@@ -71,36 +71,36 @@ public class Waypoints extends Module {
    }
 
    private void Method2249(EventRender2D a, Class260 a) {
-      a[] a = Class448.trash();
+      a[] var3 = Class448.trash();
       if (mc.getCurrentServerData().serverIP.equals(a.Method2836()) && mc.thePlayer.dimension == a.Method2840() || !this.Method1734(new Vec3(a.Method2837(), a.Method2838(), a.Method2839()))) {
-         double a = a.Method2837();
-         double a = a.Method2838();
-         double a = a.Method2839();
-         AxisAlignedBB a = (new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94)).offset(a - ReflectionUtils.getRenderPosX(), a - ReflectionUtils.getRenderPosY(), a - ReflectionUtils.getRenderPosZ());
-         List a = Arrays.asList(new Vector3d(a + a.minX - a.maxX + 0.5, a, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a + a.maxY - a.minY, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a + a.maxY - a.minY, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a + a.maxY - a.minY, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a + a.maxY - a.minY, a + a.maxZ - a.minZ - 0.5));
+         double var4 = a.Method2837();
+         double var6 = a.Method2838();
+         double var8 = a.Method2839();
+         AxisAlignedBB var10 = (new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94)).offset(var4 - ReflectionUtils.getRenderPosX(), var6 - ReflectionUtils.getRenderPosY(), var8 - ReflectionUtils.getRenderPosZ());
+         List var11 = Arrays.asList(new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6, var8 + var10.maxZ - var10.minZ - 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6, var8 + var10.maxZ - var10.minZ - 0.5), new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6 + var10.maxY - var10.minY, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6 + var10.maxY - var10.minY, var8 + var10.minZ - var10.maxZ + 0.5), new Vector3d(var4 + var10.minX - var10.maxX + 0.5, var6 + var10.maxY - var10.minY, var8 + var10.maxZ - var10.minZ - 0.5), new Vector3d(var4 + var10.maxX - var10.minX - 0.5, var6 + var10.maxY - var10.minY, var8 + var10.maxZ - var10.minZ - 0.5));
          ReflectionUtils.setupCameraTransform(a.Field2923, 0);
-         Vector4d a = null;
-         Iterator var13 = a.Method1383();
+         Vector4d var12 = null;
+         Iterator var13 = var11.Method1383();
          if (var13.Method932()) {
-            Vector3d a = (Vector3d)var13.Method933();
-            a = RenderUtils.Method1136(a.x - mc.getRenderManager().viewerPosX, a.y - mc.getRenderManager().viewerPosY, a.z - mc.getRenderManager().viewerPosZ);
-            if (a.z >= 0.0 && a.z < 1.0) {
-               a = new Vector4d(a.x, a.y, a.z, 0.0);
-               a.x = Math.min(a.x, a.x);
-               a.y = Math.min(a.y, a.y);
-               a.z = Math.max(a.x, a.z);
-               a.w = Math.max(a.y, a.w);
+            Vector3d var14 = (Vector3d)var13.Method933();
+            var14 = RenderUtils.Method1136(var14.x - mc.getRenderManager().viewerPosX, var14.y - mc.getRenderManager().viewerPosY, var14.z - mc.getRenderManager().viewerPosZ);
+            if (var14.z >= 0.0 && var14.z < 1.0) {
+               var12 = new Vector4d(var14.x, var14.y, var14.z, 0.0);
+               var12.x = Math.min(var14.x, var12.x);
+               var12.y = Math.min(var14.y, var12.y);
+               var12.z = Math.max(var14.x, var12.z);
+               var12.w = Math.max(var14.y, var12.w);
             }
          }
 
          mc.entityRenderer.setupOverlayRendering();
          GL11.glPushMatrix();
-         float a = (float)a.x;
-         float a = (float)a.z;
-         float a = (float)a.y;
-         String a = "[" + Math.round(mc.thePlayer.getDistance(a.Method2837(), a.Method2838(), a.Method2839())) + "m]" + a.Method2835();
-         RenderUtils.Method1103(a + (a - a) / 2.0F - (float)(mc.fontRendererObj.getStringWidth(a) / 2) - 2.0F, a - (float)mc.fontRendererObj.FONT_HEIGHT + 4.0F, (float)(mc.fontRendererObj.getStringWidth(a) + 2), (float)mc.fontRendererObj.FONT_HEIGHT, (new Color(0, 0, 0, 120)).getRGB());
-         mc.fontRendererObj.drawStringWithShadow(a, a + (a - a) / 2.0F - (float)(mc.fontRendererObj.getStringWidth(a) / 2), a - (float)(mc.fontRendererObj.FONT_HEIGHT / 2), -1);
+         float var17 = (float)var12.x;
+         float var18 = (float)var12.z;
+         float var15 = (float)var12.y;
+         String var16 = "[" + Math.round(mc.thePlayer.getDistance(a.Method2837(), a.Method2838(), a.Method2839())) + "m]" + a.Method2835();
+         RenderUtils.Method1103(var17 + (var18 - var17) / 2.0F - (float)(mc.fontRendererObj.getStringWidth(var16) / 2) - 2.0F, var15 - (float)mc.fontRendererObj.FONT_HEIGHT + 4.0F, (float)(mc.fontRendererObj.getStringWidth(var16) + 2), (float)mc.fontRendererObj.FONT_HEIGHT, (new Color(0, 0, 0, 120)).getRGB());
+         mc.fontRendererObj.drawStringWithShadow(var16, var17 + (var18 - var17) / 2.0F - (float)(mc.fontRendererObj.getStringWidth(var16) / 2), var15 - (float)(mc.fontRendererObj.FONT_HEIGHT / 2), -1);
          GL11.glPopMatrix();
       }
 
@@ -108,11 +108,11 @@ public class Waypoints extends Module {
 
    private void Method2250(EventRender3D a, Class260 a) {
       if (mc.getCurrentServerData().serverIP.equals(a.Method2836()) && mc.thePlayer.dimension == a.Method2840()) {
-         Entity a = Minecraft.getMinecraft().getRenderViewEntity();
-         double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a.Field2922;
-         double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a.Field2922;
-         double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a.Field2922;
-         this.Method2248(a, 12.0, a, a, a, a);
+         Entity var3 = Minecraft.getMinecraft().getRenderViewEntity();
+         double var4 = var3.lastTickPosX + (var3.posX - var3.lastTickPosX) * (double)a.Field2922;
+         double var6 = var3.lastTickPosY + (var3.posY - var3.lastTickPosY) * (double)a.Field2922;
+         double var8 = var3.lastTickPosZ + (var3.posZ - var3.lastTickPosZ) * (double)a.Field2922;
+         this.Method2248(a, 12.0, var4, var6, var8, var3);
          RenderHelper.disableStandardItemLighting();
          GlStateManager.enableDepth();
          GlStateManager.depthMask(true);

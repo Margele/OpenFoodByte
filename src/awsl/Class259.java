@@ -31,9 +31,9 @@ public class Class259 {
                this.Field1418.createNewFile();
             }
 
-            PrintWriter a = new PrintWriter(this.Field1418);
-            a.write(this.Field1417.toJson(this.Method2261()));
-            a.close();
+            PrintWriter var1 = new PrintWriter(this.Field1418);
+            var1.write(this.Field1417.toJson(this.Method2261()));
+            var1.close();
          } catch (IOException var2) {
          }
 
@@ -45,8 +45,8 @@ public class Class259 {
          this.Method2259();
       } else {
          try {
-            JsonObject a = (new JsonParser()).parse(new FileReader(this.Field1418)).getAsJsonObject();
-            this.Method2262(a);
+            JsonObject var1 = (new JsonParser()).parse(new FileReader(this.Field1418)).getAsJsonObject();
+            this.Method2262(var1);
          } catch (IOException var2) {
          }
 
@@ -54,25 +54,25 @@ public class Class259 {
    }
 
    public JsonObject Method2261() {
-      JsonObject a = new JsonObject();
-      JsonArray a = new JsonArray();
+      JsonObject var1 = new JsonObject();
+      JsonArray var2 = new JsonArray();
       this.Method2265().forEach(Class259::Method2270);
-      a.add("waypoints", a);
-      return a;
+      var1.add("waypoints", var2);
+      return var1;
    }
 
    public void Method2262(JsonObject a) {
-      JsonArray a = a.get("waypoints").getAsJsonArray();
-      a.forEach(this::Method2269);
+      JsonArray var2 = a.get("waypoints").getAsJsonArray();
+      var2.forEach(this::Method2269);
    }
 
    private Class260 Method2263(String a, String a) {
       Method2272();
       Iterator var4 = this.Field1416.Method1383();
       if (var4.Method932()) {
-         Class260 a = (Class260)var4.Method933();
-         if (a.Method2835().equalsIgnoreCase(a) && a.Method2836().equals(a)) {
-            return a;
+         Class260 var5 = (Class260)var4.Method933();
+         if (var5.Method2835().equalsIgnoreCase(a) && var5.Method2836().equals(a)) {
+            return var5;
          }
       }
 
@@ -92,8 +92,8 @@ public class Class259 {
    }
 
    public void Method2267(String a, String a) {
-      Class260 a = this.Method2263(a, a);
-      this.Field1416.remove(a);
+      Class260 var3 = this.Method2263(a, a);
+      this.Field1416.remove(var3);
    }
 
    public boolean Method2268(String a, String a) {
@@ -101,10 +101,10 @@ public class Class259 {
    }
 
    private void Method2269(JsonElement a) {
-      JsonObject a = (JsonObject)a;
-      Class260 a = new Class260();
-      a.Method2842(a);
-      this.Method2265().Method2530(a);
+      JsonObject var2 = (JsonObject)a;
+      Class260 var3 = new Class260();
+      var3.Method2842(var2);
+      this.Method2265().Method2530(var3);
    }
 
    private static void Method2270(JsonArray a, Class260 a) {

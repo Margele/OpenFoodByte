@@ -39,9 +39,9 @@ public class Chams extends Module {
    @EventTarget
    public void Method1733(Class645 a) {
       Class492.Method2239();
-      EntityLivingBase a = a.Method3605();
+      EntityLivingBase var3 = a.Method3605();
       if (a.Method2241()) {
-         if (!this.Method965(a)) {
+         if (!this.Method965(var3)) {
             return;
          }
 
@@ -49,7 +49,7 @@ public class Chams extends Module {
          GL11.glPolygonOffset(1.0F, -1000000.0F);
       }
 
-      if (a.Method3515() && this.Method965(a)) {
+      if (a.Method3515() && this.Method965(var3)) {
          GL11.glPolygonOffset(1.0F, 1000000.0F);
          GL11.glDisable(32823);
       }
@@ -57,10 +57,10 @@ public class Chams extends Module {
    }
 
    public boolean Method965(EntityLivingBase a) {
-      boolean a = this.Field2398.getBooleanValue();
-      boolean a = this.Field2401.getBooleanValue();
-      boolean a = this.Field2399.getBooleanValue();
-      boolean a = this.Field2400.getBooleanValue();
+      boolean var2 = this.Field2398.getBooleanValue();
+      boolean var3 = this.Field2401.getBooleanValue();
+      boolean var4 = this.Field2399.getBooleanValue();
+      boolean var5 = this.Field2400.getBooleanValue();
       if (a.isInvisible()) {
          return false;
       } else if (a == mc.thePlayer) {

@@ -50,23 +50,23 @@ public class BlockOverlay extends Module {
 
    @EventTarget
    public void Method810(EventRender2D a) {
-      MovingObjectPosition a = mc.objectMouseOver;
-      if (a.entityHit == null) {
-         Block a = mc.theWorld.getBlockState(a.getBlockPos()).getBlock();
-         BlockPos a = a.getBlockPos();
-         if (Block.getIdFromBlock(a) != 0) {
-            FontRenderer a = mc.fontRendererObj;
-            int a = Block.getIdFromBlock(a);
-            String a = a.getLocalizedName() + " ID:" + a;
-            String a = a.getLocalizedName();
-            String a = " ID:" + a;
+      MovingObjectPosition var2 = mc.objectMouseOver;
+      if (var2.entityHit == null) {
+         Block var3 = mc.theWorld.getBlockState(var2.getBlockPos()).getBlock();
+         BlockPos var4 = var2.getBlockPos();
+         if (Block.getIdFromBlock(var3) != 0) {
+            FontRenderer var5 = mc.fontRendererObj;
+            int var6 = Block.getIdFromBlock(var3);
+            String var7 = var3.getLocalizedName() + " ID:" + var6;
+            String var8 = var3.getLocalizedName();
+            String var9 = " ID:" + var6;
             if (mc.objectMouseOver != null && this.Method713()) {
-               ScaledResolution a = new ScaledResolution(mc);
-               int a = a.getScaledWidth() / 2 + 10;
-               int a = a.getScaledHeight() / 2 + 2;
-               RenderUtils.Method1104((float)a, (float)a, (float)a + Class565.Field2634.Method1225(a) + 3.0F, (float)(a + a.FONT_HEIGHT) + 0.5F, (new Color(0, 0, 0, 120)).getRGB());
-               Class565.Field2634.Method1217(a, (float)a + 1.0F, (float)a, Class681.WHITE.Field2962);
-               Class565.Field2634.Method1217(a, (float)a + Class565.Field2634.Method1225(a) + 1.0F, (float)a, Class681.GREY.Field2962);
+               ScaledResolution var10 = new ScaledResolution(mc);
+               int var11 = var10.getScaledWidth() / 2 + 10;
+               int var12 = var10.getScaledHeight() / 2 + 2;
+               RenderUtils.Method1104((float)var11, (float)var12, (float)var11 + Class565.Field2634.Method1225(var7) + 3.0F, (float)(var12 + var5.FONT_HEIGHT) + 0.5F, (new Color(0, 0, 0, 120)).getRGB());
+               Class565.Field2634.Method1217(var8, (float)var11 + 1.0F, (float)var12, Class681.WHITE.Field2962);
+               Class565.Field2634.Method1217(var9, (float)var11 + Class565.Field2634.Method1225(var8) + 1.0F, (float)var12, Class681.GREY.Field2962);
             }
 
          }
@@ -94,7 +94,7 @@ public class BlockOverlay extends Module {
       this.Method1747(mc.thePlayer, mc.objectMouseOver, 0, ReflectionUtils.getRenderPartialTicks());
    }
 
-   public void Method1747(EntityPlayer a, MovingObjectPosition a, int a2, float a) {
+   public void Method1747(EntityPlayer a, MovingObjectPosition a, int a, float a) {
       if (a.typeOfHit == MovingObjectType.BLOCK) {
          GL11.glPushMatrix();
          GlStateManager.enableBlend();
@@ -103,18 +103,18 @@ public class BlockOverlay extends Module {
          GL11.glLineWidth(this.Field2403.getFloatValue());
          GlStateManager.disableTexture2D();
          GlStateManager.depthMask(false);
-         float a = 0.002F;
-         BlockPos a = a.getBlockPos();
-         Block a = mc.theWorld.getBlockState(a).getBlock();
-         if (a.getMaterial() != Material.air && mc.theWorld.getWorldBorder().contains(a)) {
-            a.setBlockBoundsBasedOnState(mc.theWorld, a);
-            double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a;
-            double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a;
-            double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a;
-            AxisAlignedBB a = a.getSelectedBoundingBox(mc.theWorld, a);
-            Block.EnumOffsetType a = a.getOffsetType();
-            if (a != EnumOffsetType.NONE) {
-               a = Method1628(a, a, a);
+         float var5 = 0.002F;
+         BlockPos var6 = a.getBlockPos();
+         Block var7 = mc.theWorld.getBlockState(var6).getBlock();
+         if (var7.getMaterial() != Material.air && mc.theWorld.getWorldBorder().contains(var6)) {
+            var7.setBlockBoundsBasedOnState(mc.theWorld, var6);
+            double var8 = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a;
+            double var10 = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a;
+            double var12 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a;
+            AxisAlignedBB var14 = var7.getSelectedBoundingBox(mc.theWorld, var6);
+            Block.EnumOffsetType var15 = var7.getOffsetType();
+            if (var15 != EnumOffsetType.NONE) {
+               var14 = Method1628(var14, var15, var6);
             }
 
             if (this.Field2404.getBooleanValue()) {
@@ -125,7 +125,7 @@ public class BlockOverlay extends Module {
                GL11.glEnable(2848);
             }
 
-            Method1629(a.expand(0.0020000000949949026, 0.0020000000949949026, 0.0020000000949949026).offset(-a, -a, -a));
+            Method1629(var14.expand(0.0020000000949949026, 0.0020000000949949026, 0.0020000000949949026).offset(-var8, -var10, -var12));
             if (this.Field2404.getBooleanValue()) {
                GL11.glEnable(2929);
             }
@@ -145,47 +145,47 @@ public class BlockOverlay extends Module {
    }
 
    public static AxisAlignedBB Method1628(AxisAlignedBB a, Block.EnumOffsetType a, BlockPos a) {
-      int a = a.getX();
-      int a = a.getZ();
-      long a = (long)(a * 3129871) ^ (long)a * 116129781L;
-      a = a * a * 42317861L + a * 11L;
-      double a = ((double)((float)(a >> 16 & 15L) / 15.0F) - 0.5) * 0.5;
-      double a = ((double)((float)(a >> 24 & 15L) / 15.0F) - 0.5) * 0.5;
-      double a = 0.0;
+      int var3 = a.getX();
+      int var4 = a.getZ();
+      long var5 = (long)(var3 * 3129871) ^ (long)var4 * 116129781L;
+      var5 = var5 * var5 * 42317861L + var5 * 11L;
+      double var7 = ((double)((float)(var5 >> 16 & 15L) / 15.0F) - 0.5) * 0.5;
+      double var9 = ((double)((float)(var5 >> 24 & 15L) / 15.0F) - 0.5) * 0.5;
+      double var11 = 0.0;
       if (a == EnumOffsetType.XYZ) {
-         a = ((double)((float)(a >> 20 & 15L) / 15.0F) - 1.0) * 0.2;
+         var11 = ((double)((float)(var5 >> 20 & 15L) / 15.0F) - 1.0) * 0.2;
       }
 
-      return a.offset(a, a, a);
+      return a.offset(var7, var11, var9);
    }
 
    public static void Method1629(AxisAlignedBB a) {
-      Tessellator a = Tessellator.getInstance();
-      WorldRenderer a = a.getWorldRenderer();
-      a.begin(3, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.draw();
-      a.begin(3, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.draw();
-      a.begin(1, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.maxZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.maxZ).endVertex();
-      a.draw();
+      Tessellator var1 = Tessellator.getInstance();
+      WorldRenderer var2 = var1.getWorldRenderer();
+      var2.begin(3, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var1.draw();
+      var2.begin(3, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var1.draw();
+      var2.begin(1, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.maxZ).endVertex();
+      var1.draw();
    }
 
    public void onEnable() {

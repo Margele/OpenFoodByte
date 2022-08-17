@@ -13,7 +13,7 @@ public class Class341 {
       this.Field1647 = System.currentTimeMillis();
    }
 
-   public boolean Method286(long a, boolean a1) {
+   public boolean Method286(long a, boolean a) {
       if (System.currentTimeMillis() - this.Field1647 > a) {
          this.Method285();
          return true;

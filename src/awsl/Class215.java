@@ -12,11 +12,11 @@ public class Class215 {
    }
 
    public static boolean Method2650(String a) {
-      String[] a = Class207.Method2434();
+      String[] var1 = Class207.Method2434();
       if (Field1206.stream().filter(Class215::Method2655).count() <= 0L) {
          return false;
       } else {
-         Class207 a = (Class207)Field1206.stream().filter(Class215::Method2654).findFirst().get();
+         Class207 var2 = (Class207)Field1206.stream().filter(Class215::Method2654).findFirst().get();
          a.trash(new String[1]);
          return true;
       }

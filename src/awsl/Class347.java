@@ -30,19 +30,19 @@ public class Class347 {
    }
 
    public static void Method374(float a) {
-      ScaledResolution a = new ScaledResolution(Field1662);
-      int a = a.getScaleFactor();
-      int a = a.getScaledWidth();
-      int a = a.getScaledHeight();
-      if (Field1664 != a || Field1665 != a || Field1666 != a || Field1663 == null || Field1661 == null) {
+      ScaledResolution var1 = new ScaledResolution(Field1662);
+      int var2 = var1.getScaleFactor();
+      int var3 = var1.getScaledWidth();
+      int var4 = var1.getScaledHeight();
+      if (Field1664 != var2 || Field1665 != var3 || Field1666 != var4 || Field1663 == null || Field1661 == null) {
          Field1663 = new Framebuffer(Field1662.displayWidth, Field1662.displayHeight, false);
          Field1663.setFramebufferColor(0.0F, 0.0F, 0.0F, 0.0F);
          Method375(Field1667, Field1663);
       }
 
-      Field1664 = a;
-      Field1665 = a;
-      Field1666 = a;
+      Field1664 = var2;
+      Field1665 = var3;
+      Field1666 = var4;
       Method373(a, 0.0F, 1.0F);
    }
 

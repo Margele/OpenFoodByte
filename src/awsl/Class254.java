@@ -12,7 +12,7 @@ public final class Class254 implements Composite {
       this.Field1391 = a;
    }
 
-   public CompositeContext Method1356(ColorModel a, ColorModel a, RenderingHints a2) {
+   public CompositeContext Method1356(ColorModel a, ColorModel a, RenderingHints a) {
       return new Class240(this.Field1391, a, a);
    }
 

@@ -13,15 +13,15 @@ public final class Class270 extends Class253 {
    }
 
    public Class148 Method2114(String a, boolean a) {
-      Class801 a = this.Field1466.Method3260(a, a);
-      Class148 a = this.Field1390 == null ? null : this.Field1390.Method2114(a, a);
-      return new Class132(a, a);
+      Class801 var3 = this.Field1466.Method3260(a, a);
+      Class148 var4 = this.Field1390 == null ? null : this.Field1390.Method2114(a, a);
+      return new Class132(var4, var3);
    }
 
    public Class148 Method2115(int a, Class31 a, String a, boolean a) {
-      Class801 a = this.Field1466.Method3261(a, a, a, a);
-      Class148 a = this.Field1390 == null ? null : this.Field1390.Method2115(a, a, a, a);
-      return new Class132(a, a);
+      Class801 var5 = this.Field1466.Method3261(a, a, a, a);
+      Class148 var6 = this.Field1390 == null ? null : this.Field1390.Method2115(a, a, a, a);
+      return new Class132(var6, var5);
    }
 
    public void Method2120(Class136 a) {

@@ -37,20 +37,20 @@ public final class Class438 {
    }
 
    public double Method2671(double a, double a, double a) {
-      double a = Math.abs(a - a);
-      int a = Minecraft.getDebugFPS();
-      if (a > 0.0) {
-         double a = MathUtils.floor(Math.min(10.0, Math.max(0.05, 144.0 / (double)a * (a / 10.0) * a)), 0.05);
-         if (a != 0.0 && a < a) {
-            a = a;
+      double var7 = Math.abs(a - a);
+      int var9 = Minecraft.getDebugFPS();
+      if (var7 > 0.0) {
+         double var10 = MathUtils.floor(Math.min(10.0, Math.max(0.05, 144.0 / (double)var9 * (var7 / 10.0) * a)), 0.05);
+         if (var7 != 0.0 && var7 < var10) {
+            var10 = var7;
          }
 
          if (a < a) {
-            return a + a;
+            return a + var10;
          }
 
          if (a > a) {
-            return a - a;
+            return a - var10;
          }
       }
 

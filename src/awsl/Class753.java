@@ -26,12 +26,12 @@ public class Class753 extends Class759 {
    }
 
    public void Method1620(int a, int a) {
-      int[] a = new int[this.Field3291 + 1];
-      int[] a = new int[this.Field3291 + 1];
-      System.arraycopy(this.Field3292, 0, a, 0, this.Field3291);
-      System.arraycopy(this.Field3293, 0, a, 0, this.Field3291);
-      this.Field3292 = a;
-      this.Field3293 = a;
+      int[] var3 = new int[this.Field3291 + 1];
+      int[] var4 = new int[this.Field3291 + 1];
+      System.arraycopy(this.Field3292, 0, var3, 0, this.Field3291);
+      System.arraycopy(this.Field3293, 0, var4, 0, this.Field3291);
+      this.Field3292 = var3;
+      this.Field3293 = var4;
       this.Field3292[this.Field3291] = a;
       this.Field3293[this.Field3291] = a;
       ++this.Field3291;
@@ -63,33 +63,33 @@ public class Class753 extends Class759 {
       this.Field3292[this.Field3291 - 1] = 256;
       this.Field3293[0] = this.Field3293[1];
       this.Field3293[this.Field3291 - 1] = this.Field3293[this.Field3291 - 2];
-      int a = 0;
-      if (a < 256) {
-         this.Field3332[a] = Class776.Method1725(a, this.Field3291, this.Field3292, this.Field3293);
-         ++a;
+      int var2 = 0;
+      if (var2 < 256) {
+         this.Field3332[var2] = Class776.Method1725(var2, this.Field3291, this.Field3292, this.Field3293);
+         ++var2;
       }
 
    }
 
    private void Method1622() {
       Class193.Method1269();
-      int a = 1;
-      if (a < this.Field3291) {
-         int a = 1;
-         if (a < a) {
-            if (this.Field3292[a] < this.Field3292[a]) {
-               int a = this.Field3292[a];
-               this.Field3292[a] = this.Field3292[a];
-               this.Field3292[a] = a;
-               a = this.Field3293[a];
-               this.Field3293[a] = this.Field3293[a];
-               this.Field3293[a] = a;
+      int var2 = 1;
+      if (var2 < this.Field3291) {
+         int var3 = 1;
+         if (var3 < var2) {
+            if (this.Field3292[var2] < this.Field3292[var3]) {
+               int var4 = this.Field3292[var2];
+               this.Field3292[var2] = this.Field3292[var3];
+               this.Field3292[var3] = var4;
+               var4 = this.Field3293[var2];
+               this.Field3293[var2] = this.Field3293[var3];
+               this.Field3293[var3] = var4;
             }
 
-            ++a;
+            ++var3;
          }
 
-         ++a;
+         ++var2;
       }
 
    }

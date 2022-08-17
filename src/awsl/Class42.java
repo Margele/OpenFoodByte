@@ -52,18 +52,18 @@ public class Class42 extends Class62 {
    }
 
    private int[] Method3241(float a) {
-      int[] a = new int[256];
+      int[] var2 = new int[256];
 
-      for(int a = 0; a < 256; ++a) {
-         int a = (int)(255.0 * Math.pow((double)a / 255.0, 1.0 / (double)a) + 0.5);
-         if (a > 255) {
-            a = 255;
+      for(int var3 = 0; var3 < 256; ++var3) {
+         int var4 = (int)(255.0 * Math.pow((double)var3 / 255.0, 1.0 / (double)a) + 0.5);
+         if (var4 > 255) {
+            var4 = 255;
          }
 
-         a[a] = a;
+         var2[var3] = var4;
       }
 
-      return a;
+      return var2;
    }
 
    public String toString() {

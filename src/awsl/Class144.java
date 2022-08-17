@@ -63,9 +63,9 @@ public class Class144 {
    }
 
    public Class144 Method1426(boolean a) {
-      Class144 a = this.Method1424();
-      a.Field1001 = a;
-      return a;
+      Class144 var2 = this.Method1424();
+      var2.Field1001 = a;
+      return var2;
    }
 
    public String Method1427() {
@@ -73,9 +73,9 @@ public class Class144 {
    }
 
    public Class144 Method1428(String a) {
-      Class144 a = this.Method1424();
-      a.Field1002 = a;
-      return a;
+      Class144 var2 = this.Method1424();
+      var2.Field1002 = a;
+      return var2;
    }
 
    public boolean Method1429() {
@@ -83,9 +83,9 @@ public class Class144 {
    }
 
    public Class144 Method1430(boolean a) {
-      Class144 a = this.Method1424();
-      a.Field1003 = a;
-      return a;
+      Class144 var2 = this.Method1424();
+      var2.Field1003 = a;
+      return var2;
    }
 
    public Map Method1431() {
@@ -93,10 +93,10 @@ public class Class144 {
    }
 
    public Class144 Method1432(Map a) {
-      Class144 a = this.Method1424();
-      Map a = new HashMap(a);
-      a.Field1004 = Collections.unmodifiableMap(a);
-      return a;
+      Class144 var2 = this.Method1424();
+      HashMap var3 = new HashMap(a);
+      var2.Field1004 = Collections.unmodifiableMap(var3);
+      return var2;
    }
 
    protected Object Method1433() throws CloneNotSupportedException {

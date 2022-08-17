@@ -18,45 +18,45 @@ public final class Class228 extends Class167 {
    }
 
    public void Method1458(String a, String a) {
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "file", "file", "", Method2071(a));
-      a.addAttribute("", "debug", "debug", "", Method2071(a));
-      this.Field1277.Method2396("source", a);
+      AttributesImpl var3 = new AttributesImpl();
+      var3.addAttribute("", "file", "file", "", Method2071(a));
+      var3.addAttribute("", "debug", "debug", "", Method2071(a));
+      this.Field1277.Method2396("source", var3);
    }
 
    public void Method1453(String a, String a, String a) {
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "owner", "owner", "", a);
-      a.addAttribute("", "name", "name", "", a);
-      a.addAttribute("", "desc", "desc", "", a);
-      this.Field1277.Method2396("outerclass", a);
+      AttributesImpl var4 = new AttributesImpl();
+      var4.addAttribute("", "owner", "owner", "", a);
+      var4.addAttribute("", "name", "name", "", a);
+      var4.addAttribute("", "desc", "desc", "", a);
+      this.Field1277.Method2396("outerclass", var4);
    }
 
-   public Class148 Method1448(String a, boolean a1) {
+   public Class148 Method1448(String a, boolean a) {
       return new Class134(this.Field1277, "annotation", 1, (String)null, a);
    }
 
-   public Class148 Method1449(int a, Class31 a, String a, boolean a3) {
+   public Class148 Method1449(int a, Class31 a, String a, boolean a) {
       return new Class134(this.Field1277, "typeAnnotation", 1, (String)null, a, a, a);
    }
 
    public void Method1447(int a, int a, String a, String a, String a, String[] a) {
-      StringBuffer a = new StringBuffer();
-      Method2072(a | 262144, a);
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "access", "access", "", a.toString());
-      a.addAttribute("", "name", "name", "", a);
-      a.addAttribute("", "signature", "signature", "", Method2071(a));
-      a.addAttribute("", "parent", "parent", "", a);
-      a.addAttribute("", "major", "major", "", Integer.toString(a & '\uffff'));
-      a.addAttribute("", "minor", "minor", "", Integer.toString(a >>> 16));
-      this.Field1277.Method2394("class", a);
+      StringBuffer var7 = new StringBuffer();
+      Method2072(a | 262144, var7);
+      AttributesImpl var8 = new AttributesImpl();
+      var8.addAttribute("", "access", "access", "", var7.toString());
+      var8.addAttribute("", "name", "name", "", a);
+      var8.addAttribute("", "signature", "signature", "", Method2071(a));
+      var8.addAttribute("", "parent", "parent", "", a);
+      var8.addAttribute("", "major", "major", "", Integer.toString(a & '\uffff'));
+      var8.addAttribute("", "minor", "minor", "", Integer.toString(a >>> 16));
+      this.Field1277.Method2394("class", var8);
       this.Field1277.Method2394("interfaces", new AttributesImpl());
       if (a.length > 0) {
-         for(int a = 0; a < a.length; ++a) {
-            AttributesImpl a = new AttributesImpl();
-            a.addAttribute("", "name", "name", "", a[a]);
-            this.Field1277.Method2396("interface", a);
+         for(int var9 = 0; var9 < a.length; ++var9) {
+            AttributesImpl var10 = new AttributesImpl();
+            var10.addAttribute("", "name", "name", "", a[var9]);
+            this.Field1277.Method2396("interface", var10);
          }
       }
 
@@ -64,32 +64,32 @@ public final class Class228 extends Class167 {
    }
 
    public Class253 Method1450(int a, String a, String a, String a, Object a) {
-      StringBuffer a = new StringBuffer();
-      Method2072(a | 524288, a);
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "access", "access", "", a.toString());
-      a.addAttribute("", "name", "name", "", a);
-      a.addAttribute("", "desc", "desc", "", a);
-      a.addAttribute("", "signature", "signature", "", Method2071(a));
-      a.addAttribute("", "value", "value", "", Method2071(a.Method3780()));
-      return new Class273(this.Field1277, a);
+      StringBuffer var6 = new StringBuffer();
+      Method2072(a | 524288, var6);
+      AttributesImpl var7 = new AttributesImpl();
+      var7.addAttribute("", "access", "access", "", var6.toString());
+      var7.addAttribute("", "name", "name", "", a);
+      var7.addAttribute("", "desc", "desc", "", a);
+      var7.addAttribute("", "signature", "signature", "", Method2071(a));
+      var7.addAttribute("", "value", "value", "", Method2071(a.Method3780()));
+      return new Class273(this.Field1277, var7);
    }
 
    public Class267 Method1451(int a, String a, String a, String a, String[] a) {
-      StringBuffer a = new StringBuffer();
-      Method2072(a, a);
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "access", "access", "", a.toString());
-      a.addAttribute("", "name", "name", "", a);
-      a.addAttribute("", "desc", "desc", "", a);
-      a.addAttribute("", "signature", "signature", "", a);
-      this.Field1277.Method2394("method", a);
+      StringBuffer var6 = new StringBuffer();
+      Method2072(a, var6);
+      AttributesImpl var7 = new AttributesImpl();
+      var7.addAttribute("", "access", "access", "", var6.toString());
+      var7.addAttribute("", "name", "name", "", a);
+      var7.addAttribute("", "desc", "desc", "", a);
+      var7.addAttribute("", "signature", "signature", "", a);
+      this.Field1277.Method2394("method", var7);
       this.Field1277.Method2394("exceptions", new AttributesImpl());
       if (a.length > 0) {
-         for(int a = 0; a < a.length; ++a) {
-            AttributesImpl a = new AttributesImpl();
-            a.addAttribute("", "name", "name", "", a[a]);
-            this.Field1277.Method2396("exception", a);
+         for(int var8 = 0; var8 < a.length; ++var8) {
+            AttributesImpl var9 = new AttributesImpl();
+            var9.addAttribute("", "name", "name", "", a[var8]);
+            this.Field1277.Method2396("exception", var9);
          }
       }
 
@@ -98,14 +98,14 @@ public final class Class228 extends Class167 {
    }
 
    public final void Method1452(String a, String a, String a, int a) {
-      StringBuffer a = new StringBuffer();
-      Method2072(a | 1048576, a);
-      AttributesImpl a = new AttributesImpl();
-      a.addAttribute("", "access", "access", "", a.toString());
-      a.addAttribute("", "name", "name", "", a);
-      a.addAttribute("", "outerName", "outerName", "", a);
-      a.addAttribute("", "innerName", "innerName", "", a);
-      this.Field1277.Method2396("innerclass", a);
+      StringBuffer var5 = new StringBuffer();
+      Method2072(a | 1048576, var5);
+      AttributesImpl var6 = new AttributesImpl();
+      var6.addAttribute("", "access", "access", "", var5.toString());
+      var6.addAttribute("", "name", "name", "", a);
+      var6.addAttribute("", "outerName", "outerName", "", a);
+      var6.addAttribute("", "innerName", "innerName", "", a);
+      this.Field1277.Method2396("innerclass", var6);
    }
 
    public final void Method1460() {
@@ -117,29 +117,29 @@ public final class Class228 extends Class167 {
    }
 
    static final String Method2071(String a) {
-      StringBuffer a = new StringBuffer();
+      StringBuffer var1 = new StringBuffer();
 
-      for(int a = 0; a < a.length(); ++a) {
-         char a = a.charAt(a);
-         if (a == '\\') {
-            a.append("\\\\");
-         } else if (a >= ' ' && a <= 127) {
-            a.append(a);
+      for(int var2 = 0; var2 < a.length(); ++var2) {
+         char var3 = a.charAt(var2);
+         if (var3 == '\\') {
+            var1.append("\\\\");
+         } else if (var3 >= ' ' && var3 <= 127) {
+            var1.append(var3);
          } else {
-            a.append("\\u");
-            if (a < 16) {
-               a.append("000");
-            } else if (a < 256) {
-               a.append("00");
-            } else if (a < 4096) {
-               a.append('0');
+            var1.append("\\u");
+            if (var3 < 16) {
+               var1.append("000");
+            } else if (var3 < 256) {
+               var1.append("00");
+            } else if (var3 < 4096) {
+               var1.append('0');
             }
 
-            a.append(Integer.toString(a, 16));
+            var1.append(Integer.toString(var3, 16));
          }
       }
 
-      return a.toString();
+      return var1.toString();
    }
 
    static void Method2072(int a, StringBuffer a) {

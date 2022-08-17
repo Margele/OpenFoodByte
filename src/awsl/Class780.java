@@ -3,7 +3,6 @@ package awsl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import obfuscate.a;
 import obfuscate.b;
 
@@ -23,7 +22,7 @@ public class Class780 implements Class45 {
    }
 
    public Class784[] Method847(String a, Class15 a) throws Class731 {
-      int[] a = Class786.Method917();
+      int[] var3 = Class786.Method917();
       if ((a.Field194 & 1280) != 0) {
          this.Field3479 = (Class784[])(new Class784[0]);
          return this.Field3479;
@@ -36,185 +35,185 @@ public class Class780 implements Class45 {
          this.Field3481 = new boolean[this.Field3476];
          this.Field3482 = new int[this.Field3476];
          this.Field3483 = 0;
-         int a = 0;
-         int a;
-         if (a < a.Field209.Method1799()) {
-            Class794 a = (Class794)a.Field209.get(a);
-            int a = this.Field3477.Method188(a.Field3559);
-            a = this.Field3477.Method188(a.Field3560);
-            if (a < a) {
-               List a = this.Field3478[a];
-               List a = new ArrayList();
-               this.Field3478[a] = a;
-               a.Method2530(a);
-               int var8 = a + 1;
+         int var4 = 0;
+         int var7;
+         if (var4 < a.Field209.Method1799()) {
+            Class794 var5 = (Class794)a.Field209.get(var4);
+            int var6 = this.Field3477.Method188(var5.Field3559);
+            var7 = this.Field3477.Method188(var5.Field3560);
+            if (var6 < var7) {
+               List var9 = this.Field3478[var6];
+               ArrayList var32 = new ArrayList();
+               this.Field3478[var6] = var32;
+               var32.Method2530(var5);
+               int var8 = var6 + 1;
             }
 
-            ++a;
+            ++var4;
          }
 
-         Class796 a = new Class796((Class104)null, a.Field211, (Class102)null);
-         List a = new ArrayList();
-         Map a = new HashMap();
-         this.Method848(0, a, a);
-         if (!a.isEmpty()) {
-            Class102 a = (Class102)a.remove(0);
-            Class796 a = (Class796)a.Method2665(a.Field829);
-            a = new Class796(a.Field829, a.Field211, a);
-            a.put(a.Field829, a);
-            this.Method848(this.Field3477.Method188(a.Field829), a, a);
-            a.Field3567.Method2530(a);
+         Class796 var24 = new Class796((Class104)null, a.Field211, (Class102)null);
+         ArrayList var25 = new ArrayList();
+         HashMap var26 = new HashMap();
+         this.Method848(0, var24, var25);
+         if (!var25.isEmpty()) {
+            Class102 var27 = (Class102)var25.remove(0);
+            Class796 var29 = (Class796)var26.Method2665(var27.Field829);
+            var29 = new Class796(var27.Field829, a.Field211, var27);
+            var26.put(var27.Field829, var29);
+            this.Method848(this.Field3477.Method188(var27.Field829), var29, var25);
+            var29.Field3567.Method2530(var27);
          }
 
-         int a = 0;
-         if (a < this.Field3476) {
-            if (this.Field3480[a] != null && this.Field3480[a].Field3565 == null) {
-               this.Field3480[a] = null;
+         byte var28 = 0;
+         if (var28 < this.Field3476) {
+            if (this.Field3480[var28] != null && this.Field3480[var28].Field3565 == null) {
+               this.Field3480[var28] = null;
             }
 
-            a = a + 1;
+            var7 = var28 + 1;
          }
 
-         Class784 a = this.Method852(a.Field211, a.Field210);
-         Class784 a = this.Method852(a.Field211, a.Field210);
-         a.Method885(this.Field3475.Method907(b.Method3213(a.Field196)));
-         b[] a = b.Method3211(a.Field196);
-         int a = 0;
+         Class784 var30 = this.Method852(a.Field211, a.Field210);
+         Class784 var31 = this.Method852(a.Field211, a.Field210);
+         var30.Method885(this.Field3475.Method907(b.Method3213(a.Field196)));
+         b[] var33 = b.Method3211(a.Field196);
+         int var10 = 0;
          if ((a.Field194 & 8) == 0) {
-            b a = b.Method3205(a);
-            a.Method889(a++, this.Field3475.Method907(a));
+            b var11 = b.Method3205(a);
+            var30.Method889(var10++, this.Field3475.Method907(var11));
          }
 
-         int a = 0;
-         if (a < a.length) {
-            a.Method889(a++, this.Field3475.Method907(a[a]));
-            if (a[a].Method3233() == 2) {
-               a.Method889(a++, this.Field3475.Method907((b)null));
+         int var34 = 0;
+         if (var34 < var33.length) {
+            var30.Method889(var10++, this.Field3475.Method907(var33[var34]));
+            if (var33[var34].Method3233() == 2) {
+               var30.Method889(var10++, this.Field3475.Method907((b)null));
             }
 
-            ++a;
+            ++var34;
          }
 
-         if (a < a.Field211) {
-            a.Method889(a++, this.Field3475.Method907((b)null));
+         if (var10 < a.Field211) {
+            var30.Method889(var10++, this.Field3475.Method907((b)null));
          }
 
-         this.Method857(0, a, (Class796)null);
+         this.Method857(0, var30, (Class796)null);
          this.Method851(a, a);
          if (this.Field3483 > 0) {
-            a = this.Field3482[--this.Field3483];
-            Class784 a = this.Field3479[a];
-            Class796 a = this.Field3480[a];
-            this.Field3481[a] = false;
-            a a = null;
+            var34 = this.Field3482[--this.Field3483];
+            Class784 var12 = this.Field3479[var34];
+            Class796 var13 = this.Field3480[var34];
+            this.Field3481[var34] = false;
+            a var14 = null;
 
             try {
-               a = a.Field208.Method186(a);
-               int a = a.Method3640();
-               int a = a.Method0();
-               if (a == 8 || a == 15 || a == 14) {
-                  this.Method857(a + 1, a, a);
-                  this.Method854(a, a + 1);
+               var14 = a.Field208.Method186(var34);
+               int var15 = var14.Method3640();
+               int var16 = var14.Method0();
+               if (var16 == 8 || var16 == 15 || var16 == 14) {
+                  this.Method857(var34 + 1, var12, var13);
+                  this.Method854(var34, var34 + 1);
                }
 
-               a.Method884(a).Method895(a, this.Field3475);
-               a = null;
-               int a;
-               if (a instanceof Class102) {
-                  Class102 a = (Class102)a;
-                  if (a != 167 && a != 168) {
-                     this.Method857(a + 1, a, a);
-                     this.Method854(a, a + 1);
+               var30.Method884(var12).Method895(var14, this.Field3475);
+               var13 = null;
+               int var18;
+               if (var14 instanceof Class102) {
+                  Class102 var17 = (Class102)var14;
+                  if (var15 != 167 && var15 != 168) {
+                     this.Method857(var34 + 1, var30, var13);
+                     this.Method854(var34, var34 + 1);
                   }
 
-                  a = this.Field3477.Method188(a.Field829);
-                  if (a == 168) {
-                     this.Method857(a, a, new Class796(a.Field829, a.Field211, a));
+                  var18 = this.Field3477.Method188(var17.Field829);
+                  if (var15 == 168) {
+                     this.Method857(var18, var30, new Class796(var17.Field829, a.Field211, var17));
                   }
 
-                  this.Method857(a, a, a);
-                  this.Method854(a, a);
+                  this.Method857(var18, var30, var13);
+                  this.Method854(var34, var18);
                }
 
-               int a;
-               Class104 a;
-               if (a instanceof Class96) {
-                  Class96 a = (Class96)a;
-                  a = this.Field3477.Method188(a.Field817);
-                  this.Method857(a, a, a);
-                  this.Method854(a, a);
-                  a = 0;
-                  if (a < a.Field819.Method1799()) {
-                     a = (Class104)a.Field819.get(a);
-                     a = this.Field3477.Method188(a);
-                     this.Method857(a, a, a);
-                     this.Method854(a, a);
-                     ++a;
-                  }
-               }
-
-               if (a instanceof Class122) {
-                  Class122 a = (Class122)a;
-                  a = this.Field3477.Method188(a.Field961);
-                  this.Method857(a, a, a);
-                  this.Method854(a, a);
-                  int a = 0;
-                  if (a < a.Field962.Method1799()) {
-                     a = (Class104)a.Field962.get(a);
-                     a = this.Field3477.Method188(a);
-                     this.Method857(a, a, a);
-                     this.Method854(a, a);
-                     a = a + 1;
+               int var19;
+               Class104 var20;
+               if (var14 instanceof Class96) {
+                  Class96 var35 = (Class96)var14;
+                  var18 = this.Field3477.Method188(var35.Field817);
+                  this.Method857(var18, var30, var13);
+                  this.Method854(var34, var18);
+                  var19 = 0;
+                  if (var19 < var35.Field819.Method1799()) {
+                     var20 = (Class104)var35.Field819.get(var19);
+                     var18 = this.Field3477.Method188(var20);
+                     this.Method857(var18, var30, var13);
+                     this.Method854(var34, var18);
+                     ++var19;
                   }
                }
 
-               if (a == 169) {
-                  throw new Class731(a, "RET instruction outside of a sub routine");
+               if (var14 instanceof Class122) {
+                  Class122 var36 = (Class122)var14;
+                  var18 = this.Field3477.Method188(var36.Field961);
+                  this.Method857(var18, var30, var13);
+                  this.Method854(var34, var18);
+                  byte var39 = 0;
+                  if (var39 < var36.Field962.Method1799()) {
+                     var20 = (Class104)var36.Field962.get(var39);
+                     var18 = this.Field3477.Method188(var20);
+                     this.Method857(var18, var30, var13);
+                     this.Method854(var34, var18);
+                     var19 = var39 + 1;
+                  }
                }
 
-               if (a != 191 && (a < 172 || a > 177)) {
-                  int a;
-                  if (a instanceof Class112) {
-                     a = ((Class112)a).Field877;
-                     a.Field3566[a] = true;
-                     if (a == 22 || a == 24 || a == 55 || a == 57) {
-                        a.Field3566[a + 1] = true;
+               if (var15 == 169) {
+                  throw new Class731(var14, "RET instruction outside of a sub routine");
+               }
+
+               if (var15 != 191 && (var15 < 172 || var15 > 177)) {
+                  int var37;
+                  if (var14 instanceof Class112) {
+                     var37 = ((Class112)var14).Field877;
+                     var13.Field3566[var37] = true;
+                     if (var15 == 22 || var15 == 24 || var15 == 55 || var15 == 57) {
+                        var13.Field3566[var37 + 1] = true;
                      }
                   }
 
-                  if (a instanceof Class82) {
-                     a = ((Class82)a).Field712;
-                     a.Field3566[a] = true;
+                  if (var14 instanceof Class82) {
+                     var37 = ((Class82)var14).Field712;
+                     var13.Field3566[var37] = true;
                   }
 
-                  this.Method857(a + 1, a, a);
-                  this.Method854(a, a + 1);
+                  this.Method857(var34 + 1, var30, var13);
+                  this.Method854(var34, var34 + 1);
                }
 
-               List a = this.Field3478[a];
-               int a = 0;
-               if (a < a.Method1799()) {
-                  Class794 a = (Class794)a.get(a);
-                  b a;
-                  if (a.Field3562 == null) {
-                     a = b.Method3205("java/lang/Throwable");
+               List var38 = this.Field3478[var34];
+               byte var40 = 0;
+               if (var40 < var38.Method1799()) {
+                  Class794 var41 = (Class794)var38.get(var40);
+                  b var42;
+                  if (var41.Field3562 == null) {
+                     var42 = b.Method3205("java/lang/Throwable");
                   }
 
-                  a = b.Method3205(a.Field3562);
-                  int a = this.Field3477.Method188(a.Field3561);
-                  if (this.Method856(a, a)) {
-                     a.Method884(a);
-                     a.Method892();
-                     a.Method894(this.Field3475.Method907(a));
-                     this.Method857(a, a, a);
+                  var42 = b.Method3205(var41.Field3562);
+                  int var21 = this.Field3477.Method188(var41.Field3561);
+                  if (this.Method856(var34, var41)) {
+                     var31.Method884(var12);
+                     var31.Method892();
+                     var31.Method894(this.Field3475.Method907(var42));
+                     this.Method857(var21, var31, var13);
                   }
 
-                  a = a + 1;
+                  var18 = var40 + 1;
                }
             } catch (Class731 var22) {
-               throw new Class731(var22.Field3210, "Error at instruction " + a + ": " + var22.getMessage(), var22);
+               throw new Class731(var22.Field3210, "Error at instruction " + var34 + ": " + var22.getMessage(), var22);
             } catch (Exception var23) {
-               throw new Class731(a, "Error at instruction " + a + ": " + var23.getMessage(), var23);
+               throw new Class731(var14, "Error at instruction " + var34 + ": " + var23.getMessage(), var23);
             }
          }
 
@@ -229,50 +228,50 @@ public class Class780 implements Class45 {
          }
 
          this.Field3480[a] = a.Method807();
-         a a = this.Field3477.Method186(a);
-         int a;
-         if (a instanceof Class102) {
-            if (a.Method3640() == 168) {
-               a.Method2530(a);
+         a var4 = this.Field3477.Method186(a);
+         int var6;
+         if (var4 instanceof Class102) {
+            if (var4.Method3640() == 168) {
+               a.Method2530(var4);
             } else {
-               Class102 a = (Class102)a;
-               this.Method848(this.Field3477.Method188(a.Field829), a, a);
+               Class102 var5 = (Class102)var4;
+               this.Method848(this.Field3477.Method188(var5.Field829), a, a);
             }
          } else {
-            Class104 a;
-            if (a instanceof Class122) {
-               Class122 a = (Class122)a;
-               this.Method848(this.Field3477.Method188(a.Field961), a, a);
-               a = a.Field962.Method1799() - 1;
+            Class104 var11;
+            if (var4 instanceof Class122) {
+               Class122 var10 = (Class122)var4;
+               this.Method848(this.Field3477.Method188(var10.Field961), a, a);
+               var6 = var10.Field962.Method1799() - 1;
 
                while(true) {
-                  a = (Class104)a.Field962.get(a);
-                  this.Method848(this.Field3477.Method188(a), a, a);
-                  --a;
+                  var11 = (Class104)var10.Field962.get(var6);
+                  this.Method848(this.Field3477.Method188(var11), a, a);
+                  --var6;
                }
             }
 
-            if (a instanceof Class96) {
-               Class96 a = (Class96)a;
-               this.Method848(this.Field3477.Method188(a.Field817), a, a);
-               a = a.Field819.Method1799() - 1;
+            if (var4 instanceof Class96) {
+               Class96 var9 = (Class96)var4;
+               this.Method848(this.Field3477.Method188(var9.Field817), a, a);
+               var6 = var9.Field819.Method1799() - 1;
 
                while(true) {
-                  a = (Class104)a.Field819.get(a);
-                  this.Method848(this.Field3477.Method188(a), a, a);
-                  --a;
+                  var11 = (Class104)var9.Field819.get(var6);
+                  this.Method848(this.Field3477.Method188(var11), a, a);
+                  --var6;
                }
             }
          }
 
-         List a = this.Field3478[a];
+         List var8 = this.Field3478[a];
 
-         for(a = 0; a < a.Method1799(); ++a) {
-            Class794 a = (Class794)a.get(a);
-            this.Method848(this.Field3477.Method188(a.Field3561), a, a);
+         for(var6 = 0; var6 < var8.Method1799(); ++var6) {
+            Class794 var7 = (Class794)var8.get(var6);
+            this.Method848(this.Field3477.Method188(var7.Field3561), a, a);
          }
 
-         switch (a.Method3640()) {
+         switch (var4.Method3640()) {
             case 167:
             case 169:
             case 170:
@@ -315,7 +314,7 @@ public class Class780 implements Class45 {
       return this.Field3478[a];
    }
 
-   protected void Method851(String a, Class15 a1) throws Class731 {
+   protected void Method851(String a, Class15 a) throws Class731 {
    }
 
    protected Class784 Method852(int a, int a) {
@@ -326,10 +325,10 @@ public class Class780 implements Class45 {
       return new Class784(a);
    }
 
-   protected void Method854(int a, int a1) {
+   protected void Method854(int a, int a) {
    }
 
-   protected boolean Method855(int a, int a1) {
+   protected boolean Method855(int a, int a) {
       return true;
    }
 
@@ -338,12 +337,12 @@ public class Class780 implements Class45 {
    }
 
    private void Method857(int a, Class784 a, Class796 a) throws Class731 {
-      Class784 a = this.Field3479[a];
-      Class796 a = this.Field3480[a];
+      Class784 var4 = this.Field3479[a];
+      Class796 var5 = this.Field3480[a];
       this.Field3479[a] = this.Method853(a);
-      boolean a = true;
+      boolean var6 = true;
       this.Field3480[a] = a.Method807();
-      a = true;
+      var6 = true;
       if (!this.Field3481[a]) {
          this.Field3481[a] = true;
          this.Field3482[this.Field3483++] = a;
@@ -352,12 +351,12 @@ public class Class780 implements Class45 {
    }
 
    private void Method858(int a, Class784 a, Class784 a, Class796 a, boolean[] a) throws Class731 {
-      Class784 a = this.Field3479[a];
-      Class796 a = this.Field3480[a];
+      Class784 var6 = this.Field3479[a];
+      Class796 var7 = this.Field3480[a];
       a.Method897(a, a);
       this.Field3479[a] = this.Method853(a);
-      boolean a = true;
-      a |= a.Method808(a);
+      boolean var8 = true;
+      var8 |= var7.Method808(a);
       if (!this.Field3481[a]) {
          this.Field3481[a] = true;
          this.Field3482[this.Field3483++] = a;

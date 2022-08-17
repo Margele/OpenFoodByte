@@ -21,31 +21,31 @@ public class Class388 extends Class390 {
       this.Field1920 = "ComboBox";
    }
 
-   public void Method419(int a, int a1) {
+   public void Method419(int a, int a) {
       this.Field1916 = !this.Field1900.Method2756();
    }
 
-   public void Method411(int a, int a1) {
+   public void Method411(int a, int a) {
       super.Method411(a, a);
       this.Field1901 = -1;
       this.Field1903.Method290(true);
       this.Field1919.Method1384();
    }
 
-   public void Method412(int a, int a1) {
+   public void Method412(int a, int a) {
       Class390.Method1318();
       Class565.Field2636.Method1217(this.Field1913, (float)(this.Field1907 + 5), (float)this.Field1908 + 1.0F, 16777215);
-      int a = 0;
-      if (a < this.Field1900.Method2728().length) {
-         float a = (float)(this.Field1908 + this.Field1902 + 12 * a);
-         int a = this.Field1901 == a ? Class707.Method1831() : Class707.Method1832();
-         Class565.Field2636.Method1217(this.Field1900.Method2728()[a], (float)(this.Field1907 + 13 + 2), a + 4.5F, 16777215);
-         RenderUtils.Method1103((float)(this.Field1907 + 5), a + 5.0F, 6.5F, 6.5F, a);
-         if (this.Field1900.isCurrentMode(this.Field1900.Method2728()[a]) && this.Field1903.Method292() > 0.0) {
-            RenderUtils.Method1103((float)this.Field1907 + 6.0F, a + 6.0F, 4.5F, 4.5F, (new Color(255, 255, 255, (int)(255.0 * this.Field1903.Method292()))).getRGB());
+      int var4 = 0;
+      if (var4 < this.Field1900.Method2728().length) {
+         float var5 = (float)(this.Field1908 + this.Field1902 + 12 * var4);
+         int var6 = this.Field1901 == var4 ? Class707.Method1831() : Class707.Method1832();
+         Class565.Field2636.Method1217(this.Field1900.Method2728()[var4], (float)(this.Field1907 + 13 + 2), var5 + 4.5F, 16777215);
+         RenderUtils.Method1103((float)(this.Field1907 + 5), var5 + 5.0F, 6.5F, 6.5F, var6);
+         if (this.Field1900.isCurrentMode(this.Field1900.Method2728()[var4]) && this.Field1903.Method292() > 0.0) {
+            RenderUtils.Method1103((float)this.Field1907 + 6.0F, var5 + 6.0F, 4.5F, 4.5F, (new Color(255, 255, 255, (int)(255.0 * this.Field1903.Method292()))).getRGB());
          }
 
-         ++a;
+         ++var4;
       }
 
    }
@@ -67,13 +67,13 @@ public class Class388 extends Class390 {
 
    private int Method1442(int a, int a) {
       Class390.Method1317();
-      int a = a - this.Field1908 - this.Field1902;
-      int a = 0;
-      if (a > 12) {
-         ++a;
-         int var6 = a - 12;
+      int var4 = a - this.Field1908 - this.Field1902;
+      int var5 = 0;
+      if (var4 > 12) {
+         ++var5;
+         int var6 = var4 - 12;
       }
 
-      return a >= this.Field1900.Method2728().length ? this.Field1901 : a;
+      return var5 >= this.Field1900.Method2728().length ? this.Field1901 : var5;
    }
 }

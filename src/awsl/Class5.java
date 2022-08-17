@@ -38,17 +38,17 @@ public abstract class Class5 extends Class2 implements Class45 {
    public void Method1947(Class264 a) {
       this.Field1460.Method1947(a);
       if (this.Field105 && this.Field108 != null) {
-         List a = (List)this.Field108.Method2665(a);
-         this.Field107 = a;
+         List var2 = (List)this.Field108.Method2665(a);
+         this.Field107 = var2;
          this.Field108.remove(a);
       }
 
    }
 
    public void Method1948(int a) {
-      int a = Class37.Method3383();
+      boolean var2 = Class37.Method3383();
       if (this.Field105) {
-         int a;
+         int var3;
          switch (a) {
             case 177:
                this.Method1967(a);
@@ -172,27 +172,27 @@ public abstract class Class5 extends Class2 implements Class45 {
             case 89:
                this.Method1965(this.Method1964());
             case 90:
-               a = this.Field107.Method1799();
-               this.Field107.add(a - 2, this.Field107.get(a - 1));
+               var3 = this.Field107.Method1799();
+               this.Field107.add(var3 - 2, this.Field107.get(var3 - 1));
             case 91:
-               a = this.Field107.Method1799();
-               this.Field107.add(a - 3, this.Field107.get(a - 1));
+               var3 = this.Field107.Method1799();
+               this.Field107.add(var3 - 3, this.Field107.get(var3 - 1));
             case 92:
-               a = this.Field107.Method1799();
-               this.Field107.add(a - 2, this.Field107.get(a - 1));
-               this.Field107.add(a - 2, this.Field107.get(a - 1));
+               var3 = this.Field107.Method1799();
+               this.Field107.add(var3 - 2, this.Field107.get(var3 - 1));
+               this.Field107.add(var3 - 2, this.Field107.get(var3 - 1));
             case 93:
-               a = this.Field107.Method1799();
-               this.Field107.add(a - 3, this.Field107.get(a - 1));
-               this.Field107.add(a - 3, this.Field107.get(a - 1));
+               var3 = this.Field107.Method1799();
+               this.Field107.add(var3 - 3, this.Field107.get(var3 - 1));
+               this.Field107.add(var3 - 3, this.Field107.get(var3 - 1));
             case 94:
-               a = this.Field107.Method1799();
-               this.Field107.add(a - 4, this.Field107.get(a - 1));
-               this.Field107.add(a - 4, this.Field107.get(a - 1));
+               var3 = this.Field107.Method1799();
+               this.Field107.add(var3 - 4, this.Field107.get(var3 - 1));
+               this.Field107.add(var3 - 4, this.Field107.get(var3 - 1));
             case 95:
-               a = this.Field107.Method1799();
-               this.Field107.add(a - 2, this.Field107.get(a - 1));
-               this.Field107.remove(a);
+               var3 = this.Field107.Method1799();
+               this.Field107.add(var3 - 2, this.Field107.get(var3 - 1));
+               this.Field107.remove(var3);
             case 16:
             case 17:
             case 18:
@@ -374,8 +374,8 @@ public abstract class Class5 extends Class2 implements Class45 {
    public void Method1949(int a, String a, String a, String a) {
       this.Field1460.Method1949(a, a, a, a);
       if (this.Field105) {
-         char a = a.charAt(0);
-         boolean a = a == 'J' || a == 'D';
+         char var5 = a.charAt(0);
+         boolean var6 = var5 == 'J' || var5 == 'D';
          switch (a) {
             case 178:
                this.Method1965(Field102);
@@ -420,7 +420,7 @@ public abstract class Class5 extends Class2 implements Class45 {
    public void Method1951(String a, int a) {
       this.Field1460.Method1951(a, a);
       if (this.Field105) {
-         for(int a = 0; a < a; ++a) {
+         for(int var3 = 0; var3 < a; ++var3) {
             this.Method1963();
          }
 
@@ -458,11 +458,11 @@ public abstract class Class5 extends Class2 implements Class45 {
    private void Method1955(int a, String a, String a, String a, boolean a) {
       this.Field1460.Method1954(a, a, a, a, a);
       if (this.Field105) {
-         b[] a = b.Method3211(a);
+         b[] var6 = b.Method3211(a);
 
-         for(int a = 0; a < a.length; ++a) {
+         for(int var7 = 0; var7 < var6.length; ++var7) {
             this.Method1963();
-            if (a[a].Method3233() == 2) {
+            if (var6[var7].Method3233() == 2) {
                this.Method1963();
             }
          }
@@ -473,8 +473,8 @@ public abstract class Class5 extends Class2 implements Class45 {
                this.Method1963();
                break;
             case 183:
-               Object a = this.Method1963();
-               if (a == Field101 && !this.Field106) {
+               Object var8 = this.Method1963();
+               if (var8 == Field101 && !this.Field106) {
                   this.Method1966();
                   this.Field106 = true;
                   this.Field105 = false;
@@ -482,10 +482,10 @@ public abstract class Class5 extends Class2 implements Class45 {
             case 184:
          }
 
-         b a = b.Method3213(a);
-         if (a != b.Field572) {
+         b var9 = b.Method3213(a);
+         if (var9 != b.Field572) {
             this.Method1965(Field102);
-            if (a.Method3233() == 2) {
+            if (var9.Method3233() == 2) {
                this.Method1965(Field102);
             }
          }
@@ -496,19 +496,19 @@ public abstract class Class5 extends Class2 implements Class45 {
    public void Method1956(String a, String a, Class279 a, Object[] a) {
       this.Field1460.Method1956(a, a, a, a);
       if (this.Field105) {
-         b[] a = b.Method3211(a);
+         b[] var5 = b.Method3211(a);
 
-         for(int a = 0; a < a.length; ++a) {
+         for(int var6 = 0; var6 < var5.length; ++var6) {
             this.Method1963();
-            if (a[a].Method3233() == 2) {
+            if (var5[var6].Method3233() == 2) {
                this.Method1963();
             }
          }
 
-         b a = b.Method3213(a);
-         if (a != b.Field572) {
+         b var7 = b.Method3213(a);
+         if (var7 != b.Field572) {
             this.Method1965(Field102);
-            if (a.Method3233() == 2) {
+            if (var7.Method3233() == 2) {
                this.Method1965(Field102);
             }
          }
@@ -602,9 +602,9 @@ public abstract class Class5 extends Class2 implements Class45 {
    public void Method1960(Class264 a, Class264 a, Class264 a, String a) {
       super.Method1960(a, a, a, a);
       if (this.Field105 && !this.Field108.containsKey(a)) {
-         List a = new ArrayList();
-         a.Method2530(Field102);
-         this.Field108.put(a, a);
+         ArrayList var5 = new ArrayList();
+         var5.Method2530(Field102);
+         this.Field108.put(a, var5);
       }
 
    }
@@ -612,8 +612,8 @@ public abstract class Class5 extends Class2 implements Class45 {
    private void Method1961(Class264 a, Class264[] a) {
       this.Method1962(a);
 
-      for(int a = 0; a < a.length; ++a) {
-         this.Method1962(a[a]);
+      for(int var3 = 0; var3 < a.length; ++var3) {
+         this.Method1962(a[var3]);
       }
 
    }

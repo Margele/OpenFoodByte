@@ -31,24 +31,24 @@ public class Class241 extends Class253 {
       this.Field1345 = a;
    }
 
-   public Class148 Method2114(String a, boolean a1) {
-      Class124 a = new Class124(a);
+   public Class148 Method2114(String a, boolean a) {
+      Class124 var3 = new Class124(a);
       if (this.Field1346 == null) {
          this.Field1346 = new ArrayList(1);
       }
 
-      this.Field1346.Method2530(a);
-      return a;
+      this.Field1346.Method2530(var3);
+      return var3;
    }
 
-   public Class148 Method2115(int a, Class31 a, String a, boolean a3) {
-      Class126 a = new Class126(a, a, a);
+   public Class148 Method2115(int a, Class31 a, String a, boolean a) {
+      Class126 var5 = new Class126(a, a, a);
       if (this.Field1348 == null) {
          this.Field1348 = new ArrayList(1);
       }
 
-      this.Field1348.Method2530(a);
-      return a;
+      this.Field1348.Method2530(var5);
+      return var5;
    }
 
    public void Method2120(Class136 a) {
@@ -77,7 +77,7 @@ public class Class241 extends Class253 {
 
    public void Method2280(Class167 a) {
       Class15.Method1984();
-      Class253 a = a.Method1450(this.Field1341, this.Field1342, this.Field1343, this.Field1344, this.Field1345);
+      Class253 var3 = a.Method1450(this.Field1341, this.Field1342, this.Field1343, this.Field1344, this.Field1345);
    }
 
    private static IllegalStateException Method2281(IllegalStateException illegalStateException) {

@@ -9,18 +9,18 @@ public class Class342 {
 
    public static float Method280(float a, float a, float a) {
       RenderUtils.trash();
-      float a = GlobalModule.Field3185 * (a / 1000.0F);
+      float var4 = GlobalModule.Field3185 * (a / 1000.0F);
       float var10000;
       if (a < a) {
-         if (a + a < a) {
-            var10000 = a + a;
+         if (a + var4 < a) {
+            var10000 = a + var4;
          }
 
          a = a;
       }
 
-      if (a - a > a) {
-         var10000 = a - a;
+      if (a - var4 > a) {
+         var10000 = a - var4;
       }
 
       return a;

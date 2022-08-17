@@ -34,61 +34,61 @@ public class ChatFilter extends Module {
 
    @EventTarget
    public void Method273(EventPacket a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (a.getPacket() instanceof C01PacketChatMessage) {
-         C01PacketChatMessage a = (C01PacketChatMessage)a.getPacket();
-         String a = a.getMessage();
-         String[] a = a.split(" ");
-         String a = a[0];
-         if (a.startsWith("/") && Stream.of("/r", "/shout", "/msg", "/m", "/tell", "/whisper", "/w", "/ac", "/pc", "/gc").anyMatch(a::equalsIgnoreCase)) {
-            if (Stream.of("/r", "/shout", "/ac", "/pc", "/gc").anyMatch(a::equalsIgnoreCase)) {
-               ReflectionsHelper.setFinalField(a, ObfuscatedField.chatmessage.getObfuscatedName(), a[0] + " " + this.Method2083(String.join(" ", (CharSequence[])Arrays.copyOfRange(a, 1, a.length))), false);
+         C01PacketChatMessage var3 = (C01PacketChatMessage)a.getPacket();
+         String var4 = var3.getMessage();
+         String[] var5 = var4.split(" ");
+         String var6 = var5[0];
+         if (var4.startsWith("/") && Stream.of("/r", "/shout", "/msg", "/m", "/tell", "/whisper", "/w", "/ac", "/pc", "/gc").anyMatch(var6::equalsIgnoreCase)) {
+            if (Stream.of("/r", "/shout", "/ac", "/pc", "/gc").anyMatch(var6::equalsIgnoreCase)) {
+               ReflectionsHelper.setFinalField(var3, ObfuscatedField.chatmessage.getObfuscatedName(), var5[0] + " " + this.Method2083(String.join(" ", (CharSequence[])Arrays.copyOfRange(var5, 1, var5.length))), false);
             }
 
-            if (a.length > 1) {
-               ReflectionsHelper.setFinalField(a, ObfuscatedField.chatmessage.getObfuscatedName(), a[0] + " " + a[1] + " " + this.Method2083(String.join(" ", (CharSequence[])Arrays.copyOfRange(a, 2, a.length))), false);
+            if (var5.length > 1) {
+               ReflectionsHelper.setFinalField(var3, ObfuscatedField.chatmessage.getObfuscatedName(), var5[0] + " " + var5[1] + " " + this.Method2083(String.join(" ", (CharSequence[])Arrays.copyOfRange(var5, 2, var5.length))), false);
             }
          }
 
-         if (!a.getMessage().startsWith("/") && !a.getMessage().startsWith(".") && !a.getMessage().startsWith("http") && !a.equalsIgnoreCase("gg") && !a.equalsIgnoreCase("good game")) {
-            ReflectionsHelper.setFinalField(a, ObfuscatedField.chatmessage.getObfuscatedName(), this.Method2083(a), false);
+         if (!var3.getMessage().startsWith("/") && !var3.getMessage().startsWith(".") && !var3.getMessage().startsWith("http") && !var4.equalsIgnoreCase("gg") && !var4.equalsIgnoreCase("good game")) {
+            ReflectionsHelper.setFinalField(var3, ObfuscatedField.chatmessage.getObfuscatedName(), this.Method2083(var4), false);
          }
       }
 
    }
 
    private String Method2082(String a) {
-      StringBuilder a = new StringBuilder();
-      char[] a = a.toCharArray();
-      char[] var4 = a;
-      int var5 = a.length;
+      StringBuilder var2 = new StringBuilder();
+      char[] var3 = a.toCharArray();
+      char[] var4 = var3;
+      int var5 = var3.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         char a = var4[var6];
-         a.append(a).append('\u05fc');
+         char var7 = var4[var6];
+         var2.append(var7).append('\u05fc');
       }
 
-      return a.toString();
+      return var2.toString();
    }
 
    private String Method2083(String a) {
       Class448.trash();
-      StringBuilder a = new StringBuilder();
+      StringBuilder var3 = new StringBuilder();
       char[] var4 = a.toCharArray();
       int var5 = var4.length;
       int var6 = 0;
       if (var6 < var5) {
-         char a = var4[var6];
-         if (a >= '!') {
+         char var7 = var4[var6];
+         if (var7 >= '!') {
             ++this.Field2184;
-            a.append(a).append(this.Method2084());
+            var3.append(var7).append(this.Method2084());
          }
 
-         a.append(a);
+         var3.append(var7);
          ++var6;
       }
 
-      return a.toString();
+      return var3.toString();
    }
 
    private String Method2084() {

@@ -16,12 +16,12 @@ public class GetDmgCommand extends Command {
    }
 
    public void onCommand(String[] commands) {
-      int a = Method3599();
+      int var2 = Method3599();
       if (this.mc.thePlayer.getCurrentEquippedItem() != null) {
-         ItemStack a = this.mc.thePlayer.getCurrentEquippedItem();
-         float a = PlayerUtils.Method1590(a);
-         a += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.25F;
-         ChatUtils.addChatMessage("this Item Base Damage = §c" + PlayerUtils.Method1590(a) + " §7- §fAttack Damage = §c" + a);
+         ItemStack var3 = this.mc.thePlayer.getCurrentEquippedItem();
+         float var4 = PlayerUtils.Method1590(var3);
+         var4 += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, var3) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, var3) * 0.25F;
+         ChatUtils.addChatMessage("this Item Base Damage = §c" + PlayerUtils.Method1590(var3) + " §7- §fAttack Damage = §c" + var4);
       }
 
       ChatUtils.addChatMessage("No items on hand");

@@ -14,13 +14,13 @@ final class Class850 extends Class831 {
 
    public final void Method3501(String a, Attributes a) {
       this.Field3746.Field3203 = new HashMap();
-      HashMap a = new HashMap();
-      a.put("access", a.getValue("access"));
-      a.put("name", a.getValue("name"));
-      a.put("desc", a.getValue("desc"));
-      a.put("signature", a.getValue("signature"));
-      a.put("exceptions", new ArrayList());
-      this.Field3746.Method1950(a);
+      HashMap var3 = new HashMap();
+      var3.put("access", a.getValue("access"));
+      var3.put("name", a.getValue("name"));
+      var3.put("desc", a.getValue("desc"));
+      var3.put("signature", a.getValue("signature"));
+      var3.put("exceptions", new ArrayList());
+      this.Field3746.Method1950(var3);
    }
 
    public final void Method3514(String a) {

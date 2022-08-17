@@ -113,75 +113,75 @@ public class Class878 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = Class193.Method1269();
+      boolean var3 = Class193.Method1269();
       a = this.Method1263(a, (ColorModel)null);
-      float a = (float)a.getWidth();
-      float a = (float)a.getHeight();
-      float a = (float)a.getWidth() * this.Field3822;
-      float a = (float)a.getHeight() * this.Field3823;
-      float a = (float)Math.sqrt((double)(a * a + a * a));
-      int a = this.Field3830 * this.Field3830;
-      Class700[] a = new Class700[a];
-      float[] a = new float[a];
-      float[] a = new float[a];
-      float[] a = new float[a];
-      Graphics2D a = a.createGraphics();
-      Random a = new Random(0L);
-      float a = 0.0F;
-      float a = 0.0F;
-      int a = 0;
-      Rectangle a;
-      if (a < this.Field3830) {
-         int a = (int)a * a / this.Field3830;
-         int a = (int)a * (a + 1) / this.Field3830;
-         int a = 0;
-         if (a < this.Field3830) {
-            int a = a * this.Field3830 + a;
-            int a = (int)a * a / this.Field3830;
-            int a = (int)a * (a + 1) / this.Field3830;
-            a[a] = (float)this.Field3831 * a.nextFloat();
-            a[a] = (float)this.Field3831 * a.nextFloat();
-            a[a] = 0.0F;
-            a[a] = 0.0F;
-            a[a] = (float)this.Field3831 * (2.0F * a.nextFloat() - 1.0F);
-            a = new Rectangle(a, a, a - a, a - a);
-            a[a] = new Class700();
-            a[a].Field3025 = a;
-            a[a].Field3018 = (float)(a + a) * 0.5F;
-            a[a].Field3019 = (float)(a + a) * 0.5F;
-            a[a].Field3020 = a - (a - (float)a);
-            a[a].Field3021 = a - (a - (float)a);
-            a[a].Field3022 = (float)(a - a);
-            a[a].Field3023 = (float)(a - a);
-            ++a;
+      float var4 = (float)a.getWidth();
+      float var5 = (float)a.getHeight();
+      float var6 = (float)a.getWidth() * this.Field3822;
+      float var7 = (float)a.getHeight() * this.Field3823;
+      float var8 = (float)Math.sqrt((double)(var6 * var6 + var7 * var7));
+      int var9 = this.Field3830 * this.Field3830;
+      Class700[] var10 = new Class700[var9];
+      float[] var11 = new float[var9];
+      float[] var12 = new float[var9];
+      float[] var13 = new float[var9];
+      Graphics2D var14 = a.createGraphics();
+      Random var15 = new Random(0L);
+      float var16 = 0.0F;
+      float var17 = 0.0F;
+      int var18 = 0;
+      Rectangle var25;
+      if (var18 < this.Field3830) {
+         int var19 = (int)var5 * var18 / this.Field3830;
+         int var20 = (int)var5 * (var18 + 1) / this.Field3830;
+         int var21 = 0;
+         if (var21 < this.Field3830) {
+            int var22 = var18 * this.Field3830 + var21;
+            int var23 = (int)var4 * var21 / this.Field3830;
+            int var24 = (int)var4 * (var21 + 1) / this.Field3830;
+            var11[var22] = (float)this.Field3831 * var15.nextFloat();
+            var12[var22] = (float)this.Field3831 * var15.nextFloat();
+            var11[var22] = 0.0F;
+            var12[var22] = 0.0F;
+            var13[var22] = (float)this.Field3831 * (2.0F * var15.nextFloat() - 1.0F);
+            var25 = new Rectangle(var23, var19, var24 - var23, var20 - var19);
+            var10[var22] = new Class700();
+            var10[var22].Field3025 = var25;
+            var10[var22].Field3018 = (float)(var23 + var24) * 0.5F;
+            var10[var22].Field3019 = (float)(var19 + var20) * 0.5F;
+            var10[var22].Field3020 = var4 - (var6 - (float)var21);
+            var10[var22].Field3021 = var5 - (var7 - (float)var18);
+            var10[var22].Field3022 = (float)(var24 - var23);
+            var10[var22].Field3023 = (float)(var20 - var19);
+            ++var21;
          }
 
-         ++a;
+         ++var18;
       }
 
-      int a = 0;
-      if (a < a) {
-         float a = (float)a / (float)a;
-         double a = (double)(a * 2.0F) * Math.PI;
-         float a = this.Field3825 * a * (float)Math.cos(a);
-         float a = this.Field3825 * a * (float)Math.sin(a);
-         Class700 a = a[a];
-         a = a.Field3025.getBounds();
-         AffineTransform a = a.getTransform();
-         a = a.Field3018 + this.Field3825 * a.Field3020;
-         a = a.Field3019 + this.Field3825 * a.Field3021;
-         a.translate((double)a, (double)a);
-         a.rotate((double)(this.Field3825 * a[a]));
-         a.setColor(Color.getHSBColor(a, 1.0F, 1.0F));
-         Shape a = a.getClip();
-         a.clip(a.Field3025);
-         a.drawImage(a, 0, 0, (ImageObserver)null);
-         a.setClip(a);
-         a.setTransform(a);
-         a = a + 1;
+      byte var28 = 0;
+      if (var28 < var9) {
+         float var29 = (float)var28 / (float)var9;
+         double var30 = (double)(var29 * 2.0F) * Math.PI;
+         float var31 = this.Field3825 * var4 * (float)Math.cos(var30);
+         float var32 = this.Field3825 * var5 * (float)Math.sin(var30);
+         Class700 var33 = var10[var28];
+         var25 = var33.Field3025.getBounds();
+         AffineTransform var26 = var14.getTransform();
+         var31 = var33.Field3018 + this.Field3825 * var33.Field3020;
+         var32 = var33.Field3019 + this.Field3825 * var33.Field3021;
+         var14.translate((double)var31, (double)var32);
+         var14.rotate((double)(this.Field3825 * var13[var28]));
+         var14.setColor(Color.getHSBColor(var29, 1.0F, 1.0F));
+         Shape var27 = var14.getClip();
+         var14.clip(var33.Field3025);
+         var14.drawImage(a, 0, 0, (ImageObserver)null);
+         var14.setClip(var27);
+         var14.setTransform(var26);
+         var18 = var28 + 1;
       }
 
-      a.dispose();
+      var14.dispose();
       return a;
    }
 

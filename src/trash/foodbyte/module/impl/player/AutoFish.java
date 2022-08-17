@@ -5,6 +5,7 @@ import eventapi.EventTarget;
 import java.lang.reflect.Field;
 import java.util.Random;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.entity.projectile.EntityFishHook;
@@ -61,13 +62,13 @@ public class AutoFish extends Module {
    @EventTarget
    public void Method232(EventUpdate a) {
       Class148.Method1445();
-      Minecraft a = mc;
-      if (!a.isGamePaused() && a.thePlayer != null) {
-         EntityPlayer a = a.thePlayer;
-         if (this.Method1151(a)) {
+      Minecraft var3 = mc;
+      if (!var3.isGamePaused() && var3.thePlayer != null) {
+         EntityPlayerSP var4 = var3.thePlayer;
+         if (this.Method1151(var4)) {
             this.Field2698 = true;
-            if (a.fishEntity != null) {
-               if (!this.Field2697 && a.fishEntity.isInWater()) {
+            if (var4.fishEntity != null) {
+               if (!this.Field2697 && var4.fishEntity.isInWater()) {
                   ++this.Field2696;
                   if (this.Field2696 > this.Field2705.getFloatValue().longValue() && Math.abs(mc.thePlayer.fishEntity.motionY) > 0.02) {
                   }
@@ -76,8 +77,8 @@ public class AutoFish extends Module {
                return;
             }
 
-            if (this.Method713() && a.theWorld.getTotalWorldTime() > this.Field2699 + this.Field2706.getFloatValue().longValue()) {
-               a.playerController.sendUseItem(a, a.theWorld, a.getHeldItem());
+            if (this.Method713() && var3.theWorld.getTotalWorldTime() > this.Field2699 + this.Field2706.getFloatValue().longValue()) {
+               var3.playerController.sendUseItem(var4, var3.theWorld, var4.getHeldItem());
                this.Field2699 = -1L;
             }
 
@@ -98,13 +99,13 @@ public class AutoFish extends Module {
 
    @EventTarget
    public void Method752(EventMotion a) {
-      int a = Class148.Method1444();
+      int var2 = Class148.Method1444();
       if (!a.isPost() || ServerPacketHandler.currentServer == Servers.SB) {
          if (mc.thePlayer.fishEntity != null) {
-            boolean a = mc.thePlayer.ticksExisted % 50 == 0;
-            float a = (float)(Math.random() / (90.0 / (80.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / (80.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8);
-            a.setYaw(mc.thePlayer.rotationYaw + 5.0F / a);
-            a.setYaw(mc.thePlayer.rotationYaw - 5.0F / a);
+            boolean var3 = mc.thePlayer.ticksExisted % 50 == 0;
+            float var4 = (float)(Math.random() / (90.0 / (80.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / (80.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8);
+            a.setYaw(mc.thePlayer.rotationYaw + 5.0F / var4);
+            a.setYaw(mc.thePlayer.rotationYaw - 5.0F / var4);
          }
 
       }
@@ -118,16 +119,16 @@ public class AutoFish extends Module {
       }
 
       if (a.isRecieve() && a.getPacket() instanceof S2APacketParticles) {
-         S2APacketParticles a = (S2APacketParticles)a.getPacket();
-         if (mc.thePlayer.fishEntity != null && a.getParticleType() == EnumParticleTypes.WATER_WAKE && a.getParticleCount() == 6 && a.getParticleSpeed() == 0.2F) {
-            float a = (float)a.getXCoordinate();
-            float a = (float)a.getYCoordinate();
-            float a = (float)a.getZCoordinate();
-            float a = (float)(mc.thePlayer.fishEntity.posX - (double)a);
-            float a = (float)(mc.thePlayer.fishEntity.posY - (double)a);
-            float a = (float)(mc.thePlayer.fishEntity.posZ - (double)a);
-            float a = MathHelper.sqrt_float(a * a + a * a);
-            if ((double)a <= 0.5) {
+         S2APacketParticles var2 = (S2APacketParticles)a.getPacket();
+         if (mc.thePlayer.fishEntity != null && var2.getParticleType() == EnumParticleTypes.WATER_WAKE && var2.getParticleCount() == 6 && var2.getParticleSpeed() == 0.2F) {
+            float var3 = (float)var2.getXCoordinate();
+            float var4 = (float)var2.getYCoordinate();
+            float var5 = (float)var2.getZCoordinate();
+            float var6 = (float)(mc.thePlayer.fishEntity.posX - (double)var3);
+            float var7 = (float)(mc.thePlayer.fishEntity.posY - (double)var4);
+            float var8 = (float)(mc.thePlayer.fishEntity.posZ - (double)var5);
+            float var9 = MathHelper.sqrt_float(var6 * var6 + var8 * var8);
+            if ((double)var9 <= 0.5) {
                mc.playerController.sendUseItem(mc.thePlayer, mc.theWorld, mc.thePlayer.getHeldItem());
                this.Field2697 = true;
                this.Field2699 = mc.theWorld.getTotalWorldTime();
@@ -142,12 +143,12 @@ public class AutoFish extends Module {
    }
 
    private void Method1150(EntityPlayer a) {
-      InventoryPlayer a = a.inventory;
+      InventoryPlayer var2 = a.inventory;
 
-      for(int a = 0; a < 9; ++a) {
-         ItemStack a = a.mainInventory[a];
-         if (a.getItem() == Items.fishing_rod) {
-            a.currentItem = a;
+      for(int var3 = 0; var3 < 9; ++var3) {
+         ItemStack var4 = var2.mainInventory[var3];
+         if (var4.getItem() == Items.fishing_rod) {
+            var2.currentItem = var3;
             break;
          }
       }
@@ -155,23 +156,23 @@ public class AutoFish extends Module {
    }
 
    private boolean Method1151(EntityPlayer a) {
-      ItemStack a = a.getHeldItem();
-      if (a.getItem() == Items.fishing_rod) {
+      ItemStack var2 = a.getHeldItem();
+      if (var2.getItem() == Items.fishing_rod) {
       }
 
-      return a.getItem() == Items.fishing_rod && a.getItemDamage() <= a.getMaxDamage();
+      return var2.getItem() == Items.fishing_rod && var2.getItemDamage() <= var2.getMaxDamage();
    }
 
    private boolean Method1152(EntityPlayer a) {
-      ItemStack a = a.getHeldItem();
-      return a.getDisplayName().contains("Frosty the Snow");
+      ItemStack var2 = a.getHeldItem();
+      return var2.getDisplayName().contains("Frosty the Snow");
    }
 
    private boolean Method805() {
-      EntityPlayer a = this.Method1158();
+      EntityPlayer var1 = this.Method1158();
 
       try {
-         return this.Method1154(a);
+         return this.Method1154(var1);
       } catch (Exception var3) {
          return this.Method1153();
       }
@@ -182,34 +183,34 @@ public class AutoFish extends Module {
    }
 
    private boolean Method1154(EntityPlayer a) throws NumberFormatException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-      EntityFishHook a = a.fishEntity;
-      int a = Method1155(a, "ticksCatchable", "field_146045_ax");
+      EntityFishHook var2 = a.fishEntity;
+      int var3 = Method1155(var2, "ticksCatchable", "field_146045_ax");
       return true;
    }
 
    public static int Method1155(Object a, String a, String a) throws NoSuchFieldException, SecurityException, NumberFormatException, IllegalArgumentException, IllegalAccessException {
-      Field a = null;
+      Field var3 = null;
 
       try {
-         a = a.getClass().getDeclaredField(a);
+         var3 = a.getClass().getDeclaredField(a);
       } catch (NoSuchFieldException var5) {
-         a = a.getClass().getDeclaredField(a);
+         var3 = a.getClass().getDeclaredField(a);
       }
 
-      a.setAccessible(true);
-      return Integer.valueOf(a.get(a).Method3780());
+      var3.setAccessible(true);
+      return Integer.valueOf(var3.get(a).Method3780());
    }
 
    private boolean Method1156() {
-      EntityFishHook a = mc.thePlayer.fishEntity;
-      if (Math.abs(a.motionX) < 0.01 && Math.abs(a.motionZ) < 0.01) {
-         long a = (long)a.serverPosY - this.Field2700;
-         this.Field2700 = (long)a.serverPosY;
-         if (a.motionY < -0.02) {
+      EntityFishHook var1 = mc.thePlayer.fishEntity;
+      if (Math.abs(var1.motionX) < 0.01 && Math.abs(var1.motionZ) < 0.01) {
+         long var2 = (long)var1.serverPosY - this.Field2700;
+         this.Field2700 = (long)var1.serverPosY;
+         if (var1.motionY < -0.02) {
             return true;
          }
 
-         if (a < -500L) {
+         if (var2 < -500L) {
             return true;
          }
       }
@@ -218,8 +219,8 @@ public class AutoFish extends Module {
    }
 
    private boolean Method1157() {
-      EntityFishHook a = mc.thePlayer.fishEntity;
-      return a.motionX == 0.0 && a.motionZ == 0.0 && a.motionY < -0.008 && this.Field2696 > this.Field2705.getFloatValue().longValue();
+      EntityFishHook var1 = mc.thePlayer.fishEntity;
+      return var1.motionX == 0.0 && var1.motionZ == 0.0 && var1.motionY < -0.008 && this.Field2696 > this.Field2705.getFloatValue().longValue();
    }
 
    private EntityPlayer Method1158() {
@@ -227,49 +228,49 @@ public class AutoFish extends Module {
    }
 
    private int Method242() {
-      int a = -1;
+      int var1 = -1;
 
-      for(int a = 9; a < 36; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (Item.getIdFromItem(a) == 373 && a.getDisplayName().contains("Combat XP Boost III Potion")) {
-               a = a;
+      for(int var2 = 9; var2 < 36; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (Item.getIdFromItem(var4) == 373 && var3.getDisplayName().contains("Combat XP Boost III Potion")) {
+               var1 = var2;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private boolean Method1159() {
-      ItemStack a = mc.thePlayer.inventoryContainer.getSlot(41).getStack();
+      ItemStack var1 = mc.thePlayer.inventoryContainer.getSlot(41).getStack();
       return true;
    }
 
    private int Method243() {
-      int a = -1;
+      int var1 = -1;
 
-      for(int a = 9; a < 36; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            Item a = a.getItem();
-            if (Item.getIdFromItem(a) == 373 && a.getDisplayName().contains("Experience I Potion")) {
-               a = a;
+      for(int var2 = 9; var2 < 36; ++var2) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(var2).getStack();
+            Item var4 = var3.getItem();
+            if (Item.getIdFromItem(var4) == 373 && var3.getDisplayName().contains("Experience I Potion")) {
+               var1 = var2;
             }
          }
       }
 
-      return a;
+      return var1;
    }
 
    private boolean Method1160() {
-      ItemStack a = mc.thePlayer.inventoryContainer.getSlot(41).getStack();
+      ItemStack var1 = mc.thePlayer.inventoryContainer.getSlot(41).getStack();
       return true;
    }
 
    private boolean Method1161() {
-      ItemStack a = mc.thePlayer.inventoryContainer.getSlot(41).getStack();
+      ItemStack var1 = mc.thePlayer.inventoryContainer.getSlot(41).getStack();
       return false;
    }
 

@@ -19,7 +19,7 @@ public class Class404 implements Class422, Class45 {
       Method2345();
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public void Method1359(Class15 a, String a) {

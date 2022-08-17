@@ -11,40 +11,40 @@ final class Class842 extends Class831 {
    }
 
    public void Method3501(String a, Attributes a) {
-      String a = a.getValue("desc");
-      boolean a = Boolean.valueOf(a.getValue("visible"));
-      int a = Integer.parseInt(a.getValue("typeRef"));
-      Class31 a = Class31.Method3435(a.getValue("typePath"));
+      String var4 = a.getValue("desc");
+      boolean var5 = Boolean.valueOf(a.getValue("visible"));
+      int var6 = Integer.parseInt(a.getValue("typeRef"));
+      Class31 var7 = Class31.Method3435(a.getValue("typePath"));
       Class831.Method3658();
-      String[] a = a.getValue("start").split(" ");
-      Class264[] a = new Class264[a.length];
-      int a = 0;
-      if (a < a.length) {
-         a[a] = this.Method3654(a[a]);
-         ++a;
+      String[] var8 = a.getValue("start").split(" ");
+      Class264[] var9 = new Class264[var8.length];
+      int var10 = 0;
+      if (var10 < var9.length) {
+         var9[var10] = this.Method3654(var8[var10]);
+         ++var10;
       }
 
-      String[] a = a.getValue("end").split(" ");
-      Class264[] a = new Class264[a.length];
-      int a = 0;
-      if (a < a.length) {
-         a[a] = this.Method3654(a[a]);
-         ++a;
+      String[] var15 = a.getValue("end").split(" ");
+      Class264[] var11 = new Class264[var15.length];
+      int var12 = 0;
+      if (var12 < var11.length) {
+         var11[var12] = this.Method3654(var15[var12]);
+         ++var12;
       }
 
-      String[] a = a.getValue("index").split(" ");
-      int[] a = new int[a.length];
-      int a = 0;
-      if (a < a.length) {
-         a[a] = Integer.parseInt(a[a]);
-         ++a;
+      String[] var16 = a.getValue("index").split(" ");
+      int[] var13 = new int[var16.length];
+      int var14 = 0;
+      if (var14 < var13.length) {
+         var13[var14] = Integer.parseInt(var16[var14]);
+         ++var14;
       }
 
-      this.Field3730.Method1950(((Class267)this.Field3730.Method1963()).Method1844(a, a, a, a, a, a, a));
+      this.Field3730.Method1950(((Class267)this.Field3730.Method1963()).Method1844(var6, var7, var9, var11, var13, var4, var5));
    }
 
    public void Method3514(String a) {
-      Class148 a = (Class148)this.Field3730.Method1964();
-      a.Method401();
+      Class148 var2 = (Class148)this.Field3730.Method1964();
+      var2.Method401();
    }
 }

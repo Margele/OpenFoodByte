@@ -8,18 +8,18 @@ public class PermissionManager {
    private static int[] Field2837;
 
    public static boolean hasPermission(String permission) {
-      int[] a = Method3697();
+      int[] var1 = Method3697();
       if (permissions.contains("*.*")) {
          return true;
       } else {
-         int a = 0;
-         if (a < permissions.Method1799()) {
-            String a = (String)permissions.get(a);
-            if (a.equalsIgnoreCase(permission)) {
+         int var2 = 0;
+         if (var2 < permissions.Method1799()) {
+            String var3 = (String)permissions.get(var2);
+            if (var3.equalsIgnoreCase(permission)) {
                return true;
             }
 
-            ++a;
+            ++var2;
          }
 
          return false;

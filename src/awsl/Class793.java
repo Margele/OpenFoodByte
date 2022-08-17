@@ -9,98 +9,98 @@ public class Class793 extends Class808 {
       this.Field3617 = -1;
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
       Class193.Method1270();
-      int[] a = new int[a * a];
-      int a = false;
-      int a = -16777216;
-      int a = true;
-      int a = 0;
-      if (a < this.Field3619) {
-         int a = 0;
-         int a = 0;
-         if (a < 2) {
-            int a = 1;
-            if (a < a - 1) {
-               int a = a * a + 1;
-               int a = 1;
-               if (a < a - 1) {
-                  int a = a[a];
-                  if (a == a) {
+      int[] var6 = new int[a * a];
+      boolean var7 = false;
+      int var8 = -16777216;
+      boolean var9 = true;
+      int var10 = 0;
+      if (var10 < this.Field3619) {
+         int var18 = 0;
+         int var11 = 0;
+         if (var11 < 2) {
+            int var12 = 1;
+            if (var12 < a - 1) {
+               int var13 = var12 * a + 1;
+               int var14 = 1;
+               if (var14 < a - 1) {
+                  int var15 = a[var13];
+                  if (var15 == var8) {
                      label87: {
-                        int a = 0;
-                        if (a[a - a - 1] == a) {
-                           a |= 1;
+                        int var16 = 0;
+                        if (a[var13 - a - 1] == var8) {
+                           var16 |= 1;
                         }
 
-                        if (a[a - a] == a) {
-                           a |= 2;
+                        if (a[var13 - a] == var8) {
+                           var16 |= 2;
                         }
 
-                        if (a[a - a + 1] == a) {
-                           a |= 4;
+                        if (a[var13 - a + 1] == var8) {
+                           var16 |= 4;
                         }
 
-                        if (a[a + 1] == a) {
-                           a |= 8;
+                        if (a[var13 + 1] == var8) {
+                           var16 |= 8;
                         }
 
-                        if (a[a + a + 1] == a) {
-                           a |= 16;
+                        if (a[var13 + a + 1] == var8) {
+                           var16 |= 16;
                         }
 
-                        if (a[a + a] == a) {
-                           a |= 32;
+                        if (a[var13 + a] == var8) {
+                           var16 |= 32;
                         }
 
-                        if (a[a + a - 1] == a) {
-                           a |= 64;
+                        if (a[var13 + a - 1] == var8) {
+                           var16 |= 64;
                         }
 
-                        if (a[a - 1] == a) {
-                           a |= 128;
+                        if (a[var13 - 1] == var8) {
+                           var16 |= 128;
                         }
 
-                        int a = Field3558[a];
-                        if (a == 1) {
-                           if (a != 2 && a != 3) {
+                        byte var17 = Field3558[var16];
+                        if (var11 == 1) {
+                           if (var17 != 2 && var17 != 3) {
                               break label87;
                            }
 
                            if (this.Field3620 != null) {
-                              this.Field3620.Method283((float)a / (float)this.Field3619);
+                              this.Field3620.Method283((float)var10 / (float)this.Field3619);
                            }
 
-                           a = this.Field3617;
-                           ++a;
+                           var15 = this.Field3617;
+                           ++var18;
                         }
 
-                        if (a == 1 || a == 3) {
+                        if (var17 == 1 || var17 == 3) {
                            if (this.Field3620 != null) {
-                              this.Field3620.Method283((float)a / (float)this.Field3619);
+                              this.Field3620.Method283((float)var10 / (float)this.Field3619);
                            }
 
-                           a = this.Field3617;
-                           ++a;
+                           var15 = this.Field3617;
+                           ++var18;
                         }
                      }
                   }
 
-                  a[a++] = a;
-                  ++a;
+                  var6[var13++] = var15;
+                  ++var14;
                }
 
-               ++a;
+               ++var12;
             }
 
-            a = new int[a * a];
-            ++a;
+            var6 = new int[a * a];
+            ++var11;
          }
 
-         ++a;
+         ++var10;
       }
 
-      return a;
+      return var6;
    }
 
    public String toString() {

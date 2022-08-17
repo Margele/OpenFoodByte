@@ -821,7 +821,7 @@ public class Class403 implements Class422, Class45 {
       EventManager.call(new EventRender2D(a));
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    // $FF: synthetic method

@@ -38,46 +38,46 @@ public class PlayerUtils {
    private static final Minecraft mc = Minecraft.getMinecraft();
 
    public static float[] getRotationToEntity(Entity target) {
-      double a = target.posX;
-      double a = target.posZ;
-      double a = target.posY + (double)(target.getEyeHeight() / 4.0F);
-      return getRotation(a, a, a);
+      double var1 = target.posX;
+      double var3 = target.posZ;
+      double var5 = target.posY + (double)(target.getEyeHeight() / 4.0F);
+      return getRotation(var1, var3, var5);
    }
 
    private static float[] getRotation(double x, double y, double z) {
-      double a = x - Minecraft.getMinecraft().thePlayer.posX;
-      double a = y - Minecraft.getMinecraft().thePlayer.posZ;
-      double a = z - Minecraft.getMinecraft().thePlayer.posY - 0.6;
-      double a = (double)MathHelper.sqrt_double(a * a + a * a);
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI) - 90.0F;
-      float a = (float)(-(Math.atan2(a, a) * 180.0 / Math.PI));
-      return new float[]{a, a};
+      double var6 = x - Minecraft.getMinecraft().thePlayer.posX;
+      double var8 = y - Minecraft.getMinecraft().thePlayer.posZ;
+      double var10 = z - Minecraft.getMinecraft().thePlayer.posY - 0.6;
+      double var12 = (double)MathHelper.sqrt_double(var6 * var6 + var8 * var8);
+      float var14 = (float)(Math.atan2(var8, var6) * 180.0 / Math.PI) - 90.0F;
+      float var15 = (float)(-(Math.atan2(var10, var12) * 180.0 / Math.PI));
+      return new float[]{var14, var15};
    }
 
    public static double getDefaultSpeed() {
-      double a = 0.2873;
+      double var0 = 0.2873;
       if (Minecraft.getMinecraft().thePlayer.isPotionActive(Potion.moveSpeed)) {
-         int a = Minecraft.getMinecraft().thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
-         a *= 1.0 + 0.2 * (double)(a + 1);
+         int var2 = Minecraft.getMinecraft().thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
+         var0 *= 1.0 + 0.2 * (double)(var2 + 1);
       }
 
-      return a;
+      return var0;
    }
 
    public static float getMovingDirection() {
-      float a = Minecraft.getMinecraft().thePlayer.rotationYawHead;
-      float a = Minecraft.getMinecraft().thePlayer.moveForward;
-      float a = Minecraft.getMinecraft().thePlayer.moveStrafing;
-      a += (float)(a < 0.0F ? 180 : 0);
-      if (a < 0.0F) {
-         a += (float)(a < 0.0F ? -45 : (a == 0.0F ? 90 : 45));
+      float var0 = Minecraft.getMinecraft().thePlayer.rotationYawHead;
+      float var1 = Minecraft.getMinecraft().thePlayer.moveForward;
+      float var2 = Minecraft.getMinecraft().thePlayer.moveStrafing;
+      var0 += (float)(var1 < 0.0F ? 180 : 0);
+      if (var2 < 0.0F) {
+         var0 += (float)(var1 < 0.0F ? -45 : (var1 == 0.0F ? 90 : 45));
       }
 
-      if (a > 0.0F) {
-         a -= (float)(a < 0.0F ? -45 : (a == 0.0F ? 90 : 45));
+      if (var2 > 0.0F) {
+         var0 -= (float)(var1 < 0.0F ? -45 : (var1 == 0.0F ? 90 : 45));
       }
 
-      return a * 0.017453292F;
+      return var0 * 0.017453292F;
    }
 
    public static boolean isInWater() {
@@ -85,11 +85,11 @@ public class PlayerUtils {
    }
 
    public static void setSpeed(double a) {
-      float a = mc.thePlayer.rotationYaw * 0.017453292F;
-      EntityPlayerSP a = mc.thePlayer;
-      a.motionX -= (double)MathHelper.sin(a) * a;
-      EntityPlayerSP a = mc.thePlayer;
-      a.motionZ += (double)MathHelper.cos(a) * a;
+      float var2 = mc.thePlayer.rotationYaw * 0.017453292F;
+      EntityPlayerSP var3 = mc.thePlayer;
+      var3.motionX -= (double)MathHelper.sin(var2) * a;
+      EntityPlayerSP var4 = mc.thePlayer;
+      var4.motionZ += (double)MathHelper.cos(var2) * a;
    }
 
    public static double getSpeed() {
@@ -117,39 +117,39 @@ public class PlayerUtils {
    }
 
    public static double getBPS2() {
-      double a = Math.hypot(mc.thePlayer.posX - mc.thePlayer.prevPosX, mc.thePlayer.posZ - mc.thePlayer.prevPosZ) * (double)ReflectionUtils.getTimerSpeed() * 20.0;
-      return (double)Math.round(a * 100.0) / 100.0;
+      double var0 = Math.hypot(mc.thePlayer.posX - mc.thePlayer.prevPosX, mc.thePlayer.posZ - mc.thePlayer.prevPosZ) * (double)ReflectionUtils.getTimerSpeed() * 20.0;
+      return (double)Math.round(var0 * 100.0) / 100.0;
    }
 
    public static ArrayList Method1584(double a, double a, double a, double a) {
-      ArrayList a = new ArrayList();
-      Minecraft a = Minecraft.getMinecraft();
+      ArrayList var11 = new ArrayList();
+      Minecraft var12 = Minecraft.getMinecraft();
       MoveUtils.trash();
-      double a = a - a.thePlayer.posX;
-      double a = a - (a.thePlayer.posY + (double)a.thePlayer.getEyeHeight() + 1.1);
-      double a = a - a.thePlayer.posZ;
-      float a = (float)(Math.atan2(a, a) * 180.0 / Math.PI - 90.0);
-      float a = (float)(-Math.atan2(a, Math.sqrt(a * a + a * a)) * 180.0 / Math.PI);
-      double a = a.thePlayer.posX;
-      double a = a.thePlayer.posY;
-      double a = a.thePlayer.posZ;
-      double a = 1.0;
-      double a;
-      if (a < Method1586(a.thePlayer.posX, a.thePlayer.posY, a.thePlayer.posZ, a, a, a)) {
-         ++a;
-         a = a + a;
+      double var13 = a - var12.thePlayer.posX;
+      double var15 = a - (var12.thePlayer.posY + (double)var12.thePlayer.getEyeHeight() + 1.1);
+      double var17 = a - var12.thePlayer.posZ;
+      float var19 = (float)(Math.atan2(var17, var13) * 180.0 / Math.PI - 90.0);
+      float var20 = (float)(-Math.atan2(var15, Math.sqrt(var13 * var13 + var17 * var17)) * 180.0 / Math.PI);
+      double var21 = var12.thePlayer.posX;
+      double var23 = var12.thePlayer.posY;
+      double var25 = var12.thePlayer.posZ;
+      double var27 = 1.0;
+      double var9;
+      if (a < Method1586(var12.thePlayer.posX, var12.thePlayer.posY, var12.thePlayer.posZ, a, a, a)) {
+         ++var27;
+         var9 = a + a;
          a.trash(new String[5]);
       }
 
-      if (a < Method1586(a.thePlayer.posX, a.thePlayer.posY, a.thePlayer.posZ, a, a, a)) {
-         a = a.thePlayer.posX - Math.sin((double)getMovingDirection(a)) * a;
-         a = a.thePlayer.posZ + Math.cos((double)getMovingDirection(a)) * a;
-         a.Method2530(new Vector3f((float)a, (float)(a - (a.thePlayer.posY - a) / a), (float)a));
-         a = a + a;
+      if (a < Method1586(var12.thePlayer.posX, var12.thePlayer.posY, var12.thePlayer.posZ, a, a, a)) {
+         var21 = var12.thePlayer.posX - Math.sin((double)getMovingDirection(var19)) * a;
+         var25 = var12.thePlayer.posZ + Math.cos((double)getMovingDirection(var19)) * a;
+         var11.Method2530(new Vector3f((float)var21, (float)(var23 - (var12.thePlayer.posY - a) / var27), (float)var25));
+         var9 = a + a;
       }
 
-      a.Method2530(new Vector3f((float)a, (float)a, (float)a));
-      return a;
+      var11.Method2530(new Vector3f((float)a, (float)a, (float)a));
+      return var11;
    }
 
    public static float getMovingDirection(float a) {
@@ -157,101 +157,101 @@ public class PlayerUtils {
          a += 180.0F;
       }
 
-      float a = 1.0F;
+      float var1 = 1.0F;
       if (Minecraft.getMinecraft().thePlayer.moveForward < 0.0F) {
-         a = -0.5F;
+         var1 = -0.5F;
       } else if (Minecraft.getMinecraft().thePlayer.moveForward > 0.0F) {
-         a = 0.5F;
+         var1 = 0.5F;
       }
 
       if (Minecraft.getMinecraft().thePlayer.moveStrafing > 0.0F) {
-         a -= 90.0F * a;
+         a -= 90.0F * var1;
       }
 
       if (Minecraft.getMinecraft().thePlayer.moveStrafing < 0.0F) {
-         a += 90.0F * a;
+         a += 90.0F * var1;
       }
 
       return a *= 0.017453292F;
    }
 
    public static double Method1586(double a, double a, double a, double a, double a, double a) {
-      double a = a - a;
-      double a = a - a;
-      double a = a - a;
-      return (double)MathHelper.sqrt_double(a * a + a * a + a * a);
+      double var12 = a - a;
+      double var14 = a - a;
+      double var16 = a - a;
+      return (double)MathHelper.sqrt_double(var12 * var12 + var14 * var14 + var16 * var16);
    }
 
    public static boolean Method1587() {
       return mc.gameSettings.keyBindForward.isKeyDown() || mc.gameSettings.keyBindLeft.isKeyDown() || mc.gameSettings.keyBindRight.isKeyDown() || mc.gameSettings.keyBindBack.isKeyDown();
    }
 
-   public static void rightClickEntity(Entity a, boolean a1, boolean a2) {
-      Minecraft a = Minecraft.getMinecraft();
-      ItemStack a = a.thePlayer.getCurrentEquippedItem();
-      if (a.thePlayer.getCurrentEquippedItem() != null && a.getItem() instanceof ItemSword && (double)a.thePlayer.swingProgress > 0.2) {
+   public static void rightClickEntity(Entity a, boolean a, boolean a) {
+      Minecraft var3 = Minecraft.getMinecraft();
+      ItemStack var4 = var3.thePlayer.getCurrentEquippedItem();
+      if (var3.thePlayer.getCurrentEquippedItem() != null && var4.getItem() instanceof ItemSword && (double)var3.thePlayer.swingProgress > 0.2) {
          ReflectionUtils2.pollMouseInputEvent(1, true);
-         a.thePlayer.getCurrentEquippedItem().useItemRightClick(a.theWorld, a.thePlayer);
+         var3.thePlayer.getCurrentEquippedItem().useItemRightClick(var3.theWorld, var3.thePlayer);
          ReflectionUtils2.pollMouseInputEvent(1, false);
       }
 
-      if (a.thePlayer.getCurrentEquippedItem() != null && a.getItem() instanceof ItemSword && (double)a.thePlayer.swingProgress > 0.2) {
+      if (var3.thePlayer.getCurrentEquippedItem() != null && var4.getItem() instanceof ItemSword && (double)var3.thePlayer.swingProgress > 0.2) {
          ReflectionUtils2.pollMouseInputEvent(1, true);
-         a.thePlayer.getCurrentEquippedItem().useItemRightClick(a.theWorld, a.thePlayer);
-         Wrapper.INSTANCE.sendPacket(new C08PacketPlayerBlockPlacement(new BlockPos(-1, -1, -1), 255, a.thePlayer.inventory.getCurrentItem(), 0.0F, 0.0F, 0.0F));
+         var3.thePlayer.getCurrentEquippedItem().useItemRightClick(var3.theWorld, var3.thePlayer);
+         Wrapper.INSTANCE.sendPacket(new C08PacketPlayerBlockPlacement(new BlockPos(-1, -1, -1), 255, var3.thePlayer.inventory.getCurrentItem(), 0.0F, 0.0F, 0.0F));
          ReflectionUtils2.pollMouseInputEvent(1, false);
       }
 
    }
 
-   public static void Method1589(Entity a, boolean a1) {
-      ItemStack a = mc.thePlayer.getCurrentEquippedItem();
-      if (mc.thePlayer.getCurrentEquippedItem() != null && a.getItem() instanceof ItemSword && (double)mc.thePlayer.swingProgress > 0.2) {
+   public static void Method1589(Entity a, boolean a) {
+      ItemStack var2 = mc.thePlayer.getCurrentEquippedItem();
+      if (mc.thePlayer.getCurrentEquippedItem() != null && var2.getItem() instanceof ItemSword && (double)mc.thePlayer.swingProgress > 0.2) {
          mc.thePlayer.getCurrentEquippedItem().useItemRightClick(mc.theWorld, mc.thePlayer);
       }
 
    }
 
    public static float Method1590(ItemStack a) {
-      Multimap a = a.getAttributeModifiers();
-      Iterator a;
-      if (!a.isEmpty() && (a = a.entries().Method1383()).Method932()) {
-         Map.Entry a = (Map.Entry)a.Method933();
-         AttributeModifier a = (AttributeModifier)a.getValue();
-         double a = a.getOperation() != 1 && a.getOperation() != 2 ? a.getAmount() : a.getAmount() * 100.0;
-         return a.getAmount() > 1.0 ? (float)a : 1.0F;
+      Multimap var2 = a.getAttributeModifiers();
+      Iterator var1;
+      if (!var2.isEmpty() && (var1 = var2.entries().Method1383()).Method932()) {
+         Map.Entry var5 = (Map.Entry)var1.Method933();
+         AttributeModifier var6 = (AttributeModifier)var5.getValue();
+         double var3 = var6.getOperation() != 1 && var6.getOperation() != 2 ? var6.getAmount() : var6.getAmount() * 100.0;
+         return var6.getAmount() > 1.0 ? (float)var3 : 1.0F;
       } else {
          return 1.0F;
       }
    }
 
    public static boolean isVaildItem() {
-      ItemStack a = mc.thePlayer.getCurrentEquippedItem();
-      float a = Method1590(a);
-      a += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.25F;
-      return (double)a > 3.0 || a.getDisplayName().toLowerCase().contains("death's scythe");
+      ItemStack var0 = mc.thePlayer.getCurrentEquippedItem();
+      float var1 = Method1590(var0);
+      var1 += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, var0) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, var0) * 0.25F;
+      return (double)var1 > 3.0 || var0.getDisplayName().toLowerCase().contains("death's scythe");
    }
 
    public static int Method1592(Entity a) {
-      Minecraft a = Minecraft.getMinecraft();
-      a.thePlayer.inventory.currentItem = 0;
-      int a = 0;
-      int a = -1;
-      int a = true;
+      Minecraft var1 = Minecraft.getMinecraft();
+      var1.thePlayer.inventory.currentItem = 0;
+      byte var2 = 0;
+      byte var3 = -1;
+      boolean var4 = true;
 
-      for(int a = 0; a < 9; ++a) {
-         a.thePlayer.inventory.currentItem = a;
-         ItemStack a = a.thePlayer.getHeldItem();
+      for(byte var5 = 0; var5 < 9; ++var5) {
+         var1.thePlayer.inventory.currentItem = var5;
+         ItemStack var6 = var1.thePlayer.getHeldItem();
       }
 
-      return a != -1 ? a : a;
+      return var3 != -1 ? var3 : var2;
    }
 
    public static void Method1593(Item a) {
-      for(int a = 9; a < 37; ++a) {
-         ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-         if (a.getItem() == a) {
-            mc.playerController.windowClick(0, a, 0, 1, mc.thePlayer);
+      for(int var1 = 9; var1 < 37; ++var1) {
+         ItemStack var2 = mc.thePlayer.inventoryContainer.getSlot(var1).getStack();
+         if (var2.getItem() == a) {
+            mc.playerController.windowClick(0, var1, 0, 1, mc.thePlayer);
             break;
          }
       }
@@ -259,19 +259,19 @@ public class PlayerUtils {
    }
 
    public static boolean Method1594() {
-      for(int a = 0; a <= 36; ++a) {
-         ItemStack a = mc.thePlayer.inventory.getStackInSlot(a);
+      for(int var0 = 0; var0 <= 36; ++var0) {
+         ItemStack var1 = mc.thePlayer.inventory.getStackInSlot(var0);
       }
 
       return true;
    }
 
    public static Vec3 Method1595(float a, float a) {
-      float a = MathHelper.cos(-a * 0.017453292F - 3.1415927F);
-      float a = MathHelper.sin(-a * 0.017453292F - 3.1415927F);
-      float a = -MathHelper.cos(-a * 0.017453292F);
-      float a = MathHelper.sin(-a * 0.017453292F);
-      return new Vec3((double)(a * a), (double)a, (double)(a * a));
+      float var2 = MathHelper.cos(-a * 0.017453292F - 3.1415927F);
+      float var3 = MathHelper.sin(-a * 0.017453292F - 3.1415927F);
+      float var4 = -MathHelper.cos(-a * 0.017453292F);
+      float var5 = MathHelper.sin(-a * 0.017453292F);
+      return new Vec3((double)(var3 * var4), (double)var5, (double)(var2 * var4));
    }
 
    public static void addChatMessage(String msg) {
@@ -288,8 +288,8 @@ public class PlayerUtils {
    }
 
    public static double Method1599(double a, double a) {
-      double a = 1.0 / a;
-      return (double)Math.round(a * a) / a;
+      double var4 = 1.0 / a;
+      return (double)Math.round(a * var4) / var4;
    }
 
    public static boolean isMovingKeyboard() {
@@ -313,77 +313,77 @@ public class PlayerUtils {
    }
 
    public static boolean iJustWannaReturnAFalse() {
-      AxisAlignedBB a = mc.thePlayer.getEntityBoundingBox();
+      AxisAlignedBB var0 = mc.thePlayer.getEntityBoundingBox();
       return false;
    }
 
-   public static double Method1603(double a, int a1) {
+   public static double Method1603(double a, int a) {
       return a;
    }
 
    public static BlockPos Method1604(String a) {
-      int a = 92;
+      int var1 = 92;
       if (a.length() > 1) {
-         char[] a = a.toCharArray();
-         int a = a.length;
+         char[] var2 = a.toCharArray();
+         int var3 = var2.length;
 
-         for(int a = 0; a < a; ++a) {
-            a += a[a] * a.length() * a.length() + a.charAt(0) + a.charAt(1);
+         for(int var4 = 0; var4 < var3; ++var4) {
+            var1 += var2[var4] * a.length() * a.length() + a.charAt(0) + a.charAt(1);
          }
 
-         a /= a.length();
+         var1 /= a.length();
       }
 
-      return new BlockPos(a, -a % 255, a);
+      return new BlockPos(var1, -var1 % 255, var1);
    }
 
    public static BlockPos Method1605(String a) {
-      int a = 20;
+      int var1 = 20;
       if (a.length() > 1) {
-         char[] a = a.toCharArray();
-         int a = a.length;
+         char[] var2 = a.toCharArray();
+         int var3 = var2.length;
 
-         for(int a = 0; a < a; ++a) {
-            a += a[a] * a.length() / a.length() - a.charAt(Method1606(1.0, 4.0));
+         for(int var4 = 0; var4 < var3; ++var4) {
+            var1 += var2[var4] * a.length() / a.length() - a.charAt(Method1606(1.0, 4.0));
          }
 
-         a /= a.length();
+         var1 /= a.length();
       }
 
-      return new BlockPos(a, -a % 255, a);
+      return new BlockPos(var1, -var1 % 255, var1);
    }
 
    public static int Method1606(double a, double a) {
-      Random a = new Random();
-      return (int)(a + a.nextDouble() * (a - a));
+      Random var4 = new Random();
+      return (int)(a + var4.nextDouble() * (a - a));
    }
 
    public static void Method1607(double[] a, BlockPos a) {
       MoveUtils.trash();
-      double a = a[0] - (double)a.getX() + 0.5;
-      double a = a[1] - (double)a.getY();
-      double a = a[2] - (double)a.getZ() + 0.5;
-      double a = Math.sqrt(mc.thePlayer.getDistanceSq(a));
-      double a = 5.0;
-      double a = 0.0;
-      if (a > a) {
-         double a = (double)(Math.round(a / a + 0.49999999999) - 1L);
-         double a = mc.thePlayer.posX;
-         double a = mc.thePlayer.posY;
-         a = mc.thePlayer.posZ;
-         double a = 0.0;
-         int a = 1;
-         if ((double)a < a) {
-            double a = ((double)a.getX() - mc.thePlayer.posX) / a;
-            a += a;
-            double a = ((double)a.getZ() - mc.thePlayer.posZ) / a;
-            a += a;
-            double a = ((double)a.getY() - mc.thePlayer.posY) / a;
-            a += a;
-            ++a;
-            C03PacketPlayer.C04PacketPlayerPosition a = new C03PacketPlayer.C04PacketPlayerPosition(a, a, a, true);
-            Wrapper.INSTANCE.sendPacket(a);
-            ++a;
+      double var3 = a[0] - (double)a.getX() + 0.5;
+      double var5 = a[1] - (double)a.getY();
+      double var7 = a[2] - (double)a.getZ() + 0.5;
+      double var9 = Math.sqrt(mc.thePlayer.getDistanceSq(a));
+      double var11 = 5.0;
+      double var17 = 0.0;
+      if (var9 > var11) {
+         double var19 = (double)(Math.round(var9 / var11 + 0.49999999999) - 1L);
+         double var13 = mc.thePlayer.posX;
+         double var15 = mc.thePlayer.posY;
+         var17 = mc.thePlayer.posZ;
+         double var21 = 0.0;
+         int var23 = 1;
+         if ((double)var23 < var19) {
+            double var24 = ((double)a.getX() - mc.thePlayer.posX) / var19;
+            var13 += var24;
+            double var26 = ((double)a.getZ() - mc.thePlayer.posZ) / var19;
+            var17 += var26;
+            double var28 = ((double)a.getY() - mc.thePlayer.posY) / var19;
+            var15 += var28;
+            ++var21;
+            C03PacketPlayer.C04PacketPlayerPosition var30 = new C03PacketPlayer.C04PacketPlayerPosition(var13, var15, var17, true);
+            Wrapper.INSTANCE.sendPacket(var30);
+            ++var23;
          }
 
          mc.thePlayer.setPosition((double)a.getX() + 0.5, (double)a.getY(), (double)a.getZ() + 0.5);
@@ -400,14 +400,14 @@ public class PlayerUtils {
       if (mc.thePlayer == null) {
          return false;
       } else {
-         AxisAlignedBB a = mc.thePlayer.getEntityBoundingBox();
+         AxisAlignedBB var0 = mc.thePlayer.getEntityBoundingBox();
 
-         for(int a = MathHelper.floor_double(a.minX); a < MathHelper.floor_double(a.maxX) + 1; ++a) {
-            for(int a = MathHelper.floor_double(a.minZ); a < MathHelper.floor_double(a.maxZ) + 1; ++a) {
-               BlockPos a = new BlockPos(a, (int)a.minY, a);
-               Block a = mc.theWorld.getBlockState(a).getBlock();
-               if (!(a instanceof BlockAir)) {
-                  return a instanceof BlockLiquid;
+         for(int var1 = MathHelper.floor_double(var0.minX); var1 < MathHelper.floor_double(var0.maxX) + 1; ++var1) {
+            for(int var2 = MathHelper.floor_double(var0.minZ); var2 < MathHelper.floor_double(var0.maxZ) + 1; ++var2) {
+               BlockPos var3 = new BlockPos(var1, (int)var0.minY, var2);
+               Block var4 = mc.theWorld.getBlockState(var3).getBlock();
+               if (!(var4 instanceof BlockAir)) {
+                  return var4 instanceof BlockLiquid;
                }
             }
          }
@@ -417,23 +417,23 @@ public class PlayerUtils {
    }
 
    public static double getDefaultSpeed(double offset) {
-      double a = getNoEffectSpeed();
+      double var2 = getNoEffectSpeed();
       if (mc.thePlayer.isPotionActive(Potion.moveSpeed)) {
-         int a = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier() + 1 - (mc.thePlayer.isPotionActive(Potion.moveSlowdown) ? mc.thePlayer.getActivePotionEffect(Potion.moveSlowdown).getAmplifier() + 1 : 0);
-         a *= 1.0 + offset * (double)a;
+         int var4 = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier() + 1 - (mc.thePlayer.isPotionActive(Potion.moveSlowdown) ? mc.thePlayer.getActivePotionEffect(Potion.moveSlowdown).getAmplifier() + 1 : 0);
+         var2 *= 1.0 + offset * (double)var4;
       }
 
-      return a;
+      return var2;
    }
 
    public static double getDefaultSpeed2() {
-      double a = getNoEffectSpeed();
+      double var0 = getNoEffectSpeed();
       if (mc.thePlayer.isPotionActive(Potion.moveSpeed)) {
-         int a = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier() + 1 - (mc.thePlayer.isPotionActive(Potion.moveSlowdown) ? mc.thePlayer.getActivePotionEffect(Potion.moveSlowdown).getAmplifier() + 1 : 0);
-         a *= 1.0 + 0.2 * (double)a;
+         int var2 = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier() + 1 - (mc.thePlayer.isPotionActive(Potion.moveSlowdown) ? mc.thePlayer.getActivePotionEffect(Potion.moveSlowdown).getAmplifier() + 1 : 0);
+         var0 *= 1.0 + 0.2 * (double)var2;
       }
 
-      return a;
+      return var0;
    }
 
    public static double getNoEffectSpeed() {

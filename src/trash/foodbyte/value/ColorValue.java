@@ -26,7 +26,7 @@ public class ColorValue extends Class447 {
       this.Field2127 = a;
    }
 
-   public ColorValue(String a, String a, Color a, boolean a3) {
+   public ColorValue(String a, String a, Color a, boolean a) {
       this.Field2127 = false;
       this.Field2128 = 1.0;
       this.Field2117 = a;
@@ -61,8 +61,8 @@ public class ColorValue extends Class447 {
    }
 
    public float[] Method2443() {
-      Color a = this.Field2126;
-      return Color.RGBtoHSB(a.getRed(), a.getGreen(), a.getBlue(), (float[])null);
+      Color var1 = this.Field2126;
+      return Color.RGBtoHSB(var1.getRed(), var1.getGreen(), var1.getBlue(), (float[])null);
    }
 
    public Color Method2444() {
@@ -71,36 +71,36 @@ public class ColorValue extends Class447 {
 
    public Color Method2445(long a) {
       if (this.Field2127) {
-         float a = (float)(Math.ceil((double)System.currentTimeMillis() / 14.1 + (double)a) % 360.0 / 360.0);
-         float[] a = this.Method2443();
-         return Class681.Method2698(Color.getHSBColor(a, a[1], a[2]).getRGB(), this.Field2126.getAlpha());
+         float var3 = (float)(Math.ceil((double)System.currentTimeMillis() / 14.1 + (double)a) % 360.0 / 360.0);
+         float[] var4 = this.Method2443();
+         return Class681.Method2698(Color.getHSBColor(var3, var4[1], var4[2]).getRGB(), this.Field2126.getAlpha());
       } else {
          return this.Field2126;
       }
    }
 
    public void Method2446(int a) {
-      Color a = this.Field2126;
-      Color a = new Color(a, a.getGreen(), a.getBlue(), a.getAlpha());
-      this.Field2126 = a;
+      Color var2 = this.Field2126;
+      Color var3 = new Color(a, var2.getGreen(), var2.getBlue(), var2.getAlpha());
+      this.Field2126 = var3;
    }
 
    public void Method2447(int a) {
-      Color a = this.Field2126;
-      Color a = new Color(a.getRed(), a, a.getBlue(), a.getAlpha());
-      this.Field2126 = a;
+      Color var2 = this.Field2126;
+      Color var3 = new Color(var2.getRed(), a, var2.getBlue(), var2.getAlpha());
+      this.Field2126 = var3;
    }
 
    public void Method2448(int a) {
-      Color a = this.Field2126;
-      Color a = new Color(a.getRed(), a.getGreen(), a, a.getAlpha());
-      this.Field2126 = a;
+      Color var2 = this.Field2126;
+      Color var3 = new Color(var2.getRed(), var2.getGreen(), a, var2.getAlpha());
+      this.Field2126 = var3;
    }
 
    public void Method2449(int a) {
-      Color a = this.Field2126;
-      Color a = new Color(a.getRed(), a.getGreen(), a.getBlue(), a);
-      this.Field2126 = a;
+      Color var2 = this.Field2126;
+      Color var3 = new Color(var2.getRed(), var2.getGreen(), var2.getBlue(), a);
+      this.Field2126 = var3;
    }
 
    public int Method2450() {

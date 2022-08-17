@@ -30,30 +30,30 @@ public class MurderMystery extends Module {
 
    @EventTarget
    public void Method755(EventTick a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (mc.getCurrentServerData() != null && mc.theWorld != null && ServerUtils.isSinglePlayer(Servers.MM)) {
          Iterator var3 = mc.theWorld.loadedEntityList.Method1383();
          if (var3.Method932()) {
-            Object a = var3.Method933();
-            if (a instanceof EntityPlayer) {
-               EntityPlayer a = (EntityPlayer)a;
-               if (Field2300.contains(a) && !a.isEntityAlive()) {
-                  Field2300.remove(a);
+            Object var4 = var3.Method933();
+            if (var4 instanceof EntityPlayer) {
+               EntityPlayer var5 = (EntityPlayer)var4;
+               if (Field2300.contains(var5) && !var5.isEntityAlive()) {
+                  Field2300.remove(var5);
                }
 
-               if (Field2301.contains(a) && !a.isEntityAlive()) {
-                  Field2301.remove(a);
+               if (Field2301.contains(var5) && !var5.isEntityAlive()) {
+                  Field2301.remove(var5);
                }
 
-               if (a != mc.thePlayer && !a.isDead && !a.isInvisible()) {
-                  if (!Field2300.contains(a) && a.getHeldItem() != null && this.Method2258(a.getHeldItem().getItem())) {
-                     ChatUtils.addChatMessage(EnumChatFormatting.RED + a.getName() + EnumChatFormatting.WHITE + " might be a murderer watch out!");
-                     Field2300.Method2530(a);
+               if (var5 != mc.thePlayer && !var5.isDead && !var5.isInvisible()) {
+                  if (!Field2300.contains(var5) && var5.getHeldItem() != null && this.Method2258(var5.getHeldItem().getItem())) {
+                     ChatUtils.addChatMessage(EnumChatFormatting.RED + var5.getName() + EnumChatFormatting.WHITE + " might be a murderer watch out!");
+                     Field2300.Method2530(var5);
                   }
 
-                  if (!Field2301.contains(a) && !Field2300.contains(a) && a.getHeldItem() != null && a.getHeldItem().getItem() instanceof ItemBow) {
-                     ChatUtils.addChatMessage(EnumChatFormatting.BLUE + a.getName() + EnumChatFormatting.WHITE + " is a good guy.");
-                     Field2301.Method2530(a);
+                  if (!Field2301.contains(var5) && !Field2300.contains(var5) && var5.getHeldItem() != null && var5.getHeldItem().getItem() instanceof ItemBow) {
+                     ChatUtils.addChatMessage(EnumChatFormatting.BLUE + var5.getName() + EnumChatFormatting.WHITE + " is a good guy.");
+                     Field2301.Method2530(var5);
                   }
                }
             }
@@ -73,8 +73,8 @@ public class MurderMystery extends Module {
       int var4 = var3.length;
       int var5 = 0;
       if (var5 < var4) {
-         int a = var3[var5];
-         if (Item.getIdFromItem(a) == a) {
+         int var6 = var3[var5];
+         if (Item.getIdFromItem(a) == var6) {
             return true;
          }
 

@@ -35,70 +35,70 @@ public class Class84 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
-      int a = a.getType();
-      WritableRaster a = a.getRaster();
-      int[] a = this.Method104(a, 0, 0, a, a, (int[])null);
-      byte a = 0;
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
+      int var6 = a.getType();
+      WritableRaster var7 = a.getRaster();
+      int[] var8 = this.Method104(a, 0, 0, var4, var5, (int[])null);
+      byte var9 = 0;
       Class193.Method1270();
-      int a = 0;
-      int a = false;
-      int a = false;
-      int a = a;
-      int a = a;
+      byte var10 = 0;
+      boolean var13 = false;
+      boolean var14 = false;
+      int var15 = var4;
+      int var16 = var5;
       int var10000;
       switch (this.Field720) {
          case 1:
-            var10000 = a - (a + a);
+            var10000 = var4 - (var9 + var4);
          case 2:
-            var10000 = a - (a + a);
+            var10000 = var5 - (var10 + var5);
          case 3:
          case 4:
-            var10000 = a - (a + a);
+            var10000 = var5 - (var10 + var5);
          case 5:
-            a = a;
-            a = a;
-            var10000 = a - (a + a);
+            var15 = var5;
+            var16 = var4;
+            var10000 = var4 - (var9 + var4);
          case 6:
-            var10000 = a - (a + a);
-            var10000 = a - (a + a);
+            var10000 = var4 - (var9 + var4);
+            var10000 = var5 - (var10 + var5);
          default:
-            int[] a = new int[a * a];
-            int a = 0;
-            if (a < a) {
-               int a = 0;
-               if (a < a) {
-                  int a = a * a + a;
-                  int a = a;
-                  int a = a;
+            int[] var17 = new int[var15 * var16];
+            int var18 = 0;
+            if (var18 < var5) {
+               int var19 = 0;
+               if (var19 < var4) {
+                  int var20 = var18 * var4 + var19;
+                  int var21 = var18;
+                  int var22 = var19;
                   switch (this.Field720) {
                      case 1:
-                        a = a - a - 1;
+                        var22 = var4 - var19 - 1;
                      case 2:
-                        a = a - a - 1;
+                        var21 = var5 - var18 - 1;
                      case 3:
                      case 4:
-                        a = a - a - 1;
+                        var22 = var5 - var18 - 1;
                      case 5:
-                        a = a - a - 1;
+                        var21 = var4 - var19 - 1;
                      case 6:
-                        a = a - a - 1;
-                        a = a - a - 1;
+                        var21 = var5 - var18 - 1;
+                        var22 = var4 - var19 - 1;
                      default:
-                        int a = a * a + a;
-                        a[a] = a[a];
-                        ++a;
+                        int var23 = var21 * var15 + var22;
+                        var17[var23] = var8[var20];
+                        ++var19;
                   }
                }
 
-               ++a;
+               ++var18;
             }
 
-            ColorModel a = a.getColorModel();
-            a = new BufferedImage(a, a.createCompatibleWritableRaster(a, a), a.isAlphaPremultiplied(), (Hashtable)null);
-            WritableRaster a = a.getRaster();
-            this.Method1267(a, 0, 0, a, a, a);
+            ColorModel var24 = a.getColorModel();
+            a = new BufferedImage(var24, var24.createCompatibleWritableRaster(var15, var16), var24.isAlphaPremultiplied(), (Hashtable)null);
+            WritableRaster var25 = a.getRaster();
+            this.Method1267(a, 0, 0, var15, var16, var17);
             return a;
       }
    }

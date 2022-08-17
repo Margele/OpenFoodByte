@@ -31,11 +31,11 @@ final class Class788 implements ListIterator {
       if (this.Field3545 == null) {
          throw new NoSuchElementException();
       } else {
-         a a = this.Field3545;
-         this.Field3546 = a;
-         this.Field3545 = a.Field800;
-         this.Field3547 = a;
-         return a;
+         a var1 = this.Field3545;
+         this.Field3546 = var1;
+         this.Field3545 = var1.Field800;
+         this.Field3547 = var1;
+         return var1;
       }
    }
 
@@ -59,11 +59,11 @@ final class Class788 implements ListIterator {
    }
 
    public Object Method936() {
-      a a = this.Field3546;
-      this.Field3545 = a;
-      this.Field3546 = a.Field799;
-      this.Field3547 = a;
-      return a;
+      a var1 = this.Field3546;
+      this.Field3545 = var1;
+      this.Field3546 = var1.Field799;
+      this.Field3547 = var1;
+      return var1;
    }
 
    public int Method937() {

@@ -1,7 +1,6 @@
 package awsl;
 
 import java.util.Collections;
-import java.util.Comparator;
 
 public class Class19 extends Class15 {
    public Class19(Class267 a, int a, String a, String a, String a, String[] a) {
@@ -15,12 +14,12 @@ public class Class19 extends Class15 {
 
    public void Method1653() {
       Class37.Method3382();
-      Comparator a = new Class50(this);
-      Collections.sort(this.Field209, a);
-      int a = 0;
-      if (a < this.Field209.Method1799()) {
-         ((Class794)this.Field209.get(a)).Method795(a);
-         ++a;
+      Class50 var2 = new Class50(this);
+      Collections.sort(this.Field209, var2);
+      int var3 = 0;
+      if (var3 < this.Field209.Method1799()) {
+         ((Class794)this.Field209.get(var3)).Method795(var3);
+         ++var3;
       }
 
       if (this.Field1460 != null) {

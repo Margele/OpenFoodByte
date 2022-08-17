@@ -13,24 +13,24 @@ public class FriendCommand extends Command {
    }
 
    public void onCommand(String[] commands) {
-      int a = GetDmgCommand.Method3598();
+      int var2 = GetDmgCommand.Method3598();
       if (commands.length < 3) {
          ChatUtils.addChatMessage(this.getHelp());
       } else {
-         String a = commands[1];
-         String a = commands[2];
-         String a = commands.length > 3 ? commands[3] : a;
-         Class309 a = Class305.Method699(a);
-         if (a.equalsIgnoreCase("a") || a.equalsIgnoreCase("add")) {
-            Class309 a = new Class309(a, a);
-            ChatUtils.addChatMessage("Added friend " + a + " as " + a);
-            Class305.Method695().Method2530(a);
-            a.Method750(a);
-            ChatUtils.addChatMessage("Changed alias to " + a);
+         String var3 = commands[1];
+         String var4 = commands[2];
+         String var5 = commands.length > 3 ? commands[3] : var4;
+         Class309 var6 = Class305.Method699(var4);
+         if (var3.equalsIgnoreCase("a") || var3.equalsIgnoreCase("add")) {
+            Class309 var7 = new Class309(var4, var5);
+            ChatUtils.addChatMessage("Added friend " + var4 + " as " + var5);
+            Class305.Method695().Method2530(var7);
+            var6.Method750(var5);
+            ChatUtils.addChatMessage("Changed alias to " + var5);
          }
 
-         if (a.equalsIgnoreCase("r") || a.equalsIgnoreCase("remove")) {
-            Class305.Method695().remove(a);
+         if (var3.equalsIgnoreCase("r") || var3.equalsIgnoreCase("remove")) {
+            Class305.Method695().remove(var6);
             ChatUtils.addChatMessage("Removed friend");
          }
 

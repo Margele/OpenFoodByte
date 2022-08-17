@@ -13,17 +13,17 @@ public class HelpCommand extends Command {
 
    public void onCommand(String[] commands) {
       GetDmgCommand.Method3599();
-      Iterator a = CommandManager.Method3592().Method1383();
-      if (a.Method932()) {
-         Command a = (Command)a.Method933();
-         String a = a.getCommands()[0];
-         int a = 1;
-         if (a < a.getCommands().length) {
-            a = a + (a != a.getCommands().length ? ", " : "") + a.getCommands()[a];
-            ++a;
+      Iterator var3 = CommandManager.Method3592().Method1383();
+      if (var3.Method932()) {
+         Command var4 = (Command)var3.Method933();
+         String var5 = var4.getCommands()[0];
+         int var6 = 1;
+         if (var6 < var4.getCommands().length) {
+            var5 = var5 + (var6 != var4.getCommands().length ? ", " : "") + var4.getCommands()[var6];
+            ++var6;
          }
 
-         ChatUtils.addChatMessage("§e" + a + "§f > " + a.getHelp());
+         ChatUtils.addChatMessage("§e" + var5 + "§f > " + var4.getHelp());
       }
 
    }

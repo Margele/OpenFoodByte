@@ -10,15 +10,15 @@ class Class50 implements Comparator {
    }
 
    public int Method3197(Class794 a, Class794 a) {
-      int a = this.Method3198(a);
-      int a = this.Method3198(a);
-      return a - a;
+      int var3 = this.Method3198(a);
+      int var4 = this.Method3198(a);
+      return var3 - var4;
    }
 
    private int Method3198(Class794 a) {
-      int a = this.Field587.Field208.Method188(a.Field3559);
-      int a = this.Field587.Field208.Method188(a.Field3560);
-      return a - a;
+      int var2 = this.Field587.Field208.Method188(a.Field3559);
+      int var3 = this.Field587.Field208.Method188(a.Field3560);
+      return var3 - var2;
    }
 
    public int Method2141(Object object1, Object object2) {

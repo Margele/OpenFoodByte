@@ -24,32 +24,32 @@ public final class Class308 {
    }
 
    public static Object Method716(a a, int a, Predicate a, BiPredicate a, BiFunction a) {
-      String[] a = Method742();
-      int a = 0;
-      a a = a;
-      boolean a = a.test(a);
-      if (a.test(a, a)) {
-         ++a;
+      String[] var5 = Method742();
+      int var6 = 0;
+      a var7 = a;
+      boolean var8 = a.test(a);
+      if (a.test(var6, a)) {
+         ++var6;
       }
 
-      int a = 1;
-      if (a <= a - 1) {
-         a = a.Method3641();
-         ++a;
+      int var9 = 1;
+      if (var9 <= var6 - 1) {
+         var7 = a.Method3641();
+         ++var9;
       }
 
-      int a = 0;
-      if (a >= a) {
-         a a = a;
-         int a = 1;
-         if (a <= a - 1) {
-            a = a.Method3641();
-            ++a;
+      byte var11 = 0;
+      if (var11 >= a) {
+         a var12 = var7;
+         int var10 = 1;
+         if (var10 <= var11 - 1) {
+            var7 = var7.Method3641();
+            ++var10;
          }
 
-         return a.apply(a, a);
+         return a.apply(var7, var12);
       } else {
-         a = a.Method3642();
+         var7 = var7.Method3642();
          return null;
       }
    }
@@ -59,16 +59,16 @@ public final class Class308 {
    }
 
    public static a Method718(a a, int[] a) {
-      StringBuilder a = new StringBuilder();
+      StringBuilder var2 = new StringBuilder();
       int[] var3 = a;
       int var4 = a.length;
 
       for(int var5 = 0; var5 < var4; ++var5) {
-         int a = var3[var5];
-         a.append((char)(a == -666 ? '?' : 'x'));
+         int var6 = var3[var5];
+         var2.append((char)(var6 == -666 ? '?' : 'x'));
       }
 
-      return Method717(a, a, a.toString());
+      return Method717(a, a, var2.toString());
    }
 
    public static a Method719(Class116 a, int[] a) {
@@ -80,77 +80,77 @@ public final class Class308 {
    }
 
    public static a Method721(a a, int a) {
-      a a = a;
+      a var2 = a;
 
-      for(int a = 0; a < Math.abs(a); a = a.Method3642()) {
-         ++a;
+      for(int var3 = 0; var3 < Math.abs(a); var2 = var2.Method3642()) {
+         ++var3;
       }
 
-      return a;
+      return var2;
    }
 
    public static String Method722(Class224 a) {
-      StringBuilder a = new StringBuilder("METHODS:\n");
+      StringBuilder var2 = new StringBuilder("METHODS:\n");
       Method742();
       Iterator var3 = a.Field1260.Method1383();
       if (var3.Method932()) {
-         Class15 a = (Class15)var3.Method933();
-         a.append("\t");
-         a.append(a.Field195);
-         a.append(a.Field196);
-         a.append("\n");
+         Class15 var4 = (Class15)var3.Method933();
+         var2.append("\t");
+         var2.append(var4.Field195);
+         var2.append(var4.Field196);
+         var2.append("\n");
          a.trash(new String[3]);
       }
 
-      a.append("\nFIELDS:\n");
+      var2.append("\nFIELDS:\n");
       var3 = a.Field1259.Method1383();
       if (var3.Method932()) {
-         Class241 a = (Class241)var3.Method933();
-         a.append("\t");
-         a.append(a.Field1343);
-         a.append(" ");
-         a.append(a.Field1342);
-         a.append("\n");
+         Class241 var5 = (Class241)var3.Method933();
+         var2.append("\t");
+         var2.append(var5.Field1343);
+         var2.append(" ");
+         var2.append(var5.Field1342);
+         var2.append("\n");
       }
 
-      return a.toString();
+      return var2.toString();
    }
 
    public static int Method723(Class15 a, String a, String a, Class104 a, Class104 a) {
-      Optional a = a.Field212.stream().max(Comparator.comparingInt(Class308::Method737));
-      int a = (Integer)a.map(Class308::Method736).orElse(0);
-      Class790 a = new Class790(a, a, (String)null, a, a, a);
-      a.Field212.Method2530(a);
-      return a;
+      Optional var5 = a.Field212.stream().max(Comparator.comparingInt(Class308::Method737));
+      int var6 = (Integer)var5.map(Class308::Method736).orElse(0);
+      Class790 var7 = new Class790(a, a, (String)null, a, a, var6);
+      a.Field212.Method2530(var7);
+      return var6;
    }
 
    public static Class116 Method724(String a, String[] a, Class116 a) {
-      String a = (String)Stream.of(a).collect(Collectors.joining("", "(", ")V"));
-      return Method725(a, a, a);
+      String var3 = (String)Stream.of(a).collect(Collectors.joining("", "(", ")V"));
+      return Method725(a, var3, a);
    }
 
    public static Class116 Method725(String a, String a, Class116 a) {
-      Class116 a = new Class116();
-      a.Method194(new Class110(187, a));
-      a.Method194(new Class83(89));
-      a.Method195(a);
-      a.Method194(new Class98(183, a, "<init>", a, false));
-      return a;
+      Class116 var3 = new Class116();
+      var3.Method194(new Class110(187, a));
+      var3.Method194(new Class83(89));
+      var3.Method195(a);
+      var3.Method194(new Class98(183, a, "<init>", a, false));
+      return var3;
    }
 
    public static Class15 Method726(Class224 a, String a, String a) {
       Iterator var3 = a.Field1260.Method1383();
 
-      Class15 a;
+      Class15 var4;
       do {
          if (!var3.Method932()) {
             return null;
          }
 
-         a = (Class15)var3.Method933();
-      } while(!a.Field195.equals(a) || !a.Field196.equals(a));
+         var4 = (Class15)var3.Method933();
+      } while(!var4.Field195.equals(a) || !var4.Field196.equals(a));
 
-      return a;
+      return var4;
    }
 
    public static a Method727(Class15 a, int a, String a, String a, String a) {
@@ -158,11 +158,11 @@ public final class Class308 {
       int var6 = var5.length;
 
       for(int var7 = 0; var7 < var6; ++var7) {
-         a a = var5[var7];
-         if (a instanceof Class98) {
-            Class98 a = (Class98)a;
-            if (a.Method3640() == a && a.Field824.equals(a) && a.Field825.equals(a) && a.Field826.equals(a)) {
-               return a;
+         a var8 = var5[var7];
+         if (var8 instanceof Class98) {
+            Class98 var9 = (Class98)var8;
+            if (var9.Method3640() == a && var9.Field824.equals(a) && var9.Field825.equals(a) && var9.Field826.equals(a)) {
+               return var8;
             }
          }
       }
@@ -175,11 +175,11 @@ public final class Class308 {
       int var6 = var5.length;
 
       for(int var7 = 0; var7 < var6; ++var7) {
-         a a = var5[var7];
-         if (a instanceof Class93) {
-            Class93 a = (Class93)a;
-            if (a.Method3640() == a && a.Field807.equals(a) && a.Field808.equals(a) && a.Field809.equals(a)) {
-               return a;
+         a var8 = var5[var7];
+         if (var8 instanceof Class93) {
+            Class93 var9 = (Class93)var8;
+            if (var9.Method3640() == a && var9.Field807.equals(a) && var9.Field808.equals(a) && var9.Field809.equals(a)) {
+               return var8;
             }
          }
       }
@@ -188,21 +188,21 @@ public final class Class308 {
    }
 
    public static List Method729(Class15 a, int a, String a, String a, String a) {
-      List a = new ArrayList();
+      ArrayList var5 = new ArrayList();
       a[] var6 = a.Field208.Method192();
       int var7 = var6.length;
 
       for(int var8 = 0; var8 < var7; ++var8) {
-         a a = var6[var8];
-         if (a instanceof Class93) {
-            Class93 a = (Class93)a;
-            if (a.Method3640() == a && a.Field807.equals(a) && a.Field808.equals(a) && a.Field809.equals(a)) {
-               a.Method2530(a);
+         a var9 = var6[var8];
+         if (var9 instanceof Class93) {
+            Class93 var10 = (Class93)var9;
+            if (var10.Method3640() == a && var10.Field807.equals(a) && var10.Field808.equals(a) && var10.Field809.equals(a)) {
+               var5.Method2530(var10);
             }
          }
       }
 
-      return a;
+      return var5;
    }
 
    public static a Method730(Class15 a, int[] a) {
@@ -210,14 +210,14 @@ public final class Class308 {
       int var3 = var2.length;
 
       for(int var4 = 0; var4 < var3; ++var4) {
-         a a = var2[var4];
+         a var5 = var2[var4];
          int[] var6 = a;
          int var7 = a.length;
 
          for(int var8 = 0; var8 < var7; ++var8) {
-            int a = var6[var8];
-            if (a == a.Method3640()) {
-               return a;
+            int var9 = var6[var8];
+            if (var9 == var5.Method3640()) {
+               return var5;
             }
          }
       }
@@ -230,13 +230,13 @@ public final class Class308 {
       int var3 = var2.length;
 
       for(int var4 = 0; var4 < var3; ++var4) {
-         a a = var2[var4];
-         if (a instanceof Class106) {
-            Class106 a = (Class106)a;
-            if (a.Field850 instanceof String) {
-               String a = (String)a.Field850;
-               if (a.equals(a)) {
-                  return a;
+         a var5 = var2[var4];
+         if (var5 instanceof Class106) {
+            Class106 var6 = (Class106)var5;
+            if (var6.Field850 instanceof String) {
+               String var7 = (String)var6.Field850;
+               if (var7.equals(a)) {
+                  return var5;
                }
             }
          }
@@ -254,16 +254,16 @@ public final class Class308 {
    }
 
    public static Class224 Method734(byte[] a) {
-      Class224 a = new Class224();
-      Class165 a = new Class165(a);
-      a.Method1470(a, 0);
-      return a;
+      Class224 var1 = new Class224();
+      Class165 var2 = new Class165(a);
+      var2.Method1470(var1, 0);
+      return var1;
    }
 
    public static byte[] Method735(Class224 a) {
-      Class169 a = new Class169(3);
-      a.Method2213(a);
-      return a.Method1503();
+      Class169 var1 = new Class169(3);
+      a.Method2213(var1);
+      return var1.Method1503();
    }
 
    private static Integer Method736(Class790 a) {
@@ -274,7 +274,7 @@ public final class Class308 {
       return a.Field3554;
    }
 
-   private static a Method738(a a, a a1) {
+   private static a Method738(a a, a a) {
       return a;
    }
 

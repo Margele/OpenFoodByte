@@ -41,65 +41,65 @@ public class Class846 extends Class798 {
       return this.Field3737;
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
-      int a = 0;
-      int[] a = new int[a * a];
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
+      int var6 = 0;
+      int[] var7 = new int[a * a];
       Class193.Method1269();
-      int[] a = new int[a * a];
-      int a = 0;
-      if (a < a.length) {
-         a[a] = Class767.Method1689(a[a]);
-         ++a;
+      int[] var8 = new int[a * a];
+      int var11 = 0;
+      if (var11 < a.length) {
+         var8[var11] = Class767.Method1689(a[var11]);
+         ++var11;
       }
 
-      int a = (int)(Math.cos((double)this.Field3735) * Math.cos((double)this.Field3736) * 255.89999389648438);
-      int a = (int)(Math.sin((double)this.Field3735) * Math.cos((double)this.Field3736) * 255.89999389648438);
-      int a = (int)(Math.sin((double)this.Field3736) * 255.89999389648438);
-      int a = (int)(1530.0F / this.Field3738);
-      int a = a * a;
-      int a = a * a;
-      int a = 0;
-      int a = 0;
-      if (a < a) {
-         int a = a + a;
-         int a = a + a;
-         int a = 0;
-         if (a < a) {
-            if (a < a - 2 && a < a - 2) {
-               a = a[a - 1] + a[a - 1] + a[a - 1] - a[a + 1] - a[a + 1] - a[a + 1];
-               int a = a[a - 1] + a[a] + a[a + 1] - a[a - 1] - a[a] - a[a + 1];
-               int a;
-               if ((a = a * a + a * a + a) < 0) {
-                  int a = false;
+      int var14 = (int)(Math.cos((double)this.Field3735) * Math.cos((double)this.Field3736) * 255.89999389648438);
+      int var15 = (int)(Math.sin((double)this.Field3735) * Math.cos((double)this.Field3736) * 255.89999389648438);
+      int var16 = (int)(Math.sin((double)this.Field3736) * 255.89999389648438);
+      int var13 = (int)(1530.0F / this.Field3738);
+      int var17 = var13 * var13;
+      int var18 = var13 * var16;
+      byte var22 = 0;
+      int var23 = 0;
+      if (var23 < a) {
+         int var25 = var22 + a;
+         int var26 = var25 + a;
+         int var27 = 0;
+         if (var27 < a) {
+            if (var23 < a - 2 && var27 < a - 2) {
+               var11 = var8[var22 - 1] + var8[var25 - 1] + var8[var26 - 1] - var8[var22 + 1] - var8[var25 + 1] - var8[var26 + 1];
+               int var12 = var8[var26 - 1] + var8[var26] + var8[var26 + 1] - var8[var22 - 1] - var8[var22] - var8[var22 + 1];
+               int var19;
+               if ((var19 = var11 * var14 + var12 * var15 + var18) < 0) {
+                  boolean var20 = false;
                }
 
-               int a = (int)((double)a / Math.sqrt((double)(a * a + a * a + a)));
+               int var33 = (int)((double)var19 / Math.sqrt((double)(var11 * var11 + var12 * var12 + var17)));
             }
 
             if (this.Field3737) {
-               int a = a[a];
-               int a = a & -16777216;
-               int a = a >> 16 & 255;
-               int a = a >> 8 & 255;
-               int a = a & 255;
-               a = a * a >> 8;
-               a = a * a >> 8;
-               a = a * a >> 8;
-               a[a++] = a | a << 16 | a << 8 | a;
+               int var28 = a[var6];
+               int var29 = var28 & -16777216;
+               int var30 = var28 >> 16 & 255;
+               int var31 = var28 >> 8 & 255;
+               int var32 = var28 & 255;
+               var30 = var30 * var16 >> 8;
+               var31 = var31 * var16 >> 8;
+               var32 = var32 * var16 >> 8;
+               var7[var6++] = var29 | var30 << 16 | var31 << 8 | var32;
             }
 
-            a[a++] = -16777216 | a << 16 | a << 8 | a;
-            ++a;
-            int var24 = a + 1;
-            ++a;
-            ++a;
+            var7[var6++] = -16777216 | var16 << 16 | var16 << 8 | var16;
+            ++var27;
+            int var24 = var22 + 1;
+            ++var25;
+            ++var26;
          }
 
-         ++a;
-         int var10000 = a + a;
+         ++var23;
+         int var10000 = var22 + a;
       }
 
-      return a;
+      return var7;
    }
 
    public String toString() {

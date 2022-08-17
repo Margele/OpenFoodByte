@@ -43,17 +43,17 @@ public class Class352 {
       this.Field1692 = null;
       Iterator var2 = Field1690.Method1383();
       if (var2.Method932()) {
-         Class379 a = (Class379)var2.Method933();
-         a.Method64(this.Field1694, this.Field1695);
-         if (!a.Field1826) {
-            if (!a.Method456(this.Field1694, this.Field1695, Mouse.isButtonDown(0) || Mouse.isButtonDown(2))) {
+         Class379 var3 = (Class379)var2.Method933();
+         var3.Method64(this.Field1694, this.Field1695);
+         if (!var3.Field1826) {
+            if (!var3.Method456(this.Field1694, this.Field1695, Mouse.isButtonDown(0) || Mouse.isButtonDown(2))) {
                ;
             }
 
-            this.Field1692 = a;
+            this.Field1692 = var3;
          }
 
-         a.Method457();
+         var3.Method457();
       }
 
       if (this.Field1692 != null) {
@@ -67,16 +67,16 @@ public class Class352 {
    }
 
    public void Method72() {
-      int a = Field1690.Method1799() - 1;
+      int var1 = Field1690.Method1799() - 1;
 
       while(true) {
-         Class379 a = (Class379)Field1690.get(a);
-         if (!a.Field1826) {
-            a.Method63();
-            a.Method451();
+         Class379 var2 = (Class379)Field1690.get(var1);
+         if (!var2.Field1826) {
+            var2.Method63();
+            var2.Method451();
          }
 
-         --a;
+         --var1;
       }
    }
 
@@ -84,32 +84,32 @@ public class Class352 {
       Iterator var1 = Field1690.Method1383();
 
       while(var1.Method932()) {
-         Class379 a = (Class379)var1.Method933();
-         if (!a.Field1826) {
-            a.Method452();
+         Class379 var2 = (Class379)var1.Method933();
+         if (!var2.Field1826) {
+            var2.Method452();
          }
       }
 
    }
 
    public void Method74(int a, int a) {
-      int a = Mouse.getEventX() * a / this.Field1691.displayWidth;
-      int a = a - Mouse.getEventY() * a / this.Field1691.displayHeight - 1;
-      this.Method75(a, a);
+      int var3 = Mouse.getEventX() * a / this.Field1691.displayWidth;
+      int var4 = a - Mouse.getEventY() * a / this.Field1691.displayHeight - 1;
+      this.Method75(var3, var4);
    }
 
    public void Method75(int a, int a) {
       this.Field1692 = null;
-      int a = Field1690.Method1799() - 1;
+      int var3 = Field1690.Method1799() - 1;
 
       while(true) {
-         Class379 a = (Class379)Field1690.get(a);
-         if (a.Method463(a, a) && !a.Field1826) {
-            this.Field1692 = a;
+         Class379 var4 = (Class379)Field1690.get(var3);
+         if (var4.Method463(a, a) && !var4.Field1826) {
+            this.Field1692 = var4;
             return;
          }
 
-         --a;
+         --var3;
       }
    }
 
@@ -133,9 +133,9 @@ public class Class352 {
       Iterator var3 = Field1690.Method1383();
 
       while(var3.Method932()) {
-         Class379 a = (Class379)var3.Method933();
-         if (!a.Field1826) {
-            a.Method64(a, a);
+         Class379 var4 = (Class379)var3.Method933();
+         if (!var4.Field1826) {
+            var4.Method64(a, a);
          }
       }
 
@@ -175,16 +175,16 @@ public class Class352 {
    public static Class379 Method82(String a) {
       Iterator var1 = Field1690.Method1383();
 
-      Class379 a;
+      Class379 var2;
       do {
          if (!var1.Method932()) {
             return null;
          }
 
-         a = (Class379)var1.Method933();
-      } while(!a.Field1813.equals(a));
+         var2 = (Class379)var1.Method933();
+      } while(!var2.Field1813.equals(a));
 
-      return a;
+      return var2;
    }
 
    public void Method83() {

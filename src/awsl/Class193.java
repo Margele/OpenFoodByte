@@ -21,10 +21,10 @@ public abstract class Class193 implements BufferedImageOp, Cloneable {
       return new Rectangle(0, 0, a.getWidth(), a.getHeight());
    }
 
-   public Point2D Method1265(Point2D a, Point2D a1) {
-      Point2D a = new Point2D.Double();
-      a.setLocation(a.getX(), a.getY());
-      return a;
+   public Point2D Method1265(Point2D a, Point2D a) {
+      Point2D.Double var3 = new Point2D.Double();
+      var3.setLocation(a.getX(), a.getY());
+      return var3;
    }
 
    public RenderingHints Method1266() {
@@ -32,14 +32,14 @@ public abstract class Class193 implements BufferedImageOp, Cloneable {
    }
 
    public int[] Method104(BufferedImage a, int a, int a, int a, int a, int[] a) {
-      int a = a.getType();
-      return a != 2 && a != 1 ? a.getRGB(a, a, a, a, a, 0, a) : (int[])((int[])a.getRaster().getDataElements(a, a, a, a, a));
+      int var7 = a.getType();
+      return var7 != 2 && var7 != 1 ? a.getRGB(a, a, a, a, a, 0, a) : (int[])((int[])a.getRaster().getDataElements(a, a, a, a, a));
    }
 
    public void Method1267(BufferedImage a, int a, int a, int a, int a, int[] a) {
       Method1270();
-      int a = a.getType();
-      if (a == 2 || a == 1) {
+      int var8 = a.getType();
+      if (var8 == 2 || var8 == 1) {
          a.getRaster().setDataElements(a, a, a, a, a);
       }
 

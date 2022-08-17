@@ -34,7 +34,7 @@ public class Class264 {
       }
    }
 
-   void Method2851(Class9 a, Class138 a, int a, boolean a3) {
+   void Method2851(Class9 a, Class138 a, int a, boolean a) {
       if ((this.Field1448 & 2) == 0) {
          this.Method2852(-1 - a, a.Field991);
          a.Method489(-1);
@@ -50,9 +50,9 @@ public class Class264 {
       }
 
       if (this.Field1451 >= this.Field1452.length) {
-         int[] a = new int[this.Field1452.length + 6];
-         System.arraycopy(this.Field1452, 0, a, 0, this.Field1452.length);
-         this.Field1452 = a;
+         int[] var3 = new int[this.Field1452.length + 6];
+         System.arraycopy(this.Field1452, 0, var3, 0, this.Field1452.length);
+         this.Field1452 = var3;
       }
 
       this.Field1452[this.Field1451++] = a;
@@ -60,31 +60,31 @@ public class Class264 {
    }
 
    boolean Method2853(Class9 a, int a, byte[] a) {
-      boolean a = false;
+      boolean var4 = false;
       this.Field1448 |= 2;
       this.Field1450 = a;
 
-      int a;
-      int a;
-      for(int a = 0; a < this.Field1451; a[a] = (byte)a) {
-         int a = this.Field1452[a++];
-         a = this.Field1452[a++];
-         a = a - a;
-         if (a < -32768 || a > 32767) {
-            int a = a[a - 1] & 255;
-            if (a <= 168) {
-               a[a - 1] = (byte)(a + 49);
+      int var7;
+      int var8;
+      for(int var5 = 0; var5 < this.Field1451; a[var7] = (byte)var8) {
+         int var6 = this.Field1452[var5++];
+         var7 = this.Field1452[var5++];
+         var8 = a - var6;
+         if (var8 < -32768 || var8 > 32767) {
+            int var9 = a[var7 - 1] & 255;
+            if (var9 <= 168) {
+               a[var7 - 1] = (byte)(var9 + 49);
             } else {
-               a[a - 1] = (byte)(a + 20);
+               a[var7 - 1] = (byte)(var9 + 20);
             }
 
-            a = true;
+            var4 = true;
          }
 
-         a[a++] = (byte)(a >>> 8);
+         a[var7++] = (byte)(var8 >>> 8);
       }
 
-      return a;
+      return var4;
    }
 
    Class264 Method2854() {
@@ -101,8 +101,8 @@ public class Class264 {
 
    boolean Method2856(Class264 a) {
       if ((this.Field1448 & 1024) != 0 && (a.Field1448 & 1024) != 0) {
-         for(int a = 0; a < this.Field1452.length; ++a) {
-            if ((this.Field1452[a] & a.Field1452[a]) != 0) {
+         for(int var2 = 0; var2 < this.Field1452.length; ++var2) {
+            if ((this.Field1452[var2] & a.Field1452[var2]) != 0) {
                return true;
             }
          }
@@ -124,21 +124,21 @@ public class Class264 {
    }
 
    void Method2858(Class264 a, long a, int a) {
-      String[] a = Class267.Method2862();
-      Class264 a = this.Field1458;
+      String[] var5 = Class267.Method2862();
+      Class264 var6 = this.Field1458;
       this.Field1458 = null;
       if ((this.Field1448 & 2048) != 0) {
          ;
       }
 
       this.Field1448 |= 2048;
-      Class250 a;
+      Class250 var8;
       if ((this.Field1448 & 256) != 0 && !this.Method2856(a)) {
-         a = new Class250();
-         a.Field1384 = this.Field1453;
-         a.Field1385 = a.Field1457.Field1385;
-         a.Field1386 = this.Field1457;
-         this.Field1457 = a;
+         var8 = new Class250();
+         var8.Field1384 = this.Field1453;
+         var8.Field1385 = a.Field1457.Field1385;
+         var8.Field1386 = this.Field1457;
+         this.Field1457 = var8;
          if (this.Method2855(a)) {
             ;
          }
@@ -146,13 +146,13 @@ public class Class264 {
          this.Method2857(a, a);
       }
 
-      a = this.Field1457;
-      if (((this.Field1448 & 128) == 0 || a != this.Field1457.Field1386) && a.Field1385.Field1458 == null) {
-         a.Field1385.Field1458 = a;
-         a = a.Field1385;
+      var8 = this.Field1457;
+      if (((this.Field1448 & 128) == 0 || var8 != this.Field1457.Field1386) && var8.Field1385.Field1458 == null) {
+         var8.Field1385.Field1458 = var6;
+         var6 = var8.Field1385;
       }
 
-      a = a.Field1386;
+      var8 = var8.Field1386;
    }
 
    public String Method2859() {

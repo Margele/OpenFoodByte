@@ -16,9 +16,9 @@ public class Class349 {
    }
 
    public void Method4(boolean a) {
-      float a = (float)((double)GlobalModule.Field3185 * this.Field1677);
-      if (this.Field1679 + (double)a < 1.0) {
-         this.Field1679 += (double)a;
+      float var2 = (float)((double)GlobalModule.Field3185 * this.Field1677);
+      if (this.Field1679 + (double)var2 < 1.0) {
+         this.Field1679 += (double)var2;
       } else {
          this.Field1679 = 1.0;
       }
@@ -28,17 +28,17 @@ public class Class349 {
 
    public double Method5(double a) {
       RenderUtils.trash();
-      float a = (float)((double)GlobalModule.Field3185 * this.Field1677);
+      float var4 = (float)((double)GlobalModule.Field3185 * this.Field1677);
       if (this.Field1679 < a) {
-         if (this.Field1679 + (double)a < a) {
-            this.Field1679 += (double)a;
+         if (this.Field1679 + (double)var4 < a) {
+            this.Field1679 += (double)var4;
          }
 
          this.Field1679 = a;
       }
 
-      if (this.Field1679 - (double)a > a) {
-         this.Field1679 -= (double)a;
+      if (this.Field1679 - (double)var4 > a) {
+         this.Field1679 -= (double)var4;
       }
 
       this.Field1679 = a;

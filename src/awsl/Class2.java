@@ -53,7 +53,7 @@ public class Class2 extends Class0 {
       }
    }
 
-   protected Class2(int a, Class267 a, int a, String a3, String a) {
+   protected Class2(int a, Class267 a, int a, String a, String a) {
       super(a, a, a, a);
       this.Field56 = new ArrayList();
       this.Field53 = a;
@@ -100,8 +100,8 @@ public class Class2 extends Class0 {
    }
 
    public void Method1871(float a) {
-      int a = Float.floatToIntBits(a);
-      if ((long)a != 0L && a != 1065353216 && a != 1073741824) {
+      int var2 = Float.floatToIntBits(a);
+      if ((long)var2 != 0L && var2 != 1065353216 && var2 != 1073741824) {
          this.Field1460.Method1950(new Float(a));
       } else {
          this.Field1460.Method1948(11 + (int)a);
@@ -110,8 +110,8 @@ public class Class2 extends Class0 {
    }
 
    public void Method1872(double a) {
-      long a = Double.doubleToLongBits(a);
-      if (a != 0L && a != 4607182418800017408L) {
+      long var3 = Double.doubleToLongBits(a);
+      if (var3 != 0L && var3 != 4607182418800017408L) {
          this.Field1460.Method1950(new Double(a));
       } else {
          this.Field1460.Method1948(14 + (int)a);
@@ -132,13 +132,13 @@ public class Class2 extends Class0 {
    }
 
    private int Method1876(int a) {
-      int a = (this.Field53 & 8) == 0 ? 1 : 0;
+      int var2 = (this.Field53 & 8) == 0 ? 1 : 0;
 
-      for(int a = 0; a < a; ++a) {
-         a += this.Field55[a].Method3233();
+      for(int var3 = 0; var3 < a; ++var3) {
+         var2 += this.Field55[var3].Method3233();
       }
 
-      return a;
+      return var2;
    }
 
    private void Method1877(b a, int a) {
@@ -162,12 +162,12 @@ public class Class2 extends Class0 {
    }
 
    public void Method1881(int a, int a) {
-      int a = this.Method1876(a);
+      int var3 = this.Method1876(a);
 
-      for(int a = 0; a < a; ++a) {
-         b a = this.Field55[a + a];
-         this.Method1877(a, a);
-         a += a.Method3233();
+      for(int var4 = 0; var4 < a; ++var4) {
+         b var5 = this.Field55[a + var4];
+         this.Method1877(var5, var3);
+         var3 += var5.Method3233();
       }
 
    }
@@ -180,11 +180,11 @@ public class Class2 extends Class0 {
       this.Method1869(this.Field55.length);
       this.Method1936(Field28);
 
-      for(int a = 0; a < this.Field55.length; ++a) {
+      for(int var1 = 0; var1 < this.Field55.length; ++var1) {
          this.Method1894();
-         this.Method1869(a);
-         this.Method1880(a);
-         this.Method1907(this.Field55[a]);
+         this.Method1869(var1);
+         this.Method1880(var1);
+         this.Method1907(this.Field55[var1]);
          this.Method1891(Field28);
       }
 
@@ -199,13 +199,13 @@ public class Class2 extends Class0 {
    }
 
    protected void Method1848(int a, b a) {
-      int a = a - this.Field3;
+      int var3 = a - this.Field3;
 
-      while(this.Field56.Method1799() < a + 1) {
+      while(this.Field56.Method1799() < var3 + 1) {
          this.Field56.Method2530((Object)null);
       }
 
-      this.Field56.set(a, a);
+      this.Field56.set(var3, a);
    }
 
    public void Method1886(int a) {
@@ -398,8 +398,8 @@ public class Class2 extends Class0 {
          if (a == b.Field572) {
             this.Method1873((String)null);
          } else {
-            b a = Method1906(a);
-            this.Method1935(a);
+            b var2 = Method1906(a);
+            this.Method1935(var2);
             if (a.Method3233() == 2) {
                this.Method1897();
                this.Method1897();
@@ -409,7 +409,7 @@ public class Class2 extends Class0 {
                this.Method1900();
             }
 
-            this.Method1930(a, new Class36("<init>", b.Field572, new b[]{a}));
+            this.Method1930(var2, new Class36("<init>", b.Field572, new b[]{a}));
          }
 
       }
@@ -420,40 +420,40 @@ public class Class2 extends Class0 {
          if (a == b.Field572) {
             this.Method1873((String)null);
          } else {
-            b a = Method1906(a);
-            this.Method1931(a, new Class36("valueOf", a, new b[]{a}));
+            b var2 = Method1906(a);
+            this.Method1931(var2, new Class36("valueOf", var2, new b[]{a}));
          }
 
       }
    }
 
    public void Method1909(b a) {
-      b a = Field27;
-      Class36 a = null;
+      b var2 = Field27;
+      Class36 var3 = null;
       switch (a.Method3217()) {
          case 0:
             return;
          case 1:
-            a = Field20;
-            a = Field29;
+            var2 = Field20;
+            var3 = Field29;
             break;
          case 2:
-            a = Field22;
-            a = Field30;
+            var2 = Field22;
+            var3 = Field30;
             break;
          case 3:
          case 4:
          case 5:
-            a = Field31;
+            var3 = Field31;
             break;
          case 6:
-            a = Field32;
+            var3 = Field32;
             break;
          case 7:
-            a = Field33;
+            var3 = Field33;
             break;
          case 8:
-            a = Field34;
+            var3 = Field34;
       }
 
       this.Method1940(a);
@@ -468,9 +468,9 @@ public class Class2 extends Class0 {
    }
 
    public Class264 Method1912() {
-      Class264 a = new Class264();
-      this.Field1460.Method1947(a);
-      return a;
+      Class264 var1 = new Class264();
+      this.Field1460.Method1947(var1);
+      return var1;
    }
 
    public void Method1913(b a, int a, Class264 a) {
@@ -497,28 +497,28 @@ public class Class2 extends Class0 {
                   throw new IllegalArgumentException("Bad comparison for type " + a);
             }
          default:
-            int a = -1;
+            short var4 = -1;
             switch (a) {
                case 153:
-                  a = 159;
+                  var4 = 159;
                   break;
                case 154:
-                  a = 160;
+                  var4 = 160;
                   break;
                case 155:
-                  a = 161;
+                  var4 = 161;
                   break;
                case 156:
-                  a = 162;
+                  var4 = 162;
                   break;
                case 157:
-                  a = 163;
+                  var4 = 163;
                   break;
                case 158:
-                  a = 164;
+                  var4 = 164;
             }
 
-            this.Field1460.Method1957(a, a);
+            this.Field1460.Method1957(var4, a);
             return;
       }
 
@@ -550,52 +550,52 @@ public class Class2 extends Class0 {
    }
 
    public void Method1920(int[] a, Class48 a) {
-      float a;
+      float var3;
       if (a.length == 0) {
-         a = 0.0F;
+         var3 = 0.0F;
       } else {
-         a = (float)a.length / (float)(a[a.length - 1] - a[0] + 1);
+         var3 = (float)a.length / (float)(a[a.length - 1] - a[0] + 1);
       }
 
-      this.Method1921(a, a, a >= 0.5F);
+      this.Method1921(a, a, var3 >= 0.5F);
    }
 
-   public void Method1921(int[] a, Class48 a, boolean a2) {
-      for(int a = 1; a < a.length; ++a) {
-         if (a[a] < a[a - 1]) {
+   public void Method1921(int[] a, Class48 a, boolean a) {
+      for(int var4 = 1; var4 < a.length; ++var4) {
+         if (a[var4] < a[var4 - 1]) {
             throw new IllegalArgumentException("keys must be sorted ascending");
          }
       }
 
-      Class264 a = this.Method1910();
-      Class264 a = this.Method1910();
+      Class264 var13 = this.Method1910();
+      Class264 var5 = this.Method1910();
       if (a.length > 0) {
-         int a = a.length;
-         int a = a[0];
-         int a = a[a - 1];
-         int a = a - a + 1;
-         Class264[] a = new Class264[a];
-         Arrays.fill(a, a);
+         int var6 = a.length;
+         int var7 = a[0];
+         int var8 = a[var6 - 1];
+         int var9 = var8 - var7 + 1;
+         Class264[] var10 = new Class264[var9];
+         Arrays.fill(var10, var13);
 
-         int a;
-         for(a = 0; a < a; ++a) {
-            a[a[a] - a] = this.Method1910();
+         int var11;
+         for(var11 = 0; var11 < var6; ++var11) {
+            var10[a[var11] - var7] = this.Method1910();
          }
 
-         this.Field1460.Method1959(a, a, a, a);
+         this.Field1460.Method1959(var7, var8, var13, var10);
 
-         for(a = 0; a < a; ++a) {
-            Class264 a = a[a];
-            if (a != a) {
-               this.Method1911(a);
-               a.Method3199(a + a, a);
+         for(var11 = 0; var11 < var9; ++var11) {
+            Class264 var12 = var10[var11];
+            if (var12 != var13) {
+               this.Method1911(var12);
+               a.Method3199(var11 + var7, var5);
             }
          }
       }
 
-      this.Method1911(a);
+      this.Method1911(var13);
       a.Method3200();
-      this.Method1911(a);
+      this.Method1911(var5);
    }
 
    public void Method1922() {
@@ -623,8 +623,8 @@ public class Class2 extends Class0 {
    }
 
    private void Method1928(int a, b a, Class36 a, boolean a) {
-      String a = a.Method3217() == 9 ? a.Method3225() : a.Method3221();
-      this.Field1460.Method1954(a, a, a.Method3424(), a.Method3425(), a);
+      String var5 = a.Method3217() == 9 ? a.Method3225() : a.Method3221();
+      this.Field1460.Method1954(a, var5, a.Method3424(), a.Method3425(), a);
    }
 
    public void Method1929(b a, Class36 a) {
@@ -656,38 +656,38 @@ public class Class2 extends Class0 {
    }
 
    public void Method1936(b a) {
-      byte a;
+      byte var2;
       switch (a.Method3217()) {
          case 1:
-            a = 4;
+            var2 = 4;
             break;
          case 2:
-            a = 5;
+            var2 = 5;
             break;
          case 3:
-            a = 8;
+            var2 = 8;
             break;
          case 4:
-            a = 9;
+            var2 = 9;
             break;
          case 5:
-            a = 10;
+            var2 = 10;
             break;
          case 6:
-            a = 6;
+            var2 = 6;
             break;
          case 7:
-            a = 11;
+            var2 = 11;
             break;
          case 8:
-            a = 7;
+            var2 = 7;
             break;
          default:
             this.Method1934(189, a);
             return;
       }
 
-      this.Field1460.Method854(188, a);
+      this.Field1460.Method854(188, var2);
    }
 
    public void Method1937() {
@@ -733,7 +733,7 @@ public class Class2 extends Class0 {
       this.Field1460.Method1653();
    }
 
-   public void Method1945(Class264 a, Class264 a, b a2) {
+   public void Method1945(Class264 a, Class264 a, b a) {
       this.Field1460.Method1960(a, a, this.Method1912(), (String)null);
    }
 

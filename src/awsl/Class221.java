@@ -24,7 +24,7 @@ public class Class221 {
    private Class659 Field1233;
    private static String[] Field1234;
 
-   public ArrayList Method2151(Vec3 a, Vec3 a, boolean a2, Class670 a, Class659 a) {
+   public ArrayList Method2151(Vec3 a, Vec3 a, boolean a, Class670 a, Class659 a) {
       this.Field1221 = a;
       this.Field1233 = a;
       this.Field1223 = false;
@@ -35,9 +35,9 @@ public class Class221 {
       this.Field1226 = (float)((double)MathHelper.floor_double(a.zCoord) + 0.5);
       this.Field1220.clear();
       this.Field1220.Method2530(new Class210(new Class685(this), this.Field1221, a));
-      long a = System.nanoTime() / 1000000L;
-      long a = System.currentTimeMillis();
-      int a = 0;
+      long var6 = System.nanoTime() / 1000000L;
+      long var8 = System.currentTimeMillis();
+      int var10 = 0;
 
       do {
          if (this.Field1223) {
@@ -46,7 +46,7 @@ public class Class221 {
             return this.Field1222.Method2523();
          }
 
-         ++a;
+         ++var10;
          this.Field1228 = this.Field1227;
          this.Field1227 = this.Method2155();
          this.Field1229 = this.Field1228 - this.Field1227;
@@ -56,35 +56,35 @@ public class Class221 {
             this.Field1230 = 0.0;
          }
 
-         if (a > 5000) {
+         if (var10 > 5000) {
             return null;
          }
 
          this.Method2153();
-      } while(System.nanoTime() / 1000000L - a <= 1000L);
+      } while(System.nanoTime() / 1000000L - var6 <= 1000L);
 
       return null;
    }
 
    private void Method2152() {
-      Vec3 a = null;
-      Vec3 a = null;
-      ArrayList a = new ArrayList(this.Field1222.Method2523());
-      int a = 0;
-      Iterator var6 = a.Method1383();
+      Vec3 var1 = null;
+      Vec3 var2 = null;
+      ArrayList var4 = new ArrayList(this.Field1222.Method2523());
+      int var5 = 0;
+      Iterator var6 = var4.Method1383();
 
       while(true) {
          while(var6.Method932()) {
-            Vec3 a = (Vec3)var6.Method933();
-            Vec3 a = a;
-            a = new Vec3(a.xCoord - a.xCoord, a.yCoord - a.yCoord, a.zCoord - a.zCoord);
-            if (this.Method2159(a, a) && a < 6) {
-               this.Field1222.Method2523().remove(a);
-               ++a;
-               a = a;
+            Vec3 var7 = (Vec3)var6.Method933();
+            Vec3 var3 = var2;
+            var2 = new Vec3(var1.xCoord - var7.xCoord, var1.yCoord - var7.yCoord, var1.zCoord - var7.zCoord);
+            if (this.Method2159(var3, var2) && var5 < 6) {
+               this.Field1222.Method2523().remove(var1);
+               ++var5;
+               var1 = var7;
             } else {
-               a = 0;
-               a = a;
+               var5 = 0;
+               var1 = var7;
             }
          }
 
@@ -97,38 +97,38 @@ public class Class221 {
    }
 
    private double Method2154() {
-      double a = 0.0;
+      double var1 = 0.0;
 
-      Class210 a;
-      for(Iterator var3 = this.Field1220.Method1383(); var3.Method932(); a += a.Method2524()) {
-         a = (Class210)var3.Method933();
+      Class210 var4;
+      for(Iterator var3 = this.Field1220.Method1383(); var3.Method932(); var1 += var4.Method2524()) {
+         var4 = (Class210)var3.Method933();
       }
 
-      return a;
+      return var1;
    }
 
    private double Method2155() {
-      double a = Double.MAX_VALUE;
+      double var1 = Double.MAX_VALUE;
       Iterator var3 = this.Field1220.Method1383();
 
       while(var3.Method932()) {
-         Class210 a = (Class210)var3.Method933();
-         if (a.Method2524() < a) {
-            a = a.Method2524();
+         Class210 var4 = (Class210)var3.Method933();
+         if (var4.Method2524() < var1) {
+            var1 = var4.Method2524();
          }
       }
 
-      return a;
+      return var1;
    }
 
    private void Method2156(int a, int a, int a, ArrayList a, Vec3 a, Class210 a) {
       if (!this.Field1223) {
-         ArrayList a = new ArrayList(a);
-         Vec3 a = new Vec3(a.xCoord + (double)a, a.yCoord + (double)a, a.zCoord + (double)a);
-         if (this.Method2158(a, a)) {
-            this.Method2157(a, a);
-            a.Method2530(a);
-            this.Field1220.Method2530(new Class210(a, this.Field1221, this.Field1232));
+         ArrayList var7 = new ArrayList(a);
+         Vec3 var8 = new Vec3(a.xCoord + (double)a, a.yCoord + (double)a, a.zCoord + (double)a);
+         if (this.Method2158(var8, a)) {
+            this.Method2157(var8, a);
+            var7.Method2530(var8);
+            this.Field1220.Method2530(new Class210(var7, this.Field1221, this.Field1232));
             a.Method2525(true);
          }
       }

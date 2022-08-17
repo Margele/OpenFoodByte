@@ -10,15 +10,15 @@ public class Class693 extends MessageToByteEncoder {
 
    protected void Method2534(ChannelHandlerContext a, ByteBuf a, ByteBuf a) {
       Method2536();
-      int a = a.readableBytes();
-      int a = Class234.Method1612(a);
-      if (a > 3) {
-         throw new IllegalArgumentException("unable to fit " + a + " into " + 3);
+      int var5 = a.readableBytes();
+      int var6 = Class234.Method1612(var5);
+      if (var6 > 3) {
+         throw new IllegalArgumentException("unable to fit " + var5 + " into " + 3);
       } else {
-         Class234 a = new Class234(a);
-         a.ensureWritable(a + a);
-         a.Method9(a);
-         a.writeBytes(a, a.readerIndex(), a);
+         Class234 var7 = new Class234(a);
+         var7.ensureWritable(var6 + var5);
+         var7.Method9(var5);
+         var7.writeBytes(a, a.readerIndex(), var5);
          a.trash(new String[1]);
       }
    }

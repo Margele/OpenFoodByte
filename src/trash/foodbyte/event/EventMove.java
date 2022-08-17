@@ -64,25 +64,25 @@ public class EventMove implements Event {
 
    public void setSpeed(double a) {
       EventPacket.trash();
-      Minecraft a = Minecraft.getMinecraft();
-      MovementInput a = a.thePlayer.movementInput;
-      double a = (double)a.moveForward;
-      double a = (double)a.moveStrafe;
-      double a = (double)a.thePlayer.rotationYaw;
-      double a = a == 0.0 ? 90.0 : (a < 0.0 ? -45.0 : 45.0);
-      boolean a = a != 0.0 || a != 0.0;
-      a += a < 0.0 ? 180.0 : 0.0;
-      if (a < 0.0) {
-         a += a;
+      Minecraft var4 = Minecraft.getMinecraft();
+      MovementInput var5 = var4.thePlayer.movementInput;
+      double var6 = (double)var5.moveForward;
+      double var8 = (double)var5.moveStrafe;
+      double var10 = (double)var4.thePlayer.rotationYaw;
+      double var12 = var6 == 0.0 ? 90.0 : (var6 < 0.0 ? -45.0 : 45.0);
+      boolean var14 = var6 != 0.0 || var8 != 0.0;
+      var10 += var6 < 0.0 ? 180.0 : 0.0;
+      if (var8 < 0.0) {
+         var10 += var12;
          a.trash(new String[3]);
       }
 
-      if (a > 0.0) {
-         a -= a;
+      if (var8 > 0.0) {
+         var10 -= var12;
       }
 
-      this.setX(-((double)MathHelper.sin((float)Math.toRadians(a)) * a));
-      this.setZ((double)MathHelper.cos((float)Math.toRadians(a)) * a);
+      this.setX(-((double)MathHelper.sin((float)Math.toRadians(var10)) * a));
+      this.setZ((double)MathHelper.cos((float)Math.toRadians(var10)) * a);
       this.setX(0.0);
       this.setZ(0.0);
    }

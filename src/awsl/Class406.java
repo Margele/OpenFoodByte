@@ -16,7 +16,7 @@ public class Class406 implements Class422, Class45 {
       this.Method1362(a, a);
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    static {

@@ -18,15 +18,15 @@ public final class Class41 extends Class267 {
    }
 
    public Class148 Method1969(String a, boolean a) {
-      Class801 a = this.Field331.Method3266(a, a);
-      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1969(a, a);
-      return new Class132(a, a);
+      Class801 var3 = this.Field331.Method3266(a, a);
+      Class148 var4 = this.Field1460 == null ? null : this.Field1460.Method1969(a, a);
+      return new Class132(var4, var3);
    }
 
    public Class148 Method1970(int a, Class31 a, String a, boolean a) {
-      Class801 a = this.Field331.Method3267(a, a, a, a);
-      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1970(a, a, a, a);
-      return new Class132(a, a);
+      Class801 var5 = this.Field331.Method3267(a, a, a, a);
+      Class148 var6 = this.Field1460 == null ? null : this.Field1460.Method1970(a, a, a, a);
+      return new Class132(var6, var5);
    }
 
    public void Method1980(Class136 a) {
@@ -35,15 +35,15 @@ public final class Class41 extends Class267 {
    }
 
    public Class148 Method1968() {
-      Class801 a = this.Field331.Method3265();
-      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1968();
-      return new Class132(a, a);
+      Class801 var1 = this.Field331.Method3265();
+      Class148 var2 = this.Field1460 == null ? null : this.Field1460.Method1968();
+      return new Class132(var2, var1);
    }
 
    public Class148 Method1971(int a, String a, boolean a) {
-      Class801 a = this.Field331.Method3268(a, a, a);
-      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1971(a, a, a);
-      return new Class132(a, a);
+      Class801 var4 = this.Field331.Method3268(a, a, a);
+      Class148 var5 = this.Field1460 == null ? null : this.Field1460.Method1971(a, a, a);
+      return new Class132(var5, var4);
    }
 
    public void Method1652() {
@@ -148,9 +148,9 @@ public final class Class41 extends Class267 {
    }
 
    public Class148 Method1973(int a, Class31 a, String a, boolean a) {
-      Class801 a = this.Field331.Method3287(a, a, a, a);
-      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1973(a, a, a, a);
-      return new Class132(a, a);
+      Class801 var5 = this.Field331.Method3287(a, a, a, a);
+      Class148 var6 = this.Field1460 == null ? null : this.Field1460.Method1973(a, a, a, a);
+      return new Class132(var6, var5);
    }
 
    public void Method1960(Class264 a, Class264 a, Class264 a, String a) {
@@ -159,9 +159,9 @@ public final class Class41 extends Class267 {
    }
 
    public Class148 Method1974(int a, Class31 a, String a, boolean a) {
-      Class801 a = this.Field331.Method3289(a, a, a, a);
-      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1974(a, a, a, a);
-      return new Class132(a, a);
+      Class801 var5 = this.Field331.Method3289(a, a, a, a);
+      Class148 var6 = this.Field1460 == null ? null : this.Field1460.Method1974(a, a, a, a);
+      return new Class132(var6, var5);
    }
 
    public void Method1843(String a, String a, String a, Class264 a, Class264 a, int a) {
@@ -170,9 +170,9 @@ public final class Class41 extends Class267 {
    }
 
    public Class148 Method1844(int a, Class31 a, Class264[] a, Class264[] a, int[] a, String a, boolean a) {
-      Class801 a = this.Field331.Method3291(a, a, a, a, a, a, a);
-      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1844(a, a, a, a, a, a, a);
-      return new Class132(a, a);
+      Class801 var8 = this.Field331.Method3291(a, a, a, a, a, a, a);
+      Class148 var9 = this.Field1460 == null ? null : this.Field1460.Method1844(a, a, a, a, a, a, a);
+      return new Class132(var9, var8);
    }
 
    public void Method1981(int a, Class264 a) {

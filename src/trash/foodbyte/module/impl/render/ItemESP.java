@@ -28,9 +28,9 @@ public class ItemESP extends Module {
       Class492.Method2239();
       Iterator var3 = mc.theWorld.loadedEntityList.Method1383();
       if (var3.Method932()) {
-         Object a = var3.Method933();
-         if (a instanceof EntityItem) {
-            RenderUtils.Method1123((Entity)a, this.Field2375.Method2444());
+         Object var4 = var3.Method933();
+         if (var4 instanceof EntityItem) {
+            RenderUtils.Method1123((Entity)var4, this.Field2375.Method2444());
          }
       }
 

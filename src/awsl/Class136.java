@@ -21,42 +21,42 @@ public class Class136 {
       return null;
    }
 
-   protected Class136 Method471(Class165 a, int a, int a, char[] a3, int a4, Class264[] a5) {
-      Class136 a = new Class136(this.Field987);
-      a.Field988 = new byte[a];
-      System.arraycopy(a.Field1029, a, a.Field988, 0, a);
-      return a;
+   protected Class136 Method471(Class165 a, int a, int a, char[] a, int a, Class264[] a) {
+      Class136 var7 = new Class136(this.Field987);
+      var7.Field988 = new byte[a];
+      System.arraycopy(a.Field1029, a, var7.Field988, 0, a);
+      return var7;
    }
 
-   protected Class138 Method472(Class169 a, byte[] a1, int a2, int a3, int a4) {
-      Class138 a = new Class138();
-      a.Field990 = this.Field988;
-      a.Field991 = this.Field988.length;
-      return a;
+   protected Class138 Method472(Class169 a, byte[] a, int a, int a, int a) {
+      Class138 var6 = new Class138();
+      var6.Field990 = this.Field988;
+      var6.Field991 = this.Field988.length;
+      return var6;
    }
 
    final int Method473() {
       Class267.Method2862();
-      int a = 0;
-      ++a;
-      Class136 a = this.Field989;
-      return a;
+      int var2 = 0;
+      ++var2;
+      Class136 var3 = this.Field989;
+      return var2;
    }
 
    final int Method474(Class169 a, byte[] a, int a, int a, int a) {
       Class267.Method2862();
-      int a = 0;
+      int var8 = 0;
       a.Method1506(this.Field987);
-      a += this.Method472(a, a, a, a, a).Field991 + 6;
-      Class136 a = this.Field989;
-      return a;
+      var8 += this.Method472(a, a, a, a, a).Field991 + 6;
+      Class136 var7 = this.Field989;
+      return var8;
    }
 
    final void Method475(Class169 a, byte[] a, int a, int a, int a, Class138 a) {
-      String[] a = Class267.Method2862();
-      Class138 a = this.Method472(a, a, a, a, a);
-      a.Method487(a.Method1506(this.Field987)).Method489(a.Field991);
-      a.Method493(a.Field990, 0, a.Field991);
-      Class136 a = this.Field989;
+      String[] var7 = Class267.Method2862();
+      Class138 var9 = this.Method472(a, a, a, a, a);
+      a.Method487(a.Method1506(this.Field987)).Method489(var9.Field991);
+      a.Method493(var9.Field990, 0, var9.Field991);
+      Class136 var8 = this.Field989;
    }
 }

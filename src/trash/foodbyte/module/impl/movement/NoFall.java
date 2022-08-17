@@ -28,10 +28,10 @@ public class NoFall extends Module {
    @EventTarget(4)
    public final void Method273(EventPacket a) {
       if (this.Field2543.isCurrentMode(Method754(-12064, -22071)) && a.getPacket() instanceof C03PacketPlayer) {
-         C03PacketPlayer a = (C03PacketPlayer)a.getPacket();
+         C03PacketPlayer var2 = (C03PacketPlayer)a.getPacket();
          if (mc.thePlayer.fallDistance >= 3.0F) {
             mc.thePlayer.fallDistance = 0.0F;
-            ReflectionsHelper.setFinalField(a, ObfuscatedField.C03onGround.getObfuscatedName(), true, false);
+            ReflectionsHelper.setFinalField(var2, ObfuscatedField.C03onGround.getObfuscatedName(), true, false);
          }
       }
 
@@ -843,14 +843,14 @@ public class NoFall extends Module {
 
    private boolean Method713() {
       Class167.Method1500();
-      int a = 0;
-      if ((double)a < mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight()) {
-         AxisAlignedBB a = mc.thePlayer.getEntityBoundingBox().offset(0.0, (double)(-a), 0.0);
-         if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, a).isEmpty()) {
+      int var2 = 0;
+      if ((double)var2 < mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight()) {
+         AxisAlignedBB var3 = mc.thePlayer.getEntityBoundingBox().offset(0.0, (double)(-var2), 0.0);
+         if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, var3).isEmpty()) {
             return true;
          }
 
-         a += 2;
+         var2 += 2;
       }
 
       return false;

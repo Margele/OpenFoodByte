@@ -55,14 +55,14 @@ public class Class283 {
    public void Method3087(int a, int a) {
       this.Field1532.clear();
       this.Field1534.clear();
-      ArrayList a = new ArrayList();
-      a.Method2530(this.Field1530);
-      this.Field1534.Method2530(new Class217(this.Field1530, (Class217)null, a, this.Field1530.Method2642(this.Field1531), 0.0, 0.0));
+      ArrayList var3 = new ArrayList();
+      var3.Method2530(this.Field1530);
+      this.Field1534.Method2530(new Class217(this.Field1530, (Class217)null, var3, this.Field1530.Method2642(this.Field1531), 0.0, 0.0));
 
       label53:
-      for(int a = 0; a < a; ++a) {
+      for(int var4 = 0; var4 < a; ++var4) {
          this.Field1534.sort(new Class282());
-         int a = 0;
+         int var5 = 0;
          if (this.Field1534.Method1799() == 0) {
             break;
          }
@@ -70,28 +70,28 @@ public class Class283 {
          Iterator var6 = (new ArrayList(this.Field1534)).Method1383();
 
          while(var6.Method932()) {
-            Class217 a = (Class217)var6.Method933();
-            ++a;
-            if (a > a) {
+            Class217 var7 = (Class217)var6.Method933();
+            ++var5;
+            if (var5 > a) {
                break;
             }
 
-            this.Field1534.remove(a);
-            this.Field1533.Method2530(a);
+            this.Field1534.remove(var7);
+            this.Field1533.Method2530(var7);
             Class216[] var9 = Field1535;
             int var10 = var9.length;
 
             for(int var11 = 0; var11 < var10; ++var11) {
-               Class216 a = var9[var11];
-               Class216 a = a.Method2124().Method2643(a).Method2641();
-               if (Method3088(a, false) && this.Method3093(a, a, 0.0)) {
+               Class216 var12 = var9[var11];
+               Class216 var13 = var7.Method2124().Method2643(var12).Method2641();
+               if (Method3088(var13, false) && this.Method3093(var7, var13, 0.0)) {
                   break label53;
                }
             }
 
-            Class216 a = a.Method2124().Method2640(0.0, 1.0, 0.0).Method2641();
-            Class216 a;
-            if (Method3088(a, false) && this.Method3093(a, a, 0.0) || Method3088(a = a.Method2124().Method2640(0.0, -1.0, 0.0).Method2641(), false) && this.Method3093(a, a, 0.0)) {
+            Class216 var14 = var7.Method2124().Method2640(0.0, 1.0, 0.0).Method2641();
+            Class216 var8;
+            if (Method3088(var14, false) && this.Method3093(var7, var14, 0.0) || Method3088(var8 = var7.Method2124().Method2640(0.0, -1.0, 0.0).Method2641(), false) && this.Method3093(var7, var8, 0.0)) {
                break label53;
             }
          }
@@ -105,17 +105,17 @@ public class Class283 {
       return Method3089((int)a.Method2637(), (int)a.Method2638(), (int)a.Method2639(), a);
    }
 
-   public static boolean Method3089(int a, int a, int a, boolean a3) {
-      BlockPos a = new BlockPos(a, a, a);
-      BlockPos a = new BlockPos(a, a + 1, a);
-      BlockPos a = new BlockPos(a, a - 1, a);
+   public static boolean Method3089(int a, int a, int a, boolean a) {
+      BlockPos var4 = new BlockPos(a, a, a);
+      BlockPos var5 = new BlockPos(a, a + 1, a);
+      BlockPos var6 = new BlockPos(a, a - 1, a);
       boolean var10000;
-      if (!Method3090(a) && !Method3090(a)) {
-         if (!Method3090(a)) {
+      if (!Method3090(var4) && !Method3090(var5)) {
+         if (!Method3090(var6)) {
             ;
          }
 
-         if (Method3091(a)) {
+         if (Method3091(var6)) {
             var10000 = true;
             return var10000;
          }
@@ -126,8 +126,8 @@ public class Class283 {
    }
 
    private static boolean Method3090(BlockPos a) {
-      Block a = Field1529.theWorld.getBlockState(new BlockPos(a.getX(), a.getY(), a.getZ())).getBlock();
-      return a.isFullBlock() || a instanceof BlockSlab || a instanceof BlockStairs || a instanceof BlockCactus || a instanceof BlockChest || a instanceof BlockEnderChest || a instanceof BlockSkull || a instanceof BlockPane || a instanceof BlockFence || a instanceof BlockWall || a instanceof BlockGlass || a instanceof BlockPistonBase || a instanceof BlockPistonExtension || a instanceof BlockPistonMoving || a instanceof BlockStainedGlass || a instanceof BlockTrapDoor || a instanceof BlockEndPortalFrame || a instanceof BlockEndPortal || a instanceof BlockBed || a instanceof BlockWeb || a instanceof BlockBarrier || a instanceof BlockLadder || a instanceof BlockCarpet;
+      Block var1 = Field1529.theWorld.getBlockState(new BlockPos(a.getX(), a.getY(), a.getZ())).getBlock();
+      return var1.isFullBlock() || var1 instanceof BlockSlab || var1 instanceof BlockStairs || var1 instanceof BlockCactus || var1 instanceof BlockChest || var1 instanceof BlockEnderChest || var1 instanceof BlockSkull || var1 instanceof BlockPane || var1 instanceof BlockFence || var1 instanceof BlockWall || var1 instanceof BlockGlass || var1 instanceof BlockPistonBase || var1 instanceof BlockPistonExtension || var1 instanceof BlockPistonMoving || var1 instanceof BlockStainedGlass || var1 instanceof BlockTrapDoor || var1 instanceof BlockEndPortalFrame || var1 instanceof BlockEndPortal || var1 instanceof BlockBed || var1 instanceof BlockWeb || var1 instanceof BlockBarrier || var1 instanceof BlockLadder || var1 instanceof BlockCarpet;
    }
 
    private static boolean Method3091(BlockPos a) {
@@ -137,7 +137,7 @@ public class Class283 {
    public Class217 Method3092(Class216 a) {
       Iterator var2 = this.Field1533.Method1383();
 
-      Class217 a;
+      Class217 var3;
       do {
          if (!var2.Method932()) {
             var2 = this.Field1534.Method1383();
@@ -147,26 +147,26 @@ public class Class283 {
                   return null;
                }
 
-               a = (Class217)var2.Method933();
-            } while(a.Method2124().Method2637() != a.Method2637() || a.Method2124().Method2638() != a.Method2638() || a.Method2124().Method2639() != a.Method2639());
+               var3 = (Class217)var2.Method933();
+            } while(var3.Method2124().Method2637() != a.Method2637() || var3.Method2124().Method2638() != a.Method2638() || var3.Method2124().Method2639() != a.Method2639());
 
-            return a;
+            return var3;
          }
 
-         a = (Class217)var2.Method933();
-      } while(a.Method2124().Method2637() != a.Method2637() || a.Method2124().Method2638() != a.Method2638() || a.Method2124().Method2639() != a.Method2639());
+         var3 = (Class217)var2.Method933();
+      } while(var3.Method2124().Method2637() != a.Method2637() || var3.Method2124().Method2638() != a.Method2638() || var3.Method2124().Method2639() != a.Method2639());
 
-      return a;
+      return var3;
    }
 
    public boolean Method3093(Class217 a, Class216 a, double a) {
-      Class217 a = this.Method3092(a);
-      double a = a + a.Method2134();
-      double a = 9.5;
+      Class217 var5 = this.Method3092(a);
+      double var6 = a + a.Method2134();
+      double var8 = 9.5;
       if ((a.Method2637() != this.Field1531.Method2637() || a.Method2638() != this.Field1531.Method2638() || a.Method2639() != this.Field1531.Method2639()) && !(a.Method2642(this.Field1531) <= 9.5)) {
-         ArrayList a = new ArrayList(a.Method2126());
-         a.Method2530(a);
-         this.Field1534.Method2530(new Class217(a, a, a, a.Method2642(this.Field1531), a, a));
+         ArrayList var10 = new ArrayList(a.Method2126());
+         var10.Method2530(a);
+         this.Field1534.Method2530(new Class217(a, a, var10, a.Method2642(this.Field1531), a, var6));
          return false;
       } else {
          this.Field1532.clear();
@@ -177,66 +177,66 @@ public class Class283 {
    }
 
    public static boolean Method3094(BlockPos a) {
-      Block a = Field1529.theWorld.getBlockState(new BlockPos(a.getX(), a.getY(), a.getZ())).getBlock();
-      return a.getMaterial() == Material.air || a.getMaterial() == Material.plants || a.getMaterial() == Material.vine || a == Blocks.ladder || a == Blocks.water || a == Blocks.flowing_water || a == Blocks.wall_sign || a == Blocks.standing_sign;
+      Block var1 = Field1529.theWorld.getBlockState(new BlockPos(a.getX(), a.getY(), a.getZ())).getBlock();
+      return var1.getMaterial() == Material.air || var1.getMaterial() == Material.plants || var1.getMaterial() == Material.vine || var1 == Blocks.ladder || var1 == Blocks.water || var1 == Blocks.flowing_water || var1 == Blocks.wall_sign || var1 == Blocks.standing_sign;
    }
 
    public static ArrayList Method3095(Class216 a, Class216 a) {
-      String a = Class216.Method2647();
+      String var2 = Class216.Method2647();
       if (!Method3094(new BlockPos(a.Method2644()))) {
          a = a.Method2640(0.0, 1.0, 0.0);
       }
 
-      Class226 a = new Class226(a, a);
-      a.Method2220();
-      int a = 0;
-      Class216 a = null;
-      Class216 a = null;
-      ArrayList a = new ArrayList();
-      ArrayList a = a.Method2219();
-      Iterator var9 = a.Method1383();
+      Class226 var3 = new Class226(a, a);
+      var3.Method2220();
+      int var4 = 0;
+      Object var5 = null;
+      Class216 var6 = null;
+      ArrayList var7 = new ArrayList();
+      ArrayList var8 = var3.Method2219();
+      Iterator var9 = var8.Method1383();
       if (var9.Method932()) {
-         Class216 a = (Class216)var9.Method933();
-         if (a == a.Method1799() - 1) {
-            a.Method2530(((Class216)a).Method2640(0.5, 0.0, 0.5));
-            a.Method2530(a.Method2640(0.5, 0.0, 0.5));
-            a = a;
+         Class216 var10 = (Class216)var9.Method933();
+         if (var4 == var8.Method1799() - 1) {
+            var7.Method2530(((Class216)var5).Method2640(0.5, 0.0, 0.5));
+            var7.Method2530(var10.Method2640(0.5, 0.0, 0.5));
+            var6 = var10;
          }
 
-         boolean a = true;
-         if (a.Method2642(a) > 25.0) {
-            a = false;
+         boolean var11 = true;
+         if (var10.Method2642(var6) > 25.0) {
+            var11 = false;
          }
 
-         double a = Math.min(a.Method2637(), a.Method2637());
-         double a = Math.min(a.Method2638(), a.Method2638());
-         double a = Math.min(a.Method2639(), a.Method2639());
-         double a = Math.max(a.Method2637(), a.Method2637());
-         double a = Math.max(a.Method2638(), a.Method2638());
-         double a = Math.max(a.Method2639(), a.Method2639());
-         int a = (int)a;
-         if ((double)a <= a) {
-            int a = (int)a;
-            if ((double)a <= a) {
-               int a = (int)a;
-               if ((double)a <= a) {
-                  if (!Method3089(a, a, a, false)) {
-                     a = false;
+         double var12 = Math.min(var6.Method2637(), var10.Method2637());
+         double var14 = Math.min(var6.Method2638(), var10.Method2638());
+         double var16 = Math.min(var6.Method2639(), var10.Method2639());
+         double var18 = Math.max(var6.Method2637(), var10.Method2637());
+         double var20 = Math.max(var6.Method2638(), var10.Method2638());
+         double var22 = Math.max(var6.Method2639(), var10.Method2639());
+         int var24 = (int)var12;
+         if ((double)var24 <= var18) {
+            int var25 = (int)var14;
+            if ((double)var25 <= var20) {
+               int var26 = (int)var16;
+               if ((double)var26 <= var22) {
+                  if (!Method3089(var24, var25, var26, false)) {
+                     var11 = false;
                   }
 
-                  ++a;
+                  ++var26;
                }
 
-               ++a;
+               ++var25;
             }
 
-            ++a;
+            ++var24;
          }
 
-         a.Method2530(((Class216)a).Method2640(0.5, 0.0, 0.5));
-         ++a;
+         var7.Method2530(((Class216)var5).Method2640(0.5, 0.0, 0.5));
+         ++var4;
       }
 
-      return a;
+      return var7;
    }
 }

@@ -87,7 +87,7 @@ public class AimAssist extends Module {
 
    @EventTarget
    public void Method755(EventTick a) {
-      a[] a = b.trash();
+      a[] var2 = b.trash();
       if (mc.playerController.getCurrentGameType() == GameType.ADVENTURE || mc.objectMouseOver.typeOfHit != MovingObjectType.BLOCK || this.target != null || !this.blockCheck.getBooleanValue()) {
          if (mc.thePlayer.ridingEntity != null) {
             if (this.weapon.getValue() && this.weapon.getValue() && !PlayerUtils.isVaildItem()) {
@@ -108,25 +108,25 @@ public class AimAssist extends Module {
 
             if (this.target != null && (double)mc.thePlayer.getDistanceToEntity(this.target) <= (double)this.range.getFloatValue() + (this.infiniteRange.getBooleanValue() ? 999.0 : 0.0)) {
                if (this.aimMode.isCurrentMode("Old")) {
-                  boolean a = this.getYaw(this.target) > 0.0;
-                  double a = (double)((float)(Math.random() / (90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
+                  boolean var3 = this.getYaw(this.target) > 0.0;
+                  double var4 = (double)((float)(Math.random() / (90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
                   EntityPlayerSP var10000;
                   if ((this.getYaw(this.target) > 7.0 || this.getYaw(this.target) < -7.0) && (double)this.hSpeed.getFloatValue() * 10.0 >= 10.0) {
                      var10000 = mc.thePlayer;
-                     var10000.rotationYaw += (float)(-(Math.abs(this.getYaw(this.target)) / a));
+                     var10000.rotationYaw += (float)(-(Math.abs(this.getYaw(this.target)) / var4));
                   }
 
-                  double a = (double)((float)(Math.random() / (90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
-                  boolean a = this.getPitch(this.target) > 0.0;
+                  double var6 = (double)((float)(Math.random() / (90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
+                  boolean var8 = this.getPitch(this.target) > 0.0;
                   if ((this.getPitch(this.target) > 20.0 || this.getPitch(this.target) < -1.0) && (double)this.vSpeed.getFloatValue() * 10.0 >= 10.0) {
                      var10000 = mc.thePlayer;
-                     var10000.rotationPitch += (float)(-(Math.abs(this.getPitch(this.target)) / a));
+                     var10000.rotationPitch += (float)(-(Math.abs(this.getPitch(this.target)) / var6));
                   }
                }
 
-               double a = (double)this.hSpeed.getFloatValue() * 3.0 + ((double)this.hSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
-               double a = (double)this.vSpeed.getFloatValue() * 3.0 + ((double)this.vSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
-               this.setRotation(this.target, (float)a * 2.5F, (float)a * 2.5F);
+               double var9 = (double)this.hSpeed.getFloatValue() * 3.0 + ((double)this.hSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
+               double var5 = (double)this.vSpeed.getFloatValue() * 3.0 + ((double)this.vSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
+               this.setRotation(this.target, (float)var9 * 2.5F, (float)var5 * 2.5F);
             }
 
             this.removeTargets();
@@ -139,7 +139,7 @@ public class AimAssist extends Module {
 
    @EventTarget
    public void onMotion(EventMotion event) {
-      a[] a = b.trash();
+      a[] var2 = b.trash();
       if (mc.playerController.getCurrentGameType() == GameType.ADVENTURE || mc.objectMouseOver.typeOfHit != MovingObjectType.BLOCK || this.target != null || !this.blockCheck.getBooleanValue()) {
          if (event.isPre()) {
             if (mc.theWorld == null) {
@@ -163,25 +163,25 @@ public class AimAssist extends Module {
             }
 
             if (this.aimMode.isCurrentMode("Old")) {
-               boolean a = this.getYaw(this.target) > 0.0;
-               double a = (double)((float)(Math.random() / (90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
+               boolean var3 = this.getYaw(this.target) > 0.0;
+               double var4 = (double)((float)(Math.random() / (90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.hSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
                EntityPlayerSP var10000;
                if ((this.getYaw(this.target) > 7.0 || this.getYaw(this.target) < -7.0) && (double)this.hSpeed.getFloatValue() * 10.0 >= 10.0) {
                   var10000 = mc.thePlayer;
-                  var10000.rotationYaw += (float)(-(Math.abs(this.getYaw(this.target)) / a));
+                  var10000.rotationYaw += (float)(-(Math.abs(this.getYaw(this.target)) / var4));
                }
 
-               double a = (double)((float)(Math.random() / (90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
-               boolean a = this.getPitch(this.target) > 0.0;
+               double var6 = (double)((float)(Math.random() / (90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 1.2 - 337.5) + 90.0 / ((double)this.vSpeed.getFloatValue() * 10.0 + MathUtils.getRandomDouble2(1.2354235325235234E-4, 0.0024708470650470467)) * 3.0 / 0.8));
+               boolean var8 = this.getPitch(this.target) > 0.0;
                if ((this.getPitch(this.target) > 20.0 || this.getPitch(this.target) < -1.0) && (double)this.vSpeed.getFloatValue() * 10.0 >= 10.0) {
                   var10000 = mc.thePlayer;
-                  var10000.rotationPitch += (float)(-(Math.abs(this.getPitch(this.target)) / a));
+                  var10000.rotationPitch += (float)(-(Math.abs(this.getPitch(this.target)) / var6));
                }
             }
 
-            double a = (double)this.hSpeed.getFloatValue() * 3.0 + ((double)this.hSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
-            double a = (double)this.vSpeed.getFloatValue() * 3.0 + ((double)this.vSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
-            this.setRotation(this.target, (float)a * 2.5F, (float)a * 2.5F);
+            double var9 = (double)this.hSpeed.getFloatValue() * 3.0 + ((double)this.hSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
+            double var5 = (double)this.vSpeed.getFloatValue() * 3.0 + ((double)this.vSpeed.getFloatValue() > 0.0 ? this.random.nextDouble() : 0.0);
+            this.setRotation(this.target, (float)var9 * 2.5F, (float)var5 * 2.5F);
          }
 
          if (mc.theWorld != null) {
@@ -194,52 +194,52 @@ public class AimAssist extends Module {
    }
 
    public static Object[] getMouseEntities(double range, double hitbox) {
-      Entity a = mc.getRenderViewEntity();
-      Entity a = null;
+      Entity var4 = mc.getRenderViewEntity();
+      Entity var5 = null;
       if (mc.theWorld == null) {
          return null;
       } else {
          mc.mcProfiler.startSection("pick");
-         Vec3 a = a.getPositionEyes(ReflectionUtils.getRenderPartialTicks());
-         Vec3 a = a.getLook(ReflectionUtils.getRenderPartialTicks());
-         Vec3 a = a.addVector(a.xCoord * range, a.yCoord * range, a.zCoord * range);
-         Vec3 a = null;
-         float a = 1.0F;
-         List a = mc.theWorld.getEntitiesWithinAABBExcludingEntity(a, a.getEntityBoundingBox().addCoord(a.xCoord * range, a.yCoord * range, a.zCoord * range).expand((double)a, (double)a, (double)a));
-         double a = range;
+         Vec3 var10 = var4.getPositionEyes(ReflectionUtils.getRenderPartialTicks());
+         Vec3 var11 = var4.getLook(ReflectionUtils.getRenderPartialTicks());
+         Vec3 var12 = var10.addVector(var11.xCoord * range, var11.yCoord * range, var11.zCoord * range);
+         Vec3 var13 = null;
+         float var14 = 1.0F;
+         List var15 = mc.theWorld.getEntitiesWithinAABBExcludingEntity(var4, var4.getEntityBoundingBox().addCoord(var11.xCoord * range, var11.yCoord * range, var11.zCoord * range).expand((double)var14, (double)var14, (double)var14));
+         double var16 = range;
 
-         for(int a = 0; a < a.Method1799(); ++a) {
-            Entity a = (Entity)a.get(a);
-            if (a.canBeCollidedWith()) {
-               float a = a.getCollisionBorderSize();
-               AxisAlignedBB a = a.getEntityBoundingBox().expand((double)a, (double)a, (double)a);
-               a = a.expand(hitbox, hitbox, hitbox);
-               MovingObjectPosition a = a.calculateIntercept(a, a);
-               if (a.isVecInside(a)) {
-                  if (0.0 < a || a == 0.0) {
-                     a = a;
-                     a = 0.0;
+         for(int var18 = 0; var18 < var15.Method1799(); ++var18) {
+            Entity var21 = (Entity)var15.get(var18);
+            if (var21.canBeCollidedWith()) {
+               float var22 = var21.getCollisionBorderSize();
+               AxisAlignedBB var23 = var21.getEntityBoundingBox().expand((double)var22, (double)var22, (double)var22);
+               var23 = var23.expand(hitbox, hitbox, hitbox);
+               MovingObjectPosition var24 = var23.calculateIntercept(var10, var12);
+               if (var23.isVecInside(var10)) {
+                  if (0.0 < var16 || var16 == 0.0) {
+                     var5 = var21;
+                     var16 = 0.0;
                   }
                } else {
-                  double a;
-                  if ((a = a.distanceTo(a.hitVec)) < a || a == 0.0) {
-                     if (a == a.ridingEntity) {
-                        if (a == 0.0) {
-                           a = a;
-                           a = a.hitVec;
+                  double var19;
+                  if ((var19 = var10.distanceTo(var24.hitVec)) < var16 || var16 == 0.0) {
+                     if (var21 == var4.ridingEntity) {
+                        if (var16 == 0.0) {
+                           var5 = var21;
+                           var13 = var24.hitVec;
                         }
                      } else {
-                        a = a;
-                        a = a.hitVec;
-                        a = a;
+                        var5 = var21;
+                        var13 = var24.hitVec;
+                        var16 = var19;
                      }
                   }
                }
             }
          }
 
-         if (a < range && !(a instanceof EntityLivingBase) && !(a instanceof EntityItemFrame)) {
-            a = null;
+         if (var16 < range && !(var5 instanceof EntityLivingBase) && !(var5 instanceof EntityItemFrame)) {
+            var5 = null;
          }
 
          mc.mcProfiler.endSection();
@@ -272,23 +272,23 @@ public class AimAssist extends Module {
       Iterator var1 = this.targets.Method1383();
 
       while(var1.Method932()) {
-         EntityLivingBase a = (EntityLivingBase)var1.Method933();
-         if (!this.isInViewEmpty(a, (double)this.range.getFloatValue() + (this.infiniteRange.getBooleanValue() ? 999.0 : 0.0))) {
-            this.targets.remove(a);
+         EntityLivingBase var2 = (EntityLivingBase)var1.Method933();
+         if (!this.isInViewEmpty(var2, (double)this.range.getFloatValue() + (this.infiniteRange.getBooleanValue() ? 999.0 : 0.0))) {
+            this.targets.remove(var2);
          }
       }
 
    }
 
    private void updateTargets() {
-      int a = true;
+      boolean var1 = true;
       Iterator var2 = mc.theWorld.loadedEntityList.Method1383();
 
       while(var2.Method932()) {
-         Entity a = (Entity)var2.Method933();
-         EntityLivingBase a;
-         if (a instanceof EntityLivingBase && this.isInViewEmpty(a = (EntityLivingBase)a, (double)this.range.getFloatValue() + (this.infiniteRange.getBooleanValue() ? 999.0 : 0.0)) && !this.targets.contains(a)) {
-            this.targets.Method2530(a);
+         Entity var3 = (Entity)var2.Method933();
+         EntityLivingBase var4;
+         if (var3 instanceof EntityLivingBase && this.isInViewEmpty(var4 = (EntityLivingBase)var3, (double)this.range.getFloatValue() + (this.infiniteRange.getBooleanValue() ? 999.0 : 0.0)) && !this.targets.contains(var4)) {
+            this.targets.Method2530(var4);
          }
       }
 
@@ -322,94 +322,94 @@ public class AimAssist extends Module {
 
    public boolean isInView(EntityLivingBase target, float fov) {
       fov = (float)((double)fov * 0.5);
-      double a = (((double)mc.thePlayer.rotationYaw - this.getRotation(target)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
-      return a > 0.0 && a < (double)fov || (double)(-fov) < a && a < 0.0;
+      double var3 = (((double)mc.thePlayer.rotationYaw - this.getRotation(target)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
+      return var3 > 0.0 && var3 < (double)fov || (double)(-fov) < var3 && var3 < 0.0;
    }
 
    public double[] getRotation(EntityLivingBase entity) {
-      double a = entity.posX - mc.thePlayer.posX;
-      double a = entity.posY - mc.thePlayer.posY;
-      double a = entity.posZ - mc.thePlayer.posZ;
-      a /= (double)mc.thePlayer.getDistanceToEntity(entity);
-      double a = -(Math.atan2(a, a) * 57.29577951308232);
-      double a = -(Math.asin(a) * 57.29577951308232);
-      return new double[]{a, a};
+      double var2 = entity.posX - mc.thePlayer.posX;
+      double var4 = entity.posY - mc.thePlayer.posY;
+      double var6 = entity.posZ - mc.thePlayer.posZ;
+      var4 /= (double)mc.thePlayer.getDistanceToEntity(entity);
+      double var8 = -(Math.atan2(var2, var6) * 57.29577951308232);
+      double var10 = -(Math.asin(var4) * 57.29577951308232);
+      return new double[]{var8, var10};
    }
 
    public static float toSimpleYaw(float a, float b) {
-      float a = Math.abs(a - b) % 360.0F;
-      if (a > 180.0F) {
-         a = 360.0F - a;
+      float var2 = Math.abs(a - b) % 360.0F;
+      if (var2 > 180.0F) {
+         var2 = 360.0F - var2;
       }
 
-      return a;
+      return var2;
    }
 
    public static float[] getRotation3(Entity entity) {
-      double a = mc.thePlayer.posX;
-      double a = mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight();
-      double a = mc.thePlayer.posZ;
-      double a = entity.posX;
-      double a = entity.posY + (double)(entity.height / 2.0F);
-      double a = entity.posZ;
-      double a = a - a;
-      double a = a - a;
-      double a = a - a;
-      double a = Math.sqrt(Math.pow(a, 2.0) + Math.pow(a, 2.0));
-      double a = Math.toDegrees(Math.atan2(a, a)) + 90.0;
-      double a = Math.toDegrees(Math.atan2(a, a));
-      return new float[]{(float)a, (float)(90.0 - a)};
+      double var1 = mc.thePlayer.posX;
+      double var3 = mc.thePlayer.posY + (double)mc.thePlayer.getEyeHeight();
+      double var5 = mc.thePlayer.posZ;
+      double var7 = entity.posX;
+      double var9 = entity.posY + (double)(entity.height / 2.0F);
+      double var11 = entity.posZ;
+      double var13 = var1 - var7;
+      double var15 = var3 - var9;
+      double var17 = var5 - var11;
+      double var19 = Math.sqrt(Math.pow(var13, 2.0) + Math.pow(var17, 2.0));
+      double var21 = Math.toDegrees(Math.atan2(var17, var13)) + 90.0;
+      double var23 = Math.toDegrees(Math.atan2(var19, var15));
+      return new float[]{(float)var21, (float)(90.0 - var23)};
    }
 
    private void setRotation(Entity target, float lastYaw, float lastPitch) {
-      EntityPlayerSP a = mc.thePlayer;
-      float a = getRotation2(target)[1];
-      float a = getRotation2(target)[0];
+      EntityPlayerSP var4 = mc.thePlayer;
+      float var5 = getRotation2(target)[1];
+      float var6 = getRotation2(target)[0];
       if (this.aimMode.isCurrentMode("Blatant")) {
-         a.rotationYaw = a;
-         a.rotationPitch = a;
+         var4.rotationYaw = var5;
+         var4.rotationPitch = var6;
       } else {
-         a.rotationYaw = this.clamp(a.rotationYaw, a, lastYaw);
-         a.rotationPitch = this.clamp(a.rotationPitch, a, lastPitch);
+         var4.rotationYaw = this.clamp(var4.rotationYaw, var5, lastYaw);
+         var4.rotationPitch = this.clamp(var4.rotationPitch, var6, lastPitch);
       }
    }
 
    public static float[] getRotation2(Entity target) {
-      double a = target.posX - mc.thePlayer.posX;
-      double a = target.posZ - mc.thePlayer.posZ;
-      double a = target instanceof EntityEnderman ? target.posY - mc.thePlayer.posY : target.posY + ((double)target.getEyeHeight() - 1.9) - mc.thePlayer.posY + ((double)mc.thePlayer.getEyeHeight() - 1.5);
-      double a = (double)MathHelper.sqrt_double(a * a + a * a);
-      float a = (float)Math.toDegrees(-Math.atan(a / a));
-      float a = (float)(-Math.toDegrees(Math.atan(a / a)));
-      if (a < 0.0 && a < 0.0) {
-         a = (float)(90.0 + Math.toDegrees(Math.atan(a / a)));
-      } else if (a < 0.0 && a > 0.0) {
-         a = (float)(-90.0 + Math.toDegrees(Math.atan(a / a)));
+      double var1 = target.posX - mc.thePlayer.posX;
+      double var3 = target.posZ - mc.thePlayer.posZ;
+      double var5 = target instanceof EntityEnderman ? target.posY - mc.thePlayer.posY : target.posY + ((double)target.getEyeHeight() - 1.9) - mc.thePlayer.posY + ((double)mc.thePlayer.getEyeHeight() - 1.5);
+      double var7 = (double)MathHelper.sqrt_double(var1 * var1 + var3 * var3);
+      float var9 = (float)Math.toDegrees(-Math.atan(var1 / var3));
+      float var10 = (float)(-Math.toDegrees(Math.atan(var5 / var7)));
+      if (var3 < 0.0 && var1 < 0.0) {
+         var9 = (float)(90.0 + Math.toDegrees(Math.atan(var3 / var1)));
+      } else if (var3 < 0.0 && var1 > 0.0) {
+         var9 = (float)(-90.0 + Math.toDegrees(Math.atan(var3 / var1)));
       }
 
-      return new float[]{a, a};
+      return new float[]{var10, var9};
    }
 
    protected float clamp(float origin, float min, float max) {
-      float a = MathHelper.wrapAngleTo180_float(min - origin);
-      if (a > max) {
-         a = max;
+      float var4 = MathHelper.wrapAngleTo180_float(min - origin);
+      if (var4 > max) {
+         var4 = max;
       }
 
-      if (a < -max) {
-         a = -max;
+      if (var4 < -max) {
+         var4 = -max;
       }
 
-      Random a = new Random();
-      float a = (float)a.nextInt(15) * 0.01F;
-      return origin + a + a;
+      Random var5 = new Random();
+      float var6 = (float)var5.nextInt(15) * 0.01F;
+      return origin + var4 + var6;
    }
 
    private double getYawDiff(EntityLivingBase entity) {
-      float[] a = RotationUtils.getRotation(entity);
-      float a = (float)((int)a[0]);
-      float a = mc.thePlayer.rotationYaw > a ? mc.thePlayer.rotationYaw - a : a - mc.thePlayer.rotationYaw;
-      return (double)a;
+      float[] var2 = RotationUtils.getRotation(entity);
+      float var3 = (float)((int)var2[0]);
+      float var4 = mc.thePlayer.rotationYaw > var3 ? mc.thePlayer.rotationYaw - var3 : var3 - mc.thePlayer.rotationYaw;
+      return (double)var4;
    }
 
    private static int getHealthDiff(EntityLivingBase entity1, EntityLivingBase entity2) {
@@ -417,9 +417,9 @@ public class AimAssist extends Module {
    }
 
    private static int getAngleDiff(EntityLivingBase entity1, EntityLivingBase entity2) {
-      float[] a = RotationUtils.getRotation2(entity1);
-      float[] a = RotationUtils.getRotation2(entity2);
-      return (int)(mc.thePlayer.rotationYaw - a[0] - (mc.thePlayer.rotationYaw - a[0]));
+      float[] var2 = RotationUtils.getRotation2(entity1);
+      float[] var3 = RotationUtils.getRotation2(entity2);
+      return (int)(mc.thePlayer.rotationYaw - var2[0] - (mc.thePlayer.rotationYaw - var3[0]));
    }
 
    private static double getDistanceToPlayer(EntityLivingBase entity) {

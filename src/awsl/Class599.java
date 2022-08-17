@@ -132,11 +132,11 @@ public class Class599 {
    }
 
    public void Method120(Class599 a, float a) {
-      float a = 1.0F - a;
-      this.Field2813 = a * this.Field2813 + a * a.Field2813;
-      this.Field2814 = a * this.Field2814 + a * a.Field2814;
-      this.Field2815 = a * this.Field2815 + a * a.Field2815;
-      this.Field2816 = a * this.Field2816 + a * a.Field2816;
+      float var3 = 1.0F - a;
+      this.Field2813 = var3 * this.Field2813 + a * a.Field2813;
+      this.Field2814 = var3 * this.Field2814 + a * a.Field2814;
+      this.Field2815 = var3 * this.Field2815 + a * a.Field2815;
+      this.Field2816 = var3 * this.Field2816 + a * a.Field2816;
    }
 
    public void Method121(float a) {

@@ -92,10 +92,10 @@ public class AutoSword extends Module {
    }
 
    public boolean Method1153() {
-      for(int a = 9; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (a.getItem() instanceof ItemSword) {
+      for(int var1 = 9; var1 < 45; ++var1) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var1).getHasStack()) {
+            ItemStack var2 = mc.thePlayer.inventoryContainer.getSlot(var1).getStack();
+            if (var2.getItem() instanceof ItemSword) {
                return true;
             }
          }
@@ -105,21 +105,21 @@ public class AutoSword extends Module {
    }
 
    public static boolean Method237(ItemStack a) {
-      a[] a = b.trash();
+      a[] var1 = b.trash();
       if (Objects.isNull(a)) {
          return false;
       } else {
-         float a = Method238(a);
-         int a = 9;
-         if (a < 45) {
-            if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-               if (Method238(a) > a && a.getItem() instanceof ItemSword) {
+         float var2 = Method238(a);
+         int var3 = 9;
+         if (var3 < 45) {
+            if (mc.thePlayer.inventoryContainer.getSlot(var3).getHasStack()) {
+               ItemStack var4 = mc.thePlayer.inventoryContainer.getSlot(var3).getStack();
+               if (Method238(var4) > var2 && var4.getItem() instanceof ItemSword) {
                   return false;
                }
             }
 
-            ++a;
+            ++var3;
          }
 
          return a.getItem() instanceof ItemSword;
@@ -132,32 +132,32 @@ public class AutoSword extends Module {
 
    public void Method233(int a) {
       b.trash();
-      int a = 9;
-      if (a < 45) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (Method237(a) && Method238(a) > 0.0F && a.getItem() instanceof ItemSword) {
-               this.Method235(a, a - 36 + Field2609.getFloatValue().intValue() - 1);
+      int var3 = 9;
+      if (var3 < 45) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var3).getHasStack()) {
+            ItemStack var4 = mc.thePlayer.inventoryContainer.getSlot(var3).getStack();
+            if (Method237(var4) && Method238(var4) > 0.0F && var4.getItem() instanceof ItemSword) {
+               this.Method235(var3, a - 36 + Field2609.getFloatValue().intValue() - 1);
             }
          }
 
-         ++a;
+         ++var3;
       }
 
    }
 
    private static float Method238(ItemStack a) {
-      float a = 0.0F;
-      Item a = a.getItem();
-      if (a instanceof ItemTool) {
-         a += PlayerUtils.Method1590(a);
+      float var1 = 0.0F;
+      Item var2 = a.getItem();
+      if (var2 instanceof ItemTool) {
+         var1 += PlayerUtils.Method1590(a);
       }
 
-      if (a instanceof ItemSword) {
-         a += PlayerUtils.Method1590(a);
+      if (var2 instanceof ItemSword) {
+         var1 += PlayerUtils.Method1590(a);
       }
 
-      a += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.5F;
-      return a;
+      var1 += (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a) * 1.25F + (float)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a) * 0.5F;
+      return var1;
    }
 }

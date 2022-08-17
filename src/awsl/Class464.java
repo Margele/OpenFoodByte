@@ -810,7 +810,7 @@ public class Class464 implements Class422, Class45 {
       return new String[]{Class673.BlockGlass.Method2340()};
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    static {

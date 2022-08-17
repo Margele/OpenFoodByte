@@ -12,25 +12,25 @@ final class Class835 extends Class831 {
 
    public void Method3501(String a, Attributes a) {
       Class831.Method3658();
-      String a = a.getValue("desc");
-      boolean a = Boolean.valueOf(a.getValue("visible"));
-      Object a = this.Field3724.Method1963();
-      if (a instanceof Class167) {
-         this.Field3724.Method1950(((Class167)a).Method1448(a, a));
+      String var4 = a.getValue("desc");
+      boolean var5 = Boolean.valueOf(a.getValue("visible"));
+      Object var6 = this.Field3724.Method1963();
+      if (var6 instanceof Class167) {
+         this.Field3724.Method1950(((Class167)var6).Method1448(var4, var5));
       }
 
-      if (a instanceof Class253) {
-         this.Field3724.Method1950(((Class253)a).Method2114(a, a));
+      if (var6 instanceof Class253) {
+         this.Field3724.Method1950(((Class253)var6).Method2114(var4, var5));
       }
 
-      if (a instanceof Class267) {
-         this.Field3724.Method1950(((Class267)a).Method1969(a, a));
+      if (var6 instanceof Class267) {
+         this.Field3724.Method1950(((Class267)var6).Method1969(var4, var5));
       }
 
    }
 
    public void Method3514(String a) {
-      Class148 a = (Class148)this.Field3724.Method1964();
-      a.Method401();
+      Class148 var2 = (Class148)this.Field3724.Method1964();
+      var2.Method401();
    }
 }

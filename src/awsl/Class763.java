@@ -78,179 +78,179 @@ public class Class763 extends Class798 {
       a.Method113((float)(a >> 16 & 255) * 0.003921569F, (float)(a >> 8 & 255) * 0.003921569F, (float)(a & 255) * 0.003921569F, (float)(a >> 24 & 255) * 0.003921569F);
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
-      int a = 0;
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
+      int var6 = 0;
       Class193.Method1270();
-      int[] a = new int[a * a];
-      float a = Math.abs(6.0F * this.Field3361);
-      boolean a = this.Field3361 < 0.0F;
-      Class590 a = new Class590(0.0F, 0.0F, 0.0F);
-      Class590 a = new Class590((float)a / 2.0F, (float)a / 2.0F, this.Field3363);
-      Class590 a = new Class590();
-      Class600 a = new Class600();
-      Class594 a = this.Field3366;
+      int[] var7 = new int[a * a];
+      float var8 = Math.abs(6.0F * this.Field3361);
+      boolean var9 = this.Field3361 < 0.0F;
+      Class590 var10 = new Class590(0.0F, 0.0F, 0.0F);
+      Class590 var11 = new Class590((float)a / 2.0F, (float)a / 2.0F, this.Field3363);
+      Class590 var12 = new Class590();
+      Class600 var13 = new Class600();
+      Class594 var14 = this.Field3366;
       if (this.Field3365 != 0 && this.Field3365 != 1 && this.Field3365 != 2) {
          ;
       }
 
       if (this.Field3362 != 0.0F) {
-         int a = a;
-         int a = a;
-         int[] a = a;
+         int var15 = a;
+         int var16 = a;
+         int[] var17 = a;
          if (this.Field3365 == 2 && this.Field3366 instanceof Class596) {
-            Class596 a = (Class596)this.Field3366;
-            a = a.Method12();
-            a = a.Method14();
-            a = a.Method86();
+            Class596 var18 = (Class596)this.Field3366;
+            var15 = var18.Method12();
+            var16 = var18.Method14();
+            var17 = var18.Method86();
          }
 
-         Kernel a = Class187.Method1294(this.Field3362);
-         int[] a = new int[a * a];
-         int[] a = new int[a * a];
-         Class187.Method1293(a, a, a, a, a, true, false, false, Class183.Field1136);
-         Class187.Method1293(a, a, a, a, a, true, false, false, Class183.Field1136);
-         new Class596(a, a, a, 1, this.Field3365 == 1);
+         Kernel var32 = Class187.Method1294(this.Field3362);
+         int[] var19 = new int[var15 * var16];
+         int[] var20 = new int[var15 * var16];
+         Class187.Method1293(var32, var17, var19, var15, var16, true, false, false, Class183.Field1136);
+         Class187.Method1293(var32, var19, var20, var16, var15, true, false, false, Class183.Field1136);
+         new Class596(var20, var15, var16, 1, this.Field3365 == 1);
       }
 
-      Class594 a = new Class596(a, a, a, 1, this.Field3365 == 1);
-      Class590 a = new Class590();
-      Class590 a = new Class590();
-      Class590 a = new Class590();
-      int a = 0;
-      if (a < a) {
-         float a = (float)a;
-         a.Field2776 = (float)a;
-         int a = 0;
-         if (a < a) {
-            float a = (float)a;
-            int a;
+      Class596 var28 = new Class596(a, a, a, 1, this.Field3365 == 1);
+      Class590 var29 = new Class590();
+      Class590 var30 = new Class590();
+      Class590 var31 = new Class590();
+      int var33 = 0;
+      if (var33 < a) {
+         float var34 = (float)var33;
+         var10.Field2776 = (float)var33;
+         int var35 = 0;
+         if (var35 < a) {
+            float var21 = (float)var35;
+            int var22;
             if (this.Field3365 != 3) {
-               a = 0;
-               a.Field2775 = a.Field2776 = a.Field2777 = 0.0F;
-               float a = a * a.Method20(a, a);
-               float a = a * a.Method20(a - 1.0F, a) - a;
-               float a = a * a.Method20(a, a - 1.0F) - a;
-               float a = a < a - 1 ? a * a.Method20(a + 1.0F, a) - a : -2.0F;
-               float a = a < a - 1 ? a * a.Method20(a, a + 1.0F) - a : -2.0F;
-               if (a != -2.0F && a != -2.0F) {
-                  a.Field2775 = -1.0F;
-                  a.Field2776 = 0.0F;
-                  a.Field2777 = a;
-                  a.Field2775 = 0.0F;
-                  a.Field2776 = 1.0F;
-                  a.Field2777 = a;
-                  a.Method23(a, a);
-                  a.Method25();
-                  if ((double)a.Field2777 < 0.0) {
-                     a.Field2777 = -a.Field2777;
+               var22 = 0;
+               var12.Field2775 = var12.Field2776 = var12.Field2777 = 0.0F;
+               float var23 = var8 * var28.Method20(var21, var34);
+               float var24 = var8 * var28.Method20(var21 - 1.0F, var34) - var23;
+               float var25 = var8 * var28.Method20(var21, var34 - 1.0F) - var23;
+               float var26 = var35 < a - 1 ? var8 * var28.Method20(var21 + 1.0F, var34) - var23 : -2.0F;
+               float var27 = var33 < a - 1 ? var8 * var28.Method20(var21, var34 + 1.0F) - var23 : -2.0F;
+               if (var24 != -2.0F && var27 != -2.0F) {
+                  var29.Field2775 = -1.0F;
+                  var29.Field2776 = 0.0F;
+                  var29.Field2777 = var24;
+                  var30.Field2775 = 0.0F;
+                  var30.Field2776 = 1.0F;
+                  var30.Field2777 = var27;
+                  var31.Method23(var29, var30);
+                  var31.Method25();
+                  if ((double)var31.Field2777 < 0.0) {
+                     var31.Field2777 = -var31.Field2777;
                   }
 
-                  a.Method323(a);
-                  ++a;
+                  var12.Method323(var31);
+                  ++var22;
                }
 
-               if (a != -2.0F && a != -2.0F) {
-                  a.Field2775 = -1.0F;
-                  a.Field2776 = 0.0F;
-                  a.Field2777 = a;
-                  a.Field2775 = 0.0F;
-                  a.Field2776 = -1.0F;
-                  a.Field2777 = a;
-                  a.Method23(a, a);
-                  a.Method25();
-                  if ((double)a.Field2777 < 0.0) {
-                     a.Field2777 = -a.Field2777;
+               if (var24 != -2.0F && var25 != -2.0F) {
+                  var29.Field2775 = -1.0F;
+                  var29.Field2776 = 0.0F;
+                  var29.Field2777 = var24;
+                  var30.Field2775 = 0.0F;
+                  var30.Field2776 = -1.0F;
+                  var30.Field2777 = var25;
+                  var31.Method23(var29, var30);
+                  var31.Method25();
+                  if ((double)var31.Field2777 < 0.0) {
+                     var31.Field2777 = -var31.Field2777;
                   }
 
-                  a.Method323(a);
-                  ++a;
+                  var12.Method323(var31);
+                  ++var22;
                }
 
-               if (a != -2.0F && a != -2.0F) {
-                  a.Field2775 = 0.0F;
-                  a.Field2776 = -1.0F;
-                  a.Field2777 = a;
-                  a.Field2775 = 1.0F;
-                  a.Field2776 = 0.0F;
-                  a.Field2777 = a;
-                  a.Method23(a, a);
-                  a.Method25();
-                  if ((double)a.Field2777 < 0.0) {
-                     a.Field2777 = -a.Field2777;
+               if (var25 != -2.0F && var26 != -2.0F) {
+                  var29.Field2775 = 0.0F;
+                  var29.Field2776 = -1.0F;
+                  var29.Field2777 = var25;
+                  var30.Field2775 = 1.0F;
+                  var30.Field2776 = 0.0F;
+                  var30.Field2777 = var26;
+                  var31.Method23(var29, var30);
+                  var31.Method25();
+                  if ((double)var31.Field2777 < 0.0) {
+                     var31.Field2777 = -var31.Field2777;
                   }
 
-                  a.Method323(a);
-                  ++a;
+                  var12.Method323(var31);
+                  ++var22;
                }
 
-               if (a != -2.0F && a != -2.0F) {
-                  a.Field2775 = 1.0F;
-                  a.Field2776 = 0.0F;
-                  a.Field2777 = a;
-                  a.Field2775 = 0.0F;
-                  a.Field2776 = 1.0F;
-                  a.Field2777 = a;
-                  a.Method23(a, a);
-                  a.Method25();
-                  if ((double)a.Field2777 < 0.0) {
-                     a.Field2777 = -a.Field2777;
+               if (var26 != -2.0F && var27 != -2.0F) {
+                  var29.Field2775 = 1.0F;
+                  var29.Field2776 = 0.0F;
+                  var29.Field2777 = var26;
+                  var30.Field2775 = 0.0F;
+                  var30.Field2776 = 1.0F;
+                  var30.Field2777 = var27;
+                  var31.Method23(var29, var30);
+                  var31.Method25();
+                  if ((double)var31.Field2777 < 0.0) {
+                     var31.Field2777 = -var31.Field2777;
                   }
 
-                  a.Method323(a);
-                  ++a;
+                  var12.Method323(var31);
+                  ++var22;
                }
 
-               a.Field2775 /= (float)a;
-               a.Field2776 /= (float)a;
-               a.Field2777 /= (float)a;
+               var12.Field2775 /= (float)var22;
+               var12.Field2776 /= (float)var22;
+               var12.Field2777 /= (float)var22;
             }
 
-            a.Field2775 = -a.Field2775;
-            a.Field2776 = -a.Field2776;
-            a.Field2775 = (float)a;
-            if (a.Field2777 >= 0.0F) {
+            var12.Field2775 = -var12.Field2775;
+            var12.Field2776 = -var12.Field2776;
+            var10.Field2775 = (float)var35;
+            if (var12.Field2777 >= 0.0F) {
                if (this.Field3367 != null) {
-                  this.Field3378.Method316(a);
-                  this.Field3378.Method325(a);
+                  this.Field3378.Method316(var11);
+                  this.Field3378.Method325(var10);
                   this.Field3378.Method25();
-                  this.Field3377.Method316(a);
+                  this.Field3377.Method316(var12);
                   this.Field3377.Method25();
                   this.Field3377.Method322(2.0F * this.Field3377.Method22(this.Field3378));
                   this.Field3377.Method325(this.Field3372);
                   this.Field3377.Method25();
-                  this.Method1777(a, this.Method1778(a, a, a, a));
-                  a = a[a] & -16777216;
-                  int a = (int)(a.Field2813 * 255.0F) << 16 | (int)(a.Field2814 * 255.0F) << 8 | (int)(a.Field2815 * 255.0F);
-                  a[a++] = a | a;
+                  this.Method1777(var13, this.Method1778(var12, a, a, a));
+                  var22 = a[var6] & -16777216;
+                  int var36 = (int)(var13.Field2813 * 255.0F) << 16 | (int)(var13.Field2814 * 255.0F) << 8 | (int)(var13.Field2815 * 255.0F);
+                  var7[var6++] = var22 | var36;
                }
 
-               a[a++] = 0;
+               var7[var6++] = 0;
             }
 
-            a[a++] = 0;
-            ++a;
+            var7[var6++] = 0;
+            ++var35;
          }
 
-         ++a;
+         ++var33;
       }
 
-      return a;
+      return var7;
    }
 
-   private int Method1778(Class590 a, int[] a1, int a2, int a3) {
+   private int Method1778(Class590 a, int[] a, int a, int a) {
       if (this.Field3367 != null) {
-         float a = 0.5F * (1.0F + a.Field2775);
-         float a = 0.5F * (1.0F + a.Field2776);
-         a = Class776.Method1711(a * (float)this.Field3369, 0.0F, (float)(this.Field3369 - 1));
-         a = Class776.Method1711(a * (float)this.Field3370, 0.0F, (float)(this.Field3370 - 1));
-         int a = (int)a;
-         int a = (int)a;
-         float a = a - (float)a;
-         float a = a - (float)a;
-         int a = this.Field3369 * a + a;
-         int a = a == this.Field3369 - 1 ? 0 : 1;
-         int a = a == this.Field3370 - 1 ? 0 : this.Field3369;
-         return Class776.Method1720(a, a, this.Field3368[a], this.Field3368[a + a], this.Field3368[a + a], this.Field3368[a + a + a]);
+         float var5 = 0.5F * (1.0F + a.Field2775);
+         float var6 = 0.5F * (1.0F + a.Field2776);
+         var5 = Class776.Method1711(var5 * (float)this.Field3369, 0.0F, (float)(this.Field3369 - 1));
+         var6 = Class776.Method1711(var6 * (float)this.Field3370, 0.0F, (float)(this.Field3370 - 1));
+         int var7 = (int)var5;
+         int var8 = (int)var6;
+         float var9 = var5 - (float)var7;
+         float var10 = var6 - (float)var8;
+         int var11 = this.Field3369 * var8 + var7;
+         int var12 = var7 == this.Field3369 - 1 ? 0 : 1;
+         int var13 = var8 == this.Field3370 - 1 ? 0 : this.Field3369;
+         return Class776.Method1720(var9, var10, this.Field3368[var11], this.Field3368[var11 + var12], this.Field3368[var11 + var13], this.Field3368[var11 + var12 + var13]);
       } else {
          return 0;
       }

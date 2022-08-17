@@ -43,79 +43,79 @@ public class Class186 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
+      int var4 = a.getWidth();
       Class193.Method1269();
-      int a = a.getHeight();
-      int a = a.getType();
-      WritableRaster a = a.getRaster();
+      int var5 = a.getHeight();
+      int var6 = a.getType();
+      WritableRaster var7 = a.getRaster();
       a = this.Method1263(a, (ColorModel)null);
-      float a = 2.0F * this.Field1146 * 1.414F;
-      float[] a = new float[]{this.Field1147, this.Field1148, this.Field1149};
-      float[] a = new float[]{0.0F, -1.0F, 1.0F, 0.0F, 0.0F};
-      float[] a = new float[]{0.0F, 0.0F, 0.0F, -1.0F, 1.0F};
-      float a = a / 2.0F;
-      int[] a = new int[a];
-      int[] a = this.Method104(a, 0, 0, a, a, (int[])null);
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         int a = a * a;
-         if (a < a) {
-            a[a] = a[a] & -16777216 | 16777215;
-            ++a;
-            ++a;
+      float var8 = 2.0F * this.Field1146 * 1.414F;
+      float[] var9 = new float[]{this.Field1147, this.Field1148, this.Field1149};
+      float[] var10 = new float[]{0.0F, -1.0F, 1.0F, 0.0F, 0.0F};
+      float[] var11 = new float[]{0.0F, 0.0F, 0.0F, -1.0F, 1.0F};
+      float var12 = var8 / 2.0F;
+      int[] var13 = new int[var4];
+      int[] var14 = this.Method104(a, 0, 0, var4, var5, (int[])null);
+      int var15 = 0;
+      if (var15 < var5) {
+         int var16 = 0;
+         int var17 = var15 * var4;
+         if (var16 < var4) {
+            var13[var16] = var14[var17] & -16777216 | 16777215;
+            ++var16;
+            ++var17;
          }
 
-         int a = 0;
-         if (a < 3) {
-            a = 16 - 8 * a;
-            int a = 255 << a;
-            float a = a[a];
-            float a = (float)Math.sin((double)a);
-            float a = (float)Math.cos((double)a);
-            int a = 0;
-            if (a < a) {
-               float a = (float)a * a + (float)a * a;
-               float a = (float)(-a) * a + (float)a * a;
-               a = a - Class776.Method1714(a - a, a) + a;
-               a = a - Class776.Method1714(a - a, a) + a;
-               float a = 1.0F;
-               int a = 0;
-               if (a < 5) {
-                  float a = a + a[a] * a;
-                  float a = a + a[a] * a;
-                  float a = a * a - a * a;
-                  float a = a * a + a * a;
-                  int a = Class776.Method1712((int)a, 0, a - 1);
-                  int a = Class776.Method1712((int)a, 0, a - 1);
-                  int a = a[a * a + a];
-                  int a = a >> a & 255;
-                  float a = (float)a / 255.0F;
-                  a = 1.0F - a * a;
-                  a = (float)((double)a * (double)a * 1.414);
-                  float a = (float)a - a;
-                  float a = (float)a - a;
-                  float a = a * a;
-                  float a = a * a;
-                  float a = (float)Math.sqrt((double)(a + a));
-                  float a = 1.0F - Class776.Method1708(a, a + 1.0F, a);
-                  a = Math.min(a, a);
-                  ++a;
+         byte var42 = 0;
+         if (var42 < 3) {
+            var17 = 16 - 8 * var42;
+            int var18 = 255 << var17;
+            float var19 = var9[var42];
+            float var20 = (float)Math.sin((double)var19);
+            float var21 = (float)Math.cos((double)var19);
+            int var22 = 0;
+            if (var22 < var4) {
+               float var23 = (float)var22 * var21 + (float)var15 * var20;
+               float var24 = (float)(-var22) * var20 + (float)var15 * var21;
+               var23 = var23 - Class776.Method1714(var23 - var12, var8) + var12;
+               var24 = var24 - Class776.Method1714(var24 - var12, var8) + var12;
+               float var25 = 1.0F;
+               int var26 = 0;
+               if (var26 < 5) {
+                  float var27 = var23 + var10[var26] * var8;
+                  float var28 = var24 + var11[var26] * var8;
+                  float var29 = var27 * var21 - var28 * var20;
+                  float var30 = var27 * var20 + var28 * var21;
+                  int var31 = Class776.Method1712((int)var29, 0, var4 - 1);
+                  int var32 = Class776.Method1712((int)var30, 0, var5 - 1);
+                  int var33 = var14[var32 * var4 + var31];
+                  int var34 = var33 >> var17 & 255;
+                  float var35 = (float)var34 / 255.0F;
+                  var35 = 1.0F - var35 * var35;
+                  var35 = (float)((double)var35 * (double)var12 * 1.414);
+                  float var36 = (float)var22 - var29;
+                  float var37 = (float)var15 - var30;
+                  float var38 = var36 * var36;
+                  float var39 = var37 * var37;
+                  float var40 = (float)Math.sqrt((double)(var38 + var39));
+                  float var41 = 1.0F - Class776.Method1708(var40, var40 + 1.0F, var35);
+                  var25 = Math.min(var25, var41);
+                  ++var26;
                }
 
-               a = (int)(255.0F * a);
-               a <<= a;
-               a ^= ~a;
-               a |= -16777216;
-               a[a] &= a;
-               ++a;
+               var26 = (int)(255.0F * var25);
+               var26 <<= var17;
+               var26 ^= ~var18;
+               var26 |= -16777216;
+               var13[var22] &= var26;
+               ++var22;
             }
 
-            a = a + 1;
+            var16 = var42 + 1;
          }
 
-         this.Method1267(a, 0, a, a, 1, a);
-         ++a;
+         this.Method1267(a, 0, var15, var4, 1, var13);
+         ++var15;
       }
 
       return a;

@@ -3,34 +3,34 @@ package awsl;
 import java.util.Iterator;
 
 public class Class297 {
-   private static Object Method3037(Class292 a, boolean a1, Class288 a, boolean a3) throws Class666 {
+   private static Object Method3037(Class292 a, boolean a, Class288 a, boolean a) throws Class666 {
       Object var7 = null;
       Class666.Method3438();
-      Class288 a = null;
-      Class298 a = null;
-      String a = null;
+      Class288 var9 = null;
+      Class298 var10 = null;
+      String var12 = null;
 
       while(a.Method2884()) {
-         Object a = a.Method2900();
-         if (a == Class296.Field1572) {
-            a = a.Method2904();
-            if (a instanceof Character) {
-               if (a == Class296.Field1575) {
-                  a = a.Method2904();
-                  if (!(a instanceof String)) {
-                     throw new Class666("Expected a closing name instead of '" + a + "'.");
+         Object var11 = a.Method2900();
+         if (var11 == Class296.Field1572) {
+            var11 = a.Method2904();
+            if (var11 instanceof Character) {
+               if (var11 == Class296.Field1575) {
+                  var11 = a.Method2904();
+                  if (!(var11 instanceof String)) {
+                     throw new Class666("Expected a closing name instead of '" + var11 + "'.");
                   }
 
                   if (a.Method2904() != Class296.Field1571) {
                      throw a.Method2895("Misshaped close tag");
                   }
 
-                  return a;
+                  return var11;
                }
 
-               if (a == Class296.Field1569) {
-                  char a = a.Method2885();
-                  if (a == '-') {
+               if (var11 == Class296.Field1569) {
+                  char var6 = a.Method2885();
+                  if (var6 == '-') {
                      if (a.Method2885() == '-') {
                         a.Method2905("-->");
                      }
@@ -38,44 +38,44 @@ public class Class297 {
                      a.Method2880();
                   }
 
-                  if (a == '[') {
-                     a = a.Method2904();
-                     if (a.Method3429("CDATA") && a.Method2885() == '[') {
+                  if (var6 == '[') {
+                     var11 = a.Method2904();
+                     if (var11.Method3429("CDATA") && a.Method2885() == '[') {
                         a.Method3154(a.Method2899());
                      }
 
                      throw a.Method2895("Expected 'CDATA['");
                   }
 
-                  int a = true;
-                  a = a.Method2903();
+                  boolean var8 = true;
+                  var11 = a.Method2903();
                   throw a.Method2895("Missing '>' after '<!'.");
                }
 
-               if (a == Class296.Field1573) {
+               if (var11 == Class296.Field1573) {
                   a.Method2905("?>");
                }
 
                throw a.Method2895("Misshaped tag");
             }
 
-            if (!(a instanceof String)) {
-               throw a.Method2895("Bad tagName '" + a + "'.");
+            if (!(var11 instanceof String)) {
+               throw a.Method2895("Bad tagName '" + var11 + "'.");
             }
 
-            a = (String)a;
-            a = new Class288();
-            a = new Class298();
-            a.Method3154(a);
-            a.Method3154(a);
-            a.Method3009("tagName", a);
-            a.Method3154(a);
-            a = null;
-            a = a.Method2904();
+            var12 = (String)var11;
+            var9 = new Class288();
+            var10 = new Class298();
+            var9.Method3154(var12);
+            a.Method3154(var9);
+            var10.Method3009("tagName", var12);
+            a.Method3154(var10);
+            var11 = null;
+            var11 = a.Method2904();
             throw a.Method2895("Misshaped tag");
          }
 
-         a.Method3154(a instanceof String ? Class296.Method2926((String)a) : a);
+         a.Method3154(var11 instanceof String ? Class296.Method2926((String)var11) : var11);
       }
 
       throw a.Method2895("Bad XML");
@@ -114,67 +114,67 @@ public class Class297 {
    }
 
    public static String Method3046(Class288 a) throws Class666 {
-      StringBuilder a = new StringBuilder();
-      String a = a.Method3125(0);
-      Class296.Method2927(a);
-      a = Class296.Method2924(a);
-      a.append('<');
-      a.append(a);
-      Object a = a.Method3128(1);
-      int a;
-      if (a instanceof Class298) {
-         a = 2;
-         Class298 a = (Class298)a;
-         Iterator var7 = a.Method2968().Method1383();
+      StringBuilder var5 = new StringBuilder();
+      String var6 = a.Method3125(0);
+      Class296.Method2927(var6);
+      var6 = Class296.Method2924(var6);
+      var5.append('<');
+      var5.append(var6);
+      Object var4 = a.Method3128(1);
+      int var1;
+      if (var4 instanceof Class298) {
+         var1 = 2;
+         Class298 var2 = (Class298)var4;
+         Iterator var7 = var2.Method2968().Method1383();
 
          while(var7.Method932()) {
-            String a = (String)var7.Method933();
-            Object a = a.Method2974(a);
-            Class296.Method2927(a);
-            a.append(' ');
-            a.append(Class296.Method2924(a));
-            a.append('=');
-            a.append('"');
-            a.append(Class296.Method2924(a.Method3780()));
-            a.append('"');
+            String var8 = (String)var7.Method933();
+            Object var9 = var2.Method2974(var8);
+            Class296.Method2927(var8);
+            var5.append(' ');
+            var5.append(Class296.Method2924(var8));
+            var5.append('=');
+            var5.append('"');
+            var5.append(Class296.Method2924(var9.Method3780()));
+            var5.append('"');
          }
       } else {
-         a = 1;
+         var1 = 1;
       }
 
-      int a = a.Method10();
-      if (a >= a) {
-         a.append('/');
-         a.append('>');
+      int var3 = a.Method10();
+      if (var1 >= var3) {
+         var5.append('/');
+         var5.append('>');
       } else {
-         a.append('>');
+         var5.append('>');
 
          do {
-            a = a.Method3115(a);
-            ++a;
-            if (a instanceof String) {
-               a.append(Class296.Method2924(a.Method3780()));
-            } else if (a instanceof Class298) {
-               a.append(Method3047((Class298)a));
-            } else if (a instanceof Class288) {
-               a.append(Method3046((Class288)a));
+            var4 = a.Method3115(var1);
+            ++var1;
+            if (var4 instanceof String) {
+               var5.append(Class296.Method2924(var4.Method3780()));
+            } else if (var4 instanceof Class298) {
+               var5.append(Method3047((Class298)var4));
+            } else if (var4 instanceof Class288) {
+               var5.append(Method3046((Class288)var4));
             } else {
-               a.append(a.Method3780());
+               var5.append(var4.Method3780());
             }
-         } while(a < a);
+         } while(var1 < var3);
 
-         a.append('<');
-         a.append('/');
-         a.append(a);
-         a.append('>');
+         var5.append('<');
+         var5.append('/');
+         var5.append(var6);
+         var5.append('>');
       }
 
-      return a.toString();
+      return var5.toString();
    }
 
    public static String Method3047(Class298 a) throws Class666 {
       new StringBuilder();
-      String a = a.Method2995("tagName");
+      String var6 = a.Method2995("tagName");
       return Class296.Method2924(a.Method3025());
    }
 

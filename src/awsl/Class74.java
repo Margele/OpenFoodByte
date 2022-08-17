@@ -4,94 +4,92 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
 import java.util.TreeSet;
 
 public class Class74 {
    static final HashMap Field692 = new HashMap();
 
    public static void main(String[] a) throws IOException {
-      Properties a = new Properties();
-      int a = a.length - 1;
+      Properties var1 = new Properties();
+      int var2 = a.length - 1;
 
-      for(int a = 0; a < a - 1; ++a) {
-         a.load(new FileInputStream(a[a]));
+      for(int var3 = 0; var3 < var2 - 1; ++var3) {
+         var1.load(new FileInputStream(a[var3]));
       }
 
-      Iterator var8 = a.entrySet().Method1383();
+      Iterator var8 = var1.entrySet().Method1383();
 
       while(var8.Method932()) {
-         Map.Entry a = (Map.Entry)var8.Method933();
-         Field692.put((String)a.getKey(), (String)a.getValue());
+         Map.Entry var4 = (Map.Entry)var8.Method933();
+         Field692.put((String)var4.getKey(), (String)var4.getValue());
       }
 
-      Set a = new HashSet(Field692.keySet());
-      File a = new File(a[a - 1]);
-      File a = new File(a[a]);
-      Method3751(a, a, new Class59(Field692, a));
-      Iterator a = a.Method1383();
+      HashSet var9 = new HashSet(Field692.keySet());
+      File var10 = new File(a[var2 - 1]);
+      File var5 = new File(a[var2]);
+      Method3751(var10, var5, new Class59(Field692, var9));
+      Iterator var6 = var9.Method1383();
 
-      while(a.Method932()) {
-         String a = (String)a.Method933();
-         if (!a.endsWith("/remove")) {
-            System.out.println("INFO: unused mapping " + a);
+      while(var6.Method932()) {
+         String var7 = (String)var6.Method933();
+         if (!var7.endsWith("/remove")) {
+            System.out.println("INFO: unused mapping " + var7);
          }
       }
 
    }
 
    static void Method3751(File a, File a, Class37 a) throws IOException {
-      String[] a = Class690.Method2342();
+      String[] var3 = Class690.Method2342();
       if (a.isDirectory()) {
-         File[] a = a.listFiles();
-         int a = 0;
-         if (a < a.length) {
-            Method3751(a[a], a, a);
-            ++a;
+         File[] var4 = a.listFiles();
+         int var5 = 0;
+         if (var5 < var4.length) {
+            Method3751(var4[var5], a, a);
+            ++var5;
          }
       }
 
       if (a.getName().endsWith(".class")) {
-         Class690 a = new Class690();
-         Class165 a = new Class165(new FileInputStream(a));
-         Class169 a = new Class169(0);
-         Class230 a = new Class230(a, a);
-         Class173 a = new Class173(a, a);
-         a.Method1470(a, 2);
-         Set a = new TreeSet(new Class77());
-         a.addAll(a.values());
-         a = new Class165(a.Method1503());
-         a = new Class169(0);
-         Iterator a = a.Method1383();
-         if (a.Method932()) {
-            Class52 a = (Class52)a.Method933();
-            a.Method3192(a);
+         Class690 var17 = new Class690();
+         Class165 var18 = new Class165(new FileInputStream(a));
+         Class169 var6 = new Class169(0);
+         Class230 var7 = new Class230(var6, var17);
+         Class173 var8 = new Class173(var7, a);
+         var18.Method1470(var8, 2);
+         TreeSet var9 = new TreeSet(new Class77());
+         var9.addAll(var17.values());
+         var18 = new Class165(var6.Method1503());
+         var6 = new Class169(0);
+         Iterator var10 = var9.Method1383();
+         if (var10.Method932()) {
+            Class52 var11 = (Class52)var10.Method933();
+            var11.Method3192(var6);
          }
 
-         a.Method1470(a, 2);
-         if (Field692.Method2665(a.Method1464() + "/remove") != null) {
+         var18.Method1470(var6, 2);
+         if (Field692.Method2665(var18.Method1464() + "/remove") != null) {
             return;
          }
 
-         String a = a.Method3374(a.Method1464());
-         File a = new File(a, a + ".class");
-         if (!a.exists() || a.lastModified() < a.lastModified()) {
-            if (!a.getParentFile().exists() && !a.getParentFile().mkdirs()) {
-               throw new IOException("Cannot create directory " + a.getParentFile());
+         String var19 = a.Method3374(var18.Method1464());
+         File var12 = new File(a, var19 + ".class");
+         if (!var12.exists() || var12.lastModified() < a.lastModified()) {
+            if (!var12.getParentFile().exists() && !var12.getParentFile().mkdirs()) {
+               throw new IOException("Cannot create directory " + var12.getParentFile());
             }
 
-            OutputStream a = new FileOutputStream(a);
+            FileOutputStream var13 = new FileOutputStream(var12);
 
             try {
-               a.write(a.Method1503());
+               var13.write(var6.Method1503());
             } finally {
-               a.close();
+               var13.close();
             }
          }
       }

@@ -44,29 +44,29 @@ public class Class785 extends Class781 {
    }
 
    public int Method877(int a, int a, int[] a, int a, int a) {
-      float a = this.Field3497 * (float)a + this.Field3498 * (float)a;
-      float a = this.Field3499 * (float)a + this.Field3500 * (float)a;
-      a /= this.Field3484;
-      a /= this.Field3484 * this.Field3485;
-      a += 1000.0F;
-      a += 1000.0F;
+      float var7 = this.Field3497 * (float)a + this.Field3498 * (float)a;
+      float var8 = this.Field3499 * (float)a + this.Field3500 * (float)a;
+      var7 /= this.Field3484;
+      var8 /= this.Field3484 * this.Field3485;
+      var7 += 1000.0F;
+      var8 += 1000.0F;
       Class193.Method1270();
-      this.Method20(a, a);
-      float a = this.Field3501[0].Field3278;
-      int a = Class776.Method1712((int)((this.Field3501[0].Field3272 - 1000.0F) * this.Field3484), 0, a - 1);
-      int a = Class776.Method1712((int)((this.Field3501[0].Field3273 - 1000.0F) * this.Field3484), 0, a - 1);
-      int a = a[a * a + a];
+      this.Method20(var7, var8);
+      float var10 = this.Field3501[0].Field3278;
+      int var11 = Class776.Method1712((int)((this.Field3501[0].Field3272 - 1000.0F) * this.Field3484), 0, a - 1);
+      int var12 = Class776.Method1712((int)((this.Field3501[0].Field3273 - 1000.0F) * this.Field3484), 0, a - 1);
+      int var13 = a[var12 * a + var11];
       if (this.Field3537) {
-         float a = this.Field3501[1].Field3278;
-         a = Class776.Method1712((int)((this.Field3501[1].Field3272 - 1000.0F) * this.Field3484), 0, a - 1);
-         a = Class776.Method1712((int)((this.Field3501[1].Field3273 - 1000.0F) * this.Field3484), 0, a - 1);
-         int a = a[a * a + a];
-         a = Class776.Method1719(0.5F * a / a, a, a);
+         float var14 = this.Field3501[1].Field3278;
+         var11 = Class776.Method1712((int)((this.Field3501[1].Field3272 - 1000.0F) * this.Field3484), 0, a - 1);
+         var12 = Class776.Method1712((int)((this.Field3501[1].Field3273 - 1000.0F) * this.Field3484), 0, a - 1);
+         int var15 = a[var12 * a + var11];
+         var13 = Class776.Method1719(0.5F * var10 / var14, var13, var15);
       }
 
-      float a = 1.0F - Class776.Method1708(this.Field3536, this.Field3536 + this.Field3539, a);
-      a = Class776.Method1719(a, this.Field3538, a);
-      return a;
+      float var9 = 1.0F - Class776.Method1708(this.Field3536, this.Field3536 + this.Field3539, var10);
+      var13 = Class776.Method1719(var9, this.Field3538, var13);
+      return var13;
    }
 
    public String toString() {

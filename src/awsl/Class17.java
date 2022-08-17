@@ -32,9 +32,9 @@ public class Class17 extends Class15 implements Class45 {
 
    public void Method1957(int a, Class264 a) {
       super.Method1957(a, a);
-      Class104 a = ((Class102)this.Field208.Method185()).Field829;
-      if (a == 168 && !this.Field225.containsKey(a)) {
-         this.Field225.put(a, new BitSet());
+      Class104 var3 = ((Class102)this.Field208.Method185()).Field829;
+      if (a == 168 && !this.Field225.containsKey(var3)) {
+         this.Field225.put(var3, new BitSet());
       }
 
    }
@@ -52,38 +52,38 @@ public class Class17 extends Class15 implements Class45 {
    }
 
    private void Method1879() {
-      BitSet a = new BitSet();
-      this.Method3446(this.Field226, 0, a);
-      Iterator a = this.Field225.Method2663().Method1383();
+      BitSet var1 = new BitSet();
+      this.Method3446(this.Field226, 0, var1);
+      Iterator var2 = this.Field225.Method2663().Method1383();
 
-      while(a.Method932()) {
-         Map.Entry a = (Map.Entry)a.Method933();
-         Class104 a = (Class104)a.getKey();
-         BitSet a = (BitSet)a.getValue();
-         int a = this.Field208.Method188(a);
-         this.Method3446(a, a, a);
+      while(var2.Method932()) {
+         Map.Entry var3 = (Map.Entry)var2.Method933();
+         Class104 var4 = (Class104)var3.getKey();
+         BitSet var5 = (BitSet)var3.getValue();
+         int var6 = this.Field208.Method188(var4);
+         this.Method3446(var5, var6, var1);
       }
 
    }
 
    private void Method3446(BitSet a, int a, BitSet a) {
       this.Method3447(a, a, a);
-      boolean a = true;
+      boolean var4 = true;
 
       while(true) {
-         a = false;
-         Iterator a = this.Field209.Method1383();
+         var4 = false;
+         Iterator var5 = this.Field209.Method1383();
 
-         while(a.Method932()) {
-            Class794 a = (Class794)a.Method933();
-            int a = this.Field208.Method188(a.Field3561);
-            if (!a.get(a)) {
-               int a = this.Field208.Method188(a.Field3559);
-               int a = this.Field208.Method188(a.Field3560);
-               int a = a.nextSetBit(a);
-               if (a != -1 && a < a) {
-                  this.Method3447(a, a, a);
-                  a = true;
+         while(var5.Method932()) {
+            Class794 var6 = (Class794)var5.Method933();
+            int var7 = this.Field208.Method188(var6.Field3561);
+            if (!a.get(var7)) {
+               int var8 = this.Field208.Method188(var6.Field3559);
+               int var9 = this.Field208.Method188(var6.Field3560);
+               int var10 = a.nextSetBit(var8);
+               if (var10 != -1 && var10 < var9) {
+                  this.Method3447(a, var7, a);
+                  var4 = true;
                }
             }
          }
@@ -92,7 +92,7 @@ public class Class17 extends Class15 implements Class45 {
 
    private void Method3447(BitSet a, int a, BitSet a) {
       while(true) {
-         a a = this.Field208.Method186(a);
+         a var4 = this.Field208.Method186(a);
          if (a.get(a)) {
             return;
          }
@@ -103,40 +103,40 @@ public class Class17 extends Class15 implements Class45 {
          }
 
          a.set(a);
-         int a;
-         if (a.Method0() == 7 && a.Method3640() != 168) {
-            Class102 a = (Class102)a;
-            a = this.Field208.Method188(a.Field829);
-            this.Method3447(a, a, a);
+         int var6;
+         if (var4.Method0() == 7 && var4.Method3640() != 168) {
+            Class102 var5 = (Class102)var4;
+            var6 = this.Field208.Method188(var5.Field829);
+            this.Method3447(a, var6, a);
          }
 
-         int a;
-         Class104 a;
-         if (a.Method0() == 11) {
-            Class122 a = (Class122)a;
-            a = this.Field208.Method188(a.Field961);
-            this.Method3447(a, a, a);
-            a = a.Field962.Method1799() - 1;
+         int var7;
+         Class104 var8;
+         if (var4.Method0() == 11) {
+            Class122 var10 = (Class122)var4;
+            var6 = this.Field208.Method188(var10.Field961);
+            this.Method3447(a, var6, a);
+            var7 = var10.Field962.Method1799() - 1;
 
             while(true) {
-               a = (Class104)a.Field962.get(a);
-               a = this.Field208.Method188(a);
-               this.Method3447(a, a, a);
-               --a;
+               var8 = (Class104)var10.Field962.get(var7);
+               var6 = this.Field208.Method188(var8);
+               this.Method3447(a, var6, a);
+               --var7;
             }
          }
 
-         if (a.Method0() == 12) {
-            Class96 a = (Class96)a;
-            a = this.Field208.Method188(a.Field817);
-            this.Method3447(a, a, a);
-            a = a.Field819.Method1799() - 1;
+         if (var4.Method0() == 12) {
+            Class96 var9 = (Class96)var4;
+            var6 = this.Field208.Method188(var9.Field817);
+            this.Method3447(a, var6, a);
+            var7 = var9.Field819.Method1799() - 1;
 
             while(true) {
-               a = (Class104)a.Field819.get(a);
-               a = this.Field208.Method188(a);
-               this.Method3447(a, a, a);
-               --a;
+               var8 = (Class104)var9.Field819.get(var7);
+               var6 = this.Field208.Method188(var8);
+               this.Method3447(a, var6, a);
+               --var7;
             }
          }
 
@@ -177,97 +177,97 @@ public class Class17 extends Class15 implements Class45 {
    }
 
    private void Method1882() {
-      LinkedList a = new LinkedList();
-      a.Method2530(new Class699(this, (Class699)null, this.Field226));
-      Class116 a = new Class116();
-      List a = new ArrayList();
-      List a = new ArrayList();
+      LinkedList var1 = new LinkedList();
+      var1.Method2530(new Class699(this, (Class699)null, this.Field226));
+      Class116 var2 = new Class116();
+      ArrayList var3 = new ArrayList();
+      ArrayList var4 = new ArrayList();
 
-      while(!a.isEmpty()) {
-         Class699 a = (Class699)a.removeFirst();
-         this.Method3448(a, a, a, a, a);
+      while(!var1.isEmpty()) {
+         Class699 var5 = (Class699)var1.removeFirst();
+         this.Method3448(var5, var1, var2, var3, var4);
       }
 
-      this.Field208 = a;
-      this.Field209 = a;
-      this.Field212 = a;
+      this.Field208 = var2;
+      this.Field209 = var3;
+      this.Field212 = var4;
    }
 
-   private void Method3448(Class699 a, List a, Class116 a, List a3, List a) {
+   private void Method3448(Class699 a, List a, Class116 a, List a, List a) {
       Class37.Method3383();
-      Class104 a = null;
-      int a = 0;
-      int a = this.Field208.Method183();
-      Class104 a;
-      if (a < a) {
+      Object var7 = null;
+      int var8 = 0;
+      int var9 = this.Field208.Method183();
+      Class104 var12;
+      if (var8 < var9) {
          label70: {
-            a a = this.Field208.Method186(a);
-            Class699 a = a.Method2660(a);
-            if (a.Method0() == 8) {
-               a = (Class104)a;
-               Class104 a = a.Method2662(a);
-               if (a == a) {
+            a var10 = this.Field208.Method186(var8);
+            Class699 var11 = a.Method2660(var8);
+            if (var10.Method0() == 8) {
+               var12 = (Class104)var10;
+               Class104 var13 = a.Method2662(var12);
+               if (var13 == var7) {
                   break label70;
                }
 
-               a.Method194(a);
+               a.Method194(var13);
             }
 
-            if (a != a) {
+            if (var11 != a) {
                ;
             }
 
-            if (a.Method3640() == 169) {
-               a = null;
-               if (a.Field3014.get(a)) {
-                  a = a.Field3016;
+            if (var10.Method3640() == 169) {
+               var12 = null;
+               if (a.Field3014.get(var8)) {
+                  var12 = a.Field3016;
                }
 
-               Class699 a = a.Field3013;
-               throw new RuntimeException("Instruction #" + a + " is a RET not owned by any subroutine");
+               Class699 var22 = a.Field3013;
+               throw new RuntimeException("Instruction #" + var8 + " is a RET not owned by any subroutine");
             }
 
-            if (a.Method3640() == 168) {
-               a = ((Class102)a).Field829;
-               BitSet a = (BitSet)this.Field225.Method2665(a);
-               Class699 a = new Class699(this, a, a);
-               Class104 a = a.Method2661(a);
+            if (var10.Method3640() == 168) {
+               var12 = ((Class102)var10).Field829;
+               BitSet var21 = (BitSet)this.Field225.Method2665(var12);
+               Class699 var14 = new Class699(this, a, var21);
+               Class104 var15 = var14.Method2661(var12);
                a.Method194(new Class83(1));
-               a.Method194(new Class102(167, a));
-               a.Method194(a.Field3016);
-               a.Method2530(a);
+               a.Method194(new Class102(167, var15));
+               a.Method194(var14.Field3016);
+               a.Method2530(var14);
             }
 
-            a.Method194(a.Method2(a));
+            a.Method194(var10.Method2(a));
          }
 
-         ++a;
+         ++var8;
       }
 
-      Iterator a = this.Field209.Method1383();
-      Class104 a;
-      Class104 a;
-      if (a.Method932()) {
-         Class794 a = (Class794)a.Method933();
-         a = a.Method2662(a.Field3559);
-         a = a.Method2662(a.Field3560);
-         if (a == a) {
+      Iterator var16 = this.Field209.Method1383();
+      Class104 var19;
+      Class104 var20;
+      if (var16.Method932()) {
+         Class794 var18 = (Class794)var16.Method933();
+         var19 = a.Method2662(var18.Field3559);
+         var20 = a.Method2662(var18.Field3560);
+         if (var19 == var20) {
             ;
          }
 
-         a = a.Method2661(a.Field3561);
+         var12 = a.Method2661(var18.Field3561);
          throw new RuntimeException("Internal error!");
       } else {
-         a = this.Field212.Method1383();
-         if (a.Method932()) {
-            Class790 a = (Class790)a.Method933();
-            a = a.Method2662(a.Field3552);
-            a = a.Method2662(a.Field3553);
-            if (a == a) {
+         var16 = this.Field212.Method1383();
+         if (var16.Method932()) {
+            Class790 var17 = (Class790)var16.Method933();
+            var19 = a.Method2662(var17.Field3552);
+            var20 = a.Method2662(var17.Field3553);
+            if (var19 == var20) {
                ;
             }
 
-            a.Method2530(new Class790(a.Field3549, a.Field3550, a.Field3551, a, a, a.Field3554));
+            a.Method2530(new Class790(var17.Field3549, var17.Field3550, var17.Field3551, var19, var20, var17.Field3554));
          }
 
       }

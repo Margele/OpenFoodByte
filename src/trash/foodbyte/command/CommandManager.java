@@ -54,39 +54,39 @@ public class CommandManager {
 
    @EventTarget
    public void Method3590(Class632 a) {
-      int a = Command.Method1666();
+      int var2 = Command.Method1666();
       if (GlobalModule.Field3160.getBooleanValue() && Minecraft.getMinecraft().currentScreen == null && a.Method3513() == 12) {
-         GuiChat a;
+         GuiChat var3;
          if (GlobalModule.INSTANCE.balant.Field2834 != null && GlobalModule.INSTANCE.balant.Field2834.isOpen()) {
-            a = new GuiChat("-I ");
-            Minecraft.getMinecraft().displayGuiScreen(a);
+            var3 = new GuiChat("-I ");
+            Minecraft.getMinecraft().displayGuiScreen(var3);
          }
 
-         a = new GuiChat("-");
-         Minecraft.getMinecraft().displayGuiScreen(a);
+         var3 = new GuiChat("-");
+         Minecraft.getMinecraft().displayGuiScreen(var3);
       }
 
    }
 
    @EventTarget
    public void Method3591(EventPacket a) {
-      int a = Command.Method1665();
+      int var2 = Command.Method1665();
       if (GlobalModule.Field3160.getValue() && a.getPacket() instanceof C01PacketChatMessage) {
-         C01PacketChatMessage a = (C01PacketChatMessage)a.getPacket();
-         String a = Method3593(a.getMessage());
-         if (a.getMessage().startsWith("-")) {
+         C01PacketChatMessage var3 = (C01PacketChatMessage)a.getPacket();
+         String var4 = Method3593(var3.getMessage());
+         if (var3.getMessage().startsWith("-")) {
             Iterator var5 = Method3592().Method1383();
             if (var5.Method932()) {
-               Command a = (Command)var5.Method933();
-               int a = 0;
-               if (a < a.getCommands().length) {
-                  if (a.toLowerCase().split(" ")[0].equals("-" + a.getCommands()[a].toLowerCase())) {
+               Command var6 = (Command)var5.Method933();
+               int var7 = 0;
+               if (var7 < var6.getCommands().length) {
+                  if (var4.toLowerCase().split(" ")[0].equals("-" + var6.getCommands()[var7].toLowerCase())) {
                      a.setCancelled(true);
-                     a.onCommand(a.split(" "));
+                     var6.onCommand(var4.split(" "));
                      return;
                   }
 
-                  ++a;
+                  ++var7;
                }
             }
          }
@@ -99,9 +99,9 @@ public class CommandManager {
    }
 
    public static String Method3593(String a) {
-      String a = " ";
+      String var1 = " ";
 
-      for(String a = "  "; a.contains(a); a = a.replace(a, a)) {
+      for(String var2 = "  "; a.contains(var2); a = a.replace(var2, var1)) {
       }
 
       return a;

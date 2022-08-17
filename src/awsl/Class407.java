@@ -3,7 +3,7 @@ package awsl;
 import native0.Class614;
 
 public class Class407 implements Class422, Class45 {
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    static {

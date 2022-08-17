@@ -32,8 +32,8 @@ public class Class223 {
    }
 
    public Class223 Method2169() {
-      double a = Math.sqrt(this.Field1239 * this.Field1239 + this.Field1240 * this.Field1240 + this.Field1241 * this.Field1241);
-      return a < 1.0E-4 ? Field1238 : new Class223(this.Field1239 / a, this.Field1240 / a, this.Field1241 / a);
+      double var1 = Math.sqrt(this.Field1239 * this.Field1239 + this.Field1240 * this.Field1240 + this.Field1241 * this.Field1241);
+      return var1 < 1.0E-4 ? Field1238 : new Class223(this.Field1239 / var1, this.Field1240 / var1, this.Field1241 / var1);
    }
 
    public Class223 Method2170(Class223 a) {
@@ -53,17 +53,17 @@ public class Class223 {
    }
 
    public double Method2174(Class223 a) {
-      double a = a.Field1239 - this.Field1239;
-      double a = a.Field1240 - this.Field1240;
-      double a = a.Field1241 - this.Field1241;
-      return a * a + a * a + a * a;
+      double var2 = a.Field1239 - this.Field1239;
+      double var4 = a.Field1240 - this.Field1240;
+      double var6 = a.Field1241 - this.Field1241;
+      return var2 * var2 + var4 * var4 + var6 * var6;
    }
 
    public double Method2175(double a, double a, double a) {
-      double a = a - this.Field1239;
-      double a = a - this.Field1240;
-      double a = a - this.Field1241;
-      return a * a + a * a + a * a;
+      double var7 = a - this.Field1239;
+      double var9 = a - this.Field1240;
+      double var11 = a - this.Field1241;
+      return var7 * var7 + var9 * var9 + var11 * var11;
    }
 
    public Class223 Method2176(double a) {
@@ -76,24 +76,24 @@ public class Class223 {
       } else if (!(a instanceof Class223)) {
          return false;
       } else {
-         Class223 a = (Class223)a;
-         return Double.compare(a.Field1239, this.Field1239) == 0 && Double.compare(a.Field1240, this.Field1240) == 0 && Double.compare(a.Field1241, this.Field1241) == 0;
+         Class223 var2 = (Class223)a;
+         return Double.compare(var2.Field1239, this.Field1239) == 0 && Double.compare(var2.Field1240, this.Field1240) == 0 && Double.compare(var2.Field1241, this.Field1241) == 0;
       }
    }
 
    public int Method2178() {
-      long a = Double.doubleToLongBits(this.Field1239);
-      int a = (int)(a ^ a >>> 32);
+      long var2 = Double.doubleToLongBits(this.Field1239);
+      int var4 = (int)(var2 ^ var2 >>> 32);
       Class216.Method2647();
-      a = Double.doubleToLongBits(this.Field1240);
-      a = 31 * a + (int)(a ^ a >>> 32);
-      a = Double.doubleToLongBits(this.Field1241);
-      a = 31 * a + (int)(a ^ a >>> 32);
+      var2 = Double.doubleToLongBits(this.Field1240);
+      var4 = 31 * var4 + (int)(var2 ^ var2 >>> 32);
+      var2 = Double.doubleToLongBits(this.Field1241);
+      var4 = 31 * var4 + (int)(var2 ^ var2 >>> 32);
       if (a.trash() == null) {
          Class216.Method2646("w2n8Y");
       }
 
-      return a;
+      return var4;
    }
 
    public String Method2179() {

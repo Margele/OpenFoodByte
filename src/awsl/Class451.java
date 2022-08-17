@@ -23,7 +23,7 @@ final class Class451 {
       return this.Field2132;
    }
 
-   Class451(double a, double a, double a, Class491 a3) {
+   Class451(double a, double a, double a, Class491 a) {
       this(a, a, a);
    }
 }

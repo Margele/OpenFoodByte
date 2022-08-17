@@ -23,9 +23,9 @@ public class Class312 extends Class321 {
 
    protected double Method797(double a) {
       Class314.Method833();
-      double a = Math.pow(a / (double)this.Field1605, (double)this.Field1600);
-      double a = (double)(this.Field1599 * 0.1F);
-      double var10000 = Math.pow(2.0, -10.0 * (this.Field1601 ? Math.sqrt(a) : a)) * Math.sin((a - a / 4.0) * (6.283185307179586 / a)) + 1.0;
+      double var4 = Math.pow(a / (double)this.Field1605, (double)this.Field1600);
+      double var6 = (double)(this.Field1599 * 0.1F);
+      double var10000 = Math.pow(2.0, -10.0 * (this.Field1601 ? Math.sqrt(var4) : var4)) * Math.sin((var4 - var6 / 4.0) * (6.283185307179586 / var6)) + 1.0;
       a.trash(new String[2]);
       return var10000;
    }

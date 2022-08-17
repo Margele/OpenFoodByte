@@ -15,8 +15,8 @@ public class Class765 implements Class766 {
       this.Method1781(256);
       this.Field3397 = new Vector[6];
 
-      for(int a = 0; a < 6; ++a) {
-         this.Field3397[a] = new Vector();
+      for(int var1 = 0; var1 < 6; ++var1) {
+         this.Field3397[var1] = new Vector();
       }
 
       this.Field3393 = new Class764(this);
@@ -28,8 +28,8 @@ public class Class765 implements Class766 {
    }
 
    public void Method1782(int[] a, int a, int a) {
-      for(int a = 0; a < a; ++a) {
-         this.Method1785(a[a + a]);
+      for(int var4 = 0; var4 < a; ++var4) {
+         this.Method1785(a[var4 + a]);
          if (this.Field3396 > this.Field3394) {
             this.Method1786(this.Field3394);
          }
@@ -38,28 +38,28 @@ public class Class765 implements Class766 {
    }
 
    public int Method1784(int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      Class764 a = this.Field3393;
-      int a = 0;
-      if (a <= 5) {
-         int a = 128 >> a;
-         int a = 0;
-         if ((a & a) != 0) {
-            a += 4;
+      int var2 = a >> 16 & 255;
+      int var3 = a >> 8 & 255;
+      int var4 = a & 255;
+      Class764 var5 = this.Field3393;
+      byte var6 = 0;
+      if (var6 <= 5) {
+         int var8 = 128 >> var6;
+         int var9 = 0;
+         if ((var2 & var8) != 0) {
+            var9 += 4;
          }
 
-         if ((a & a) != 0) {
-            a += 2;
+         if ((var3 & var8) != 0) {
+            var9 += 2;
          }
 
-         if ((a & a) != 0) {
-            ++a;
+         if ((var4 & var8) != 0) {
+            ++var9;
          }
 
-         Class764 a = a.Field3383[a];
-         return a.Field3389;
+         Class764 var7 = var5.Field3383[var9];
+         return var5.Field3389;
       } else {
          System.out.println("getIndexForColor failed");
          return 0;
@@ -67,55 +67,55 @@ public class Class765 implements Class766 {
    }
 
    private void Method1785(int a) {
-      int a = a >> 16 & 255;
+      int var3 = a >> 16 & 255;
       Class193.Method1270();
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      Class764 a = this.Field3393;
-      int a = 0;
-      if (a <= 5) {
-         int a = 128 >> a;
-         int a = 0;
-         if ((a & a) != 0) {
-            a += 4;
+      int var4 = a >> 8 & 255;
+      int var5 = a & 255;
+      Class764 var6 = this.Field3393;
+      int var7 = 0;
+      if (var7 <= 5) {
+         int var9 = 128 >> var7;
+         int var10 = 0;
+         if ((var3 & var9) != 0) {
+            var10 += 4;
          }
 
-         if ((a & a) != 0) {
-            a += 2;
+         if ((var4 & var9) != 0) {
+            var10 += 2;
          }
 
-         if ((a & a) != 0) {
-            ++a;
+         if ((var5 & var9) != 0) {
+            ++var10;
          }
 
-         Class764 a = a.Field3383[a];
-         ++a.Field3380;
-         a = new Class764(this);
-         a.Field3382 = a;
-         a.Field3383[a] = a;
-         a.Field3384 = false;
+         Class764 var8 = var6.Field3383[var10];
+         ++var6.Field3380;
+         var8 = new Class764(this);
+         var8.Field3382 = var6;
+         var6.Field3383[var10] = var8;
+         var6.Field3384 = false;
          ++this.Field3392;
-         this.Field3397[a].addElement(a);
-         if (a == 5) {
-            a.Field3384 = true;
-            a.Field3385 = 1;
-            a.Field3386 = a;
-            a.Field3387 = a;
-            a.Field3388 = a;
-            a.Field3381 = a;
+         this.Field3397[var7].addElement(var8);
+         if (var7 == 5) {
+            var8.Field3384 = true;
+            var8.Field3385 = 1;
+            var8.Field3386 = var3;
+            var8.Field3387 = var4;
+            var8.Field3388 = var5;
+            var8.Field3381 = var7;
             ++this.Field3396;
             return;
          }
 
-         if (a.Field3384) {
-            ++a.Field3385;
-            a.Field3386 += a;
-            a.Field3387 += a;
-            a.Field3388 += a;
+         if (var8.Field3384) {
+            ++var8.Field3385;
+            var8.Field3386 += var3;
+            var8.Field3387 += var4;
+            var8.Field3388 += var5;
             return;
          }
 
-         ++a;
+         ++var7;
       }
 
       System.out.println("insertColor failed");
@@ -123,59 +123,59 @@ public class Class765 implements Class766 {
 
    private void Method1786(int a) {
       Class193.Method1269();
-      int a = 4;
-      Vector a = this.Field3397[a];
-      if (a.size() > 0) {
-         int a = 0;
-         if (a < a.size()) {
-            Class764 a = (Class764)a.elementAt(a);
-            if (a.Field3380 > 0) {
-               int a = 0;
-               if (a < 8) {
-                  Class764 a = a.Field3383[a];
-                  if (!a.Field3384) {
+      int var3 = 4;
+      Vector var4 = this.Field3397[var3];
+      if (var4.size() > 0) {
+         int var5 = 0;
+         if (var5 < var4.size()) {
+            Class764 var6 = (Class764)var4.elementAt(var5);
+            if (var6.Field3380 > 0) {
+               int var7 = 0;
+               if (var7 < 8) {
+                  Class764 var8 = var6.Field3383[var7];
+                  if (!var8.Field3384) {
                      System.out.println("not a leaf!");
                   }
 
-                  a.Field3385 += a.Field3385;
-                  a.Field3386 += a.Field3386;
-                  a.Field3387 += a.Field3387;
-                  a.Field3388 += a.Field3388;
-                  a.Field3383[a] = null;
-                  --a.Field3380;
+                  var6.Field3385 += var8.Field3385;
+                  var6.Field3386 += var8.Field3386;
+                  var6.Field3387 += var8.Field3387;
+                  var6.Field3388 += var8.Field3388;
+                  var6.Field3383[var7] = null;
+                  --var6.Field3380;
                   --this.Field3396;
                   --this.Field3392;
-                  this.Field3397[a + 1].removeElement(a);
-                  ++a;
+                  this.Field3397[var3 + 1].removeElement(var8);
+                  ++var7;
                }
 
-               a.Field3384 = true;
+               var6.Field3384 = true;
                ++this.Field3396;
                if (this.Field3396 <= a) {
                   return;
                }
             }
 
-            ++a;
+            ++var5;
          }
       }
 
-      --a;
+      --var3;
       System.out.println("Unable to reduce the OctTree");
    }
 
    public int[] Method1783() {
-      int[] a = new int[this.Field3396];
-      this.Method1788(this.Field3393, a, 0);
-      return a;
+      int[] var1 = new int[this.Field3396];
+      this.Method1788(this.Field3393, var1, 0);
+      return var1;
    }
 
    public void Method1787(int[] a, int[] a) {
-      int a = a.length;
+      int var3 = a.length;
       this.Field3395 = a.length;
 
-      for(int a = 0; a < a; ++a) {
-         this.Method1785(a[a]);
+      for(int var4 = 0; var4 < var3; ++var4) {
+         this.Method1785(a[var4]);
          if (this.Field3396 > this.Field3394) {
             this.Method1786(this.Field3394);
          }
@@ -193,16 +193,16 @@ public class Class765 implements Class766 {
          this.Method1786(this.Field3395);
       }
 
-      int a;
+      int var4;
       if (a.Field3384) {
-         a = a.Field3385;
-         a[a] = -16777216 | a.Field3386 / a << 16 | a.Field3387 / a << 8 | a.Field3388 / a;
+         var4 = a.Field3385;
+         a[a] = -16777216 | a.Field3386 / var4 << 16 | a.Field3387 / var4 << 8 | a.Field3388 / var4;
          a.Field3389 = a++;
       } else {
-         for(a = 0; a < 8; ++a) {
-            if (a.Field3383[a] != null) {
+         for(var4 = 0; var4 < 8; ++var4) {
+            if (a.Field3383[var4] != null) {
                a.Field3389 = a;
-               a = this.Method1788(a.Field3383[a], a, a);
+               a = this.Method1788(a.Field3383[var4], a, a);
             }
          }
       }

@@ -34,16 +34,16 @@ public class Class589 extends Class588 {
    }
 
    public float Method378(Class589 a) {
-      float a = this.Field2775 - a.Field2775;
-      float a = this.Field2776 - a.Field2776;
-      float a = this.Field2777 - a.Field2777;
-      return a * a + a * a + a * a;
+      float var2 = this.Field2775 - a.Field2775;
+      float var3 = this.Field2776 - a.Field2776;
+      float var4 = this.Field2777 - a.Field2777;
+      return var2 * var2 + var3 * var3 + var4 * var4;
    }
 
    public float Method379(Class589 a) {
-      float a = this.Field2775 - a.Field2775;
-      float a = this.Field2776 - a.Field2776;
-      float a = this.Field2777 - a.Field2777;
-      return (float)Math.sqrt((double)(a * a + a * a + a * a));
+      float var2 = this.Field2775 - a.Field2775;
+      float var3 = this.Field2776 - a.Field2776;
+      float var4 = this.Field2777 - a.Field2777;
+      return (float)Math.sqrt((double)(var2 * var2 + var3 * var3 + var4 * var4));
    }
 }

@@ -25,7 +25,7 @@ public class Class29 extends Class267 {
       return new Class154(this.Field1460.Method1969(a, a), this.Field249);
    }
 
-   public Class148 Method1970(int a, Class31 a1, String a, boolean a) {
+   public Class148 Method1970(int a, Class31 a, String a, boolean a) {
       this.Field249.Method2496(a);
       this.Field249.Method2496("RuntimeVisibleTypeAnnotations");
       return new Class154(this.Field1460.Method1969(a, a), this.Field249);

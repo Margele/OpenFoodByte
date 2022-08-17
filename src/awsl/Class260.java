@@ -53,20 +53,20 @@ public class Class260 {
 
    public JsonObject Method2841() {
       int var10000 = Class259.Method2273();
-      JsonObject a = new JsonObject();
-      int a = var10000;
-      a.addProperty("label", this.Field1420);
-      a.addProperty("server", this.Field1421);
-      a.addProperty("x", this.Field1422);
-      a.addProperty("y", this.Field1423);
-      a.addProperty("z", this.Field1424);
-      a.addProperty("dimension", this.Field1425);
+      JsonObject var2 = new JsonObject();
+      int var1 = var10000;
+      var2.addProperty("label", this.Field1420);
+      var2.addProperty("server", this.Field1421);
+      var2.addProperty("x", this.Field1422);
+      var2.addProperty("y", this.Field1423);
+      var2.addProperty("z", this.Field1424);
+      var2.addProperty("dimension", this.Field1425);
       if (a.trash() == null) {
-         ++a;
-         Class259.Method2271(a);
+         ++var1;
+         Class259.Method2271(var1);
       }
 
-      return a;
+      return var2;
    }
 
    public void Method2842(JsonObject a) {
@@ -78,12 +78,12 @@ public class Class260 {
       this.Field1425 = a.get("dimension").getAsInt();
    }
 
-   public void Method2843(FontRenderer a, String a, String a, float a3, boolean a4) {
+   public void Method2843(FontRenderer a, String a, String a, float a, boolean a) {
       GlStateManager.scale(1.0F, 1.0F, 1.0F);
-      int a = a.getStringWidth(a + a) / 2;
-      RenderUtils.Method1103((float)(-a) - 1.0F, 0.0F, (float)(a.getStringWidth(a + a) + 1), (float)(-a.FONT_HEIGHT), (new Color(0, 0, 0, 80)).getRGB());
+      int var7 = a.getStringWidth(a + a) / 2;
+      RenderUtils.Method1103((float)(-var7) - 1.0F, 0.0F, (float)(a.getStringWidth(a + a) + 1), (float)(-a.FONT_HEIGHT), (new Color(0, 0, 0, 80)).getRGB());
       Class259.Method2272();
-      a.drawStringWithShadow(a + a, (float)(-a), -8.0F, -1);
+      a.drawStringWithShadow(a + a, (float)(-var7), -8.0F, -1);
       a.trash(new String[1]);
    }
 }

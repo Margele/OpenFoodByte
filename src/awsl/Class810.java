@@ -70,18 +70,18 @@ public class Class810 extends Class877 {
 
    protected void Method3439(int a, int a, float[] a) {
       Class193.Method1269();
-      float a = (float)a - this.Field3626;
-      float a = (float)a - this.Field3627;
-      float a = a * a + a * a;
-      if (a > this.Field3625) {
+      float var5 = (float)a - this.Field3626;
+      float var6 = (float)a - this.Field3627;
+      float var7 = var5 * var5 + var6 * var6;
+      if (var7 > this.Field3625) {
          a[0] = (float)a;
          a[1] = (float)a;
       }
 
-      a = (float)Math.sqrt((double)a);
-      float a = (float)Math.atan2((double)a, (double)a) + this.Field3621 * (this.Field3624 - a) / this.Field3624;
-      a[0] = this.Field3626 + a * (float)Math.cos((double)a);
-      a[1] = this.Field3627 + a * (float)Math.sin((double)a);
+      var7 = (float)Math.sqrt((double)var7);
+      float var8 = (float)Math.atan2((double)var6, (double)var5) + this.Field3621 * (this.Field3624 - var7) / this.Field3624;
+      a[0] = this.Field3626 + var7 * (float)Math.cos((double)var8);
+      a[1] = this.Field3627 + var7 * (float)Math.sin((double)var8);
    }
 
    public String toString() {

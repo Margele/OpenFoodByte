@@ -30,8 +30,8 @@ public abstract class Class236 implements Composite {
       if (!(a instanceof Class236)) {
          return false;
       } else {
-         Class236 a = (Class236)a;
-         return this.Field1299 == a.Field1299;
+         Class236 var2 = (Class236)a;
+         return this.Field1299 == var2.Field1299;
       }
    }
 

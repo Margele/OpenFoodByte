@@ -70,14 +70,14 @@ public class Class8 extends Class119 {
       return super.Method62(a, a);
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = a & -16777216;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      int a = a + a + a;
-      float a = Class776.Method1708(this.Field114, this.Field115, (float)a);
-      return Class776.Method1719(a, this.Field117, this.Field116);
+   public int Method3(int a, int a, int a) {
+      int var4 = a & -16777216;
+      int var5 = a >> 16 & 255;
+      int var6 = a >> 8 & 255;
+      int var7 = a & 255;
+      int var8 = var5 + var6 + var7;
+      float var9 = Class776.Method1708(this.Field114, this.Field115, (float)var8);
+      return Class776.Method1719(var9, this.Field117, this.Field116);
    }
 
    public String toString() {

@@ -36,20 +36,20 @@ public class Class813 extends Class811 {
    }
 
    public Class782 Method3360(b a) {
-      int[] a = Class786.Method917();
+      int[] var2 = Class786.Method917();
       return Class782.Field3513;
    }
 
    protected boolean Method3660(Class782 a) {
-      b a = a.Method861();
-      return "Lnull;".equals(a.Method3225()) || a.Method3217() == 9;
+      b var2 = a.Method861();
+      return "Lnull;".equals(var2.Method3225()) || var2.Method3217() == 9;
    }
 
    protected Class782 Method3661(Class782 a) throws Class731 {
-      b a = a.Method861();
-      if (a.Method3217() == 9) {
-         return this.Method3360(b.Method3204(a.Method3225().substring(1)));
-      } else if ("Lnull;".equals(a.Method3225())) {
+      b var2 = a.Method861();
+      if (var2.Method3217() == 9) {
+         return this.Method3360(b.Method3204(var2.Method3225().substring(1)));
+      } else if ("Lnull;".equals(var2.Method3225())) {
          return a;
       } else {
          throw new Error("Internal error");
@@ -57,24 +57,24 @@ public class Class813 extends Class811 {
    }
 
    protected boolean Method3662(Class782 a, Class782 a) {
-      b a = a.Method861();
-      b a = a.Method861();
-      switch (a.Method3217()) {
+      b var3 = a.Method861();
+      b var4 = a.Method861();
+      switch (var3.Method3217()) {
          case 5:
          case 6:
          case 7:
          case 8:
-            return a.Method3235(a);
+            return var4.Method3235(var3);
          case 9:
          case 10:
-            if ("Lnull;".equals(a.Method3225())) {
+            if ("Lnull;".equals(var4.Method3225())) {
                return true;
             } else {
-               if (a.Method3217() != 10 && a.Method3217() != 9) {
+               if (var4.Method3217() != 10 && var4.Method3217() != 9) {
                   return false;
                }
 
-               return this.Method3674(a, a);
+               return this.Method3674(var3, var4);
             }
          default:
             throw new Error("Internal error");
@@ -85,22 +85,22 @@ public class Class813 extends Class811 {
       if (a.Method863(a)) {
          return a;
       } else {
-         b a = a.Method861();
-         b a = a.Method861();
-         if ((a.Method3217() == 10 || a.Method3217() == 9) && (a.Method3217() == 10 || a.Method3217() == 9)) {
-            if ("Lnull;".equals(a.Method3225())) {
+         b var3 = a.Method861();
+         b var4 = a.Method861();
+         if ((var3.Method3217() == 10 || var3.Method3217() == 9) && (var4.Method3217() == 10 || var4.Method3217() == 9)) {
+            if ("Lnull;".equals(var3.Method3225())) {
                return a;
-            } else if ("Lnull;".equals(a.Method3225())) {
+            } else if ("Lnull;".equals(var4.Method3225())) {
                return a;
-            } else if (this.Method3674(a, a)) {
+            } else if (this.Method3674(var3, var4)) {
                return a;
-            } else if (this.Method3674(a, a)) {
+            } else if (this.Method3674(var4, var3)) {
                return a;
             } else {
-               while(!this.Method3673(a)) {
-                  a = this.Method1906(a);
-                  if (this.Method3674(a, a)) {
-                     return this.Method3360(a);
+               while(!this.Method3673(var3)) {
+                  var3 = this.Method1906(var3);
+                  if (this.Method3674(var3, var4)) {
+                     return this.Method3360(var3);
                   }
                }
 
@@ -120,13 +120,13 @@ public class Class813 extends Class811 {
       if (this.Field3638 != null && a.Method3235(this.Field3638)) {
          return this.Field3639;
       } else {
-         Class a = this.Method3675(a).getSuperclass();
+         Class var2 = this.Method3675(a).getSuperclass();
          return null;
       }
    }
 
    protected boolean Method3674(b a, b a) {
-      int[] a = Class786.Method917();
+      int[] var3 = Class786.Method917();
       if (a.Method3235(a)) {
          return true;
       } else if (this.Field3638 != null && a.Method3235(this.Field3638)) {
@@ -142,26 +142,26 @@ public class Class813 extends Class811 {
             return true;
          } else {
             if (this.Field3640 != null) {
-               int a = 0;
-               if (a < this.Field3640.Method1799()) {
-                  b a = (b)this.Field3640.get(a);
-                  if (this.Method3674(a, a)) {
+               int var6 = 0;
+               if (var6 < this.Field3640.Method1799()) {
+                  b var5 = (b)this.Field3640.get(var6);
+                  if (this.Method3674(a, var5)) {
                      return true;
                   }
 
-                  ++a;
+                  ++var6;
                }
             }
 
             return false;
          }
       } else {
-         Class a = this.Method3675(a);
-         if (a.isInterface()) {
-            a = Object.class;
+         Class var4 = this.Method3675(a);
+         if (var4.isInterface()) {
+            var4 = Object.class;
          }
 
-         return a.isAssignableFrom(this.Method3675(a));
+         return var4.isAssignableFrom(this.Method3675(a));
       }
    }
 

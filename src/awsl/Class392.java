@@ -837,67 +837,67 @@ public final class Class392 implements Runnable {
    }
 
    private String Method1328(String a, String a) {
-      Class298 a = new Class298();
-      a.Method3009(Method1327(16174, -19433), Method1327(16137, 17973) + a + ";" + a);
-      Class298 a = new Class298(Method1333(Method1327(16134, 16413), a));
-      return a.Method2963(Method1327(16238, -24272));
+      Class298 var3 = new Class298();
+      var3.Method3009(Method1327(16174, -19433), Method1327(16137, 17973) + a + ";" + a);
+      Class298 var4 = new Class298(Method1333(Method1327(16134, 16413), var3));
+      return var4.Method2963(Method1327(16238, -24272));
    }
 
    public static String Method1329(Map a) {
-      StringBuilder a = new StringBuilder();
+      StringBuilder var1 = new StringBuilder();
       Iterator var2 = a.Method2663().Method1383();
 
       while(var2.Method932()) {
-         Map.Entry a = (Map.Entry)var2.Method933();
+         Map.Entry var3 = (Map.Entry)var2.Method933();
 
          try {
-            a.append(URLEncoder.encode((String)a.getKey(), Method1327(16154, -20177)));
-            a.append('=');
-            a.append(URLEncoder.encode((String)a.getValue(), Method1327(16154, -20177)));
-            a.append('&');
+            var1.append(URLEncoder.encode((String)var3.getKey(), Method1327(16154, -20177)));
+            var1.append('=');
+            var1.append(URLEncoder.encode((String)var3.getValue(), Method1327(16154, -20177)));
+            var1.append('&');
          } catch (UnsupportedEncodingException var5) {
             var5.printStackTrace();
          }
       }
 
-      if (a.length() > 0) {
-         a.deleteCharAt(a.length() - 1);
+      if (var1.length() > 0) {
+         var1.deleteCharAt(var1.length() - 1);
       }
 
-      return a.toString();
+      return var1.toString();
    }
 
    public static String Method1330(String a, String a, String a) {
-      Map a = new HashMap();
-      a.put(Method1327(16249, 2260), a + Method1327(16138, -25501));
-      return Method1334(a, a, a);
+      HashMap var3 = new HashMap();
+      var3.put(Method1327(16249, 2260), a + Method1327(16138, -25501));
+      return Method1334(a, a, var3);
    }
 
    public static String Method1331(String a, Map a) throws UnsupportedEncodingException, IOException {
-      String a = "";
-      BufferedReader a = null;
-      URL a = new URL(a);
-      URLConnection a = a.openConnection();
-      a.setConnectTimeout(5000);
-      a.setReadTimeout(15000);
-      Iterator a = a.Method2663().Method1383();
+      String var2 = "";
+      BufferedReader var3 = null;
+      URL var5 = new URL(a);
+      URLConnection var6 = var5.openConnection();
+      var6.setConnectTimeout(5000);
+      var6.setReadTimeout(15000);
+      Iterator var7 = a.Method2663().Method1383();
 
-      while(a.Method932()) {
-         Map.Entry a = (Map.Entry)a.Method933();
-         a.setRequestProperty((String)a.getKey(), (String)a.getValue());
+      while(var7.Method932()) {
+         Map.Entry var8 = (Map.Entry)var7.Method933();
+         var6.setRequestProperty((String)var8.getKey(), (String)var8.getValue());
       }
 
-      a.setRequestProperty(Method1327(16240, -20234), Method1327(16226, 28579));
-      a.setRequestProperty(Method1327(16186, 12069), Method1327(16159, -211));
-      a.setRequestProperty(Method1327(16175, -10274), Method1327(16155, -11014));
-      a.connect();
+      var6.setRequestProperty(Method1327(16240, -20234), Method1327(16226, 28579));
+      var6.setRequestProperty(Method1327(16186, 12069), Method1327(16159, -211));
+      var6.setRequestProperty(Method1327(16175, -10274), Method1327(16155, -11014));
+      var6.connect();
 
-      String a;
-      for(a = new BufferedReader(new InputStreamReader(a.getInputStream(), Method1327(16142, 28414))); (a = a.readLine()) != null; a = a + a) {
+      String var9;
+      for(var3 = new BufferedReader(new InputStreamReader(var6.getInputStream(), Method1327(16142, 28414))); (var9 = var3.readLine()) != null; var2 = var2 + var9) {
       }
 
-      a.close();
-      return a;
+      var3.close();
+      return var2;
    }
 
    @Class628
@@ -908,51 +908,51 @@ public final class Class392 implements Runnable {
    }
 
    public static String Method1334(String a, String a, Map a) {
-      CloseableHttpClient a = HttpClients.createDefault();
+      CloseableHttpClient var3 = HttpClients.createDefault();
       new ArrayList();
-      HttpPost a = new HttpPost(a);
-      a.setEntity(new StringEntity(a, Method1327(16154, -20177)));
+      HttpPost var5 = new HttpPost(a);
+      var5.setEntity(new StringEntity(a, Method1327(16154, -20177)));
       if (a.Method1799() > 0) {
          Iterator var6 = a.Method2663().Method1383();
 
          while(var6.Method932()) {
-            Map.Entry a = (Map.Entry)var6.Method933();
-            a.addHeader((String)a.getKey(), (String)a.getValue());
+            Map.Entry var7 = (Map.Entry)var6.Method933();
+            var5.addHeader((String)var7.getKey(), (String)var7.getValue());
          }
       }
 
-      CloseableHttpResponse a = null;
+      CloseableHttpResponse var12 = null;
 
       try {
-         a = a.execute(a);
+         var12 = var3.execute(var5);
       } catch (IOException var11) {
          var11.printStackTrace();
       }
 
-      HttpEntity a = a.getEntity();
-      String a = null;
+      HttpEntity var13 = var12.getEntity();
+      String var8 = null;
 
       try {
-         a = EntityUtils.toString(a);
+         var8 = EntityUtils.toString(var13);
       } catch (IOException | ParseException var10) {
          var10.printStackTrace();
       }
 
-      return a;
+      return var8;
    }
 
    private Class298 Method1335(String a) {
-      Class298 a = new Class298();
-      Class298 a = new Class298();
-      a.Method3009(Method1327(16145, 6946), a);
-      a.Method3009(Method1327(16228, 2790), Method1327(16251, -28989));
-      a.Method3009(Method1327(16153, 28866), Method1327(16162, -7486));
-      a.Method3009(Method1327(16151, 4076), Method1327(16185, -9738));
-      a.Method3009(Method1327(16184, -1145), new Class288(Arrays.asList(a)));
-      Map a = new HashMap();
-      a.put(Method1327(16144, 15379), Method1327(16166, -23537));
-      a.put(Method1327(16227, 10206), "1");
-      return new Class298(Method1334(Method1327(16152, -10454), a.Method3025(), a));
+      Class298 var2 = new Class298();
+      Class298 var3 = new Class298();
+      var2.Method3009(Method1327(16145, 6946), var3);
+      var2.Method3009(Method1327(16228, 2790), Method1327(16251, -28989));
+      var2.Method3009(Method1327(16153, 28866), Method1327(16162, -7486));
+      var3.Method3009(Method1327(16151, 4076), Method1327(16185, -9738));
+      var3.Method3009(Method1327(16184, -1145), new Class288(Arrays.asList(a)));
+      HashMap var4 = new HashMap();
+      var4.put(Method1327(16144, 15379), Method1327(16166, -23537));
+      var4.put(Method1327(16227, 10206), "1");
+      return new Class298(Method1334(Method1327(16152, -10454), var2.Method3025(), var4));
    }
 
    static {
@@ -968,11 +968,11 @@ public final class Class392 implements Runnable {
    }
 
    private void Method1338(String a, String a, OutputStream a) throws IOException {
-      byte[] a = a.getBytes(StandardCharsets.UTF_8);
+      byte[] var4 = a.getBytes(StandardCharsets.UTF_8);
       a.write((a + Method1327(16225, 23252)).getBytes());
-      a.write(String.valueOf(a.length).getBytes());
+      a.write(String.valueOf(var4.length).getBytes());
       a.write(Method1327(16176, 14303).getBytes());
-      a.write(a);
+      a.write(var4);
       a.flush();
    }
 

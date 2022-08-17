@@ -1,6 +1,5 @@
 package awsl;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -24,77 +23,77 @@ public class Class54 {
    static boolean Field604 = false;
 
    public static void main(String[] a) throws IOException {
-      File a = new File(a[0]);
-      InputStream a = new GZIPInputStream(new FileInputStream(a));
-      BufferedReader a = new LineNumberReader(new InputStreamReader(a));
+      File var1 = new File(a[0]);
+      GZIPInputStream var2 = new GZIPInputStream(new FileInputStream(var1));
+      LineNumberReader var3 = new LineNumberReader(new InputStreamReader(var2));
 
       while(true) {
          while(true) {
-            String a = a.readLine();
-            if (a.startsWith("class")) {
-               String a = a.substring(6, a.lastIndexOf(32));
-               String a = a.substring(a.lastIndexOf(32) + 1);
-               Field603.put(a, a);
+            String var4 = var3.readLine();
+            if (var4.startsWith("class")) {
+               String var5 = var4.substring(6, var4.lastIndexOf(32));
+               String var6 = var4.substring(var4.lastIndexOf(32) + 1);
+               Field603.put(var5, var6);
             } else {
-               Field602.Method2530(a);
+               Field602.Method2530(var4);
             }
          }
       }
    }
 
    static void Method3195(File a) throws IOException {
-      String[] a = Class690.Method2342();
+      String[] var1 = Class690.Method2342();
       if (!Field604 || !a.getName().contains("debug")) {
          if (a.isDirectory()) {
-            File[] a = a.listFiles();
-            int a = 0;
-            if (a < a.length) {
-               Method3195(a[a]);
-               ++a;
+            File[] var2 = a.listFiles();
+            int var3 = 0;
+            if (var3 < var2.length) {
+               Method3195(var2[var3]);
+               ++var3;
             }
          }
 
          if (a.getName().endsWith(".jar")) {
-            File a = new File(a.getParentFile(), a.getName() + ".new");
-            ZipFile a = new ZipFile(a);
-            ZipOutputStream a = new ZipOutputStream(new FileOutputStream(a));
-            Enumeration a = a.entries();
-            byte[] a = new byte[10000];
-            if (a.hasMoreElements()) {
-               ZipEntry a = (ZipEntry)a.nextElement();
-               if (a.isDirectory()) {
-                  a.putNextEntry(a);
+            File var10 = new File(a.getParentFile(), a.getName() + ".new");
+            ZipFile var11 = new ZipFile(a);
+            ZipOutputStream var4 = new ZipOutputStream(new FileOutputStream(var10));
+            Enumeration var5 = var11.entries();
+            byte[] var6 = new byte[10000];
+            if (var5.hasMoreElements()) {
+               ZipEntry var7 = (ZipEntry)var5.nextElement();
+               if (var7.isDirectory()) {
+                  var4.putNextEntry(var7);
                }
 
-               a.putNextEntry(a);
-               if (a.getName().endsWith(".class")) {
-                  Class165 a = new Class165(a.getInputStream(a));
-                  a.Method1470(new Class233(), 0);
+               var4.putNextEntry(var7);
+               if (var7.getName().endsWith(".class")) {
+                  Class165 var8 = new Class165(var11.getInputStream(var7));
+                  var8.Method1470(new Class233(), 0);
                }
 
-               InputStream a = a.getInputStream(a);
+               InputStream var12 = var11.getInputStream(var7);
 
                while(true) {
-                  int a = a.Method2521(a, 0, a.length);
-                  if (a != -1) {
-                     a.write(a, 0, a);
+                  int var9 = var12.Method2521(var6, 0, var6.length);
+                  if (var9 != -1) {
+                     var4.write(var6, 0, var9);
                   }
 
-                  if (a == -1) {
-                     a.closeEntry();
+                  if (var9 == -1) {
+                     var4.closeEntry();
                      break;
                   }
                }
             }
 
-            a.close();
-            a.close();
+            var4.close();
+            var11.close();
             if (!a.delete()) {
                throw new IOException("Cannot delete file " + a);
             }
 
-            if (!a.renameTo(a)) {
-               throw new IOException("Cannot rename file " + a);
+            if (!var10.renameTo(a)) {
+               throw new IOException("Cannot rename file " + var10);
             }
          }
 

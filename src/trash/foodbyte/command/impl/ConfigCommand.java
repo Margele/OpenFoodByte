@@ -15,7 +15,7 @@ public class ConfigCommand extends Command {
    }
 
    public void onCommand(String[] commands) {
-      int a = GetDmgCommand.Method3599();
+      int var2 = GetDmgCommand.Method3599();
       if (commands.length == 1) {
          ChatUtils.addChatMessage("§f-C list");
          ChatUtils.addChatMessage("§f-C §aConfigName §e[Load CFG]!");
@@ -32,10 +32,10 @@ public class ConfigCommand extends Command {
          ChatUtils.addChatMessage("§c[Can't find]");
       } else {
          if (commands.length == 2) {
-            File a = new File(System.getProperty("user.home") + File.separator + GlobalModule.clientName + "/conf-" + commands[1].trim() + ".cfg");
+            File var3 = new File(System.getProperty("user.home") + File.separator + GlobalModule.clientName + "/conf-" + commands[1].trim() + ".cfg");
 
             try {
-               if (!a.exists()) {
+               if (!var3.exists()) {
                   ChatUtils.addChatMessage("Loaded §c" + commands[1] + " §fConfig §cError [Can't find]");
                   return;
                }
@@ -48,12 +48,12 @@ public class ConfigCommand extends Command {
          }
 
          if (commands.length == 3) {
-            Class207 a;
+            Class207 var6;
             if (commands[1].toLowerCase().equals("save")) {
                GlobalModule.INSTANCE.fileManager.Method786(commands[2]);
                if (Class215.Method2649().stream().noneMatch(ConfigCommand::Method1639)) {
-                  a = new Class207(commands[2]);
-                  Class215.Method2649().Method2530(a);
+                  var6 = new Class207(commands[2]);
+                  Class215.Method2649().Method2530(var6);
                   ChatUtils.addChatMessage("Saved Config §a" + commands[2]);
                }
 
@@ -62,8 +62,8 @@ public class ConfigCommand extends Command {
 
             if (commands[1].toLowerCase().equals("remove") || commands[1].toLowerCase().equals("del")) {
                GlobalModule.INSTANCE.fileManager.deleteConfig(commands[2]);
-               a = new Class207(commands[2]);
-               Class215.Method2649().remove(a);
+               var6 = new Class207(commands[2]);
+               Class215.Method2649().remove(var6);
                ChatUtils.addChatMessage("removed Config §6" + commands[2]);
             }
 
@@ -74,8 +74,8 @@ public class ConfigCommand extends Command {
          }
 
          if (a.trash() == null) {
-            ++a;
-            GetDmgCommand.Method3597(a);
+            ++var2;
+            GetDmgCommand.Method3597(var2);
          }
 
       }

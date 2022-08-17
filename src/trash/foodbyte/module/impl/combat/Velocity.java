@@ -38,40 +38,40 @@ public class Velocity extends Module {
 
    @EventTarget
    public void Method273(EventPacket a) {
-      a[] a = b.trash();
+      a[] var2 = b.trash();
       if (this.Field2480.isCurrentMode("Simple")) {
          this.setDisplayTag("Simple");
-         S12PacketEntityVelocity a;
-         if (a.packet instanceof S12PacketEntityVelocity && mc.theWorld.getEntityByID((a = (S12PacketEntityVelocity)a.packet).getEntityID()) == mc.thePlayer) {
-            ChatUtils.debug("§6S12 Vertical " + EnumChatFormatting.GRAY + ": §fX §e" + a.getMotionX() + " §fY §e" + a.getMotionY() + " §fZ §e" + a.getMotionZ());
+         S12PacketEntityVelocity var3;
+         if (a.packet instanceof S12PacketEntityVelocity && mc.theWorld.getEntityByID((var3 = (S12PacketEntityVelocity)a.packet).getEntityID()) == mc.thePlayer) {
+            ChatUtils.debug("§6S12 Vertical " + EnumChatFormatting.GRAY + ": §fX §e" + var3.getMotionX() + " §fY §e" + var3.getMotionY() + " §fZ §e" + var3.getMotionZ());
             if (this.Method798() == 0.0F && this.Method276() == 0.0F) {
                a.setCancelled(true);
             }
 
-            int a = (int)((float)a.getMotionX() * (this.Method798() / 100.0F));
-            int a = (int)((float)a.getMotionY() * (this.Method276() / 100.0F));
-            int a = (int)((float)a.getMotionZ() * (this.Method798() / 100.0F));
-            ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionX.getObfuscatedName(), a, false);
-            ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionY.getObfuscatedName(), a, false);
-            ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionZ.getObfuscatedName(), a, false);
+            int var4 = (int)((float)var3.getMotionX() * (this.Method798() / 100.0F));
+            int var5 = (int)((float)var3.getMotionY() * (this.Method276() / 100.0F));
+            int var6 = (int)((float)var3.getMotionZ() * (this.Method798() / 100.0F));
+            ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionX.getObfuscatedName(), var4, false);
+            ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionY.getObfuscatedName(), var5, false);
+            ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionZ.getObfuscatedName(), var6, false);
          }
 
          if (!(a.packet instanceof S27PacketExplosion)) {
             return;
          }
 
-         S27PacketExplosion a = (S27PacketExplosion)a.packet;
-         ChatUtils.debug("§aS27 Vertical " + EnumChatFormatting.GRAY + ": §fX §e" + a.func_149149_c() + " §fY §e" + a.func_149144_d() + " §fZ §e" + a.func_149147_e());
+         S27PacketExplosion var8 = (S27PacketExplosion)a.packet;
+         ChatUtils.debug("§aS27 Vertical " + EnumChatFormatting.GRAY + ": §fX §e" + var8.func_149149_c() + " §fY §e" + var8.func_149144_d() + " §fZ §e" + var8.func_149147_e());
          if (this.Method798() == 0.0F && this.Method276() == 0.0F) {
             a.setCancelled(true);
          }
 
-         float a = a.func_149149_c() * (this.Method798() / 100.0F);
-         float a = a.func_149144_d() * (this.Method276() / 100.0F);
-         float a = a.func_149147_e() * (this.Method798() / 100.0F);
-         ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionX.getObfuscatedName(), a, false);
-         ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionY.getObfuscatedName(), a, false);
-         ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionZ.getObfuscatedName(), a, false);
+         float var9 = var8.func_149149_c() * (this.Method798() / 100.0F);
+         float var10 = var8.func_149144_d() * (this.Method276() / 100.0F);
+         float var7 = var8.func_149147_e() * (this.Method798() / 100.0F);
+         ReflectionsHelper.setFinalField(var8, ObfuscatedField.S27MotionX.getObfuscatedName(), var9, false);
+         ReflectionsHelper.setFinalField(var8, ObfuscatedField.S27MotionY.getObfuscatedName(), var10, false);
+         ReflectionsHelper.setFinalField(var8, ObfuscatedField.S27MotionZ.getObfuscatedName(), var7, false);
       }
 
    }

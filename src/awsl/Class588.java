@@ -110,10 +110,10 @@ public class Class588 {
    }
 
    public void Method321(Class588 a, float a) {
-      float a = 1.0F - a;
-      this.Field2775 = a * this.Field2775 + a * a.Field2775;
-      this.Field2776 = a * this.Field2776 + a * a.Field2776;
-      this.Field2777 = a * this.Field2777 + a * a.Field2777;
+      float var3 = 1.0F - a;
+      this.Field2775 = var3 * this.Field2775 + a * a.Field2775;
+      this.Field2776 = var3 * this.Field2776 + a * a.Field2776;
+      this.Field2777 = var3 * this.Field2777 + a * a.Field2777;
    }
 
    public void Method322(float a) {

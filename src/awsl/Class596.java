@@ -41,24 +41,24 @@ public class Class596 implements Class594 {
    public Class596(Image a, int a, boolean a) {
       this.Field2792 = 0;
       this.Field2793 = false;
-      PixelGrabber a = new PixelGrabber(a, 0, 0, -1, -1, (int[])null, 0, -1);
+      PixelGrabber var4 = new PixelGrabber(a, 0, 0, -1, -1, (int[])null, 0, -1);
 
       try {
-         a.grabPixels();
+         var4.grabPixels();
       } catch (InterruptedException var6) {
          throw new RuntimeException("interrupted waiting for pixels!");
       }
 
-      if ((a.status() & 128) != 0) {
+      if ((var4.status() & 128) != 0) {
          throw new RuntimeException("image fetch aborted");
       } else {
-         this.Method105((int[])((int[])a.getPixels()), a.getWidth(), a.getHeight(), a, a);
+         this.Method105((int[])((int[])var4.getPixels()), var4.getWidth(), var4.getHeight(), a, a);
       }
    }
 
    public int[] Method104(BufferedImage a, int a, int a, int a, int a, int[] a) {
-      int a = a.getType();
-      return a != 2 && a != 1 ? a.getRGB(a, a, a, a, a, 0, a) : (int[])((int[])a.getRaster().getDataElements(a, a, a, a, a));
+      int var7 = a.getType();
+      return var7 != 2 && var7 != 1 ? a.getRGB(a, a, a, a, a, 0, a) : (int[])((int[])a.getRaster().getDataElements(a, a, a, a, a));
    }
 
    public void Method105(int[] a, int a, int a, int a, boolean a) {
@@ -71,30 +71,30 @@ public class Class596 implements Class594 {
 
    public float Method20(float a, float a) {
       Class598.Method86();
-      int a = (int)a;
-      int a = (int)a;
+      int var4 = (int)a;
+      int var5 = (int)a;
       if (this.Field2792 == 2) {
-         a = Class776.Method1715(a, this.Field2790);
-         a = Class776.Method1715(a, this.Field2791);
+         var4 = Class776.Method1715(var4, this.Field2790);
+         var5 = Class776.Method1715(var5, this.Field2791);
       }
 
-      if (a >= this.Field2790 || a >= this.Field2791) {
+      if (var4 >= this.Field2790 || var5 >= this.Field2791) {
          if (this.Field2792 == 0) {
             return 0.0F;
          }
 
-         a = 0;
-         if (a >= this.Field2790) {
-            a = this.Field2790 - 1;
+         var4 = 0;
+         if (var4 >= this.Field2790) {
+            var4 = this.Field2790 - 1;
          }
 
-         a = 0;
-         if (a >= this.Field2791) {
-            a = this.Field2791 - 1;
+         var5 = 0;
+         if (var5 >= this.Field2791) {
+            var5 = this.Field2791 - 1;
          }
       }
 
-      return this.Field2793 ? (float)(this.Field2789[a * this.Field2790 + a] >> 24 & 255) / 255.0F : (float)Class767.Method1689(this.Field2789[a * this.Field2790 + a]) / 255.0F;
+      return this.Field2793 ? (float)(this.Field2789[var5 * this.Field2790 + var4] >> 24 & 255) / 255.0F : (float)Class767.Method1689(this.Field2789[var5 * this.Field2790 + var4]) / 255.0F;
    }
 
    public void Method9(int a) {

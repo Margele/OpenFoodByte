@@ -45,19 +45,19 @@ public class Class348 {
       ((Shader)ReflectionUtils.getListShaders(Field1668).get(1)).getShaderManager().getShaderUniform("BlurDir").set(a, a);
    }
 
-   public static void Method364(float a, float a, float a, float a, boolean a4) {
+   public static void Method364(float a, float a, float a, float a, boolean a) {
       if (Method368()) {
-         ScaledResolution a = new ScaledResolution(Field1669);
-         float a = (float)a.getScaleFactor();
-         int a = a.getScaledWidth();
-         int a = a.getScaledHeight();
-         if (Field1671 != a || Field1672 != a || Field1673 != a || Field1670 == null || Field1668 == null) {
+         ScaledResolution var5 = new ScaledResolution(Field1669);
+         float var6 = (float)var5.getScaleFactor();
+         int var7 = var5.getScaledWidth();
+         int var8 = var5.getScaledHeight();
+         if (Field1671 != var6 || Field1672 != var7 || Field1673 != var8 || Field1670 == null || Field1668 == null) {
             Method362();
          }
 
-         Field1671 = a;
-         Field1672 = a;
-         Field1673 = a;
+         Field1671 = var6;
+         Field1672 = var7;
+         Field1673 = var8;
          GL11.glEnable(3089);
          Method369(a, a, a, a);
          GL11.glPushMatrix();
@@ -69,19 +69,19 @@ public class Class348 {
       }
    }
 
-   public static void Method365(float a, float a, float a, float a, float a4, boolean a5) {
+   public static void Method365(float a, float a, float a, float a, float a, boolean a) {
       if (Method368()) {
-         ScaledResolution a = new ScaledResolution(Field1669);
-         float a = (float)a.getScaleFactor();
-         int a = a.getScaledWidth();
-         int a = a.getScaledHeight();
-         if (Field1671 != a || Field1672 != a || Field1673 != a || Field1670 == null || Field1668 == null) {
+         ScaledResolution var6 = new ScaledResolution(Field1669);
+         float var7 = (float)var6.getScaleFactor();
+         int var8 = var6.getScaledWidth();
+         int var9 = var6.getScaledHeight();
+         if (Field1671 != var7 || Field1672 != var8 || Field1673 != var9 || Field1670 == null || Field1668 == null) {
             Method362();
          }
 
-         Field1671 = a;
-         Field1672 = a;
-         Field1673 = a;
+         Field1671 = var7;
+         Field1672 = var8;
+         Field1673 = var9;
          GL11.glEnable(3089);
          Method369(a, a, a, a);
          GL11.glPushMatrix();
@@ -122,11 +122,11 @@ public class Class348 {
 
    public static void Method367(Framebuffer a) {
       EXTFramebufferObject.glDeleteRenderbuffersEXT(a.depthBuffer);
-      int a = EXTFramebufferObject.glGenRenderbuffersEXT();
-      EXTFramebufferObject.glBindRenderbufferEXT(36161, a);
+      int var1 = EXTFramebufferObject.glGenRenderbuffersEXT();
+      EXTFramebufferObject.glBindRenderbufferEXT(36161, var1);
       EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Field1669.displayWidth, Field1669.displayHeight);
-      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, a);
-      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, a);
+      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, var1);
+      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, var1);
    }
 
    public static boolean Method368() {
@@ -139,17 +139,17 @@ public class Class348 {
 
    public static void Method369(float a, float a, float a, float a) {
       Method371();
-      int a = 1;
-      float a = (float)Field1669.gameSettings.guiScale;
-      if (a == 0.0F) {
-         a = 1000.0F;
+      int var5 = 1;
+      float var6 = (float)Field1669.gameSettings.guiScale;
+      if (var6 == 0.0F) {
+         var6 = 1000.0F;
       }
 
-      if ((float)a < a && Field1669.displayWidth / (a + 1) >= 320 && Field1669.displayHeight / (a + 1) >= 240) {
-         ++a;
+      if ((float)var5 < var6 && Field1669.displayWidth / (var5 + 1) >= 320 && Field1669.displayHeight / (var5 + 1) >= 240) {
+         ++var5;
       }
 
-      GL11.glScissor((int)(a * (float)a), (int)((float)Field1669.displayHeight - (a + a) * (float)a), (int)(a * (float)a), (int)(a * (float)a));
+      GL11.glScissor((int)(a * (float)var5), (int)((float)Field1669.displayHeight - (a + a) * (float)var5), (int)(a * (float)var5), (int)(a * (float)var5));
    }
 
    static {

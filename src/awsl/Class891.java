@@ -45,123 +45,123 @@ public class Class891 extends Class877 {
 
    protected void Method3439(int a, int a, float[] a) {
       Class193.Method1270();
-      float a = 0.0F;
-      float a;
-      float a;
-      float a;
-      float a;
+      float var10 = 0.0F;
+      float var5;
+      float var7;
+      float var8;
+      float var9;
       float var10000;
       switch (this.Field3909) {
          case 0:
-            a = 0.0F;
+            var5 = 0.0F;
             if ((float)a >= this.Field3912) {
                if ((float)a > this.Field3913) {
-                  a = 3.1415927F - (float)Math.atan((double)(((float)a - this.Field3912) / ((float)a - this.Field3913)));
-                  a = (float)Math.sqrt((double)(this.Method29((float)a - this.Field3912) + this.Method29((float)a - this.Field3913)));
+                  var5 = 3.1415927F - (float)Math.atan((double)(((float)a - this.Field3912) / ((float)a - this.Field3913)));
+                  var10 = (float)Math.sqrt((double)(this.Method29((float)a - this.Field3912) + this.Method29((float)a - this.Field3913)));
                }
 
                if ((float)a < this.Field3913) {
-                  a = (float)Math.atan((double)(((float)a - this.Field3912) / (this.Field3913 - (float)a)));
-                  a = (float)Math.sqrt((double)(this.Method29((float)a - this.Field3912) + this.Method29(this.Field3913 - (float)a)));
+                  var5 = (float)Math.atan((double)(((float)a - this.Field3912) / (this.Field3913 - (float)a)));
+                  var10 = (float)Math.sqrt((double)(this.Method29((float)a - this.Field3912) + this.Method29(this.Field3913 - (float)a)));
                }
 
-               a = 1.5707964F;
-               a = (float)a - this.Field3912;
+               var5 = 1.5707964F;
+               var10 = (float)a - this.Field3912;
             }
 
             if ((float)a < this.Field3912) {
                if ((float)a < this.Field3913) {
-                  a = 6.2831855F - (float)Math.atan((double)((this.Field3912 - (float)a) / (this.Field3913 - (float)a)));
-                  a = (float)Math.sqrt((double)(this.Method29(this.Field3912 - (float)a) + this.Method29(this.Field3913 - (float)a)));
+                  var5 = 6.2831855F - (float)Math.atan((double)((this.Field3912 - (float)a) / (this.Field3913 - (float)a)));
+                  var10 = (float)Math.sqrt((double)(this.Method29(this.Field3912 - (float)a) + this.Method29(this.Field3913 - (float)a)));
                }
 
                if ((float)a > this.Field3913) {
-                  a = 3.1415927F + (float)Math.atan((double)((this.Field3912 - (float)a) / ((float)a - this.Field3913)));
-                  a = (float)Math.sqrt((double)(this.Method29(this.Field3912 - (float)a) + this.Method29((float)a - this.Field3913)));
+                  var5 = 3.1415927F + (float)Math.atan((double)((this.Field3912 - (float)a) / ((float)a - this.Field3913)));
+                  var10 = (float)Math.sqrt((double)(this.Method29(this.Field3912 - (float)a) + this.Method29((float)a - this.Field3913)));
                }
 
-               a = 4.712389F;
-               a = this.Field3912 - (float)a;
+               var5 = 4.712389F;
+               var10 = this.Field3912 - (float)a;
             }
 
             if ((float)a != this.Field3912) {
-               a = Math.abs(((float)a - this.Field3913) / ((float)a - this.Field3912));
+               var7 = Math.abs(((float)a - this.Field3913) / ((float)a - this.Field3912));
             }
 
-            a = 0.0F;
-            if (a <= this.Field3911 / this.Field3910) {
+            var7 = 0.0F;
+            if (var7 <= this.Field3911 / this.Field3910) {
                if ((float)a == this.Field3912) {
-                  a = 0.0F;
-                  a = this.Field3913;
+                  var8 = 0.0F;
+                  var9 = this.Field3913;
                }
 
-               a = this.Field3912;
-               var10000 = a * a;
+               var8 = this.Field3912;
+               var10000 = var7 * var8;
             }
 
-            a = this.Field3913;
-            var10000 = a / a;
-            a[0] = this.Field3910 - 1.0F - (this.Field3910 - 1.0F) / 6.2831855F * a;
-            a[1] = this.Field3911 * a / this.Field3914;
+            var9 = this.Field3913;
+            var10000 = var9 / var7;
+            a[0] = this.Field3910 - 1.0F - (this.Field3910 - 1.0F) / 6.2831855F * var5;
+            a[1] = this.Field3911 * var10 / this.Field3914;
          case 1:
-            a = (float)a / this.Field3910 * 6.2831855F;
-            float a;
-            if (a >= 4.712389F) {
-               a = 6.2831855F - a;
+            var5 = (float)a / this.Field3910 * 6.2831855F;
+            float var11;
+            if (var5 >= 4.712389F) {
+               var11 = 6.2831855F - var5;
             }
 
-            if (a >= 3.1415927F) {
-               a = a - 3.1415927F;
+            if (var5 >= 3.1415927F) {
+               var11 = var5 - 3.1415927F;
             }
 
-            if (a >= 1.5707964F) {
-               a = 3.1415927F - a;
+            if (var5 >= 1.5707964F) {
+               var11 = 3.1415927F - var5;
             }
 
-            float a = (float)Math.tan((double)a);
-            if (a != 0.0F) {
-               a = 1.0F / a;
+            float var6 = (float)Math.tan((double)var5);
+            if (var6 != 0.0F) {
+               var7 = 1.0F / var6;
             }
 
-            a = 0.0F;
-            if (a <= this.Field3911 / this.Field3910) {
-               if (a == 0.0F) {
-                  a = 0.0F;
-                  a = this.Field3913;
+            var7 = 0.0F;
+            if (var7 <= this.Field3911 / this.Field3910) {
+               if (var5 == 0.0F) {
+                  var8 = 0.0F;
+                  var9 = this.Field3913;
                }
 
-               a = this.Field3912;
-               var10000 = a * a;
+               var8 = this.Field3912;
+               var10000 = var7 * var8;
             }
 
-            a = this.Field3913;
-            var10000 = a / a;
-            a = this.Field3914 * ((float)a / this.Field3911);
-            float a = -a * (float)Math.sin((double)a);
-            float a = a * (float)Math.cos((double)a);
-            if (a >= 4.712389F) {
-               a[0] = this.Field3912 - a;
-               a[1] = this.Field3913 - a;
+            var9 = this.Field3913;
+            var10000 = var9 / var7;
+            var10 = this.Field3914 * ((float)a / this.Field3911);
+            float var12 = -var10 * (float)Math.sin((double)var5);
+            float var13 = var10 * (float)Math.cos((double)var5);
+            if (var5 >= 4.712389F) {
+               a[0] = this.Field3912 - var12;
+               a[1] = this.Field3913 - var13;
             }
 
-            if ((double)a >= Math.PI) {
-               a[0] = this.Field3912 - a;
-               a[1] = this.Field3913 + a;
+            if ((double)var5 >= Math.PI) {
+               a[0] = this.Field3912 - var12;
+               a[1] = this.Field3913 + var13;
             }
 
-            if ((double)a >= 1.5707963267948966) {
-               a[0] = this.Field3912 + a;
-               a[1] = this.Field3913 + a;
+            if ((double)var5 >= 1.5707963267948966) {
+               a[0] = this.Field3912 + var12;
+               a[1] = this.Field3913 + var13;
             }
 
-            a[0] = this.Field3912 + a;
-            a[1] = this.Field3913 - a;
+            a[0] = this.Field3912 + var12;
+            a[1] = this.Field3913 - var13;
          case 2:
-            float a = (float)a - this.Field3912;
-            float a = (float)a - this.Field3913;
-            float a = a * a + a * a;
-            a[0] = this.Field3912 + this.Field3912 * this.Field3912 * a / a;
-            a[1] = this.Field3913 + this.Field3913 * this.Field3913 * a / a;
+            float var14 = (float)a - this.Field3912;
+            float var15 = (float)a - this.Field3913;
+            float var16 = var14 * var14 + var15 * var15;
+            a[0] = this.Field3912 + this.Field3912 * this.Field3912 * var14 / var16;
+            a[1] = this.Field3913 + this.Field3913 * this.Field3913 * var15 / var16;
          default:
       }
    }

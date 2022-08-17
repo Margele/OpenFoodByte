@@ -42,10 +42,10 @@ public class Class603 extends Class599 {
    }
 
    public void Method3690() {
-      float a = 1.0F / (this.Field2813 * this.Field2813 + this.Field2814 * this.Field2814 + this.Field2815 * this.Field2815 + this.Field2816 * this.Field2816);
-      this.Field2813 *= a;
-      this.Field2814 *= a;
-      this.Field2815 *= a;
-      this.Field2816 *= a;
+      float var1 = 1.0F / (this.Field2813 * this.Field2813 + this.Field2814 * this.Field2814 + this.Field2815 * this.Field2815 + this.Field2816 * this.Field2816);
+      this.Field2813 *= var1;
+      this.Field2814 *= var1;
+      this.Field2815 *= var1;
+      this.Field2816 *= var1;
    }
 }

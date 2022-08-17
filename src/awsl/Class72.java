@@ -14,13 +14,13 @@ public class Class72 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1269();
-      BufferedImage a = a;
-      int a = 0;
-      if (a < this.Field689) {
-         a = this.Field688.Method62(a, a);
-         ++a;
+      BufferedImage var4 = a;
+      int var5 = 0;
+      if (var5 < this.Field689) {
+         var4 = this.Field688.Method62(a, a);
+         ++var5;
       }
 
-      return a;
+      return var4;
    }
 }

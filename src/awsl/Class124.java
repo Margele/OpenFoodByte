@@ -57,9 +57,9 @@ public class Class124 extends Class148 {
          this.Field974.Method2530(a);
       }
 
-      Class124 a = new Class124(a);
-      this.Field974.Method2530(a);
-      return a;
+      Class124 var3 = new Class124(a);
+      this.Field974.Method2530(var3);
+      return var3;
    }
 
    public Class148 Method400(String a) {
@@ -71,9 +71,9 @@ public class Class124 extends Class148 {
          this.Field974.Method2530(a);
       }
 
-      List a = new ArrayList();
-      this.Field974.Method2530(a);
-      return new Class124(a);
+      ArrayList var2 = new ArrayList();
+      this.Field974.Method2530(var2);
+      return new Class124(var2);
    }
 
    public void Method401() {
@@ -84,10 +84,10 @@ public class Class124 extends Class148 {
 
    public void Method646(Class148 a) {
       if (this.Field974 != null) {
-         for(int a = 0; a < this.Field974.Method1799(); a += 2) {
-            String a = (String)this.Field974.get(a);
-            Object a = this.Field974.get(a + 1);
-            Method647(a, a, a);
+         for(int var2 = 0; var2 < this.Field974.Method1799(); var2 += 2) {
+            String var3 = (String)this.Field974.get(var2);
+            Object var4 = this.Field974.get(var2 + 1);
+            Method647(a, var3, var4);
          }
       }
 
@@ -95,27 +95,27 @@ public class Class124 extends Class148 {
    }
 
    static void Method647(Class148 a, String a, Object a) {
-      int a = Class15.Method3445();
+      int var3 = Class15.Method3445();
       if (a instanceof String[]) {
-         String[] a = (String[])((String[])a);
-         a.Method398(a, a[0], a[1]);
+         String[] var4 = (String[])((String[])a);
+         a.Method398(a, var4[0], var4[1]);
       }
 
       if (a instanceof Class124) {
-         Class124 a = (Class124)a;
-         a.Method646(a.Method399(a, a.Field973));
+         Class124 var7 = (Class124)a;
+         var7.Method646(a.Method399(a, var7.Field973));
       }
 
       if (a instanceof List) {
-         Class148 a = a.Method400(a);
-         List a = (List)a;
-         int a = 0;
-         if (a < a.Method1799()) {
-            Method647(a, (String)null, a.get(a));
-            ++a;
+         Class148 var8 = a.Method400(a);
+         List var5 = (List)a;
+         int var6 = 0;
+         if (var6 < var5.Method1799()) {
+            Method647(var8, (String)null, var5.get(var6));
+            ++var6;
          }
 
-         a.Method401();
+         var8.Method401();
       }
 
       a.Method397(a, a);

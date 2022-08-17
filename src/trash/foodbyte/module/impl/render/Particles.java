@@ -38,9 +38,9 @@ public class Particles extends Module {
    @EventTarget
    public void Method273(EventPacket a) {
       if (a.isSend() && a.getPacket() instanceof C02PacketUseEntity) {
-         C02PacketUseEntity a = (C02PacketUseEntity)a.getPacket();
-         if (a.getAction() == Action.ATTACK) {
-            this.Field2208 = (EntityLivingBase)a.getEntityFromWorld(mc.theWorld);
+         C02PacketUseEntity var2 = (C02PacketUseEntity)a.getPacket();
+         if (var2.getAction() == Action.ATTACK) {
+            this.Field2208 = (EntityLivingBase)var2.getEntityFromWorld(mc.theWorld);
          }
       }
 
@@ -48,12 +48,12 @@ public class Particles extends Module {
 
    @EventTarget
    public void Method755(EventTick a) {
-      String a = Class492.Method2239();
+      String var2 = Class492.Method2239();
       if (this.Field2208 != null && this.Field2208.hurtTime >= 9 && mc.thePlayer.getDistance(this.Field2208.posX, this.Field2208.posY, this.Field2208.posZ) < 10.0) {
-         int a = 0;
-         if ((float)a < this.Field2205.getFloatValue()) {
+         int var3 = 0;
+         if ((float)var3 < this.Field2205.getFloatValue()) {
             this.Field2206.Method2530(new Class285(new Class216(this.Field2208.posX + (Math.random() - 0.5) * 0.5, this.Field2208.posY + Math.random() * 1.0 + 0.5, this.Field2208.posZ + (Math.random() - 0.5) * 0.5)));
-            ++a;
+            ++var3;
          }
 
          this.Field2208 = null;
@@ -63,18 +63,18 @@ public class Particles extends Module {
 
    @EventTarget
    public void Method802(EventRender3D a) {
-      String a = Class492.Method2239();
+      String var2 = Class492.Method2239();
       if (!this.Field2206.isEmpty()) {
          Minecraft var10001 = mc;
-         int a = 3000 / Minecraft.getDebugFPS();
-         int a = 0;
-         if (a <= a) {
+         int var3 = 3000 / Minecraft.getDebugFPS();
+         int var4 = 0;
+         if (var4 <= var3) {
             if (this.Field2204.getBooleanValue()) {
                this.Field2206.forEach(Class285::Method3096);
             }
 
             this.Field2206.forEach(Class285::Method3097);
-            ++a;
+            ++var4;
          }
 
          this.Field2206.removeIf(Particles::Method2278);

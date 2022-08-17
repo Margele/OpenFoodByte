@@ -13,31 +13,31 @@ class Class194 extends Class143 {
 
    public void Method380(int[] a, int[] a, float a) {
       Class236.Method2106();
-      int a = a.length;
-      int a = 0;
-      if (a < a) {
-         int a = a[a];
-         int a = a[a];
-         int a = a[a + 1];
-         int a = a[a + 1];
-         int a = a[a + 2];
-         int a = a[a + 2];
-         int a = a[a + 3];
-         int a = a[a + 3];
-         Color.RGBtoHSB(a, a, a, this.Field1160);
-         Color.RGBtoHSB(a, a, a, this.Field1161);
+      int var5 = a.length;
+      int var6 = 0;
+      if (var6 < var5) {
+         int var7 = a[var6];
+         int var8 = a[var6];
+         int var9 = a[var6 + 1];
+         int var10 = a[var6 + 1];
+         int var11 = a[var6 + 2];
+         int var12 = a[var6 + 2];
+         int var13 = a[var6 + 3];
+         int var14 = a[var6 + 3];
+         Color.RGBtoHSB(var7, var9, var11, this.Field1160);
+         Color.RGBtoHSB(var8, var10, var12, this.Field1161);
          this.Field1161[2] = this.Field1160[2];
-         int a = Color.HSBtoRGB(this.Field1161[0], this.Field1161[1], this.Field1161[2]);
-         int a = (a & 16711680) >> 16;
-         int a = (a & '\uff00') >> 8;
-         int a = a & 255;
-         float a = a * (float)a / 255.0F;
-         float a = 1.0F - a;
-         a[a] = (int)(a * (float)a + a * (float)a);
-         a[a + 1] = (int)(a * (float)a + a * (float)a);
-         a[a + 2] = (int)(a * (float)a + a * (float)a);
-         a[a + 3] = (int)((float)a * a + (float)a * a);
-         a += 4;
+         int var18 = Color.HSBtoRGB(this.Field1161[0], this.Field1161[1], this.Field1161[2]);
+         int var15 = (var18 & 16711680) >> 16;
+         int var16 = (var18 & '\uff00') >> 8;
+         int var17 = var18 & 255;
+         float var19 = a * (float)var13 / 255.0F;
+         float var20 = 1.0F - var19;
+         a[var6] = (int)(var19 * (float)var15 + var20 * (float)var8);
+         a[var6 + 1] = (int)(var19 * (float)var16 + var20 * (float)var10);
+         a[var6 + 2] = (int)(var19 * (float)var17 + var20 * (float)var12);
+         a[var6 + 3] = (int)((float)var13 * a + (float)var14 * var20);
+         var6 += 4;
       }
 
    }

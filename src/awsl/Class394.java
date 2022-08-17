@@ -12,8 +12,8 @@ public abstract class Class394 extends Class390 {
       this.Field1920 = "Button";
    }
 
-   public void Method412(int a, int a1) {
-      int a = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
+   public void Method412(int a, int a) {
+      int var3 = this.Field1909 - (this.Field1919.Method1418() ? 2 : 0);
       if (this.Field1915) {
          RenderUtils.Method1103((float)this.Field1907, (float)this.Field1908, (float)this.Method1310(), (float)this.Field1910, Class681.Method2699(Class707.Method1829(), -250));
       }

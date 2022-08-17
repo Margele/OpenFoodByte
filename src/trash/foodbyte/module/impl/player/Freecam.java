@@ -42,7 +42,7 @@ public class Freecam extends Module {
       if (!a.isRecieve()) {
          if (!(a.getPacket() instanceof C03PacketPlayer.C06PacketPlayerPosLook) && !(a.getPacket() instanceof C03PacketPlayer.C04PacketPlayerPosition) && !(a.getPacket() instanceof C03PacketPlayer.C05PacketPlayerLook)) {
             if (a.getPacket() instanceof C03PacketPlayer) {
-               C03PacketPlayer a = (C03PacketPlayer)a.getPacket();
+               C03PacketPlayer var2 = (C03PacketPlayer)a.getPacket();
                ++this.Field2744;
                if (this.Field2744 > 20) {
                   a.setCancelled(true);
@@ -50,8 +50,8 @@ public class Freecam extends Module {
                   this.Field2744 = 0;
                }
             } else if (a.getPacket() instanceof C0BPacketEntityAction) {
-               C0BPacketEntityAction a = (C0BPacketEntityAction)a.getPacket();
-               if (a.getAction() == Action.START_SPRINTING || a.getAction() == Action.STOP_SPRINTING) {
+               C0BPacketEntityAction var3 = (C0BPacketEntityAction)a.getPacket();
+               if (var3.getAction() == Action.START_SPRINTING || var3.getAction() == Action.STOP_SPRINTING) {
                   a.setCancelled(true);
                }
             }
@@ -65,78 +65,78 @@ public class Freecam extends Module {
 
    @EventTarget
    public void Method274(EventMove a) {
-      int a = Class148.Method1444();
+      int var2 = Class148.Method1444();
       if (a.isLocalPlayer()) {
          this.Field2739.setSneaking(mc.thePlayer.isSneaking());
          mc.thePlayer.noClip = true;
          mc.thePlayer.onGround = this.Field2739.onGround;
-         float a = this.Field2740.getFloatValue();
+         float var3 = this.Field2740.getFloatValue();
          if (mc.thePlayer.movementInput.jump) {
-            a.setY(mc.thePlayer.motionY = (double)a);
+            a.setY(mc.thePlayer.motionY = (double)var3);
          }
 
          if (mc.thePlayer.movementInput.sneak) {
-            a.setY(mc.thePlayer.motionY = (double)(-a));
+            a.setY(mc.thePlayer.motionY = (double)(-var3));
          }
 
          a.setY(mc.thePlayer.motionY = 0.0);
-         a = (float)Math.max((double)a, Method275());
-         double a = (double)mc.thePlayer.movementInput.moveForward;
-         double a = (double)mc.thePlayer.movementInput.moveStrafe;
-         float a = mc.thePlayer.rotationYaw;
-         if (a == 0.0 && a == 0.0) {
+         var3 = (float)Math.max((double)var3, Method275());
+         double var4 = (double)mc.thePlayer.movementInput.moveForward;
+         double var6 = (double)mc.thePlayer.movementInput.moveStrafe;
+         float var8 = mc.thePlayer.rotationYaw;
+         if (var4 == 0.0 && var6 == 0.0) {
             a.setX(0.0);
             a.setZ(0.0);
          }
 
-         if (a != 0.0) {
-            if (a > 0.0) {
-               a = 1.0;
-               a += (float)(a > 0.0 ? -45 : 45);
+         if (var4 != 0.0) {
+            if (var6 > 0.0) {
+               var6 = 1.0;
+               var8 += (float)(var4 > 0.0 ? -45 : 45);
             }
 
-            if (a < 0.0) {
-               a += (float)(a > 0.0 ? 45 : -45);
+            if (var6 < 0.0) {
+               var8 += (float)(var4 > 0.0 ? 45 : -45);
             }
 
-            a = 0.0;
-            if (a > 0.0) {
-               a = 1.0;
+            var6 = 0.0;
+            if (var4 > 0.0) {
+               var4 = 1.0;
             }
 
-            a = -1.0;
+            var4 = -1.0;
          }
 
-         a.setX(a * (double)a * Math.cos(Math.toRadians((double)(a + 90.0F))) + a * (double)a * Math.sin(Math.toRadians((double)(a + 90.0F))));
-         a.setZ(a * (double)a * Math.sin(Math.toRadians((double)(a + 90.0F))) - a * (double)a * Math.cos(Math.toRadians((double)(a + 90.0F))));
+         a.setX(var4 * (double)var3 * Math.cos(Math.toRadians((double)(var8 + 90.0F))) + var6 * (double)var3 * Math.sin(Math.toRadians((double)(var8 + 90.0F))));
+         a.setZ(var4 * (double)var3 * Math.sin(Math.toRadians((double)(var8 + 90.0F))) - var6 * (double)var3 * Math.cos(Math.toRadians((double)(var8 + 90.0F))));
       }
 
    }
 
    public static double Method275() {
-      double a = 0.2873;
+      double var0 = 0.2873;
       if (mc.thePlayer.isPotionActive(Potion.moveSpeed)) {
-         int a = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
-         a *= 1.0 + 0.2 * (double)(a + 1);
+         int var2 = mc.thePlayer.getActivePotionEffect(Potion.moveSpeed).getAmplifier();
+         var0 *= 1.0 + 0.2 * (double)(var2 + 1);
       }
 
-      return a;
+      return var0;
    }
 
    public float Method276() {
-      float a = mc.thePlayer.rotationYaw;
-      float a = mc.thePlayer.moveForward;
-      float a = mc.thePlayer.moveStrafing;
-      a += (float)(a < 0.0F ? 180 : 0);
-      if (a < 0.0F) {
-         a += a < 0.0F ? -45.0F : (a == 0.0F ? 90.0F : 45.0F);
+      float var1 = mc.thePlayer.rotationYaw;
+      float var2 = mc.thePlayer.moveForward;
+      float var3 = mc.thePlayer.moveStrafing;
+      var1 += (float)(var2 < 0.0F ? 180 : 0);
+      if (var3 < 0.0F) {
+         var1 += var2 < 0.0F ? -45.0F : (var2 == 0.0F ? 90.0F : 45.0F);
       }
 
-      if (a > 0.0F) {
-         a -= a < 0.0F ? -45.0F : (a == 0.0F ? 90.0F : 45.0F);
+      if (var3 > 0.0F) {
+         var1 -= var2 < 0.0F ? -45.0F : (var2 == 0.0F ? 90.0F : 45.0F);
       }
 
-      return a * 0.017453292F;
+      return var1 * 0.017453292F;
    }
 
    public void Method277(double a) {

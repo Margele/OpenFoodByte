@@ -18,9 +18,9 @@ class Class142 implements Iterator {
    }
 
    public Integer Method1422() {
-      int a = this.Field995.Field992.codePointAt(this.Field993);
-      this.Field993 += Character.charCount(a);
-      return a;
+      int var1 = this.Field995.Field992.codePointAt(this.Field993);
+      this.Field993 += Character.charCount(var1);
+      return var1;
    }
 
    public void Method934() {

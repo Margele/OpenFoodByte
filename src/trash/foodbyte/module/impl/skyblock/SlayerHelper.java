@@ -52,14 +52,14 @@ public class SlayerHelper extends Module {
 
    @EventTarget
    public void Method1186(EventPacket a) {
-      int[] a = Class98.Method3639();
+      int[] var2 = Class98.Method3639();
       if (a.isSend() && Field3134.getBooleanValue()) {
          if (a.getPacket() instanceof C02PacketUseEntity) {
-            C02PacketUseEntity a = (C02PacketUseEntity)a.getPacket();
-            if (a.getAction() == net.minecraft.network.play.client.C02PacketUseEntity.Action.ATTACK && a.getEntityFromWorld(mc.theWorld) instanceof EntityEnderman) {
-               EntityEnderman a = (EntityEnderman)a.getEntityFromWorld(mc.theWorld);
+            C02PacketUseEntity var3 = (C02PacketUseEntity)a.getPacket();
+            if (var3.getAction() == net.minecraft.network.play.client.C02PacketUseEntity.Action.ATTACK && var3.getEntityFromWorld(mc.theWorld) instanceof EntityEnderman) {
+               EntityEnderman var4 = (EntityEnderman)var3.getEntityFromWorld(mc.theWorld);
                this.Field3136 = 0;
-               if (!this.Field3135 && a.getEntityAttribute(SharedMonsterAttributes.maxHealth).getBaseValue() >= 750000.0) {
+               if (!this.Field3135 && var4.getEntityAttribute(SharedMonsterAttributes.maxHealth).getBaseValue() >= 750000.0) {
                   this.Field3135 = !this.Field3135;
                   Wrapper.INSTANCE.sendPacketNoEvent(new C0BPacketEntityAction(mc.thePlayer, Action.START_SNEAKING));
                }
@@ -71,8 +71,8 @@ public class SlayerHelper extends Module {
          }
 
          if (a.getPacket() instanceof C0BPacketEntityAction) {
-            C0BPacketEntityAction a = (C0BPacketEntityAction)a.getPacket();
-            if (this.Field3135 && (a.getAction().equals(Action.START_SNEAKING) || a.getAction().equals(Action.STOP_SNEAKING))) {
+            C0BPacketEntityAction var5 = (C0BPacketEntityAction)a.getPacket();
+            if (this.Field3135 && (var5.getAction().equals(Action.START_SNEAKING) || var5.getAction().equals(Action.STOP_SNEAKING))) {
                a.setCancelled(true);
             }
          }

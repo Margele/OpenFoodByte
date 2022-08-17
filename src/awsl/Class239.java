@@ -112,7 +112,7 @@ public final class Class239 implements Composite {
       }
    }
 
-   public CompositeContext Method1356(ColorModel a, ColorModel a, RenderingHints a2) {
+   public CompositeContext Method1356(ColorModel a, ColorModel a, RenderingHints a) {
       return new Class237(this.Field1339, this.Field1338, a, a);
    }
 
@@ -132,11 +132,11 @@ public final class Class239 implements Composite {
       if (!(a instanceof Class239)) {
          return false;
       } else {
-         Class239 a = (Class239)a;
-         if (this.Field1339 != a.Field1339) {
+         Class239 var2 = (Class239)a;
+         if (this.Field1339 != var2.Field1339) {
             return false;
          } else {
-            return this.Field1338 == a.Field1338;
+            return this.Field1338 == var2.Field1338;
          }
       }
    }

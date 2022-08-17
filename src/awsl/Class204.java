@@ -9,30 +9,30 @@ class Class204 extends Class143 {
 
    public void Method380(int[] a, int[] a, float a) {
       Class236.Method2106();
-      int a = a.length;
-      int a = 0;
-      if (a < a) {
-         int a = a[a];
-         int a = a[a];
-         int a = a[a + 1];
-         int a = a[a + 1];
-         int a = a[a + 2];
-         int a = a[a + 2];
-         int a = a[a + 3];
-         int a = a[a + 3];
-         int a = Method1435(a, a);
-         int a = a + Method1435(a, 255 - Method1435(255 - a, 255 - a) - a);
-         a = Method1435(a, a);
-         int a = a + Method1435(a, 255 - Method1435(255 - a, 255 - a) - a);
-         a = Method1435(a, a);
-         int a = a + Method1435(a, 255 - Method1435(255 - a, 255 - a) - a);
-         float a = a * (float)a / 255.0F;
-         float a = 1.0F - a;
-         a[a] = (int)(a * (float)a + a * (float)a);
-         a[a + 1] = (int)(a * (float)a + a * (float)a);
-         a[a + 2] = (int)(a * (float)a + a * (float)a);
-         a[a + 3] = (int)((float)a * a + (float)a * a);
-         a += 4;
+      int var5 = a.length;
+      int var6 = 0;
+      if (var6 < var5) {
+         int var7 = a[var6];
+         int var8 = a[var6];
+         int var9 = a[var6 + 1];
+         int var10 = a[var6 + 1];
+         int var11 = a[var6 + 2];
+         int var12 = a[var6 + 2];
+         int var13 = a[var6 + 3];
+         int var14 = a[var6 + 3];
+         int var18 = Method1435(var7, var8);
+         int var15 = var18 + Method1435(var8, 255 - Method1435(255 - var8, 255 - var7) - var18);
+         var18 = Method1435(var9, var10);
+         int var16 = var18 + Method1435(var10, 255 - Method1435(255 - var10, 255 - var9) - var18);
+         var18 = Method1435(var11, var12);
+         int var17 = var18 + Method1435(var12, 255 - Method1435(255 - var12, 255 - var11) - var18);
+         float var19 = a * (float)var13 / 255.0F;
+         float var20 = 1.0F - var19;
+         a[var6] = (int)(var19 * (float)var15 + var20 * (float)var8);
+         a[var6 + 1] = (int)(var19 * (float)var16 + var20 * (float)var10);
+         a[var6 + 2] = (int)(var19 * (float)var17 + var20 * (float)var12);
+         a[var6 + 3] = (int)((float)var13 * a + (float)var14 * var20);
+         var6 += 4;
       }
 
    }

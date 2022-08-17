@@ -48,7 +48,7 @@ public class Class606 {
       this.Field2846 = System.currentTimeMillis();
    }
 
-   public Class606(String a, String a, String a, String a, String a, long a5, long a6, long a, boolean a, boolean a) {
+   public Class606(String a, String a, String a, String a, String a, long a, long a, long a, boolean a, boolean a) {
       this.Field2838 = a;
       this.Field2839 = a;
       this.Field2840 = a;
@@ -62,15 +62,15 @@ public class Class606 {
    }
 
    public JsonObject Method3734() {
-      JsonObject a = new JsonObject();
-      a.addProperty("client", this.Field2838);
-      a.addProperty("name", this.Field2840);
-      a.addProperty("rank", this.Field2839);
-      a.addProperty("ranklvl", 0);
-      a.addProperty("muteTime", this.Field2845);
-      a.addProperty("hide", this.Field2847);
-      a.addProperty("MT", this.Field2848);
-      return a;
+      JsonObject var1 = new JsonObject();
+      var1.addProperty("client", this.Field2838);
+      var1.addProperty("name", this.Field2840);
+      var1.addProperty("rank", this.Field2839);
+      var1.addProperty("ranklvl", 0);
+      var1.addProperty("muteTime", this.Field2845);
+      var1.addProperty("hide", this.Field2847);
+      var1.addProperty("MT", this.Field2848);
+      return var1;
    }
 
    public void Method3735(JsonObject a) {
@@ -169,28 +169,28 @@ public class Class606 {
    }
 
    public String Method3738(String a) {
-      String a = "§b";
+      String var2 = "§b";
       switch (this.Field2843) {
          case 1:
-            a = "§a";
+            var2 = "§a";
             break;
          case 2:
-            a = "§5";
+            var2 = "§5";
             break;
          case 3:
-            a = "§9";
+            var2 = "§9";
             break;
          case 4:
-            a = "§2";
+            var2 = "§2";
             break;
          case 5:
-            a = "§c";
+            var2 = "§c";
             break;
          case 999:
-            a = "§3";
+            var2 = "§3";
       }
 
-      return a + "[" + a + a + "]§r";
+      return var2 + "[" + a + var2 + "]§r";
    }
 
    public String Method3739() {
@@ -213,18 +213,18 @@ public class Class606 {
    }
 
    public String Method3742(long a) {
-      long a = 86400000L;
-      long a = 3600000L;
-      long a = 60000L;
-      long a = 1000L;
-      long a = a / a;
-      long a = a % a / a;
-      long a = a % a % a / a;
-      long a = a % a % a % a / a;
-      String a = a <= 0L ? "" : a + "d ";
-      String a = a <= 0L ? "" : a + "h ";
-      String a = a <= 0L ? "" : a + "m ";
-      String a = a <= 0L ? "" : a + "s";
-      return a + a + a + a;
+      long var3 = 86400000L;
+      long var5 = 3600000L;
+      long var7 = 60000L;
+      long var9 = 1000L;
+      long var13 = a / var3;
+      long var15 = a % var3 / var5;
+      long var17 = a % var3 % var5 / var7;
+      long var19 = a % var3 % var5 % var7 / var9;
+      String var21 = var13 <= 0L ? "" : var13 + "d ";
+      String var22 = var15 <= 0L ? "" : var15 + "h ";
+      String var23 = var17 <= 0L ? "" : var17 + "m ";
+      String var24 = var19 <= 0L ? "" : var19 + "s";
+      return var21 + var22 + var23 + var24;
    }
 }

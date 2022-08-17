@@ -18,19 +18,19 @@ public class Panic extends Module {
    public void onEnable() {
       int var10000 = FloatValue.Method2450();
       Iterator var2 = ModuleManager.getAllModules().Method1383();
-      int a = var10000;
+      int var1 = var10000;
       if (var2.Method932()) {
-         Module a = (Module)var2.Method933();
-         if (!a.getState()) {
+         Module var3 = (Module)var2.Method933();
+         if (!var3.getState()) {
             ;
          }
 
-         a.setState(false);
+         var3.setState(false);
       }
 
       if (a.trash() == null) {
-         ++a;
-         FloatValue.Method2440(a);
+         ++var1;
+         FloatValue.Method2440(var1);
       }
 
    }

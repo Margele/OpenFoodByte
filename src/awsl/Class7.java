@@ -13,23 +13,23 @@ public class Class7 extends Class0 {
    }
 
    public Class148 Method1968() {
-      Class148 a = super.Method1968();
-      return a;
+      Class148 var1 = super.Method1968();
+      return var1;
    }
 
    public Class148 Method1969(String a, boolean a) {
-      Class148 a = super.Method1969(this.Field110.Method3372(a), a);
-      return a;
+      Class148 var3 = super.Method1969(this.Field110.Method3372(a), a);
+      return var3;
    }
 
    public Class148 Method1970(int a, Class31 a, String a, boolean a) {
-      Class148 a = super.Method1970(a, a, this.Field110.Method3372(a), a);
-      return a;
+      Class148 var5 = super.Method1970(a, a, this.Field110.Method3372(a), a);
+      return var5;
    }
 
    public Class148 Method1971(int a, String a, boolean a) {
-      Class148 a = super.Method1971(a, this.Field110.Method3372(a), a);
-      return a;
+      Class148 var4 = super.Method1971(a, this.Field110.Method3372(a), a);
+      return var4;
    }
 
    public void Method1845(int a, int a, Object[] a, int a, Object[] a) {
@@ -38,21 +38,21 @@ public class Class7 extends Class0 {
 
    private Object[] Method1972(int a, Object[] a) {
       Class37.Method3382();
-      int a = 0;
-      if (a < a) {
-         if (a[a] instanceof String) {
-            Object[] a = new Object[a];
-            System.arraycopy(a, 0, a, 0, a);
+      int var4 = 0;
+      if (var4 < a) {
+         if (a[var4] instanceof String) {
+            Object[] var5 = new Object[a];
+            System.arraycopy(a, 0, var5, 0, var4);
 
             do {
-               Object a = a[a];
-               a[a++] = a instanceof String ? this.Field110.Method3374((String)a) : a;
-            } while(a < a);
+               Object var6 = a[var4];
+               var5[var4++] = var6 instanceof String ? this.Field110.Method3374((String)var6) : var6;
+            } while(var4 < a);
 
-            return a;
+            return var5;
          }
 
-         ++a;
+         ++var4;
       }
 
       return a;
@@ -89,10 +89,10 @@ public class Class7 extends Class0 {
 
    public void Method1956(String a, String a, Class279 a, Object[] a) {
       Class37.Method3383();
-      int a = 0;
-      if (a < a.length) {
-         a[a] = this.Field110.Method3377(a[a]);
-         ++a;
+      int var6 = 0;
+      if (var6 < a.length) {
+         a[var6] = this.Field110.Method3377(a[var6]);
+         ++var6;
       }
 
       super.Method1956(this.Field110.Method3380(a, a), this.Field110.Method3376(a), (Class279)this.Field110.Method3377(a), a);
@@ -111,17 +111,17 @@ public class Class7 extends Class0 {
    }
 
    public Class148 Method1973(int a, Class31 a, String a, boolean a) {
-      Class148 a = super.Method1973(a, a, this.Field110.Method3372(a), a);
-      return a;
+      Class148 var5 = super.Method1973(a, a, this.Field110.Method3372(a), a);
+      return var5;
    }
 
-   public void Method1960(Class264 a, Class264 a, Class264 a, String a3) {
+   public void Method1960(Class264 a, Class264 a, Class264 a, String a) {
       super.Method1960(a, a, a, (String)null);
    }
 
    public Class148 Method1974(int a, Class31 a, String a, boolean a) {
-      Class148 a = super.Method1974(a, a, this.Field110.Method3372(a), a);
-      return a;
+      Class148 var5 = super.Method1974(a, a, this.Field110.Method3372(a), a);
+      return var5;
    }
 
    public void Method1843(String a, String a, String a, Class264 a, Class264 a, int a) {
@@ -129,7 +129,7 @@ public class Class7 extends Class0 {
    }
 
    public Class148 Method1844(int a, Class31 a, Class264[] a, Class264[] a, int[] a, String a, boolean a) {
-      Class148 a = super.Method1844(a, a, a, a, a, this.Field110.Method3372(a), a);
-      return a;
+      Class148 var8 = super.Method1844(a, a, a, a, a, this.Field110.Method3372(a), a);
+      return var8;
    }
 }

@@ -15,12 +15,12 @@ public class Class115 extends Class119 {
 
    public void Method56(float a) {
       this.Field903 = a;
-      float a = (float)Math.cos((double)a);
-      float a = (float)Math.sin((double)a);
-      this.Field908 = a;
-      this.Field909 = a;
-      this.Field910 = -a;
-      this.Field911 = a;
+      float var2 = (float)Math.cos((double)a);
+      float var3 = (float)Math.sin((double)a);
+      this.Field908 = var2;
+      this.Field909 = var3;
+      this.Field910 = -var3;
+      this.Field911 = var2;
    }
 
    public float Method57() {
@@ -67,26 +67,26 @@ public class Class115 extends Class119 {
 
    public int Method3(int a, int a, int a) {
       Class193.Method1270();
-      float a = this.Field908 * (float)a + this.Field909 * (float)a;
-      float a = this.Field910 * (float)a + this.Field911 * (float)a;
+      float var5 = this.Field908 * (float)a + this.Field909 * (float)a;
+      float var6 = this.Field910 * (float)a + this.Field911 * (float)a;
       if (this.Field906 == 2) {
-         a = (float)Math.sqrt((double)(a * a + a * a));
+         var5 = (float)Math.sqrt((double)(var5 * var5 + var6 * var6));
       }
 
       if (this.Field906 == 3) {
-         a = Class776.Method1714(a, 16.0F);
+         var5 = Class776.Method1714(var5, 16.0F);
       }
 
       if (this.Field906 == 4) {
-         a = this.Method20(a, 16.0F);
+         var5 = this.Method20(var5, 16.0F);
       }
 
-      int a = (int)(Class776.Method1708(this.Field904, this.Field904 + this.Field905, a) * 255.0F);
+      int var7 = (int)(Class776.Method1708(this.Field904, this.Field904 + this.Field905, var5) * 255.0F);
       if (this.Field907) {
-         a = 255 - a;
+         var7 = 255 - var7;
       }
 
-      return a << 24 | a & 16777215;
+      return var7 << 24 | a & 16777215;
    }
 
    public float Method20(float a, float a) {

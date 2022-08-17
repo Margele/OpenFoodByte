@@ -29,8 +29,8 @@ public class Class816 implements Class797 {
       if (!(a instanceof Class816)) {
          return false;
       } else {
-         Class816 a = (Class816)a;
-         return this.Field3652 == a.Field3652 && this.Field3653.equals(a.Field3653);
+         Class816 var2 = (Class816)a;
+         return this.Field3652 == var2.Field3652 && this.Field3653.equals(var2.Field3653);
       }
    }
 

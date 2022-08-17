@@ -18,14 +18,14 @@ public class IRCCommand extends Command {
    public native boolean Method2357(String string);
 
    public static String Method2358(String a) {
-      String[] a = a.split(" ");
-      StringBuilder a = new StringBuilder();
+      String[] var1 = a.split(" ");
+      StringBuilder var2 = new StringBuilder();
 
-      for(int a = 1; a < a.length; ++a) {
-         a.append(a[a]).append(" ");
+      for(int var3 = 1; var3 < var1.length; ++var3) {
+         var2.append(var1[var3]).append(" ");
       }
 
-      return a.toString();
+      return var2.toString();
    }
 
    static {
@@ -39,22 +39,22 @@ public class IRCCommand extends Command {
    }
 
    public void onCommand(String[] commands) {
-      int a = GetDmgCommand.Method3599();
+      int var2 = GetDmgCommand.Method3599();
       if (commands.length == 1) {
          ChatUtils.addChatMessage(this.getHelp());
       }
 
-      String a = Method1663(commands, " ", 1, commands.length);
-      if (!this.Method2357(a)) {
-         if (a.startsWith(Method2017(-21088, -31357))) {
+      String var3 = Method1663(commands, " ", 1, commands.length);
+      if (!this.Method2357(var3)) {
+         if (var3.startsWith(Method2017(-21088, -31357))) {
             if (GlobalModule.INSTANCE.balant.Field2834 != null && GlobalModule.INSTANCE.balant.Field2834.isOpen()) {
                ChatUtils.addChatMessage(Method2017(-21080, 16306));
             }
 
             if (commands.length == 3) {
-               String a = Method1663(commands, " ", 2, commands.length);
+               String var4 = Method1663(commands, " ", 2, commands.length);
                if (commands[1].startsWith(Method2017(-21084, -10762))) {
-                  GlobalModule.INSTANCE.balant.Field2830 = a;
+                  GlobalModule.INSTANCE.balant.Field2830 = var4;
                }
             }
 
@@ -64,11 +64,11 @@ public class IRCCommand extends Command {
 
             GlobalModule.INSTANCE.balant.Method3699();
          } else if (GlobalModule.INSTANCE.balant.Field2834 != null && GlobalModule.INSTANCE.balant.Field2834.isOpen()) {
-            if (a.startsWith("/")) {
-               GlobalModule.INSTANCE.balant.Method3711(new Class613(a));
+            if (var3.startsWith("/")) {
+               GlobalModule.INSTANCE.balant.Method3711(new Class613(var3));
             }
 
-            GlobalModule.INSTANCE.balant.Method3711(new Class548(a, 0L, 0.0, 0L));
+            GlobalModule.INSTANCE.balant.Method3711(new Class548(var3, 0L, 0.0, 0L));
          } else {
             ChatUtils.addChatMessage(Method2017(-21086, 1949));
          }

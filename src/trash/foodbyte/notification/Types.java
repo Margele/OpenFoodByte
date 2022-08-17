@@ -17,7 +17,7 @@ public enum Types {
       return (Types)Enum.valueOf(Types.class, a);
    }
 
-   private Types(String a, int a1, int a) {
+   private Types(String a, int a, int a) {
       this.Field2954 = a;
    }
 

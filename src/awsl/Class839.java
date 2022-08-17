@@ -3,42 +3,42 @@ package awsl;
 import java.awt.Rectangle;
 
 public class Class839 extends Class798 {
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
       Class193.Method1270();
-      int a = 0;
-      int[] a = new int[a * a];
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         if (a < a) {
-            int a = -16777216;
-            int a = -1;
-            if (a <= 1) {
-               int a = a + a;
-               if (0 <= a && a < a) {
-                  int a = a * a;
-                  int a = -1;
-                  if (a <= 1) {
-                     int a = a + a;
-                     if (0 <= a && a < a) {
-                        a = Class767.Method1691(a, a[a + a], 3);
+      int var6 = 0;
+      int[] var7 = new int[a * a];
+      int var8 = 0;
+      if (var8 < a) {
+         int var9 = 0;
+         if (var9 < a) {
+            int var10 = -16777216;
+            int var11 = -1;
+            if (var11 <= 1) {
+               int var12 = var8 + var11;
+               if (0 <= var12 && var12 < a) {
+                  int var13 = var12 * a;
+                  int var14 = -1;
+                  if (var14 <= 1) {
+                     int var15 = var9 + var14;
+                     if (0 <= var15 && var15 < a) {
+                        var10 = Class767.Method1691(var10, a[var13 + var15], 3);
                      }
 
-                     ++a;
+                     ++var14;
                   }
                }
 
-               ++a;
+               ++var11;
             }
 
-            a[a++] = a;
-            ++a;
+            var7[var6++] = var10;
+            ++var9;
          }
 
-         ++a;
+         ++var8;
       }
 
-      return a;
+      return var7;
    }
 
    public String toString() {

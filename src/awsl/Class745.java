@@ -35,67 +35,67 @@ public class Class745 {
       this.Field3268 = new float[3];
       this.Field3263 = a * a;
       this.Field3269 = true;
-      int a = false;
-      int a = 0;
-      int a;
-      if (a < a) {
-         int a = a + a * a;
-         a = 0;
-         if (a < a) {
-            int a = a[a++];
-            int a = a >> 16 & 255;
-            int a = a >> 8 & 255;
-            int a = a & 255;
-            int var10002 = this.Field3262[0][a]++;
-            var10002 = this.Field3262[1][a]++;
-            var10002 = this.Field3262[2][a]++;
-            ++a;
+      boolean var7 = false;
+      int var8 = 0;
+      int var9;
+      if (var8 < a) {
+         int var14 = a + var8 * a;
+         var9 = 0;
+         if (var9 < a) {
+            int var10 = a[var14++];
+            int var11 = var10 >> 16 & 255;
+            int var12 = var10 >> 8 & 255;
+            int var13 = var10 & 255;
+            int var10002 = this.Field3262[0][var11]++;
+            var10002 = this.Field3262[1][var12]++;
+            var10002 = this.Field3262[2][var13]++;
+            ++var9;
          }
 
-         ++a;
+         ++var8;
       }
 
-      int a = 0;
-      if (a < 256) {
-         if (this.Field3262[0][a] != this.Field3262[1][a] || this.Field3262[1][a] != this.Field3262[2][a]) {
+      byte var15 = 0;
+      if (var15 < 256) {
+         if (this.Field3262[0][var15] != this.Field3262[1][var15] || this.Field3262[1][var15] != this.Field3262[2][var15]) {
             this.Field3269 = false;
          }
 
-         a = a + 1;
+         var8 = var15 + 1;
       }
 
-      a = 0;
-      if (a < 3) {
-         int a = 0;
-         if (a < 256) {
-            if (this.Field3262[a][a] > 0) {
-               this.Field3264[a] = a;
+      var15 = 0;
+      if (var15 < 3) {
+         short var16 = 0;
+         if (var16 < 256) {
+            if (this.Field3262[var15][var16] > 0) {
+               this.Field3264[var15] = var16;
             }
 
-            a = a + 1;
+            var9 = var16 + 1;
          }
 
-         a = 255;
-         if (this.Field3262[a][a] > 0) {
-            this.Field3265[a] = a;
+         var16 = 255;
+         if (this.Field3262[var15][var16] > 0) {
+            this.Field3265[var15] = var16;
          }
 
-         a = a - 1;
-         this.Field3266[a] = Integer.MAX_VALUE;
-         this.Field3267[a] = 0;
-         int a = 0;
+         var9 = var16 - 1;
+         this.Field3266[var15] = Integer.MAX_VALUE;
+         this.Field3267[var15] = 0;
+         byte var17 = 0;
          float[] var10000;
-         if (a < 256) {
-            this.Field3266[a] = Math.min(this.Field3266[a], this.Field3262[a][a]);
-            this.Field3267[a] = Math.max(this.Field3267[a], this.Field3262[a][a]);
+         if (var17 < 256) {
+            this.Field3266[var15] = Math.min(this.Field3266[var15], this.Field3262[var15][var17]);
+            this.Field3267[var15] = Math.max(this.Field3267[var15], this.Field3262[var15][var17]);
             var10000 = this.Field3268;
-            var10000[a] += (float)(a * this.Field3262[a][a]);
-            a = a + 1;
+            var10000[var15] += (float)(var17 * this.Field3262[var15][var17]);
+            var9 = var17 + 1;
          }
 
          var10000 = this.Field3268;
-         var10000[a] /= (float)this.Field3263;
-         a = a + 1;
+         var10000[var15] /= (float)this.Field3263;
+         var8 = var15 + 1;
       }
 
       this.Field3264[3] = Math.min(Math.min(this.Field3264[0], this.Field3264[1]), this.Field3264[2]);

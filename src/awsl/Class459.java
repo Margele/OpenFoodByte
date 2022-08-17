@@ -18,7 +18,7 @@ public class Class459 implements Class422, Class45 {
       return Class363.Field1713;
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    private static String Method1357(int integer1, int integer2) {
@@ -824,8 +824,8 @@ public class Class459 implements Class422, Class45 {
    }
 
    public static boolean Method2138(IBlockAccess a, BlockPos a, EnumFacing a, Block a) {
-      double[] a = new double[]{a.getBlockBoundsMinX(), a.getBlockBoundsMinY(), a.getBlockBoundsMinZ(), a.getBlockBoundsMaxX(), a.getBlockBoundsMaxY(), a.getBlockBoundsMaxZ()};
-      return Class363.Method597(a, a, a, a, a);
+      double[] var4 = new double[]{a.getBlockBoundsMinX(), a.getBlockBoundsMinY(), a.getBlockBoundsMinZ(), a.getBlockBoundsMaxX(), a.getBlockBoundsMaxY(), a.getBlockBoundsMaxZ()};
+      return Class363.Method597(a, a, a, a, var4);
    }
 
    public String[] Method1360() {

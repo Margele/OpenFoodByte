@@ -67,7 +67,7 @@ public class Module {
    }
 
    public void setDisplayTag(String a) {
-      int[] a = Method1041();
+      int[] var2 = Method1041();
       if (a.isEmpty()) {
          this.Field2654 = a;
       }
@@ -171,8 +171,8 @@ public class Module {
 
    }
 
-   public void setState(boolean a, boolean a1) {
-      int[] a = Method1041();
+   public void setState(boolean a, boolean a) {
+      int[] var3 = Method1041();
       if (!this.canUse()) {
          this.state = a;
          this.toggle();
@@ -200,15 +200,15 @@ public class Module {
    public boolean Method1031() {
       Iterator var1 = Class446.Method2764().Method1383();
 
-      String a;
+      String var3;
       do {
          if (!var1.Method932()) {
             return false;
          }
 
-         Class447 a = (Class447)var1.Method933();
-         a = a.Method2755();
-      } while(!a.equalsIgnoreCase(this.getName()));
+         Class447 var2 = (Class447)var1.Method933();
+         var3 = var2.Method2755();
+      } while(!var3.equalsIgnoreCase(this.getName()));
 
       return true;
    }

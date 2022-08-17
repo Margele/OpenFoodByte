@@ -13,39 +13,39 @@ public class Class614 {
 
    public static void Method2233() {
       if (!System.getProperty("nativeload", "flase").equals("true")) {
-         String osName;
-         String platformTypeName;
+         String var0;
+         String var2;
          label93: {
-            String platform;
+            String var1;
             label92: {
-               osName = System.getProperty("os.name").toLowerCase();
-               platform = System.getProperty("os.arch").toLowerCase();
-               switch (platform.hashCode()) {
+               var0 = System.getProperty("os.name").toLowerCase();
+               var1 = System.getProperty("os.arch").toLowerCase();
+               switch (var1.hashCode()) {
                   case -1221096139:
-                     if (platform.equals("aarch64")) {
-                        platformTypeName = "arm64";
+                     if (var1.equals("aarch64")) {
+                        var2 = "arm64";
                         break label93;
                      }
                      break label92;
                   case -806050265:
-                     if (!platform.equals("x86_64")) {
+                     if (!var1.equals("x86_64")) {
                         break label92;
                      }
                      break;
                   case 96860:
-                     if (platform.equals("arm")) {
-                        platformTypeName = "arm32";
+                     if (var1.equals("arm")) {
+                        var2 = "arm32";
                         break label93;
                      }
                      break label92;
                   case 117110:
-                     if (platform.equals("x86")) {
-                        platformTypeName = "x86";
+                     if (var1.equals("x86")) {
+                        var2 = "x86";
                         break label93;
                      }
                      break label92;
                   case 92926582:
-                     if (!platform.equals("amd64")) {
+                     if (!var1.equals("amd64")) {
                         break label92;
                      }
                      break;
@@ -53,43 +53,43 @@ public class Class614 {
                      break label92;
                }
 
-               platformTypeName = "x64";
+               var2 = "x64";
                break label93;
             }
 
-            platformTypeName = "raw" + platform;
+            var2 = "raw" + var1;
          }
 
-         String osTypeName;
-         if (!osName.contains("nix") && !osName.contains("nux") && !osName.contains("aix")) {
-            if (osName.contains("win")) {
-               osTypeName = "windows.dll";
-            } else if (osName.contains("mac")) {
-               osTypeName = "macos.dylib";
+         String var4;
+         if (!var0.contains("nix") && !var0.contains("nux") && !var0.contains("aix")) {
+            if (var0.contains("win")) {
+               var4 = "windows.dll";
+            } else if (var0.contains("mac")) {
+               var4 = "macos.dylib";
             } else {
-               osTypeName = "raw" + osName;
+               var4 = "raw" + var0;
             }
          } else {
-            osTypeName = "linux.so";
+            var4 = "linux.so";
          }
 
-         String libFileName = String.format("/%s/%s-%s", Class614.class.getName().split("\\.")[0], platformTypeName, osTypeName);
+         String var5 = String.format("/%s/%s-%s", Class614.class.getName().split("\\.")[0], var2, var4);
 
          try {
-            File libFile = File.createTempFile("lib", (String)null);
-            libFile.deleteOnExit();
-            if (!libFile.exists()) {
+            File var6 = File.createTempFile("lib", (String)null);
+            var6.deleteOnExit();
+            if (!var6.exists()) {
                throw new IOException();
             }
          } catch (IOException var13) {
             throw new UnsatisfiedLinkError("Failed to create temp file");
          }
 
-         byte[] arrayOfByte = new byte[2048];
+         byte[] var7 = new byte[2048];
 
          try {
-            InputStream inputStream = Class614.class.getResourceAsStream(libFileName);
-            throw new UnsatisfiedLinkError(String.format("Failed to open lib file: %s", libFileName));
+            InputStream var8 = Class614.class.getResourceAsStream(var5);
+            throw new UnsatisfiedLinkError(String.format("Failed to open lib file: %s", var5));
          } catch (IOException var12) {
             throw new UnsatisfiedLinkError(String.format("Failed to copy file: %s", var12.getMessage()));
          }

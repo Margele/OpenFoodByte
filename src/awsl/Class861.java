@@ -36,75 +36,75 @@ public class Class861 extends Class798 {
       return this.Field3768;
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
       Class193.Method1269();
-      int a = 0;
-      int[] a = new int[a * a];
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         if (a < a) {
-            int a = false;
-            int a = false;
-            int a = false;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = a[a * a + a] & -16777216;
-            int a = -1;
-            int a;
-            int a;
-            int a;
-            if (a <= 1) {
-               int a = a + a;
-               if (0 <= a && a < a) {
-                  int var10000 = a * a;
+      int var6 = 0;
+      int[] var7 = new int[a * a];
+      int var8 = 0;
+      if (var8 < a) {
+         int var9 = 0;
+         if (var9 < a) {
+            boolean var10 = false;
+            boolean var11 = false;
+            boolean var12 = false;
+            int var13 = 0;
+            int var14 = 0;
+            int var15 = 0;
+            int var16 = 0;
+            int var17 = 0;
+            int var18 = 0;
+            int var19 = a[var8 * a + var9] & -16777216;
+            int var20 = -1;
+            int var29;
+            int var30;
+            int var31;
+            if (var20 <= 1) {
+               int var21 = var8 + var20;
+               if (0 <= var21 && var21 < a) {
+                  int var10000 = var21 * a;
                }
 
-               int a = a * a;
-               int a = 3 * (a + 1) + 1;
-               int a = -1;
-               if (a <= 1) {
-                  int a = a + a;
-                  if (0 > a || a >= a) {
-                     a = a;
+               int var22 = var8 * a;
+               int var23 = 3 * (var20 + 1) + 1;
+               int var24 = -1;
+               if (var24 <= 1) {
+                  int var25 = var9 + var24;
+                  if (0 > var25 || var25 >= a) {
+                     var25 = var9;
                   }
 
-                  int a = a[a + a];
-                  float a = this.Field3768[a + a];
-                  float a = this.Field3767[a + a];
-                  a = (a & 16711680) >> 16;
-                  a = (a & '\uff00') >> 8;
-                  a = a & 255;
-                  a += (int)(a * (float)a);
-                  a += (int)(a * (float)a);
-                  a += (int)(a * (float)a);
-                  a += (int)(a * (float)a);
-                  a += (int)(a * (float)a);
-                  a += (int)(a * (float)a);
-                  ++a;
+                  int var26 = a[var22 + var25];
+                  float var27 = this.Field3768[var23 + var24];
+                  float var28 = this.Field3767[var23 + var24];
+                  var29 = (var26 & 16711680) >> 16;
+                  var30 = (var26 & '\uff00') >> 8;
+                  var31 = var26 & 255;
+                  var13 += (int)(var27 * (float)var29);
+                  var14 += (int)(var27 * (float)var30);
+                  var15 += (int)(var27 * (float)var31);
+                  var16 += (int)(var28 * (float)var29);
+                  var17 += (int)(var28 * (float)var30);
+                  var18 += (int)(var28 * (float)var31);
+                  ++var24;
                }
 
-               ++a;
+               ++var20;
             }
 
-            a = (int)(Math.sqrt((double)(a * a + a * a)) / 1.8);
-            a = (int)(Math.sqrt((double)(a * a + a * a)) / 1.8);
-            a = (int)(Math.sqrt((double)(a * a + a * a)) / 1.8);
-            a = Class767.Method1687(a);
-            a = Class767.Method1687(a);
-            a = Class767.Method1687(a);
-            a[a++] = a | a << 16 | a << 8 | a;
-            ++a;
+            var29 = (int)(Math.sqrt((double)(var13 * var13 + var16 * var16)) / 1.8);
+            var30 = (int)(Math.sqrt((double)(var14 * var14 + var17 * var17)) / 1.8);
+            var31 = (int)(Math.sqrt((double)(var15 * var15 + var18 * var18)) / 1.8);
+            var29 = Class767.Method1687(var29);
+            var30 = Class767.Method1687(var30);
+            var31 = Class767.Method1687(var31);
+            var7[var6++] = var19 | var29 << 16 | var30 << 8 | var31;
+            ++var9;
          }
 
-         ++a;
+         ++var8;
       }
 
-      return a;
+      return var7;
    }
 
    public String toString() {

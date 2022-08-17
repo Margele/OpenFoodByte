@@ -109,20 +109,20 @@ public class Class773 implements Cloneable {
    }
 
    public void Method17(int a, int a) {
-      float a = (float)(Math.cos((double)this.Field3440) * Math.cos((double)this.Field3441));
-      float a = (float)(Math.sin((double)this.Field3440) * Math.cos((double)this.Field3441));
-      float a = (float)Math.sin((double)this.Field3441);
-      this.Field3436 = new Class590(a, a, a);
+      float var3 = (float)(Math.cos((double)this.Field3440) * Math.cos((double)this.Field3441));
+      float var4 = (float)(Math.sin((double)this.Field3440) * Math.cos((double)this.Field3441));
+      float var5 = (float)Math.sin((double)this.Field3441);
+      this.Field3436 = new Class590(var3, var4, var5);
       this.Field3436.Method25();
       if (this.Field3434 != 1) {
-         a *= this.Field3447;
-         a *= this.Field3447;
-         a *= this.Field3447;
-         a += (float)a * this.Field3443;
-         a += (float)a * this.Field3444;
+         var3 *= this.Field3447;
+         var4 *= this.Field3447;
+         var5 *= this.Field3447;
+         var3 += (float)a * this.Field3443;
+         var4 += (float)a * this.Field3444;
       }
 
-      this.Field3435 = new Class590(a, a, a);
+      this.Field3435 = new Class590(var3, var4, var5);
       this.Field3437.Method3790(new Color(this.Field3438));
       this.Field3437.Method121(this.Field3439);
       this.Field3446 = (float)Math.cos((double)this.Field3445);
@@ -130,8 +130,8 @@ public class Class773 implements Cloneable {
 
    public Object Method878() {
       try {
-         Class773 a = (Class773)super.Method1433();
-         return a;
+         Class773 var1 = (Class773)super.Method1433();
+         return var1;
       } catch (CloneNotSupportedException var2) {
          return null;
       }

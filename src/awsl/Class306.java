@@ -31,16 +31,16 @@ public class Class306 implements IImageBuffer {
 
    public void Method685() {
       int var10000 = Class286.Method3111();
-      AbstractClientPlayer a = (AbstractClientPlayer)this.Field1588.get();
-      int a = var10000;
-      Method686(a, this.Field1589);
+      AbstractClientPlayer var2 = (AbstractClientPlayer)this.Field1588.get();
+      int var1 = var10000;
+      Method686(var2, this.Field1589);
       if (a.trash() == null) {
-         ++a;
-         Class286.Method3110(a);
+         ++var1;
+         Class286.Method3110(var1);
       }
 
    }
 
-   private static void Method686(AbstractClientPlayer a, ResourceLocation a1) {
+   private static void Method686(AbstractClientPlayer a, ResourceLocation a) {
    }
 }

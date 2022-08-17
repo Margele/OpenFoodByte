@@ -11,19 +11,19 @@ public class Class44 extends Class119 {
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1269();
       this.Field342 = new int[256];
-      int a = 0;
-      float a;
-      if (a < 128) {
-         a = (float)a / 127.0F;
-         this.Field342[a] = Class776.Method1719(a, this.Field339, this.Field340);
-         ++a;
+      int var4 = 0;
+      float var5;
+      if (var4 < 128) {
+         var5 = (float)var4 / 127.0F;
+         this.Field342[var4] = Class776.Method1719(var5, this.Field339, this.Field340);
+         ++var4;
       }
 
-      int a = 128;
-      if (a < 256) {
-         a = (float)(a - 127) / 128.0F;
-         this.Field342[a] = Class776.Method1719(a, this.Field340, this.Field341);
-         a = a + 1;
+      short var6 = 128;
+      if (var6 < 256) {
+         var5 = (float)(var6 - 127) / 128.0F;
+         this.Field342[var6] = Class776.Method1719(var5, this.Field340, this.Field341);
+         var4 = var6 + 1;
       }
 
       a = super.Method62(a, a);
@@ -31,7 +31,7 @@ public class Class44 extends Class119 {
       return a;
    }
 
-   public int Method3(int a, int a1, int a) {
+   public int Method3(int a, int a, int a) {
       return this.Field342[Class767.Method1689(a)];
    }
 

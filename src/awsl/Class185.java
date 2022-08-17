@@ -41,12 +41,12 @@ public class Class185 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       a = this.Method1263(a, (ColorModel)null);
-      Graphics2D a = a.createGraphics();
-      a.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-      a.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-      a.setComposite(this.Field1144);
-      a.drawRenderedImage(a, this.Field1145);
-      a.dispose();
+      Graphics2D var3 = a.createGraphics();
+      var3.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+      var3.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+      var3.setComposite(this.Field1144);
+      var3.drawRenderedImage(a, this.Field1145);
+      var3.dispose();
       return a;
    }
 

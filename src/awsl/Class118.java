@@ -60,15 +60,15 @@ public class Class118 extends Class119 {
       return this.Field949;
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = a & -16777216;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      int a = Class767.Method1687((this.Field947 * (this.Field944 * a + (255 - this.Field944) * a) / 255 + (255 - this.Field947) * a) / 255);
-      int a = Class767.Method1687((this.Field948 * (this.Field945 * a + (255 - this.Field945) * a) / 255 + (255 - this.Field948) * a) / 255);
-      int a = Class767.Method1687((this.Field949 * (this.Field946 * a + (255 - this.Field946) * a) / 255 + (255 - this.Field949) * a) / 255);
-      return a | a << 16 | a << 8 | a;
+   public int Method3(int a, int a, int a) {
+      int var4 = a & -16777216;
+      int var5 = a >> 16 & 255;
+      int var6 = a >> 8 & 255;
+      int var7 = a & 255;
+      int var8 = Class767.Method1687((this.Field947 * (this.Field944 * var6 + (255 - this.Field944) * var7) / 255 + (255 - this.Field947) * var5) / 255);
+      int var9 = Class767.Method1687((this.Field948 * (this.Field945 * var7 + (255 - this.Field945) * var5) / 255 + (255 - this.Field948) * var6) / 255);
+      int var10 = Class767.Method1687((this.Field949 * (this.Field946 * var5 + (255 - this.Field946) * var6) / 255 + (255 - this.Field949) * var7) / 255);
+      return var4 | var8 << 16 | var9 << 8 | var10;
    }
 
    public String toString() {

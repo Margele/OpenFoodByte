@@ -10,7 +10,7 @@ public class Class316 extends Class321 {
    }
 
    protected double Method797(double a) {
-      double a = a / (double)this.Field1605;
-      return -2.0 * Math.pow(a, 3.0) + 3.0 * Math.pow(a, 2.0);
+      double var3 = a / (double)this.Field1605;
+      return -2.0 * Math.pow(var3, 3.0) + 3.0 * Math.pow(var3, 2.0);
    }
 }

@@ -15,7 +15,7 @@ public class Class402 implements Class422, Class45 {
 
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    @Class628

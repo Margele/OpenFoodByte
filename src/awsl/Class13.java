@@ -402,10 +402,10 @@ public class Class13 extends Class267 {
    }
 
    public void Method1952(int a, String a) {
-      b a = b.Method3205(a);
+      b var3 = b.Method3205(a);
       switch (a) {
          case 187:
-            this.Method3485(a);
+            this.Method3485(var3);
             break;
          case 188:
          case 190:
@@ -413,13 +413,13 @@ public class Class13 extends Class267 {
          default:
             throw new IllegalArgumentException();
          case 189:
-            this.Method3486(a);
+            this.Method3486(var3);
             break;
          case 192:
-            this.Method3487(a);
+            this.Method3487(var3);
             break;
          case 193:
-            this.Method3488(a);
+            this.Method3488(var3);
       }
 
    }
@@ -581,31 +581,31 @@ public class Class13 extends Class267 {
    }
 
    public void Method1950(Object a) {
-      int a;
+      int var2;
       if (a instanceof Integer) {
-         a = (Integer)a;
-         this.Method1869(a);
+         var2 = (Integer)a;
+         this.Method1869(var2);
       } else if (a instanceof Byte) {
-         a = ((Byte)a).intValue();
-         this.Method1869(a);
+         var2 = ((Byte)a).intValue();
+         this.Method1869(var2);
       } else if (a instanceof Character) {
-         int a = (Character)a;
-         this.Method1869(a);
+         char var4 = (Character)a;
+         this.Method1869(var4);
       } else if (a instanceof Short) {
-         a = ((Short)a).intValue();
-         this.Method1869(a);
+         var2 = ((Short)a).intValue();
+         this.Method1869(var2);
       } else if (a instanceof Boolean) {
-         a = (Boolean)a ? 1 : 0;
-         this.Method1869(a);
+         var2 = (Boolean)a ? 1 : 0;
+         this.Method1869(var2);
       } else if (a instanceof Float) {
-         float a = (Float)a;
-         this.Method1871(a);
+         float var5 = (Float)a;
+         this.Method1871(var5);
       } else if (a instanceof Long) {
-         long a = (Long)a;
-         this.Method1870(a);
+         long var6 = (Long)a;
+         this.Method1870(var6);
       } else if (a instanceof Double) {
-         double a = (Double)a;
-         this.Method1872(a);
+         double var7 = (Double)a;
+         this.Method1872(var7);
       } else if (a instanceof String) {
          this.Method1965(a);
       } else if (a instanceof b) {
@@ -667,8 +667,8 @@ public class Class13 extends Class267 {
    }
 
    public void Method1871(float a) {
-      int a = Float.floatToIntBits(a);
-      if ((long)a != 0L && a != 1065353216 && a != 1073741824) {
+      int var2 = Float.floatToIntBits(a);
+      if ((long)var2 != 0L && var2 != 1065353216 && var2 != 1073741824) {
          this.Field1460.Method1950(new Float(a));
       } else {
          this.Field1460.Method1948(11 + (int)a);
@@ -677,8 +677,8 @@ public class Class13 extends Class267 {
    }
 
    public void Method1872(double a) {
-      long a = Double.doubleToLongBits(a);
-      if (a != 0L && a != 4607182418800017408L) {
+      long var3 = Double.doubleToLongBits(a);
+      if (var3 != 0L && var3 != 4607182418800017408L) {
          this.Field1460.Method1950(new Double(a));
       } else {
          this.Field1460.Method1948(14 + (int)a);
@@ -1019,38 +1019,38 @@ public class Class13 extends Class267 {
    }
 
    public void Method3486(b a) {
-      byte a;
+      byte var2;
       switch (a.Method3217()) {
          case 1:
-            a = 4;
+            var2 = 4;
             break;
          case 2:
-            a = 5;
+            var2 = 5;
             break;
          case 3:
-            a = 8;
+            var2 = 8;
             break;
          case 4:
-            a = 9;
+            var2 = 9;
             break;
          case 5:
-            a = 10;
+            var2 = 10;
             break;
          case 6:
-            a = 6;
+            var2 = 6;
             break;
          case 7:
-            a = 11;
+            var2 = 11;
             break;
          case 8:
-            a = 7;
+            var2 = 7;
             break;
          default:
             this.Field1460.Method1952(189, a.Method3221());
             return;
       }
 
-      this.Field1460.Method854(188, a);
+      this.Field1460.Method854(188, var2);
    }
 
    public void Method1900() {

@@ -13,7 +13,7 @@ final class Class859 extends Class831 {
    }
 
    public final void Method3501(String a, Attributes a) throws SAXException {
-      ArrayList a = (ArrayList)this.Field3756.Method1963();
-      a.Method2530(this.Method3651(a.getValue("desc"), a.getValue("cst")));
+      ArrayList var3 = (ArrayList)this.Field3756.Method1963();
+      var3.Method2530(this.Method3651(a.getValue("desc"), a.getValue("cst")));
    }
 }

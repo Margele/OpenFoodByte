@@ -34,8 +34,8 @@ public class AutoGG extends Module {
    @EventTarget
    public void Method273(EventPacket a) {
       if (a.getPacket() instanceof S02PacketChat) {
-         S02PacketChat a = (S02PacketChat)a.getPacket();
-         if (Arrays.stream(this.Field2172).anyMatch(AutoGG::Method2075) && EnumChatFormatting.getTextWithoutFormattingCodes(a.getChatComponent().getUnformattedText()).startsWith(" ")) {
+         S02PacketChat var2 = (S02PacketChat)a.getPacket();
+         if (Arrays.stream(this.Field2172).anyMatch(AutoGG::Method2075) && EnumChatFormatting.getTextWithoutFormattingCodes(var2.getChatComponent().getUnformattedText()).startsWith(" ")) {
             ++this.Field2174;
             if (this.Field2174 > 3) {
                this.Field2174 = 0;

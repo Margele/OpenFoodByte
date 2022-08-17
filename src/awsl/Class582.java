@@ -19,25 +19,25 @@ public class Class582 {
 
    @EventTarget
    public void Method270(EventPacket a) {
-      Packet a = a.packet;
+      Packet var2 = a.packet;
       if (a.isSend()) {
       }
 
       if (a.isRecieve()) {
-         if (a instanceof S02PacketLoginSuccess || a instanceof S07PacketRespawn) {
+         if (var2 instanceof S02PacketLoginSuccess || var2 instanceof S07PacketRespawn) {
             Class484.Field2234 = Class615.NONE;
          }
 
-         if (a instanceof S3EPacketTeams) {
-            S3EPacketTeams a = (S3EPacketTeams)a;
-            if (a.getPrefix().startsWith(" §7⏣") && a.getSuffix().isEmpty()) {
-               this.Method271(a.getPrefix());
-            } else if (a.getPrefix().startsWith(" §7⏣")) {
-               this.Method271(a.getPrefix() + a.getSuffix());
+         if (var2 instanceof S3EPacketTeams) {
+            S3EPacketTeams var3 = (S3EPacketTeams)var2;
+            if (var3.getPrefix().startsWith(" §7⏣") && var3.getSuffix().isEmpty()) {
+               this.Method271(var3.getPrefix());
+            } else if (var3.getPrefix().startsWith(" §7⏣")) {
+               this.Method271(var3.getPrefix() + var3.getSuffix());
             }
 
-            if (a.getPrefix().startsWith("Cleared:")) {
-               this.Method271(a.getPrefix());
+            if (var3.getPrefix().startsWith("Cleared:")) {
+               this.Method271(var3.getPrefix());
             }
          }
       }

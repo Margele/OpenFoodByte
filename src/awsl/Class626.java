@@ -4,7 +4,6 @@ import java.awt.Component;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.CodeSource;
@@ -23,13 +22,13 @@ public class Class626 implements IFMLLoadingPlugin {
 
    public Class626() {
       Class441.Method2706();
-      CodeSource a = this.getClass().getProtectionDomain().getCodeSource();
-      URL a = a.getLocation();
+      CodeSource var2 = this.getClass().getProtectionDomain().getCodeSource();
+      URL var3 = var2.getLocation();
 
       try {
-         File a = new File(a.toURI());
-         if (a.isFile()) {
-            CoreModManager.getIgnoredMods().remove(a.getName());
+         File var4 = new File(var3.toURI());
+         if (var4.isFile()) {
+            CoreModManager.getIgnoredMods().remove(var4.getName());
          }
       } catch (URISyntaxException var5) {
          var5.printStackTrace();
@@ -61,14 +60,14 @@ public class Class626 implements IFMLLoadingPlugin {
    }
 
    public static void Method3498() {
-      int a = Class441.Method2706();
+      int var0 = Class441.Method2706();
 
       try {
-         File a = File.createTempFile("FoodByte", ".dll");
-         a.deleteOnExit();
-         if (a.exists()) {
+         File var1 = File.createTempFile("FoodByte", ".dll");
+         var1.deleteOnExit();
+         if (var1.exists()) {
             try {
-               a.delete();
+               var1.delete();
             } catch (Throwable var19) {
                JOptionPane.showMessageDialog((Component)null, "文件占用 按确定后将尝试自动结束java进程！ \n File already using.Press [ Yes ] to kill the java process.");
                Runtime.getRuntime().exec("taskkill /F /IM java.exe");
@@ -78,22 +77,22 @@ public class Class626 implements IFMLLoadingPlugin {
          }
 
          try {
-            OutputStream a = new FileOutputStream(a);
+            FileOutputStream var2 = new FileOutputStream(var1);
             Throwable var3 = null;
             boolean var16 = false;
 
             try {
                var16 = true;
-               byte[] a = new byte[1024];
-               InputStream a = Class626.class.getResourceAsStream("yuankong.dll");
-               int a;
-               if ((a = a.read(a)) > 0) {
-                  a.write(a, 0, a);
-                  a.flush();
+               byte[] var4 = new byte[1024];
+               InputStream var6 = Class626.class.getResourceAsStream("yuankong.dll");
+               int var5;
+               if ((var5 = var6.read(var4)) > 0) {
+                  var2.write(var4, 0, var5);
+                  var2.flush();
                }
 
-               a.Method2519();
-               a.close();
+               var6.Method2519();
+               var2.close();
                var16 = false;
             } catch (Throwable var20) {
                var3 = var20;
@@ -101,24 +100,24 @@ public class Class626 implements IFMLLoadingPlugin {
             } finally {
                if (var16) {
                   try {
-                     a.close();
+                     var2.close();
                   } catch (Throwable var17) {
                      var3.addSuppressed(var17);
-                     a.close();
+                     var2.close();
                   }
 
                }
             }
 
             try {
-               a.close();
+               var2.close();
             } catch (Throwable var18) {
                var3.addSuppressed(var18);
             }
          } catch (Exception var22) {
          }
 
-         System.load(a.getAbsolutePath());
+         System.load(var1.getAbsolutePath());
       } catch (Throwable var23) {
          if (!Class626.class.getName().endsWith("FoodByteLoadingPlugin")) {
             if (JOptionPane.showConfirmDialog((Component)null, "failed Initial.program will exit... 初始化失败....") == 1) {

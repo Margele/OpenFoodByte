@@ -103,24 +103,24 @@ public class Class894 extends Class877 {
 
    public void Method3562(float a, float a, float a, float a, float a, float a, float a, float a) {
       this.Method3561(a, a, a, a, a, a, a, a);
-      float a = this.Field3953 * this.Field3957 - this.Field3956 * this.Field3954;
-      float a = this.Field3956 * this.Field3951 - this.Field3950 * this.Field3957;
-      float a = this.Field3950 * this.Field3954 - this.Field3953 * this.Field3951;
-      float a = this.Field3955 * this.Field3954 - this.Field3952 * this.Field3957;
-      float a = this.Field3949 * this.Field3957 - this.Field3955 * this.Field3951;
-      float a = this.Field3952 * this.Field3951 - this.Field3949 * this.Field3954;
-      float a = this.Field3952 * this.Field3956 - this.Field3955 * this.Field3953;
-      float a = this.Field3955 * this.Field3950 - this.Field3949 * this.Field3956;
-      float a = this.Field3949 * this.Field3953 - this.Field3952 * this.Field3950;
-      float a = 1.0F / a;
-      this.Field3949 = a * a;
-      this.Field3952 = a * a;
-      this.Field3955 = a * a;
-      this.Field3950 = a * a;
-      this.Field3953 = a * a;
-      this.Field3956 = a * a;
-      this.Field3951 = a * a;
-      this.Field3954 = a * a;
+      float var9 = this.Field3953 * this.Field3957 - this.Field3956 * this.Field3954;
+      float var10 = this.Field3956 * this.Field3951 - this.Field3950 * this.Field3957;
+      float var11 = this.Field3950 * this.Field3954 - this.Field3953 * this.Field3951;
+      float var12 = this.Field3955 * this.Field3954 - this.Field3952 * this.Field3957;
+      float var13 = this.Field3949 * this.Field3957 - this.Field3955 * this.Field3951;
+      float var14 = this.Field3952 * this.Field3951 - this.Field3949 * this.Field3954;
+      float var15 = this.Field3952 * this.Field3956 - this.Field3955 * this.Field3953;
+      float var16 = this.Field3955 * this.Field3950 - this.Field3949 * this.Field3956;
+      float var17 = this.Field3949 * this.Field3953 - this.Field3952 * this.Field3950;
+      float var18 = 1.0F / var17;
+      this.Field3949 = var9 * var18;
+      this.Field3952 = var12 * var18;
+      this.Field3955 = var15 * var18;
+      this.Field3950 = var10 * var18;
+      this.Field3953 = var13 * var18;
+      this.Field3956 = var16 * var18;
+      this.Field3951 = var11 * var18;
+      this.Field3954 = var14 * var18;
       this.Field3957 = 1.0F;
    }
 
@@ -135,16 +135,16 @@ public class Class894 extends Class877 {
       this.Field3947 = this.Field3952 * this.Field3951 - this.Field3949 * this.Field3954;
       this.Field3948 = this.Field3949 * this.Field3953 - this.Field3952 * this.Field3950;
       if (!this.Field3958) {
-         int a = a.getWidth();
-         int a = a.getHeight();
-         float a = 1.0F / (float)a;
-         float a = 1.0F / (float)a;
-         this.Field3940 *= a;
-         this.Field3943 *= a;
-         this.Field3946 *= a;
-         this.Field3941 *= a;
-         this.Field3944 *= a;
-         this.Field3947 *= a;
+         int var3 = a.getWidth();
+         int var4 = a.getHeight();
+         float var5 = 1.0F / (float)var3;
+         float var6 = 1.0F / (float)var4;
+         this.Field3940 *= var5;
+         this.Field3943 *= var5;
+         this.Field3946 *= var5;
+         this.Field3941 *= var6;
+         this.Field3944 *= var6;
+         this.Field3947 *= var6;
       }
 
       return super.Method62(a, a);
@@ -158,14 +158,14 @@ public class Class894 extends Class877 {
          a.height = (int)Math.max(Math.max(this.Field3927, this.Field3929), Math.max(this.Field3931, this.Field3933)) - a.y;
       } else {
          if (!this.Field3959) {
-            float a = (float)a.getWidth();
-            float a = (float)a.getHeight();
-            Rectangle a = new Rectangle();
-            a.add(this.Method1265(new Point2D.Float(0.0F, 0.0F), (Point2D)null));
-            a.add(this.Method1265(new Point2D.Float(a, 0.0F), (Point2D)null));
-            a.add(this.Method1265(new Point2D.Float(0.0F, a), (Point2D)null));
-            a.add(this.Method1265(new Point2D.Float(a, a), (Point2D)null));
-            a.setRect(a);
+            float var2 = (float)a.getWidth();
+            float var3 = (float)a.getHeight();
+            Rectangle var4 = new Rectangle();
+            var4.add(this.Method1265(new Point2D.Float(0.0F, 0.0F), (Point2D)null));
+            var4.add(this.Method1265(new Point2D.Float(var2, 0.0F), (Point2D)null));
+            var4.add(this.Method1265(new Point2D.Float(0.0F, var3), (Point2D)null));
+            var4.add(this.Method1265(new Point2D.Float(var2, var3), (Point2D)null));
+            a.setRect(var4);
          }
 
       }
@@ -183,24 +183,24 @@ public class Class894 extends Class877 {
       if (this.Field3959) {
          return new Rectangle(0, 0, a.getWidth(), a.getHeight());
       } else {
-         float a = (float)a.getWidth();
-         float a = (float)a.getHeight();
-         Rectangle2D a = new Rectangle2D.Float();
-         a.add(this.Method1265(new Point2D.Float(0.0F, 0.0F), (Point2D)null));
-         a.add(this.Method1265(new Point2D.Float(a, 0.0F), (Point2D)null));
-         a.add(this.Method1265(new Point2D.Float(0.0F, a), (Point2D)null));
-         a.add(this.Method1265(new Point2D.Float(a, a), (Point2D)null));
-         return a;
+         float var2 = (float)a.getWidth();
+         float var3 = (float)a.getHeight();
+         Rectangle2D.Float var4 = new Rectangle2D.Float();
+         var4.add(this.Method1265(new Point2D.Float(0.0F, 0.0F), (Point2D)null));
+         var4.add(this.Method1265(new Point2D.Float(var2, 0.0F), (Point2D)null));
+         var4.add(this.Method1265(new Point2D.Float(0.0F, var3), (Point2D)null));
+         var4.add(this.Method1265(new Point2D.Float(var2, var3), (Point2D)null));
+         return var4;
       }
    }
 
-   public Point2D Method1265(Point2D a, Point2D a1) {
-      Point2D a = new Point2D.Float();
-      float a = (float)a.getX();
-      float a = (float)a.getY();
-      float a = 1.0F / (a * this.Field3951 + a * this.Field3954 + this.Field3957);
-      a.setLocation((double)((a * this.Field3949 + a * this.Field3952 + this.Field3955) * a), (double)((a * this.Field3950 + a * this.Field3953 + this.Field3956) * a));
-      return a;
+   public Point2D Method1265(Point2D a, Point2D a) {
+      Point2D.Float var6 = new Point2D.Float();
+      float var3 = (float)a.getX();
+      float var4 = (float)a.getY();
+      float var5 = 1.0F / (var3 * this.Field3951 + var4 * this.Field3954 + this.Field3957);
+      var6.setLocation((double)((var3 * this.Field3949 + var4 * this.Field3952 + this.Field3955) * var5), (double)((var3 * this.Field3950 + var4 * this.Field3953 + this.Field3956) * var5));
+      return var6;
    }
 
    protected void Method3439(int a, int a, float[] a) {

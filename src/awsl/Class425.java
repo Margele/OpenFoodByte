@@ -15,12 +15,12 @@ public class Class425 extends Class426 {
       super.Method2308();
    }
 
-   public void Method2310(int a, int a, float a2) {
-      Color a = Class416.Method2352();
-      int a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 200)).getRGB();
+   public void Method2310(int a, int a, float a) {
+      Color var4 = Class416.Method2352();
+      int var5 = (new Color(var4.getRed(), var4.getGreen(), var4.getBlue(), 200)).getRGB();
       RenderUtils.Method1105(this.Field2050, this.Field2051, this.Field2050 + this.Field2052, this.Field2051 + this.Field2053, (new Color(0, 0, 0, 150)).getRGB());
       Class565.Field2637.Method1217(this.Field2054, (float)(this.Field2050 + 2.0), (float)(this.Field2051 + 0.0), -1);
-      Class565.Field2640.Method1217("j", (float)(this.Field2050 + this.Field2052 - (double)Class565.Field2640.Method1225("j") - 3.0), (float)(this.Field2051 + 3.0), this.Field2045.getBooleanValue() ? a : (new Color(150, 150, 150, 255)).getRGB());
+      Class565.Field2640.Method1217("j", (float)(this.Field2050 + this.Field2052 - (double)Class565.Field2640.Method1225("j") - 3.0), (float)(this.Field2051 + 3.0), this.Field2045.getBooleanValue() ? var5 : (new Color(150, 150, 150, 255)).getRGB());
       if (this.Method2407(a, a)) {
          RenderUtils.Method1105(this.Field2050 + this.Field2052 - 2.0, this.Field2051 + 2.0, this.Field2050 + this.Field2052 - 13.0, this.Field2051 + 13.0, 1427181841);
       }
@@ -36,7 +36,7 @@ public class Class425 extends Class426 {
       }
    }
 
-   public void Method2312(int a, int a1, int a2) {
+   public void Method2312(int a, int a, int a) {
       GlobalModule.INSTANCE.fileManager.saveValues();
    }
 

@@ -108,7 +108,7 @@ public class Class169 extends Class167 {
       this.Field1079 = a;
    }
 
-   public final void Method1447(int a, int a, String a, String a, String a4, String[] a) {
+   public final void Method1447(int a, int a, String a, String a, String a, String[] a) {
       this.Field1080 = a;
       this.Field1091 = a;
       this.Field1092 = this.Method1508(a);
@@ -119,8 +119,8 @@ public class Class169 extends Class167 {
          this.Field1096 = a.length;
          this.Field1097 = new int[this.Field1096];
 
-         for(int a = 0; a < this.Field1096; ++a) {
-            this.Field1097[a] = this.Method1508(a[a]);
+         for(int var7 = 0; var7 < this.Field1096; ++var7) {
+            this.Field1097[var7] = this.Method1508(a[var7]);
          }
       }
 
@@ -136,23 +136,23 @@ public class Class169 extends Class167 {
       this.Field1101 = this.Method1524(a, a);
    }
 
-   public final Class148 Method1448(String a, boolean a1) {
-      Class138 a = new Class138();
-      a.Method487(this.Method1506(a)).Method487(0);
-      Class150 a = new Class150(this, true, a, a, 2);
-      a.Field1016 = this.Field1102;
-      this.Field1102 = a;
-      return a;
+   public final Class148 Method1448(String a, boolean a) {
+      Class138 var3 = new Class138();
+      var3.Method487(this.Method1506(a)).Method487(0);
+      Class150 var4 = new Class150(this, true, var3, var3, 2);
+      var4.Field1016 = this.Field1102;
+      this.Field1102 = var4;
+      return var4;
    }
 
-   public final Class148 Method1449(int a, Class31 a, String a, boolean a3) {
-      Class138 a = new Class138();
-      Class150.Method1324(a, a, a);
-      a.Method487(this.Method1506(a)).Method487(0);
-      Class150 a = new Class150(this, true, a, a, a.Field991 - 2);
-      a.Field1016 = this.Field1104;
-      this.Field1104 = a;
-      return a;
+   public final Class148 Method1449(int a, Class31 a, String a, boolean a) {
+      Class138 var5 = new Class138();
+      Class150.Method1324(a, a, var5);
+      var5.Method487(this.Method1506(a)).Method487(0);
+      Class150 var6 = new Class150(this, true, var5, var5, var5.Field991 - 2);
+      var6.Field1016 = this.Field1104;
+      this.Field1104 = var6;
+      return var6;
    }
 
    public final void Method1459(Class136 a) {
@@ -160,19 +160,19 @@ public class Class169 extends Class167 {
       this.Field1106 = a;
    }
 
-   public final void Method1452(String a, String a1, String a2, int a) {
+   public final void Method1452(String a, String a, String a, int a) {
       if (this.Field1108 == null) {
          this.Field1108 = new Class138();
       }
 
-      Class261 a = this.Method1507(a);
-      if (a.Field1428 == 0) {
+      Class261 var5 = this.Method1507(a);
+      if (var5.Field1428 == 0) {
          ++this.Field1107;
-         this.Field1108.Method487(a.Field1426);
+         this.Field1108.Method487(var5.Field1426);
          this.Field1108.Method487(0);
          this.Field1108.Method487(0);
          this.Field1108.Method487(a);
-         a.Field1428 = this.Field1107;
+         var5.Field1428 = this.Field1107;
       }
 
    }
@@ -189,183 +189,183 @@ public class Class169 extends Class167 {
    }
 
    public byte[] Method1503() {
-      String[] a = Class267.Method2862();
+      String[] var1 = Class267.Method2862();
       if (this.Field1081 > 65535) {
          throw new RuntimeException(Method1536(31578, -554));
       } else {
-         int a = 24 + 2 * this.Field1096;
-         int a = 0;
-         Class256 a = this.Field1111;
-         ++a;
-         a += a.Method2251();
-         a = (Class256)a.Field1390;
+         int var2 = 24 + 2 * this.Field1096;
+         int var3 = 0;
+         Class256 var4 = this.Field1111;
+         ++var3;
+         var2 += var4.Method2251();
+         var4 = (Class256)var4.Field1390;
          a.trash(new String[2]);
-         int a = 0;
-         Class9 a = this.Field1113;
-         ++a;
-         a += a.Method1984();
-         a = (Class9)a.Field1460;
-         int a = 0;
+         int var5 = 0;
+         Class9 var6 = this.Field1113;
+         ++var5;
+         var2 += var6.Method1984();
+         var6 = (Class9)var6.Field1460;
+         int var7 = 0;
          if (this.Field1110 != null) {
-            ++a;
-            a += 8 + this.Field1110.Field991;
+            ++var7;
+            var2 += 8 + this.Field1110.Field991;
             this.Method1506(Method1536(31580, -13909));
          }
 
          if (this.Field1094 != 0) {
-            ++a;
-            a += 8;
+            ++var7;
+            var2 += 8;
             this.Method1506(Method1536(31560, 15372));
          }
 
          if (this.Field1098 != 0) {
-            ++a;
-            a += 8;
+            ++var7;
+            var2 += 8;
             this.Method1506(Method1536(31559, 25966));
          }
 
          if (this.Field1099 != null) {
-            ++a;
-            a += this.Field1099.Field991 + 6;
+            ++var7;
+            var2 += this.Field1099.Field991 + 6;
             this.Method1506(Method1536(31568, -31638));
          }
 
          if (this.Field1100 != 0) {
-            ++a;
-            a += 10;
+            ++var7;
+            var2 += 10;
             this.Method1506(Method1536(31562, -17856));
          }
 
          if ((this.Field1091 & 131072) != 0) {
-            ++a;
-            a += 6;
+            ++var7;
+            var2 += 6;
             this.Method1506(Method1536(31574, -23373));
          }
 
          if ((this.Field1091 & 4096) != 0 && ((this.Field1080 & '\uffff') < 49 || (this.Field1091 & 262144) != 0)) {
-            ++a;
-            a += 6;
+            ++var7;
+            var2 += 6;
             this.Method1506(Method1536(31564, 12875));
          }
 
          if (this.Field1108 != null) {
-            ++a;
-            a += 8 + this.Field1108.Field991;
+            ++var7;
+            var2 += 8 + this.Field1108.Field991;
             this.Method1506(Method1536(31561, 10662));
          }
 
          if (this.Field1102 != null) {
-            ++a;
-            a += 8 + this.Field1102.Method1321();
+            ++var7;
+            var2 += 8 + this.Field1102.Method1321();
             this.Method1506(Method1536(31573, 14489));
          }
 
          if (this.Field1103 != null) {
-            ++a;
-            a += 8 + this.Field1103.Method1321();
+            ++var7;
+            var2 += 8 + this.Field1103.Method1321();
             this.Method1506(Method1536(31556, -12453));
          }
 
          if (this.Field1104 != null) {
-            ++a;
-            a += 8 + this.Field1104.Method1321();
+            ++var7;
+            var2 += 8 + this.Field1104.Method1321();
             this.Method1506(Method1536(31582, -24346));
          }
 
          if (this.Field1105 != null) {
-            ++a;
-            a += 8 + this.Field1105.Method1321();
+            ++var7;
+            var2 += 8 + this.Field1105.Method1321();
             this.Method1506(Method1536(31557, -21908));
          }
 
          if (this.Field1106 != null) {
-            a += this.Field1106.Method473();
-            a += this.Field1106.Method474(this, (byte[])null, 0, -1, -1);
+            var7 += this.Field1106.Method473();
+            var2 += this.Field1106.Method474(this, (byte[])null, 0, -1, -1);
          }
 
-         a += this.Field1082.Field991;
-         Class138 a = new Class138(a);
-         a.Method489(-889275714).Method489(this.Field1080);
-         a.Method487(this.Field1081).Method493(this.Field1082.Field990, 0, this.Field1082.Field991);
-         int a = 393216 | (this.Field1091 & 262144) / 64;
-         a.Method487(this.Field1091 & ~a).Method487(this.Field1092).Method487(this.Field1095);
-         a.Method487(this.Field1096);
-         int a = 0;
-         if (a < this.Field1096) {
-            a.Method487(this.Field1097[a]);
-            ++a;
+         var2 += this.Field1082.Field991;
+         Class138 var8 = new Class138(var2);
+         var8.Method489(-889275714).Method489(this.Field1080);
+         var8.Method487(this.Field1081).Method493(this.Field1082.Field990, 0, this.Field1082.Field991);
+         int var9 = 393216 | (this.Field1091 & 262144) / 64;
+         var8.Method487(this.Field1091 & ~var9).Method487(this.Field1092).Method487(this.Field1095);
+         var8.Method487(this.Field1096);
+         int var10 = 0;
+         if (var10 < this.Field1096) {
+            var8.Method487(this.Field1097[var10]);
+            ++var10;
          }
 
-         a.Method487(a);
-         a = this.Field1111;
-         a.Method2252(a);
-         a = (Class256)a.Field1390;
-         a.Method487(a);
-         a = this.Field1113;
-         a.Method1985(a);
-         a = (Class9)a.Field1460;
-         a.Method487(a);
+         var8.Method487(var3);
+         var4 = this.Field1111;
+         var4.Method2252(var8);
+         var4 = (Class256)var4.Field1390;
+         var8.Method487(var5);
+         var6 = this.Field1113;
+         var6.Method1985(var8);
+         var6 = (Class9)var6.Field1460;
+         var8.Method487(var7);
          if (this.Field1110 != null) {
-            a.Method487(this.Method1506(Method1536(31583, 9091)));
-            a.Method489(this.Field1110.Field991 + 2).Method487(this.Field1109);
-            a.Method493(this.Field1110.Field990, 0, this.Field1110.Field991);
+            var8.Method487(this.Method1506(Method1536(31583, 9091)));
+            var8.Method489(this.Field1110.Field991 + 2).Method487(this.Field1109);
+            var8.Method493(this.Field1110.Field990, 0, this.Field1110.Field991);
          }
 
          if (this.Field1094 != 0) {
-            a.Method487(this.Method1506(Method1536(31558, 21563))).Method489(2).Method487(this.Field1094);
+            var8.Method487(this.Method1506(Method1536(31558, 21563))).Method489(2).Method487(this.Field1094);
          }
 
          if (this.Field1098 != 0) {
-            a.Method487(this.Method1506(Method1536(31565, -13598))).Method489(2).Method487(this.Field1098);
+            var8.Method487(this.Method1506(Method1536(31565, -13598))).Method489(2).Method487(this.Field1098);
          }
 
          if (this.Field1099 != null) {
-            a = this.Field1099.Field991;
-            a.Method487(this.Method1506(Method1536(31570, -10643))).Method489(a);
-            a.Method493(this.Field1099.Field990, 0, a);
+            var10 = this.Field1099.Field991;
+            var8.Method487(this.Method1506(Method1536(31570, -10643))).Method489(var10);
+            var8.Method493(this.Field1099.Field990, 0, var10);
          }
 
          if (this.Field1100 != 0) {
-            a.Method487(this.Method1506(Method1536(31572, -593))).Method489(4);
-            a.Method487(this.Field1100).Method487(this.Field1101);
+            var8.Method487(this.Method1506(Method1536(31572, -593))).Method489(4);
+            var8.Method487(this.Field1100).Method487(this.Field1101);
          }
 
          if ((this.Field1091 & 131072) != 0) {
-            a.Method487(this.Method1506(Method1536(31581, 6334))).Method489(0);
+            var8.Method487(this.Method1506(Method1536(31581, 6334))).Method489(0);
          }
 
          if ((this.Field1091 & 4096) != 0 && ((this.Field1080 & '\uffff') < 49 || (this.Field1091 & 262144) != 0)) {
-            a.Method487(this.Method1506(Method1536(31579, 19320))).Method489(0);
+            var8.Method487(this.Method1506(Method1536(31579, 19320))).Method489(0);
          }
 
          if (this.Field1108 != null) {
-            a.Method487(this.Method1506(Method1536(31566, -32171)));
-            a.Method489(this.Field1108.Field991 + 2).Method487(this.Field1107);
-            a.Method493(this.Field1108.Field990, 0, this.Field1108.Field991);
+            var8.Method487(this.Method1506(Method1536(31566, -32171)));
+            var8.Method489(this.Field1108.Field991 + 2).Method487(this.Field1107);
+            var8.Method493(this.Field1108.Field990, 0, this.Field1108.Field991);
          }
 
          if (this.Field1102 != null) {
-            a.Method487(this.Method1506(Method1536(31563, 26273)));
-            this.Field1102.Method1322(a);
+            var8.Method487(this.Method1506(Method1536(31563, 26273)));
+            this.Field1102.Method1322(var8);
          }
 
          if (this.Field1103 != null) {
-            a.Method487(this.Method1506(Method1536(31567, -12090)));
-            this.Field1103.Method1322(a);
+            var8.Method487(this.Method1506(Method1536(31567, -12090)));
+            this.Field1103.Method1322(var8);
          }
 
          if (this.Field1104 != null) {
-            a.Method487(this.Method1506(Method1536(31576, 6279)));
-            this.Field1104.Method1322(a);
+            var8.Method487(this.Method1506(Method1536(31576, 6279)));
+            this.Field1104.Method1322(var8);
          }
 
          if (this.Field1105 != null) {
-            a.Method487(this.Method1506(Method1536(31569, -23860)));
-            this.Field1105.Method1322(a);
+            var8.Method487(this.Method1506(Method1536(31569, -23860)));
+            this.Field1105.Method1322(var8);
          }
 
          if (this.Field1106 != null) {
-            this.Field1106.Method475(this, (byte[])null, 0, -1, -1, a);
+            this.Field1106.Method475(this, (byte[])null, 0, -1, -1, var8);
          }
 
          if (this.Field1117) {
@@ -383,53 +383,53 @@ public class Class169 extends Class167 {
             this.Field1115 = false;
             this.Field1116 = true;
             this.Field1117 = false;
-            (new Class165(a.Field990)).Method1470(this, 4);
+            (new Class165(var8.Field990)).Method1470(this, 4);
             return this.Method1503();
          } else {
-            return a.Field990;
+            return var8.Field990;
          }
       }
    }
 
    Class261 Method1504(Object a) {
-      int a;
+      int var8;
       if (a instanceof Integer) {
-         a = (Integer)a;
-         return this.Method1519(a);
+         var8 = (Integer)a;
+         return this.Method1519(var8);
       } else if (a instanceof Byte) {
-         a = ((Byte)a).intValue();
-         return this.Method1519(a);
+         var8 = ((Byte)a).intValue();
+         return this.Method1519(var8);
       } else if (a instanceof Character) {
-         int a = (Character)a;
-         return this.Method1519(a);
+         char var9 = (Character)a;
+         return this.Method1519(var9);
       } else if (a instanceof Short) {
-         a = ((Short)a).intValue();
-         return this.Method1519(a);
+         var8 = ((Short)a).intValue();
+         return this.Method1519(var8);
       } else if (a instanceof Boolean) {
-         a = (Boolean)a ? 1 : 0;
-         return this.Method1519(a);
+         var8 = (Boolean)a ? 1 : 0;
+         return this.Method1519(var8);
       } else if (a instanceof Float) {
-         float a = (Float)a;
-         return this.Method1520(a);
+         float var7 = (Float)a;
+         return this.Method1520(var7);
       } else if (a instanceof Long) {
-         long a = (Long)a;
-         return this.Method1521(a);
+         long var6 = (Long)a;
+         return this.Method1521(var6);
       } else if (a instanceof Double) {
-         double a = (Double)a;
-         return this.Method1522(a);
+         double var5 = (Double)a;
+         return this.Method1522(var5);
       } else if (a instanceof String) {
          return this.Method1523((String)a);
       } else if (a instanceof b) {
-         b a = (b)a;
-         int a = a.Method3217();
-         if (a == 10) {
-            return this.Method1507(a.Method3221());
+         b var4 = (b)a;
+         int var3 = var4.Method3217();
+         if (var3 == 10) {
+            return this.Method1507(var4.Method3221());
          } else {
-            return a == 11 ? this.Method1509(a.Method3225()) : this.Method1507(a.Method3225());
+            return var3 == 11 ? this.Method1509(var4.Method3225()) : this.Method1507(var4.Method3225());
          }
       } else if (a instanceof Class279) {
-         Class279 a = (Class279)a;
-         return this.Method1511(a.Field1519, a.Field1520, a.Field1521, a.Field1522);
+         Class279 var2 = (Class279)a;
+         return this.Method1511(var2.Field1519, var2.Field1520, var2.Field1521, var2.Field1522);
       } else {
          throw new IllegalArgumentException(Method1536(31571, -11169) + a);
       }
@@ -441,20 +441,20 @@ public class Class169 extends Class167 {
 
    public int Method1506(String a) {
       this.Field1085.Method2831(1, a, (String)null, (String)null);
-      Class261 a = this.Method1531(this.Field1085);
+      Class261 var2 = this.Method1531(this.Field1085);
       this.Field1082.Method485(1).Method491(a);
-      a = new Class261(this.Field1081++, this.Field1085);
-      this.Method1532(a);
-      return a.Field1426;
+      var2 = new Class261(this.Field1081++, this.Field1085);
+      this.Method1532(var2);
+      return var2.Field1426;
    }
 
    Class261 Method1507(String a) {
       this.Field1086.Method2831(7, a, (String)null, (String)null);
-      Class261 a = this.Method1531(this.Field1086);
+      Class261 var2 = this.Method1531(this.Field1086);
       this.Field1082.Method488(7, this.Method1506(a));
-      a = new Class261(this.Field1081++, this.Field1086);
-      this.Method1532(a);
-      return a;
+      var2 = new Class261(this.Field1081++, this.Field1086);
+      this.Method1532(var2);
+      return var2;
    }
 
    public int Method1508(String a) {
@@ -463,11 +463,11 @@ public class Class169 extends Class167 {
 
    Class261 Method1509(String a) {
       this.Field1086.Method2831(16, a, (String)null, (String)null);
-      Class261 a = this.Method1531(this.Field1086);
+      Class261 var2 = this.Method1531(this.Field1086);
       this.Field1082.Method488(16, this.Method1506(a));
-      a = new Class261(this.Field1081++, this.Field1086);
-      this.Method1532(a);
-      return a;
+      var2 = new Class261(this.Field1081++, this.Field1086);
+      this.Method1532(var2);
+      return var2;
    }
 
    public int Method1510(String a) {
@@ -476,16 +476,16 @@ public class Class169 extends Class167 {
 
    Class261 Method1511(int a, String a, String a, String a) {
       this.Field1088.Method2831(20 + a, a, a, a);
-      Class261 a = this.Method1531(this.Field1088);
+      Class261 var5 = this.Method1531(this.Field1088);
       if (a <= 4) {
          this.Method1534(15, a, this.Method1516(a, a, a));
       } else {
          this.Method1534(15, a, this.Method1518(a, a, a, a == 9));
       }
 
-      a = new Class261(this.Field1081++, this.Field1088);
-      this.Method1532(a);
-      return a;
+      var5 = new Class261(this.Field1081++, this.Field1088);
+      this.Method1532(var5);
+      return var5;
    }
 
    public int Method1512(int a, String a, String a, String a) {
@@ -493,48 +493,48 @@ public class Class169 extends Class167 {
    }
 
    Class261 Method1513(String a, String a, Class279 a, Object[] a) {
-      Class138 a = this.Field1110;
-      a = this.Field1110 = new Class138();
-      int a = a.Field991;
-      int a = a.Method2825();
-      a.Method487(this.Method1512(a.Field1519, a.Field1520, a.Field1521, a.Field1522));
-      int a = a.length;
-      a.Method487(a);
+      Class138 var5 = this.Field1110;
+      var5 = this.Field1110 = new Class138();
+      int var6 = var5.Field991;
+      int var7 = a.Method2825();
+      var5.Method487(this.Method1512(a.Field1519, a.Field1520, a.Field1521, a.Field1522));
+      int var8 = a.length;
+      var5.Method487(var8);
 
-      for(int a = 0; a < a; ++a) {
-         Object a = a[a];
-         a ^= a.Method3430();
-         a.Method487(this.Method1505(a));
+      for(int var9 = 0; var9 < var8; ++var9) {
+         Object var10 = a[var9];
+         var7 ^= var10.Method3430();
+         var5.Method487(this.Method1505(var10));
       }
 
-      byte[] a = a.Field990;
-      int a = 2 + a << 1;
-      a &= Integer.MAX_VALUE;
-      Class261 a = this.Field1083[a % this.Field1083.length];
+      byte[] var14 = var5.Field990;
+      int var15 = 2 + var8 << 1;
+      var7 &= Integer.MAX_VALUE;
+      Class261 var11 = this.Field1083[var7 % this.Field1083.length];
 
       label38:
       while(true) {
-         while(a.Field1427 != 33 || a.Field1433 != a) {
-            a = a.Field1434;
+         while(var11.Field1427 != 33 || var11.Field1433 != var7) {
+            var11 = var11.Field1434;
          }
 
-         int a = a.Field1428;
+         int var12 = var11.Field1428;
 
-         for(int a = 0; a < a; ++a) {
-            if (a[a + a] != a[a + a]) {
-               a = a.Field1434;
+         for(int var13 = 0; var13 < var15; ++var13) {
+            if (var14[var6 + var13] != var14[var12 + var13]) {
+               var11 = var11.Field1434;
                continue label38;
             }
          }
 
-         a = a.Field1426;
-         a.Field991 = a;
-         this.Field1087.Method2832(a, a, a);
-         a = this.Method1531(this.Field1087);
-         this.Method1533(18, a, this.Method1524(a, a));
-         a = new Class261(this.Field1081++, this.Field1087);
-         this.Method1532(a);
-         return a;
+         var12 = var11.Field1426;
+         var5.Field991 = var6;
+         this.Field1087.Method2832(a, a, var12);
+         var11 = this.Method1531(this.Field1087);
+         this.Method1533(18, var12, this.Method1524(a, a));
+         var11 = new Class261(this.Field1081++, this.Field1087);
+         this.Method1532(var11);
+         return var11;
       }
    }
 
@@ -544,25 +544,25 @@ public class Class169 extends Class167 {
 
    Class261 Method1515(String a, String a, String a) {
       this.Field1087.Method2831(9, a, a, a);
-      Class261 a = this.Method1531(this.Field1087);
+      Class261 var4 = this.Method1531(this.Field1087);
       this.Method1533(9, this.Method1508(a), this.Method1524(a, a));
-      a = new Class261(this.Field1081++, this.Field1087);
-      this.Method1532(a);
-      return a;
+      var4 = new Class261(this.Field1081++, this.Field1087);
+      this.Method1532(var4);
+      return var4;
    }
 
    public int Method1516(String a, String a, String a) {
       return this.Method1515(a, a, a).Field1426;
    }
 
-   Class261 Method1517(String a, String a, String a, boolean a3) {
-      byte a = 11;
-      this.Field1087.Method2831(a, a, a, a);
-      Class261 a = this.Method1531(this.Field1087);
-      this.Method1533(a, this.Method1508(a), this.Method1524(a, a));
-      a = new Class261(this.Field1081++, this.Field1087);
-      this.Method1532(a);
-      return a;
+   Class261 Method1517(String a, String a, String a, boolean a) {
+      byte var5 = 11;
+      this.Field1087.Method2831(var5, a, a, a);
+      Class261 var6 = this.Method1531(this.Field1087);
+      this.Method1533(var5, this.Method1508(a), this.Method1524(a, a));
+      var6 = new Class261(this.Field1081++, this.Field1087);
+      this.Method1532(var6);
+      return var6;
    }
 
    public int Method1518(String a, String a, String a, boolean a) {
@@ -571,49 +571,49 @@ public class Class169 extends Class167 {
 
    Class261 Method1519(int a) {
       this.Field1085.Method2827(a);
-      Class261 a = this.Method1531(this.Field1085);
+      Class261 var2 = this.Method1531(this.Field1085);
       this.Field1082.Method485(3).Method489(a);
-      a = new Class261(this.Field1081++, this.Field1085);
-      this.Method1532(a);
-      return a;
+      var2 = new Class261(this.Field1081++, this.Field1085);
+      this.Method1532(var2);
+      return var2;
    }
 
    Class261 Method1520(float a) {
       this.Field1085.Method2829(a);
-      Class261 a = this.Method1531(this.Field1085);
+      Class261 var2 = this.Method1531(this.Field1085);
       this.Field1082.Method485(4).Method489(this.Field1085.Field1428);
-      a = new Class261(this.Field1081++, this.Field1085);
-      this.Method1532(a);
-      return a;
+      var2 = new Class261(this.Field1081++, this.Field1085);
+      this.Method1532(var2);
+      return var2;
    }
 
    Class261 Method1521(long a) {
       this.Field1085.Method2828(a);
-      Class261 a = this.Method1531(this.Field1085);
+      Class261 var3 = this.Method1531(this.Field1085);
       this.Field1082.Method485(5).Method490(a);
-      a = new Class261(this.Field1081, this.Field1085);
+      var3 = new Class261(this.Field1081, this.Field1085);
       this.Field1081 += 2;
-      this.Method1532(a);
-      return a;
+      this.Method1532(var3);
+      return var3;
    }
 
    Class261 Method1522(double a) {
       this.Field1085.Method2830(a);
-      Class261 a = this.Method1531(this.Field1085);
+      Class261 var3 = this.Method1531(this.Field1085);
       this.Field1082.Method485(6).Method490(this.Field1085.Field1429);
-      a = new Class261(this.Field1081, this.Field1085);
+      var3 = new Class261(this.Field1081, this.Field1085);
       this.Field1081 += 2;
-      this.Method1532(a);
-      return a;
+      this.Method1532(var3);
+      return var3;
    }
 
    private Class261 Method1523(String a) {
       this.Field1086.Method2831(8, a, (String)null, (String)null);
-      Class261 a = this.Method1531(this.Field1086);
+      Class261 var2 = this.Method1531(this.Field1086);
       this.Field1082.Method488(8, this.Method1506(a));
-      a = new Class261(this.Field1081++, this.Field1086);
-      this.Method1532(a);
-      return a;
+      var2 = new Class261(this.Field1081++, this.Field1086);
+      this.Method1532(var2);
+      return var2;
    }
 
    public int Method1524(String a, String a) {
@@ -622,18 +622,18 @@ public class Class169 extends Class167 {
 
    Class261 Method1525(String a, String a) {
       this.Field1086.Method2831(12, a, a, (String)null);
-      Class261 a = this.Method1531(this.Field1086);
+      Class261 var3 = this.Method1531(this.Field1086);
       this.Method1533(12, this.Method1506(a), this.Method1506(a));
-      a = new Class261(this.Field1081++, this.Field1086);
-      this.Method1532(a);
-      return a;
+      var3 = new Class261(this.Field1081++, this.Field1086);
+      this.Method1532(var3);
+      return var3;
    }
 
    int Method1526(String a) {
       this.Field1085.Method2831(30, a, (String)null, (String)null);
-      Class261 a = this.Method1531(this.Field1085);
-      a = this.Method1528(this.Field1085);
-      return a.Field1426;
+      Class261 var2 = this.Method1531(this.Field1085);
+      var2 = this.Method1528(this.Field1085);
+      return var2.Field1426;
    }
 
    int Method1527(String a, int a) {
@@ -641,98 +641,98 @@ public class Class169 extends Class167 {
       this.Field1085.Field1428 = a;
       this.Field1085.Field1430 = a;
       this.Field1085.Field1433 = Integer.MAX_VALUE & 31 + a.hashCode() + a;
-      Class261 a = this.Method1531(this.Field1085);
-      a = this.Method1528(this.Field1085);
-      return a.Field1426;
+      Class261 var3 = this.Method1531(this.Field1085);
+      var3 = this.Method1528(this.Field1085);
+      return var3.Field1426;
    }
 
    private Class261 Method1528(Class261 a) {
       ++this.Field1090;
-      Class261 a = new Class261(this.Field1090, this.Field1085);
-      this.Method1532(a);
+      Class261 var2 = new Class261(this.Field1090, this.Field1085);
+      this.Method1532(var2);
       if (this.Field1089 == null) {
          this.Field1089 = new Class261[16];
       }
 
       if (this.Field1090 == this.Field1089.length) {
-         Class261[] a = new Class261[2 * this.Field1089.length];
-         System.arraycopy(this.Field1089, 0, a, 0, this.Field1089.length);
-         this.Field1089 = a;
+         Class261[] var3 = new Class261[2 * this.Field1089.length];
+         System.arraycopy(this.Field1089, 0, var3, 0, this.Field1089.length);
+         this.Field1089 = var3;
       }
 
-      this.Field1089[this.Field1090] = a;
-      return a;
+      this.Field1089[this.Field1090] = var2;
+      return var2;
    }
 
    int Method1529(int a, int a) {
       this.Field1086.Field1427 = 32;
       this.Field1086.Field1429 = (long)a | (long)a << 32;
       this.Field1086.Field1433 = Integer.MAX_VALUE & 32 + a + a;
-      Class261 a = this.Method1531(this.Field1086);
-      String a = this.Field1089[a].Field1430;
-      String a = this.Field1089[a].Field1430;
-      this.Field1086.Field1428 = this.Method1526(this.Method1530(a, a));
-      a = new Class261(0, this.Field1086);
-      this.Method1532(a);
-      return a.Field1428;
+      Class261 var3 = this.Method1531(this.Field1086);
+      String var4 = this.Field1089[a].Field1430;
+      String var5 = this.Field1089[a].Field1430;
+      this.Field1086.Field1428 = this.Method1526(this.Method1530(var4, var5));
+      var3 = new Class261(0, this.Field1086);
+      this.Method1532(var3);
+      return var3.Field1428;
    }
 
    protected String Method1530(String a, String a) {
-      ClassLoader a = this.getClass().getClassLoader();
+      ClassLoader var5 = this.getClass().getClassLoader();
 
-      Class a;
-      Class a;
+      Class var3;
+      Class var4;
       try {
-         a = Class.forName(a.replace('/', '.'), false, a);
-         a = Class.forName(a.replace('/', '.'), false, a);
+         var3 = Class.forName(a.replace('/', '.'), false, var5);
+         var4 = Class.forName(a.replace('/', '.'), false, var5);
       } catch (Exception var7) {
          throw new RuntimeException(var7.toString());
       }
 
-      if (a.isAssignableFrom(a)) {
+      if (var3.isAssignableFrom(var4)) {
          return a;
-      } else if (a.isAssignableFrom(a)) {
+      } else if (var4.isAssignableFrom(var3)) {
          return a;
-      } else if (!a.isInterface() && !a.isInterface()) {
+      } else if (!var3.isInterface() && !var4.isInterface()) {
          do {
-            a = a.getSuperclass();
-         } while(!a.isAssignableFrom(a));
+            var3 = var3.getSuperclass();
+         } while(!var3.isAssignableFrom(var4));
 
-         return a.getName().replace('.', '/');
+         return var3.getName().replace('.', '/');
       } else {
          return Method1536(31575, -9573);
       }
    }
 
    private Class261 Method1531(Class261 a) {
-      Class261 a;
-      for(a = this.Field1083[a.Field1433 % this.Field1083.length]; a.Field1427 != a.Field1427 || !a.Method2834(a); a = a.Field1434) {
+      Class261 var2;
+      for(var2 = this.Field1083[a.Field1433 % this.Field1083.length]; var2.Field1427 != a.Field1427 || !a.Method2834(var2); var2 = var2.Field1434) {
       }
 
-      return a;
+      return var2;
    }
 
    private void Method1532(Class261 a) {
-      int a;
+      int var2;
       if (this.Field1081 + this.Field1090 > this.Field1084) {
-         a = this.Field1083.length;
-         int a = a * 2 + 1;
-         Class261[] a = new Class261[a];
-         int a = a - 1;
-         Class261 a = this.Field1083[a];
+         var2 = this.Field1083.length;
+         int var3 = var2 * 2 + 1;
+         Class261[] var4 = new Class261[var3];
+         int var5 = var2 - 1;
+         Class261 var6 = this.Field1083[var5];
 
          while(true) {
-            int a = a.Field1433 % a.length;
-            Class261 a = a.Field1434;
-            a.Field1434 = a[a];
-            a[a] = a;
-            a = a;
+            int var7 = var6.Field1433 % var4.length;
+            Class261 var8 = var6.Field1434;
+            var6.Field1434 = var4[var7];
+            var4[var7] = var6;
+            var6 = var8;
          }
       }
 
-      a = a.Field1433 % this.Field1083.length;
-      a.Field1434 = this.Field1083[a];
-      this.Field1083[a] = a;
+      var2 = a.Field1433 % this.Field1083.length;
+      a.Field1434 = this.Field1083[var2];
+      this.Field1083[var2] = a;
    }
 
    private void Method1533(int a, int a, int a) {
@@ -744,18 +744,18 @@ public class Class169 extends Class167 {
    }
 
    static {
-      String[] a = new String[28];
-      int a = 0;
-      String a = "\u008d7~!\u0013/ñ\u000e\u007fkÅÐ\u009csâ\u0092\u001d\u001cB_Ö\fÈ\\ÿ&ºØ\u0005¶\u0017\u0013_féÞ\u001f _Þ¢d]\u009c}\u0012\n \u008c\u0012\u001bt¹Ú<~³\u0010ñ\u0089ñöâÕÏQ¸\u0080=\u00ad\u0083Ü\u0001g\tÀ\u0002åSZp¦Þ@\u0015\u001f>\u0003ds4é»öü.\u000f\u000b\u0088³ò\u0099ü4CÐÜuÂ,A\u0080\u0085Äè½\u009f®öx\nWdk\u0097\u0006\u0011´ò;|Þ*×0\"£FíM\u0090ýÊ\u001a[Úîv\u0089\u0016\u0094À\u000b\u0099HçQÙ¨\"\u0010ìÓeÿ\u008eGuÅú`ú\u000eÆDõÜf>Î^\\æß\u0004^\u0086VÕgn´è\u0014\u0004\u0087-$ý¡=-¢\b\u0080Y5©¿0ZÒ\u0013\u007fàö\u0019s÷6ÛDb\u008dáed\u0089\u000e(Ä¨LM¬+\u008c`<×ß1y?*J\u0091\u0011\u0017 û\u0011Òö\u0002ûÂf]at\u007fÊ\f!åè\t$egÔ\u0088V¤óÞ\u0098vÙPïRØÈ\u0004\u001aíW%\u000fæ7\u0017d<4Áã&~\u008eü\u009aª«U\u0010g\u0096ô\u0096}ªË\u0099Ì\nÝ¢Ã0´³¯2\u0016\u001d\u0018§ßj\u001c_^\rfäÐÎ·n3pb\f^£0ÈÜP$\u0003\u0094¶\u0013\u0010\u008drJSóÎ)&\u0002âµÙÿ\u008cË!\n\f\t\u0097«Ä¯Ìþ¼ë\u0019\u00adÞiEÊº\u0084±=s»<Ú0\u008b¬Ühak^9S§ª\u000fÝ\u0097\u009f\f¾\u0096ÀÑ6~\u0019r\u0007'\u0091\u0006Wê\u0094T;ô\u0014\u0001ýÆ~M\u0013\u001e¾`Át\u008bø\u0014}\u001b¿\u0098¨¼\u001f²\u009c\u008a\r¶³\u000b\u008fËM\u0082OøjG\u000b÷à}ªl\u0082\u00876\u0016\bÉÙÜ\u001cÀ\u0014n\u000f+ ðØ©Ç\u0096îªn#¨\u0006\u008cÐjEâ\u001bDZTÕm¨pì¤!oÂEÛð=\u00141¨o>~DA,/ñ\f\u0097´Va6#j^Ò_\u0013¨\n¥\u0086R\u0011ßþN\u000f&j\t5\u0001[3\u008d|\\_\u001f\u0019\u009fÊ/Ç\u0002ê\u009d»\u001e2ß\u0014V5\u001a\fî|'é\u0096iJ\u00ad\u0089\u000f\u0096\fö\u007f\u0093øe\u001c\u0082Ç\u008fEÕÁË\f\f\u009f%\u0004X\u008f§Ëkí$þ\t~#;\u007f ½ÐO©\n=?A&½\u0018\u0002Ó¯ñ\t*Î±Âñ\nú¹ì";
-      int a = "\u008d7~!\u0013/ñ\u000e\u007fkÅÐ\u009csâ\u0092\u001d\u001cB_Ö\fÈ\\ÿ&ºØ\u0005¶\u0017\u0013_féÞ\u001f _Þ¢d]\u009c}\u0012\n \u008c\u0012\u001bt¹Ú<~³\u0010ñ\u0089ñöâÕÏQ¸\u0080=\u00ad\u0083Ü\u0001g\tÀ\u0002åSZp¦Þ@\u0015\u001f>\u0003ds4é»öü.\u000f\u000b\u0088³ò\u0099ü4CÐÜuÂ,A\u0080\u0085Äè½\u009f®öx\nWdk\u0097\u0006\u0011´ò;|Þ*×0\"£FíM\u0090ýÊ\u001a[Úîv\u0089\u0016\u0094À\u000b\u0099HçQÙ¨\"\u0010ìÓeÿ\u008eGuÅú`ú\u000eÆDõÜf>Î^\\æß\u0004^\u0086VÕgn´è\u0014\u0004\u0087-$ý¡=-¢\b\u0080Y5©¿0ZÒ\u0013\u007fàö\u0019s÷6ÛDb\u008dáed\u0089\u000e(Ä¨LM¬+\u008c`<×ß1y?*J\u0091\u0011\u0017 û\u0011Òö\u0002ûÂf]at\u007fÊ\f!åè\t$egÔ\u0088V¤óÞ\u0098vÙPïRØÈ\u0004\u001aíW%\u000fæ7\u0017d<4Áã&~\u008eü\u009aª«U\u0010g\u0096ô\u0096}ªË\u0099Ì\nÝ¢Ã0´³¯2\u0016\u001d\u0018§ßj\u001c_^\rfäÐÎ·n3pb\f^£0ÈÜP$\u0003\u0094¶\u0013\u0010\u008drJSóÎ)&\u0002âµÙÿ\u008cË!\n\f\t\u0097«Ä¯Ìþ¼ë\u0019\u00adÞiEÊº\u0084±=s»<Ú0\u008b¬Ühak^9S§ª\u000fÝ\u0097\u009f\f¾\u0096ÀÑ6~\u0019r\u0007'\u0091\u0006Wê\u0094T;ô\u0014\u0001ýÆ~M\u0013\u001e¾`Át\u008bø\u0014}\u001b¿\u0098¨¼\u001f²\u009c\u008a\r¶³\u000b\u008fËM\u0082OøjG\u000b÷à}ªl\u0082\u00876\u0016\bÉÙÜ\u001cÀ\u0014n\u000f+ ðØ©Ç\u0096îªn#¨\u0006\u008cÐjEâ\u001bDZTÕm¨pì¤!oÂEÛð=\u00141¨o>~DA,/ñ\f\u0097´Va6#j^Ò_\u0013¨\n¥\u0086R\u0011ßþN\u000f&j\t5\u0001[3\u008d|\\_\u001f\u0019\u009fÊ/Ç\u0002ê\u009d»\u001e2ß\u0014V5\u001a\fî|'é\u0096iJ\u00ad\u0089\u000f\u0096\fö\u007f\u0093øe\u001c\u0082Ç\u008fEÕÁË\f\f\u009f%\u0004X\u008f§Ëkí$þ\t~#;\u007f ½ÐO©\n=?A&½\u0018\u0002Ó¯ñ\t*Î±Âñ\nú¹ì".length();
-      int a = 16;
-      int a = -1;
+      String[] var5 = new String[28];
+      int var3 = 0;
+      String var2 = "\u008d7~!\u0013/ñ\u000e\u007fkÅÐ\u009csâ\u0092\u001d\u001cB_Ö\fÈ\\ÿ&ºØ\u0005¶\u0017\u0013_féÞ\u001f _Þ¢d]\u009c}\u0012\n \u008c\u0012\u001bt¹Ú<~³\u0010ñ\u0089ñöâÕÏQ¸\u0080=\u00ad\u0083Ü\u0001g\tÀ\u0002åSZp¦Þ@\u0015\u001f>\u0003ds4é»öü.\u000f\u000b\u0088³ò\u0099ü4CÐÜuÂ,A\u0080\u0085Äè½\u009f®öx\nWdk\u0097\u0006\u0011´ò;|Þ*×0\"£FíM\u0090ýÊ\u001a[Úîv\u0089\u0016\u0094À\u000b\u0099HçQÙ¨\"\u0010ìÓeÿ\u008eGuÅú`ú\u000eÆDõÜf>Î^\\æß\u0004^\u0086VÕgn´è\u0014\u0004\u0087-$ý¡=-¢\b\u0080Y5©¿0ZÒ\u0013\u007fàö\u0019s÷6ÛDb\u008dáed\u0089\u000e(Ä¨LM¬+\u008c`<×ß1y?*J\u0091\u0011\u0017 û\u0011Òö\u0002ûÂf]at\u007fÊ\f!åè\t$egÔ\u0088V¤óÞ\u0098vÙPïRØÈ\u0004\u001aíW%\u000fæ7\u0017d<4Áã&~\u008eü\u009aª«U\u0010g\u0096ô\u0096}ªË\u0099Ì\nÝ¢Ã0´³¯2\u0016\u001d\u0018§ßj\u001c_^\rfäÐÎ·n3pb\f^£0ÈÜP$\u0003\u0094¶\u0013\u0010\u008drJSóÎ)&\u0002âµÙÿ\u008cË!\n\f\t\u0097«Ä¯Ìþ¼ë\u0019\u00adÞiEÊº\u0084±=s»<Ú0\u008b¬Ühak^9S§ª\u000fÝ\u0097\u009f\f¾\u0096ÀÑ6~\u0019r\u0007'\u0091\u0006Wê\u0094T;ô\u0014\u0001ýÆ~M\u0013\u001e¾`Át\u008bø\u0014}\u001b¿\u0098¨¼\u001f²\u009c\u008a\r¶³\u000b\u008fËM\u0082OøjG\u000b÷à}ªl\u0082\u00876\u0016\bÉÙÜ\u001cÀ\u0014n\u000f+ ðØ©Ç\u0096îªn#¨\u0006\u008cÐjEâ\u001bDZTÕm¨pì¤!oÂEÛð=\u00141¨o>~DA,/ñ\f\u0097´Va6#j^Ò_\u0013¨\n¥\u0086R\u0011ßþN\u000f&j\t5\u0001[3\u008d|\\_\u001f\u0019\u009fÊ/Ç\u0002ê\u009d»\u001e2ß\u0014V5\u001a\fî|'é\u0096iJ\u00ad\u0089\u000f\u0096\fö\u007f\u0093øe\u001c\u0082Ç\u008fEÕÁË\f\f\u009f%\u0004X\u008f§Ëkí$þ\t~#;\u007f ½ÐO©\n=?A&½\u0018\u0002Ó¯ñ\t*Î±Âñ\nú¹ì";
+      int var4 = "\u008d7~!\u0013/ñ\u000e\u007fkÅÐ\u009csâ\u0092\u001d\u001cB_Ö\fÈ\\ÿ&ºØ\u0005¶\u0017\u0013_féÞ\u001f _Þ¢d]\u009c}\u0012\n \u008c\u0012\u001bt¹Ú<~³\u0010ñ\u0089ñöâÕÏQ¸\u0080=\u00ad\u0083Ü\u0001g\tÀ\u0002åSZp¦Þ@\u0015\u001f>\u0003ds4é»öü.\u000f\u000b\u0088³ò\u0099ü4CÐÜuÂ,A\u0080\u0085Äè½\u009f®öx\nWdk\u0097\u0006\u0011´ò;|Þ*×0\"£FíM\u0090ýÊ\u001a[Úîv\u0089\u0016\u0094À\u000b\u0099HçQÙ¨\"\u0010ìÓeÿ\u008eGuÅú`ú\u000eÆDõÜf>Î^\\æß\u0004^\u0086VÕgn´è\u0014\u0004\u0087-$ý¡=-¢\b\u0080Y5©¿0ZÒ\u0013\u007fàö\u0019s÷6ÛDb\u008dáed\u0089\u000e(Ä¨LM¬+\u008c`<×ß1y?*J\u0091\u0011\u0017 û\u0011Òö\u0002ûÂf]at\u007fÊ\f!åè\t$egÔ\u0088V¤óÞ\u0098vÙPïRØÈ\u0004\u001aíW%\u000fæ7\u0017d<4Áã&~\u008eü\u009aª«U\u0010g\u0096ô\u0096}ªË\u0099Ì\nÝ¢Ã0´³¯2\u0016\u001d\u0018§ßj\u001c_^\rfäÐÎ·n3pb\f^£0ÈÜP$\u0003\u0094¶\u0013\u0010\u008drJSóÎ)&\u0002âµÙÿ\u008cË!\n\f\t\u0097«Ä¯Ìþ¼ë\u0019\u00adÞiEÊº\u0084±=s»<Ú0\u008b¬Ühak^9S§ª\u000fÝ\u0097\u009f\f¾\u0096ÀÑ6~\u0019r\u0007'\u0091\u0006Wê\u0094T;ô\u0014\u0001ýÆ~M\u0013\u001e¾`Át\u008bø\u0014}\u001b¿\u0098¨¼\u001f²\u009c\u008a\r¶³\u000b\u008fËM\u0082OøjG\u000b÷à}ªl\u0082\u00876\u0016\bÉÙÜ\u001cÀ\u0014n\u000f+ ðØ©Ç\u0096îªn#¨\u0006\u008cÐjEâ\u001bDZTÕm¨pì¤!oÂEÛð=\u00141¨o>~DA,/ñ\f\u0097´Va6#j^Ò_\u0013¨\n¥\u0086R\u0011ßþN\u000f&j\t5\u0001[3\u008d|\\_\u001f\u0019\u009fÊ/Ç\u0002ê\u009d»\u001e2ß\u0014V5\u001a\fî|'é\u0096iJ\u00ad\u0089\u000f\u0096\fö\u007f\u0093øe\u001c\u0082Ç\u008fEÕÁË\f\f\u009f%\u0004X\u008f§Ëkí$þ\t~#;\u007f ½ÐO©\n=?A&½\u0018\u0002Ó¯ñ\t*Î±Âñ\nú¹ì".length();
+      char var1 = 16;
+      int var0 = -1;
 
       label66:
       while(true) {
          byte var10000 = 4;
-         ++a;
-         String var10001 = a.substring(a, a + a);
+         ++var0;
+         String var10001 = var2.substring(var0, var0 + var1);
          byte var10002 = -1;
 
          while(true) {
@@ -763,7 +763,7 @@ public class Class169 extends Class167 {
             label61: {
                char[] var15 = var10001.toCharArray();
                int var10004 = var15.length;
-               int a = 0;
+               int var6 = 0;
                byte var16 = var10000;
                byte var10003 = var10000;
                var14 = var15;
@@ -772,22 +772,22 @@ public class Class169 extends Class167 {
                int var10006;
                if (var10004 <= 1) {
                   var17 = var15;
-                  var10006 = a;
+                  var10006 = var6;
                } else {
                   var10003 = var10000;
                   var11 = var10004;
-                  if (var10004 <= a) {
+                  if (var10004 <= var6) {
                      break label61;
                   }
 
                   var17 = var15;
-                  var10006 = a;
+                  var10006 = var6;
                }
 
                while(true) {
                   char var25 = var17[var10006];
                   byte var26;
-                  switch (a % 7) {
+                  switch (var6 % 7) {
                      case 0:
                         var26 = 17;
                         break;
@@ -811,19 +811,19 @@ public class Class169 extends Class167 {
                   }
 
                   var17[var10006] = (char)(var25 ^ var16 ^ var26);
-                  ++a;
+                  ++var6;
                   if (var10003 == 0) {
                      var10006 = var10003;
                      var17 = var14;
                      var16 = var10003;
                   } else {
-                     if (var11 <= a) {
+                     if (var11 <= var6) {
                         break;
                      }
 
                      var17 = var14;
                      var16 = var10003;
-                     var10006 = a;
+                     var10006 = var6;
                   }
                }
             }
@@ -831,39 +831,39 @@ public class Class169 extends Class167 {
             String var19 = (new String(var14)).intern();
             switch (var10002) {
                case 0:
-                  a[a++] = var19;
-                  if ((a += a) >= a) {
-                     Field1118 = a;
+                  var5[var3++] = var19;
+                  if ((var0 += var1) >= var4) {
+                     Field1118 = var5;
                      Field1119 = new String[28];
-                     byte[] a = new byte[220];
-                     String a = Method1536(31577, -11437);
+                     byte[] var8 = new byte[220];
+                     String var9 = Method1536(31577, -11437);
 
-                     for(int a = 0; a < a.length; ++a) {
-                        a[a] = (byte)(a.charAt(a) - 65);
+                     for(int var7 = 0; var7 < var8.length; ++var7) {
+                        var8[var7] = (byte)(var9.charAt(var7) - 65);
                      }
 
-                     Field1059 = a;
+                     Field1059 = var8;
                      return;
                   }
 
-                  a = a.charAt(a);
+                  var1 = var2.charAt(var0);
                   break;
                default:
-                  a[a++] = var19;
-                  if ((a += a) < a) {
-                     a = a.charAt(a);
+                  var5[var3++] = var19;
+                  if ((var0 += var1) < var4) {
+                     var1 = var2.charAt(var0);
                      continue label66;
                   }
 
-                  a = "v¤\u008b\u0093\u000fù¥_\u0087Î\u0092¦cÎ\u00ad\u00063Ø|4ÕÈ)æZ\u008bÙ0G¸*\u001bz\u009e\nÔ?\u0011£BGm\u008aÒ`@Í×*õönlÇ\u0097ïÏc\u0014";
-                  a = "v¤\u008b\u0093\u000fù¥_\u0087Î\u0092¦cÎ\u00ad\u00063Ø|4ÕÈ)æZ\u008bÙ0G¸*\u001bz\u009e\nÔ?\u0011£BGm\u008aÒ`@Í×*õönlÇ\u0097ïÏc\u0014".length();
-                  a = 31;
-                  a = -1;
+                  var2 = "v¤\u008b\u0093\u000fù¥_\u0087Î\u0092¦cÎ\u00ad\u00063Ø|4ÕÈ)æZ\u008bÙ0G¸*\u001bz\u009e\nÔ?\u0011£BGm\u008aÒ`@Í×*õönlÇ\u0097ïÏc\u0014";
+                  var4 = "v¤\u008b\u0093\u000fù¥_\u0087Î\u0092¦cÎ\u00ad\u00063Ø|4ÕÈ)æZ\u008bÙ0G¸*\u001bz\u009e\nÔ?\u0011£BGm\u008aÒ`@Í×*õönlÇ\u0097ïÏc\u0014".length();
+                  var1 = 31;
+                  var0 = -1;
             }
 
             var10000 = 115;
-            ++a;
-            var10001 = a.substring(a, a + a);
+            ++var0;
+            var10001 = var2.substring(var0, var0 + var1);
             var10002 = 0;
          }
       }

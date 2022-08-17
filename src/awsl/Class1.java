@@ -65,33 +65,33 @@ public class Class1 extends Class119 {
       super.Method17(a, a);
       this.Field17.setSeed(this.Field15);
       this.Field16 = new float[this.Field6];
-      int a = 0;
-      if (a < this.Field6) {
-         this.Field16[a] = (float)this.Field7 + (float)this.Field10 / 100.0F * (float)this.Field7 * (float)this.Field17.nextGaussian();
-         ++a;
+      int var4 = 0;
+      if (var4 < this.Field6) {
+         this.Field16[var4] = (float)this.Field7 + (float)this.Field10 / 100.0F * (float)this.Field7 * (float)this.Field17.nextGaussian();
+         ++var4;
       }
 
    }
 
    public int Method3(int a, int a, int a) {
-      float a = (float)(a - this.Field13);
-      float a = (float)(a - this.Field14);
-      float a = a * a + a * a;
-      float a = (float)Math.atan2((double)a, (double)a);
-      float a = (a + 3.1415927F) / 6.2831855F * (float)this.Field6;
-      int a = (int)a;
-      float a = a - (float)a;
+      float var4 = (float)(a - this.Field13);
+      float var5 = (float)(a - this.Field14);
+      float var6 = var4 * var4 + var5 * var5;
+      float var7 = (float)Math.atan2((double)var5, (double)var4);
+      float var8 = (var7 + 3.1415927F) / 6.2831855F * (float)this.Field6;
+      int var9 = (int)var8;
+      float var10 = var8 - (float)var9;
       if (this.Field7 != 0) {
-         float a = Class776.Method1717(a, this.Field16[a % this.Field6], this.Field16[(a + 1) % this.Field6]);
-         float a = a * a / (a + 1.0E-4F);
-         a = (float)Math.pow((double)a, (double)(100 - this.Field8) / 50.0);
-         a -= 0.5F;
-         a = 1.0F - a * a;
-         a *= a;
+         float var11 = Class776.Method1717(var10, this.Field16[var9 % this.Field6], this.Field16[(var9 + 1) % this.Field6]);
+         float var12 = var11 * var11 / (var6 + 1.0E-4F);
+         var12 = (float)Math.pow((double)var12, (double)(100 - this.Field8) / 50.0);
+         var10 -= 0.5F;
+         var10 = 1.0F - var10 * var10;
+         var10 *= var12;
       }
 
-      a = Class776.Method1711(a, 0.0F, 1.0F);
-      return Class776.Method1719(a, a, this.Field9);
+      var10 = Class776.Method1711(var10, 0.0F, 1.0F);
+      return Class776.Method1719(var10, a, this.Field9);
    }
 
    public String toString() {

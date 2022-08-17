@@ -20,7 +20,7 @@ public class Class18 extends Class119 {
       return this.Field228;
    }
 
-   public int Method3(int a, int a1, int a) {
+   public int Method3(int a, int a, int a) {
       return a & this.Field228;
    }
 

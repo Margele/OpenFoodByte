@@ -811,7 +811,7 @@ public class Class456 implements Class422, Class45 {
    @Class628
    public native void Method1362(Class15 class15, String string);
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public String[] Method1360() {

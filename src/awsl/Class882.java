@@ -82,31 +82,31 @@ public class Class882 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
+      int var3 = a.getWidth();
+      int var4 = a.getHeight();
       a = this.Method1263(a, (ColorModel)null);
-      float a = this.Field3851 * (float)Math.cos((double)this.Field3850);
-      float a = -this.Field3851 * (float)Math.sin((double)this.Field3850);
-      new BufferedImage(a, a, 2);
-      Class111 a = new Class111(this.Field3852 * 10.0F, 0.75F, 0.1F);
-      BufferedImage a = a.Method62(a, (BufferedImage)null);
-      BufferedImage a = new BufferedImage(a, a, 2);
-      Graphics2D a = a.createGraphics();
-      a.setColor(new Color(this.Field3854));
-      a.fillRect(0, 0, a, a);
-      a.setComposite(AlphaComposite.DstIn);
-      a.drawRenderedImage(a, (AffineTransform)null);
-      a.setComposite(AlphaComposite.DstOut);
-      a.translate((double)a, (double)a);
-      a.drawRenderedImage(a, (AffineTransform)null);
-      a.dispose();
-      a = (new Class187(this.Field3849)).Method62(a, (BufferedImage)null);
-      a = (new Class40(3.0F * this.Field3855)).Method62(a, a);
-      a = a.createGraphics();
-      a.drawRenderedImage(a, (AffineTransform)null);
-      a.setComposite(new Class246(1.0F));
-      a.drawRenderedImage(a, (AffineTransform)null);
-      a.dispose();
+      float var5 = this.Field3851 * (float)Math.cos((double)this.Field3850);
+      float var6 = -this.Field3851 * (float)Math.sin((double)this.Field3850);
+      new BufferedImage(var3, var4, 2);
+      Class111 var8 = new Class111(this.Field3852 * 10.0F, 0.75F, 0.1F);
+      BufferedImage var7 = var8.Method62(a, (BufferedImage)null);
+      BufferedImage var9 = new BufferedImage(var3, var4, 2);
+      Graphics2D var10 = var9.createGraphics();
+      var10.setColor(new Color(this.Field3854));
+      var10.fillRect(0, 0, var3, var4);
+      var10.setComposite(AlphaComposite.DstIn);
+      var10.drawRenderedImage(var7, (AffineTransform)null);
+      var10.setComposite(AlphaComposite.DstOut);
+      var10.translate((double)var5, (double)var6);
+      var10.drawRenderedImage(var7, (AffineTransform)null);
+      var10.dispose();
+      var9 = (new Class187(this.Field3849)).Method62(var9, (BufferedImage)null);
+      var9 = (new Class40(3.0F * this.Field3855)).Method62(var9, var9);
+      var10 = a.createGraphics();
+      var10.drawRenderedImage(a, (AffineTransform)null);
+      var10.setComposite(new Class246(1.0F));
+      var10.drawRenderedImage(var9, (AffineTransform)null);
+      var10.dispose();
       return a;
    }
 

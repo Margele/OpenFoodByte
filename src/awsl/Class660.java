@@ -13,8 +13,8 @@ final class Class660 implements Class674 {
    }
 
    public OutputStream Method2334(String a) throws IOException {
-      ZipEntry a = new ZipEntry(a);
-      this.Field2930.putNextEntry(a);
+      ZipEntry var2 = new ZipEntry(a);
+      this.Field2930.putNextEntry(var2);
       return this.Field2930;
    }
 

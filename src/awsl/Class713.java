@@ -75,9 +75,9 @@ public class Class713 extends Gui {
    }
 
    public String Method2029() {
-      int a = this.Field3092 < this.Field3093 ? this.Field3092 : this.Field3093;
-      int a = this.Field3092 < this.Field3093 ? this.Field3093 : this.Field3092;
-      return this.Field3084.substring(a, a);
+      int var1 = this.Field3092 < this.Field3093 ? this.Field3092 : this.Field3093;
+      int var2 = this.Field3092 < this.Field3093 ? this.Field3093 : this.Field3092;
+      return this.Field3084.substring(var1, var2);
    }
 
    public void Method2030(Predicate a) {
@@ -85,32 +85,32 @@ public class Class713 extends Gui {
    }
 
    public void Method2031(String a) {
-      String a = "";
-      String a = ChatAllowedCharacters.filterAllowedCharacters(a);
-      int a = this.Field3092 < this.Field3093 ? this.Field3092 : this.Field3093;
-      int a = this.Field3092 < this.Field3093 ? this.Field3093 : this.Field3092;
-      int a = this.Field3085 - this.Field3084.length() - (a - a);
-      int a = false;
+      String var2 = "";
+      String var3 = ChatAllowedCharacters.filterAllowedCharacters(a);
+      int var4 = this.Field3092 < this.Field3093 ? this.Field3092 : this.Field3093;
+      int var5 = this.Field3092 < this.Field3093 ? this.Field3093 : this.Field3092;
+      int var6 = this.Field3085 - this.Field3084.length() - (var4 - var5);
+      boolean var7 = false;
       if (this.Field3084.length() > 0) {
-         a = a + this.Field3084.substring(0, a);
+         var2 = var2 + this.Field3084.substring(0, var4);
       }
 
-      int a;
-      if (a < a.length()) {
-         a = a + a.substring(0, a);
-         a = a;
+      int var8;
+      if (var6 < var3.length()) {
+         var2 = var2 + var3.substring(0, var6);
+         var8 = var6;
       } else {
-         a = a + a;
-         a = a.length();
+         var2 = var2 + var3;
+         var8 = var3.length();
       }
 
-      if (this.Field3084.length() > 0 && a < this.Field3084.length()) {
-         a = a + this.Field3084.substring(a);
+      if (this.Field3084.length() > 0 && var5 < this.Field3084.length()) {
+         var2 = var2 + this.Field3084.substring(var5);
       }
 
-      if (this.Field3098.apply(a)) {
-         this.Field3084 = a;
-         this.Method2036(a - this.Field3093 + a);
+      if (this.Field3098.apply(var2)) {
+         this.Field3084 = var2;
+         this.Method2036(var4 - this.Field3093 + var8);
          if (this.Field3097 != null) {
             this.Field3097.func_175319_a(this.Field3078, this.Field3084);
          }
@@ -135,16 +135,16 @@ public class Class713 extends Gui {
             this.Method2031("");
          } else {
             boolean var2 = true;
-            int a = this.Field3092 + a;
-            int a = this.Field3092;
-            String a = "";
-            a = this.Field3084.substring(0, a);
-            if (a < this.Field3084.length()) {
-               a = a + this.Field3084.substring(a);
+            int var3 = this.Field3092 + a;
+            int var4 = this.Field3092;
+            String var5 = "";
+            var5 = this.Field3084.substring(0, var3);
+            if (var4 < this.Field3084.length()) {
+               var5 = var5 + this.Field3084.substring(var4);
             }
 
-            if (this.Field3098.apply(a)) {
-               this.Field3084 = a;
+            if (this.Field3098.apply(var5)) {
+               this.Field3084 = var5;
                this.Method2036(a);
                if (this.Field3097 != null) {
                   this.Field3097.func_175319_a(this.Field3078, this.Field3084);
@@ -167,24 +167,24 @@ public class Class713 extends Gui {
       return this.Method2035(a, a, true);
    }
 
-   public int Method2035(int a, int a, boolean a2) {
-      int a = a;
+   public int Method2035(int a, int a, boolean a) {
+      int var4 = a;
       boolean var5 = true;
-      int a = Math.abs(a);
+      int var6 = Math.abs(a);
 
-      for(int a = 0; a < a; ++a) {
-         int a = this.Field3084.length();
-         a = this.Field3084.indexOf(32, a);
-         if (a == -1) {
-            a = a;
+      for(int var7 = 0; var7 < var6; ++var7) {
+         int var8 = this.Field3084.length();
+         var4 = this.Field3084.indexOf(32, var4);
+         if (var4 == -1) {
+            var4 = var8;
          } else {
-            while(a < a && this.Field3084.charAt(a) == ' ') {
-               ++a;
+            while(var4 < var8 && this.Field3084.charAt(var4) == ' ') {
+               ++var4;
             }
          }
       }
 
-      return a;
+      return var4;
    }
 
    public void Method2036(int a) {
@@ -193,8 +193,8 @@ public class Class713 extends Gui {
 
    public void Method2037(int a) {
       this.Field3092 = a;
-      int a = this.Field3084.length();
-      this.Field3092 = MathHelper.clamp_int(this.Field3092, 0, a);
+      int var2 = this.Field3084.length();
+      this.Field3092 = MathHelper.clamp_int(this.Field3092, 0, var2);
       this.Method2049(this.Field3092);
    }
 
@@ -318,39 +318,39 @@ public class Class713 extends Gui {
       }
    }
 
-   public void Method2039(int a, int a, int a2) {
-      boolean a = a >= this.Field3080 && a < this.Field3080 + this.Field3082 && a >= this.Field3081 && a < this.Field3081 + this.Field3083;
+   public void Method2039(int a, int a, int a) {
+      boolean var4 = a >= this.Field3080 && a < this.Field3080 + this.Field3082 && a >= this.Field3081 && a < this.Field3081 + this.Field3083;
       if (this.Field3088) {
-         this.Method2046(a);
+         this.Method2046(var4);
       }
 
       if (this.Field3089) {
-         int a = a - this.Field3080;
+         int var5 = a - this.Field3080;
          if (this.Field3087) {
-            a -= 4;
+            var5 -= 4;
          }
 
-         String a = this.Field3079.trimStringToWidth(this.Field3084.substring(this.Field3091), this.Method1832());
-         this.Method2037(this.Field3079.trimStringToWidth(a, a).length() + this.Field3091);
+         String var6 = this.Field3079.trimStringToWidth(this.Field3084.substring(this.Field3091), this.Method1832());
+         this.Method2037(this.Field3079.trimStringToWidth(var6, var5).length() + this.Field3091);
       }
 
    }
 
    public void Method2040() {
-      int[] a = Method2054();
+      int[] var1 = Method2054();
       if (this.Method2051()) {
-         int a;
+         int var2;
          if (this.Method1834()) {
             this.Field3099.Method290(this.Field3089);
-            a = (int)(this.Field3099.Method292() * 50.0);
-            RenderUtils.Method1108((double)this.Field3080, (double)this.Field3081, (double)(this.Field3080 + this.Field3082), (double)(this.Field3081 + this.Field3083), 0.5, 1436129689 + 16777216 * a, Class681.Method1612(0));
+            var2 = (int)(this.Field3099.Method292() * 50.0);
+            RenderUtils.Method1108((double)this.Field3080, (double)this.Field3081, (double)(this.Field3080 + this.Field3082), (double)(this.Field3081 + this.Field3083), 0.5, 1436129689 + 16777216 * var2, Class681.Method1612(0));
          }
 
-         a = this.Field3090 ? this.Field3094 : this.Field3095;
-         int a = this.Field3092 - this.Field3091;
-         int a = this.Field3093 - this.Field3091;
-         String a = this.Field3079.trimStringToWidth(this.Field3084.substring(this.Field3091), this.Method1832());
-         boolean a = a <= a.length();
+         var2 = this.Field3090 ? this.Field3094 : this.Field3095;
+         int var3 = this.Field3092 - this.Field3091;
+         int var4 = this.Field3093 - this.Field3091;
+         String var5 = this.Field3079.trimStringToWidth(this.Field3084.substring(this.Field3091), this.Method1832());
+         boolean var6 = var3 <= var5.length();
          boolean var10000;
          if (this.Field3089 && this.Field3086 / 6 % 2 == 0) {
             var10000 = true;
@@ -358,16 +358,16 @@ public class Class713 extends Gui {
             var10000 = false;
          }
 
-         int a = this.Field3087 ? this.Field3080 + 4 : this.Field3080;
-         int a = this.Field3087 ? this.Field3081 + (this.Field3083 - 5) / 2 : this.Field3081;
-         int a = a;
-         if (a > a.length()) {
-            a = a.length();
+         int var8 = this.Field3087 ? this.Field3080 + 4 : this.Field3080;
+         int var9 = this.Field3087 ? this.Field3081 + (this.Field3083 - 5) / 2 : this.Field3081;
+         int var10 = var8;
+         if (var4 > var5.length()) {
+            var4 = var5.length();
          }
 
-         if (a.length() > 0) {
-            String a = a.substring(0, a);
-            a = this.Field3079.drawStringWithShadow(a, (float)a, (float)a, a);
+         if (var5.length() > 0) {
+            String var11 = var5.substring(0, var3);
+            var10 = this.Field3079.drawStringWithShadow(var11, (float)var8, (float)var9, var2);
          }
 
          if (this.Field3092 >= this.Field3084.length() && this.Field3084.length() < this.Method1829()) {
@@ -376,35 +376,35 @@ public class Class713 extends Gui {
             var10000 = true;
          }
 
-         int var14 = a + this.Field3082;
-         int a = a - 1;
-         --a;
-         if (a.length() > 0 && a < a.length()) {
-            a = this.Field3079.drawStringWithShadow(a.substring(a), (float)a, (float)a, a);
+         int var14 = var8 + this.Field3082;
+         int var12 = var10 - 1;
+         --var10;
+         if (var5.length() > 0 && var3 < var5.length()) {
+            var10 = this.Field3079.drawStringWithShadow(var5.substring(var3), (float)var10, (float)var9, var2);
          }
 
-         Gui.drawRect(a, a - 1, a + 1, a + 1 + this.Field3079.FONT_HEIGHT, -3092272);
-         this.Field3079.drawStringWithShadow("_", (float)a, (float)a, a);
-         if (a != a) {
-            int a = a + this.Field3079.getStringWidth(a.substring(0, a));
-            this.Method2041(a, a - 1, a - 1, a + 1 + this.Field3079.FONT_HEIGHT);
+         Gui.drawRect(var12, var9 - 1, var12 + 1, var9 + 1 + this.Field3079.FONT_HEIGHT, -3092272);
+         this.Field3079.drawStringWithShadow("_", (float)var12, (float)var9, var2);
+         if (var4 != var3) {
+            int var13 = var8 + this.Field3079.getStringWidth(var5.substring(0, var4));
+            this.Method2041(var12, var9 - 1, var13 - 1, var9 + 1 + this.Field3079.FONT_HEIGHT);
          }
       }
 
    }
 
    public void Method2041(int a, int a, int a, int a) {
-      int a;
+      int var5;
       if (a < a) {
+         var5 = a;
          a = a;
-         a = a;
-         a = a;
+         a = var5;
       }
 
       if (a < a) {
+         var5 = a;
          a = a;
-         a = a;
-         a = a;
+         a = var5;
       }
 
       if (a > this.Field3080 + this.Field3082) {
@@ -415,18 +415,18 @@ public class Class713 extends Gui {
          a = this.Field3080 + this.Field3082;
       }
 
-      Tessellator a = Tessellator.getInstance();
-      WorldRenderer a = a.getWorldRenderer();
+      Tessellator var7 = Tessellator.getInstance();
+      WorldRenderer var6 = var7.getWorldRenderer();
       GlStateManager.color(0.0F, 0.0F, 255.0F, 255.0F);
       GlStateManager.disableTexture2D();
       GlStateManager.enableColorLogic();
       GlStateManager.colorLogicOp(5387);
-      a.begin(7, DefaultVertexFormats.POSITION);
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.draw();
+      var6.begin(7, DefaultVertexFormats.POSITION);
+      var6.pos((double)a, (double)a, 0.0).endVertex();
+      var6.pos((double)a, (double)a, 0.0).endVertex();
+      var6.pos((double)a, (double)a, 0.0).endVertex();
+      var6.pos((double)a, (double)a, 0.0).endVertex();
+      var7.draw();
       GlStateManager.disableColorLogic();
       GlStateManager.enableTexture2D();
    }
@@ -488,32 +488,32 @@ public class Class713 extends Gui {
    }
 
    public void Method2049(int a) {
-      int a = this.Field3084.length();
-      if (a > a) {
+      int var2 = this.Field3084.length();
+      if (a > var2) {
          ;
       }
 
-      int a = 0;
-      this.Field3093 = a;
+      byte var6 = 0;
+      this.Field3093 = var6;
       if (this.Field3079 != null) {
-         if (this.Field3091 > a) {
-            this.Field3091 = a;
+         if (this.Field3091 > var2) {
+            this.Field3091 = var2;
          }
 
-         int a = this.Method1832();
-         String a = this.Field3079.trimStringToWidth(this.Field3084.substring(this.Field3091), a);
-         int a = a.length() + this.Field3091;
-         if (a == this.Field3091) {
-            this.Field3091 -= this.Field3079.trimStringToWidth(this.Field3084, a, true).length();
+         int var3 = this.Method1832();
+         String var4 = this.Field3079.trimStringToWidth(this.Field3084.substring(this.Field3091), var3);
+         int var5 = var4.length() + this.Field3091;
+         if (var6 == this.Field3091) {
+            this.Field3091 -= this.Field3079.trimStringToWidth(this.Field3084, var3, true).length();
          }
 
-         if (a > a) {
-            this.Field3091 += a - a;
-         } else if (a <= this.Field3091) {
-            this.Field3091 -= this.Field3091 - a;
+         if (var6 > var5) {
+            this.Field3091 += var6 - var5;
+         } else if (var6 <= this.Field3091) {
+            this.Field3091 -= this.Field3091 - var6;
          }
 
-         this.Field3091 = MathHelper.clamp_int(this.Field3091, 0, a);
+         this.Field3091 = MathHelper.clamp_int(this.Field3091, 0, var2);
       }
 
    }

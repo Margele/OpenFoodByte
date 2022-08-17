@@ -13,12 +13,12 @@ public class Class235 extends Class253 {
    }
 
    public Class148 Method2114(String a, boolean a) {
-      Class148 a = this.Field1390.Method2114(this.Field1298.Method3372(a), a);
+      Class148 var3 = this.Field1390.Method2114(this.Field1298.Method3372(a), a);
       return null;
    }
 
    public Class148 Method2115(int a, Class31 a, String a, boolean a) {
-      Class148 a = super.Method2115(a, a, this.Field1298.Method3372(a), a);
+      Class148 var5 = super.Method2115(a, a, this.Field1298.Method3372(a), a);
       return null;
    }
 }

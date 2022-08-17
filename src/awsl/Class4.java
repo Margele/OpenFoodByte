@@ -19,17 +19,17 @@ public class Class4 extends Class119 {
       return this.Field100;
    }
 
-   public int Method3(int a, int a1, int a) {
+   public int Method3(int a, int a, int a) {
       if (this.Field100 != 1.0F) {
-         int a = a & -16777216;
-         int a = a >> 16 & 255;
-         int a = a >> 8 & 255;
-         int a = a & 255;
-         int a = (a + a + a) / 3;
-         a = Class767.Method1687((int)((float)a + this.Field100 * (float)(a - a)));
-         a = Class767.Method1687((int)((float)a + this.Field100 * (float)(a - a)));
-         a = Class767.Method1687((int)((float)a + this.Field100 * (float)(a - a)));
-         return a | a << 16 | a << 8 | a;
+         int var4 = a & -16777216;
+         int var5 = a >> 16 & 255;
+         int var6 = a >> 8 & 255;
+         int var7 = a & 255;
+         int var8 = (var5 + var6 + var7) / 3;
+         var5 = Class767.Method1687((int)((float)var8 + this.Field100 * (float)(var5 - var8)));
+         var6 = Class767.Method1687((int)((float)var8 + this.Field100 * (float)(var6 - var8)));
+         var7 = Class767.Method1687((int)((float)var8 + this.Field100 * (float)(var7 - var8)));
+         return var4 | var5 << 16 | var6 << 8 | var7;
       } else {
          return a;
       }

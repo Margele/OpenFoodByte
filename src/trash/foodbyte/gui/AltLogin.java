@@ -27,10 +27,10 @@ public final class AltLogin extends GuiScreen {
 
    public void Method1801() {
       Method1809();
-      int a = this.height / 4 + 24;
-      this.buttonList.Method2530(new Class715(0, this.width / 2 - 100, a + 72, "Login"));
-      this.buttonList.Method2530(new Class715(2, this.width / 2 - 100, a + 72 + 24, "Import user:pass"));
-      this.buttonList.Method2530(new Class715(1, this.width / 2 - 100, a + 72 + 48, "Back"));
+      int var2 = this.height / 4 + 24;
+      this.buttonList.Method2530(new Class715(0, this.width / 2 - 100, var2 + 72, "Login"));
+      this.buttonList.Method2530(new Class715(2, this.width / 2 - 100, var2 + 72 + 24, "Import user:pass"));
+      this.buttonList.Method2530(new Class715(1, this.width / 2 - 100, var2 + 72 + 48, "Back"));
       this.buttonList.Method2530(new Class715(9, this.width - 88, 7, 60, 20, "Microsoft"));
       this.Field3051 = new Class713(1, this.mc.fontRendererObj, this.width / 2 - 100, 60, 200, 20);
       this.Field3052 = new Class713(2, this.mc.fontRendererObj, this.width / 2 - 100, 100, 200, 20);
@@ -45,7 +45,7 @@ public final class AltLogin extends GuiScreen {
    }
 
    protected void Method1802(GuiButton a) {
-      String a = Method1809();
+      String var2 = Method1809();
       switch (a.id) {
          case 0:
             this.Field3050 = new Class697(this.Field3051.Method1809(), this.Field3052.Method1809());
@@ -53,24 +53,24 @@ public final class AltLogin extends GuiScreen {
          case 1:
             this.mc.displayGuiScreen(this.Field3048);
          case 2:
-            String a = null;
+            String var3 = null;
 
             try {
-               a = (String)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+               var3 = (String)Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
             } catch (Exception var5) {
             }
 
-            if (!a.contains(":")) {
+            if (!var3.contains(":")) {
                break;
             }
 
-            String[] a = a.split(":");
-            this.Field3051.Method1808(a[0]);
-            this.Field3052.Method1808(a[1]);
+            String[] var4 = var3.split(":");
+            this.Field3051.Method1808(var4[0]);
+            this.Field3052.Method1808(var4[1]);
          case 9:
             Field3049 = "Logging in...";
-            Thread a = new Thread(Field3047);
-            a.start();
+            Thread var6 = new Thread(Field3047);
+            var6.start();
          case 3:
          case 4:
          case 5:
@@ -88,10 +88,10 @@ public final class AltLogin extends GuiScreen {
       this.drawString(this.mc.fontRendererObj, "Username / E-Mail", this.width / 2 - 100, 50, -7829368);
       this.drawString(this.mc.fontRendererObj, "Password", this.width / 2 - 100, 90, -7829368);
       this.Field3051.Method2040();
-      String a = this.Field3052.Method1809();
-      this.Field3052.Method1808(a.replaceAll("(?s).", "*"));
+      String var4 = this.Field3052.Method1809();
+      this.Field3052.Method1808(var4.replaceAll("(?s).", "*"));
       this.Field3052.Method2040();
-      this.Field3052.Method1808(a);
+      this.Field3052.Method1808(var4);
       super.Method1803(a, a, a);
    }
 

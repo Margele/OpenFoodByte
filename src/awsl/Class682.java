@@ -20,9 +20,9 @@ final class Class682 implements Class672 {
 
    public final ContentHandler Method2326() {
       try {
-         TransformerHandler a = this.Field2964.newTransformerHandler(this.Field2965);
-         a.setResult(new SAXResult(this.Field2966));
-         return a;
+         TransformerHandler var1 = this.Field2964.newTransformerHandler(this.Field2965);
+         var1.setResult(new SAXResult(this.Field2966));
+         return var1;
       } catch (TransformerConfigurationException var2) {
          throw new RuntimeException(var2.toString());
       }

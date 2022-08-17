@@ -53,54 +53,54 @@ public class UHCFind extends Module {
 
    @EventTarget(0)
    public void Method802(EventRender3D a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (ServerUtils.isSinglePlayer(Servers.UHC)) {
-         List a = mc.theWorld.getLoadedEntityList();
-         a.sort(Comparator.comparingDouble(UHCFind::Method2246));
-         int a = 0;
-         Iterator var5 = a.Method1383();
+         List var3 = mc.theWorld.getLoadedEntityList();
+         var3.sort(Comparator.comparingDouble(UHCFind::Method2246));
+         int var4 = 0;
+         Iterator var5 = var3.Method1383();
          if (var5.Method932()) {
-            Entity a = (Entity)var5.Method933();
-            if (this.Field2282.getValue() && a instanceof EntityEnderman) {
-               this.Method2245(a, new Color(143, 0, 226));
+            Entity var6 = (Entity)var5.Method933();
+            if (this.Field2282.getValue() && var6 instanceof EntityEnderman) {
+               this.Method2245(var6, new Color(143, 0, 226));
             }
 
-            if (this.Field2284.getValue() && a instanceof EntityBlaze) {
-               this.Method2245(a, new Color(239, 128, 2));
+            if (this.Field2284.getValue() && var6 instanceof EntityBlaze) {
+               this.Method2245(var6, new Color(239, 128, 2));
             }
 
-            if (this.Field2285.getValue() && a instanceof EntitySlime) {
-               this.Method2245(a, new Color(41, 255, 0));
+            if (this.Field2285.getValue() && var6 instanceof EntitySlime) {
+               this.Method2245(var6, new Color(41, 255, 0));
             }
 
-            if (this.Field2286.getValue() && a instanceof EntityMagmaCube) {
-               this.Method2245(a, new Color(177, 22, 53));
+            if (this.Field2286.getValue() && var6 instanceof EntityMagmaCube) {
+               this.Method2245(var6, new Color(177, 22, 53));
             }
 
-            if (this.Field2283.getValue() && a instanceof EntityCreeper && a < 2) {
-               this.Method2245(a, new Color(29, 156, 7));
-               ++a;
+            if (this.Field2283.getValue() && var6 instanceof EntityCreeper && var4 < 2) {
+               this.Method2245(var6, new Color(29, 156, 7));
+               ++var4;
             }
 
-            if (this.Field2281.getValue() && a instanceof EntityZombie && !(a instanceof EntityPigZombie) && a.getDisplayName() != null && Objects.nonNull(((EntityZombie)a).getEquipmentInSlot(4)) && ((EntityZombie)a).getEquipmentInSlot(4).getItem() == Items.skull) {
-               this.Method2245(a, new Color(255, 0, 0, 255));
+            if (this.Field2281.getValue() && var6 instanceof EntityZombie && !(var6 instanceof EntityPigZombie) && var6.getDisplayName() != null && Objects.nonNull(((EntityZombie)var6).getEquipmentInSlot(4)) && ((EntityZombie)var6).getEquipmentInSlot(4).getItem() == Items.skull) {
+               this.Method2245(var6, new Color(255, 0, 0, 255));
             }
          }
 
          if (this.Field2280.getValue()) {
             var5 = mc.theWorld.loadedTileEntityList.Method1383();
             if (var5.Method932()) {
-               TileEntity a = (TileEntity)var5.Method933();
-               if (a instanceof TileEntityMobSpawner) {
+               TileEntity var7 = (TileEntity)var5.Method933();
+               if (var7 instanceof TileEntityMobSpawner) {
                   GL11.glPushMatrix();
                   RenderUtils.Method1126(2.0F);
-                  TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
+                  TileEntityRendererDispatcher.instance.renderTileEntity(var7, a.Field2922, -1);
                   RenderUtils.Method1129();
-                  TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
+                  TileEntityRendererDispatcher.instance.renderTileEntity(var7, a.Field2922, -1);
                   RenderUtils.Method1130();
-                  TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
+                  TileEntityRendererDispatcher.instance.renderTileEntity(var7, a.Field2922, -1);
                   RenderUtils.Method1131((new Color(0, 86, 255)).getRGB());
-                  TileEntityRendererDispatcher.instance.renderTileEntity(a, a.Field2922, -1);
+                  TileEntityRendererDispatcher.instance.renderTileEntity(var7, a.Field2922, -1);
                   RenderUtils.Method1132();
                   GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                   GL11.glPopMatrix();
@@ -113,56 +113,56 @@ public class UHCFind extends Module {
 
    @EventTarget
    public void Method273(EventPacket a) {
-      a[] a = Class448.trash();
+      a[] var2 = Class448.trash();
       if (!a.isSend() || ServerUtils.isSinglePlayer(Servers.UHC)) {
          if (a.getPacket() instanceof S0FPacketSpawnMob) {
-            S0FPacketSpawnMob a = (S0FPacketSpawnMob)a.getPacket();
-            EntityLivingBase a = (EntityLivingBase)EntityList.createEntityByID(a.getEntityType(), mc.theWorld);
-            double a = (double)a.getX() / 32.0;
-            double a = (double)a.getY() / 32.0;
-            double a = (double)a.getZ() / 32.0;
-            float a = (float)(a.getYaw() * 360) / 256.0F;
-            float a = (float)(a.getPitch() * 360) / 256.0F;
-            a.serverPosX = a.getX();
-            a.serverPosY = a.getY();
-            a.serverPosZ = a.getZ();
-            a.renderYawOffset = a.rotationYawHead = (float)(a.getHeadPitch() * 360) / 256.0F;
-            Entity[] a = a.getParts();
-            int a = a.getEntityID() - a.getEntityId();
-            int a = 0;
-            if (a < a.length) {
-               a[a].setEntityId(a[a].getEntityId() + a);
-               ++a;
+            S0FPacketSpawnMob var3 = (S0FPacketSpawnMob)a.getPacket();
+            EntityLivingBase var4 = (EntityLivingBase)EntityList.createEntityByID(var3.getEntityType(), mc.theWorld);
+            double var5 = (double)var3.getX() / 32.0;
+            double var7 = (double)var3.getY() / 32.0;
+            double var9 = (double)var3.getZ() / 32.0;
+            float var11 = (float)(var3.getYaw() * 360) / 256.0F;
+            float var12 = (float)(var3.getPitch() * 360) / 256.0F;
+            var4.serverPosX = var3.getX();
+            var4.serverPosY = var3.getY();
+            var4.serverPosZ = var3.getZ();
+            var4.renderYawOffset = var4.rotationYawHead = (float)(var3.getHeadPitch() * 360) / 256.0F;
+            Entity[] var13 = var4.getParts();
+            int var14 = var3.getEntityID() - var4.getEntityId();
+            int var15 = 0;
+            if (var15 < var13.length) {
+               var13[var15].setEntityId(var13[var15].getEntityId() + var14);
+               ++var15;
             }
 
-            a.setEntityId(a.getEntityID());
-            a.setPositionAndRotation(a, a, a, a, a);
-            a.motionX = (double)((float)a.getVelocityX() / 8000.0F);
-            a.motionY = (double)((float)a.getVelocityY() / 8000.0F);
-            a.motionZ = (double)((float)a.getVelocityZ() / 8000.0F);
-            List a = a.func_149027_c();
-            a.getDataWatcher().updateWatchedObjectsFromList(a);
-            a = a.getX() / 32;
-            int a = a.getY() / 32;
-            int a = a.getZ() / 32;
-            float a = (float)(mc.thePlayer.posX - (double)a);
-            float a = (float)(mc.thePlayer.posY - (double)a);
-            float a = (float)(mc.thePlayer.posZ - (double)a);
-            float a = MathHelper.sqrt_float(a * a + a * a + a * a);
-            if (this.Field2282.getBooleanValue() && a instanceof EntityEnderman) {
-               ChatUtils.addChatMessage("§3Find §9" + a.getName() + "§e " + (int)a + "§7m §BX: §r" + a + " §BY: §r" + a + " §BZ: §r" + a);
+            var4.setEntityId(var3.getEntityID());
+            var4.setPositionAndRotation(var5, var7, var9, var11, var12);
+            var4.motionX = (double)((float)var3.getVelocityX() / 8000.0F);
+            var4.motionY = (double)((float)var3.getVelocityY() / 8000.0F);
+            var4.motionZ = (double)((float)var3.getVelocityZ() / 8000.0F);
+            List var22 = var3.func_149027_c();
+            var4.getDataWatcher().updateWatchedObjectsFromList(var22);
+            var15 = var3.getX() / 32;
+            int var16 = var3.getY() / 32;
+            int var17 = var3.getZ() / 32;
+            float var18 = (float)(mc.thePlayer.posX - (double)var15);
+            float var19 = (float)(mc.thePlayer.posY - (double)var16);
+            float var20 = (float)(mc.thePlayer.posZ - (double)var17);
+            float var21 = MathHelper.sqrt_float(var18 * var18 + var19 * var19 + var20 * var20);
+            if (this.Field2282.getBooleanValue() && var4 instanceof EntityEnderman) {
+               ChatUtils.addChatMessage("§3Find §9" + var4.getName() + "§e " + (int)var21 + "§7m §BX: §r" + var15 + " §BY: §r" + var16 + " §BZ: §r" + var17);
             }
 
-            if (this.Field2286.getBooleanValue() && a instanceof EntityMagmaCube) {
-               ChatUtils.addChatMessage("§3Find §9" + a.getName() + "§e " + (int)a + "§7m §BX: §r" + a + " §BY: §r" + a + " §BZ: §r" + a);
+            if (this.Field2286.getBooleanValue() && var4 instanceof EntityMagmaCube) {
+               ChatUtils.addChatMessage("§3Find §9" + var4.getName() + "§e " + (int)var21 + "§7m §BX: §r" + var15 + " §BY: §r" + var16 + " §BZ: §r" + var17);
             }
 
-            if (this.Field2284.getBooleanValue() && a instanceof EntityBlaze) {
-               ChatUtils.addChatMessage("§3Find §9" + a.getName() + "§e " + (int)a + "§7m §BX: §r" + a + " §BY: §r" + a + " §BZ: §r" + a);
+            if (this.Field2284.getBooleanValue() && var4 instanceof EntityBlaze) {
+               ChatUtils.addChatMessage("§3Find §9" + var4.getName() + "§e " + (int)var21 + "§7m §BX: §r" + var15 + " §BY: §r" + var16 + " §BZ: §r" + var17);
             }
 
-            if (this.Field2281.getBooleanValue() && a instanceof EntityZombie && !(a instanceof EntityPigZombie) && a.getDisplayName() != null && !a.getDisplayName().getUnformattedText().equalsIgnoreCase("Zombie") && !a.getDisplayName().getUnformattedText().equalsIgnoreCase("僵尸") && !a.getDisplayName().getFormattedText().startsWith("§")) {
-               ChatUtils.addChatMessage("§3Find §9" + a.getDisplayName().getFormattedText() + " Exit! §e " + (int)a + "§7m §BX: §r" + a + " §BY: §r" + a + " §BZ: §r" + a);
+            if (this.Field2281.getBooleanValue() && var4 instanceof EntityZombie && !(var4 instanceof EntityPigZombie) && var4.getDisplayName() != null && !var4.getDisplayName().getUnformattedText().equalsIgnoreCase("Zombie") && !var4.getDisplayName().getUnformattedText().equalsIgnoreCase("僵尸") && !var4.getDisplayName().getFormattedText().startsWith("§")) {
+               ChatUtils.addChatMessage("§3Find §9" + var4.getDisplayName().getFormattedText() + " Exit! §e " + (int)var21 + "§7m §BX: §r" + var15 + " §BY: §r" + var16 + " §BZ: §r" + var17);
             }
          }
 
@@ -170,22 +170,22 @@ public class UHCFind extends Module {
    }
 
    public void Method2245(Entity a, Color a) {
-      float a = ReflectionUtils.getRenderPartialTicks();
-      double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a - ReflectionUtils.getRenderPosX();
-      double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a - ReflectionUtils.getRenderPosY();
-      double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a - ReflectionUtils.getRenderPosZ();
-      double a = (double)a.width / 1.5;
-      double a = a.getEntityBoundingBox().maxY - a.getEntityBoundingBox().minY;
+      float var3 = ReflectionUtils.getRenderPartialTicks();
+      double var4 = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)var3 - ReflectionUtils.getRenderPosX();
+      double var6 = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)var3 - ReflectionUtils.getRenderPosY();
+      double var8 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)var3 - ReflectionUtils.getRenderPosZ();
+      double var10 = (double)a.width / 1.5;
+      double var12 = a.getEntityBoundingBox().maxY - a.getEntityBoundingBox().minY;
       GL11.glPushMatrix();
       RenderUtils.Method1126(2.0F);
       GL11.glDisable(2848);
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var4 - var10, var6, var8 - var10, var4 + var10, var6 + var12, var8 + var10));
       RenderUtils.Method1129();
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var4 - var10, var6, var8 - var10, var4 + var10, var6 + var12, var8 + var10));
       RenderUtils.Method1130();
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var4 - var10, var6, var8 - var10, var4 + var10, var6 + var12, var8 + var10));
       RenderUtils.Method1131(a.getRGB());
-      RenderUtils.Method1124(new AxisAlignedBB(a - a, a, a - a, a + a, a + a, a + a));
+      RenderUtils.Method1124(new AxisAlignedBB(var4 - var10, var6, var8 - var10, var4 + var10, var6 + var12, var8 + var10));
       RenderUtils.Method1132();
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glPopMatrix();

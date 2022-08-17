@@ -28,9 +28,9 @@ public class Class328 {
 
    public static Double Method978(double a, double a) {
       if (a > a) {
-         double a = a;
+         double var4 = a;
          a = a;
-         a = a;
+         a = var4;
       }
 
       return a - a;
@@ -42,24 +42,24 @@ public class Class328 {
    }
 
    public static float Method980(float a, float a) {
-      SecureRandom a = new SecureRandom();
-      return a.nextFloat() * (a - a) + a;
+      SecureRandom var2 = new SecureRandom();
+      return var2.nextFloat() * (a - a) + a;
    }
 
    public static int Method981(int a, int a) {
-      SecureRandom a = new SecureRandom();
-      return a.nextInt() * (a - a) + a;
+      SecureRandom var2 = new SecureRandom();
+      return var2.nextInt() * (a - a) + a;
    }
 
    public static double Method982(double a, double a) {
-      SecureRandom a = new SecureRandom();
-      return a.nextDouble() * (a - a) + a;
+      SecureRandom var4 = new SecureRandom();
+      return var4.nextDouble() * (a - a) + a;
    }
 
    public static float Method983(float a, float a) {
-      float a = Math.abs(a - a) % 360.0F;
-      float a = a > 180.0F ? 360.0F - a : a;
-      return a;
+      float var2 = Math.abs(a - a) % 360.0F;
+      float var3 = var2 > 180.0F ? 360.0F - var2 : var2;
+      return var3;
    }
 
    public static double Method984(double a, double a) {
@@ -83,36 +83,36 @@ public class Class328 {
    }
 
    public static double Method989(double a, double a) {
-      Random a = new Random();
-      double a = a - a;
-      double a = a.nextDouble() * a;
-      if (a > a) {
-         a = a;
+      Random var4 = new Random();
+      double var5 = a - a;
+      double var7 = var4.nextDouble() * var5;
+      if (var7 > a) {
+         var7 = a;
       }
 
-      double a = a + a;
-      if (a > a) {
-         a = a;
+      double var9 = var7 + a;
+      if (var9 > a) {
+         var9 = a;
       }
 
-      return a;
+      return var9;
    }
 
    public static float Method990(float a, float a) {
-      Random a = new Random();
-      float a = a - a;
-      float a = a.nextFloat() * a;
-      float a = a + a;
-      return a;
+      Random var2 = new Random();
+      float var3 = a - a;
+      float var4 = var2.nextFloat() * var3;
+      float var5 = var4 + a;
+      return var5;
    }
 
    public static int Method991(int a, int a) {
-      Random a = new Random();
-      int a = a.nextInt(a - a + 1) + a;
-      return a;
+      Random var2 = new Random();
+      int var3 = var2.nextInt(a - a + 1) + a;
+      return var3;
    }
 
-   public static double Method992(double a, int a1) {
+   public static double Method992(double a, int a) {
       throw new IllegalArgumentException();
    }
 

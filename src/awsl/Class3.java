@@ -254,41 +254,41 @@ public class Class3 extends Class119 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1270();
-      long a = System.currentTimeMillis();
+      long var4 = System.currentTimeMillis();
       this.Field82 = (float)(this.Field81 >> 16 & 255) * 0.003921569F;
       this.Field83 = (float)(this.Field81 >> 8 & 255) * 0.003921569F;
       this.Field84 = (float)(this.Field81 & 255) * 0.003921569F;
       this.Field98 = 10000.0F;
       this.Field99 = -10000.0F;
       this.Field91 = new float[(int)this.Field62 + 1];
-      float a = 1.0F;
-      int a = 0;
-      if (a <= (int)this.Field62) {
-         this.Field91[a] = (float)Math.pow(2.0, (double)(-a));
-         float var10000 = a * this.Field63;
-         ++a;
+      float var6 = 1.0F;
+      int var7 = 0;
+      if (var7 <= (int)this.Field62) {
+         this.Field91[var7] = (float)Math.pow(2.0, (double)(-var7));
+         float var10000 = var6 * this.Field63;
+         ++var7;
       }
 
       this.Field67 = -1.0F;
       this.Field68 = 1.0F;
       this.Field96 = (float)a.getWidth();
       this.Field97 = (float)a.getHeight();
-      a = a.getHeight();
-      this.Field92 = new float[a];
-      int a = 0;
-      if (a < a) {
-         this.Field92[a] = (float)Math.tan((double)(this.Field90 * (float)a / (float)a) * Math.PI * 0.5);
-         ++a;
+      var7 = a.getHeight();
+      this.Field92 = new float[var7];
+      int var8 = 0;
+      if (var8 < var7) {
+         this.Field92[var8] = (float)Math.tan((double)(this.Field90 * (float)var8 / (float)var7) * Math.PI * 0.5);
+         ++var8;
       }
 
       a = this.Method1263(a, (ColorModel)null);
-      a = (int)(63.0F * this.Field75);
-      Graphics2D a = a.createGraphics();
-      a.drawImage(this.Field93, 0, 0, a.getWidth(), a.getHeight(), a, 0, a + 1, 64, (ImageObserver)null);
-      a.dispose();
+      var8 = (int)(63.0F * this.Field75);
+      Graphics2D var9 = a.createGraphics();
+      var9.drawImage(this.Field93, 0, 0, a.getWidth(), a.getHeight(), var8, 0, var8 + 1, 64, (ImageObserver)null);
+      var9.dispose();
       super.Method62(a, a);
-      long a = System.currentTimeMillis();
-      System.out.println(this.Field98 + " " + this.Field99 + " " + (float)(a - a) * 0.001F);
+      long var11 = System.currentTimeMillis();
+      System.out.println(this.Field98 + " " + this.Field99 + " " + (float)(var11 - var4) * 0.001F);
       this.Field91 = null;
       this.Field92 = null;
       return a;
@@ -296,81 +296,81 @@ public class Class3 extends Class119 {
 
    public float Method20(float a, float a) {
       Class193.Method1269();
-      float a = 0.0F;
+      float var4 = 0.0F;
       a += 371.0F;
       a += 529.0F;
-      int a = 0;
-      if (a < (int)this.Field62) {
-         a += Class598.Method158(a, a, this.Field79) * this.Field91[a];
+      int var6 = 0;
+      if (var6 < (int)this.Field62) {
+         var4 += Class598.Method158(a, a, this.Field79) * this.Field91[var6];
          a *= this.Field63;
          a *= this.Field63;
-         ++a;
+         ++var6;
       }
 
-      float a = this.Field62 - (float)((int)this.Field62);
-      if (a != 0.0F) {
-         a += a * Class598.Method158(a, a, this.Field79) * this.Field91[a];
+      float var5 = this.Field62 - (float)((int)this.Field62);
+      if (var5 != 0.0F) {
+         var4 += var5 * Class598.Method158(a, a, this.Field79) * this.Field91[var6];
       }
 
-      return a;
+      return var4;
    }
 
    public int Method3(int a, int a, int a) {
       Class193.Method1270();
-      float a = (float)a / this.Field96;
-      float a = (float)a / this.Field97;
-      float a = (float)Math.pow((double)this.Field78, (double)(100.0F * a * a));
-      float a = (float)(a >> 16 & 255) * 0.003921569F;
-      float a = (float)(a >> 8 & 255) * 0.003921569F;
-      float a = (float)(a & 255) * 0.003921569F;
-      float a = this.Field96 * 0.5F;
-      float a = (float)a - a;
-      float a = (float)a;
-      a = this.Field92[a];
-      a = (a - 0.5F) * (1.0F + a);
-      a += this.Field79 * this.Field87;
-      a /= this.Field57;
-      a /= this.Field57 * this.Field58;
-      float a = this.Method20(a, a);
-      a = (a + 1.23F) / 2.46F;
-      int a = a & -16777216;
-      float a = a - this.Field73;
-      if (a < 0.0F) {
-         a = 0.0F;
+      float var5 = (float)a / this.Field96;
+      float var6 = (float)a / this.Field97;
+      float var7 = (float)Math.pow((double)this.Field78, (double)(100.0F * var6 * var6));
+      float var8 = (float)(a >> 16 & 255) * 0.003921569F;
+      float var9 = (float)(a >> 8 & 255) * 0.003921569F;
+      float var10 = (float)(a & 255) * 0.003921569F;
+      float var11 = this.Field96 * 0.5F;
+      float var12 = (float)a - var11;
+      float var13 = (float)a;
+      var13 = this.Field92[a];
+      var12 = (var5 - 0.5F) * (1.0F + var13);
+      var13 += this.Field79 * this.Field87;
+      var12 /= this.Field57;
+      var13 /= this.Field57 * this.Field58;
+      float var14 = this.Method20(var12, var13);
+      var14 = (var14 + 1.23F) / 2.46F;
+      int var16 = a & -16777216;
+      float var18 = var14 - this.Field73;
+      if (var18 < 0.0F) {
+         var18 = 0.0F;
       }
 
-      float a = 1.0F - (float)Math.pow((double)this.Field74, (double)a);
-      this.Field98 = Math.min(this.Field98, a);
-      this.Field99 = Math.max(this.Field99, a);
-      float a = this.Field96 * this.Field85;
-      float a = this.Field97 * this.Field86;
-      float a = (float)a - a;
-      float a = (float)a - a;
-      float a = a * a + a * a;
-      a = (float)Math.pow((double)a, (double)this.Field77);
-      float a = 10.0F * (float)Math.exp((double)(-a * this.Field76 * 0.1F));
-      a += a * this.Field82;
-      a += a * this.Field83;
-      a += a * this.Field84;
-      float a = (1.0F - a * a * a * a) * this.Field60;
-      float a = this.Field82 * a;
-      float a = this.Field83 * a;
-      float a = this.Field84 * a;
-      a *= a;
-      float a = 1.0F - a;
-      a = a * a + a * a;
-      a = a * a + a * a;
-      a = a * a + a * a;
-      float a = this.Field64;
-      a = 1.0F - (float)Math.exp((double)(-a * a));
-      a = 1.0F - (float)Math.exp((double)(-a * a));
-      a = 1.0F - (float)Math.exp((double)(-a * a));
-      int a = (int)(255.0F * a) << 16;
-      int a = (int)(255.0F * a) << 8;
-      int a = (int)(255.0F * a);
-      int a = -16777216 | a | a | a;
+      float var19 = 1.0F - (float)Math.pow((double)this.Field74, (double)var18);
+      this.Field98 = Math.min(this.Field98, var19);
+      this.Field99 = Math.max(this.Field99, var19);
+      float var20 = this.Field96 * this.Field85;
+      float var21 = this.Field97 * this.Field86;
+      float var22 = (float)a - var20;
+      float var23 = (float)a - var21;
+      float var24 = var22 * var22 + var23 * var23;
+      var24 = (float)Math.pow((double)var24, (double)this.Field77);
+      float var25 = 10.0F * (float)Math.exp((double)(-var24 * this.Field76 * 0.1F));
+      var8 += var25 * this.Field82;
+      var9 += var25 * this.Field83;
+      var10 += var25 * this.Field84;
+      float var26 = (1.0F - var19 * var19 * var19 * var19) * this.Field60;
+      float var27 = this.Field82 * var26;
+      float var28 = this.Field83 * var26;
+      float var29 = this.Field84 * var26;
+      var19 *= var7;
+      float var30 = 1.0F - var19;
+      var8 = var30 * var8 + var19 * var27;
+      var9 = var30 * var9 + var19 * var28;
+      var10 = var30 * var10 + var19 * var29;
+      float var31 = this.Field64;
+      var8 = 1.0F - (float)Math.exp((double)(-var8 * var31));
+      var9 = 1.0F - (float)Math.exp((double)(-var9 * var31));
+      var10 = 1.0F - (float)Math.exp((double)(-var10 * var31));
+      int var32 = (int)(255.0F * var8) << 16;
+      int var33 = (int)(255.0F * var9) << 8;
+      int var34 = (int)(255.0F * var10);
+      int var17 = -16777216 | var32 | var33 | var34;
       a.trash(new String[4]);
-      return a;
+      return var17;
    }
 
    public String toString() {

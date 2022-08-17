@@ -19,12 +19,12 @@ public class Class591 implements Class594 {
       this.Field2781 = a;
       this.Field2782 = a;
       this.Field2778 = new float[(int)a + 1];
-      float a = 1.0F;
-      int a = 0;
-      if (a <= (int)a) {
-         this.Field2778[a] = (float)Math.pow((double)a, (double)(-a));
-         float var10000 = a * a;
-         ++a;
+      float var6 = 1.0F;
+      int var7 = 0;
+      if (var7 <= (int)a) {
+         this.Field2778[var7] = (float)Math.pow((double)var6, (double)(-a));
+         float var10000 = var6 * a;
+         ++var7;
       }
 
    }
@@ -38,23 +38,23 @@ public class Class591 implements Class594 {
    }
 
    public float Method20(float a, float a) {
-      float a = 0.0F;
+      float var4 = 0.0F;
       Class598.Method86();
       a += 371.0F;
       a += 529.0F;
-      int a = 0;
-      if (a < (int)this.Field2781) {
-         a += this.Field2782.Method20(a, a) * this.Field2778[a];
+      int var6 = 0;
+      if (var6 < (int)this.Field2781) {
+         var4 += this.Field2782.Method20(a, a) * this.Field2778[var6];
          a *= this.Field2780;
          a *= this.Field2780;
-         ++a;
+         ++var6;
       }
 
-      float a = this.Field2781 - (float)((int)this.Field2781);
-      if (a != 0.0F) {
-         a += a * this.Field2782.Method20(a, a) * this.Field2778[a];
+      float var5 = this.Field2781 - (float)((int)this.Field2781);
+      if (var5 != 0.0F) {
+         var4 += var5 * this.Field2782.Method20(a, a) * this.Field2778[var6];
       }
 
-      return a;
+      return var4;
    }
 }

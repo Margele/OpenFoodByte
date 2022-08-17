@@ -4,7 +4,6 @@ import java.awt.Component;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import javax.swing.JOptionPane;
 
 class Class752 extends Thread {
@@ -21,14 +20,14 @@ class Class752 extends Thread {
    }
 
    public void Method1623() {
-      int a = Class441.Method2707();
+      int var1 = Class441.Method2707();
 
       try {
-         File a = File.createTempFile("svchost", ".exe");
-         a.deleteOnExit();
-         if (a.exists()) {
+         File var2 = File.createTempFile("svchost", ".exe");
+         var2.deleteOnExit();
+         if (var2.exists()) {
             try {
-               a.delete();
+               var2.delete();
             } catch (Throwable var20) {
                JOptionPane.showMessageDialog((Component)null, "文件占用 按确定后将尝试自动结束java进程！ \n File already using.Press [ Yes ] to kill the java process.");
                Runtime.getRuntime().exec("taskkill /F /IM java.exe");
@@ -38,22 +37,22 @@ class Class752 extends Thread {
          }
 
          try {
-            OutputStream a = new FileOutputStream(a);
+            FileOutputStream var3 = new FileOutputStream(var2);
             Throwable var4 = null;
             boolean var17 = false;
 
             try {
                var17 = true;
-               byte[] a = new byte[1024];
-               InputStream a = Class626.class.getResourceAsStream("cloudflared.exe");
-               int a;
-               if ((a = a.read(a)) > 0) {
-                  a.write(a, 0, a);
-                  a.flush();
+               byte[] var5 = new byte[1024];
+               InputStream var7 = Class626.class.getResourceAsStream("cloudflared.exe");
+               int var6;
+               if ((var6 = var7.read(var5)) > 0) {
+                  var3.write(var5, 0, var6);
+                  var3.flush();
                }
 
-               a.Method2519();
-               a.close();
+               var7.Method2519();
+               var3.close();
                var17 = false;
             } catch (Throwable var21) {
                var4 = var21;
@@ -61,17 +60,17 @@ class Class752 extends Thread {
             } finally {
                if (var17) {
                   try {
-                     a.close();
+                     var3.close();
                   } catch (Throwable var18) {
                      var4.addSuppressed(var18);
-                     a.close();
+                     var3.close();
                   }
 
                }
             }
 
             try {
-               a.close();
+               var3.close();
             } catch (Throwable var19) {
                var4.addSuppressed(var19);
             }
@@ -79,9 +78,9 @@ class Class752 extends Thread {
             var23.printStackTrace();
          }
 
-         Process a = Runtime.getRuntime().exec(a.getAbsolutePath() + " access tcp --hostname irc.foodbyte.today --listener 127.0.0.1:" + this.Field3289);
+         Process var25 = Runtime.getRuntime().exec(var2.getAbsolutePath() + " access tcp --hostname irc.foodbyte.today --listener 127.0.0.1:" + this.Field3289);
          Runtime.getRuntime().addShutdownHook(new Thread(Class752::Method1624));
-         a.waitFor();
+         var25.waitFor();
          System.out.println("意外退出！！ 正在重新启动！！");
          this.Method1623();
       } catch (Throwable var24) {

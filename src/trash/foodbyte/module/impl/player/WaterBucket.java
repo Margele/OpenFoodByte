@@ -71,28 +71,28 @@ public class WaterBucket extends Module {
 
    private boolean canPlace() {
       if (mc.thePlayer.fallDistance > this.fallCheck.getFloatValue() && !mc.thePlayer.onGround && mc.thePlayer.rotationPitch >= 70.0F && this.position.typeOfHit == MovingObjectType.BLOCK && this.position.sideHit == EnumFacing.UP && !mc.thePlayer.capabilities.isFlying && !mc.thePlayer.capabilities.isCreativeMode && !this.placed) {
-         Block a = mc.theWorld.getBlockState(this.position.getBlockPos().up()).getBlock();
-         return a != Blocks.water;
+         Block var1 = mc.theWorld.getBlockState(this.position.getBlockPos().up()).getBlock();
+         return var1 != Blocks.water;
       } else {
          return false;
       }
    }
 
    private boolean backWater() {
-      int a = Class148.Method1444();
+      int var1 = Class148.Method1444();
       if (this.isHeldingItem(mc.thePlayer.getHeldItem(), Items.water_bucket)) {
          this.originItem = mc.thePlayer.inventory.currentItem;
          return true;
       } else {
-         int a = 0;
-         if (a < InventoryPlayer.getHotbarSize()) {
-            if (this.isHeldingItem(mc.thePlayer.inventory.mainInventory[a], Items.water_bucket)) {
+         int var2 = 0;
+         if (var2 < InventoryPlayer.getHotbarSize()) {
+            if (this.isHeldingItem(mc.thePlayer.inventory.mainInventory[var2], Items.water_bucket)) {
                this.originItem = mc.thePlayer.inventory.currentItem;
-               mc.thePlayer.inventory.currentItem = a;
+               mc.thePlayer.inventory.currentItem = var2;
                return true;
             }
 
-            ++a;
+            ++var2;
          }
 
          return false;
@@ -100,17 +100,17 @@ public class WaterBucket extends Module {
    }
 
    private void useItem() {
-      ItemStack a = mc.thePlayer.getHeldItem();
-      if (this.isHeldingItem(a, Items.water_bucket) && mc.thePlayer.rotationPitch >= 70.0F && this.position.typeOfHit == MovingObjectType.BLOCK && this.position.sideHit == EnumFacing.UP) {
-         mc.playerController.sendUseItem(mc.thePlayer, mc.theWorld, a);
+      ItemStack var1 = mc.thePlayer.getHeldItem();
+      if (this.isHeldingItem(var1, Items.water_bucket) && mc.thePlayer.rotationPitch >= 70.0F && this.position.typeOfHit == MovingObjectType.BLOCK && this.position.sideHit == EnumFacing.UP) {
+         mc.playerController.sendUseItem(mc.thePlayer, mc.theWorld, var1);
       }
 
    }
 
    private void placeWater() {
-      ItemStack a = mc.thePlayer.getHeldItem();
-      if (this.isHeldingItem(a, Items.bucket) && this.recycle.getValue()) {
-         mc.playerController.sendUseItem(mc.thePlayer, mc.theWorld, a);
+      ItemStack var1 = mc.thePlayer.getHeldItem();
+      if (this.isHeldingItem(var1, Items.bucket) && this.recycle.getValue()) {
+         mc.playerController.sendUseItem(mc.thePlayer, mc.theWorld, var1);
       }
 
       if (this.swap.getValue() && this.originItem != mc.thePlayer.inventory.currentItem) {
@@ -126,47 +126,47 @@ public class WaterBucket extends Module {
 
    public MovingObjectPosition getPosition() {
       Class148.Method1445();
-      Entity a = mc.getRenderViewEntity();
+      Entity var2 = mc.getRenderViewEntity();
       if (mc.theWorld != null) {
          mc.mcProfiler.startSection("pick");
-         float a = ReflectionUtils.getRenderPartialTicks();
-         double a = (double)mc.playerController.getBlockReachDistance();
-         MovingObjectPosition a = a.rayTrace(a, a);
-         Vec3 a = a.getPositionEyes(a);
-         boolean a = false;
-         boolean a = true;
-         double a;
+         float var3 = ReflectionUtils.getRenderPartialTicks();
+         double var4 = (double)mc.playerController.getBlockReachDistance();
+         MovingObjectPosition var6 = var2.rayTrace(var4, var3);
+         Vec3 var9 = var2.getPositionEyes(var3);
+         boolean var10 = false;
+         boolean var11 = true;
+         double var7;
          if (mc.playerController.extendedReach()) {
-            a = 6.0;
-            a = 6.0;
+            var4 = 6.0;
+            var7 = 6.0;
          }
 
-         if (a > 3.0) {
-            a = true;
+         if (var4 > 3.0) {
+            var10 = true;
          }
 
-         a = a.hitVec.distanceTo(a);
-         Vec3 a = a.getLook(a);
-         a.addVector(a.xCoord * a, a.yCoord * a, a.zCoord * a);
-         Entity a = null;
-         Vec3 a = null;
-         float a = 1.0F;
-         mc.theWorld.getEntitiesInAABBexcluding(a, a.getEntityBoundingBox().addCoord(a.xCoord * a, a.yCoord * a, a.zCoord * a).expand((double)a, (double)a, (double)a), Predicates.and(EntitySelectors.NOT_SPECTATING, Entity::func_70067_L));
-         if (a.distanceTo((Vec3)a) > 3.0) {
-            a = null;
-            a = new MovingObjectPosition(MovingObjectType.MISS, (Vec3)a, (EnumFacing)null, new BlockPos((Vec3)a));
+         var7 = var6.hitVec.distanceTo(var9);
+         Vec3 var12 = var2.getLook(var3);
+         var9.addVector(var12.xCoord * var4, var12.yCoord * var4, var12.zCoord * var4);
+         Object var14 = null;
+         Object var15 = null;
+         float var16 = 1.0F;
+         mc.theWorld.getEntitiesInAABBexcluding(var2, var2.getEntityBoundingBox().addCoord(var12.xCoord * var4, var12.yCoord * var4, var12.zCoord * var4).expand((double)var16, (double)var16, (double)var16), Predicates.and(EntitySelectors.NOT_SPECTATING, Entity::func_70067_L));
+         if (var9.distanceTo((Vec3)var15) > 3.0) {
+            var14 = null;
+            var6 = new MovingObjectPosition(MovingObjectType.MISS, (Vec3)var15, (EnumFacing)null, new BlockPos((Vec3)var15));
          }
 
-         if (!(a < a)) {
+         if (!(var7 < var7)) {
             ;
          }
 
-         a = new MovingObjectPosition((Entity)a, (Vec3)a);
-         if (!(a instanceof EntityLivingBase) && a instanceof EntityItemFrame) {
+         var6 = new MovingObjectPosition((Entity)var14, (Vec3)var15);
+         if (!(var14 instanceof EntityLivingBase) && var14 instanceof EntityItemFrame) {
          }
 
          mc.mcProfiler.endSection();
-         return a;
+         return var6;
       } else {
          return null;
       }

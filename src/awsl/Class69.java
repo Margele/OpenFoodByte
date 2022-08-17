@@ -49,8 +49,8 @@ public class Class69 extends Class63 {
          throw new IllegalStateException();
       } else {
          this.Field677 = 4;
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3611();
-         return new Class69(2, a);
+         Class63 var1 = this.Field679 == null ? null : this.Field679.Method3611();
+         return new Class69(2, var1);
       }
    }
 
@@ -58,16 +58,16 @@ public class Class69 extends Class63 {
       if (this.Field677 != 2 && this.Field677 != 4) {
          throw new IllegalArgumentException();
       } else {
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3612();
-         return new Class69(2, a);
+         Class63 var1 = this.Field679 == null ? null : this.Field679.Method3612();
+         return new Class69(2, var1);
       }
    }
 
    public Class63 Method3613() {
       if (this.Field676 == 0 && (this.Field677 & 7) != 0) {
          this.Field677 = 8;
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3613();
-         return new Class69(2, a);
+         Class63 var1 = this.Field679 == null ? null : this.Field679.Method3613();
+         return new Class69(2, var1);
       } else {
          throw new IllegalArgumentException();
       }
@@ -77,33 +77,33 @@ public class Class69 extends Class63 {
       if (this.Field677 != 8) {
          throw new IllegalStateException();
       } else {
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3614();
-         return new Class69(2, a);
+         Class63 var1 = this.Field679 == null ? null : this.Field679.Method3614();
+         return new Class69(2, var1);
       }
    }
 
    public Class63 Method3615() {
       if (this.Field676 == 1 && (this.Field677 & 23) != 0) {
          this.Field677 = 16;
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3615();
-         return new Class69(2, a);
+         Class63 var1 = this.Field679 == null ? null : this.Field679.Method3615();
+         return new Class69(2, var1);
       } else {
          throw new IllegalArgumentException();
       }
    }
 
    public Class63 Method3616() {
-      a[] a = Class801.Method3300();
+      a[] var1 = Class801.Method3300();
       if (this.Field676 == 1 && (this.Field677 & 23) != 0) {
          this.Field677 = 32;
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3616();
-         Class69 a = new Class69(2, a);
-         a.Field678 = true;
+         Class63 var2 = this.Field679 == null ? null : this.Field679.Method3616();
+         Class69 var3 = new Class69(2, var2);
+         var3.Field678 = true;
          if (a.trash() == null) {
             Class801.Method3299(new a[5]);
          }
 
-         return a;
+         return var3;
       } else {
          throw new IllegalArgumentException();
       }
@@ -113,8 +113,8 @@ public class Class69 extends Class63 {
       if (this.Field677 != 32) {
          throw new IllegalStateException();
       } else {
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3617();
-         return new Class69(2, a);
+         Class63 var1 = this.Field679 == null ? null : this.Field679.Method3617();
+         return new Class69(2, var1);
       }
    }
 
@@ -154,8 +154,8 @@ public class Class69 extends Class63 {
    public Class63 Method3620() {
       if (this.Field676 == 2 && this.Field677 == 1) {
          this.Field677 = 64;
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3620();
-         return new Class69(2, a);
+         Class63 var1 = this.Field679 == null ? null : this.Field679.Method3620();
+         return new Class69(2, var1);
       } else {
          throw new IllegalStateException();
       }
@@ -203,8 +203,8 @@ public class Class69 extends Class63 {
       } else if ("+-=".indexOf(a) == -1) {
          throw new IllegalArgumentException();
       } else {
-         Class63 a = this.Field679 == null ? null : this.Field679.Method3624(a);
-         return new Class69(2, a);
+         Class63 var2 = this.Field679 == null ? null : this.Field679.Method3624(a);
+         return new Class69(2, var2);
       }
    }
 

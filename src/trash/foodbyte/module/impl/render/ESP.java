@@ -46,30 +46,30 @@ public class ESP extends Module {
       Iterator var3 = mc.theWorld.loadedEntityList.Method1383();
 
       while(var3.Method932()) {
-         Object a = var3.Method933();
-         if (a instanceof EntityLivingBase) {
+         Object var4 = var3.Method933();
+         if (var4 instanceof EntityLivingBase) {
             Minecraft var10001 = mc;
-            if (a != Minecraft.getMinecraft().thePlayer && !AntiBot.botList.contains(a)) {
-               EntityLivingBase a = (EntityLivingBase)a;
-               if (this.Method965(a)) {
-                  double a = (double)ReflectionUtils.getRenderPartialTicks();
-                  double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-                  double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-                  double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-                  Color a = this.Field2378.Method2444();
-                  if (Class305.Method704(a)) {
-                     a = new Color(0, 255, 0);
+            if (var4 != Minecraft.getMinecraft().thePlayer && !AntiBot.botList.contains(var4)) {
+               EntityLivingBase var5 = (EntityLivingBase)var4;
+               if (this.Method965(var5)) {
+                  double var6 = (double)ReflectionUtils.getRenderPartialTicks();
+                  double var8 = var5.lastTickPosX + (var5.posX - var5.lastTickPosX) * var6 - ReflectionUtils.getRenderPosX();
+                  double var10 = var5.lastTickPosY + (var5.posY - var5.lastTickPosY) * var6 - ReflectionUtils.getRenderPosY();
+                  double var12 = var5.lastTickPosZ + (var5.posZ - var5.lastTickPosZ) * var6 - ReflectionUtils.getRenderPosZ();
+                  Color var14 = this.Field2378.Method2444();
+                  if (Class305.Method704(var5)) {
+                     var14 = new Color(0, 255, 0);
                   }
 
-                  if (a.hurtTime > 0) {
-                     a = new Color(255, 0, 0);
+                  if (var5.hurtTime > 0) {
+                     var14 = new Color(255, 0, 0);
                   }
 
-                  if (a.isInvisible()) {
-                     a = new Color(255, 255, 0);
+                  if (var5.isInvisible()) {
+                     var14 = new Color(255, 255, 0);
                   }
 
-                  RenderUtils.Method1121(a, a, a, (double)a.width / 1.5, (double)a.height + 0.2, (float)a.getRed() / 255.0F, (float)a.getGreen() / 255.0F, (float)a.getBlue() / 255.0F, (float)a.getAlpha() / 255.0F);
+                  RenderUtils.Method1121(var8, var10, var12, (double)var5.width / 1.5, (double)var5.height + 0.2, (float)var14.getRed() / 255.0F, (float)var14.getGreen() / 255.0F, (float)var14.getBlue() / 255.0F, (float)var14.getAlpha() / 255.0F);
                   break;
                }
             }
@@ -79,10 +79,10 @@ public class ESP extends Module {
    }
 
    public boolean Method965(EntityLivingBase a) {
-      boolean a = this.Field2379.getBooleanValue();
-      boolean a = this.Field2382.getBooleanValue();
-      boolean a = this.Field2380.getBooleanValue();
-      boolean a = this.Field2381.getBooleanValue();
+      boolean var2 = this.Field2379.getBooleanValue();
+      boolean var3 = this.Field2382.getBooleanValue();
+      boolean var4 = this.Field2380.getBooleanValue();
+      boolean var5 = this.Field2381.getBooleanValue();
       if (a.isInvisible()) {
          return false;
       } else if (!(a instanceof EntityPlayer) && !(a instanceof EntityMob) && !(a instanceof EntityDragon) && !(a instanceof EntityGhast) && !(a instanceof EntitySlime) && !(a instanceof EntityIronGolem) && !(a instanceof EntitySnowman) && !(a instanceof EntityAnimal) && !(a instanceof EntitySquid) && !(a instanceof EntityVillager) && !(a instanceof EntityBat)) {

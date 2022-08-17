@@ -45,13 +45,13 @@ public class Class709 extends GuiScreen {
    }
 
    protected void Method1802(GuiButton a) throws IOException {
-      int a = Method1828();
+      int var2 = Method1828();
       if (a.id == 3) {
          if (!this.Field3067.getText().equalsIgnoreCase("")) {
             GlobalModule.INSTANCE.fileManager.Method786(this.Field3067.getText());
             if (Class215.Method2649().stream().noneMatch(this::Method1839)) {
-               Class207 a = new Class207(this.Field3067.getText());
-               Class215.Method2649().Method2530(a);
+               Class207 var3 = new Class207(this.Field3067.getText());
+               Class215.Method2649().Method2530(var3);
                GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("Config", "Saved Config §a" + this.Field3067.getText(), Types.INFO));
             }
 

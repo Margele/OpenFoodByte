@@ -22,92 +22,92 @@ public class Class818 extends Class798 {
       return this.Field3656;
    }
 
-   protected int[] Method714(int a, int a, int[] a, Rectangle a3) {
-      int a = 0;
+   protected int[] Method714(int a, int a, int[] a, Rectangle a) {
+      int var6 = 0;
       Class193.Method1269();
-      int[] a = new int[this.Field3656];
-      int[] a = new int[this.Field3656];
-      int[] a = new int[this.Field3656];
-      int[] a = new int[this.Field3656];
-      int[] a = new int[this.Field3656];
-      int[] a = new int[this.Field3656];
-      int[] a = new int[a * a];
-      int a = 0;
-      if (a < a) {
-         int a = 0;
-         if (a < a) {
-            int a = 0;
-            if (a < this.Field3656) {
-               a[a] = a[a] = a[a] = a[a] = a[a] = a[a] = 0;
-               ++a;
+      int[] var7 = new int[this.Field3656];
+      int[] var8 = new int[this.Field3656];
+      int[] var9 = new int[this.Field3656];
+      int[] var10 = new int[this.Field3656];
+      int[] var11 = new int[this.Field3656];
+      int[] var12 = new int[this.Field3656];
+      int[] var13 = new int[a * a];
+      int var14 = 0;
+      if (var14 < a) {
+         int var15 = 0;
+         if (var15 < a) {
+            int var16 = 0;
+            if (var16 < this.Field3656) {
+               var7[var16] = var8[var16] = var9[var16] = var10[var16] = var11[var16] = var12[var16] = 0;
+               ++var16;
             }
 
-            a = -this.Field3655;
-            int a;
-            int a;
-            int a;
-            if (a <= this.Field3655) {
-               a = a + a;
-               if (0 <= a && a < a) {
-                  a = a * a;
-                  a = -this.Field3655;
-                  if (a <= this.Field3655) {
-                     int a = a + a;
-                     if (0 <= a && a < a) {
-                        int a = a[a + a];
-                        int a = a >> 16 & 255;
-                        int a = a >> 8 & 255;
-                        int a = a & 255;
-                        int a = a * this.Field3656 / 256;
-                        int a = a * this.Field3656 / 256;
-                        int a = a * this.Field3656 / 256;
-                        a[a] += a;
-                        a[a] += a;
-                        a[a] += a;
-                        int var10002 = a[a]++;
-                        var10002 = a[a]++;
-                        var10002 = a[a]++;
+            var16 = -this.Field3655;
+            int var17;
+            int var18;
+            int var19;
+            if (var16 <= this.Field3655) {
+               var17 = var14 + var16;
+               if (0 <= var17 && var17 < a) {
+                  var18 = var17 * a;
+                  var19 = -this.Field3655;
+                  if (var19 <= this.Field3655) {
+                     int var20 = var15 + var19;
+                     if (0 <= var20 && var20 < a) {
+                        int var21 = a[var18 + var20];
+                        int var22 = var21 >> 16 & 255;
+                        int var23 = var21 >> 8 & 255;
+                        int var24 = var21 & 255;
+                        int var25 = var22 * this.Field3656 / 256;
+                        int var26 = var23 * this.Field3656 / 256;
+                        int var27 = var24 * this.Field3656 / 256;
+                        var10[var25] += var22;
+                        var11[var26] += var23;
+                        var12[var27] += var24;
+                        int var10002 = var7[var25]++;
+                        var10002 = var8[var26]++;
+                        var10002 = var9[var27]++;
                      }
 
-                     ++a;
+                     ++var19;
                   }
                }
 
-               ++a;
+               ++var16;
             }
 
-            int a = 0;
-            int a = 0;
-            int a = 0;
-            int a = 1;
-            if (a < this.Field3656) {
-               if (a[a] > a[a]) {
-                  a = a;
+            byte var28 = 0;
+            byte var29 = 0;
+            byte var30 = 0;
+            byte var31 = 1;
+            if (var31 < this.Field3656) {
+               if (var7[var31] > var7[var28]) {
+                  var28 = var31;
                }
 
-               if (a[a] > a[a]) {
-                  a = a;
+               if (var8[var31] > var8[var29]) {
+                  var29 = var31;
                }
 
-               if (a[a] > a[a]) {
-                  a = a;
+               if (var9[var31] > var9[var30]) {
+                  var30 = var31;
                }
 
-               a = a + 1;
+               var19 = var31 + 1;
             }
 
-            a = a[a] / a[a];
-            a = a[a] / a[a];
-            a = a[a] / a[a];
-            a[a] = a[a] & -16777216 | a << 16 | a << 8 | a;
-            ++a;
-            ++a;
+            var16 = var10[var28] / var7[var28];
+            var17 = var11[var29] / var8[var29];
+            var18 = var12[var30] / var9[var30];
+            var13[var6] = a[var6] & -16777216 | var16 << 16 | var17 << 8 | var18;
+            ++var6;
+            ++var15;
          }
 
-         ++a;
+         ++var14;
       }
 
-      return a;
+      return var13;
    }
 
    public String toString() {

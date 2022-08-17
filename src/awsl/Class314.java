@@ -21,10 +21,10 @@ public class Class314 extends Class321 {
    }
 
    protected double Method797(double a) {
-      double a = a / (double)this.Field1605;
+      double var4 = a / (double)this.Field1605;
       Method833();
-      float a = this.Field1602 + 1.0F;
-      double var10000 = Math.max(0.0, 1.0 + (double)a * Math.pow(a - 1.0, 3.0) + (double)this.Field1602 * Math.pow(a - 1.0, 2.0));
+      float var6 = this.Field1602 + 1.0F;
+      double var10000 = Math.max(0.0, 1.0 + (double)var6 * Math.pow(var4 - 1.0, 3.0) + (double)this.Field1602 * Math.pow(var4 - 1.0, 2.0));
       if (a.trash() == null) {
          Method832(new String[1]);
       }

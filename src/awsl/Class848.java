@@ -11,8 +11,8 @@ final class Class848 extends Class831 {
    }
 
    public void Method3501(String a, Attributes a) {
-      String a = a.getValue("name");
-      int a = this.Method3656(a.getValue("access"));
-      this.Method3655().Method1979(a, a);
+      String var3 = a.getValue("name");
+      int var4 = this.Method3656(a.getValue("access"));
+      this.Method3655().Method1979(var3, var4);
    }
 }

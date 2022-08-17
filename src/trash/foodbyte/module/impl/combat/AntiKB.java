@@ -64,13 +64,13 @@ public class AntiKB extends Module {
    }
 
    public float getVertical() {
-      float a = (double)this.vertical.getFloatValue() == 100.0 && (double)this.vertical.getFloatValue() == 0.0 ? 0.0F : this.randomFloat() / 1000.0F;
-      return this.vertical.getFloatValue() + a;
+      float var1 = (double)this.vertical.getFloatValue() == 100.0 && (double)this.vertical.getFloatValue() == 0.0 ? 0.0F : this.randomFloat() / 1000.0F;
+      return this.vertical.getFloatValue() + var1;
    }
 
    public float getHorizontal() {
-      float a = (double)this.horizontal.getFloatValue() == 100.0 && (double)this.horizontal.getFloatValue() == 0.0 ? 0.0F : this.randomFloat() / 1000.0F;
-      return this.horizontal.getFloatValue() + a;
+      float var1 = (double)this.horizontal.getFloatValue() == 100.0 && (double)this.horizontal.getFloatValue() == 0.0 ? 0.0F : this.randomFloat() / 1000.0F;
+      return this.horizontal.getFloatValue() + var1;
    }
 
    public float randomFloat() {
@@ -132,37 +132,37 @@ public class AntiKB extends Module {
 
    @EventTarget
    public void onPacket(EventPacket e) {
-      a[] a = b.trash();
+      a[] var2 = b.trash();
       if (!e.isSend()) {
          if (!((Velocity)ModuleManager.getModule2(Velocity.class)).getState()) {
             if (this.mode.isCurrentMode("Packet")) {
                if (e.getPacket() instanceof S12PacketEntityVelocity) {
-                  S12PacketEntityVelocity a = (S12PacketEntityVelocity)e.getPacket();
-                  if (a.getEntityID() == mc.thePlayer.getEntityId()) {
-                     double a = (double)a.getMotionX() / 8000.0;
-                     double a = (double)a.getMotionY() / 8000.0;
-                     double a = (double)a.getMotionZ() / 8000.0;
-                     ChatUtils.debug("§6S12 KB " + EnumChatFormatting.GRAY + ": §fX §e" + a + " §fY §e" + a + " §fZ §e" + a);
-                     int a;
-                     int a;
-                     int a;
+                  S12PacketEntityVelocity var3 = (S12PacketEntityVelocity)e.getPacket();
+                  if (var3.getEntityID() == mc.thePlayer.getEntityId()) {
+                     double var4 = (double)var3.getMotionX() / 8000.0;
+                     double var6 = (double)var3.getMotionY() / 8000.0;
+                     double var8 = (double)var3.getMotionZ() / 8000.0;
+                     ChatUtils.debug("§6S12 KB " + EnumChatFormatting.GRAY + ": §fX §e" + var4 + " §fY §e" + var6 + " §fZ §e" + var8);
+                     int var10;
+                     int var11;
+                     int var12;
                      if (this.flag && !mc.thePlayer.isSwingInProgress) {
-                        a = (int)((double)a.getMotionX() * (1.0 + (double)this.explodeXZ.getFloatValue() / 100.0));
-                        a = (int)((double)a.getMotionY() * (1.0 + (double)this.explodeY.getFloatValue() / 100.0));
-                        a = (int)((double)a.getMotionZ() * (1.0 + (double)this.explodeXZ.getFloatValue() / 100.0));
-                        ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionX.getObfuscatedName(), a, false);
-                        ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionY.getObfuscatedName(), a, false);
-                        ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionZ.getObfuscatedName(), a, false);
+                        var10 = (int)((double)var3.getMotionX() * (1.0 + (double)this.explodeXZ.getFloatValue() / 100.0));
+                        var11 = (int)((double)var3.getMotionY() * (1.0 + (double)this.explodeY.getFloatValue() / 100.0));
+                        var12 = (int)((double)var3.getMotionZ() * (1.0 + (double)this.explodeXZ.getFloatValue() / 100.0));
+                        ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionX.getObfuscatedName(), var10, false);
+                        ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionY.getObfuscatedName(), var11, false);
+                        ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionZ.getObfuscatedName(), var12, false);
                      }
 
-                     a = (new Random()).nextInt(100);
-                     if ((double)a > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
-                        a = (int)((float)a.getMotionX() * (this.getHorizontal() / 100.0F));
-                        a = (int)((float)a.getMotionY() * (this.getVertical() / 100.0F));
-                        int a = (int)((float)a.getMotionZ() * (this.getHorizontal() / 100.0F));
-                        ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionX.getObfuscatedName(), a, false);
-                        ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionY.getObfuscatedName(), a, false);
-                        ReflectionsHelper.setFinalField(a, ObfuscatedField.S12MotionZ.getObfuscatedName(), a, false);
+                     var10 = (new Random()).nextInt(100);
+                     if ((double)var10 > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
+                        var11 = (int)((float)var3.getMotionX() * (this.getHorizontal() / 100.0F));
+                        var12 = (int)((float)var3.getMotionY() * (this.getVertical() / 100.0F));
+                        int var13 = (int)((float)var3.getMotionZ() * (this.getHorizontal() / 100.0F));
+                        ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionX.getObfuscatedName(), var11, false);
+                        ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionY.getObfuscatedName(), var12, false);
+                        ReflectionsHelper.setFinalField(var3, ObfuscatedField.S12MotionZ.getObfuscatedName(), var13, false);
                      }
                   }
 
@@ -170,28 +170,28 @@ public class AntiKB extends Module {
                }
 
                if (e.getPacket() instanceof S27PacketExplosion) {
-                  S27PacketExplosion a = (S27PacketExplosion)e.getPacket();
-                  ChatUtils.debug("§aS27 KB " + EnumChatFormatting.GRAY + ": §fX §e" + a.func_149149_c() + " §fY §e" + a.func_149144_d() + " §fZ §e" + a.func_149147_e());
-                  int a = (new Random()).nextInt(100);
-                  float a;
-                  float a;
-                  float a;
-                  if ((double)a > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
-                     a = a.func_149149_c() * (this.getHorizontal() / 100.0F);
-                     a = a.func_149144_d() * (this.getVertical() / 100.0F);
-                     a = a.func_149147_e() * (this.getHorizontal() / 100.0F);
-                     ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionX.getObfuscatedName(), a, false);
-                     ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionY.getObfuscatedName(), a, false);
-                     ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionZ.getObfuscatedName(), a, false);
+                  S27PacketExplosion var14 = (S27PacketExplosion)e.getPacket();
+                  ChatUtils.debug("§aS27 KB " + EnumChatFormatting.GRAY + ": §fX §e" + var14.func_149149_c() + " §fY §e" + var14.func_149144_d() + " §fZ §e" + var14.func_149147_e());
+                  int var15 = (new Random()).nextInt(100);
+                  float var5;
+                  float var7;
+                  float var16;
+                  if ((double)var15 > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
+                     var5 = var14.func_149149_c() * (this.getHorizontal() / 100.0F);
+                     var16 = var14.func_149144_d() * (this.getVertical() / 100.0F);
+                     var7 = var14.func_149147_e() * (this.getHorizontal() / 100.0F);
+                     ReflectionsHelper.setFinalField(var14, ObfuscatedField.S27MotionX.getObfuscatedName(), var5, false);
+                     ReflectionsHelper.setFinalField(var14, ObfuscatedField.S27MotionY.getObfuscatedName(), var16, false);
+                     ReflectionsHelper.setFinalField(var14, ObfuscatedField.S27MotionZ.getObfuscatedName(), var7, false);
                   }
 
-                  a = a.func_149149_c() * (1.0F + this.explodeXZ.getFloatValue() / 100.0F);
-                  a = a.func_149144_d() * (1.0F + this.explodeY.getFloatValue() / 100.0F);
-                  a = a.func_149147_e() * (1.0F + this.explodeXZ.getFloatValue() / 100.0F);
-                  ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionX.getObfuscatedName(), a, false);
-                  ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionY.getObfuscatedName(), a, false);
-                  ReflectionsHelper.setFinalField(a, ObfuscatedField.S27MotionZ.getObfuscatedName(), a, false);
-                  if (a.func_149149_c() != 0.0F && a.func_149144_d() != 0.0F && a.func_149147_e() != 0.0F) {
+                  var5 = var14.func_149149_c() * (1.0F + this.explodeXZ.getFloatValue() / 100.0F);
+                  var16 = var14.func_149144_d() * (1.0F + this.explodeY.getFloatValue() / 100.0F);
+                  var7 = var14.func_149147_e() * (1.0F + this.explodeXZ.getFloatValue() / 100.0F);
+                  ReflectionsHelper.setFinalField(var14, ObfuscatedField.S27MotionX.getObfuscatedName(), var5, false);
+                  ReflectionsHelper.setFinalField(var14, ObfuscatedField.S27MotionY.getObfuscatedName(), var16, false);
+                  ReflectionsHelper.setFinalField(var14, ObfuscatedField.S27MotionZ.getObfuscatedName(), var7, false);
+                  if (var14.func_149149_c() != 0.0F && var14.func_149144_d() != 0.0F && var14.func_149147_e() != 0.0F) {
                      this.flag = true;
                   }
                }
@@ -202,14 +202,14 @@ public class AntiKB extends Module {
    }
 
    public void setVelocity(double x, double y, double z) {
-      Random a = new Random();
+      Random var8 = new Random();
       b.trash();
-      int a = a.nextInt(100);
-      if ((double)a > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
-         double a = x * ((double)this.getHorizontal() / 100.0);
-         double a = y * ((double)this.getVertical() / 100.0);
-         double a = z * ((double)this.getHorizontal() / 100.0);
-         mc.thePlayer.setVelocity(a, a, a);
+      int var9 = var8.nextInt(100);
+      if ((double)var9 > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
+         double var10 = x * ((double)this.getHorizontal() / 100.0);
+         double var12 = y * ((double)this.getVertical() / 100.0);
+         double var14 = z * ((double)this.getHorizontal() / 100.0);
+         mc.thePlayer.setVelocity(var10, var12, var14);
       }
 
       mc.thePlayer.setVelocity(x, y, z);
@@ -236,9 +236,9 @@ public class AntiKB extends Module {
    }
 
    public void processVelocity() {
-      Random a = new Random();
-      int a = a.nextInt(100);
-      if (mc.thePlayer.hurtTime == mc.thePlayer.maxHurtTime && mc.thePlayer.maxHurtTime > 0 && (double)a > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
+      Random var1 = new Random();
+      int var2 = var1.nextInt(100);
+      if (mc.thePlayer.hurtTime == mc.thePlayer.maxHurtTime && mc.thePlayer.maxHurtTime > 0 && (double)var2 > 100.0 - (double)this.chance.getFloatValue() && this.canNoKB()) {
          EntityPlayerSP var10000 = mc.thePlayer;
          var10000.motionX *= (double)this.getHorizontal() / 100.0;
          if (this.getVertical() != 100.0F) {

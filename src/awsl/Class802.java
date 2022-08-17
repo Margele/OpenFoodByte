@@ -33,16 +33,16 @@ public class Class802 extends Class193 {
       this.Field3590 = a;
 
       try {
-         BeanInfo a = Introspector.getBeanInfo(a.getClass());
-         PropertyDescriptor[] a = a.getPropertyDescriptors();
-         int a = 0;
-         if (a < a.length) {
-            PropertyDescriptor a = a[a];
-            if (a.equals(a.getName())) {
-               this.Field3587 = a.getWriteMethod();
+         BeanInfo var6 = Introspector.getBeanInfo(a.getClass());
+         PropertyDescriptor[] var7 = var6.getPropertyDescriptors();
+         int var8 = 0;
+         if (var8 < var7.length) {
+            PropertyDescriptor var9 = var7[var8];
+            if (a.equals(var9.getName())) {
+               this.Field3587 = var9.getWriteMethod();
             }
 
-            ++a;
+            ++var8;
          }
 
          if (this.Field3587 == null) {
@@ -82,23 +82,23 @@ public class Class802 extends Class193 {
       if (this.Field3585 == null) {
          return a;
       } else {
-         float a = 1.0F - this.Field3584;
-         Graphics2D a = a.createGraphics();
-         float a;
+         float var3 = 1.0F - this.Field3584;
+         Graphics2D var4 = a.createGraphics();
+         float var5;
          if (this.Field3584 != 1.0F) {
-            a = this.Field3589 + this.Field3584 * (this.Field3590 - this.Field3589);
-            this.Method58(a);
-            a.drawImage(a, this.Field3588, 0, 0);
+            var5 = this.Field3589 + this.Field3584 * (this.Field3590 - this.Field3589);
+            this.Method58(var5);
+            var4.drawImage(a, this.Field3588, 0, 0);
          }
 
          if (this.Field3584 != 0.0F) {
-            a.setComposite(AlphaComposite.getInstance(3, this.Field3584));
-            a = this.Field3589 + a * (this.Field3590 - this.Field3589);
-            this.Method58(a);
-            a.drawImage(this.Field3585, this.Field3588, 0, 0);
+            var4.setComposite(AlphaComposite.getInstance(3, this.Field3584));
+            var5 = this.Field3589 + var3 * (this.Field3590 - this.Field3589);
+            this.Method58(var5);
+            var4.drawImage(this.Field3585, this.Field3588, 0, 0);
          }
 
-         a.dispose();
+         var4.dispose();
          return a;
       }
    }

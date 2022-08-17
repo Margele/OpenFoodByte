@@ -47,54 +47,54 @@ public class Trajectories extends Module {
 
    @EventTarget(0)
    public void Method802(EventRender3D a) {
-      float a = 0.0F;
+      float var4 = 0.0F;
       Class492.Method2239();
-      float a = 0.99F;
-      float a = 1.5F;
+      float var5 = 0.99F;
+      float var6 = 1.5F;
       if (mc.thePlayer.getHeldItem() != null) {
          if (mc.thePlayer.getHeldItem().getItem() instanceof ItemBow && mc.thePlayer.isUsingItem() || mc.thePlayer.getHeldItem().getItem() instanceof ItemFishingRod || mc.thePlayer.getHeldItem().getItem() instanceof ItemSnowball || mc.thePlayer.getHeldItem().getItem() instanceof ItemEnderPearl || mc.thePlayer.getHeldItem().getItem() instanceof ItemEgg || mc.thePlayer.getHeldItem().getItem() instanceof ItemPotion && ItemPotion.isSplash(mc.thePlayer.getHeldItem().getItemDamage())) {
-            EntityPlayerSP a = mc.thePlayer;
-            Item a = mc.thePlayer.getCurrentEquippedItem().getItem();
-            boolean a = a instanceof ItemBow;
-            double a = 1.0;
-            double a;
-            if (a instanceof ItemBow) {
-               a = 0.05;
-               float a = (float)(72000 - a.getItemInUseCount()) / 20.0F;
-               a = (a * a + a * 2.0F) / 3.0F;
-               if (a > 1.0F) {
-                  a = 1.0F;
+            EntityPlayerSP var9 = mc.thePlayer;
+            Item var10 = mc.thePlayer.getCurrentEquippedItem().getItem();
+            boolean var3 = var10 instanceof ItemBow;
+            double var11 = 1.0;
+            double var7;
+            if (var10 instanceof ItemBow) {
+               var7 = 0.05;
+               float var13 = (float)(72000 - var9.getItemInUseCount()) / 20.0F;
+               var13 = (var13 * var13 + var13 * 2.0F) / 3.0F;
+               if (var13 > 1.0F) {
+                  var13 = 1.0F;
                }
 
-               a *= 3.0F;
-               a = a;
+               var13 *= 3.0F;
+               var6 = var13;
             }
 
-            if (a instanceof ItemFishingRod) {
-               a = 0.92F;
-               a = 0.04;
+            if (var10 instanceof ItemFishingRod) {
+               var5 = 0.92F;
+               var7 = 0.04;
             }
 
             if (ItemPotion.isSplash(mc.thePlayer.getCurrentEquippedItem().getMetadata())) {
-               a = 0.05;
-               a = -20.0F;
-               a = 0.5F;
+               var7 = 0.05;
+               var4 = -20.0F;
+               var6 = 0.5F;
             }
 
-            a = 0.03;
-            double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a.Method3523() - Math.cos(Math.toRadians((double)a.rotationYaw)) * 0.1599999964237213;
-            double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a.Method3523() + (double)a.getEyeHeight() - 0.1;
-            double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a.Method3523() - Math.sin(Math.toRadians((double)a.rotationYaw)) * 0.1599999964237213;
-            double a = (double)(-MathHelper.sin(mc.thePlayer.rotationYaw / 180.0F * 3.1415927F) * MathHelper.cos(mc.thePlayer.rotationPitch / 180.0F * 3.1415927F)) * a;
-            double a = (double)(-MathHelper.sin((mc.thePlayer.rotationPitch + a) / 180.0F * 3.1415927F)) * a;
-            double a = (double)(MathHelper.cos(mc.thePlayer.rotationYaw / 180.0F * 3.1415927F) * MathHelper.cos(mc.thePlayer.rotationPitch / 180.0F * 3.1415927F)) * a;
-            float a = MathHelper.sqrt_double(a * a + a * a + a * a);
-            a /= (double)a;
-            a /= (double)a;
-            a /= (double)a;
-            a *= (double)a;
-            a *= (double)a;
-            a *= (double)a;
+            var7 = 0.03;
+            double var37 = var9.lastTickPosX + (var9.posX - var9.lastTickPosX) * (double)a.Method3523() - Math.cos(Math.toRadians((double)var9.rotationYaw)) * 0.1599999964237213;
+            double var15 = var9.lastTickPosY + (var9.posY - var9.lastTickPosY) * (double)a.Method3523() + (double)var9.getEyeHeight() - 0.1;
+            double var17 = var9.lastTickPosZ + (var9.posZ - var9.lastTickPosZ) * (double)a.Method3523() - Math.sin(Math.toRadians((double)var9.rotationYaw)) * 0.1599999964237213;
+            double var19 = (double)(-MathHelper.sin(mc.thePlayer.rotationYaw / 180.0F * 3.1415927F) * MathHelper.cos(mc.thePlayer.rotationPitch / 180.0F * 3.1415927F)) * var11;
+            double var21 = (double)(-MathHelper.sin((mc.thePlayer.rotationPitch + var4) / 180.0F * 3.1415927F)) * var11;
+            double var23 = (double)(MathHelper.cos(mc.thePlayer.rotationYaw / 180.0F * 3.1415927F) * MathHelper.cos(mc.thePlayer.rotationPitch / 180.0F * 3.1415927F)) * var11;
+            float var25 = MathHelper.sqrt_double(var19 * var19 + var21 * var21 + var23 * var23);
+            var19 /= (double)var25;
+            var21 /= (double)var25;
+            var23 /= (double)var25;
+            var19 *= (double)var6;
+            var21 *= (double)var6;
+            var23 *= (double)var6;
             GL11.glPushMatrix();
             GL11.glEnable(3553);
             GL11.glDisable(2896);
@@ -107,77 +107,77 @@ public class Trajectories extends Module {
             GL11.glEnable(3042);
             GL11.glLineWidth(1.5F);
             GL11.glBegin(3);
-            boolean a = false;
-            EntityLivingBase a = null;
-            if (a > 0.0) {
-               Vec3 a = new Vec3(a.posX, a.posY + (double)a.getEyeHeight(), a.posZ);
-               Vec3 a = new Vec3(a, a, a);
-               Vec3 a = new Vec3(a + a, a + a, a + a);
-               this.Field2194 = mc.theWorld.rayTraceBlocks(a, a);
-               this.Field2194 = mc.theWorld.rayTraceBlocks(a, a, false, true, false);
+            boolean var26 = false;
+            EntityLivingBase var27 = null;
+            if (var15 > 0.0) {
+               Vec3 var28 = new Vec3(var9.posX, var9.posY + (double)var9.getEyeHeight(), var9.posZ);
+               Vec3 var29 = new Vec3(var37, var15, var17);
+               Vec3 var30 = new Vec3(var37 + var19, var15 + var21, var17 + var23);
+               this.Field2194 = mc.theWorld.rayTraceBlocks(var28, var29);
+               this.Field2194 = mc.theWorld.rayTraceBlocks(var29, var30, false, true, false);
                if (this.Field2194 != null) {
-                  a = true;
+                  var26 = true;
                }
 
                Iterator var31 = mc.theWorld.getLoadedEntityList().Method1383();
                if (var31.Method932()) {
-                  Entity a = (Entity)var31.Method933();
-                  if (a instanceof EntityLivingBase && !(a instanceof EntityPlayerSP)) {
-                     this.Field2193 = (EntityLivingBase)a;
-                     AxisAlignedBB a = this.Field2193.getEntityBoundingBox().expand(0.3, 0.3, 0.3);
-                     this.Field2195 = a.calculateIntercept(a, a);
+                  Entity var32 = (Entity)var31.Method933();
+                  if (var32 instanceof EntityLivingBase && !(var32 instanceof EntityPlayerSP)) {
+                     this.Field2193 = (EntityLivingBase)var32;
+                     AxisAlignedBB var33 = this.Field2193.getEntityBoundingBox().expand(0.3, 0.3, 0.3);
+                     this.Field2195 = var33.calculateIntercept(var28, var29);
                      if (this.Field2195 != null) {
-                        a = true;
+                        var26 = true;
                         this.Field2194 = this.Field2195;
-                        a = this.Field2193;
+                        var27 = this.Field2193;
                      }
                   }
                }
 
-               a += a;
-               a += a;
-               a += a;
-               BlockPos a = new BlockPos(a, a, a);
-               Block a = mc.theWorld.getBlockState(a).getBlock();
-               if (a.getMaterial() == Material.water) {
-                  a *= 0.72;
-                  a *= 0.72;
-                  a *= 0.72;
+               var37 += var19;
+               var15 += var21;
+               var17 += var23;
+               BlockPos var41 = new BlockPos(var37, var15, var17);
+               Block var42 = mc.theWorld.getBlockState(var41).getBlock();
+               if (var42.getMaterial() == Material.water) {
+                  var19 *= 0.72;
+                  var21 *= 0.72;
+                  var23 *= 0.72;
                }
 
-               double var10000 = a * (double)a;
-               a *= (double)a;
-               var10000 = a * (double)a;
-               var10000 = a - a;
-               GL11.glVertex3d(a - ReflectionUtils.getRenderPosX(), a - ReflectionUtils.getRenderPosY(), a - ReflectionUtils.getRenderPosZ());
+               double var10000 = var19 * (double)var5;
+               var21 *= (double)var5;
+               var10000 = var23 * (double)var5;
+               var10000 = var21 - var7;
+               GL11.glVertex3d(var37 - ReflectionUtils.getRenderPosX(), var15 - ReflectionUtils.getRenderPosY(), var17 - ReflectionUtils.getRenderPosZ());
             }
 
             GL11.glEnd();
             GL11.glPushMatrix();
             GL11.glColor4f(1.0F, 0.0F, 0.2F, 0.5F);
             GL11.glColor4f(0.0F, 0.6451613F, 1.0F, 0.5F);
-            GL11.glTranslated(a - ReflectionUtils.getRenderPosX() - 0.5, a - ReflectionUtils.getRenderPosY() - 0.5, a - ReflectionUtils.getRenderPosZ() - 0.5);
+            GL11.glTranslated(var37 - ReflectionUtils.getRenderPosX() - 0.5, var15 - ReflectionUtils.getRenderPosY() - 0.5, var17 - ReflectionUtils.getRenderPosZ() - 0.5);
             if (this.Field2194 != null && this.Field2194.typeOfHit == MovingObjectType.BLOCK) {
-               int a = this.Field2194.sideHit.getIndex();
-               if (a == 2) {
+               int var38 = this.Field2194.sideHit.getIndex();
+               if (var38 == 2) {
                   GL11.glRotatef(90.0F, 1.0F, 0.0F, 0.0F);
                   Method1629(new AxisAlignedBB(0.0, 0.5, -1.0, 1.0, 0.5, 0.0));
                   Method2098(new AxisAlignedBB(0.0, 0.5, -1.0, 1.0, 0.5, 0.0));
                }
 
-               if (a == 3) {
+               if (var38 == 3) {
                   GL11.glRotatef(90.0F, 1.0F, 0.0F, 0.0F);
                   Method1629(new AxisAlignedBB(0.0, 0.5, -1.0, 1.0, 0.5, 0.0));
                   Method2098(new AxisAlignedBB(0.0, 0.5, -1.0, 1.0, 0.5, 0.0));
                }
 
-               if (a == 4) {
+               if (var38 == 4) {
                   GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
                   Method1629(new AxisAlignedBB(0.0, -0.5, 0.0, 1.0, -0.5, 1.0));
                   Method2098(new AxisAlignedBB(0.0, -0.5, 0.0, 1.0, -0.5, 1.0));
                }
 
-               if (a == 5) {
+               if (var38 == 5) {
                   GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
                   Method1629(new AxisAlignedBB(0.0, -0.5, 0.0, 1.0, -0.5, 1.0));
                   Method2098(new AxisAlignedBB(0.0, -0.5, 0.0, 1.0, -0.5, 1.0));
@@ -195,47 +195,47 @@ public class Trajectories extends Module {
             GL11.glEnable(2929);
             GL11.glDisable(2848);
             GL11.glPopMatrix();
-            double a = (double)ReflectionUtils.getRenderPartialTicks();
-            double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
-            double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
-            double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
-            Color a = new Color(255, 0, 0);
-            RenderUtils.Method1121(a, a, a, (double)a.width / 1.5, (double)a.height + 0.2, (float)a.getRed() / 255.0F, (float)a.getGreen() / 255.0F, (float)a.getBlue() / 255.0F, 1.0F);
+            double var39 = (double)ReflectionUtils.getRenderPartialTicks();
+            double var40 = var27.lastTickPosX + (var27.posX - var27.lastTickPosX) * var39 - ReflectionUtils.getRenderPosX();
+            double var43 = var27.lastTickPosY + (var27.posY - var27.lastTickPosY) * var39 - ReflectionUtils.getRenderPosY();
+            double var34 = var27.lastTickPosZ + (var27.posZ - var27.lastTickPosZ) * var39 - ReflectionUtils.getRenderPosZ();
+            Color var36 = new Color(255, 0, 0);
+            RenderUtils.Method1121(var40, var43, var34, (double)var27.width / 1.5, (double)var27.height + 0.2, (float)var36.getRed() / 255.0F, (float)var36.getGreen() / 255.0F, (float)var36.getBlue() / 255.0F, 1.0F);
          }
       }
    }
 
    public ArrayList Method241() {
-      ArrayList a = new ArrayList();
+      ArrayList var1 = new ArrayList();
       Iterator var2 = mc.theWorld.loadedEntityList.Method1383();
 
       while(var2.Method932()) {
-         Object a = var2.Method933();
-         if (a != mc.thePlayer && a instanceof EntityLivingBase) {
-            a.Method2530(a);
+         Object var3 = var2.Method933();
+         if (var3 != mc.thePlayer && var3 instanceof EntityLivingBase) {
+            var1.Method2530(var3);
          }
       }
 
-      return a;
+      return var1;
    }
 
    public Entity Method2108(boolean a, Vec3 a, Vec3 a) {
       Iterator var4 = this.Method241().Method1383();
 
-      EntityLivingBase a;
+      EntityLivingBase var6;
       do {
          if (!var4.Method932()) {
             return null;
          }
 
-         Object a = var4.Method933();
-         a = (EntityLivingBase)a;
-      } while(a == mc.thePlayer);
+         Object var5 = var4.Method933();
+         var6 = (EntityLivingBase)var5;
+      } while(var6 == mc.thePlayer);
 
-      float a = 0.2F;
-      AxisAlignedBB a = a.getEntityBoundingBox().expand((double)a, (double)a, (double)a);
-      MovingObjectPosition a = a.calculateIntercept(a, a);
-      return a;
+      float var7 = 0.2F;
+      AxisAlignedBB var8 = var6.getEntityBoundingBox().expand((double)var7, (double)var7, (double)var7);
+      MovingObjectPosition var9 = var8.calculateIntercept(a, a);
+      return var6;
    }
 
    public static void Method1629(AxisAlignedBB a) {
@@ -268,32 +268,32 @@ public class Trajectories extends Module {
    }
 
    public static void Method2098(AxisAlignedBB a) {
-      Tessellator a = Tessellator.getInstance();
-      WorldRenderer a = a.getWorldRenderer();
-      a.begin(3, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.draw();
-      a.begin(3, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.draw();
-      a.begin(1, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.maxZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.maxZ).endVertex();
-      a.draw();
+      Tessellator var1 = Tessellator.getInstance();
+      WorldRenderer var2 = var1.getWorldRenderer();
+      var2.begin(3, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var1.draw();
+      var2.begin(3, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var1.draw();
+      var2.begin(1, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.maxZ).endVertex();
+      var1.draw();
    }
 
    public void Method2109(float a, float a, float a, float a, int a) {
@@ -321,15 +321,15 @@ public class Trajectories extends Module {
    }
 
    public static void Method2111(double a, double a, double a, double a, int a) {
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
+      float var9 = (float)(a >> 24 & 255) / 255.0F;
+      float var10 = (float)(a >> 16 & 255) / 255.0F;
+      float var11 = (float)(a >> 8 & 255) / 255.0F;
+      float var12 = (float)(a & 255) / 255.0F;
       GlStateManager.enableBlend();
       GlStateManager.disableTexture2D();
       GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
       GL11.glPushMatrix();
-      GL11.glColor4f(a, a, a, a);
+      GL11.glColor4f(var10, var11, var12, var9);
       GL11.glBegin(7);
       GL11.glVertex2d(a, a);
       GL11.glVertex2d(a, a);
@@ -342,14 +342,14 @@ public class Trajectories extends Module {
    }
 
    public static void Method2112(double a, double a, double a, double a, int a, int a) {
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
+      float var10 = (float)(a >> 24 & 255) / 255.0F;
+      float var11 = (float)(a >> 16 & 255) / 255.0F;
+      float var12 = (float)(a >> 8 & 255) / 255.0F;
+      float var13 = (float)(a & 255) / 255.0F;
+      float var14 = (float)(a >> 24 & 255) / 255.0F;
+      float var15 = (float)(a >> 16 & 255) / 255.0F;
+      float var16 = (float)(a >> 8 & 255) / 255.0F;
+      float var17 = (float)(a & 255) / 255.0F;
       GL11.glEnable(3042);
       GL11.glDisable(3553);
       GL11.glBlendFunc(770, 771);
@@ -357,10 +357,10 @@ public class Trajectories extends Module {
       GL11.glShadeModel(7425);
       GL11.glPushMatrix();
       GL11.glBegin(7);
-      GL11.glColor4f(a, a, a, a);
+      GL11.glColor4f(var11, var12, var13, var10);
       GL11.glVertex2d(a, a);
       GL11.glVertex2d(a, a);
-      GL11.glColor4f(a, a, a, a);
+      GL11.glColor4f(var15, var16, var17, var14);
       GL11.glVertex2d(a, a);
       GL11.glVertex2d(a, a);
       GL11.glEnd();

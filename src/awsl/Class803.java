@@ -27,18 +27,18 @@ public class Class803 extends Class801 {
    }
 
    public static void main(String[] a) throws Exception {
-      int a = false;
-      int a = true;
-      boolean a = true;
+      boolean var1 = false;
+      boolean var2 = true;
+      boolean var3 = true;
       if (a.length < 1 || a.length > 2) {
-         a = false;
+         var3 = false;
       }
 
       if ("-debug".equals(a[0])) {
-         a = true;
-         a = false;
+         var1 = true;
+         var2 = false;
          if (a.length != 2) {
-            a = false;
+            var3 = false;
          }
       }
 
@@ -47,18 +47,18 @@ public class Class803 extends Class801 {
    }
 
    public void Method3245(int a, int a, String a, String a, String a, String[] a) {
-      int a = a.lastIndexOf(47);
-      String a;
-      if (a == -1) {
-         a = a;
+      int var8 = a.lastIndexOf(47);
+      String var7;
+      if (var8 == -1) {
+         var7 = a;
       } else {
-         this.Field3580.Method2530("package asm." + a.substring(0, a).replace('/', '.') + ";\n");
-         a = a.substring(a + 1);
+         this.Field3580.Method2530("package asm." + a.substring(0, var8).replace('/', '.') + ";\n");
+         var7 = a.substring(var8 + 1);
       }
 
       this.Field3580.Method2530("import java.util.*;\n");
       this.Field3580.Method2530("import org.objectweb.asm.*;\n");
-      this.Field3580.Method2530("public class " + a + "Dump implements Opcodes {\n\n");
+      this.Field3580.Method2530("public class " + var7 + "Dump implements Opcodes {\n\n");
       this.Field3580.Method2530("public static byte[] dump () throws Exception {\n\n");
       this.Field3580.Method2530("ClassWriter cw = new ClassWriter(0);\n");
       this.Field3580.Method2530("FieldVisitor fv;\n");
@@ -104,9 +104,9 @@ public class Class803 extends Class801 {
       if (a.length > 0) {
          this.Field3579.append("new String[] {");
 
-         for(int a = 0; a < a.length; ++a) {
+         for(int var9 = 0; var9 < a.length; ++var9) {
             this.Field3579.append(" ");
-            this.Method3326(a[a]);
+            this.Method3326(a[var9]);
          }
 
          this.Field3579.append(" }");
@@ -181,10 +181,10 @@ public class Class803 extends Class801 {
       this.Method3326(a);
       this.Field3579.append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("fv", 0);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var6 = this.Method3324("fv", 0);
+      this.Field3580.Method2530(var6.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var6;
    }
 
    public Class803 Method3308(int a, String a, String a, String a, String[] a) {
@@ -202,9 +202,9 @@ public class Class803 extends Class801 {
       if (a.length > 0) {
          this.Field3579.append("new String[] {");
 
-         for(int a = 0; a < a.length; ++a) {
+         for(int var6 = 0; var6 < a.length; ++var6) {
             this.Field3579.append(" ");
-            this.Method3326(a[a]);
+            this.Method3326(a[var6]);
          }
 
          this.Field3579.append(" }");
@@ -214,10 +214,10 @@ public class Class803 extends Class801 {
 
       this.Field3579.append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("mv", 0);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var7 = this.Method3324("mv", 0);
+      this.Field3580.Method2530(var7.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var7;
    }
 
    public void Method3254() {
@@ -259,10 +259,10 @@ public class Class803 extends Class801 {
       Method3327(this.Field3579, a);
       this.Field3579.append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("av", this.Field3592 + 1);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var3 = this.Method3324("av", this.Field3592 + 1);
+      this.Field3580.Method2530(var3.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var3;
    }
 
    public Class803 Method3310(String a) {
@@ -273,10 +273,10 @@ public class Class803 extends Class801 {
       Method3327(this.Field3579, a);
       this.Field3579.append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("av", this.Field3592 + 1);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var2 = this.Method3324("av", this.Field3592 + 1);
+      this.Field3580.Method2530(var2.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var2;
    }
 
    public void Method3259() {
@@ -316,10 +316,10 @@ public class Class803 extends Class801 {
       this.Field3579.setLength(0);
       this.Field3579.append("{\n").append("av0 = ").append(this.Field3591).append(".visitAnnotationDefault();\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("av", 0);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var1 = this.Method3324("av", 0);
+      this.Field3580.Method2530(var1.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var1;
    }
 
    public Class803 Method3314(String a, boolean a) {
@@ -336,10 +336,10 @@ public class Class803 extends Class801 {
       this.Method3326(a);
       this.Field3579.append(", ").append(a).append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("av", 0);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var4 = this.Method3324("av", 0);
+      this.Field3580.Method2530(var4.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var4;
    }
 
    public void Method3269(Class136 a) {
@@ -448,7 +448,7 @@ public class Class803 extends Class801 {
       }
    }
 
-   private void Method3317(int a, String a, String a, String a, boolean a4) {
+   private void Method3317(int a, String a, String a, String a, boolean a) {
       this.Field3579.setLength(0);
       this.Field3579.append(this.Field3591).append(".visitMethodInsn(").append(Field3575[a]).append(", ");
       this.Method3326(a);
@@ -472,9 +472,9 @@ public class Class803 extends Class801 {
       this.Method3326(a);
       this.Field3579.append(", new Object[]{");
 
-      for(int a = 0; a < a.length; ++a) {
-         this.Method3326(a[a]);
-         if (a != a.length - 1) {
+      for(int var5 = 0; var5 < a.length; ++var5) {
+         this.Method3326(a[var5]);
+         if (var5 != a.length - 1) {
             this.Field3579.append(", ");
          }
       }
@@ -518,9 +518,9 @@ public class Class803 extends Class801 {
    public void Method3284(int a, int a, Class264 a, Class264[] a) {
       this.Field3579.setLength(0);
 
-      int a;
-      for(a = 0; a < a.length; ++a) {
-         this.Method3330(a[a]);
+      int var5;
+      for(var5 = 0; var5 < a.length; ++var5) {
+         this.Method3330(a[var5]);
       }
 
       this.Method3330(a);
@@ -528,9 +528,9 @@ public class Class803 extends Class801 {
       this.Method3331(a);
       this.Field3579.append(", new Label[] {");
 
-      for(a = 0; a < a.length; ++a) {
+      for(var5 = 0; var5 < a.length; ++var5) {
          this.Field3579.append(" ");
-         this.Method3331(a[a]);
+         this.Method3331(a[var5]);
       }
 
       this.Field3579.append(" });\n");
@@ -540,9 +540,9 @@ public class Class803 extends Class801 {
    public void Method3285(Class264 a, int[] a, Class264[] a) {
       this.Field3579.setLength(0);
 
-      int a;
-      for(a = 0; a < a.length; ++a) {
-         this.Method3330(a[a]);
+      int var4;
+      for(var4 = 0; var4 < a.length; ++var4) {
+         this.Method3330(a[var4]);
       }
 
       this.Method3330(a);
@@ -550,15 +550,15 @@ public class Class803 extends Class801 {
       this.Method3331(a);
       this.Field3579.append(", new int[] {");
 
-      for(a = 0; a < a.length; ++a) {
-         this.Field3579.append(" ").append(a[a]);
+      for(var4 = 0; var4 < a.length; ++var4) {
+         this.Field3579.append(" ").append(a[var4]);
       }
 
       this.Field3579.append(" }, new Label[] {");
 
-      for(a = 0; a < a.length; ++a) {
+      for(var4 = 0; var4 < a.length; ++var4) {
          this.Field3579.append(" ");
-         this.Method3331(a[a]);
+         this.Method3331(a[var4]);
       }
 
       this.Field3579.append(" });\n");
@@ -621,33 +621,33 @@ public class Class803 extends Class801 {
       this.Field3579.append(", TypePath.fromString(\"").append(a).append("\"), ");
       this.Field3579.append("new Label[] {");
 
-      int a;
-      for(a = 0; a < a.length; ++a) {
+      int var8;
+      for(var8 = 0; var8 < a.length; ++var8) {
          this.Field3579.append(" ");
-         this.Method3331(a[a]);
+         this.Method3331(a[var8]);
       }
 
       this.Field3579.append(" }, new Label[] {");
 
-      for(a = 0; a < a.length; ++a) {
+      for(var8 = 0; var8 < a.length; ++var8) {
          this.Field3579.append(" ");
-         this.Method3331(a[a]);
+         this.Method3331(a[var8]);
       }
 
       this.Field3579.append(" }, new int[] {");
 
-      for(a = 0; a < a.length; ++a) {
-         this.Field3579.append(" ").append(a[a]);
+      for(var8 = 0; var8 < a.length; ++var8) {
+         this.Field3579.append(" ").append(a[var8]);
       }
 
       this.Field3579.append(" }, ");
       this.Method3326(a);
       this.Field3579.append(", ").append(a).append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("av", 0);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var9 = this.Method3324("av", 0);
+      this.Field3580.Method2530(var9.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var9;
    }
 
    public void Method3292(int a, Class264 a) {
@@ -676,10 +676,10 @@ public class Class803 extends Class801 {
       this.Method3326(a);
       this.Field3579.append(", ").append(a).append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("av", 0);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var3 = this.Method3324("av", 0);
+      this.Field3580.Method2530(var3.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var3;
    }
 
    public Class803 Method3321(int a, Class31 a, String a, boolean a) {
@@ -694,10 +694,10 @@ public class Class803 extends Class801 {
       this.Method3326(a);
       this.Field3579.append(", ").append(a).append(");\n");
       this.Field3580.Method2530(this.Field3579.toString());
-      Class803 a = this.Method3324("av", 0);
-      this.Field3580.Method2530(a.Method3295());
+      Class803 var6 = this.Method3324("av", 0);
+      this.Field3580.Method2530(var6.Method3295());
       this.Field3580.Method2530("}\n");
-      return a;
+      return var6;
    }
 
    public void Method3323(Class136 a) {
@@ -722,32 +722,32 @@ public class Class803 extends Class801 {
    }
 
    void Method3325(int a) {
-      boolean a = true;
+      boolean var2 = true;
       if ((a & 1) != 0) {
          this.Field3579.append("ACC_PUBLIC");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 2) != 0) {
          this.Field3579.append("ACC_PRIVATE");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 4) != 0) {
          this.Field3579.append("ACC_PROTECTED");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 16) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_FINAL");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 8) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_STATIC");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 32) != 0) {
@@ -758,85 +758,85 @@ public class Class803 extends Class801 {
             this.Field3579.append("ACC_SUPER");
          }
 
-         a = false;
+         var2 = false;
       }
 
       if ((a & 64) != 0 && (a & 524288) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_VOLATILE");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 64) != 0 && (a & 262144) == 0 && (a & 524288) == 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_BRIDGE");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 128) != 0 && (a & 262144) == 0 && (a & 524288) == 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_VARARGS");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 128) != 0 && (a & 524288) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_TRANSIENT");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 256) != 0 && (a & 262144) == 0 && (a & 524288) == 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_NATIVE");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 16384) != 0 && ((a & 262144) != 0 || (a & 524288) != 0 || (a & 1048576) != 0)) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_ENUM");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 8192) != 0 && ((a & 262144) != 0 || (a & 1048576) != 0)) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_ANNOTATION");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 1024) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_ABSTRACT");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 512) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_INTERFACE");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 2048) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_STRICT");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 4096) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_SYNTHETIC");
-         a = false;
+         var2 = false;
       }
 
       if ((a & 131072) != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_DEPRECATED");
-         a = false;
+         var2 = false;
       }
 
       if ((a & '耀') != 0) {
          this.Field3579.append(" + ");
          this.Field3579.append("ACC_MANDATED");
-         a = false;
+         var2 = false;
       }
 
       this.Field3579.append('0');
@@ -847,7 +847,7 @@ public class Class803 extends Class801 {
    }
 
    static void Method3327(StringBuffer a, Object a) {
-      a[] a = Class801.Method3300();
+      a[] var2 = Class801.Method3300();
       a.append("null");
       if (a instanceof String) {
          Method3297(a, (String)a);
@@ -861,11 +861,11 @@ public class Class803 extends Class801 {
 
       if (a instanceof Class279) {
          a.append("new Handle(");
-         Class279 a = (Class279)a;
-         a.append("Opcodes.").append(Field3577[a.Method2820()]).append(", \"");
-         a.append(a.Method2821()).append("\", \"");
-         a.append(a.Method2822()).append("\", \"");
-         a.append(a.Method2823()).append("\")");
+         Class279 var3 = (Class279)a;
+         a.append("Opcodes.").append(Field3577[var3.Method2820()]).append(", \"");
+         a.append(var3.Method2821()).append("\", \"");
+         a.append(var3.Method2822()).append("\", \"");
+         a.append(var3.Method2823()).append("\")");
       }
 
       if (a instanceof Byte) {
@@ -881,8 +881,8 @@ public class Class803 extends Class801 {
       }
 
       if (a instanceof Character) {
-         int a = (Character)a;
-         a.append("new Character((char)").append(a).append(')');
+         char var5 = (Character)a;
+         a.append("new Character((char)").append(var5).append(')');
       }
 
       if (a instanceof Integer) {
@@ -901,99 +901,99 @@ public class Class803 extends Class801 {
          a.append("new Double(\"").append(a).append("\")");
       }
 
-      int a;
+      int var4;
       if (a instanceof byte[]) {
-         byte[] a = (byte[])((byte[])a);
+         byte[] var6 = (byte[])((byte[])a);
          a.append("new byte[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append(a[a]);
-            ++a;
+         var4 = 0;
+         if (var4 < var6.length) {
+            a.append("").append(var6[var4]);
+            ++var4;
          }
 
          a.append('}');
       }
 
-      byte a;
+      byte var9;
       if (a instanceof boolean[]) {
-         boolean[] a = (boolean[])((boolean[])a);
+         boolean[] var7 = (boolean[])((boolean[])a);
          a.append("new boolean[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append(a[a]);
-            a = a + 1;
+         var9 = 0;
+         if (var9 < var7.length) {
+            a.append("").append(var7[var9]);
+            var4 = var9 + 1;
          }
 
          a.append('}');
       }
 
       if (a instanceof short[]) {
-         short[] a = (short[])((short[])a);
+         short[] var8 = (short[])((short[])a);
          a.append("new short[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append("(short)").append(a[a]);
-            a = a + 1;
+         var9 = 0;
+         if (var9 < var8.length) {
+            a.append("").append("(short)").append(var8[var9]);
+            var4 = var9 + 1;
          }
 
          a.append('}');
       }
 
       if (a instanceof char[]) {
-         char[] a = (char[])((char[])a);
+         char[] var10 = (char[])((char[])a);
          a.append("new char[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append("(char)").append(a[a]);
-            a = a + 1;
+         var9 = 0;
+         if (var9 < var10.length) {
+            a.append("").append("(char)").append(var10[var9]);
+            var4 = var9 + 1;
          }
 
          a.append('}');
       }
 
       if (a instanceof int[]) {
-         int[] a = (int[])((int[])a);
+         int[] var11 = (int[])((int[])a);
          a.append("new int[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append(a[a]);
-            a = a + 1;
+         var9 = 0;
+         if (var9 < var11.length) {
+            a.append("").append(var11[var9]);
+            var4 = var9 + 1;
          }
 
          a.append('}');
       }
 
       if (a instanceof long[]) {
-         long[] a = (long[])((long[])a);
+         long[] var12 = (long[])((long[])a);
          a.append("new long[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append(a[a]).append('L');
-            a = a + 1;
+         var9 = 0;
+         if (var9 < var12.length) {
+            a.append("").append(var12[var9]).append('L');
+            var4 = var9 + 1;
          }
 
          a.append('}');
       }
 
       if (a instanceof float[]) {
-         float[] a = (float[])((float[])a);
+         float[] var13 = (float[])((float[])a);
          a.append("new float[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append(a[a]).append('f');
-            a = a + 1;
+         var9 = 0;
+         if (var9 < var13.length) {
+            a.append("").append(var13[var9]).append('f');
+            var4 = var9 + 1;
          }
 
          a.append('}');
       }
 
       if (a instanceof double[]) {
-         double[] a = (double[])((double[])a);
+         double[] var14 = (double[])((double[])a);
          a.append("new double[] {");
-         a = 0;
-         if (a < a.length) {
-            a.append("").append(a[a]).append('d');
-            a = a + 1;
+         var9 = 0;
+         if (var9 < var14.length) {
+            a.append("").append(var14[var9]).append('d');
+            var4 = var9 + 1;
          }
 
          a.append('}');
@@ -1002,21 +1002,21 @@ public class Class803 extends Class801 {
    }
 
    private void Method3328(int a, Object[] a) {
-      for(int a = 0; a < a; ++a) {
-         if (a[a] instanceof Class264) {
-            this.Method3330((Class264)a[a]);
+      for(int var3 = 0; var3 < a; ++var3) {
+         if (a[var3] instanceof Class264) {
+            this.Method3330((Class264)a[var3]);
          }
       }
 
    }
 
    private void Method3329(int a, Object[] a) {
-      for(int a = 0; a < a; ++a) {
+      for(int var3 = 0; var3 < a; ++var3) {
          this.Field3579.append(", ");
-         if (a[a] instanceof String) {
-            this.Method3326(a[a]);
-         } else if (a[a] instanceof Integer) {
-            switch ((Integer)a[a]) {
+         if (a[var3] instanceof String) {
+            this.Method3326(a[var3]);
+         } else if (a[var3] instanceof Integer) {
+            switch ((Integer)a[var3]) {
                case 0:
                   this.Field3579.append("Opcodes.TOP");
                   break;
@@ -1039,7 +1039,7 @@ public class Class803 extends Class801 {
                   this.Field3579.append("Opcodes.UNINITIALIZED_THIS");
             }
          } else {
-            this.Method3331((Class264)a[a]);
+            this.Method3331((Class264)a[var3]);
          }
       }
 
@@ -1050,10 +1050,10 @@ public class Class803 extends Class801 {
          this.Field3593 = new HashMap();
       }
 
-      String a = (String)this.Field3593.Method2665(a);
-      a = "l" + this.Field3593.Method1799();
-      this.Field3593.put(a, a);
-      this.Field3579.append("Label ").append(a).append(" = new Label();\n");
+      String var2 = (String)this.Field3593.Method2665(a);
+      var2 = "l" + this.Field3593.Method1799();
+      this.Field3593.put(a, var2);
+      this.Field3579.append("Label ").append(var2).append(" = new Label();\n");
    }
 
    protected void Method3331(Class264 a) {

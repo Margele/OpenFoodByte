@@ -18,7 +18,7 @@ public enum Category {
       return (Category)Enum.valueOf(Category.class, a);
    }
 
-   private Category(String a, int a1, String a) {
+   private Category(String a, int a, String a) {
       this.Field2976 = a;
    }
 

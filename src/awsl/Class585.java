@@ -12,8 +12,8 @@ public class Class585 implements Class594 {
    }
 
    public float Method20(float a, float a) {
-      float a = Class598.Method157(a + 0.5F, a) * this.Field2754;
-      float a = Class598.Method157(a, a + 0.5F) * this.Field2754;
-      return Class598.Method157(a + a, a + a);
+      float var3 = Class598.Method157(a + 0.5F, a) * this.Field2754;
+      float var4 = Class598.Method157(a, a + 0.5F) * this.Field2754;
+      return Class598.Method157(a + var3, a + var4);
    }
 }

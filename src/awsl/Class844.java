@@ -13,8 +13,8 @@ final class Class844 extends Class831 {
    }
 
    public final void Method3501(String a, Attributes a) {
-      HashMap a = (HashMap)this.Field3732.Method1963();
-      ((ArrayList)a.Method2665("labels")).Method2530(this.Method3654(a.getValue("name")));
-      ((ArrayList)a.Method2665("keys")).Method2530(a.getValue("key"));
+      HashMap var3 = (HashMap)this.Field3732.Method1963();
+      ((ArrayList)var3.Method2665("labels")).Method2530(this.Method3654(a.getValue("name")));
+      ((ArrayList)var3.Method2665("keys")).Method2530(a.getValue("key"));
    }
 }

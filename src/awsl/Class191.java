@@ -21,14 +21,14 @@ public class Class191 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
-      ColorModel a = a.getColorModel();
-      a = new BufferedImage(a, a.createCompatibleWritableRaster(this.Field1155, this.Field1156), a.isAlphaPremultiplied(), (Hashtable)null);
-      Graphics2D a = a.createGraphics();
-      a.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-      a.drawImage(a, 0, 0, this.Field1155, this.Field1156, (ImageObserver)null);
-      a.dispose();
+      int var3 = a.getWidth();
+      int var4 = a.getHeight();
+      ColorModel var5 = a.getColorModel();
+      a = new BufferedImage(var5, var5.createCompatibleWritableRaster(this.Field1155, this.Field1156), var5.isAlphaPremultiplied(), (Hashtable)null);
+      Graphics2D var6 = a.createGraphics();
+      var6.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+      var6.drawImage(a, 0, 0, this.Field1155, this.Field1156, (ImageObserver)null);
+      var6.dispose();
       return a;
    }
 

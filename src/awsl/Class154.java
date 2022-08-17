@@ -11,7 +11,7 @@ public class Class154 extends Class148 {
    }
 
    public void Method397(String a, Object a) {
-      String[] a = Class690.Method2342();
+      String[] var3 = Class690.Method2342();
       this.Field1019.Method2496(a);
       if (a instanceof Byte) {
          this.Field1019.Method2492((Byte)a);
@@ -33,77 +33,77 @@ public class Class154 extends Class148 {
          this.Field1019.Method2496(((b)a).Method3225());
       }
 
-      int a;
+      int var5;
       if (a instanceof byte[]) {
-         byte[] a = (byte[])((byte[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2492(a[a]);
-            ++a;
+         byte[] var4 = (byte[])((byte[])a);
+         var5 = 0;
+         if (var5 < var4.length) {
+            this.Field1019.Method2492(var4[var5]);
+            ++var5;
          }
       }
 
-      byte a;
+      byte var10;
       if (a instanceof boolean[]) {
-         boolean[] a = (boolean[])((boolean[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2492(a[a] ? 1 : 0);
-            a = a + 1;
+         boolean[] var6 = (boolean[])((boolean[])a);
+         var10 = 0;
+         if (var10 < var6.length) {
+            this.Field1019.Method2492(var6[var10] ? 1 : 0);
+            var5 = var10 + 1;
          }
       }
 
       if (a instanceof short[]) {
-         short[] a = (short[])((short[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2492(a[a]);
-            a = a + 1;
+         short[] var7 = (short[])((short[])a);
+         var10 = 0;
+         if (var10 < var7.length) {
+            this.Field1019.Method2492(var7[var10]);
+            var5 = var10 + 1;
          }
       }
 
       if (a instanceof char[]) {
-         char[] a = (char[])((char[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2492(a[a]);
-            a = a + 1;
+         char[] var8 = (char[])((char[])a);
+         var10 = 0;
+         if (var10 < var8.length) {
+            this.Field1019.Method2492(var8[var10]);
+            var5 = var10 + 1;
          }
       }
 
       if (a instanceof int[]) {
-         int[] a = (int[])((int[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2492(a[a]);
-            a = a + 1;
+         int[] var9 = (int[])((int[])a);
+         var10 = 0;
+         if (var10 < var9.length) {
+            this.Field1019.Method2492(var9[var10]);
+            var5 = var10 + 1;
          }
       }
 
       if (a instanceof long[]) {
-         long[] a = (long[])((long[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2494(a[a]);
-            a = a + 1;
+         long[] var11 = (long[])((long[])a);
+         var10 = 0;
+         if (var10 < var11.length) {
+            this.Field1019.Method2494(var11[var10]);
+            var5 = var10 + 1;
          }
       }
 
       if (a instanceof float[]) {
-         float[] a = (float[])((float[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2493(a[a]);
-            a = a + 1;
+         float[] var12 = (float[])((float[])a);
+         var10 = 0;
+         if (var10 < var12.length) {
+            this.Field1019.Method2493(var12[var10]);
+            var5 = var10 + 1;
          }
       }
 
       if (a instanceof double[]) {
-         double[] a = (double[])((double[])a);
-         a = 0;
-         if (a < a.length) {
-            this.Field1019.Method2495(a[a]);
-            a = a + 1;
+         double[] var13 = (double[])((double[])a);
+         var10 = 0;
+         if (var10 < var13.length) {
+            this.Field1019.Method2495(var13[var10]);
+            var5 = var10 + 1;
          }
       }
 

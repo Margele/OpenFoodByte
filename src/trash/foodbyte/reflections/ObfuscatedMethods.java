@@ -173,7 +173,7 @@ public enum ObfuscatedMethods {
       this(a, a, a, a, a, a);
    }
 
-   private ObfuscatedMethods(String a, String a, String a, String a, String a, boolean a5) {
+   private ObfuscatedMethods(String a, String a, String a, String a, String a, boolean a) {
       this.Field2969 = null;
       this.Field2970 = a;
       this.Field2971 = a;

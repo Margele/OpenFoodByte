@@ -44,8 +44,8 @@ public class b {
    }
 
    public static b Method3205(String a) {
-      char[] a = a.toCharArray();
-      return new b(a[0] == '[' ? 9 : 10, a, 0, a.length);
+      char[] var1 = a.toCharArray();
+      return new b(var1[0] == '[' ? 9 : 10, var1, 0, var1.length);
    }
 
    public static b Method3206(String a) {
@@ -89,51 +89,51 @@ public class b {
    }
 
    public static b[] Method3211(String a) {
-      char[] a = a.toCharArray();
-      int a = 1;
-      int a = 0;
+      char[] var1 = a.toCharArray();
+      int var2 = 1;
+      int var3 = 0;
 
       while(true) {
          while(true) {
-            char a = a[a++];
-            if (a == ')') {
-               b[] a = new b[a];
-               a = 1;
+            char var4 = var1[var2++];
+            if (var4 == ')') {
+               b[] var5 = new b[var3];
+               var2 = 1;
 
-               for(a = 0; a[a] != ')'; ++a) {
-                  a[a] = Method3216(a, a);
-                  a += a[a].Field584 + (a[a].Field581 == 10 ? 2 : 0);
+               for(var3 = 0; var1[var2] != ')'; ++var3) {
+                  var5[var3] = Method3216(var1, var2);
+                  var2 += var5[var3].Field584 + (var5[var3].Field581 == 10 ? 2 : 0);
                }
 
-               return a;
+               return var5;
             }
 
-            if (a == 'L') {
-               while(a[a++] != ';') {
+            if (var4 == 'L') {
+               while(var1[var2++] != ';') {
                }
 
-               ++a;
-            } else if (a != '[') {
-               ++a;
+               ++var3;
+            } else if (var4 != '[') {
+               ++var3;
             }
          }
       }
    }
 
    public static b[] Method3212(Method a) {
-      Class[] a = a.getParameterTypes();
-      b[] a = new b[a.length];
-      int a = a.length - 1;
+      Class[] var1 = a.getParameterTypes();
+      b[] var2 = new b[var1.length];
+      int var3 = var1.length - 1;
 
       while(true) {
-         a[a] = Method3208(a[a]);
-         --a;
+         var2[var3] = Method3208(var1[var3]);
+         --var3;
       }
    }
 
    public static b Method3213(String a) {
-      char[] a = a.toCharArray();
-      return Method3216(a, a.indexOf(41) + 1);
+      char[] var1 = a.toCharArray();
+      return Method3216(var1, a.indexOf(41) + 1);
    }
 
    public static b Method3214(Method a) {
@@ -141,35 +141,35 @@ public class b {
    }
 
    public static int Method3215(String a) {
-      int a = 1;
-      int a = 1;
+      int var1 = 1;
+      int var2 = 1;
 
       while(true) {
          while(true) {
-            char a = a.charAt(a++);
-            if (a == ')') {
-               a = a.charAt(a);
-               return a << 2 | (a == 'V' ? 0 : (a != 'D' && a != 'J' ? 1 : 2));
+            char var3 = a.charAt(var2++);
+            if (var3 == ')') {
+               var3 = a.charAt(var2);
+               return var1 << 2 | (var3 == 'V' ? 0 : (var3 != 'D' && var3 != 'J' ? 1 : 2));
             }
 
-            if (a == 'L') {
-               while(a.charAt(a++) != ';') {
+            if (var3 == 'L') {
+               while(a.charAt(var2++) != ';') {
                }
 
-               ++a;
-            } else if (a != '[') {
-               if (a != 'D' && a != 'J') {
-                  ++a;
+               ++var1;
+            } else if (var3 != '[') {
+               if (var3 != 'D' && var3 != 'J') {
+                  ++var1;
                } else {
-                  a += 2;
+                  var1 += 2;
                }
             } else {
-               while((a = a.charAt(a)) == '[') {
-                  ++a;
+               while((var3 = a.charAt(var2)) == '[') {
+                  ++var2;
                }
 
-               if (a == 'D' || a == 'J') {
-                  --a;
+               if (var3 == 'D' || var3 == 'J') {
+                  --var1;
                }
             }
          }
@@ -177,7 +177,7 @@ public class b {
    }
 
    private static b Method3216(char[] a, int a) {
-      int a;
+      int var2;
       switch (a[a]) {
          case 'B':
             return Field575;
@@ -209,10 +209,10 @@ public class b {
          case 'J':
             return Field579;
          case 'L':
-            for(a = 1; a[a + a] != ';'; ++a) {
+            for(var2 = 1; a[a + var2] != ';'; ++var2) {
             }
 
-            return new b(10, a, a + 1, a - 1);
+            return new b(10, a, a + 1, var2 - 1);
          case 'S':
             return Field576;
          case 'V':
@@ -220,18 +220,18 @@ public class b {
          case 'Z':
             return Field573;
          case '[':
-            for(a = 1; a[a + a] == '['; ++a) {
+            for(var2 = 1; a[a + var2] == '['; ++var2) {
             }
 
-            if (a[a + a] == 'L') {
-               ++a;
+            if (a[a + var2] == 'L') {
+               ++var2;
 
-               while(a[a + a] != ';') {
-                  ++a;
+               while(a[a + var2] != ';') {
+                  ++var2;
                }
             }
 
-            return new b(9, a, a, a + 1);
+            return new b(9, a, a, var2 + 1);
       }
    }
 
@@ -240,11 +240,11 @@ public class b {
    }
 
    public int Method3218() {
-      int a;
-      for(a = 1; this.Field582[this.Field583 + a] == '['; ++a) {
+      int var1;
+      for(var1 = 1; this.Field582[this.Field583 + var1] == '['; ++var1) {
       }
 
-      return a;
+      return var1;
    }
 
    public b Method3219() {
@@ -272,12 +272,12 @@ public class b {
          case 8:
             return "double";
          case 9:
-            StringBuilder a = new StringBuilder(this.Method3219().Method3220());
-            int a = this.Method3218();
+            StringBuilder var1 = new StringBuilder(this.Method3219().Method3220());
+            int var2 = this.Method3218();
 
             while(true) {
-               a.append("[]");
-               --a;
+               var1.append("[]");
+               --var2;
             }
          case 10:
             return (new String(this.Field582, this.Field583, this.Field584)).replace('/', '.');
@@ -303,22 +303,22 @@ public class b {
    }
 
    public String Method3225() {
-      StringBuffer a = new StringBuffer();
-      this.Method3227(a);
-      return a.toString();
+      StringBuffer var1 = new StringBuffer();
+      this.Method3227(var1);
+      return var1.toString();
    }
 
    public static String Method3226(b a, b[] a) {
-      StringBuffer a = new StringBuffer();
-      a.append('(');
+      StringBuffer var2 = new StringBuffer();
+      var2.append('(');
 
-      for(int a = 0; a < a.length; ++a) {
-         a[a].Method3227(a);
+      for(int var3 = 0; var3 < a.length; ++var3) {
+         a[var3].Method3227(var2);
       }
 
-      a.append(')');
-      a.Method3227(a);
-      return a.toString();
+      var2.append(')');
+      a.Method3227(var2);
+      return var2.toString();
    }
 
    private void Method3227(StringBuffer a) {
@@ -339,90 +339,90 @@ public class b {
    }
 
    public static String Method3229(Class a) {
-      StringBuffer a = new StringBuffer();
-      Method3232(a, a);
-      return a.toString();
+      StringBuffer var1 = new StringBuffer();
+      Method3232(var1, a);
+      return var1.toString();
    }
 
    public static String Method3230(Constructor a) {
-      Class[] a = a.getParameterTypes();
-      StringBuffer a = new StringBuffer();
-      a.append('(');
+      Class[] var1 = a.getParameterTypes();
+      StringBuffer var2 = new StringBuffer();
+      var2.append('(');
 
-      for(int a = 0; a < a.length; ++a) {
-         Method3232(a, a[a]);
+      for(int var3 = 0; var3 < var1.length; ++var3) {
+         Method3232(var2, var1[var3]);
       }
 
-      return a.append(")V").toString();
+      return var2.append(")V").toString();
    }
 
    public static String Method3231(Method a) {
-      Class[] a = a.getParameterTypes();
-      StringBuffer a = new StringBuffer();
-      a.append('(');
+      Class[] var1 = a.getParameterTypes();
+      StringBuffer var2 = new StringBuffer();
+      var2.append('(');
 
-      for(int a = 0; a < a.length; ++a) {
-         Method3232(a, a[a]);
+      for(int var3 = 0; var3 < var1.length; ++var3) {
+         Method3232(var2, var1[var3]);
       }
 
-      a.append(')');
-      Method3232(a, a.getReturnType());
-      return a.toString();
+      var2.append(')');
+      Method3232(var2, a.getReturnType());
+      return var2.toString();
    }
 
    private static void Method3232(StringBuffer a, Class a) {
       Class267.Method2862();
-      Class a = a;
+      Class var3 = a;
       if (a.isPrimitive()) {
-         boolean a;
+         boolean var8;
          if (a == Integer.TYPE) {
-            a = true;
+            var8 = true;
          }
 
          if (a == Void.TYPE) {
-            a = true;
+            var8 = true;
          }
 
          if (a == Boolean.TYPE) {
-            a = true;
+            var8 = true;
          }
 
          if (a == Byte.TYPE) {
-            a = true;
+            var8 = true;
          }
 
          if (a == Character.TYPE) {
-            a = true;
+            var8 = true;
          }
 
          if (a == Short.TYPE) {
-            a = true;
+            var8 = true;
          }
 
          if (a == Double.TYPE) {
-            a = true;
+            var8 = true;
          }
 
          if (a == Float.TYPE) {
-            a = true;
+            var8 = true;
          }
 
-         char a = 'J';
-         a.append(a);
+         char var9 = 'J';
+         a.append(var9);
       } else {
          if (a.isArray()) {
             a.append('[');
-            a = a.getComponentType();
+            var3 = a.getComponentType();
          }
 
          a.append('L');
-         String a = a.getName();
-         int a = a.length();
-         int a = 0;
-         if (a < a) {
-            char a = a.charAt(a);
-            a.append(a == '.' ? '/' : a);
-            ++a;
+         String var4 = var3.getName();
+         int var5 = var4.length();
+         int var6 = 0;
+         if (var6 < var5) {
+            char var7 = var4.charAt(var6);
+            a.append(var7 == '.' ? '/' : var7);
+            ++var6;
          }
 
          a.append(';');
@@ -443,24 +443,24 @@ public class b {
       } else if (!(a instanceof b)) {
          return false;
       } else {
-         b a = (b)a;
-         if (this.Field581 != a.Field581) {
+         b var2 = (b)a;
+         if (this.Field581 != var2.Field581) {
             return false;
          } else {
             if (this.Field581 >= 9) {
-               if (this.Field584 != a.Field584) {
+               if (this.Field584 != var2.Field584) {
                   return false;
                }
 
-               int a = this.Field583;
-               int a = a.Field583;
+               int var3 = this.Field583;
+               int var4 = var2.Field583;
 
-               for(int a = a + this.Field584; a < a; ++a) {
-                  if (this.Field582[a] != a.Field582[a]) {
+               for(int var5 = var3 + this.Field584; var3 < var5; ++var4) {
+                  if (this.Field582[var3] != var2.Field582[var4]) {
                      return false;
                   }
 
-                  ++a;
+                  ++var3;
                }
             }
 
@@ -470,16 +470,16 @@ public class b {
    }
 
    public int Method3236() {
-      int a = 13 * this.Field581;
+      int var1 = 13 * this.Field581;
       if (this.Field581 >= 9) {
-         int a = this.Field583;
+         int var2 = this.Field583;
 
-         for(int a = a + this.Field584; a < a; ++a) {
-            a = 17 * (a + this.Field582[a]);
+         for(int var3 = var2 + this.Field584; var2 < var3; ++var2) {
+            var1 = 17 * (var1 + this.Field582[var2]);
          }
       }
 
-      return a;
+      return var1;
    }
 
    public String Method3237() {

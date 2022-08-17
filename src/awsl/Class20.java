@@ -22,29 +22,29 @@ public class Class20 extends Class119 {
       Class193.Method1269();
       this.Field230 = new int[256];
       if (this.Field229 != 1) {
-         int a = 0;
-         if (a < 256) {
-            this.Field230[a] = 255 * (this.Field229 * a / 256) / (this.Field229 - 1);
-            ++a;
+         int var2 = 0;
+         if (var2 < 256) {
+            this.Field230[var2] = 255 * (this.Field229 * var2 / 256) / (this.Field229 - 1);
+            ++var2;
          }
       }
 
    }
 
-   public int Method3(int a, int a1, int a) {
+   public int Method3(int a, int a, int a) {
       if (!this.Field231) {
          this.Field231 = true;
          this.Method89();
       }
 
-      int a = a & -16777216;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      a = this.Field230[a];
-      a = this.Field230[a];
-      a = this.Field230[a];
-      return a | a << 16 | a << 8 | a;
+      int var4 = a & -16777216;
+      int var5 = a >> 16 & 255;
+      int var6 = a >> 8 & 255;
+      int var7 = a & 255;
+      var5 = this.Field230[var5];
+      var6 = this.Field230[var6];
+      var7 = this.Field230[var7];
+      return var4 | var5 << 16 | var6 << 8 | var7;
    }
 
    public String toString() {

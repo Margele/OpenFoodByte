@@ -19,7 +19,7 @@ public class Class105 extends Class119 {
       return this.Field849;
    }
 
-   public int Method3(int a, int a1, int a2) {
+   public int Method3(int a, int a, int a) {
       return this.Field849;
    }
 }

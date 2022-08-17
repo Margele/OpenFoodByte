@@ -32,16 +32,16 @@ public class ServerUtils {
    }
 
    public static boolean isPlayingSkyblock() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"SKYBLOCK", "空岛生存"};
-      String[] var4 = a;
-      int var5 = a.length;
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var2 = format(var1.getDisplayName());
+      String[] var3 = new String[]{"SKYBLOCK", "空岛生存"};
+      String[] var4 = var3;
+      int var5 = var3.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         String a = var4[var6];
-         if (a.contains(a)) {
+         String var7 = var4[var6];
+         if (var2.contains(var7)) {
             return true;
          }
       }
@@ -50,16 +50,16 @@ public class ServerUtils {
    }
 
    public static boolean isPlayingSkywars() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"SKYWARS", "空岛战争"};
-      String[] var4 = a;
-      int var5 = a.length;
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var2 = format(var1.getDisplayName());
+      String[] var3 = new String[]{"SKYWARS", "空岛战争"};
+      String[] var4 = var3;
+      int var5 = var3.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         String a = var4[var6];
-         if (a.contains(a)) {
+         String var7 = var4[var6];
+         if (var2.contains(var7)) {
             return true;
          }
       }
@@ -68,16 +68,16 @@ public class ServerUtils {
    }
 
    public static boolean isPlayerBlitzSg() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"BLITZ SG", "闪电饥饿游戏"};
-      String[] var4 = a;
-      int var5 = a.length;
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var2 = format(var1.getDisplayName());
+      String[] var3 = new String[]{"BLITZ SG", "闪电饥饿游戏"};
+      String[] var4 = var3;
+      int var5 = var3.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         String a = var4[var6];
-         if (a.contains(a)) {
+         String var7 = var4[var6];
+         if (var2.contains(var7)) {
             return true;
          }
       }
@@ -86,16 +86,16 @@ public class ServerUtils {
    }
 
    public static boolean isPlayingPit() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"Pit"};
-      String[] var4 = a;
-      int var5 = a.length;
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var2 = format(var1.getDisplayName());
+      String[] var3 = new String[]{"Pit"};
+      String[] var4 = var3;
+      int var5 = var3.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         String a = var4[var6];
-         if (a.contains(a)) {
+         String var7 = var4[var6];
+         if (var2.contains(var7)) {
             return true;
          }
       }
@@ -104,40 +104,40 @@ public class ServerUtils {
    }
 
    public static boolean inOnYourOwnSkyblock() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      Collection a = a.getSortedScores(a);
-      if (((Collection)a).Method1799() > 15) {
-         a = Lists.newArrayList(Iterables.skip((Iterable)a, ((Collection)a).Method1799() - 15));
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      Object var2 = var0.getSortedScores(var1);
+      if (((Collection)var2).Method1799() > 15) {
+         var2 = Lists.newArrayList(Iterables.skip((Iterable)var2, ((Collection)var2).Method1799() - 15));
       }
 
-      Iterator var3 = ((Collection)a).Method1383();
+      Iterator var3 = ((Collection)var2).Method1383();
 
-      String a;
+      String var6;
       do {
          if (!var3.Method932()) {
             return false;
          }
 
-         Score a = (Score)var3.Method933();
-         ScorePlayerTeam a = a.getPlayersTeam(a.getPlayerName());
-         a = format(ScorePlayerTeam.formatPlayerName(a, a.getPlayerName()));
-      } while(!a.contains("Your Isla") || !a.contains("nd"));
+         Score var4 = (Score)var3.Method933();
+         ScorePlayerTeam var5 = var0.getPlayersTeam(var4.getPlayerName());
+         var6 = format(ScorePlayerTeam.formatPlayerName(var5, var4.getPlayerName()));
+      } while(!var6.contains("Your Isla") || !var6.contains("nd"));
 
       return true;
    }
 
    public static boolean isPlayingUHC() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"UHC", "极限生存冠军", "极限生存", "闪电饥饿游戏", "BLITZ SG", "MEGA WALLS", "超级战墙", "丢锅大战"};
-      String[] var4 = a;
-      int var5 = a.length;
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var2 = format(var1.getDisplayName());
+      String[] var3 = new String[]{"UHC", "极限生存冠军", "极限生存", "闪电饥饿游戏", "BLITZ SG", "MEGA WALLS", "超级战墙", "丢锅大战"};
+      String[] var4 = var3;
+      int var5 = var3.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         String a = var4[var6];
-         if (a.contains(a)) {
+         String var7 = var4[var6];
+         if (var2.contains(var7)) {
             return true;
          }
       }
@@ -147,19 +147,19 @@ public class ServerUtils {
 
    public static boolean isInDeadMatch() {
       trash();
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      Collection a = a.getSortedScores(a);
-      if (((Collection)a).Method1799() > 15) {
-         a = Lists.newArrayList(Iterables.skip((Iterable)a, ((Collection)a).Method1799() - 15));
+      Scoreboard var1 = mc.theWorld.getScoreboard();
+      ScoreObjective var2 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      Object var3 = var1.getSortedScores(var2);
+      if (((Collection)var3).Method1799() > 15) {
+         var3 = Lists.newArrayList(Iterables.skip((Iterable)var3, ((Collection)var3).Method1799() - 15));
       }
 
-      Iterator var4 = ((Collection)a).Method1383();
+      Iterator var4 = ((Collection)var3).Method1383();
       if (var4.Method932()) {
-         Score a = (Score)var4.Method933();
-         ScorePlayerTeam a = a.getPlayersTeam(a.getPlayerName());
-         String a = format(ScorePlayerTeam.formatPlayerName(a, a.getPlayerName()));
-         if ((a.contains("Game ends in") || a.contains("游戏结束倒计时")) && isOnUHC()) {
+         Score var5 = (Score)var4.Method933();
+         ScorePlayerTeam var6 = var1.getPlayersTeam(var5.getPlayerName());
+         String var7 = format(ScorePlayerTeam.formatPlayerName(var6, var5.getPlayerName()));
+         if ((var7.contains("Game ends in") || var7.contains("游戏结束倒计时")) && isOnUHC()) {
             return true;
          }
       }
@@ -169,19 +169,19 @@ public class ServerUtils {
 
    public static boolean isNotInDeadMatch() {
       trash();
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      Collection a = a.getSortedScores(a);
-      if (((Collection)a).Method1799() > 15) {
-         a = Lists.newArrayList(Iterables.skip((Iterable)a, ((Collection)a).Method1799() - 15));
+      Scoreboard var1 = mc.theWorld.getScoreboard();
+      ScoreObjective var2 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      Object var3 = var1.getSortedScores(var2);
+      if (((Collection)var3).Method1799() > 15) {
+         var3 = Lists.newArrayList(Iterables.skip((Iterable)var3, ((Collection)var3).Method1799() - 15));
       }
 
-      Iterator var4 = ((Collection)a).Method1383();
+      Iterator var4 = ((Collection)var3).Method1383();
       if (var4.Method932()) {
-         Score a = (Score)var4.Method933();
-         ScorePlayerTeam a = a.getPlayersTeam(a.getPlayerName());
-         String a = format(ScorePlayerTeam.formatPlayerName(a, a.getPlayerName()));
-         if ((a.contains("Deathmatch in") || a.contains("死亡竞赛倒计时")) && isOnUHC()) {
+         Score var5 = (Score)var4.Method933();
+         ScorePlayerTeam var6 = var1.getPlayersTeam(var5.getPlayerName());
+         String var7 = format(ScorePlayerTeam.formatPlayerName(var6, var5.getPlayerName()));
+         if ((var7.contains("Deathmatch in") || var7.contains("死亡竞赛倒计时")) && isOnUHC()) {
             return true;
          }
       }
@@ -194,16 +194,16 @@ public class ServerUtils {
    }
 
    public static boolean isPlayingMegaWalls() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"MEGA WALLS", "超级战墙"};
-      String[] var4 = a;
-      int var5 = a.length;
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var2 = format(var1.getDisplayName());
+      String[] var3 = new String[]{"MEGA WALLS", "超级战墙"};
+      String[] var4 = var3;
+      int var5 = var3.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         String a = var4[var6];
-         if (a.contains(a)) {
+         String var7 = var4[var6];
+         if (var2.contains(var7)) {
             return true;
          }
       }
@@ -212,15 +212,15 @@ public class ServerUtils {
    }
 
    public static boolean isOnUHC() {
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"HYPIXEL UHC", "UHC", "UHC CHAMPIONS", "极限生存冠军", "极限生存"};
-      String[] var3 = a;
-      int var4 = a.length;
+      ScoreObjective var0 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var1 = format(var0.getDisplayName());
+      String[] var2 = new String[]{"HYPIXEL UHC", "UHC", "UHC CHAMPIONS", "极限生存冠军", "极限生存"};
+      String[] var3 = var2;
+      int var4 = var2.length;
 
       for(int var5 = 0; var5 < var4; ++var5) {
-         String a = var3[var5];
-         if (a.contains(a)) {
+         String var6 = var3[var5];
+         if (var1.contains(var6)) {
             return true;
          }
       }
@@ -230,19 +230,19 @@ public class ServerUtils {
 
    public static boolean isStartingGame() {
       trash();
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      Collection a = a.getSortedScores(a);
-      if (((Collection)a).Method1799() > 15) {
-         a = Lists.newArrayList(Iterables.skip((Iterable)a, ((Collection)a).Method1799() - 15));
+      Scoreboard var1 = mc.theWorld.getScoreboard();
+      ScoreObjective var2 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      Object var3 = var1.getSortedScores(var2);
+      if (((Collection)var3).Method1799() > 15) {
+         var3 = Lists.newArrayList(Iterables.skip((Iterable)var3, ((Collection)var3).Method1799() - 15));
       }
 
-      Iterator var4 = ((Collection)a).Method1383();
+      Iterator var4 = ((Collection)var3).Method1383();
       if (var4.Method932()) {
-         Score a = (Score)var4.Method933();
-         ScorePlayerTeam a = a.getPlayersTeam(a.getPlayerName());
-         String a = format(ScorePlayerTeam.formatPlayerName(a, a.getPlayerName()));
-         if (a.contains("开始") || a.contains("倒计时") || a.contains("开启") || a.contains("Starting") || a.contains("Open")) {
+         Score var5 = (Score)var4.Method933();
+         ScorePlayerTeam var6 = var1.getPlayersTeam(var5.getPlayerName());
+         String var7 = format(ScorePlayerTeam.formatPlayerName(var6, var5.getPlayerName()));
+         if (var7.contains("开始") || var7.contains("倒计时") || var7.contains("开启") || var7.contains("Starting") || var7.contains("Open")) {
             return true;
          }
 
@@ -253,15 +253,15 @@ public class ServerUtils {
    }
 
    public static boolean isPlayingMurderMystery() {
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      String a = format(a.getDisplayName());
-      String[] a = new String[]{"MURDER MYSTERY", "密室杀手"};
-      String[] var3 = a;
-      int var4 = a.length;
+      ScoreObjective var0 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      String var1 = format(var0.getDisplayName());
+      String[] var2 = new String[]{"MURDER MYSTERY", "密室杀手"};
+      String[] var3 = var2;
+      int var4 = var2.length;
 
       for(int var5 = 0; var5 < var4; ++var5) {
-         String a = var3[var5];
-         if (a.contains(a)) {
+         String var6 = var3[var5];
+         if (var1.contains(var6)) {
             return true;
          }
       }
@@ -270,46 +270,46 @@ public class ServerUtils {
    }
 
    public static boolean isDragonNext() {
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
-      Collection a = a.getSortedScores(a);
-      if (((Collection)a).Method1799() > 15) {
-         a = Lists.newArrayList(Iterables.skip((Iterable)a, ((Collection)a).Method1799() - 15));
+      Scoreboard var0 = mc.theWorld.getScoreboard();
+      ScoreObjective var1 = mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1);
+      Object var2 = var0.getSortedScores(var1);
+      if (((Collection)var2).Method1799() > 15) {
+         var2 = Lists.newArrayList(Iterables.skip((Iterable)var2, ((Collection)var2).Method1799() - 15));
       }
 
-      Iterator var3 = ((Collection)a).Method1383();
+      Iterator var3 = ((Collection)var2).Method1383();
 
-      String a;
+      String var6;
       do {
          if (!var3.Method932()) {
             return false;
          }
 
-         Score a = (Score)var3.Method933();
-         ScorePlayerTeam a = a.getPlayersTeam(a.getPlayerName());
-         a = getOnlyChar(format(ScorePlayerTeam.formatPlayerName(a, a.getPlayerName())));
-      } while(!a.contains("Dragons Nest"));
+         Score var4 = (Score)var3.Method933();
+         ScorePlayerTeam var5 = var0.getPlayersTeam(var4.getPlayerName());
+         var6 = getOnlyChar(format(ScorePlayerTeam.formatPlayerName(var5, var4.getPlayerName())));
+      } while(!var6.contains("Dragons Nest"));
 
       return true;
    }
 
    public static boolean isCleared() {
-      boolean a = false;
-      Scoreboard a = mc.theWorld.getScoreboard();
-      ScoreObjective a = a.getObjectiveInDisplaySlot(1);
-      ArrayList a = new ArrayList(a.getSortedScores(a));
-      int a = a.Method1799() - 1;
+      boolean var0 = false;
+      Scoreboard var1 = mc.theWorld.getScoreboard();
+      ScoreObjective var2 = var1.getObjectiveInDisplaySlot(1);
+      ArrayList var3 = new ArrayList(var1.getSortedScores(var2));
+      int var4 = var3.Method1799() - 1;
 
       while(true) {
-         Score a = (Score)a.get(a);
-         ScorePlayerTeam a = a.getPlayersTeam(a.getPlayerName());
-         String a = ScorePlayerTeam.formatPlayerName(a, a.getPlayerName());
-         String a = clearColorChar(removeColorChar2(a));
-         if (a.contains("Cleared:") && a.contains("%")) {
-            a = true;
+         Score var5 = (Score)var3.get(var4);
+         ScorePlayerTeam var6 = var1.getPlayersTeam(var5.getPlayerName());
+         String var7 = ScorePlayerTeam.formatPlayerName(var6, var5.getPlayerName());
+         String var8 = clearColorChar(removeColorChar2(var7));
+         if (var8.contains("Cleared:") && var8.contains("%")) {
+            var0 = true;
          }
 
-         --a;
+         --var4;
       }
    }
 
@@ -330,30 +330,30 @@ public class ServerUtils {
    }
 
    public static String removeColorChar2(String a) {
-      StringBuilder a = new StringBuilder();
-      char a = 'r';
-      boolean a = false;
+      StringBuilder var1 = new StringBuilder();
+      char var2 = 'r';
+      boolean var3 = false;
       char[] var4 = a.toCharArray();
       int var5 = var4.length;
 
       for(int var6 = 0; var6 < var5; ++var6) {
-         char a = var4[var6];
-         if (a <= '썐') {
-            if (a == 167) {
-               a = true;
+         char var7 = var4[var6];
+         if (var7 <= '썐') {
+            if (var7 == 167) {
+               var3 = true;
             } else {
-               if (a != a) {
-                  a.append('§');
-                  a.append(a);
-                  a = a;
+               if (var2 != var7) {
+                  var1.append('§');
+                  var1.append(var7);
+                  var2 = var7;
                }
 
-               a = false;
+               var3 = false;
             }
          }
       }
 
-      return a.toString();
+      return var1.toString();
    }
 
    public static void displayMultiPlayer() {
@@ -363,13 +363,13 @@ public class ServerUtils {
    }
 
    public static String getServerIP() {
-      String a = "Singleplayer";
+      String var0 = "Singleplayer";
       if (mc.theWorld.isRemote) {
-         ServerData a = mc.getCurrentServerData();
-         a = a.serverIP;
+         ServerData var1 = mc.getCurrentServerData();
+         var0 = var1.serverIP;
       }
 
-      return a;
+      return var0;
    }
 
    public static boolean isPlaying(String s) {

@@ -13,13 +13,13 @@ public class Class747 {
 
    public static int Method1561() {
       MoveUtils.trash();
-      int a = 0;
-      if (a < 8) {
-         if (Field3270.thePlayer.inventory.mainInventory[a] == null) {
-            return a;
+      int var1 = 0;
+      if (var1 < 8) {
+         if (Field3270.thePlayer.inventory.mainInventory[var1] == null) {
+            return var1;
          }
 
-         ++a;
+         ++var1;
       }
 
       return Field3270.thePlayer.inventory.currentItem + (Field3270.thePlayer.inventory.getCurrentItem() == null ? 0 : (Field3270.thePlayer.inventory.currentItem < 8 ? 4 : -1));
@@ -38,9 +38,9 @@ public class Class747 {
    }
 
    public static void Method1565(int a) {
-      short a = Field3270.thePlayer.openContainer.getNextTransactionID(Field3270.thePlayer.inventory);
-      ItemStack a = Field3270.thePlayer.openContainer.getSlot(a).getStack();
-      Wrapper.INSTANCE.sendPacket(new C0EPacketClickWindow(Field3270.thePlayer.openContainer.windowId, a, 0, 0, a, a));
+      short var1 = Field3270.thePlayer.openContainer.getNextTransactionID(Field3270.thePlayer.inventory);
+      ItemStack var2 = Field3270.thePlayer.openContainer.getSlot(a).getStack();
+      Wrapper.INSTANCE.sendPacket(new C0EPacketClickWindow(Field3270.thePlayer.openContainer.windowId, a, 0, 0, var2, var1));
    }
 
    public static void Method1566(int a, int a) {
@@ -48,9 +48,9 @@ public class Class747 {
    }
 
    public static void Method1567(int a, int a) {
-      short a = Field3270.thePlayer.openContainer.getNextTransactionID(Field3270.thePlayer.inventory);
-      ItemStack a = Field3270.thePlayer.openContainer.getSlot(a).getStack();
-      Wrapper.INSTANCE.sendPacket(new C0EPacketClickWindow(Field3270.thePlayer.openContainer.windowId, a, a, 0, a, a));
+      short var2 = Field3270.thePlayer.openContainer.getNextTransactionID(Field3270.thePlayer.inventory);
+      ItemStack var3 = Field3270.thePlayer.openContainer.getSlot(a).getStack();
+      Wrapper.INSTANCE.sendPacket(new C0EPacketClickWindow(Field3270.thePlayer.openContainer.windowId, a, a, 0, var3, var2));
    }
 
    public static void Method1568(int a) {
@@ -58,9 +58,9 @@ public class Class747 {
    }
 
    public static void Method1569(int a) {
-      short a = Field3270.thePlayer.openContainer.getNextTransactionID(Field3270.thePlayer.inventory);
-      ItemStack a = Field3270.thePlayer.openContainer.getSlot(a).getStack();
-      Wrapper.INSTANCE.sendPacket(new C0EPacketClickWindow(Field3270.thePlayer.openContainer.windowId, a, 0, 1, a, a));
+      short var1 = Field3270.thePlayer.openContainer.getNextTransactionID(Field3270.thePlayer.inventory);
+      ItemStack var2 = Field3270.thePlayer.openContainer.getSlot(a).getStack();
+      Wrapper.INSTANCE.sendPacket(new C0EPacketClickWindow(Field3270.thePlayer.openContainer.windowId, a, 0, 1, var2, var1));
    }
 
    public static boolean Method1570() {

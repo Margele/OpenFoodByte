@@ -11,29 +11,29 @@ public class Class684 extends ByteToMessageDecoder {
    protected void decode(ChannelHandlerContext a, ByteBuf a, List a) {
       a.markReaderIndex();
       Class693.Method2536();
-      byte[] a = new byte[3];
-      int a = 0;
-      if (a < a.length) {
+      byte[] var5 = new byte[3];
+      int var6 = 0;
+      if (var6 < var5.length) {
          if (!a.isReadable()) {
             a.resetReaderIndex();
             return;
          }
 
-         a[a] = a.readByte();
-         if (a[a] >= 0) {
-            Class234 a = new Class234(Unpooled.wrappedBuffer(a));
+         var5[var6] = a.readByte();
+         if (var5[var6] >= 0) {
+            Class234 var7 = new Class234(Unpooled.wrappedBuffer(var5));
 
             label74: {
                try {
-                  int a = a.Method10();
-                  if (a.readableBytes() >= a) {
-                     a.Method2530(a.readBytes(a));
+                  int var8 = var7.Method10();
+                  if (a.readableBytes() >= var8) {
+                     a.Method2530(a.readBytes(var8));
                      break label74;
                   }
 
                   a.resetReaderIndex();
                } finally {
-                  a.release();
+                  var7.release();
                }
 
                return;
@@ -46,7 +46,7 @@ public class Class684 extends ByteToMessageDecoder {
             return;
          }
 
-         ++a;
+         ++var6;
       }
 
       throw new RuntimeException("length wider than 21-bit");

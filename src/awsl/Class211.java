@@ -46,11 +46,11 @@ public class Class211 {
    public static void Method2577(Framebuffer a) {
       Class212.Method2566();
       EXTFramebufferObject.glDeleteRenderbuffersEXT(a.depthBuffer);
-      int a = EXTFramebufferObject.glGenRenderbuffersEXT();
-      EXTFramebufferObject.glBindRenderbufferEXT(36161, a);
+      int var2 = EXTFramebufferObject.glGenRenderbuffersEXT();
+      EXTFramebufferObject.glBindRenderbufferEXT(36161, var2);
       EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Field1190.displayWidth, Field1190.displayHeight);
-      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, a);
-      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, a);
+      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, var2);
+      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, var2);
       if (a.trash() == null) {
          Class212.Method2565("Xh3nn");
       }

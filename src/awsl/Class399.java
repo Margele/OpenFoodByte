@@ -805,36 +805,36 @@ public class Class399 implements Class422, Class45 {
    }
 
    public static void Method1358(int a, int a, int a, int a, int a) {
-      int[] a = Class405.Method917();
-      int a;
+      int[] var5 = Class405.Method917();
+      int var6;
       if (a < a) {
+         var6 = a;
          a = a;
-         a = a;
-         a = a;
+         a = var6;
       }
 
       if (a < a) {
+         var6 = a;
          a = a;
-         a = a;
-         a = a;
+         a = var6;
       }
 
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
-      Tessellator a = Tessellator.getInstance();
-      WorldRenderer a = a.getWorldRenderer();
+      float var12 = (float)(a >> 24 & 255) / 255.0F;
+      float var7 = (float)(a >> 16 & 255) / 255.0F;
+      float var8 = (float)(a >> 8 & 255) / 255.0F;
+      float var9 = (float)(a & 255) / 255.0F;
+      Tessellator var10 = Tessellator.getInstance();
+      WorldRenderer var11 = var10.getWorldRenderer();
       GlStateManager.enableBlend();
       GlStateManager.disableTexture2D();
       GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
-      GlStateManager.color(a, a, a, a);
-      a.begin(7, DefaultVertexFormats.POSITION);
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.pos((double)a, (double)a, 0.0).endVertex();
-      a.draw();
+      GlStateManager.color(var7, var8, var9, var12);
+      var11.begin(7, DefaultVertexFormats.POSITION);
+      var11.pos((double)a, (double)a, 0.0).endVertex();
+      var11.pos((double)a, (double)a, 0.0).endVertex();
+      var11.pos((double)a, (double)a, 0.0).endVertex();
+      var11.pos((double)a, (double)a, 0.0).endVertex();
+      var10.draw();
       GlStateManager.enableTexture2D();
       GlStateManager.disableBlend();
       GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
@@ -854,7 +854,7 @@ public class Class399 implements Class422, Class45 {
       return new String[]{Class673.Gui.Method2340()};
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    @Class628

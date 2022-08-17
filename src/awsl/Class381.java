@@ -64,32 +64,32 @@ public class Class381 {
    }
 
    public void Method1384() {
-      int a = 0;
-      int a = this.Field1876;
+      int var1 = 0;
+      int var2 = this.Field1876;
       Iterator var3 = this.Field1844.Method1383();
 
-      Class390 a;
+      Class390 var4;
       while(var3.Method932()) {
-         a = (Class390)var3.Method933();
-         if (a.Field1916) {
-            a.Field1912 = a;
-            a += a.Field1910;
-            a = Math.max(a, a.Field1909);
+         var4 = (Class390)var3.Method933();
+         if (var4.Field1916) {
+            var4.Field1912 = var2;
+            var2 += var4.Field1910;
+            var1 = Math.max(var1, var4.Field1909);
          }
       }
 
-      this.Field1852 = Math.max(this.Field1874, a);
+      this.Field1852 = Math.max(this.Field1874, var1);
       var3 = this.Field1844.Method1383();
 
       while(var3.Method932()) {
-         a = (Class390)var3.Method933();
-         if (a.Field1916) {
-            a.Field1909 = this.Field1852;
+         var4 = (Class390)var3.Method933();
+         if (var4.Field1916) {
+            var4.Field1909 = this.Field1852;
          }
       }
 
-      this.Field1853 = Math.min(this.Field1880, a);
-      this.Field1860 = a - this.Field1876;
+      this.Field1853 = Math.min(this.Field1880, var2);
+      this.Field1860 = var2 - this.Field1876;
       if (this.Field1862 > this.Field1860 - (this.Field1880 - this.Field1876)) {
          this.Field1862 = this.Field1860 - (this.Field1880 - this.Field1876);
       }
@@ -114,10 +114,10 @@ public class Class381 {
       Iterator var3 = this.Field1844.Method1383();
 
       while(var3.Method932()) {
-         Class390 a = (Class390)var3.Method933();
-         a.Method419(a, a);
-         if (a.Field1916) {
-            a.Method411(a, a);
+         Class390 var4 = (Class390)var3.Method933();
+         var4.Method419(a, a);
+         if (var4.Field1916) {
+            var4.Method411(a, a);
          }
       }
 
@@ -152,65 +152,65 @@ public class Class381 {
    public void Method1386(int a, int a) {
       Method1420();
       this.Field1865.Method4(this.Field1856);
-      int a = this.Field1876;
-      int a = this.Field1851 + a;
-      float a = (float)(this.Field1853 - a) * (float)this.Field1863.Method6();
-      int a = 18;
+      int var4 = this.Field1876;
+      int var5 = this.Field1851 + var4;
+      float var6 = (float)(this.Field1853 - var4) * (float)this.Field1863.Method6();
+      int var7 = 18;
       Iterator var8 = this.Field1844.Method1383();
 
       while(var8.Method932()) {
-         Class390 a = (Class390)var8.Method933();
-         if (a.Field1916) {
-            a += a.Field1910;
+         Class390 var9 = (Class390)var8.Method933();
+         if (var9.Field1916) {
+            var7 += var9.Field1910;
             a.trash(new String[3]);
             break;
          }
       }
 
-      if (this.Field1859 || a > this.Field1880) {
-         a = this.Field1880;
+      if (this.Field1859 || var7 > this.Field1880) {
+         var7 = this.Field1880;
       }
 
-      float a = (float)a + (float)((a >= this.Field1880 ? a + 1 : a - 1) - a) * (float)this.Field1863.Method6();
-      int a = 7 + (int)(5.0 * this.Field1865.Method6());
-      Class350.Method48(this.Field1850, this.Field1851, this.Field1852, (int)a, a);
-      RenderUtils.Method1103((float)this.Field1850, (float)this.Field1851, (float)this.Field1852, (float)a, Class707.Method1828());
-      float a;
-      float a;
+      float var19 = (float)var4 + (float)((var7 >= this.Field1880 ? var7 + 1 : var7 - 1) - var4) * (float)this.Field1863.Method6();
+      int var20 = 7 + (int)(5.0 * this.Field1865.Method6());
+      Class350.Method48(this.Field1850, this.Field1851, this.Field1852, (int)var19, var20);
+      RenderUtils.Method1103((float)this.Field1850, (float)this.Field1851, (float)this.Field1852, (float)var4, Class707.Method1828());
+      float var10;
+      float var12;
       if (GlobalModule.INSTANCE.Field3190.Method1834()) {
-         a = (float)this.Field1863.Method6() * 1.0F - 1.0F;
-         float a = (float)(this.Field1851 + a / 2) + a * 2.0F;
-         a = (float)(this.Field1851 + a / 2) - a * 2.0F;
-         float a = (float)(this.Field1851 + a / 2) + a * 2.0F;
-         RenderUtils.Method1085((double)(this.Field1850 + this.Field1852 - a + 5), (double)a, (double)((float)(this.Field1850 + this.Field1852) - (float)a / 2.0F), (double)a, 1.5F, 16777215);
-         RenderUtils.Method1085((double)((float)(this.Field1850 + this.Field1852) - (float)a / 2.0F), (double)a, (double)(this.Field1850 + this.Field1852 - 5), (double)a, 1.5F, 16777215);
+         var10 = (float)this.Field1863.Method6() * 1.0F - 1.0F;
+         float var11 = (float)(this.Field1851 + var4 / 2) + var10 * 2.0F;
+         var12 = (float)(this.Field1851 + var4 / 2) - var10 * 2.0F;
+         float var13 = (float)(this.Field1851 + var4 / 2) + var10 * 2.0F;
+         RenderUtils.Method1085((double)(this.Field1850 + this.Field1852 - var4 + 5), (double)var11, (double)((float)(this.Field1850 + this.Field1852) - (float)var4 / 2.0F), (double)var12, 1.5F, 16777215);
+         RenderUtils.Method1085((double)((float)(this.Field1850 + this.Field1852) - (float)var4 / 2.0F), (double)var12, (double)(this.Field1850 + this.Field1852 - 5), (double)var13, 1.5F, 16777215);
       }
 
       if (this.Field1867) {
-         RenderUtils.Method1103((float)(this.Field1850 + this.Field1852 - a), (float)this.Field1851, (float)a, (float)a, 553648127);
+         RenderUtils.Method1103((float)(this.Field1850 + this.Field1852 - var4), (float)this.Field1851, (float)var4, (float)var4, 553648127);
       }
 
       if (this.Field1845 && GlobalModule.INSTANCE.Field3190.Method1834()) {
-         RenderUtils.Method1086((float)(this.Field1850 + a / 2), (float)(this.Field1851 + a / 2), 3.0F, 1.5F, 16777215);
+         RenderUtils.Method1086((float)(this.Field1850 + var4 / 2), (float)(this.Field1851 + var4 / 2), 3.0F, 1.5F, 16777215);
          if (this.Field1864.Method6() > 0.0) {
-            RenderUtils.Method1087((float)(this.Field1850 + a / 2), (float)(this.Field1851 + a / 2), (float)this.Field1864.Method6() * 1.5F, 16777215);
+            RenderUtils.Method1087((float)(this.Field1850 + var4 / 2), (float)(this.Field1851 + var4 / 2), (float)this.Field1864.Method6() * 1.5F, 16777215);
          }
 
          if (this.Field1866) {
-            RenderUtils.Method1103((float)this.Field1850, (float)this.Field1851, (float)a, (float)a, 553648127);
+            RenderUtils.Method1103((float)this.Field1850, (float)this.Field1851, (float)var4, (float)var4, 553648127);
          }
       }
 
-      Class565.Field2635.Method1222(this.Field1843, (float)(this.Field1850 + this.Field1852 / 2), (float)(this.Field1851 + a / 2 - 4), 16777215);
+      Class565.Field2635.Method1222(this.Field1843, (float)(this.Field1850 + this.Field1852 / 2), (float)(this.Field1851 + var4 / 2 - 4), 16777215);
       if (this.Field1863.Method6() > 0.0) {
-         Class348.Method364((float)this.Field1850, (float)a, (float)this.Field1852, a, this.Field1863.Method6() > 0.0);
-         RenderUtils.Method1103((float)this.Field1850, (float)(this.Field1851 + a), (float)this.Field1852, a, Class707.Method1830());
-         RenderUtils.Method1080((float)this.Field1850, (float)a, (float)(this.Field1850 + this.Field1852), (float)a + a);
+         Class348.Method364((float)this.Field1850, (float)var5, (float)this.Field1852, var6, this.Field1863.Method6() > 0.0);
+         RenderUtils.Method1103((float)this.Field1850, (float)(this.Field1851 + var4), (float)this.Field1852, var6, Class707.Method1830());
+         RenderUtils.Method1080((float)this.Field1850, (float)var5, (float)(this.Field1850 + this.Field1852), (float)var5 + var6);
          this.Field1869 = (float)this.Field1850;
          this.Field1870 = (float)this.Field1851 + (float)(this.Field1853 - this.Field1876) + (float)this.Field1876;
          this.Field1871 = (float)this.Field1852;
          this.Field1872 = (float)(this.Field1853 - this.Field1876);
-         a = 0.0F;
+         var10 = 0.0F;
          if (this.Method1392(a, a)) {
             this.Field1881 = (float)(this.Field1880 - this.Field1876);
          }
@@ -218,28 +218,28 @@ public class Class381 {
          Iterator var21 = this.Field1844.Method1383();
 
          while(var21.Method932()) {
-            Class390 a = (Class390)var21.Method933();
-            if (a.Field1916) {
-               a.Method412(a, a);
-               a += (float)a.Field1910;
+            Class390 var23 = (Class390)var21.Method933();
+            if (var23.Field1916) {
+               var23.Method412(a, a);
+               var10 += (float)var23.Field1910;
                break;
             }
          }
 
          if (this.Method1392(a, a)) {
-            this.Field1881 -= a;
+            this.Field1881 -= var10;
          }
 
          if (this.Field1859) {
-            int a = this.Field1850 + this.Field1852 - 2;
-            a = (float)(this.Field1880 - this.Field1876);
-            float a = MathHelper.clamp_float(this.Field1858, 0.0F, 1.0F);
-            float a = a / a * a;
-            float a = Math.max(a, 20.0F);
-            float a = a * (a - a);
-            int var10000 = a + (int)MathUtils.Method547(this.Field1858, 0.0F, 1.0F, 1.5F, (float)((double)(a - 50.0F) - 0.5));
-            RenderUtils.Method1103((float)a, (float)a, 2.0F, a, (new Color(0, 0, 0, 70)).getRGB());
-            RenderUtils.Method1103((float)a + 0.5F, (float)a + a, 1.0F, a, this.Method1387(a, a) ? Class681.Method2699(Class707.Method1832(), 30) : Class707.Method1832());
+            int var22 = this.Field1850 + this.Field1852 - 2;
+            var12 = (float)(this.Field1880 - this.Field1876);
+            float var14 = MathHelper.clamp_float(this.Field1858, 0.0F, 1.0F);
+            float var15 = var12 / var10 * var12;
+            float var16 = Math.max(var15, 20.0F);
+            float var17 = var14 * (var12 - var16);
+            int var10000 = var5 + (int)MathUtils.Method547(this.Field1858, 0.0F, 1.0F, 1.5F, (float)((double)(var12 - 50.0F) - 0.5));
+            RenderUtils.Method1103((float)var22, (float)var5, 2.0F, var12, (new Color(0, 0, 0, 70)).getRGB());
+            RenderUtils.Method1103((float)var22 + 0.5F, (float)var5 + var17, 1.0F, var16, this.Method1387(a, a) ? Class681.Method2699(Class707.Method1832(), 30) : Class707.Method1832());
          }
 
          RenderUtils.Method1082();
@@ -252,19 +252,19 @@ public class Class381 {
    }
 
    public boolean Method1388(int a, int a, boolean a) {
-      String[] a = Method1420();
+      String[] var4 = Method1420();
       if (!this.Field1868 && this.Method1387(a, a)) {
          this.Field1861 = true;
       }
 
       this.Field1861 = false;
-      boolean a = false;
+      boolean var5 = false;
       if (this.Method1392(a, a)) {
-         int a = this.Field1876;
-         this.Field1866 = this.Field1845 && MathUtils.isHovering((float)a, (float)a, (float)this.Field1850, (float)this.Field1851, (float)(this.Field1850 + a), (float)(this.Field1851 + a));
-         this.Field1867 = MathUtils.isHovering((float)a, (float)a, (float)(this.Field1850 + this.Field1852 - a), (float)this.Field1851, (float)(this.Field1850 + this.Field1852), (float)(this.Field1851 + a));
+         int var6 = this.Field1876;
+         this.Field1866 = this.Field1845 && MathUtils.isHovering((float)a, (float)a, (float)this.Field1850, (float)this.Field1851, (float)(this.Field1850 + var6), (float)(this.Field1851 + var6));
+         this.Field1867 = MathUtils.isHovering((float)a, (float)a, (float)(this.Field1850 + this.Field1852 - var6), (float)this.Field1851, (float)(this.Field1850 + this.Field1852), (float)(this.Field1851 + var6));
          if (!this.Field1868) {
-            a = true;
+            var5 = true;
          }
 
          if (this.Field1866 && !this.Field1868) {
@@ -275,7 +275,7 @@ public class Class381 {
             this.Field1847 = !this.Field1847;
          }
 
-         boolean a = MathUtils.isHovering((float)a, (float)a, (float)this.Field1850, (float)this.Field1851, (float)(this.Field1850 + this.Field1852), (float)(this.Field1851 + a));
+         boolean var7 = MathUtils.isHovering((float)a, (float)a, (float)this.Field1850, (float)this.Field1851, (float)(this.Field1850 + this.Field1852), (float)(this.Field1851 + var6));
          if (!this.Field1866 && !this.Field1867 && !this.Field1868) {
             this.Field1856 = true;
             this.Field1854 = a - this.Field1850;
@@ -285,24 +285,24 @@ public class Class381 {
          this.Field1856 = false;
          if (this.Field1847) {
             Iterator var8 = this.Field1844.Method1383();
-            Class390 a;
+            Class390 var9;
             if (var8.Method932()) {
-               a = (Class390)var8.Method933();
-               if (!a.Field1916) {
+               var9 = (Class390)var8.Method933();
+               if (!var9.Field1916) {
                   ;
                }
 
-               a.Method413(a, a, a);
+               var9.Method413(a, a, a);
             }
 
             var8 = this.Field1844.Method1383();
             if (var8.Method932()) {
-               a = (Class390)var8.Method933();
-               if (!a.Field1916) {
+               var9 = (Class390)var8.Method933();
+               if (!var9.Field1916) {
                   ;
                }
 
-               a.Method414();
+               var9.Method414();
             }
          }
       }
@@ -317,14 +317,14 @@ public class Class381 {
          Method1419(new String[3]);
       }
 
-      return a;
+      return var5;
    }
 
-   public void Method1389(int a, int a, boolean a2) {
+   public void Method1389(int a, int a, boolean a) {
       if (this.Method1392(a, a)) {
-         int a = Mouse.getEventDWheel();
-         int a = -1;
-         this.Field1862 += a * 18;
+         int var4 = Mouse.getEventDWheel();
+         byte var5 = -1;
+         this.Field1862 += var5 * 18;
          if (this.Field1862 > this.Field1860 - (this.Field1880 - this.Field1876)) {
             this.Field1862 = this.Field1860 - (this.Field1880 - this.Field1876);
          }
@@ -341,9 +341,9 @@ public class Class381 {
          Iterator var3 = this.Field1844.Method1383();
 
          while(var3.Method932()) {
-            Class390 a = (Class390)var3.Method933();
-            if (a.Field1916) {
-               a.Method1315(a, a);
+            Class390 var4 = (Class390)var3.Method933();
+            if (var4.Field1916) {
+               var4.Method1315(a, a);
             }
          }
       }
@@ -357,16 +357,16 @@ public class Class381 {
    public boolean Method1392(int a, int a) {
       Iterator var3 = GlobalModule.INSTANCE.Field3190.Method1833().Method1383();
 
-      Class381 a;
+      Class381 var4;
       do {
          if (!var3.Method932()) {
             return false;
          }
 
-         a = (Class381)var3.Method933();
-      } while(!a.Field1848 || !a.Method1391(a, a));
+         var4 = (Class381)var3.Method933();
+      } while(!var4.Field1848 || !var4.Method1391(a, a));
 
-      return a == this;
+      return var4 == this;
    }
 
    public void Method1393() {
@@ -384,9 +384,9 @@ public class Class381 {
          Iterator var1 = this.Field1844.Method1383();
 
          while(var1.Method932()) {
-            Class390 a = (Class390)var1.Method933();
-            if (a.Field1916) {
-               a.Method414();
+            Class390 var2 = (Class390)var1.Method933();
+            if (var2.Field1916) {
+               var2.Method414();
             }
          }
       }

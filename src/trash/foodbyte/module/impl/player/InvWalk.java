@@ -51,19 +51,19 @@ public class InvWalk extends Module {
    @EventTarget
    public void Method232(EventUpdate a) {
       Class148.Method1444();
-      KeyBinding[] a = new KeyBinding[]{mc.gameSettings.keyBindForward, mc.gameSettings.keyBindBack, mc.gameSettings.keyBindLeft, mc.gameSettings.keyBindRight, mc.gameSettings.keyBindSprint, mc.gameSettings.keyBindJump};
-      int a;
-      int a;
-      KeyBinding a;
-      byte a;
+      KeyBinding[] var3 = new KeyBinding[]{mc.gameSettings.keyBindForward, mc.gameSettings.keyBindBack, mc.gameSettings.keyBindLeft, mc.gameSettings.keyBindRight, mc.gameSettings.keyBindSprint, mc.gameSettings.keyBindJump};
+      int var5;
+      int var6;
+      KeyBinding var7;
+      byte var8;
       if (!this.Field2719.getValue()) {
          if (mc.currentScreen != null && !(mc.currentScreen instanceof GuiChat)) {
-            a = a.length;
-            a = 0;
-            if (a < a) {
-               a = a[a];
-               KeyBinding.setKeyBindState(a.getKeyCode(), Keyboard.isKeyDown(a.getKeyCode()));
-               ++a;
+            var5 = var3.length;
+            var6 = 0;
+            if (var6 < var5) {
+               var7 = var3[var6];
+               KeyBinding.setKeyBindState(var7.getKeyCode(), Keyboard.isKeyDown(var7.getKeyCode()));
+               ++var6;
             }
          }
 
@@ -71,57 +71,57 @@ public class InvWalk extends Module {
             return;
          }
 
-         a = a.length;
-         a = 0;
-         if (a < a) {
-            a = a[a];
-            if (!Keyboard.isKeyDown(a.getKeyCode())) {
-               KeyBinding.setKeyBindState(a.getKeyCode(), false);
+         var5 = var3.length;
+         var8 = 0;
+         if (var8 < var5) {
+            var7 = var3[var8];
+            if (!Keyboard.isKeyDown(var7.getKeyCode())) {
+               KeyBinding.setKeyBindState(var7.getKeyCode(), false);
             }
 
-            a = a + 1;
+            var6 = var8 + 1;
          }
       }
 
       if (this.Field2718 && Objects.nonNull(mc.currentScreen)) {
-         a = a.length;
-         a = 0;
-         if (a < a) {
-            a = a[a];
-            KeyBinding.setKeyBindState(a.getKeyCode(), false);
-            a = a + 1;
+         var5 = var3.length;
+         var8 = 0;
+         if (var8 < var5) {
+            var7 = var3[var8];
+            KeyBinding.setKeyBindState(var7.getKeyCode(), false);
+            var6 = var8 + 1;
          }
 
       } else {
          if (mc.currentScreen != null && !(mc.currentScreen instanceof GuiChat) && !(mc.currentScreen instanceof GuiChest) && !(mc.currentScreen instanceof GuiCrafting) && !(mc.currentScreen instanceof GuiFurnace) && !(mc.currentScreen instanceof GuiRepair) && !(mc.currentScreen instanceof GuiEditSign) && !(mc.currentScreen instanceof GuiEnchantment)) {
-            a = a.length;
-            a = 0;
-            if (a < a) {
-               a = a[a];
-               KeyBinding.setKeyBindState(a.getKeyCode(), Keyboard.isKeyDown(a.getKeyCode()));
-               a = a + 1;
+            var5 = var3.length;
+            var8 = 0;
+            if (var8 < var5) {
+               var7 = var3[var8];
+               KeyBinding.setKeyBindState(var7.getKeyCode(), Keyboard.isKeyDown(var7.getKeyCode()));
+               var6 = var8 + 1;
             }
          }
 
          if (Objects.isNull(mc.currentScreen)) {
             this.Field2718 = false;
-            a = a.length;
-            a = 0;
-            if (a < a) {
-               a = a[a];
-               if (!Keyboard.isKeyDown(a.getKeyCode())) {
-                  KeyBinding.setKeyBindState(a.getKeyCode(), false);
+            var5 = var3.length;
+            var8 = 0;
+            if (var8 < var5) {
+               var7 = var3[var8];
+               if (!Keyboard.isKeyDown(var7.getKeyCode())) {
+                  KeyBinding.setKeyBindState(var7.getKeyCode(), false);
                }
 
-               a = a + 1;
+               var6 = var8 + 1;
             }
 
-            a = a.length;
-            a = 0;
-            if (a < a) {
-               a = a[a];
-               KeyBinding.setKeyBindState(a.getKeyCode(), Keyboard.isKeyDown(a.getKeyCode()));
-               a = a + 1;
+            var5 = var3.length;
+            var8 = 0;
+            if (var8 < var5) {
+               var7 = var3[var8];
+               KeyBinding.setKeyBindState(var7.getKeyCode(), Keyboard.isKeyDown(var7.getKeyCode()));
+               var6 = var8 + 1;
             }
          }
 
@@ -131,15 +131,15 @@ public class InvWalk extends Module {
    @EventTarget
    public void Method273(EventPacket a) {
       if (this.Field2719.getValue()) {
-         Packet a = a.getPacket();
+         Packet var2 = a.getPacket();
          if (a.isSend()) {
-            if (a instanceof C0DPacketCloseWindow) {
-               C0DPacketCloseWindow a = (C0DPacketCloseWindow)a.getPacket();
+            if (var2 instanceof C0DPacketCloseWindow) {
+               C0DPacketCloseWindow var3 = (C0DPacketCloseWindow)a.getPacket();
                if (mc.currentScreen instanceof GuiInventory && !this.Field2718) {
-                  int a = true;
+                  boolean var4 = true;
 
                   try {
-                     int a = ReflectionHelper.findField(a.getClass(), new String[]{ObfuscatedField.windowId.getObfuscatedName()}).getInt(a);
+                     int var9 = ReflectionHelper.findField(var3.getClass(), new String[]{ObfuscatedField.windowId.getObfuscatedName()}).getInt(var3);
                      a.setCancelled(true);
                   } catch (IllegalAccessException var6) {
                   }
@@ -148,17 +148,17 @@ public class InvWalk extends Module {
                this.Field2718 = false;
             }
 
-            if (a instanceof C16PacketClientStatus) {
-               C16PacketClientStatus a = (C16PacketClientStatus)a;
-               if (a.getStatus() == EnumState.OPEN_INVENTORY_ACHIEVEMENT) {
+            if (var2 instanceof C16PacketClientStatus) {
+               C16PacketClientStatus var7 = (C16PacketClientStatus)var2;
+               if (var7.getStatus() == EnumState.OPEN_INVENTORY_ACHIEVEMENT) {
                   a.setCancelled(true);
                }
             }
 
-            if (a instanceof C0EPacketClickWindow) {
-               C0EPacketClickWindow a = (C0EPacketClickWindow)a.getPacket();
+            if (var2 instanceof C0EPacketClickWindow) {
+               C0EPacketClickWindow var8 = (C0EPacketClickWindow)a.getPacket();
                if (mc.currentScreen instanceof GuiInventory) {
-                  if ((a.getMode() == 4 || a.getMode() == 3) && a.getSlotId() == -999) {
+                  if ((var8.getMode() == 4 || var8.getMode() == 3) && var8.getSlotId() == -999) {
                      a.setCancelled(true);
                   } else {
                      Wrapper.INSTANCE.sendPacketNoEvent(new C16PacketClientStatus(EnumState.OPEN_INVENTORY_ACHIEVEMENT));
@@ -176,13 +176,13 @@ public class InvWalk extends Module {
 
    public void onDisable() {
       if (mc.currentScreen != null || Wrapper.INSTANCE.isVaildWorldAndPlayer()) {
-         KeyBinding[] a = new KeyBinding[]{mc.gameSettings.keyBindForward, mc.gameSettings.keyBindBack, mc.gameSettings.keyBindLeft, mc.gameSettings.keyBindRight, mc.gameSettings.keyBindSprint, mc.gameSettings.keyBindJump};
-         KeyBinding[] a = a;
-         int a = a.length;
+         KeyBinding[] var1 = new KeyBinding[]{mc.gameSettings.keyBindForward, mc.gameSettings.keyBindBack, mc.gameSettings.keyBindLeft, mc.gameSettings.keyBindRight, mc.gameSettings.keyBindSprint, mc.gameSettings.keyBindJump};
+         KeyBinding[] var2 = var1;
+         int var3 = var1.length;
 
-         for(int a = 0; a < a; ++a) {
-            KeyBinding a = a[a];
-            KeyBinding.setKeyBindState(a.getKeyCode(), false);
+         for(int var4 = 0; var4 < var3; ++var4) {
+            KeyBinding var5 = var2[var4];
+            KeyBinding.setKeyBindState(var5.getKeyCode(), false);
          }
 
       }

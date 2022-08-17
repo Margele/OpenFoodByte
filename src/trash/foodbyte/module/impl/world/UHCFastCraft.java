@@ -60,43 +60,43 @@ public class UHCFastCraft extends Module {
    }
 
    public void Method258() {
-      String a = Class492.Method2239();
+      String var1 = Class492.Method2239();
       if (mc.currentScreen instanceof GuiInventory || mc.currentScreen instanceof GuiChest) {
-         GuiContainer a = (GuiContainer)mc.currentScreen;
-         int a = false;
-         int a = false;
-         int a = 0;
-         int a = 0;
+         GuiContainer var2 = (GuiContainer)mc.currentScreen;
+         boolean var3 = false;
+         boolean var4 = false;
+         int var5 = 0;
+         int var6 = 0;
 
          try {
-            a = ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.guiLeft.getObfuscatedName()}).getInt(a);
-            a = ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.guiTop.getObfuscatedName()}).getInt(a);
+            var5 = ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.guiLeft.getObfuscatedName()}).getInt(var2);
+            var6 = ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.guiTop.getObfuscatedName()}).getInt(var2);
          } catch (Exception var10) {
          }
 
-         int a = false;
+         boolean var7 = false;
          if (mc.currentScreen instanceof GuiInventory) {
             try {
-               InventoryEffectRenderer a = (InventoryEffectRenderer)mc.currentScreen;
-               if (a == ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.guiLeft.getObfuscatedName()}).getInt(a)) {
-                  a = true;
+               InventoryEffectRenderer var8 = (InventoryEffectRenderer)mc.currentScreen;
+               if (var5 == ReflectionHelper.findField(GuiContainer.class, new String[]{ObfuscatedField.guiLeft.getObfuscatedName()}).getInt(var8)) {
+                  var7 = true;
                }
             } catch (Exception var9) {
             }
          }
 
          if (mc.thePlayer.getActivePotionEffects().isEmpty() || mc.currentScreen instanceof GuiChest) {
-            int var10000 = a.width - a;
+            int var10000 = var2.width - var5;
          }
 
-         int a = a + 176;
+         int var12 = var5 + 176;
          if (this.Field2189 == null) {
-            this.Field2189 = new Class378(this, (float)(a.width - a), (float)(a + 3), 100.0F, 100.0F, 12.0F, 1.0F, 0.5F);
+            this.Field2189 = new Class378(this, (float)(var2.width - var5), (float)(var6 + 3), 100.0F, 100.0F, 12.0F, 1.0F, 0.5F);
          }
 
          if (this.Field2188.getBooleanValue()) {
-            this.Field2189.Field1806 = (float)a;
-            this.Field2189.Field1807 = (float)(a + 3);
+            this.Field2189.Field1806 = (float)var12;
+            this.Field2189.Field1807 = (float)(var6 + 3);
          }
       }
 
@@ -104,17 +104,17 @@ public class UHCFastCraft extends Module {
          this.Method814();
          this.Method815();
          if (this.Field2189.Field1794 != null) {
-            ItemStack a = this.Field2189.Field1794;
-            List a = a.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips);
-            int a = 0;
-            if (a < a.Method1799()) {
-               a.set(a, a.getRarity().rarityColor + (String)a.get(a));
-               a.set(a, EnumChatFormatting.GRAY + (String)a.get(a));
-               ++a;
+            ItemStack var11 = this.Field2189.Field1794;
+            List var13 = var11.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips);
+            int var14 = 0;
+            if (var14 < var13.Method1799()) {
+               var13.set(var14, var11.getRarity().rarityColor + (String)var13.get(var14));
+               var13.set(var14, EnumChatFormatting.GRAY + (String)var13.get(var14));
+               ++var14;
             }
 
             GlStateManager.disableDepth();
-            this.Method2117(a, this.Field2190, this.Field2191);
+            this.Method2117(var13, this.Field2190, this.Field2191);
             GlStateManager.enableDepth();
          }
       }
@@ -134,41 +134,41 @@ public class UHCFastCraft extends Module {
 
    public void Method2117(List a, int a, int a) {
       if (!a.isEmpty()) {
-         int a = 0;
+         int var4 = 0;
          Iterator var5 = a.Method1383();
 
-         int a;
+         int var7;
          while(var5.Method932()) {
-            String a = (String)var5.Method933();
-            a = mc.fontRendererObj.getStringWidth(a);
-            if (a > a) {
-               a = a;
+            String var6 = (String)var5.Method933();
+            var7 = mc.fontRendererObj.getStringWidth(var6);
+            if (var7 > var4) {
+               var4 = var7;
             }
          }
 
-         int a = a + 12;
-         int a = a - 12;
-         a = 8;
+         int var10 = a + 12;
+         int var11 = a - 12;
+         var7 = 8;
          if (a.Method1799() > 1) {
-            a += 2 + (a.Method1799() - 1) * 10;
+            var7 += 2 + (a.Method1799() - 1) * 10;
          }
 
-         if (a + a > RenderUtils.Method1076()) {
-            a -= 28 + a;
+         if (var10 + var4 > RenderUtils.Method1076()) {
+            var10 -= 28 + var4;
          }
 
-         if (a + a + 6 > RenderUtils.Method1077()) {
-            a = RenderUtils.Method1077() - a - 6;
+         if (var11 + var7 + 6 > RenderUtils.Method1077()) {
+            var11 = RenderUtils.Method1077() - var7 - 6;
          }
 
-         RenderUtils.Method1104((float)(a - 4), (float)(a - 4), (float)(a + a + 4), (float)(a + a + 4), Class681.Method2699(Class707.Method1828(), 50));
-         RenderUtils.Method1104((float)(a - 3), (float)(a - 3), (float)(a + a + 3), (float)(a + a + 3), Integer.MIN_VALUE);
+         RenderUtils.Method1104((float)(var10 - 4), (float)(var11 - 4), (float)(var10 + var4 + 4), (float)(var11 + var7 + 4), Class681.Method2699(Class707.Method1828(), 50));
+         RenderUtils.Method1104((float)(var10 - 3), (float)(var11 - 3), (float)(var10 + var4 + 3), (float)(var11 + var7 + 3), Integer.MIN_VALUE);
 
-         for(int a = 0; a < a.Method1799(); ++a) {
-            String a = (String)a.get(a);
-            mc.fontRendererObj.drawStringWithShadow(a, (float)a, (float)a, -1);
-            a += 2;
-            a += 10;
+         for(int var8 = 0; var8 < a.Method1799(); ++var8) {
+            String var9 = (String)a.get(var8);
+            mc.fontRendererObj.drawStringWithShadow(var9, (float)var10, (float)var11, -1);
+            var11 += 2;
+            var11 += 10;
          }
       }
 

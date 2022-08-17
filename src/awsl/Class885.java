@@ -62,16 +62,16 @@ public class Class885 extends Class877 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
-      this.Field3873 = (float)a * this.Field3870;
-      this.Field3874 = (float)a * this.Field3871;
+      int var3 = a.getWidth();
+      int var4 = a.getHeight();
+      this.Field3873 = (float)var3 * this.Field3870;
+      this.Field3874 = (float)var4 * this.Field3871;
       if (this.Field3866 == 0.0F) {
-         this.Field3866 = (float)(a / 2);
+         this.Field3866 = (float)(var3 / 2);
       }
 
       if (this.Field3867 == 0.0F) {
-         this.Field3867 = (float)(a / 2);
+         this.Field3867 = (float)(var4 / 2);
       }
 
       this.Field3868 = this.Field3866 * this.Field3866;
@@ -80,29 +80,29 @@ public class Class885 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      float a = (float)a - this.Field3873;
+      float var5 = (float)a - this.Field3873;
       Class193.Method1270();
-      float a = (float)a - this.Field3874;
-      float a = a * a;
-      float a = a * a;
-      if (a >= this.Field3869 - this.Field3869 * a / this.Field3868) {
+      float var6 = (float)a - this.Field3874;
+      float var7 = var5 * var5;
+      float var8 = var6 * var6;
+      if (var8 >= this.Field3869 - this.Field3869 * var7 / this.Field3868) {
          a[0] = (float)a;
          a[1] = (float)a;
       }
 
-      float a = 1.0F / this.Field3872;
-      float a = (float)Math.sqrt((double)((1.0F - a / this.Field3868 - a / this.Field3869) * this.Field3866 * this.Field3867));
-      float a = a * a;
-      float a = (float)Math.acos((double)a / Math.sqrt((double)(a + a)));
-      float a = 1.5707964F - a;
-      float a = (float)Math.asin(Math.sin((double)a) * (double)a);
-      a = 1.5707964F - a - a;
-      a[0] = (float)a - (float)Math.tan((double)a) * a;
-      float a = (float)Math.acos((double)a / Math.sqrt((double)(a + a)));
-      a = 1.5707964F - a;
-      a = (float)Math.asin(Math.sin((double)a) * (double)a);
-      a = 1.5707964F - a - a;
-      a[1] = (float)a - (float)Math.tan((double)a) * a;
+      float var9 = 1.0F / this.Field3872;
+      float var10 = (float)Math.sqrt((double)((1.0F - var7 / this.Field3868 - var8 / this.Field3869) * this.Field3866 * this.Field3867));
+      float var11 = var10 * var10;
+      float var12 = (float)Math.acos((double)var5 / Math.sqrt((double)(var7 + var11)));
+      float var13 = 1.5707964F - var12;
+      float var14 = (float)Math.asin(Math.sin((double)var13) * (double)var9);
+      var14 = 1.5707964F - var12 - var14;
+      a[0] = (float)a - (float)Math.tan((double)var14) * var10;
+      float var15 = (float)Math.acos((double)var6 / Math.sqrt((double)(var8 + var11)));
+      var13 = 1.5707964F - var15;
+      var14 = (float)Math.asin(Math.sin((double)var13) * (double)var9);
+      var14 = 1.5707964F - var15 - var14;
+      a[1] = (float)a - (float)Math.tan((double)var14) * var10;
    }
 
    public String toString() {

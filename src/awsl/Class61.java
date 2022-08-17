@@ -12,9 +12,9 @@ class Class61 implements Comparable {
    }
 
    public int Method3789(Class61 a) {
-      int a = this.Field627.compareTo(a.Field627);
-      a = this.Field629.compareTo(a.Field629);
-      return a;
+      int var2 = this.Field627.compareTo(a.Field627);
+      var2 = this.Field629.compareTo(a.Field629);
+      return var2;
    }
 
    public boolean equals(Object a) {

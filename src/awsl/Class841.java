@@ -11,7 +11,7 @@ final class Class841 extends Class831 {
    }
 
    public void Method3501(String a, Attributes a) {
-      Class148 a = (Class148)this.Field3729.Method1963();
-      a.Method398(a.getValue("name"), a.getValue("desc"), a.getValue("value"));
+      Class148 var3 = (Class148)this.Field3729.Method1963();
+      var3.Method398(a.getValue("name"), a.getValue("desc"), a.getValue("value"));
    }
 }

@@ -29,9 +29,9 @@ public class Tracers extends Module {
          Iterator var2 = mc.theWorld.playerEntities.Method1383();
 
          while(var2.Method932()) {
-            EntityPlayer a = (EntityPlayer)var2.Method933();
-            if (mc.thePlayer != a && !a.isInvisible() && !AntiBot.botList.contains(a)) {
-               this.drawLine(a, a);
+            EntityPlayer var3 = (EntityPlayer)var2.Method933();
+            if (mc.thePlayer != var3 && !var3.isInvisible() && !AntiBot.botList.contains(var3)) {
+               this.drawLine(var3, a);
             }
          }
 
@@ -40,11 +40,11 @@ public class Tracers extends Module {
    }
 
    private void drawLine(EntityLivingBase enitity, EventRender3D a) {
-      float a = a.Method3523();
+      float var4 = a.Method3523();
       Class492.Method2239();
-      double a = enitity.lastTickPosX + (enitity.posX - enitity.lastTickPosX) * (double)a - ReflectionUtils.getRenderPosX();
-      double a = enitity.lastTickPosY + (enitity.posY - enitity.lastTickPosY) * (double)a - ReflectionUtils.getRenderPosY();
-      double a = enitity.lastTickPosZ + (enitity.posZ - enitity.lastTickPosZ) * (double)a - ReflectionUtils.getRenderPosZ();
+      double var5 = enitity.lastTickPosX + (enitity.posX - enitity.lastTickPosX) * (double)var4 - ReflectionUtils.getRenderPosX();
+      double var7 = enitity.lastTickPosY + (enitity.posY - enitity.lastTickPosY) * (double)var4 - ReflectionUtils.getRenderPosY();
+      double var9 = enitity.lastTickPosZ + (enitity.posZ - enitity.lastTickPosZ) * (double)var4 - ReflectionUtils.getRenderPosZ();
       GL11.glPushMatrix();
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -52,7 +52,7 @@ public class Tracers extends Module {
       GL11.glDisable(3553);
       GL11.glBlendFunc(770, 771);
       GL11.glLineWidth(1.0F);
-      float a = mc.thePlayer.getDistanceToEntity(enitity);
+      float var11 = mc.thePlayer.getDistanceToEntity(enitity);
       if (Class305.Method697(enitity)) {
          GL11.glColor3f(0.0F, 1.0F, 1.0F);
       }
@@ -61,20 +61,20 @@ public class Tracers extends Module {
          GL11.glColor3f(0.0F, 1.0F, 0.0F);
       }
 
-      if (a <= 200.0F) {
-         GL11.glColor3f(1.0F, a / 40.0F, 0.0F);
+      if (var11 <= 200.0F) {
+         GL11.glColor3f(1.0F, var11 / 40.0F, 0.0F);
       }
 
       GL11.glLoadIdentity();
-      boolean a = mc.gameSettings.viewBobbing;
+      boolean var12 = mc.gameSettings.viewBobbing;
       mc.gameSettings.viewBobbing = false;
-      ReflectionUtils.setOrientCamera(a);
+      ReflectionUtils.setOrientCamera(var4);
       GL11.glBegin(3);
       GL11.glVertex3d(0.0, (double)mc.thePlayer.getEyeHeight(), 0.0);
-      GL11.glVertex3d(a, a, a);
-      GL11.glVertex3d(a, a, a);
+      GL11.glVertex3d(var5, var7, var9);
+      GL11.glVertex3d(var5, var7, var9);
       GL11.glEnd();
-      mc.gameSettings.viewBobbing = a;
+      mc.gameSettings.viewBobbing = var12;
       GL11.glEnable(3553);
       GL11.glEnable(2929);
       GL11.glDisable(2848);
@@ -83,7 +83,7 @@ public class Tracers extends Module {
    }
 
    private void Method952(EntityLivingBase a) {
-      float a = ReflectionUtils.getRenderPartialTicks();
+      float var3 = ReflectionUtils.getRenderPartialTicks();
       Class492.Method2239();
       GL11.glPushMatrix();
       GL11.glEnable(3042);
@@ -92,10 +92,10 @@ public class Tracers extends Module {
       GL11.glDisable(3553);
       GL11.glBlendFunc(770, 771);
       GL11.glLineWidth(2.0F);
-      double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a - ReflectionUtils.getRenderPosX();
-      double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a - ReflectionUtils.getRenderPosY();
-      double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a - ReflectionUtils.getRenderPosZ();
-      float a = mc.thePlayer.getDistanceToEntity(a);
+      double var4 = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)var3 - ReflectionUtils.getRenderPosX();
+      double var6 = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)var3 - ReflectionUtils.getRenderPosY();
+      double var8 = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)var3 - ReflectionUtils.getRenderPosZ();
+      float var10 = mc.thePlayer.getDistanceToEntity(a);
       if (Class305.Method697(a)) {
          GL11.glColor3f(0.0F, 1.0F, 1.0F);
       }
@@ -104,18 +104,18 @@ public class Tracers extends Module {
          GL11.glColor3f(0.0F, 1.0F, 0.0F);
       }
 
-      if (a <= 200.0F) {
-         GL11.glColor3f(1.0F, a / 40.0F, 0.0F);
+      if (var10 <= 200.0F) {
+         GL11.glColor3f(1.0F, var10 / 40.0F, 0.0F);
       }
 
-      boolean a = mc.gameSettings.viewBobbing;
+      boolean var11 = mc.gameSettings.viewBobbing;
       mc.gameSettings.viewBobbing = false;
       GL11.glBegin(3);
       GL11.glVertex3d(0.0, (double)mc.thePlayer.getEyeHeight(), 0.0);
-      GL11.glVertex3d(a, a, a);
-      GL11.glVertex3d(a, a, a);
+      GL11.glVertex3d(var4, var6, var8);
+      GL11.glVertex3d(var4, var6, var8);
       GL11.glEnd();
-      mc.gameSettings.viewBobbing = a;
+      mc.gameSettings.viewBobbing = var11;
       GL11.glEnable(3553);
       GL11.glEnable(2929);
       GL11.glDisable(2848);

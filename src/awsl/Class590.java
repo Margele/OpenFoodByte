@@ -48,9 +48,9 @@ public class Class590 extends Class588 {
    }
 
    public void Method25() {
-      float a = 1.0F / (float)Math.sqrt((double)(this.Field2775 * this.Field2775 + this.Field2776 * this.Field2776 + this.Field2777 * this.Field2777));
-      this.Field2775 *= a;
-      this.Field2776 *= a;
-      this.Field2777 *= a;
+      float var1 = 1.0F / (float)Math.sqrt((double)(this.Field2775 * this.Field2775 + this.Field2776 * this.Field2776 + this.Field2777 * this.Field2777));
+      this.Field2775 *= var1;
+      this.Field2776 *= var1;
+      this.Field2777 *= var1;
    }
 }

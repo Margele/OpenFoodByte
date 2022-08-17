@@ -26,121 +26,121 @@ public class Class584 implements Class593, Class594, Class595 {
    }
 
    public float Method20(float a, float a) {
-      float a = 0.0F;
+      float var10 = 0.0F;
       if (Field2750 == null) {
          Field2750 = Method284(665);
       }
 
-      int a = Method283(a);
-      float a = a - (float)a;
-      int a = Method283(a);
-      float a = a - (float)a;
-      int a = 2;
+      int var8 = Method283(a);
+      float var11 = a - (float)var8;
+      int var9 = Method283(a);
+      float var12 = a - (float)var9;
+      byte var16 = 2;
 
-      for(int a = -a; a <= a; ++a) {
-         int a = -a;
-         if (a <= a) {
-            int a = this.Field2746[a + a + this.Field2746[a + a & 255] & 255];
-            int a = 3;
+      for(int var3 = -var16; var3 <= var16; ++var3) {
+         int var4 = -var16;
+         if (var4 <= var16) {
+            int var6 = this.Field2746[var8 + var3 + this.Field2746[var9 + var4 & 255] & 255];
+            int var7 = 3;
 
             while(true) {
-               int a = a * 4;
-               float a = a - ((float)a + Field2750[a++]);
-               float a = a - ((float)a + Field2750[a++]);
-               float a = a * a + a * a;
-               a += this.Method155(a) * Field2750[a];
-               --a;
-               a = a + 1 & 255;
+               int var17 = var6 * 4;
+               float var13 = var11 - ((float)var3 + Field2750[var17++]);
+               float var14 = var12 - ((float)var4 + Field2750[var17++]);
+               float var15 = var13 * var13 + var14 * var14;
+               var10 += this.Method155(var15) * Field2750[var17];
+               --var7;
+               var6 = var6 + 1 & 255;
             }
          }
       }
 
-      return a / 3.0F;
+      return var10 / 3.0F;
    }
 
    public float Method67(float a, float a, float a) {
       Class598.Method86();
-      float a = 0.0F;
+      float var13 = 0.0F;
       if (Field2750 == null) {
          Field2750 = Method284(665);
       }
 
-      int a = Method283(a);
-      float a = a - (float)a;
-      int a = Method283(a);
-      float a = a - (float)a;
-      int a = Method283(a);
-      float a = a - (float)a;
-      int a = 2;
-      int a = -a;
-      if (a <= a) {
-         int a = -a;
-         if (a <= a) {
-            int a = -a;
-            if (a <= a) {
-               int a = this.Field2746[a + a + this.Field2746[a + a + this.Field2746[a + a & 255] & 255] & 255];
-               int a = 3;
-               int a = a * 4;
-               float a = a - ((float)a + Field2750[a++]);
-               float a = a - ((float)a + Field2750[a++]);
-               float a = a - ((float)a + Field2750[a++]);
-               float a = a * a + a * a + a * a;
-               a += this.Method155(a) * Field2750[a];
-               --a;
-               a = a + 1 & 255;
-               ++a;
+      int var10 = Method283(a);
+      float var14 = a - (float)var10;
+      int var11 = Method283(a);
+      float var15 = a - (float)var11;
+      int var12 = Method283(a);
+      float var16 = a - (float)var12;
+      byte var21 = 2;
+      int var5 = -var21;
+      if (var5 <= var21) {
+         int var6 = -var21;
+         if (var6 <= var21) {
+            int var7 = -var21;
+            if (var7 <= var21) {
+               int var8 = this.Field2746[var10 + var5 + this.Field2746[var11 + var6 + this.Field2746[var12 + var7 & 255] & 255] & 255];
+               int var9 = 3;
+               int var22 = var8 * 4;
+               float var17 = var14 - ((float)var5 + Field2750[var22++]);
+               float var18 = var15 - ((float)var6 + Field2750[var22++]);
+               float var19 = var16 - ((float)var7 + Field2750[var22++]);
+               float var20 = var17 * var17 + var18 * var18 + var19 * var19;
+               var13 += this.Method155(var20) * Field2750[var22];
+               --var9;
+               var8 = var8 + 1 & 255;
+               ++var7;
             }
 
-            ++a;
+            ++var6;
          }
 
-         ++a;
+         ++var5;
       }
 
-      return a / 3.0F;
+      return var13 / 3.0F;
    }
 
    public static int Method283(float a) {
-      int a = (int)a;
-      return a < 0.0F && a != (float)a ? a - 1 : a;
+      int var1 = (int)a;
+      return a < 0.0F && a != (float)var1 ? var1 - 1 : var1;
    }
 
    public float Method155(float a) {
       if (a >= 4.0F) {
          return 0.0F;
       } else {
-         int a;
+         int var3;
          if (Field2753 == null) {
             Field2753 = new float[401];
 
-            for(a = 0; a < 401; ++a) {
-               float a = (float)a / 100.0F;
-               a = (float)Math.sqrt((double)a);
-               if (a < 1.0F) {
-                  Field2753[a] = 0.5F * (2.0F + a * a * (-5.0F + a * 3.0F));
+            for(var3 = 0; var3 < 401; ++var3) {
+               float var2 = (float)var3 / 100.0F;
+               var2 = (float)Math.sqrt((double)var2);
+               if (var2 < 1.0F) {
+                  Field2753[var3] = 0.5F * (2.0F + var2 * var2 * (-5.0F + var2 * 3.0F));
                } else {
-                  Field2753[a] = 0.5F * (4.0F + a * (-8.0F + a * (5.0F - a)));
+                  Field2753[var3] = 0.5F * (4.0F + var2 * (-8.0F + var2 * (5.0F - var2)));
                }
             }
          }
 
          a = a * 100.0F + 0.5F;
-         a = Method283(a);
-         return a >= 401 ? 0.0F : Field2753[a];
+         var3 = Method283(a);
+         return var3 >= 401 ? 0.0F : Field2753[var3];
       }
    }
 
    static float[] Method284(int a) {
-      float[] a = new float[1024];
+      float[] var1 = new float[1024];
       Field2745 = new Random((long)a);
 
-      for(int a = 0; a < 256; ++a) {
-         a[a++] = Field2745.nextFloat();
-         a[a++] = Field2745.nextFloat();
-         a[a++] = Field2745.nextFloat();
-         a[a++] = 1.0F - 2.0F * Field2745.nextFloat();
+      for(int var2 = 0; var2 < 256; ++var2) {
+         var1[var2++] = Field2745.nextFloat();
+         var1[var2++] = Field2745.nextFloat();
+         var1[var2++] = Field2745.nextFloat();
+         var1[var2++] = 1.0F - 2.0F * Field2745.nextFloat();
       }
 
-      return a;
+      return var1;
    }
 }

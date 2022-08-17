@@ -20,9 +20,9 @@ public class Class327 {
 
    public double Method997(Class322 a, double a, double a, double a) {
       if (a > a) {
-         double a = a;
+         double var8 = a;
          a = a;
-         a = a;
+         a = var8;
       }
 
       if (a.Method1191() < a) {
@@ -56,9 +56,9 @@ public class Class327 {
 
    public double Method998(Class322 a, double a, double a, double a) {
       if (a > a) {
-         double a = a;
+         double var8 = a;
          a = a;
-         a = a;
+         a = var8;
       }
 
       if (a.Method1191() < a) {
@@ -91,11 +91,11 @@ public class Class327 {
    }
 
    public double Method999(Class322 a, double a, double a, double a) {
-      int a = Class326.Method1248();
+      boolean var8 = Class326.Method1248();
       if (a > a) {
-         double a = a;
+         double var9 = a;
          a = a;
-         a = a;
+         a = var9;
       }
 
       if (a.Method1191() < a) {
@@ -161,37 +161,37 @@ public class Class327 {
    }
 
    public Class322 Method1003(int a) {
-      Class322 a = new Class322();
+      Class322 var2 = new Class322();
       if (!this.Field1613.containsKey(a)) {
-         this.Field1613.put(a, a);
+         this.Field1613.put(a, var2);
       } else {
-         a = (Class322)this.Field1613.Method2665(a);
+         var2 = (Class322)this.Field1613.Method2665(a);
       }
 
-      return a;
+      return var2;
    }
 
    public Class322 Method1004(int a) {
-      Class322 a = null;
+      Class322 var2 = null;
       if (!this.Field1613.containsKey(a)) {
-         Class322 a = new Class322();
-         this.Field1613.put(a, a);
-         a = a;
+         Class322 var3 = new Class322();
+         this.Field1613.put(a, var3);
+         var2 = var3;
       } else {
-         a = (Class322)this.Field1613.Method2665(a);
+         var2 = (Class322)this.Field1613.Method2665(a);
       }
 
-      return a;
+      return var2;
    }
 
-   public static double Method1005(double a, double a, double a, double a, boolean a4) {
+   public static double Method1005(double a, double a, double a, double a, boolean a) {
       a *= (double)GlobalModule.Field3185 * 0.2;
       return MathHelper.clamp_double(a < a ? a + (a - a) * a : a, a, a);
    }
 
    public static double Method1006(double a, double a, double a) {
-      int a = Class326.Method1248();
-      boolean a = a > a;
+      boolean var6 = Class326.Method1248();
+      boolean var7 = a > a;
       if (a < 0.0) {
          a = 0.0;
          a.trash(new String[3]);
@@ -201,14 +201,14 @@ public class Class327 {
          a = 1.0;
       }
 
-      double a = Math.max(a, a) - Math.min(a, a);
-      double a = a * a;
-      if (a < 0.1) {
-         a = 0.1;
+      double var8 = Math.max(a, a) - Math.min(a, a);
+      double var10 = var8 * a;
+      if (var10 < 0.1) {
+         var10 = 0.1;
       }
 
-      a += a;
-      a -= a;
+      a += var10;
+      a -= var10;
       return a;
    }
 }

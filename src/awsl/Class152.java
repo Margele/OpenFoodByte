@@ -21,12 +21,12 @@ public class Class152 extends Class148 {
    }
 
    public Class148 Method399(String a, String a) {
-      Class148 a = this.Field1006.Method399(a, this.Field1018.Method3372(a));
+      Class148 var3 = this.Field1006.Method399(a, this.Field1018.Method3372(a));
       return null;
    }
 
    public Class148 Method400(String a) {
-      Class148 a = this.Field1006.Method400(a);
+      Class148 var2 = this.Field1006.Method400(a);
       return null;
    }
 }

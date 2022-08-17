@@ -32,37 +32,37 @@ public class Class301 {
       if (this.Field1582.isEmpty()) {
          return a;
       } else {
-         Object a = a;
+         Object var2 = a;
          Iterator var3 = this.Field1582.Method1383();
 
          while(var3.Method932()) {
-            String a = (String)var3.Method933();
-            if (a instanceof Class298) {
-               a = ((Class298)a).Method2974(Method919(a));
+            String var4 = (String)var3.Method933();
+            if (var2 instanceof Class298) {
+               var2 = ((Class298)var2).Method2974(Method919(var4));
             } else {
-               if (!(a instanceof Class288)) {
-                  throw new Class669(String.format("value [%s] is not an array or object therefore its key %s cannot be resolved", a, a));
+               if (!(var2 instanceof Class288)) {
+                  throw new Class669(String.format("value [%s] is not an array or object therefore its key %s cannot be resolved", var2, var4));
                }
 
-               a = Method921(a, a);
+               var2 = Method921(var2, var4);
             }
          }
 
-         return a;
+         return var2;
       }
    }
 
    private static Object Method921(Object a, String a) throws Class669 {
       try {
-         int a = Integer.parseInt(a);
-         Class288 a = (Class288)a;
-         if (a >= a.Method10()) {
-            throw new Class669(String.format("index %s is out of bounds - the array has %d elements", a, a.Method10()));
+         int var2 = Integer.parseInt(a);
+         Class288 var3 = (Class288)a;
+         if (var2 >= var3.Method10()) {
+            throw new Class669(String.format("index %s is out of bounds - the array has %d elements", a, var3.Method10()));
          } else {
             try {
-               return a.Method3115(a);
+               return var3.Method3115(var2);
             } catch (Class666 var5) {
-               throw new Class669("Error reading value at index position " + a, var5);
+               throw new Class669("Error reading value at index position " + var2, var5);
             }
          }
       } catch (NumberFormatException var6) {
@@ -71,15 +71,15 @@ public class Class301 {
    }
 
    public String Method922() {
-      StringBuilder a = new StringBuilder("");
+      StringBuilder var1 = new StringBuilder("");
       Iterator var2 = this.Field1582.Method1383();
 
       while(var2.Method932()) {
-         String a = (String)var2.Method933();
-         a.append('/').append(Method923(a));
+         String var3 = (String)var2.Method933();
+         var1.append('/').append(Method923(var3));
       }
 
-      return a.toString();
+      return var1.toString();
    }
 
    private static String Method923(String a) {
@@ -88,15 +88,15 @@ public class Class301 {
 
    public String Method924() {
       try {
-         StringBuilder a = new StringBuilder("#");
+         StringBuilder var1 = new StringBuilder("#");
          Iterator var2 = this.Field1582.Method1383();
 
          while(var2.Method932()) {
-            String a = (String)var2.Method933();
-            a.append('/').append(URLEncoder.encode(a, "utf-8"));
+            String var3 = (String)var2.Method933();
+            var1.append('/').append(URLEncoder.encode(var3, "utf-8"));
          }
 
-         return a.toString();
+         return var1.toString();
       } catch (UnsupportedEncodingException var4) {
          throw new RuntimeException(var4);
       }

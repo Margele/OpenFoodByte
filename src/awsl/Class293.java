@@ -79,8 +79,8 @@ public class Class293 {
       if (this.Field1565 <= 0) {
          throw new Class666("Nesting error.");
       } else {
-         char a = this.Field1564[this.Field1565 - 1] == null ? 97 : 107;
-         if (a != a) {
+         int var2 = this.Field1564[this.Field1565 - 1] == null ? 97 : 107;
+         if (var2 != a) {
             throw new Class666("Nesting error.");
          } else {
             --this.Field1565;
@@ -103,25 +103,25 @@ public class Class293 {
       if (a.Method3429((Object)null)) {
          return "null";
       } else {
-         String a;
+         String var5;
          if (a instanceof Class289) {
             try {
-               a = ((Class289)a).Method3114();
+               var5 = ((Class289)a).Method3114();
             } catch (Exception var3) {
                throw new Class666(var3);
             }
 
-            return a;
+            return var5;
          } else if (a instanceof Number) {
-            a = Class298.Method2973((Number)a);
-            return Class298.Field1578.matcher(a).matches() ? a : Class298.Method3016(a);
+            var5 = Class298.Method2973((Number)a);
+            return Class298.Field1578.matcher(var5).matches() ? var5 : Class298.Method3016(var5);
          } else if (!(a instanceof Boolean) && !(a instanceof Class298) && !(a instanceof Class288)) {
             if (a instanceof Map) {
-               Map a = (Map)a;
-               return (new Class298(a)).Method3025();
+               Map var4 = (Map)a;
+               return (new Class298(var4)).Method3025();
             } else if (a instanceof Collection) {
-               Collection a = (Collection)a;
-               return (new Class288(a)).toString();
+               Collection var1 = (Collection)a;
+               return (new Class288(var1)).toString();
             } else if (a.getClass().isArray()) {
                return (new Class288(a)).toString();
             } else {

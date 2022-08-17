@@ -38,18 +38,18 @@ public class Class601 extends Class599 {
    }
 
    public float Method3787(Class601 a) {
-      float a = this.Field2813 - a.Field2813;
-      float a = this.Field2814 - a.Field2814;
-      float a = this.Field2815 - a.Field2815;
-      float a = this.Field2816 - a.Field2816;
-      return a * a + a * a + a * a + a * a;
+      float var2 = this.Field2813 - a.Field2813;
+      float var3 = this.Field2814 - a.Field2814;
+      float var4 = this.Field2815 - a.Field2815;
+      float var5 = this.Field2816 - a.Field2816;
+      return var2 * var2 + var3 * var3 + var4 * var4 + var5 * var5;
    }
 
    public float Method3788(Class601 a) {
-      float a = this.Field2813 - a.Field2813;
-      float a = this.Field2814 - a.Field2814;
-      float a = this.Field2815 - a.Field2815;
-      float a = this.Field2816 - a.Field2816;
-      return (float)Math.sqrt((double)(a * a + a * a + a * a + a * a));
+      float var2 = this.Field2813 - a.Field2813;
+      float var3 = this.Field2814 - a.Field2814;
+      float var4 = this.Field2815 - a.Field2815;
+      float var5 = this.Field2816 - a.Field2816;
+      return (float)Math.sqrt((double)(var2 * var2 + var3 * var3 + var4 * var4 + var5 * var5));
    }
 }

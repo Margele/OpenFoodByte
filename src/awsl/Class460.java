@@ -19,32 +19,32 @@ public class Class460 implements Class422, Class45 {
    public native void Method1362(Class15 class15, String string);
 
    private static Class116 Method2143() {
-      Class116 a = new Class116();
-      a.Method194(new Class110(187, b.Method3228(EventMove.class)));
-      a.Method194(new Class83(89));
-      a.Method194(new Class112(24, 1));
-      a.Method194(new Class112(24, 3));
-      a.Method194(new Class112(24, 5));
-      a.Method194(new Class98(183, b.Method3228(EventMove.class), Method1357(-20289, -17928), Method1357(-20293, -15683), false));
-      a.Method194(new Class112(58, 11));
-      a.Method194(new Class112(25, 11));
-      a.Method194(new Class98(184, b.Method3228(EventManager.class), Method1357(-20306, -9616), Method1357(-20291, 29686), false));
-      a.Method194(new Class83(87));
-      a.Method194(new Class112(25, 11));
-      a.Method194(new Class98(182, b.Method3228(EventMove.class), Method1357(-20294, -7320), Method1357(-20318, -25068), false));
-      a.Method194(new Class112(57, 1));
-      a.Method194(new Class112(25, 11));
-      a.Method194(new Class98(182, b.Method3228(EventMove.class), Method1357(-20315, -31985), Method1357(-20296, -31442), false));
-      a.Method194(new Class112(57, 3));
-      a.Method194(new Class112(25, 11));
-      a.Method194(new Class98(182, b.Method3228(EventMove.class), Method1357(-20302, 733), Method1357(-20296, -31442), false));
-      a.Method194(new Class112(57, 5));
-      a.Method194(new Class112(25, 0));
-      a.Method194(new Class112(24, 1));
-      a.Method194(new Class112(24, 3));
-      a.Method194(new Class112(24, 5));
-      a.Method194(new Class98(183, b.Method3228(AbstractClientPlayer.class), Method1357(-20319, -27161), Method1357(-20308, -12613), false));
-      return a;
+      Class116 var0 = new Class116();
+      var0.Method194(new Class110(187, b.Method3228(EventMove.class)));
+      var0.Method194(new Class83(89));
+      var0.Method194(new Class112(24, 1));
+      var0.Method194(new Class112(24, 3));
+      var0.Method194(new Class112(24, 5));
+      var0.Method194(new Class98(183, b.Method3228(EventMove.class), Method1357(-20289, -17928), Method1357(-20293, -15683), false));
+      var0.Method194(new Class112(58, 11));
+      var0.Method194(new Class112(25, 11));
+      var0.Method194(new Class98(184, b.Method3228(EventManager.class), Method1357(-20306, -9616), Method1357(-20291, 29686), false));
+      var0.Method194(new Class83(87));
+      var0.Method194(new Class112(25, 11));
+      var0.Method194(new Class98(182, b.Method3228(EventMove.class), Method1357(-20294, -7320), Method1357(-20318, -25068), false));
+      var0.Method194(new Class112(57, 1));
+      var0.Method194(new Class112(25, 11));
+      var0.Method194(new Class98(182, b.Method3228(EventMove.class), Method1357(-20315, -31985), Method1357(-20296, -31442), false));
+      var0.Method194(new Class112(57, 3));
+      var0.Method194(new Class112(25, 11));
+      var0.Method194(new Class98(182, b.Method3228(EventMove.class), Method1357(-20302, 733), Method1357(-20296, -31442), false));
+      var0.Method194(new Class112(57, 5));
+      var0.Method194(new Class112(25, 0));
+      var0.Method194(new Class112(24, 1));
+      var0.Method194(new Class112(24, 3));
+      var0.Method194(new Class112(24, 5));
+      var0.Method194(new Class98(183, b.Method3228(AbstractClientPlayer.class), Method1357(-20319, -27161), Method1357(-20308, -12613), false));
+      return var0;
    }
 
    private static String Method1357(int integer1, int integer2) {
@@ -841,14 +841,14 @@ public class Class460 implements Class422, Class45 {
    }
 
    public static void Method2144(Type a) {
-      EventMotion a;
+      EventMotion var1;
       if (a == Type.PRE) {
-         a = new EventMotion(Wrapper.INSTANCE.getThePlayer().posX, Wrapper.INSTANCE.getThePlayer().posY, Wrapper.INSTANCE.getThePlayer().posZ, Wrapper.INSTANCE.getThePlayer().rotationYaw, Wrapper.INSTANCE.getThePlayer().rotationPitch, Wrapper.INSTANCE.getThePlayer().onGround);
-         EventManager.call(a);
-         a.Method2240();
+         var1 = new EventMotion(Wrapper.INSTANCE.getThePlayer().posX, Wrapper.INSTANCE.getThePlayer().posY, Wrapper.INSTANCE.getThePlayer().posZ, Wrapper.INSTANCE.getThePlayer().rotationYaw, Wrapper.INSTANCE.getThePlayer().rotationPitch, Wrapper.INSTANCE.getThePlayer().onGround);
+         EventManager.call(var1);
+         var1.Method2240();
       } else if (a == Type.POST) {
-         a = new EventMotion(a);
-         EventManager.call(a);
+         var1 = new EventMotion(a);
+         EventManager.call(var1);
       }
 
    }
@@ -861,7 +861,7 @@ public class Class460 implements Class422, Class45 {
       return new String[]{Class673.EntityPlayerSP.Method2340()};
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    public void Method1359(Class15 a, String a) {
@@ -873,9 +873,9 @@ public class Class460 implements Class422, Class45 {
    }
 
    public static void Method2147(boolean a) {
-      EventMotion a = new EventMotion(Wrapper.INSTANCE.getThePlayer().posX, Wrapper.INSTANCE.getThePlayer().posY, Wrapper.INSTANCE.getThePlayer().posZ, Wrapper.INSTANCE.getThePlayer().rotationYaw, Wrapper.INSTANCE.getThePlayer().rotationPitch, Wrapper.INSTANCE.getThePlayer().onGround);
-      EventManager.call(a);
-      a.Method2240();
+      EventMotion var1 = new EventMotion(Wrapper.INSTANCE.getThePlayer().posX, Wrapper.INSTANCE.getThePlayer().posY, Wrapper.INSTANCE.getThePlayer().posZ, Wrapper.INSTANCE.getThePlayer().rotationYaw, Wrapper.INSTANCE.getThePlayer().rotationPitch, Wrapper.INSTANCE.getThePlayer().onGround);
+      EventManager.call(var1);
+      var1.Method2240();
    }
 
    static {
@@ -888,25 +888,25 @@ public class Class460 implements Class422, Class45 {
    }
 
    private static Class116 Method2149() {
-      Class116 a = new Class116();
-      a.Method194(new Class110(187, b.Method3228(Class644.class)));
-      a.Method194(new Class83(89));
-      a.Method194(new Class112(25, 1));
-      a.Method194(new Class98(183, b.Method3228(Class644.class), Method1357(-20312, 4156), Method1357(-20297, 7576), false));
-      a.Method194(new Class112(58, 9));
-      a.Method194(new Class112(25, 9));
-      a.Method194(new Class98(184, b.Method3228(EventManager.class), Method1357(-20316, 5671), Method1357(-20304, 26750), false));
-      a.Method194(new Class83(87));
-      a.Method194(new Class112(25, 9));
-      a.Method194(new Class98(182, b.Method3228(Class644.class), Method1357(-20317, -31589), Method1357(-20311, 32664), false));
-      Class104 a = new Class104();
-      a.Method194(new Class102(153, a));
-      a.Method194(new Class83(177));
-      a.Method194(a);
-      a.Method194(new Class112(25, 9));
-      a.Method194(new Class98(182, b.Method3228(Class644.class), Method1357(-20295, -9798), Method1357(-20303, -22672), false));
-      a.Method194(new Class112(58, 1));
-      return a;
+      Class116 var0 = new Class116();
+      var0.Method194(new Class110(187, b.Method3228(Class644.class)));
+      var0.Method194(new Class83(89));
+      var0.Method194(new Class112(25, 1));
+      var0.Method194(new Class98(183, b.Method3228(Class644.class), Method1357(-20312, 4156), Method1357(-20297, 7576), false));
+      var0.Method194(new Class112(58, 9));
+      var0.Method194(new Class112(25, 9));
+      var0.Method194(new Class98(184, b.Method3228(EventManager.class), Method1357(-20316, 5671), Method1357(-20304, 26750), false));
+      var0.Method194(new Class83(87));
+      var0.Method194(new Class112(25, 9));
+      var0.Method194(new Class98(182, b.Method3228(Class644.class), Method1357(-20317, -31589), Method1357(-20311, 32664), false));
+      Class104 var1 = new Class104();
+      var0.Method194(new Class102(153, var1));
+      var0.Method194(new Class83(177));
+      var0.Method194(var1);
+      var0.Method194(new Class112(25, 9));
+      var0.Method194(new Class98(182, b.Method3228(Class644.class), Method1357(-20295, -9798), Method1357(-20303, -22672), false));
+      var0.Method194(new Class112(58, 1));
+      return var0;
    }
 
    // $FF: synthetic method

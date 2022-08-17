@@ -45,40 +45,40 @@ public class Class195 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1270();
-      int a = a.getWidth();
-      int a = a.getHeight();
-      int a = a.getType();
-      WritableRaster a = a.getRaster();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
+      int var6 = a.getType();
+      WritableRaster var7 = a.getRaster();
       a = this.Method1263(a, (ColorModel)null);
-      WritableRaster a = a.getRaster();
-      float[] a = null;
-      float[] a = null;
-      int a = this.Field1165;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      float[] a = Color.RGBtoHSB(a, a, a, (float[])a);
-      int[] a = null;
-      int a = 0;
-      if (a < a) {
-         int[] a = this.Method104(a, 0, a, a, 1, (int[])a);
-         int a = 0;
-         if (a < a) {
-            int a = a[a];
-            int a = a >> 16 & 255;
-            int a = a >> 8 & 255;
-            int a = a & 255;
-            float[] a = Color.RGBtoHSB(a, a, a, (float[])a);
-            if (Math.abs(a[0] - a[0]) < this.Field1162 && Math.abs(a[1] - a[1]) < this.Field1163 && Math.abs(a[2] - a[2]) < this.Field1164) {
-               a[a] = a & 16777215;
+      WritableRaster var8 = a.getRaster();
+      Object var9 = null;
+      Object var10 = null;
+      int var11 = this.Field1165;
+      int var12 = var11 >> 16 & 255;
+      int var13 = var11 >> 8 & 255;
+      int var14 = var11 & 255;
+      float[] var23 = Color.RGBtoHSB(var12, var14, var13, (float[])var10);
+      Object var15 = null;
+      int var16 = 0;
+      if (var16 < var5) {
+         int[] var24 = this.Method104(a, 0, var16, var4, 1, (int[])var15);
+         int var17 = 0;
+         if (var17 < var4) {
+            int var18 = var24[var17];
+            int var19 = var18 >> 16 & 255;
+            int var20 = var18 >> 8 & 255;
+            int var21 = var18 & 255;
+            float[] var22 = Color.RGBtoHSB(var19, var21, var20, (float[])var9);
+            if (Math.abs(var22[0] - var23[0]) < this.Field1162 && Math.abs(var22[1] - var23[1]) < this.Field1163 && Math.abs(var22[2] - var23[2]) < this.Field1164) {
+               var24[var17] = var18 & 16777215;
             }
 
-            a[a] = a;
-            ++a;
+            var24[var17] = var18;
+            ++var17;
          }
 
-         this.Method1267(a, 0, a, a, 1, a);
-         ++a;
+         this.Method1267(a, 0, var16, var4, 1, var24);
+         ++var16;
       }
 
       return a;

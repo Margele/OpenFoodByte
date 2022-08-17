@@ -11,7 +11,7 @@ public class Class230 extends Class167 {
    }
 
    public void Method1447(int a, int a, String a, String a, String a, String[] a) {
-      String[] a = Class690.Method2342();
+      String[] var7 = Class690.Method2342();
       if ((a & 131072) != 0) {
          this.Field1286.Method2496("Deprecated");
       }
@@ -24,10 +24,10 @@ public class Class230 extends Class167 {
       this.Field1286.Method2496("Signature");
       this.Field1286.Method2496(a);
       this.Field1286.Method2498(a);
-      int a = 0;
-      if (a < a.length) {
-         this.Field1286.Method2498(a[a]);
-         ++a;
+      int var8 = 0;
+      if (var8 < a.length) {
+         this.Field1286.Method2498(a[var8]);
+         ++var8;
       }
 
       this.Field1035.Method1447(a, a, a, a, a, a);
@@ -53,7 +53,7 @@ public class Class230 extends Class167 {
       return new Class154(this.Field1035.Method1448(a, a), this.Field1286);
    }
 
-   public Class148 Method1449(int a, Class31 a1, String a, boolean a) {
+   public Class148 Method1449(int a, Class31 a, String a, boolean a) {
       Class690.Method2342();
       this.Field1286.Method2496(a);
       this.Field1286.Method2496("RuntimeVisibleTypeAnnotations");
@@ -97,7 +97,7 @@ public class Class230 extends Class167 {
    }
 
    public Class267 Method1451(int a, String a, String a, String a, String[] a) {
-      String[] a = Class690.Method2342();
+      String[] var6 = Class690.Method2342();
       if ((a & 4096) != 0) {
          this.Field1286.Method2496("Synthetic");
       }
@@ -111,10 +111,10 @@ public class Class230 extends Class167 {
       this.Field1286.Method2496("Signature");
       this.Field1286.Method2496(a);
       this.Field1286.Method2496("Exceptions");
-      int a = 0;
-      if (a < a.length) {
-         this.Field1286.Method2498(a[a]);
-         ++a;
+      int var7 = 0;
+      if (var7 < a.length) {
+         this.Field1286.Method2498(a[var7]);
+         ++var7;
          a.trash(new String[4]);
       }
 

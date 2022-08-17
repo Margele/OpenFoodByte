@@ -9,39 +9,39 @@ class Class141 extends Class143 {
 
    public void Method380(int[] a, int[] a, float a) {
       Class236.Method2106();
-      int a = a.length;
-      int a = 0;
-      if (a < a) {
-         int a = a[a];
-         int a = a[a];
-         int a = a[a + 1];
-         int a = a[a + 1];
-         int a = a[a + 2];
-         int a = a[a + 2];
-         int a = a[a + 3];
-         int a = a[a + 3];
-         int a = a + a;
-         if (a > 255) {
-            a = 255;
+      int var5 = a.length;
+      int var6 = 0;
+      if (var6 < var5) {
+         int var7 = a[var6];
+         int var8 = a[var6];
+         int var9 = a[var6 + 1];
+         int var10 = a[var6 + 1];
+         int var11 = a[var6 + 2];
+         int var12 = a[var6 + 2];
+         int var13 = a[var6 + 3];
+         int var14 = a[var6 + 3];
+         int var15 = var8 + var7;
+         if (var15 > 255) {
+            var15 = 255;
          }
 
-         int a = a + a;
-         if (a > 255) {
-            a = 255;
+         int var16 = var10 + var9;
+         if (var16 > 255) {
+            var16 = 255;
          }
 
-         int a = a + a;
-         if (a > 255) {
-            a = 255;
+         int var17 = var12 + var11;
+         if (var17 > 255) {
+            var17 = 255;
          }
 
-         float a = a * (float)a / 255.0F;
-         float a = 1.0F - a;
-         a[a] = (int)(a * (float)a + a * (float)a);
-         a[a + 1] = (int)(a * (float)a + a * (float)a);
-         a[a + 2] = (int)(a * (float)a + a * (float)a);
-         a[a + 3] = (int)((float)a * a + (float)a * a);
-         a += 4;
+         float var18 = a * (float)var13 / 255.0F;
+         float var19 = 1.0F - var18;
+         a[var6] = (int)(var18 * (float)var15 + var19 * (float)var8);
+         a[var6 + 1] = (int)(var18 * (float)var16 + var19 * (float)var10);
+         a[var6 + 2] = (int)(var18 * (float)var17 + var19 * (float)var12);
+         a[var6 + 3] = (int)((float)var13 * a + (float)var14 * var19);
+         var6 += 4;
       }
 
    }

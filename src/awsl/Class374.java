@@ -43,7 +43,7 @@ public class Class374 extends Class390 {
       this.Field1920 = "ColorPicker";
    }
 
-   public void Method419(int a, int a1) {
+   public void Method419(int a, int a) {
       this.Field1916 = !this.Field1764.Method2756();
    }
 
@@ -64,24 +64,24 @@ public class Class374 extends Class390 {
 
    }
 
-   public void Method412(int a, int a1) {
-      float a = this.Method432()[0];
-      float a = this.Method432()[1];
+   public void Method412(int a, int a) {
+      float var3 = this.Method432()[0];
+      float var4 = this.Method432()[1];
       Class565.Field2636.Method1217(this.Field1764.Method2754(), (float)(this.Field1907 + 5), (float)(this.Field1908 + 2), -1);
-      int a = (new Color(this.Method431())).darker().darker().getRGB();
+      int var5 = (new Color(this.Method431())).darker().darker().getRGB();
       if (this == GlobalModule.INSTANCE.Field3190.Method1825() && this.Field1770) {
-         a = -1;
+         var5 = -1;
       }
 
-      RenderUtils.Method1104(a - 18.5F, a - 0.5F, a - 3.0F, a + 6.5F, a);
-      this.Method445(a - 18.0F, a, a - 3.25F, a + 6.0F);
-      RenderUtils.Method1104(a - 18.0F, a, a - 3.25F, a + 6.0F, this.Method431());
+      RenderUtils.Method1104(var3 - 18.5F, var4 - 0.5F, var3 - 3.0F, var4 + 6.5F, var5);
+      this.Method445(var3 - 18.0F, var4, var3 - 3.25F, var4 + 6.0F);
+      RenderUtils.Method1104(var3 - 18.0F, var4, var3 - 3.25F, var4 + 6.0F, this.Method431());
    }
 
    public void Method413(int a, int a, boolean a) {
-      float a = this.Method432()[0];
-      float a = this.Method432()[1];
-      this.Field1915 = MathUtils.isHovering((float)a, (float)a, a - 18.5F, a - 0.5F, a - 3.0F, a + 6.5F) && this.Field1919.Method1392(a, a);
+      float var4 = this.Method432()[0];
+      float var5 = this.Method432()[1];
+      this.Field1915 = MathUtils.isHovering((float)a, (float)a, var4 - 18.5F, var5 - 0.5F, var4 - 3.0F, var5 + 6.5F) && this.Field1919.Method1392(a, a);
       if (!this.Field1918 && this.Field1915 && Mouse.isButtonDown(0) && Keyboard.isKeyDown(42)) {
          this.Field1764.Method2438(!this.Field1764.Method2437());
          this.Method415(this.Field1764.Method2442());
@@ -91,8 +91,8 @@ public class Class374 extends Class390 {
       if (!this.Field1918 && this.Field1915 && Mouse.isButtonDown(1)) {
          this.Field1770 = !this.Field1770;
          GlobalModule.INSTANCE.Field3190.Method1824(this);
-         this.Field1774 = a + 2.0F - (float)this.Field1907;
-         this.Field1775 = a - (float)this.Field1908;
+         this.Field1774 = var4 + 2.0F - (float)this.Field1907;
+         this.Field1775 = var5 - (float)this.Field1908;
       }
 
       this.Field1918 = a;
@@ -103,146 +103,146 @@ public class Class374 extends Class390 {
    }
 
    public void Method421(int a, int a) {
-      float[] a = this.Method433();
+      float[] var4 = this.Method433();
       Method448();
-      float a = a[0];
-      float a = a[1];
-      int a = Class681.Method1612(1);
-      float a = this.Method434();
-      float a = this.Method435();
-      RenderUtils.Method1110(a, a, a + a, a + a, 3.0F, a);
-      RenderUtils.Method1110(a + 0.5F, a + 0.5F, a + a - 0.5F, a + a - 0.5F, 3.0F, Class681.Method1612(3750203));
-      RenderUtils.Method1110(a + 1.0F, a + 1.0F, a + a - 1.0F, a + a - 1.0F, 3.0F, Class681.Method1612(2302755));
-      float a = a - 17.0F;
-      float a = a + 3.0F;
-      float a = a + 3.0F;
-      float a = a + a;
-      float a = a + a;
-      int a = (new Color(255, 255, 255, 180)).getRGB();
-      if (!((float)a <= a) && !((float)a <= a) && !((float)a >= a) && (float)a >= a) {
+      float var5 = var4[0];
+      float var6 = var4[1];
+      int var11 = Class681.Method1612(1);
+      float var14 = this.Method434();
+      float var15 = this.Method435();
+      RenderUtils.Method1110(var5, var6, var5 + var14, var6 + var15, 3.0F, var11);
+      RenderUtils.Method1110(var5 + 0.5F, var6 + 0.5F, var5 + var14 - 0.5F, var6 + var15 - 0.5F, 3.0F, Class681.Method1612(3750203));
+      RenderUtils.Method1110(var5 + 1.0F, var6 + 1.0F, var5 + var14 - 1.0F, var6 + var15 - 1.0F, 3.0F, Class681.Method1612(2302755));
+      float var16 = var14 - 17.0F;
+      float var17 = var5 + 3.0F;
+      float var18 = var6 + 3.0F;
+      float var19 = var17 + var16;
+      float var20 = var18 + var16;
+      int var21 = (new Color(255, 255, 255, 180)).getRGB();
+      if (!((float)a <= var17) && !((float)a <= var18) && !((float)a >= var19) && (float)a >= var20) {
       }
 
-      RenderUtils.Method1104(a - 0.5F, a - 0.5F, a + 0.5F, a + 0.5F, Class681.Method1612(0));
-      this.Method446(a, a, a, a);
-      float a = this.Field1767 * (a - a);
-      float a = (1.0F - this.Field1768) * (a - a);
-      float a;
-      float a;
-      float a;
-      float a;
+      RenderUtils.Method1104(var17 - 0.5F, var18 - 0.5F, var19 + 0.5F, var20 + 0.5F, Class681.Method1612(0));
+      this.Method446(var17, var18, var19, var20);
+      float var22 = this.Field1767 * (var19 - var17);
+      float var23 = (1.0F - this.Field1768) * (var20 - var18);
+      float var7;
+      float var8;
+      float var9;
+      float var10;
       if (this.Field1771) {
-         a = a - a;
-         a = (float)a - a;
-         if (a <= 0.0F) {
-            a = 0.0F;
+         var10 = var19 - var17;
+         var9 = (float)a - var17;
+         if (var9 <= 0.0F) {
+            var9 = 0.0F;
          }
 
-         if (a >= a) {
-            a = a;
+         if (var9 >= var10) {
+            var9 = var10;
          }
 
-         this.Field1767 = a / a;
-         a = a;
-         a = a - a;
-         a = (float)a - a;
-         if (a <= 0.0F) {
-            a = 0.0F;
+         this.Field1767 = var9 / var10;
+         var22 = var9;
+         var8 = var20 - var18;
+         var7 = (float)a - var18;
+         if (var7 <= 0.0F) {
+            var7 = 0.0F;
          }
 
-         if (a >= a) {
-            a = a;
+         if (var7 >= var8) {
+            var7 = var8;
          }
 
-         this.Field1768 = 1.0F - a / a;
-         a = a;
+         this.Field1768 = 1.0F - var7 / var8;
+         var23 = var7;
          this.Method442(Color.HSBtoRGB(this.Field1766, this.Field1767, this.Field1768), false);
       }
 
-      a = a + a - 0.5F;
-      a = a + a - 0.5F;
-      a = a + a + 0.5F;
-      a = a + a + 0.5F;
-      RenderUtils.Method1104(a - 0.5F, a - 0.5F, a, a + 0.5F, a);
-      RenderUtils.Method1104(a, a - 0.5F, a + 0.5F, a + 0.5F, a);
-      RenderUtils.Method1104(a, a - 0.5F, a, a, a);
-      RenderUtils.Method1104(a, a, a, a + 0.5F, a);
-      RenderUtils.Method1104(a, a, a, a, a);
-      a = a + 3.0F;
-      a = a + 8.0F;
-      if (!((float)a <= a) && !((float)a <= a) && !((float)a >= a) && (float)a >= a) {
+      var10 = var17 + var22 - 0.5F;
+      var9 = var18 + var23 - 0.5F;
+      var8 = var17 + var22 + 0.5F;
+      var7 = var18 + var23 + 0.5F;
+      RenderUtils.Method1104(var10 - 0.5F, var9 - 0.5F, var10, var7 + 0.5F, var11);
+      RenderUtils.Method1104(var8, var9 - 0.5F, var8 + 0.5F, var7 + 0.5F, var11);
+      RenderUtils.Method1104(var10, var9 - 0.5F, var8, var9, var11);
+      RenderUtils.Method1104(var10, var7, var8, var7 + 0.5F, var11);
+      RenderUtils.Method1104(var10, var9, var8, var7, var21);
+      var22 = var19 + 3.0F;
+      var10 = var22 + 8.0F;
+      if (!((float)a <= var22) && !((float)a <= var18) && !((float)a >= var10) && (float)a >= var20) {
       }
 
-      a = a - a;
-      a = (1.0F - this.Field1766) * a;
-      float a;
+      var8 = var20 - var18;
+      var7 = (1.0F - this.Field1766) * var8;
+      float var24;
       if (this.Field1772) {
-         a = (float)a - a;
-         if (a <= 0.0F) {
-            a = 0.0F;
+         var24 = (float)a - var18;
+         if (var24 <= 0.0F) {
+            var24 = 0.0F;
          }
 
-         if (a >= a) {
-            a = a;
+         if (var24 >= var8) {
+            var24 = var8;
          }
 
-         this.Field1766 = 1.0F - a / a;
-         a = a;
+         this.Field1766 = 1.0F - var24 / var8;
+         var7 = var24;
          this.Method442(Color.HSBtoRGB(this.Field1766, this.Field1767, this.Field1768), false);
       }
 
-      RenderUtils.Method1104(a - 0.5F, a - 0.5F, a + 0.5F, a + 0.5F, a);
-      a = a - a;
-      float a = a / 5.0F;
-      int a = 0;
-      float a;
-      if ((float)a < 5.0F) {
-         boolean a = (float)a == 4.0F;
-         this.Method426(a, a, a, a + a, this.Method444(Color.HSBtoRGB(1.0F - 0.2F * (float)a, 1.0F, 1.0F)), this.Method444(Color.HSBtoRGB(1.0F - 0.2F * (float)(a + 1), 1.0F, 1.0F)));
-         a = a + a;
-         ++a;
+      RenderUtils.Method1104(var22 - 0.5F, var18 - 0.5F, var10 + 0.5F, var20 + 0.5F, var11);
+      var24 = var20 - var18;
+      float var25 = var24 / 5.0F;
+      int var27 = 0;
+      float var26;
+      if ((float)var27 < 5.0F) {
+         boolean var28 = (float)var27 == 4.0F;
+         this.Method426(var22, var18, var10, var18 + var25, this.Method444(Color.HSBtoRGB(1.0F - 0.2F * (float)var27, 1.0F, 1.0F)), this.Method444(Color.HSBtoRGB(1.0F - 0.2F * (float)(var27 + 1), 1.0F, 1.0F)));
+         var26 = var18 + var25;
+         ++var27;
          a.trash(new String[3]);
       }
 
-      float a = a + a - 0.5F;
-      float a = a + a + 0.5F;
-      RenderUtils.Method1104(a - 0.5F, a - 0.5F, a, a + 0.5F, a);
-      RenderUtils.Method1104(a, a - 0.5F, a + 0.5F, a + 0.5F, a);
-      RenderUtils.Method1104(a, a - 0.5F, a, a, a);
-      RenderUtils.Method1104(a, a, a, a + 0.5F, a);
-      RenderUtils.Method1104(a, a, a, a, a);
-      a = a + 3.0F;
-      a = a + 8.0F;
-      if (!((float)a <= a) && !((float)a <= a) && !((float)a >= a) && (float)a >= a) {
+      float var34 = var18 + var7 - 0.5F;
+      float var29 = var18 + var7 + 0.5F;
+      RenderUtils.Method1104(var22 - 0.5F, var34 - 0.5F, var22, var29 + 0.5F, var11);
+      RenderUtils.Method1104(var10, var34 - 0.5F, var10 + 0.5F, var29 + 0.5F, var11);
+      RenderUtils.Method1104(var22, var34 - 0.5F, var10, var34, var11);
+      RenderUtils.Method1104(var22, var29, var10, var29 + 0.5F, var11);
+      RenderUtils.Method1104(var22, var34, var10, var29, var21);
+      var23 = var20 + 3.0F;
+      var9 = var23 + 8.0F;
+      if (!((float)a <= var17) && !((float)a <= var23) && !((float)a >= var19) && (float)a >= var9) {
       }
 
-      int a = Color.HSBtoRGB(this.Field1766, this.Field1767, this.Field1768);
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      a = a - a;
-      a = this.Field1769 * a;
+      int var30 = Color.HSBtoRGB(this.Field1766, this.Field1767, this.Field1768);
+      int var31 = var30 >> 16 & 255;
+      int var32 = var30 >> 8 & 255;
+      int var33 = var30 & 255;
+      var24 = var19 - var17;
+      var25 = this.Field1769 * var24;
       if (this.Field1773) {
-         a = (float)a - a;
-         if (a <= 0.0F) {
-            a = 0.0F;
+         var26 = (float)a - var17;
+         if (var26 <= 0.0F) {
+            var26 = 0.0F;
          }
 
-         if (a >= a) {
-            a = a;
+         if (var26 >= var8) {
+            var26 = var8;
          }
 
-         this.Field1769 = a / a;
-         a = a;
-         this.Method442((new Color(a, a, a, (int)(this.Field1769 * 255.0F))).getRGB(), true);
+         this.Field1769 = var26 / var24;
+         var25 = var26;
+         this.Method442((new Color(var31, var32, var33, (int)(this.Field1769 * 255.0F))).getRGB(), true);
       }
 
-      RenderUtils.Method1104(a - 0.5F, a - 0.5F, a + 0.5F, a + 0.5F, a);
-      this.Method445(a, a, a, a);
-      this.Method427((double)a, (double)a, (double)a, (double)a, true, (new Color(a, a, a, 0)).getRGB(), (new Color(a, a, a, 255)).getRGB());
-      a = a + a - 0.5F;
-      a = a + a + 0.5F;
-      RenderUtils.Method1104(a - 0.5F, a, a + 0.5F, a, a);
-      RenderUtils.Method1104(a, a, a, a, a);
+      RenderUtils.Method1104(var17 - 0.5F, var23 - 0.5F, var19 + 0.5F, var9 + 0.5F, var11);
+      this.Method445(var17, var23, var19, var9);
+      this.Method427((double)var17, (double)var23, (double)var19, (double)var9, true, (new Color(var31, var32, var33, 0)).getRGB(), (new Color(var31, var32, var33, 255)).getRGB());
+      var26 = var17 + var25 - 0.5F;
+      var29 = var17 + var25 + 0.5F;
+      RenderUtils.Method1104(var26 - 0.5F, var23, var29 + 0.5F, var9, var11);
+      RenderUtils.Method1104(var26, var23, var29, var9, var21);
    }
 
    public static void Method422(float a, float a, float a, float a, float a, int a, int a) {
@@ -254,33 +254,33 @@ public class Class374 extends Class390 {
    }
 
    public boolean Method423(int a, int a) {
-      float[] a = this.Method433();
-      float a = a[0];
-      float a = a[1];
-      float a = this.Method434();
-      float a = this.Method435();
-      return (float)a >= a && (float)a <= a + a && (float)a >= a && (float)a <= a + a;
+      float[] var3 = this.Method433();
+      float var4 = var3[0];
+      float var5 = var3[1];
+      float var6 = this.Method434();
+      float var7 = this.Method435();
+      return (float)a >= var4 && (float)a <= var4 + var6 && (float)a >= var5 && (float)a <= var5 + var7;
    }
 
    public void Method424(int a, int a) {
       if (Mouse.isButtonDown(0)) {
-         float[] a = this.Method433();
-         float a = a[0];
-         float a = a[1];
-         float a = this.Method434();
-         float a = this.Method435();
-         float a = a - 9.0F - 8.0F;
-         float a = a + 3.0F;
-         float a = a + 3.0F;
-         float a = a + a;
-         float a = a + a;
-         float a = a + 3.0F;
-         float a = a + 8.0F;
-         float a = a + 3.0F;
-         float a = a + 8.0F;
-         this.Field1771 = !this.Field1771 && (float)a > a && (float)a > a && (float)a < a && (float)a < a;
-         this.Field1773 = !this.Field1773 && (float)a > a && (float)a > a && (float)a < a && (float)a < a;
-         this.Field1772 = !this.Field1772 && (float)a > a && (float)a > a && (float)a < a && (float)a < a;
+         float[] var3 = this.Method433();
+         float var4 = var3[0];
+         float var5 = var3[1];
+         float var6 = this.Method434();
+         float var7 = this.Method435();
+         float var8 = var6 - 9.0F - 8.0F;
+         float var9 = var4 + 3.0F;
+         float var10 = var5 + 3.0F;
+         float var11 = var9 + var8;
+         float var12 = var10 + var8;
+         float var13 = var12 + 3.0F;
+         float var14 = var13 + 8.0F;
+         float var15 = var11 + 3.0F;
+         float var16 = var15 + 8.0F;
+         this.Field1771 = !this.Field1771 && (float)a > var9 && (float)a > var10 && (float)a < var11 && (float)a < var12;
+         this.Field1773 = !this.Field1773 && (float)a > var9 && (float)a > var13 && (float)a < var11 && (float)a < var14;
+         this.Field1772 = !this.Field1772 && (float)a > var15 && (float)a > var10 && (float)a < var16 && (float)a < var12;
          this.Field1765 = true;
       }
 
@@ -296,27 +296,27 @@ public class Class374 extends Class390 {
 
    public void Method426(float a, float a, float a, float a, int a, int a) {
       Method448();
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
-      float a = (float)(a >> 24 & 255) / 255.0F;
-      float a = (float)(a >> 16 & 255) / 255.0F;
-      float a = (float)(a >> 8 & 255) / 255.0F;
-      float a = (float)(a & 255) / 255.0F;
+      float var8 = (float)(a >> 24 & 255) / 255.0F;
+      float var9 = (float)(a >> 16 & 255) / 255.0F;
+      float var10 = (float)(a >> 8 & 255) / 255.0F;
+      float var11 = (float)(a & 255) / 255.0F;
+      float var12 = (float)(a >> 24 & 255) / 255.0F;
+      float var13 = (float)(a >> 16 & 255) / 255.0F;
+      float var14 = (float)(a >> 8 & 255) / 255.0F;
+      float var15 = (float)(a & 255) / 255.0F;
       GlStateManager.disableTexture2D();
       GlStateManager.enableBlend();
       GlStateManager.disableAlpha();
       GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
       GlStateManager.shadeModel(7425);
-      Tessellator a = Tessellator.getInstance();
-      WorldRenderer a = a.getWorldRenderer();
-      a.begin(7, DefaultVertexFormats.POSITION_COLOR);
-      a.pos((double)a, (double)a, 0.0).color(a, a, a, a).endVertex();
-      a.pos((double)a, (double)a, 0.0).color(a, a, a, a).endVertex();
-      a.pos((double)a, (double)a, 0.0).color(a, a, a, a).endVertex();
-      a.pos((double)a, (double)a, 0.0).color(a, a, a, a).endVertex();
-      a.draw();
+      Tessellator var16 = Tessellator.getInstance();
+      WorldRenderer var17 = var16.getWorldRenderer();
+      var17.begin(7, DefaultVertexFormats.POSITION_COLOR);
+      var17.pos((double)a, (double)a, 0.0).color(var9, var10, var11, var8).endVertex();
+      var17.pos((double)a, (double)a, 0.0).color(var9, var10, var11, var8).endVertex();
+      var17.pos((double)a, (double)a, 0.0).color(var13, var14, var15, var12).endVertex();
+      var17.pos((double)a, (double)a, 0.0).color(var13, var14, var15, var12).endVertex();
+      var16.draw();
       GlStateManager.shadeModel(7424);
       GlStateManager.disableBlend();
       GlStateManager.enableAlpha();
@@ -327,7 +327,7 @@ public class Class374 extends Class390 {
 
    }
 
-   public void Method427(double a, double a, double a, double a, boolean a4, int a, int a) {
+   public void Method427(double a, double a, double a, double a, boolean a, int a, int a) {
       GL11.glDisable(3553);
       Method448();
       GL11.glEnable(3042);
@@ -353,10 +353,10 @@ public class Class374 extends Class390 {
    }
 
    private void Method428() {
-      float[] a = this.Field1764.Method2443();
-      this.Field1766 = a[0];
-      this.Field1767 = a[1];
-      this.Field1768 = a[2];
+      float[] var1 = this.Field1764.Method2443();
+      this.Field1766 = var1[0];
+      this.Field1767 = var1[1];
+      this.Field1768 = var1[2];
    }
 
    private void Method429(float a, float a, float a) {
@@ -410,21 +410,21 @@ public class Class374 extends Class390 {
    }
 
    public void Method415(int a) {
-      float[] a = this.Method441(a);
-      this.Field1766 = a[0];
-      this.Field1767 = a[1];
-      this.Field1768 = a[2];
+      float[] var2 = this.Method441(a);
+      this.Field1766 = var2[0];
+      this.Field1767 = var2[1];
+      this.Field1768 = var2[2];
       this.Field1769 = (float)(a >> 24 & 255) / 255.0F;
    }
 
    private float[] Method441(int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      return Color.RGBtoHSB(a, a, a, (float[])null);
+      int var2 = a >> 16 & 255;
+      int var3 = a >> 8 & 255;
+      int var4 = a & 255;
+      return Color.RGBtoHSB(var2, var3, var4, (float[])null);
    }
 
-   public void Method442(int a, boolean a1) {
+   public void Method442(int a, boolean a) {
       this.Method443(a);
    }
 
@@ -433,26 +433,26 @@ public class Class374 extends Class390 {
    }
 
    public int Method444(int a) {
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      int a = 255;
-      return (a & 255) << 16 | (a & 255) << 8 | a & 255 | (a & 255) << 24;
+      int var2 = a >> 16 & 255;
+      int var3 = a >> 8 & 255;
+      int var4 = a & 255;
+      short var5 = 255;
+      return (var2 & 255) << 16 | (var3 & 255) << 8 | var4 & 255 | (var5 & 255) << 24;
    }
 
    private void Method445(float a, float a, float a, float a) {
       RenderUtils.Method1104(a, a, a, a, this.Method444(16777215));
       Method448();
-      boolean a = false;
+      boolean var6 = false;
       if (a < a) {
-         a = true;
-         float a = a + (float)(true ? 1 : 0);
-         if (a < a) {
-            if (a <= a - 1.0F) {
-               RenderUtils.Method1104(a, a, a + 1.0F, a + 1.0F, this.Method444(8421504));
+         var6 = true;
+         float var7 = a + (float)(true ? 1 : 0);
+         if (var7 < a) {
+            if (var7 <= a - 1.0F) {
+               RenderUtils.Method1104(var7, a, var7 + 1.0F, a + 1.0F, this.Method444(8421504));
             }
 
-            a += 2.0F;
+            var7 += 2.0F;
          }
 
          ++a;
@@ -461,8 +461,8 @@ public class Class374 extends Class390 {
    }
 
    private void Method446(float a, float a, float a, float a) {
-      int a = this.Method444(Color.HSBtoRGB(this.Field1766, 1.0F, 1.0F));
-      this.Method427((double)a, (double)a, (double)a, (double)a, true, this.Method444(16777215), a);
+      int var5 = this.Method444(Color.HSBtoRGB(this.Field1766, 1.0F, 1.0F));
+      this.Method427((double)a, (double)a, (double)a, (double)a, true, this.Method444(16777215), var5);
       this.Method426(a, a, a, a, 0, this.Method444(0));
    }
 

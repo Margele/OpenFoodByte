@@ -69,29 +69,29 @@ public class Class35 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       a = this.Method1263(a, (ColorModel)null);
-      Graphics2D a = a.createGraphics();
-      a.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+      Graphics2D var3 = a.createGraphics();
+      var3.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
       if (this.Field294 != null) {
-         a.setFont(this.Field294);
+         var3.setFont(this.Field294);
       }
 
       if (this.Field297 != null) {
-         a.setTransform(this.Field297);
+         var3.setTransform(this.Field297);
       }
 
       if (this.Field296 != null) {
-         a.setComposite(this.Field296);
+         var3.setComposite(this.Field296);
       }
 
       if (this.Field295 != null) {
-         a.setPaint(this.Field295);
+         var3.setPaint(this.Field295);
       }
 
       if (this.Field293 != null) {
-         a.drawString(this.Field293, 10, 100);
+         var3.drawString(this.Field293, 10, 100);
       }
 
-      a.dispose();
+      var3.dispose();
       return a;
    }
 }

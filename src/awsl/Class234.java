@@ -24,32 +24,32 @@ public class Class234 extends ByteBuf {
    }
 
    public Class606 Method2092() {
-      Class606 a = new Class606();
-      String a = this.Method497();
+      Class606 var2 = new Class606();
+      String var3 = this.Method497();
       Method1270();
-      String a = this.Method497();
-      int a = this.readInt();
-      String a = this.Method497();
-      String a = this.Method497();
-      String a = this.Method497();
-      long a = this.readLong();
-      long a = this.readLong();
-      long a = this.readLong();
-      boolean a = this.readBoolean();
-      boolean a = this.readBoolean();
-      a.Field2838 = a;
-      a.Field2839 = a;
-      a.Field2843 = a;
-      a.Field2840 = a;
-      a.Field2841 = a;
-      a.Field2842 = a;
-      a.Field2844 = a;
-      a.Field2845 = a;
-      a.Field2846 = a;
-      a.Field2847 = a;
-      a.Field2848 = a;
+      String var4 = this.Method497();
+      int var5 = this.readInt();
+      String var6 = this.Method497();
+      String var7 = this.Method497();
+      String var8 = this.Method497();
+      long var9 = this.readLong();
+      long var11 = this.readLong();
+      long var13 = this.readLong();
+      boolean var15 = this.readBoolean();
+      boolean var16 = this.readBoolean();
+      var2.Field2838 = var3;
+      var2.Field2839 = var4;
+      var2.Field2843 = var5;
+      var2.Field2840 = var6;
+      var2.Field2841 = var7;
+      var2.Field2842 = var8;
+      var2.Field2844 = var9;
+      var2.Field2845 = var11;
+      var2.Field2846 = var13;
+      var2.Field2847 = var15;
+      var2.Field2848 = var16;
       a.trash(new String[5]);
-      return a;
+      return var2;
    }
 
    public void Method2093(Class606 a) {
@@ -77,36 +77,36 @@ public class Class234 extends ByteBuf {
    }
 
    public String Method497() {
-      byte[] a = new byte[this.readInt()];
+      byte[] var1 = new byte[this.readInt()];
 
-      for(int a = 0; a < a.length; ++a) {
-         a[a] = this.readByte();
+      for(int var2 = 0; var2 < var1.length; ++var2) {
+         var1[var2] = this.readByte();
       }
 
-      return new String(a, Charsets.UTF_8);
+      return new String(var1, Charsets.UTF_8);
    }
 
    public int Method10() {
       Method1269();
-      int a = 0;
-      int a = 0;
-      byte a = this.readByte();
-      a |= (a & 127) << a++ * 7;
-      if (a > 5) {
+      int var2 = 0;
+      int var3 = 0;
+      byte var4 = this.readByte();
+      var2 |= (var4 & 127) << var3++ * 7;
+      if (var3 > 5) {
          throw new RuntimeException("VarInt too big");
       } else {
-         if ((a & 128) != 128) {
+         if ((var4 & 128) != 128) {
             ;
          }
 
-         return a;
+         return var2;
       }
    }
 
    public static int Method1612(int a) {
-      for(int a = 1; a < 5; ++a) {
-         if ((a & -1 << a * 7) == 0) {
-            return a;
+      for(int var1 = 1; var1 < 5; ++var1) {
+         if ((a & -1 << var1 * 7) == 0) {
+            return var1;
          }
       }
 

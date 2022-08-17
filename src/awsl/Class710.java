@@ -25,7 +25,7 @@ public class Class710 extends GuiScreen {
       this.Field3071 = a;
    }
 
-   protected void Method1804(char a, int a1) throws IOException {
+   protected void Method1804(char a, int a) throws IOException {
    }
 
    public void Method1801() {
@@ -62,13 +62,13 @@ public class Class710 extends GuiScreen {
       Class713.Method2054();
       this.drawDefaultBackground();
       this.drawCenteredString(this.fontRendererObj, this.Field3070, this.width / 2, this.height / 2 - this.Field3074 / 2 - this.fontRendererObj.FONT_HEIGHT * 2, 11184810);
-      int a = this.height / 2 - this.Field3074 / 2;
+      int var5 = this.height / 2 - this.Field3074 / 2;
       if (this.Field3072 != null) {
          Iterator var6 = this.Field3072.Method1383();
          if (var6.Method932()) {
-            String a = (String)var6.Method933();
-            this.drawCenteredString(this.fontRendererObj, a, this.width / 2, a, 16777215);
-            int var10000 = a + this.fontRendererObj.FONT_HEIGHT;
+            String var7 = (String)var6.Method933();
+            this.drawCenteredString(this.fontRendererObj, var7, this.width / 2, var5, 16777215);
+            int var10000 = var5 + this.fontRendererObj.FONT_HEIGHT;
          }
       }
 

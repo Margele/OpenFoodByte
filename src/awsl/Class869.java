@@ -20,22 +20,22 @@ public class Class869 extends Class877 {
    }
 
    protected void Method3439(int a, int a, float[] a) {
-      int a = (int)(Math.random() * 255.0);
-      float a = (float)Math.random();
-      a[0] = (float)a + a * this.Field3799[a];
-      a[1] = (float)a + a * this.Field3800[a];
+      int var4 = (int)(Math.random() * 255.0);
+      float var5 = (float)Math.random();
+      a[0] = (float)a + var5 * this.Field3799[var4];
+      a[1] = (float)a + var5 * this.Field3800[var4];
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       this.Field3799 = new float[256];
       this.Field3800 = new float[256];
       Class193.Method1269();
-      int a = 0;
-      if (a < 256) {
-         float a = 6.2831855F * (float)a / 256.0F;
-         this.Field3799[a] = (float)((double)this.Field3801 * Math.sin((double)a));
-         this.Field3800[a] = (float)((double)this.Field3801 * Math.cos((double)a));
-         ++a;
+      int var4 = 0;
+      if (var4 < 256) {
+         float var5 = 6.2831855F * (float)var4 / 256.0F;
+         this.Field3799[var4] = (float)((double)this.Field3801 * Math.sin((double)var5));
+         this.Field3800[var4] = (float)((double)this.Field3801 * Math.cos((double)var5));
+         ++var4;
       }
 
       return super.Method62(a, a);

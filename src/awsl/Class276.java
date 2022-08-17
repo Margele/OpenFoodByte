@@ -41,9 +41,9 @@ final class Class276 {
 
    private int Method2790(int a) {
       if (this.Field1507 != null && a < this.Field1507.length) {
-         int a = this.Field1507[a];
-         a = this.Field1507[a] = 33554432 | a;
-         return a;
+         int var2 = this.Field1507[a];
+         var2 = this.Field1507[a] = 33554432 | a;
+         return var2;
       } else {
          return 33554432 | a;
       }
@@ -54,11 +54,11 @@ final class Class276 {
          this.Field1507 = new int[10];
       }
 
-      int a = this.Field1507.length;
-      if (a >= a) {
-         int[] a = new int[Math.max(a + 1, 2 * a)];
-         System.arraycopy(this.Field1507, 0, a, 0, a);
-         this.Field1507 = a;
+      int var3 = this.Field1507.length;
+      if (a >= var3) {
+         int[] var4 = new int[Math.max(a + 1, 2 * var3)];
+         System.arraycopy(this.Field1507, 0, var4, 0, var3);
+         this.Field1507 = var4;
       }
 
       this.Field1507[a] = a;
@@ -69,34 +69,34 @@ final class Class276 {
          this.Field1508 = new int[10];
       }
 
-      int a = this.Field1508.length;
-      if (this.Field1509 >= a) {
-         int[] a = new int[Math.max(this.Field1509 + 1, 2 * a)];
-         System.arraycopy(this.Field1508, 0, a, 0, a);
-         this.Field1508 = a;
+      int var2 = this.Field1508.length;
+      if (this.Field1509 >= var2) {
+         int[] var3 = new int[Math.max(this.Field1509 + 1, 2 * var2)];
+         System.arraycopy(this.Field1508, 0, var3, 0, var2);
+         this.Field1508 = var3;
       }
 
       this.Field1508[this.Field1509++] = a;
-      int a = this.Field1504.Field1453 + this.Field1509;
-      if (a > this.Field1504.Field1454) {
-         this.Field1504.Field1454 = a;
+      int var4 = this.Field1504.Field1453 + this.Field1509;
+      if (var4 > this.Field1504.Field1454) {
+         this.Field1504.Field1454 = var4;
       }
 
    }
 
    private void Method2793(Class169 a, String a) {
-      int a = Method2794(a, a);
-      this.Method2792(a);
-      if (a == 16777220 || a == 16777219) {
+      int var3 = Method2794(a, a);
+      this.Method2792(var3);
+      if (var3 == 16777220 || var3 == 16777219) {
          this.Method2792(16777216);
       }
 
    }
 
    private static int Method2794(Class169 a, String a) {
-      int a = a.charAt(0) == '(' ? a.indexOf(41) + 1 : 0;
-      String a;
-      switch (a.charAt(a)) {
+      int var3 = a.charAt(0) == '(' ? a.indexOf(41) + 1 : 0;
+      String var2;
+      switch (a.charAt(var3)) {
          case 'B':
          case 'C':
          case 'I':
@@ -121,20 +121,20 @@ final class Class276 {
          case 'X':
          case 'Y':
          default:
-            int a;
-            for(a = a + 1; a.charAt(a) == '['; ++a) {
+            int var5;
+            for(var5 = var3 + 1; a.charAt(var5) == '['; ++var5) {
             }
 
-            int a;
-            switch (a.charAt(a)) {
+            int var4;
+            switch (a.charAt(var5)) {
                case 'B':
-                  a = 16777226;
+                  var4 = 16777226;
                   break;
                case 'C':
-                  a = 16777227;
+                  var4 = 16777227;
                   break;
                case 'D':
-                  a = 16777219;
+                  var4 = 16777219;
                   break;
                case 'E':
                case 'G':
@@ -154,33 +154,33 @@ final class Class276 {
                case 'X':
                case 'Y':
                default:
-                  a = a.substring(a + 1, a.length() - 1);
-                  a = 24117248 | a.Method1526(a);
+                  var2 = a.substring(var5 + 1, a.length() - 1);
+                  var4 = 24117248 | a.Method1526(var2);
                   break;
                case 'F':
-                  a = 16777218;
+                  var4 = 16777218;
                   break;
                case 'I':
-                  a = 16777217;
+                  var4 = 16777217;
                   break;
                case 'J':
-                  a = 16777220;
+                  var4 = 16777220;
                   break;
                case 'S':
-                  a = 16777228;
+                  var4 = 16777228;
                   break;
                case 'Z':
-                  a = 16777225;
+                  var4 = 16777225;
             }
 
-            return a - a << 28 | a;
+            return var5 - var3 << 28 | var4;
          case 'F':
             return 16777218;
          case 'J':
             return 16777220;
          case 'L':
-            a = a.substring(a + 1, a.length() - 1);
-            return 24117248 | a.Method1526(a);
+            var2 = a.substring(var3 + 1, a.length() - 1);
+            return 24117248 | a.Method1526(var2);
          case 'V':
             return 0;
       }
@@ -202,10 +202,10 @@ final class Class276 {
    }
 
    private void Method2797(String a) {
-      char a = a.charAt(0);
-      if (a == '(') {
+      char var2 = a.charAt(0);
+      if (var2 == '(') {
          this.Method2796((b.Method3215(a) >> 2) - 1);
-      } else if (a != 'J' && a != 'D') {
+      } else if (var2 != 'J' && var2 != 'D') {
          this.Method2796(1);
       } else {
          this.Method2796(2);
@@ -218,41 +218,41 @@ final class Class276 {
          this.Field1511 = new int[2];
       }
 
-      int a = this.Field1511.length;
-      if (this.Field1510 >= a) {
-         int[] a = new int[Math.max(this.Field1510 + 1, 2 * a)];
-         System.arraycopy(this.Field1511, 0, a, 0, a);
-         this.Field1511 = a;
+      int var2 = this.Field1511.length;
+      if (this.Field1510 >= var2) {
+         int[] var3 = new int[Math.max(this.Field1510 + 1, 2 * var2)];
+         System.arraycopy(this.Field1511, 0, var3, 0, var2);
+         this.Field1511 = var3;
       }
 
       this.Field1511[this.Field1510++] = a;
    }
 
    private int Method2799(Class169 a, int a) {
-      int a;
+      int var3;
       if (a == 16777222) {
-         a = 24117248 | a.Method1526(a.Field1093);
+         var3 = 24117248 | a.Method1526(a.Field1093);
       } else {
          if ((a & -1048576) != 25165824) {
             return a;
          }
 
-         String a = a.Field1089[a & 1048575].Field1430;
-         a = 24117248 | a.Method1526(a);
+         String var4 = a.Field1089[a & 1048575].Field1430;
+         var3 = 24117248 | a.Method1526(var4);
       }
 
-      for(int a = 0; a < this.Field1510; ++a) {
-         int a = this.Field1511[a];
-         int a = a & -268435456;
-         int a = a & 251658240;
-         if (a == 33554432) {
-            a = a + this.Field1505[a & 8388607];
-         } else if (a == 50331648) {
-            a = a + this.Field1506[this.Field1506.length - (a & 8388607)];
+      for(int var8 = 0; var8 < this.Field1510; ++var8) {
+         int var5 = this.Field1511[var8];
+         int var6 = var5 & -268435456;
+         int var7 = var5 & 251658240;
+         if (var7 == 33554432) {
+            var5 = var6 + this.Field1505[var5 & 8388607];
+         } else if (var7 == 50331648) {
+            var5 = var6 + this.Field1506[this.Field1506.length - (var5 & 8388607)];
          }
 
-         if (a == a) {
-            return a;
+         if (a == var5) {
+            return var3;
          }
       }
 
@@ -262,25 +262,25 @@ final class Class276 {
    void Method2800(Class169 a, int a, b[] a, int a) {
       this.Field1505 = new int[a];
       this.Field1506 = new int[0];
-      int a = 0;
+      int var5 = 0;
       if ((a & 8) == 0) {
          if ((a & 524288) == 0) {
-            this.Field1505[a++] = 24117248 | a.Method1526(a.Field1093);
+            this.Field1505[var5++] = 24117248 | a.Method1526(a.Field1093);
          } else {
-            this.Field1505[a++] = 16777222;
+            this.Field1505[var5++] = 16777222;
          }
       }
 
-      for(int a = 0; a < a.length; ++a) {
-         int a = Method2794(a, a[a].Method3225());
-         this.Field1505[a++] = a;
-         if (a == 16777220 || a == 16777219) {
-            this.Field1505[a++] = 16777216;
+      for(int var6 = 0; var6 < a.length; ++var6) {
+         int var7 = Method2794(a, a[var6].Method3225());
+         this.Field1505[var5++] = var7;
+         if (var7 == 16777220 || var7 == 16777219) {
+            this.Field1505[var5++] = 16777216;
          }
       }
 
-      while(a < a) {
-         this.Field1505[a++] = 16777216;
+      while(var5 < a) {
+         this.Field1505[var5++] = 16777216;
       }
 
    }
@@ -288,7 +288,7 @@ final class Class276 {
    void Method2801(int a, int a, Class169 a, Class261 a) {
       label345: {
          label322: {
-            String a;
+            String var10;
             label316: {
                label315: {
                   label323: {
@@ -299,7 +299,7 @@ final class Class276 {
                                  label309: {
                                     label308: {
                                        label324: {
-                                          int a;
+                                          int var6;
                                           label306: {
                                              label305: {
                                                 label304: {
@@ -309,9 +309,9 @@ final class Class276 {
                                                             label300: {
                                                                label330: {
                                                                   label297: {
-                                                                     int a;
+                                                                     int var7;
                                                                      label296: {
-                                                                        int a;
+                                                                        int var8;
                                                                         label295: {
                                                                            label294: {
                                                                               label293: {
@@ -321,7 +321,7 @@ final class Class276 {
                                                                                           label289: {
                                                                                              label288: {
                                                                                                 label287: {
-                                                                                                   String[] a = Class267.Method2862();
+                                                                                                   String[] var5 = Class267.Method2862();
                                                                                                    switch (a) {
                                                                                                       case 0:
                                                                                                       case 116:
@@ -412,39 +412,39 @@ final class Class276 {
                                                                                                          this.Method2792(16777216);
                                                                                                       case 50:
                                                                                                          this.Method2796(1);
-                                                                                                         a = this.Method2795();
-                                                                                                         this.Method2792(-268435456 + a);
+                                                                                                         var6 = this.Method2795();
+                                                                                                         this.Method2792(-268435456 + var6);
                                                                                                       case 54:
                                                                                                       case 56:
                                                                                                       case 58:
-                                                                                                         a = this.Method2795();
-                                                                                                         this.Method2791(a, a);
-                                                                                                         a = this.Method2790(a - 1);
-                                                                                                         if (a == 16777220 || a == 16777219) {
+                                                                                                         var6 = this.Method2795();
+                                                                                                         this.Method2791(a, var6);
+                                                                                                         var7 = this.Method2790(a - 1);
+                                                                                                         if (var7 == 16777220 || var7 == 16777219) {
                                                                                                             this.Method2791(a - 1, 16777216);
                                                                                                          }
 
-                                                                                                         if ((a & 251658240) == 16777216) {
+                                                                                                         if ((var7 & 251658240) == 16777216) {
                                                                                                             return;
                                                                                                          }
 
-                                                                                                         this.Method2791(a - 1, a | 8388608);
+                                                                                                         this.Method2791(a - 1, var7 | 8388608);
                                                                                                       case 55:
                                                                                                       case 57:
                                                                                                          this.Method2796(1);
-                                                                                                         a = this.Method2795();
-                                                                                                         this.Method2791(a, a);
+                                                                                                         var6 = this.Method2795();
+                                                                                                         this.Method2791(a, var6);
                                                                                                          this.Method2791(a + 1, 16777216);
-                                                                                                         a = this.Method2790(a - 1);
-                                                                                                         if (a == 16777220 || a == 16777219) {
+                                                                                                         var7 = this.Method2790(a - 1);
+                                                                                                         if (var7 == 16777220 || var7 == 16777219) {
                                                                                                             this.Method2791(a - 1, 16777216);
                                                                                                          }
 
-                                                                                                         if ((a & 251658240) == 16777216) {
+                                                                                                         if ((var7 & 251658240) == 16777216) {
                                                                                                             return;
                                                                                                          }
 
-                                                                                                         this.Method2791(a - 1, a | 8388608);
+                                                                                                         this.Method2791(a - 1, var7 | 8388608);
                                                                                                          break;
                                                                                                       case 19:
                                                                                                       case 20:
@@ -647,61 +647,61 @@ final class Class276 {
                                                                                           this.Method2796(2);
                                                                                        }
 
-                                                                                       a = this.Method2795();
-                                                                                       this.Method2792(a);
-                                                                                       this.Method2792(a);
+                                                                                       var6 = this.Method2795();
+                                                                                       this.Method2792(var6);
+                                                                                       this.Method2792(var6);
                                                                                     }
 
-                                                                                    a = this.Method2795();
-                                                                                    a = this.Method2795();
-                                                                                    this.Method2792(a);
-                                                                                    this.Method2792(a);
-                                                                                    this.Method2792(a);
+                                                                                    var6 = this.Method2795();
+                                                                                    var7 = this.Method2795();
+                                                                                    this.Method2792(var6);
+                                                                                    this.Method2792(var7);
+                                                                                    this.Method2792(var6);
                                                                                  }
 
-                                                                                 a = this.Method2795();
-                                                                                 a = this.Method2795();
-                                                                                 a = this.Method2795();
-                                                                                 this.Method2792(a);
-                                                                                 this.Method2792(a);
-                                                                                 this.Method2792(a);
-                                                                                 this.Method2792(a);
+                                                                                 var6 = this.Method2795();
+                                                                                 var7 = this.Method2795();
+                                                                                 var8 = this.Method2795();
+                                                                                 this.Method2792(var6);
+                                                                                 this.Method2792(var8);
+                                                                                 this.Method2792(var7);
+                                                                                 this.Method2792(var6);
                                                                               }
 
-                                                                              a = this.Method2795();
-                                                                              a = this.Method2795();
-                                                                              this.Method2792(a);
-                                                                              this.Method2792(a);
-                                                                              this.Method2792(a);
-                                                                              this.Method2792(a);
+                                                                              var6 = this.Method2795();
+                                                                              var7 = this.Method2795();
+                                                                              this.Method2792(var7);
+                                                                              this.Method2792(var6);
+                                                                              this.Method2792(var7);
+                                                                              this.Method2792(var6);
                                                                            }
 
-                                                                           a = this.Method2795();
-                                                                           a = this.Method2795();
-                                                                           a = this.Method2795();
-                                                                           this.Method2792(a);
-                                                                           this.Method2792(a);
-                                                                           this.Method2792(a);
-                                                                           this.Method2792(a);
-                                                                           this.Method2792(a);
+                                                                           var6 = this.Method2795();
+                                                                           var7 = this.Method2795();
+                                                                           var8 = this.Method2795();
+                                                                           this.Method2792(var7);
+                                                                           this.Method2792(var6);
+                                                                           this.Method2792(var8);
+                                                                           this.Method2792(var7);
+                                                                           this.Method2792(var6);
                                                                         }
 
-                                                                        a = this.Method2795();
-                                                                        a = this.Method2795();
-                                                                        a = this.Method2795();
-                                                                        int a = this.Method2795();
-                                                                        this.Method2792(a);
-                                                                        this.Method2792(a);
-                                                                        this.Method2792(a);
-                                                                        this.Method2792(a);
-                                                                        this.Method2792(a);
-                                                                        this.Method2792(a);
+                                                                        var6 = this.Method2795();
+                                                                        var7 = this.Method2795();
+                                                                        var8 = this.Method2795();
+                                                                        int var9 = this.Method2795();
+                                                                        this.Method2792(var7);
+                                                                        this.Method2792(var6);
+                                                                        this.Method2792(var9);
+                                                                        this.Method2792(var8);
+                                                                        this.Method2792(var7);
+                                                                        this.Method2792(var6);
                                                                      }
 
-                                                                     a = this.Method2795();
-                                                                     a = this.Method2795();
-                                                                     this.Method2792(a);
-                                                                     this.Method2792(a);
+                                                                     var6 = this.Method2795();
+                                                                     var7 = this.Method2795();
+                                                                     this.Method2792(var6);
+                                                                     this.Method2792(var7);
                                                                   }
 
                                                                   this.Method2796(2);
@@ -747,9 +747,9 @@ final class Class276 {
 
                                           this.Method2797(a.Field1432);
                                           if (a != 184) {
-                                             a = this.Method2795();
+                                             var6 = this.Method2795();
                                              if (a == 183 && a.Field1431.charAt(0) == '<') {
-                                                this.Method2798(a);
+                                                this.Method2798(var6);
                                              }
                                           }
 
@@ -802,13 +802,13 @@ final class Class276 {
                         }
                      }
 
-                     a = a.Field1430;
+                     var10 = a.Field1430;
                      this.Method2795();
-                     if (a.charAt(0) == '[') {
-                        this.Method2793(a, '[' + a);
+                     if (var10.charAt(0) == '[') {
+                        this.Method2793(a, '[' + var10);
                      }
 
-                     this.Method2792(292552704 | a.Method1526(a));
+                     this.Method2792(292552704 | a.Method1526(var10));
                      break label316;
                   }
 
@@ -822,13 +822,13 @@ final class Class276 {
                break label345;
             }
 
-            a = a.Field1430;
+            var10 = a.Field1430;
             this.Method2795();
-            if (a.charAt(0) == '[') {
-               this.Method2793(a, a);
+            if (var10.charAt(0) == '[') {
+               this.Method2793(a, var10);
             }
 
-            this.Method2792(24117248 | a.Method1526(a));
+            this.Method2792(24117248 | a.Method1526(var10));
          }
 
          this.Method2796(a);
@@ -842,52 +842,52 @@ final class Class276 {
    }
 
    boolean Method2802(Class169 a, Class276 a, int a) {
-      boolean a = false;
-      int a = this.Field1505.length;
-      int a = this.Field1506.length;
+      boolean var4 = false;
+      int var10 = this.Field1505.length;
+      int var11 = this.Field1506.length;
       if (a.Field1505 == null) {
-         a.Field1505 = new int[a];
-         a = true;
+         a.Field1505 = new int[var10];
+         var4 = true;
       }
 
-      int a;
-      int a;
-      for(a = 0; a < a; ++a) {
-         if (this.Field1507 != null && a < this.Field1507.length) {
-            int a = this.Field1507[a];
-            a = this.Field1505[a];
+      int var5;
+      int var9;
+      for(var5 = 0; var5 < var10; ++var5) {
+         if (this.Field1507 != null && var5 < this.Field1507.length) {
+            int var6 = this.Field1507[var5];
+            var9 = this.Field1505[var5];
          } else {
-            a = this.Field1505[a];
+            var9 = this.Field1505[var5];
          }
 
          if (this.Field1511 != null) {
-            a = this.Method2799(a, a);
+            var9 = this.Method2799(a, var9);
          }
 
-         a |= Method2803(a, a, a.Field1505, a);
+         var4 |= Method2803(a, var9, a.Field1505, var5);
       }
 
-      for(a = 0; a < a; ++a) {
-         a = this.Field1505[a];
-         a |= Method2803(a, a, a.Field1505, a);
+      for(var5 = 0; var5 < var10; ++var5) {
+         var9 = this.Field1505[var5];
+         var4 |= Method2803(a, var9, a.Field1505, var5);
       }
 
       if (a.Field1506 == null) {
          a.Field1506 = new int[1];
-         a = true;
+         var4 = true;
       }
 
-      a |= Method2803(a, a, a.Field1506, 0);
-      return a;
+      var4 |= Method2803(a, a, a.Field1506, 0);
+      return var4;
    }
 
    private static boolean Method2803(Class169 a, int a, int[] a, int a) {
-      int a = a[a];
-      if (a == a) {
+      int var4 = a[a];
+      if (var4 == a) {
          return false;
       } else {
          if ((a & 268435455) == 16777221) {
-            if (a == 16777221) {
+            if (var4 == 16777221) {
                return false;
             }
 
@@ -900,18 +900,18 @@ final class Class276 {
    }
 
    static {
-      String[] a = new String[8];
-      int a = 0;
-      String a = "\u0010\u0087f\rÐ<ê¹i\u008e4üpV\u00813K\u0086\r\u0017`Ñ\u001bFÂ«¡â/L\u00835Ì&\u007fÓ¥Ç\\\u0094Äð»\b+3\u008a±\u0091è\u009b\u0019g¨\u0081%c®õxb¬\u0093ß>ßó\u0010<Lãt`\u0013ü\\«2|sx¦ìé\u0010\u0090YvÖÒGªÖac9OWù\u001f\u009c\u001b@¢l©\u0091¨Â+lÜ¾´Y\u0001IÙ5n\u0082áª\u0018Jà\t9®\u0010Â\u0094<o\u009bp\u00830D¿\u009dÔÃ\u008a\u008dò";
-      int a = "\u0010\u0087f\rÐ<ê¹i\u008e4üpV\u00813K\u0086\r\u0017`Ñ\u001bFÂ«¡â/L\u00835Ì&\u007fÓ¥Ç\\\u0094Äð»\b+3\u008a±\u0091è\u009b\u0019g¨\u0081%c®õxb¬\u0093ß>ßó\u0010<Lãt`\u0013ü\\«2|sx¦ìé\u0010\u0090YvÖÒGªÖac9OWù\u001f\u009c\u001b@¢l©\u0091¨Â+lÜ¾´Y\u0001IÙ5n\u0082áª\u0018Jà\t9®\u0010Â\u0094<o\u009bp\u00830D¿\u009dÔÃ\u008a\u008dò".length();
-      int a = 15;
-      int a = -1;
+      String[] var5 = new String[8];
+      int var3 = 0;
+      String var2 = "\u0010\u0087f\rÐ<ê¹i\u008e4üpV\u00813K\u0086\r\u0017`Ñ\u001bFÂ«¡â/L\u00835Ì&\u007fÓ¥Ç\\\u0094Äð»\b+3\u008a±\u0091è\u009b\u0019g¨\u0081%c®õxb¬\u0093ß>ßó\u0010<Lãt`\u0013ü\\«2|sx¦ìé\u0010\u0090YvÖÒGªÖac9OWù\u001f\u009c\u001b@¢l©\u0091¨Â+lÜ¾´Y\u0001IÙ5n\u0082áª\u0018Jà\t9®\u0010Â\u0094<o\u009bp\u00830D¿\u009dÔÃ\u008a\u008dò";
+      int var4 = "\u0010\u0087f\rÐ<ê¹i\u008e4üpV\u00813K\u0086\r\u0017`Ñ\u001bFÂ«¡â/L\u00835Ì&\u007fÓ¥Ç\\\u0094Äð»\b+3\u008a±\u0091è\u009b\u0019g¨\u0081%c®õxb¬\u0093ß>ßó\u0010<Lãt`\u0013ü\\«2|sx¦ìé\u0010\u0090YvÖÒGªÖac9OWù\u001f\u009c\u001b@¢l©\u0091¨Â+lÜ¾´Y\u0001IÙ5n\u0082áª\u0018Jà\t9®\u0010Â\u0094<o\u009bp\u00830D¿\u009dÔÃ\u008a\u008dò".length();
+      char var1 = 15;
+      int var0 = -1;
 
       label66:
       while(true) {
          byte var10000 = 98;
-         ++a;
-         String var10001 = a.substring(a, a + a);
+         ++var0;
+         String var10001 = var2.substring(var0, var0 + var1);
          byte var10002 = -1;
 
          while(true) {
@@ -919,7 +919,7 @@ final class Class276 {
             label61: {
                char[] var15 = var10001.toCharArray();
                int var10004 = var15.length;
-               int a = 0;
+               int var6 = 0;
                byte var16 = var10000;
                byte var10003 = var10000;
                var14 = var15;
@@ -928,22 +928,22 @@ final class Class276 {
                int var10006;
                if (var10004 <= 1) {
                   var17 = var15;
-                  var10006 = a;
+                  var10006 = var6;
                } else {
                   var10003 = var10000;
                   var11 = var10004;
-                  if (var10004 <= a) {
+                  if (var10004 <= var6) {
                      break label61;
                   }
 
                   var17 = var15;
-                  var10006 = a;
+                  var10006 = var6;
                }
 
                while(true) {
                   char var25 = var17[var10006];
                   byte var26;
-                  switch (a % 7) {
+                  switch (var6 % 7) {
                      case 0:
                         var26 = 57;
                         break;
@@ -967,19 +967,19 @@ final class Class276 {
                   }
 
                   var17[var10006] = (char)(var25 ^ var16 ^ var26);
-                  ++a;
+                  ++var6;
                   if (var10003 == 0) {
                      var10006 = var10003;
                      var17 = var14;
                      var16 = var10003;
                   } else {
-                     if (var11 <= a) {
+                     if (var11 <= var6) {
                         break;
                      }
 
                      var17 = var14;
                      var16 = var10003;
-                     var10006 = a;
+                     var10006 = var6;
                   }
                }
             }
@@ -987,39 +987,39 @@ final class Class276 {
             String var19 = (new String(var14)).intern();
             switch (var10002) {
                case 0:
-                  a[a++] = var19;
-                  if ((a += a) >= a) {
-                     Field1512 = a;
+                  var5[var3++] = var19;
+                  if ((var0 += var1) >= var4) {
+                     Field1512 = var5;
                      Field1513 = new String[8];
-                     int[] a = new int[202];
-                     String a = Method2805(-20525, -11326);
+                     int[] var8 = new int[202];
+                     String var9 = Method2805(-20525, -11326);
 
-                     for(int a = 0; a < a.length; ++a) {
-                        a[a] = a.charAt(a) - 69;
+                     for(int var7 = 0; var7 < var8.length; ++var7) {
+                        var8[var7] = var9.charAt(var7) - 69;
                      }
 
-                     Field1503 = a;
+                     Field1503 = var8;
                      return;
                   }
 
-                  a = a.charAt(a);
+                  var1 = var2.charAt(var0);
                   break;
                default:
-                  a[a++] = var19;
-                  if ((a += a) < a) {
-                     a = a.charAt(a);
+                  var5[var3++] = var19;
+                  if ((var0 += var1) < var4) {
+                     var1 = var2.charAt(var0);
                      continue label66;
                   }
 
-                  a = "\u000bÃHÈXÉ¶J¯½\u008bÕ²`y¸~\u000f¦\u0080cy>\u009dÒZ\u0082\u0092!Ê.1\u0016rÌwGÚsê;r\u007f\u0090Ú\u0088ÊdW¶7\u0081\u001f\u0080\u0097\u001eé\u001ei8ý3Ñ?\u0084³k¦Yºré\u001aÆ\u0093ì\u001dÄ=Ì|H\u009bG\nq5\u0015VP\u0085S\u000e>:\u0017s\u008c7/²\u001e\u0086÷¾§i ÖÃêö\u0084\u0080G\u000bØ³\u0094\ré\u0095§\u0003\u0080L\n15\u001dVW\u0084s\u000eú\u001aOWG\u0093\u0096\u0006é0ÉI¦\u0097\u0080\bÁ\u0015vÛP\u000fÖ\u0011.l\\\u0012\u001a¹ó\u0002r8ÑPÂ¸\u000fY¸´Cj¹\u009f\u007f\u008c·#-\u0094±ÜH\u0002\u009d{£\u009bÚê#Ì\u009f+Æ+¦û@¤\u001e\u0081\u00adi\u000by\u009aÿg\u0091¶\u008cájìyówÁ\u009bâ¢i\u001bU";
-                  a = "\u000bÃHÈXÉ¶J¯½\u008bÕ²`y¸~\u000f¦\u0080cy>\u009dÒZ\u0082\u0092!Ê.1\u0016rÌwGÚsê;r\u007f\u0090Ú\u0088ÊdW¶7\u0081\u001f\u0080\u0097\u001eé\u001ei8ý3Ñ?\u0084³k¦Yºré\u001aÆ\u0093ì\u001dÄ=Ì|H\u009bG\nq5\u0015VP\u0085S\u000e>:\u0017s\u008c7/²\u001e\u0086÷¾§i ÖÃêö\u0084\u0080G\u000bØ³\u0094\ré\u0095§\u0003\u0080L\n15\u001dVW\u0084s\u000eú\u001aOWG\u0093\u0096\u0006é0ÉI¦\u0097\u0080\bÁ\u0015vÛP\u000fÖ\u0011.l\\\u0012\u001a¹ó\u0002r8ÑPÂ¸\u000fY¸´Cj¹\u009f\u007f\u008c·#-\u0094±ÜH\u0002\u009d{£\u009bÚê#Ì\u009f+Æ+¦û@¤\u001e\u0081\u00adi\u000by\u009aÿg\u0091¶\u008cájìyówÁ\u009bâ¢i\u001bU".length();
-                  a = 29;
-                  a = -1;
+                  var2 = "\u000bÃHÈXÉ¶J¯½\u008bÕ²`y¸~\u000f¦\u0080cy>\u009dÒZ\u0082\u0092!Ê.1\u0016rÌwGÚsê;r\u007f\u0090Ú\u0088ÊdW¶7\u0081\u001f\u0080\u0097\u001eé\u001ei8ý3Ñ?\u0084³k¦Yºré\u001aÆ\u0093ì\u001dÄ=Ì|H\u009bG\nq5\u0015VP\u0085S\u000e>:\u0017s\u008c7/²\u001e\u0086÷¾§i ÖÃêö\u0084\u0080G\u000bØ³\u0094\ré\u0095§\u0003\u0080L\n15\u001dVW\u0084s\u000eú\u001aOWG\u0093\u0096\u0006é0ÉI¦\u0097\u0080\bÁ\u0015vÛP\u000fÖ\u0011.l\\\u0012\u001a¹ó\u0002r8ÑPÂ¸\u000fY¸´Cj¹\u009f\u007f\u008c·#-\u0094±ÜH\u0002\u009d{£\u009bÚê#Ì\u009f+Æ+¦û@¤\u001e\u0081\u00adi\u000by\u009aÿg\u0091¶\u008cájìyówÁ\u009bâ¢i\u001bU";
+                  var4 = "\u000bÃHÈXÉ¶J¯½\u008bÕ²`y¸~\u000f¦\u0080cy>\u009dÒZ\u0082\u0092!Ê.1\u0016rÌwGÚsê;r\u007f\u0090Ú\u0088ÊdW¶7\u0081\u001f\u0080\u0097\u001eé\u001ei8ý3Ñ?\u0084³k¦Yºré\u001aÆ\u0093ì\u001dÄ=Ì|H\u009bG\nq5\u0015VP\u0085S\u000e>:\u0017s\u008c7/²\u001e\u0086÷¾§i ÖÃêö\u0084\u0080G\u000bØ³\u0094\ré\u0095§\u0003\u0080L\n15\u001dVW\u0084s\u000eú\u001aOWG\u0093\u0096\u0006é0ÉI¦\u0097\u0080\bÁ\u0015vÛP\u000fÖ\u0011.l\\\u0012\u001a¹ó\u0002r8ÑPÂ¸\u000fY¸´Cj¹\u009f\u007f\u008c·#-\u0094±ÜH\u0002\u009d{£\u009bÚê#Ì\u009f+Æ+¦û@¤\u001e\u0081\u00adi\u000by\u009aÿg\u0091¶\u008cájìyówÁ\u009bâ¢i\u001bU".length();
+                  var1 = 29;
+                  var0 = -1;
             }
 
             var10000 = 3;
-            ++a;
-            var10001 = a.substring(a, a + a);
+            ++var0;
+            var10001 = var2.substring(var0, var0 + var1);
             var10002 = 0;
          }
       }

@@ -6,7 +6,7 @@ import awsl.Class447;
 public class BooleanValue extends Class447 {
    private static int[] Field2129;
 
-   public BooleanValue(String a, String a, Boolean a, boolean a3) {
+   public BooleanValue(String a, String a, Boolean a, boolean a) {
       this.Field2117 = a;
       this.Field2118 = a;
       this.Field2120 = a;

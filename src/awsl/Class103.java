@@ -93,33 +93,33 @@ public class Class103 extends Class119 {
    }
 
    public int Method3(int a, int a, int a) {
-      float a = (float)a - this.Field846;
+      float var5 = (float)a - this.Field846;
       Class193.Method1270();
-      float a = (float)a - this.Field847;
-      float a = (float)Math.sqrt((double)(a * a + a * a));
-      float a = (float)Math.exp((double)(-a * a * this.Field842)) * this.Field843 + (float)Math.exp((double)(-a * this.Field841)) * (1.0F - this.Field843);
-      a *= this.Field832;
-      if (a > this.Field831 + this.Field840) {
-         a = Class776.Method1717((a - (this.Field831 + this.Field840)) / this.Field844, a, 0.0F);
+      float var6 = (float)a - this.Field847;
+      float var7 = (float)Math.sqrt((double)(var5 * var5 + var6 * var6));
+      float var8 = (float)Math.exp((double)(-var7 * var7 * this.Field842)) * this.Field843 + (float)Math.exp((double)(-var7 * this.Field841)) * (1.0F - this.Field843);
+      var8 *= this.Field832;
+      if (var7 > this.Field831 + this.Field840) {
+         var8 = Class776.Method1717((var7 - (this.Field831 + this.Field840)) / this.Field844, var8, 0.0F);
       }
 
-      float a;
-      if (a < this.Field831 - this.Field840 || a > this.Field831 + this.Field840) {
-         a = 0.0F;
+      float var9;
+      if (var7 < this.Field831 - this.Field840 || var7 > this.Field831 + this.Field840) {
+         var9 = 0.0F;
       }
 
-      a = Math.abs(a - this.Field831) / this.Field840;
-      a = 1.0F - a * a * (3.0F - 2.0F * a);
-      a *= this.Field833;
-      a += a;
-      float a = (float)Math.atan2((double)a, (double)a) + 3.1415927F;
-      a = (Class776.Method1714(a / 3.1415927F * 17.0F + 1.0F + Class598.Method156(a * 10.0F), 1.0F) - 0.5F) * 2.0F;
-      a = Math.abs(a);
-      a = (float)Math.pow((double)a, 5.0);
-      float a = this.Field834 * a / (1.0F + a * 0.1F);
-      a += a;
-      a = Class776.Method1711(a, 0.0F, 1.0F);
-      return Class776.Method1719(a, a, this.Field835);
+      var9 = Math.abs(var7 - this.Field831) / this.Field840;
+      var9 = 1.0F - var9 * var9 * (3.0F - 2.0F * var9);
+      var9 *= this.Field833;
+      var8 += var9;
+      float var10 = (float)Math.atan2((double)var5, (double)var6) + 3.1415927F;
+      var10 = (Class776.Method1714(var10 / 3.1415927F * 17.0F + 1.0F + Class598.Method156(var10 * 10.0F), 1.0F) - 0.5F) * 2.0F;
+      var10 = Math.abs(var10);
+      var10 = (float)Math.pow((double)var10, 5.0);
+      float var11 = this.Field834 * var10 / (1.0F + var7 * 0.1F);
+      var8 += var11;
+      var8 = Class776.Method1711(var8, 0.0F, 1.0F);
+      return Class776.Method1719(var8, a, this.Field835);
    }
 
    public String toString() {

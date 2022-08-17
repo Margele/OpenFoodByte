@@ -24,26 +24,26 @@ public class Class128 extends Class126 {
       int var10 = a.length;
       int var11 = 0;
       if (var11 < var10) {
-         int a = a[var11];
-         this.Field979.Method2530(a);
+         int var12 = a[var11];
+         this.Field979.Method2530(var12);
          ++var11;
       }
 
    }
 
-   public void Method679(Class267 a, boolean a1) {
+   public void Method679(Class267 a, boolean a) {
       Class15.Method3445();
-      Class264[] a = new Class264[this.Field977.Method1799()];
-      Class264[] a = new Class264[this.Field978.Method1799()];
-      int[] a = new int[this.Field979.Method1799()];
-      int a = 0;
-      if (a < a.length) {
-         a[a] = ((Class104)this.Field977.get(a)).Method303();
-         a[a] = ((Class104)this.Field978.get(a)).Method303();
-         a[a] = (Integer)this.Field979.get(a);
-         ++a;
+      Class264[] var4 = new Class264[this.Field977.Method1799()];
+      Class264[] var5 = new Class264[this.Field978.Method1799()];
+      int[] var6 = new int[this.Field979.Method1799()];
+      int var7 = 0;
+      if (var7 < var4.length) {
+         var4[var7] = ((Class104)this.Field977.get(var7)).Method303();
+         var5[var7] = ((Class104)this.Field978.get(var7)).Method303();
+         var6[var7] = (Integer)this.Field979.get(var7);
+         ++var7;
       }
 
-      this.Method646(a.Method1844(this.Field975, this.Field976, a, a, a, this.Field973, true));
+      this.Method646(a.Method1844(this.Field975, this.Field976, var4, var5, var6, this.Field973, true));
    }
 }

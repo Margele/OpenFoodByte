@@ -43,40 +43,40 @@ public class Class76 extends Class193 {
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
       Class193.Method1269();
-      int a = a.getWidth();
-      int a = a.getHeight();
+      int var4 = a.getWidth();
+      int var5 = a.getHeight();
       a = this.Method1263(a, (ColorModel)null);
       if (this.Field700 == null) {
          return a;
       } else {
-         int a = this.Field700.getWidth();
-         int a = this.Field700.getHeight();
-         float a = this.Field697 * (1.0F + this.Field698);
-         float a = 255.0F * (a - this.Field698);
-         float a = 255.0F * a;
-         int[] a = new int[a];
-         int[] a = new int[a];
-         int a = 0;
-         if (a < a) {
-            this.Method104(a, 0, a, a, 1, a);
-            this.Method104(this.Field700, 0, a % a, a, 1, a);
-            int a = 0;
-            if (a < a) {
-               int a = a[a % a];
-               int a = a[a];
-               int a = Class767.Method1689(a);
-               float a = Class776.Method1708(a, a, (float)a);
-               int a = (int)(255.0F * a);
+         int var6 = this.Field700.getWidth();
+         int var7 = this.Field700.getHeight();
+         float var8 = this.Field697 * (1.0F + this.Field698);
+         float var9 = 255.0F * (var8 - this.Field698);
+         float var10 = 255.0F * var8;
+         int[] var11 = new int[var4];
+         int[] var12 = new int[var6];
+         int var13 = 0;
+         if (var13 < var5) {
+            this.Method104(a, 0, var13, var4, 1, var11);
+            this.Method104(this.Field700, 0, var13 % var7, var6, 1, var12);
+            int var14 = 0;
+            if (var14 < var4) {
+               int var15 = var12[var14 % var6];
+               int var16 = var11[var14];
+               int var17 = Class767.Method1689(var15);
+               float var18 = Class776.Method1708(var9, var10, (float)var17);
+               int var19 = (int)(255.0F * var18);
                if (this.Field699) {
-                  a = 255 - a;
+                  var19 = 255 - var19;
                }
 
-               a[a] = a << 24 | a & 16777215;
-               ++a;
+               var11[var14] = var19 << 24 | var16 & 16777215;
+               ++var14;
             }
 
-            this.Method1267(a, 0, a, a, 1, a);
-            ++a;
+            this.Method1267(a, 0, var13, var4, 1, var11);
+            ++var13;
          }
 
          return a;

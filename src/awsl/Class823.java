@@ -12,12 +12,12 @@ final class Class823 extends Class831 {
    }
 
    public final void Method3501(String a, Attributes a) throws SAXException {
-      int a = this.Method3656(a.getValue("access"));
-      String a = a.getValue("name");
-      String a = a.getValue("signature");
-      String a = a.getValue("desc");
-      Object a = this.Method3651(a, a.getValue("value"));
-      this.Field3660.Method1950(this.Field3660.Field3202.Method1450(a, a, a, a, a));
+      int var3 = this.Method3656(a.getValue("access"));
+      String var4 = a.getValue("name");
+      String var5 = a.getValue("signature");
+      String var6 = a.getValue("desc");
+      Object var7 = this.Method3651(var6, a.getValue("value"));
+      this.Field3660.Method1950(this.Field3660.Field3202.Method1450(var3, var4, var6, var5, var7));
    }
 
    public void Method3514(String a) {

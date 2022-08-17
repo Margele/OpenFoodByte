@@ -14,17 +14,17 @@ public class NameProtectCommand extends Command {
 
    public void onCommand(String[] commands) {
       GetDmgCommand.Method3599();
-      String a = "";
+      String var3 = "";
       if (commands.length <= 1) {
          ChatUtils.addChatMessage(this.getHelp());
       } else {
-         int a = 1;
-         if (a < commands.length) {
-            a = String.valueOf(a) + commands[a] + " ";
-            ++a;
+         int var4 = 1;
+         if (var4 < commands.length) {
+            var3 = String.valueOf(var3) + commands[var4] + " ";
+            ++var4;
          }
 
-         GlobalModule.fakeName = a.substring(0, a.length() - 1).replace("&", "§");
+         GlobalModule.fakeName = var3.substring(0, var3.length() - 1).replace("&", "§");
          GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("NameProtect", "Updated You New NameProtect - " + GlobalModule.fakeName, Types.WARNING));
          GlobalModule.INSTANCE.fileManager.saveNameProtect();
          super.onCommand(commands);

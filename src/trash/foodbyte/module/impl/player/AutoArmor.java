@@ -62,11 +62,11 @@ public class AutoArmor extends Module {
 
    public void Method258() {
       Class148.Method1445();
-      int a = 1;
-      if (a < 5) {
-         if (mc.thePlayer.inventoryContainer.getSlot(4 + a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(4 + a).getStack();
-            if (Method1695(a, a)) {
+      int var2 = 1;
+      if (var2 < 5) {
+         if (mc.thePlayer.inventoryContainer.getSlot(4 + var2).getHasStack()) {
+            ItemStack var3 = mc.thePlayer.inventoryContainer.getSlot(4 + var2).getStack();
+            if (Method1695(var3, var2)) {
                ;
             }
 
@@ -77,24 +77,24 @@ public class AutoArmor extends Module {
                }
 
                if (this.Method713()) {
-                  this.Method234(4 + a);
+                  this.Method234(4 + var2);
                }
 
-               this.Method233(4 + a);
+               this.Method233(4 + var2);
             }
          }
 
-         int a = 9;
-         if (a < 45) {
-            if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-               if (this.Field2460.Method211((long)(1000.0F * Field2462.getFloatValueCast())) && Method239(a, a) && Method238(a) > 0.0F) {
+         int var5 = 9;
+         if (var5 < 45) {
+            if (mc.thePlayer.inventoryContainer.getSlot(var5).getHasStack()) {
+               ItemStack var4 = mc.thePlayer.inventoryContainer.getSlot(var5).getStack();
+               if (this.Field2460.Method211((long)(1000.0F * Field2462.getFloatValueCast())) && Method239(var4, var2) && Method238(var4) > 0.0F) {
                   if (Field2461.isCurrentMode("FakeInv") && !this.Field2463) {
                      Wrapper.INSTANCE.sendPacket(new C16PacketClientStatus(EnumState.OPEN_INVENTORY_ACHIEVEMENT));
                      this.Field2463 = false;
                   }
 
-                  this.Method233(a);
+                  this.Method233(var5);
                   if (Field2461.isCurrentMode("FakeInv")) {
                      Wrapper.INSTANCE.sendPacket(new C0DPacketCloseWindow(0));
                      this.Field2463 = false;
@@ -104,34 +104,34 @@ public class AutoArmor extends Module {
                }
             }
 
-            ++a;
+            ++var5;
          }
 
-         ++a;
+         ++var2;
       }
 
    }
 
    public static boolean Method239(ItemStack a, int a) {
-      float a = Method238(a);
-      String a = "";
+      float var2 = Method238(a);
+      String var3 = "";
       if (a == 1) {
-         a = "helmet";
+         var3 = "helmet";
       } else if (a == 2) {
-         a = "chestplate";
+         var3 = "chestplate";
       } else if (a == 3) {
-         a = "leggings";
+         var3 = "leggings";
       } else if (a == 4) {
-         a = "boots";
+         var3 = "boots";
       }
 
-      if (!a.getUnlocalizedName().contains(a)) {
+      if (!a.getUnlocalizedName().contains(var3)) {
          return false;
       } else {
-         for(int a = 5; a < 45; ++a) {
-            if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-               ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-               if (Method238(a) > a && a.getUnlocalizedName().contains(a)) {
+         for(int var4 = 5; var4 < 45; ++var4) {
+            if (mc.thePlayer.inventoryContainer.getSlot(var4).getHasStack()) {
+               ItemStack var5 = mc.thePlayer.inventoryContainer.getSlot(var4).getStack();
+               if (Method238(var5) > var2 && var5.getUnlocalizedName().contains(var3)) {
                   return false;
                }
             }
@@ -142,22 +142,22 @@ public class AutoArmor extends Module {
    }
 
    public static boolean Method1695(ItemStack a, int a) {
-      float a = Method238(a);
-      String a = "";
+      float var2 = Method238(a);
+      String var3 = "";
       if (a == 1) {
-         a = "helmet";
+         var3 = "helmet";
       } else if (a == 2) {
-         a = "chestplate";
+         var3 = "chestplate";
       } else if (a == 3) {
-         a = "leggings";
+         var3 = "leggings";
       } else if (a == 4) {
-         a = "boots";
+         var3 = "boots";
       }
 
-      for(int a = 5; a < 45; ++a) {
-         if (mc.thePlayer.inventoryContainer.getSlot(a).getHasStack()) {
-            ItemStack a = mc.thePlayer.inventoryContainer.getSlot(a).getStack();
-            if (Method238(a) > a && a.getUnlocalizedName().contains(a)) {
+      for(int var4 = 5; var4 < 45; ++var4) {
+         if (mc.thePlayer.inventoryContainer.getSlot(var4).getHasStack()) {
+            ItemStack var5 = mc.thePlayer.inventoryContainer.getSlot(var4).getStack();
+            if (Method238(var5) > var2 && var5.getUnlocalizedName().contains(var3)) {
                return false;
             }
          }
@@ -175,24 +175,24 @@ public class AutoArmor extends Module {
    }
 
    public static float Method238(ItemStack a) {
-      float a = 0.0F;
+      float var1 = 0.0F;
       if (a.getItem() instanceof ItemArmor) {
-         ItemArmor a = (ItemArmor)a.getItem();
-         a = (float)((double)a + (double)a.damageReduceAmount + (double)((100 - a.damageReduceAmount) * EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a)) * 0.0075);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.depthStrider.effectId, a) / 45.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.featherFalling.effectId, a) / 40.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.blastProtection.effectId, a) / 100.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireProtection.effectId, a) / 100.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.thorns.effectId, a) / 100.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) / 50.0);
-         a = (float)((double)a + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.projectileProtection.effectId, a) / 100.0);
-         a = a.getDisplayName().toLowerCase().contains("§abarbarian chestplate") ? 10.76F : a;
-         a = a.getDisplayName().toLowerCase().contains("§6exodus") ? 5.91F : a;
-         a = a.getDisplayName().toLowerCase().contains("§ashoes of vidar") ? 5.91F : a;
-         a = a.getDisplayName().toLowerCase().contains("§ahermes' boots") ? 5.91F : a;
+         ItemArmor var2 = (ItemArmor)a.getItem();
+         var1 = (float)((double)var1 + (double)var2.damageReduceAmount + (double)((100 - var2.damageReduceAmount) * EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a)) * 0.0075);
+         var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.depthStrider.effectId, a) / 45.0);
+         var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.featherFalling.effectId, a) / 40.0);
+         var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.blastProtection.effectId, a) / 100.0);
+         var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.fireProtection.effectId, a) / 100.0);
+         var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.thorns.effectId, a) / 100.0);
+         var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a) / 50.0);
+         var1 = (float)((double)var1 + (double)EnchantmentHelper.getEnchantmentLevel(Enchantment.projectileProtection.effectId, a) / 100.0);
+         var1 = a.getDisplayName().toLowerCase().contains("§abarbarian chestplate") ? 10.76F : var1;
+         var1 = a.getDisplayName().toLowerCase().contains("§6exodus") ? 5.91F : var1;
+         var1 = a.getDisplayName().toLowerCase().contains("§ashoes of vidar") ? 5.91F : var1;
+         var1 = a.getDisplayName().toLowerCase().contains("§ahermes' boots") ? 5.91F : var1;
       }
 
-      return a;
+      return var1;
    }
 
    public boolean Method713() {

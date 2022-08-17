@@ -7,7 +7,7 @@ public class Class434 implements Class422, Class45 {
    private static final String[] Field2072;
    private static final String[] Field2073;
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    @Class628

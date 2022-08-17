@@ -8,41 +8,41 @@ public class Class79 {
    }
 
    public void Method3748(Class63 a) {
-      String a = this.Field706;
-      int a = a.length();
-      int a;
-      if (a.charAt(0) == '<') {
-         a = 2;
+      String var2 = this.Field706;
+      int var3 = var2.length();
+      int var4;
+      if (var2.charAt(0) == '<') {
+         var4 = 2;
 
-         char a;
+         char var5;
          do {
-            int a = a.indexOf(58, a);
-            a.Method3610(a.substring(a - 1, a));
-            a = a + 1;
-            a = a.charAt(a);
-            if (a == 'L' || a == '[' || a == 'T') {
-               a = Method3750(a, a, a.Method3611());
+            int var6 = var2.indexOf(58, var4);
+            a.Method3610(var2.substring(var4 - 1, var6));
+            var4 = var6 + 1;
+            var5 = var2.charAt(var4);
+            if (var5 == 'L' || var5 == '[' || var5 == 'T') {
+               var4 = Method3750(var2, var4, a.Method3611());
             }
 
-            while((a = a.charAt(a++)) == ':') {
-               a = Method3750(a, a, a.Method3612());
+            while((var5 = var2.charAt(var4++)) == ':') {
+               var4 = Method3750(var2, var4, a.Method3612());
             }
-         } while(a != '>');
+         } while(var5 != '>');
       } else {
-         a = 0;
+         var4 = 0;
       }
 
-      if (a.charAt(a) == '(') {
-         ++a;
+      if (var2.charAt(var4) == '(') {
+         ++var4;
 
-         while(a.charAt(a) != ')') {
-            a = Method3750(a, a, a.Method3615());
+         while(var2.charAt(var4) != ')') {
+            var4 = Method3750(var2, var4, a.Method3615());
          }
 
-         for(a = Method3750(a, a + 1, a.Method3616()); a < a; a = Method3750(a, a + 1, a.Method3617())) {
+         for(var4 = Method3750(var2, var4 + 1, a.Method3616()); var4 < var3; var4 = Method3750(var2, var4 + 1, a.Method3617())) {
          }
       } else {
-         for(a = Method3750(a, a, a.Method3613()); a < a; a = Method3750(a, a, a.Method3614())) {
+         for(var4 = Method3750(var2, var4, a.Method3613()); var4 < var3; var4 = Method3750(var2, var4, a.Method3614())) {
          }
       }
 
@@ -53,9 +53,9 @@ public class Class79 {
    }
 
    private static int Method3750(String a, int a, Class63 a) {
-      String a = Class63.Method3784();
-      char a;
-      switch (a = a.charAt(a++)) {
+      String var3 = Class63.Method3784();
+      char var4;
+      switch (var4 = a.charAt(a++)) {
          case 'B':
          case 'C':
          case 'D':
@@ -65,7 +65,7 @@ public class Class79 {
          case 'S':
          case 'V':
          case 'Z':
-            a.Method3618(a);
+            a.Method3618(var4);
             return a;
          case 'E':
          case 'G':
@@ -83,53 +83,53 @@ public class Class79 {
          case 'X':
          case 'Y':
          default:
-            int a = a;
-            boolean a = false;
-            boolean a = false;
+            int var5 = a;
+            boolean var7 = false;
+            boolean var8 = false;
 
             while(true) {
-               String a;
+               String var9;
                label28:
                while(true) {
-                  switch (a = a.charAt(a++)) {
+                  switch (var4 = a.charAt(a++)) {
                      case '.':
                      case ';':
-                        a = a.substring(a, a - 1);
-                        a.Method3622(a);
-                        a.Method3621(a);
-                        if (a == ';') {
+                        var9 = a.substring(var5, a - 1);
+                        a.Method3622(var9);
+                        a.Method3621(var9);
+                        if (var4 == ';') {
                            a.Method3625();
                            return a;
                         }
 
-                        a = a;
-                        a = false;
-                        a = true;
+                        var5 = a;
+                        var7 = false;
+                        var8 = true;
                      case '<':
                         break label28;
                   }
                }
 
-               a = a.substring(a, a - 1);
-               a.Method3622(a);
-               a.Method3621(a);
-               a = true;
-               switch (a = a.charAt(a)) {
+               var9 = a.substring(var5, a - 1);
+               a.Method3622(var9);
+               a.Method3621(var9);
+               var7 = true;
+               switch (var4 = a.charAt(a)) {
                   case '>':
                   case '*':
                      ++a;
                      a.Method3623();
                   case '+':
                   case '-':
-                     a = Method3750(a, a + 1, a.Method3624(a));
+                     a = Method3750(a, a + 1, a.Method3624(var4));
                   default:
                      a = Method3750(a, a, a.Method3624('='));
                }
             }
          case 'T':
-            int a = a.indexOf(59, a);
-            a.Method3619(a.substring(a, a));
-            return a + 1;
+            int var6 = a.indexOf(59, a);
+            a.Method3619(a.substring(a, var6));
+            return var6 + 1;
          case '[':
             return Method3750(a, a, a.Method3620());
       }

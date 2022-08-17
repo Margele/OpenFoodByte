@@ -29,16 +29,16 @@ public class GhostBlocks extends Module {
    @EventTarget
    public void Method2066(MouseEvent a) {
       if (mc.currentScreen == null && a.eventButton == 1 && a.eventButtonState) {
-         MovingObjectPosition a = mc.objectMouseOver;
-         if (a.entityHit != null) {
+         MovingObjectPosition var2 = mc.objectMouseOver;
+         if (var2.entityHit != null) {
             return;
          }
 
-         mc.theWorld.getBlockState(a.getBlockPos()).getBlock();
-         BlockPos a = a.getBlockPos();
-         ItemStack a = mc.thePlayer.getHeldItem();
-         if (!this.Method2067(a) && (a.getDisplayName().contains("Stonk") || a.getDisplayName().contains("Pickaxe"))) {
-            mc.theWorld.setBlockToAir(a);
+         mc.theWorld.getBlockState(var2.getBlockPos()).getBlock();
+         BlockPos var4 = var2.getBlockPos();
+         ItemStack var5 = mc.thePlayer.getHeldItem();
+         if (!this.Method2067(var4) && (var5.getDisplayName().contains("Stonk") || var5.getDisplayName().contains("Pickaxe"))) {
+            mc.theWorld.setBlockToAir(var4);
             a.Method2300(true);
          }
       }
@@ -46,16 +46,16 @@ public class GhostBlocks extends Module {
    }
 
    private boolean Method2067(BlockPos a) {
-      Block a = mc.theWorld.getBlockState(a).getBlock();
-      if (a == Blocks.skull) {
-         TileEntitySkull a = (TileEntitySkull)mc.theWorld.getTileEntity(a);
-         if (a.getSkullType() == 3 && a.getPlayerProfile() != null && a.getPlayerProfile().getProperties() != null) {
-            Property a = (Property)Method2068(a.getPlayerProfile().getProperties().get("textures"));
-            return a.getValue().equals("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkYjRhZGZhOWJmNDhmZjVkNDE3MDdhZTM0ZWE3OGJkMjM3MTY1OWZjZDhjZDg5MzQ3NDlhZjRjY2U5YiJ9fX0=");
+      Block var2 = mc.theWorld.getBlockState(a).getBlock();
+      if (var2 == Blocks.skull) {
+         TileEntitySkull var3 = (TileEntitySkull)mc.theWorld.getTileEntity(a);
+         if (var3.getSkullType() == 3 && var3.getPlayerProfile() != null && var3.getPlayerProfile().getProperties() != null) {
+            Property var4 = (Property)Method2068(var3.getPlayerProfile().getProperties().get("textures"));
+            return var4.getValue().equals("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzRkYjRhZGZhOWJmNDhmZjVkNDE3MDdhZTM0ZWE3OGJkMjM3MTY1OWZjZDhjZDg5MzQ3NDlhZjRjY2U5YiJ9fX0=");
          }
       }
 
-      return a == Blocks.lever || a == Blocks.chest || a == Blocks.trapped_chest;
+      return var2 == Blocks.lever || var2 == Blocks.chest || var2 == Blocks.trapped_chest;
    }
 
    public static Object Method2068(Iterable a) {

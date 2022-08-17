@@ -77,19 +77,19 @@ public class Class109 extends Class119 {
       super.Method17(a, a);
    }
 
-   public int Method3(int a, int a, int a2) {
-      float a = (float)a / (float)this.Field853;
-      float a = (float)a / (float)this.Field854;
-      float a = (float)this.Field859 + (float)(this.Field862 - this.Field859) * a;
-      float a = (float)this.Field865 + (float)(this.Field868 - this.Field865) * a;
-      int a = (int)(a + (a - a) * a + 0.5F);
-      a = (float)this.Field860 + (float)(this.Field863 - this.Field860) * a;
-      a = (float)this.Field866 + (float)(this.Field869 - this.Field866) * a;
-      int a = (int)(a + (a - a) * a + 0.5F);
-      a = (float)this.Field861 + (float)(this.Field864 - this.Field861) * a;
-      a = (float)this.Field867 + (float)(this.Field870 - this.Field867) * a;
-      int a = (int)(a + (a - a) * a + 0.5F);
-      return -16777216 | a << 16 | a << 8 | a;
+   public int Method3(int a, int a, int a) {
+      float var4 = (float)a / (float)this.Field853;
+      float var5 = (float)a / (float)this.Field854;
+      float var6 = (float)this.Field859 + (float)(this.Field862 - this.Field859) * var4;
+      float var7 = (float)this.Field865 + (float)(this.Field868 - this.Field865) * var4;
+      int var8 = (int)(var6 + (var7 - var6) * var5 + 0.5F);
+      var6 = (float)this.Field860 + (float)(this.Field863 - this.Field860) * var4;
+      var7 = (float)this.Field866 + (float)(this.Field869 - this.Field866) * var4;
+      int var9 = (int)(var6 + (var7 - var6) * var5 + 0.5F);
+      var6 = (float)this.Field861 + (float)(this.Field864 - this.Field861) * var4;
+      var7 = (float)this.Field867 + (float)(this.Field870 - this.Field867) * var4;
+      int var10 = (int)(var6 + (var7 - var6) * var5 + 0.5F);
+      return -16777216 | var8 << 16 | var9 << 8 | var10;
    }
 
    public String toString() {

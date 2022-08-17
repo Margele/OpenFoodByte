@@ -36,11 +36,11 @@ public class Class11 extends Class267 {
          }
       }
 
-      b[] a = b.Method3211(a);
+      b[] var7 = b.Method3211(a);
 
-      for(int a = 0; a < a.length; ++a) {
-         b a = a[a];
-         switch (a.Method3217()) {
+      for(int var8 = 0; var8 < var7.length; ++var8) {
+         b var9 = var7[var8];
+         switch (var9.Method3217()) {
             case 1:
             case 2:
             case 3:
@@ -60,10 +60,10 @@ public class Class11 extends Class267 {
                this.Field181.Method2530(Class45.Field396);
                break;
             case 9:
-               this.Field181.Method2530(a[a].Method3225());
+               this.Field181.Method2530(var7[var8].Method3225());
                break;
             default:
-               this.Field181.Method2530(a[a].Method3221());
+               this.Field181.Method2530(var7[var8].Method3221());
          }
       }
 
@@ -93,10 +93,10 @@ public class Class11 extends Class267 {
    }
 
    private static void Method3449(int a, Object[] a, List a) {
-      for(int a = 0; a < a; ++a) {
-         Object a = a[a];
-         a.Method2530(a);
-         if (a == Class45.Field400 || a == Class45.Field399) {
+      for(int var3 = 0; var3 < a; ++var3) {
+         Object var4 = a[var3];
+         a.Method2530(var4);
+         if (var4 == Class45.Field400 || var4 == Class45.Field399) {
             a.Method2530(Class45.Field396);
          }
       }
@@ -135,16 +135,16 @@ public class Class11 extends Class267 {
    public void Method1952(int a, String a) {
       if (a == 187) {
          if (this.Field183 == null) {
-            Class264 a = new Class264();
+            Class264 var3 = new Class264();
             this.Field183 = new ArrayList(3);
-            this.Field183.Method2530(a);
+            this.Field183.Method2530(var3);
             if (this.Field1460 != null) {
-               this.Field1460.Method1947(a);
+               this.Field1460.Method1947(var3);
             }
          }
 
-         for(int a = 0; a < this.Field183.Method1799(); ++a) {
-            this.Field184.put(this.Field183.get(a), a);
+         for(int var4 = 0; var4 < this.Field183.Method1799(); ++var4) {
+            this.Field184.put(this.Field183.get(var4), a);
          }
       }
 
@@ -191,25 +191,25 @@ public class Class11 extends Class267 {
       } else {
          this.Method3451(a);
          if (a != 184) {
-            Object a = this.Method1963();
+            Object var6 = this.Method1963();
             if (a == 183 && a.charAt(0) == '<') {
-               Object a;
-               if (a == Class45.Field402) {
-                  a = this.Field187;
+               Object var7;
+               if (var6 == Class45.Field402) {
+                  var7 = this.Field187;
                } else {
-                  a = this.Field184.Method2665(a);
+                  var7 = this.Field184.Method2665(var6);
                }
 
-               int a;
-               for(a = 0; a < this.Field181.Method1799(); ++a) {
-                  if (this.Field181.get(a) == a) {
-                     this.Field181.set(a, a);
+               int var8;
+               for(var8 = 0; var8 < this.Field181.Method1799(); ++var8) {
+                  if (this.Field181.get(var8) == var6) {
+                     this.Field181.set(var8, var7);
                   }
                }
 
-               for(a = 0; a < this.Field182.Method1799(); ++a) {
-                  if (this.Field182.get(a) == a) {
-                     this.Field182.set(a, a);
+               for(var8 = 0; var8 < this.Field182.Method1799(); ++var8) {
+                  if (this.Field182.get(var8) == var6) {
+                     this.Field182.set(var8, var7);
                   }
                }
             }
@@ -280,9 +280,9 @@ public class Class11 extends Class267 {
          } else if (a instanceof String) {
             this.Method1965("java/lang/String");
          } else if (a instanceof b) {
-            int a = ((b)a).Method3217();
-            if (a != 10 && a != 9) {
-               if (a != 11) {
+            int var2 = ((b)a).Method3217();
+            if (var2 != 10 && var2 != 9) {
+               if (var2 != 11) {
                   throw new IllegalArgumentException();
                }
 
@@ -368,8 +368,8 @@ public class Class11 extends Class267 {
    }
 
    private void Method1873(String a) {
-      int a = a.charAt(0) == '(' ? a.indexOf(41) + 1 : 0;
-      switch (a.charAt(a)) {
+      int var2 = a.charAt(0) == '(' ? a.indexOf(41) + 1 : 0;
+      switch (a.charAt(var2)) {
          case 'B':
          case 'C':
          case 'I':
@@ -420,27 +420,27 @@ public class Class11 extends Class267 {
    }
 
    private void Method1869(int a) {
-      int a = this.Field182.Method1799();
-      int a = a - a;
+      int var2 = this.Field182.Method1799();
+      int var3 = var2 - a;
 
-      for(int a = a - 1; a >= a; --a) {
-         this.Field182.remove(a);
+      for(int var4 = var2 - 1; var4 >= var3; --var4) {
+         this.Field182.remove(var4);
       }
 
    }
 
    private void Method3451(String a) {
-      char a = a.charAt(0);
-      if (a == '(') {
-         int a = 0;
-         b[] a = b.Method3211(a);
+      char var2 = a.charAt(0);
+      if (var2 == '(') {
+         int var3 = 0;
+         b[] var4 = b.Method3211(a);
 
-         for(int a = 0; a < a.length; ++a) {
-            a += a[a].Method3233();
+         for(int var5 = 0; var5 < var4.length; ++var5) {
+            var3 += var4[var5].Method3233();
          }
 
-         this.Method1869(a);
-      } else if (a != 'J' && a != 'D') {
+         this.Method1869(var3);
+      } else if (var2 != 'J' && var2 != 'D') {
          this.Method1869(1);
       } else {
          this.Method1869(2);
@@ -449,13 +449,13 @@ public class Class11 extends Class267 {
    }
 
    private void Method3452(int a, int a, String a) {
-      int a = Class37.Method3383();
+      boolean var4 = Class37.Method3383();
       if (this.Field181 == null) {
          this.Field183 = null;
       } else {
-         Object a;
-         Object a;
-         Object a;
+         Object var5;
+         Object var6;
+         Object var7;
          switch (a) {
             case 0:
             case 116:
@@ -520,19 +520,19 @@ public class Class11 extends Class267 {
                this.Method1965(Class45.Field396);
             case 50:
                this.Method1869(1);
-               a = this.Method1963();
-               if (a instanceof String) {
-                  this.Method1873(((String)a).substring(1));
+               var5 = this.Method1963();
+               if (var5 instanceof String) {
+                  this.Method1873(((String)var5).substring(1));
                }
 
                this.Method1965("java/lang/Object");
             case 54:
             case 56:
             case 58:
-               a = this.Method1963();
-               this.Method1849(a, a);
-               a = this.Method3450(a - 1);
-               if (a != Class45.Field400 && a != Class45.Field399) {
+               var5 = this.Method1963();
+               this.Method1849(a, var5);
+               var6 = this.Method3450(a - 1);
+               if (var6 != Class45.Field400 && var6 != Class45.Field399) {
                   break;
                }
 
@@ -540,11 +540,11 @@ public class Class11 extends Class267 {
             case 55:
             case 57:
                this.Method1869(1);
-               a = this.Method1963();
-               this.Method1849(a, a);
+               var5 = this.Method1963();
+               this.Method1849(a, var5);
                this.Method1849(a + 1, Class45.Field396);
-               a = this.Method3450(a - 1);
-               if (a != Class45.Field400 && a != Class45.Field399) {
+               var6 = this.Method3450(a - 1);
+               if (var6 != Class45.Field400 && var6 != Class45.Field399) {
                   break;
                }
 
@@ -590,55 +590,55 @@ public class Class11 extends Class267 {
             case 175:
                this.Method1869(2);
             case 89:
-               a = this.Method1963();
-               this.Method1965(a);
-               this.Method1965(a);
+               var5 = this.Method1963();
+               this.Method1965(var5);
+               this.Method1965(var5);
             case 90:
-               a = this.Method1963();
-               a = this.Method1963();
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
+               var5 = this.Method1963();
+               var6 = this.Method1963();
+               this.Method1965(var5);
+               this.Method1965(var6);
+               this.Method1965(var5);
             case 91:
-               a = this.Method1963();
-               a = this.Method1963();
-               a = this.Method1963();
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
+               var5 = this.Method1963();
+               var6 = this.Method1963();
+               var7 = this.Method1963();
+               this.Method1965(var5);
+               this.Method1965(var7);
+               this.Method1965(var6);
+               this.Method1965(var5);
             case 92:
-               a = this.Method1963();
-               a = this.Method1963();
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
+               var5 = this.Method1963();
+               var6 = this.Method1963();
+               this.Method1965(var6);
+               this.Method1965(var5);
+               this.Method1965(var6);
+               this.Method1965(var5);
             case 93:
-               a = this.Method1963();
-               a = this.Method1963();
-               a = this.Method1963();
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
+               var5 = this.Method1963();
+               var6 = this.Method1963();
+               var7 = this.Method1963();
+               this.Method1965(var6);
+               this.Method1965(var5);
+               this.Method1965(var7);
+               this.Method1965(var6);
+               this.Method1965(var5);
             case 94:
-               a = this.Method1963();
-               a = this.Method1963();
-               a = this.Method1963();
-               Object a = this.Method1963();
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
-               this.Method1965(a);
+               var5 = this.Method1963();
+               var6 = this.Method1963();
+               var7 = this.Method1963();
+               Object var8 = this.Method1963();
+               this.Method1965(var6);
+               this.Method1965(var5);
+               this.Method1965(var8);
+               this.Method1965(var7);
+               this.Method1965(var6);
+               this.Method1965(var5);
             case 95:
-               a = this.Method1963();
-               a = this.Method1963();
-               this.Method1965(a);
-               this.Method1965(a);
+               var5 = this.Method1963();
+               var6 = this.Method1963();
+               this.Method1965(var5);
+               this.Method1965(var6);
             case 96:
             case 100:
             case 104:

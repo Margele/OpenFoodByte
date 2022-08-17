@@ -43,9 +43,9 @@ public class BedESP extends Module {
 
    @EventTarget
    public void Method1625(Class649 a) {
-      BlockPos a = new BlockPos(a.Method3513(), a.Method3542(), a.Method3543());
-      if (!this.Field2384.contains(a) && Field2383.contains(Block.getIdFromBlock(a.Method3544()))) {
-         this.Field2384.Method2530(a);
+      BlockPos var2 = new BlockPos(a.Method3513(), a.Method3542(), a.Method3543());
+      if (!this.Field2384.contains(var2) && Field2383.contains(Block.getIdFromBlock(a.Method3544()))) {
+         this.Field2384.Method2530(var2);
       }
 
    }
@@ -53,15 +53,15 @@ public class BedESP extends Module {
    @EventTarget
    public void Method1626(EventTickUpdate a) {
       Class492.Method2239();
-      int a = 0;
-      if (a < this.Field2384.Method1799()) {
-         BlockPos a = (BlockPos)this.Field2384.get(a);
-         int a = Block.getIdFromBlock(mc.theWorld.getBlockState(a).getBlock());
-         if (!Field2383.contains(a)) {
-            this.Field2384.remove(a);
+      int var3 = 0;
+      if (var3 < this.Field2384.Method1799()) {
+         BlockPos var4 = (BlockPos)this.Field2384.get(var3);
+         int var5 = Block.getIdFromBlock(mc.theWorld.getBlockState(var4).getBlock());
+         if (!Field2383.contains(var5)) {
+            this.Field2384.remove(var3);
          }
 
-         ++a;
+         ++var3;
       }
 
    }
@@ -71,24 +71,24 @@ public class BedESP extends Module {
       Class492.Method2239();
       Iterator var3 = this.Field2384.Method1383();
       if (var3.Method932()) {
-         BlockPos a = (BlockPos)var3.Method933();
-         this.Method1627(a, a);
+         BlockPos var4 = (BlockPos)var3.Method933();
+         this.Method1627(var4, a);
       }
 
    }
 
    private void Method1627(BlockPos a, EventRender3D a) {
-      EntityPlayerSP a = mc.thePlayer;
-      Block a = mc.theWorld.getBlockState(a).getBlock();
-      if (a.getMaterial() != Material.air && mc.theWorld.getWorldBorder().contains(a)) {
-         a.setBlockBoundsBasedOnState(mc.theWorld, a);
-         double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a.Method3523();
-         double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a.Method3523();
-         double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a.Method3523();
-         AxisAlignedBB a = a.getSelectedBoundingBox(mc.theWorld, a);
-         Block.EnumOffsetType a = a.getOffsetType();
-         if (a != EnumOffsetType.NONE) {
-            a = Method1628(a, a, a);
+      EntityPlayerSP var3 = mc.thePlayer;
+      Block var5 = mc.theWorld.getBlockState(a).getBlock();
+      if (var5.getMaterial() != Material.air && mc.theWorld.getWorldBorder().contains(a)) {
+         var5.setBlockBoundsBasedOnState(mc.theWorld, a);
+         double var6 = var3.lastTickPosX + (var3.posX - var3.lastTickPosX) * (double)a.Method3523();
+         double var8 = var3.lastTickPosY + (var3.posY - var3.lastTickPosY) * (double)a.Method3523();
+         double var10 = var3.lastTickPosZ + (var3.posZ - var3.lastTickPosZ) * (double)a.Method3523();
+         AxisAlignedBB var12 = var5.getSelectedBoundingBox(mc.theWorld, a);
+         Block.EnumOffsetType var13 = var5.getOffsetType();
+         if (var13 != EnumOffsetType.NONE) {
+            var12 = Method1628(var12, var13, a);
          }
 
          GL11.glPushMatrix();
@@ -104,7 +104,7 @@ public class BedESP extends Module {
          }
 
          GlStateManager.color((float)this.Method242() / 255.0F, (float)this.Method243() / 255.0F, (float)this.Method244() / 255.0F, (float)this.Method245() / 255.0F);
-         Method1629(a.expand(0.0020000000949949026, 0.0020000000949949026, 0.0020000000949949026).offset(-a, -a, -a));
+         Method1629(var12.expand(0.0020000000949949026, 0.0020000000949949026, 0.0020000000949949026).offset(-var6, -var8, -var10));
          GL11.glEnable(2929);
          if (this.Field2387.getBooleanValue()) {
             GL11.glDisable(2848);
@@ -140,47 +140,47 @@ public class BedESP extends Module {
    }
 
    public static AxisAlignedBB Method1628(AxisAlignedBB a, Block.EnumOffsetType a, BlockPos a) {
-      int a = a.getX();
-      int a = a.getZ();
-      long a = (long)(a * 3129871) ^ (long)a * 116129781L;
-      a = a * a * 42317861L + a * 11L;
-      double a = ((double)((float)(a >> 16 & 15L) / 15.0F) - 0.5) * 0.5;
-      double a = ((double)((float)(a >> 24 & 15L) / 15.0F) - 0.5) * 0.5;
-      double a = 0.0;
+      int var3 = a.getX();
+      int var4 = a.getZ();
+      long var5 = (long)(var3 * 3129871) ^ (long)var4 * 116129781L;
+      var5 = var5 * var5 * 42317861L + var5 * 11L;
+      double var7 = ((double)((float)(var5 >> 16 & 15L) / 15.0F) - 0.5) * 0.5;
+      double var9 = ((double)((float)(var5 >> 24 & 15L) / 15.0F) - 0.5) * 0.5;
+      double var11 = 0.0;
       if (a == EnumOffsetType.XYZ) {
-         a = ((double)((float)(a >> 20 & 15L) / 15.0F) - 1.0) * 0.2;
+         var11 = ((double)((float)(var5 >> 20 & 15L) / 15.0F) - 1.0) * 0.2;
       }
 
-      return a.offset(a, a, a);
+      return a.offset(var7, var11, var9);
    }
 
    public static void Method1629(AxisAlignedBB a) {
-      Tessellator a = Tessellator.getInstance();
-      WorldRenderer a = a.getWorldRenderer();
-      a.begin(3, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.draw();
-      a.begin(3, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.draw();
-      a.begin(1, DefaultVertexFormats.POSITION);
-      a.pos(a.minX, a.minY, a.minZ).endVertex();
-      a.pos(a.minX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.minZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.minZ).endVertex();
-      a.pos(a.maxX, a.minY, a.maxZ).endVertex();
-      a.pos(a.maxX, a.maxY, a.maxZ).endVertex();
-      a.pos(a.minX, a.minY, a.maxZ).endVertex();
-      a.pos(a.minX, a.maxY, a.maxZ).endVertex();
-      a.draw();
+      Tessellator var1 = Tessellator.getInstance();
+      WorldRenderer var2 = var1.getWorldRenderer();
+      var2.begin(3, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var1.draw();
+      var2.begin(3, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var1.draw();
+      var2.begin(1, DefaultVertexFormats.POSITION);
+      var2.pos(a.minX, a.minY, a.minZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.minZ).endVertex();
+      var2.pos(a.maxX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.maxX, a.maxY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.minY, a.maxZ).endVertex();
+      var2.pos(a.minX, a.maxY, a.maxZ).endVertex();
+      var1.draw();
    }
 
    public void onEnable() {

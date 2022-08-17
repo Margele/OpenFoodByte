@@ -11,11 +11,11 @@ public class Class416 {
    }
 
    public static Color Method2353(int a, int a, float a, float a, float a) {
-      int a = (int)((System.currentTimeMillis() / (long)a + (long)a) % 360L);
+      int var6 = (int)((System.currentTimeMillis() / (long)a + (long)a) % 360L);
       Method2356();
-      float a = (float)a / 360.0F;
-      Color a = new Color(Color.HSBtoRGB(a, a, a));
-      Color var10000 = new Color(a.getRed(), a.getGreen(), a.getBlue(), Math.max(0, Math.min(255, (int)(a * 255.0F))));
+      float var7 = (float)var6 / 360.0F;
+      Color var8 = new Color(Color.HSBtoRGB(var7, a, a));
+      Color var10000 = new Color(var8.getRed(), var8.getGreen(), var8.getBlue(), Math.max(0, Math.min(255, (int)(a * 255.0F))));
       a.trash(new String[2]);
       return var10000;
    }

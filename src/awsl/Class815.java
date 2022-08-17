@@ -92,23 +92,23 @@ public class Class815 extends Class877 {
 
    protected void Method3439(int a, int a, float[] a) {
       Class193.Method1270();
-      float a = (float)a - this.Field3650;
-      float a = (float)a - this.Field3651;
-      float a = a * a + a * a;
-      if (a > this.Field3649) {
+      float var5 = (float)a - this.Field3650;
+      float var6 = (float)a - this.Field3651;
+      float var7 = var5 * var5 + var6 * var6;
+      if (var7 > this.Field3649) {
          a[0] = (float)a;
          a[1] = (float)a;
       }
 
-      float a = (float)Math.sqrt((double)a);
-      float a = this.Field3644 * (float)Math.sin((double)(a / this.Field3643 * 6.2831855F - this.Field3645));
-      a *= (this.Field3648 - a) / this.Field3648;
-      if (a != 0.0F) {
-         a *= this.Field3643 / a;
+      float var8 = (float)Math.sqrt((double)var7);
+      float var9 = this.Field3644 * (float)Math.sin((double)(var8 / this.Field3643 * 6.2831855F - this.Field3645));
+      var9 *= (this.Field3648 - var8) / this.Field3648;
+      if (var8 != 0.0F) {
+         var9 *= this.Field3643 / var8;
       }
 
-      a[0] = (float)a + a * a;
-      a[1] = (float)a + a * a;
+      a[0] = (float)a + var5 * var9;
+      a[1] = (float)a + var6 * var9;
    }
 
    public String toString() {

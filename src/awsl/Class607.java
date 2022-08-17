@@ -16,8 +16,8 @@ public class Class607 implements Class611 {
    private static boolean Field2853;
 
    public void Method3714(Class552 a) {
-      String a = a.Method692();
-      ChatUtils.addChatMessageNoPrefix(a);
+      String var2 = a.Method692();
+      ChatUtils.addChatMessageNoPrefix(var2);
    }
 
    public void Method3715(Class534 a) {
@@ -41,36 +41,36 @@ public class Class607 implements Class611 {
 
    public void Method3719(Class523 a) {
       Method3733();
-      String a = a.Method692();
+      String var3 = a.Method692();
       byte var5 = -1;
-      switch (a.hashCode()) {
+      switch (var3.hashCode()) {
          case 1513939:
-            if (!a.equals("/set")) {
+            if (!var3.equals("/set")) {
                break;
             }
 
             var5 = 0;
             a.trash(new String[2]);
          case 1496594:
-            if (!a.equals("/add")) {
+            if (!var3.equals("/add")) {
                break;
             }
 
             var5 = 1;
          case 2123356531:
-            if (!a.equals("/remove")) {
+            if (!var3.equals("/remove")) {
                break;
             }
 
             var5 = 2;
          case 46481497:
-            if (!a.equals("/data")) {
+            if (!var3.equals("/data")) {
                break;
             }
 
             var5 = 3;
          case 46607857:
-            if (a.equals("/hide")) {
+            if (var3.equals("/hide")) {
                var5 = 4;
             }
       }
@@ -88,21 +88,21 @@ public class Class607 implements Class611 {
                GlobalModule.INSTANCE.balant.Field2827.Field2848 = a.Method846().Field2848;
             }
 
-            int a = 0;
-            if (a < GlobalModule.INSTANCE.balant.Field2823.Method1799()) {
-               Class606 a = (Class606)GlobalModule.INSTANCE.balant.Field2823.get(a);
-               if (a.Method846().Field2840.equals(a.Field2840) && a.Method846().Field2846 == a.Field2846) {
-                  a.Field2838 = a.Method846().Field2838;
-                  a.Field2839 = a.Method846().Field2839;
-                  a.Field2843 = a.Method846().Field2843;
-                  a.Field2840 = a.Method846().Field2840;
-                  a.Field2841 = a.Method846().Field2841;
-                  a.Field2842 = a.Method846().Field2842;
-                  a.Field2847 = a.Method846().Field2847;
-                  a.Field2848 = a.Method846().Field2848;
+            int var6 = 0;
+            if (var6 < GlobalModule.INSTANCE.balant.Field2823.Method1799()) {
+               Class606 var7 = (Class606)GlobalModule.INSTANCE.balant.Field2823.get(var6);
+               if (a.Method846().Field2840.equals(var7.Field2840) && a.Method846().Field2846 == var7.Field2846) {
+                  var7.Field2838 = a.Method846().Field2838;
+                  var7.Field2839 = a.Method846().Field2839;
+                  var7.Field2843 = a.Method846().Field2843;
+                  var7.Field2840 = a.Method846().Field2840;
+                  var7.Field2841 = a.Method846().Field2841;
+                  var7.Field2842 = a.Method846().Field2842;
+                  var7.Field2847 = a.Method846().Field2847;
+                  var7.Field2848 = a.Method846().Field2848;
                }
 
-               ++a;
+               ++var6;
             }
          case 1:
             GlobalModule.INSTANCE.balant.Field2823.Method2530(a.Method846());
@@ -157,9 +157,9 @@ public class Class607 implements Class611 {
       Iterator var2 = ModuleManager.getAllModules().Method1383();
 
       while(var2.Method932()) {
-         Module a = (Module)var2.Method933();
-         if (a.canUse() && a.getState()) {
-            a.setState(!a.getState());
+         Module var3 = (Module)var2.Method933();
+         if (var3.canUse() && var3.getState()) {
+            var3.setState(!var3.getState());
          }
       }
 

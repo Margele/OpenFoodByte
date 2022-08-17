@@ -63,12 +63,12 @@ public class SuperPlace extends Module {
 
    @EventTarget
    public void Method712(EventMotion a) {
-      int a = Class148.Method1444();
+      int var2 = Class148.Method1444();
       if (a.isPre() && this.Field2409.getValue()) {
-         MovingObjectPosition a = mc.objectMouseOver;
-         if (Mouse.isButtonDown(1) && a.typeOfHit == MovingObjectType.BLOCK && a.sideHit != EnumFacing.DOWN) {
-            ItemStack a = mc.thePlayer.getHeldItem();
-            if (a.getItem() instanceof ItemBlock) {
+         MovingObjectPosition var3 = mc.objectMouseOver;
+         if (Mouse.isButtonDown(1) && var3.typeOfHit == MovingObjectType.BLOCK && var3.sideHit != EnumFacing.DOWN) {
+            ItemStack var4 = mc.thePlayer.getHeldItem();
+            if (var4.getItem() instanceof ItemBlock) {
                if (this.Field2417) {
                   this.Field2417 = false;
                   a.setYaw(mc.thePlayer.rotationYaw + (float)MathUtils.getRandomDouble2(0.0, 1.0) / 10.0F);
@@ -85,8 +85,8 @@ public class SuperPlace extends Module {
    @EventTarget
    public void Method755(EventTick a) {
       if (Mouse.isButtonDown(1) && !mc.thePlayer.capabilities.isFlying && !ModuleManager.getModule(FastPlace.class).getState()) {
-         ItemStack a = mc.thePlayer.getHeldItem();
-         if (!(a.getItem() instanceof ItemBlock)) {
+         ItemStack var2 = mc.thePlayer.getHeldItem();
+         if (!(var2.getItem() instanceof ItemBlock)) {
             if (ReflectionUtils.getRightClickDelayTimer() > 4) {
                ReflectionUtils.setRightClickDelayTimer(0);
             }
@@ -103,35 +103,35 @@ public class SuperPlace extends Module {
    public void Method1743(Class642 a) {
       if (Objects.nonNull(mc.thePlayer) && Objects.nonNull(mc.theWorld)) {
          if (mc.currentScreen == null && !mc.thePlayer.capabilities.isFlying) {
-            ItemStack a = mc.thePlayer.getHeldItem();
-            if (a.getItem() instanceof ItemBlock) {
-               MovingObjectPosition a = mc.objectMouseOver;
-               if (a.typeOfHit == MovingObjectType.BLOCK && a.sideHit != EnumFacing.UP && a.sideHit != EnumFacing.DOWN) {
+            ItemStack var2 = mc.thePlayer.getHeldItem();
+            if (var2.getItem() instanceof ItemBlock) {
+               MovingObjectPosition var3 = mc.objectMouseOver;
+               if (var3.typeOfHit == MovingObjectType.BLOCK && var3.sideHit != EnumFacing.UP && var3.sideHit != EnumFacing.DOWN) {
                   if (this.Field2415 != null && (float)this.Field2414 < this.Field2407.getFloatValueCast()) {
                      ++this.Field2414;
                   } else {
-                     this.Field2415 = a;
-                     BlockPos a = a.getBlockPos();
-                     if (this.Field2416 == null || a.getX() != this.Field2416.getX() || a.getY() != this.Field2416.getY() || a.getZ() != this.Field2416.getZ()) {
-                        Block a = mc.theWorld.getBlockState(a).getBlock();
-                        if (a != Blocks.air && !(a instanceof BlockLiquid)) {
+                     this.Field2415 = var3;
+                     BlockPos var4 = var3.getBlockPos();
+                     if (this.Field2416 == null || var4.getX() != this.Field2416.getX() || var4.getY() != this.Field2416.getY() || var4.getZ() != this.Field2416.getZ()) {
+                        Block var5 = mc.theWorld.getBlockState(var4).getBlock();
+                        if (var5 != Blocks.air && !(var5 instanceof BlockLiquid)) {
                            if (!this.Field2412.getBooleanValue() || Mouse.isButtonDown(1)) {
-                              long a = System.currentTimeMillis();
-                              if (a - this.Field2413 >= 25L) {
-                                 this.Field2413 = a;
+                              long var6 = System.currentTimeMillis();
+                              if (var6 - this.Field2413 >= 25L) {
+                                 this.Field2413 = var6;
                                  if (this.Field2410.getBooleanValue()) {
-                                    ItemBlock a = (ItemBlock)a.getItem();
-                                    if (a.canPlaceBlockOnSide(mc.theWorld, a, a.sideHit, mc.thePlayer, a) && mc.thePlayer.inventory.mainInventory[mc.thePlayer.inventory.currentItem].stackSize > 1) {
+                                    ItemBlock var8 = (ItemBlock)var2.getItem();
+                                    if (var8.canPlaceBlockOnSide(mc.theWorld, var4, var3.sideHit, mc.thePlayer, var2) && mc.thePlayer.inventory.mainInventory[mc.thePlayer.inventory.currentItem].stackSize > 1) {
                                        --mc.thePlayer.inventory.mainInventory[mc.thePlayer.inventory.currentItem].stackSize;
                                     }
                                  }
 
-                                 if (mc.playerController.onPlayerRightClick(mc.thePlayer, mc.theWorld, a, a, a.sideHit, a.hitVec)) {
+                                 if (mc.playerController.onPlayerRightClick(mc.thePlayer, mc.theWorld, var2, var4, var3.sideHit, var3.hitVec)) {
                                     ReflectionUtils2.pollMouseInputEvent(1, true);
                                     mc.thePlayer.swingItem();
                                     mc.getItemRenderer().resetEquippedProgress();
                                     ReflectionUtils2.pollMouseInputEvent(1, false);
-                                    this.Field2416 = a;
+                                    this.Field2416 = var4;
                                     this.Field2414 = 0;
                                  }
 

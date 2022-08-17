@@ -43,20 +43,20 @@ public class Class884 extends Class877 {
    }
 
    protected void Method834(Rectangle a) {
-      float a = (float)Math.tan((double)this.Field3859);
-      this.Field3863 = (float)(-a.height) * a;
-      if ((double)a < 0.0) {
-         a = -a;
+      float var2 = (float)Math.tan((double)this.Field3859);
+      this.Field3863 = (float)(-a.height) * var2;
+      if ((double)var2 < 0.0) {
+         var2 = -var2;
       }
 
-      a.width = (int)((float)a.height * a + (float)a.width + 0.999999F);
-      a = (float)Math.tan((double)this.Field3860);
-      this.Field3864 = (float)(-a.width) * a;
-      if ((double)a < 0.0) {
-         a = -a;
+      a.width = (int)((float)a.height * var2 + (float)a.width + 0.999999F);
+      var2 = (float)Math.tan((double)this.Field3860);
+      this.Field3864 = (float)(-a.width) * var2;
+      if ((double)var2 < 0.0) {
+         var2 = -var2;
       }
 
-      a.height = (int)((float)a.width * a + (float)a.height + 0.999999F);
+      a.height = (int)((float)a.width * var2 + (float)a.height + 0.999999F);
    }
 
    protected void Method3439(int a, int a, float[] a) {

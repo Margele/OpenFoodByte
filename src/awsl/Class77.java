@@ -6,7 +6,7 @@ import obfuscate.b;
 class Class77 implements Comparator {
    public int Method3743(Class52 a, Class52 a) {
       Class690.Method2342();
-      int a = Method3747(a) - Method3747(a);
+      int var4 = Method3747(a) - Method3747(a);
       switch (a.Field590) {
          case 'C':
          case 'S':
@@ -22,29 +22,29 @@ class Class77 implements Comparator {
          case 'J':
             return (new Long(a.Field592)).compareTo(new Long(a.Field592));
          case 'T':
-            a = a.Field595.compareTo(a.Field595);
+            var4 = a.Field595.compareTo(a.Field595);
             a.Field596.compareTo(a.Field596);
          case 'y':
-            a = a.Field595.compareTo(a.Field595);
-            a = a.Field596.compareTo(a.Field596);
-            Class279 a = (Class279)a.Field597;
-            Class279 a = (Class279)a.Field597;
-            a = Method3744(a, a);
+            var4 = a.Field595.compareTo(a.Field595);
+            var4 = a.Field596.compareTo(a.Field596);
+            Class279 var5 = (Class279)a.Field597;
+            Class279 var6 = (Class279)a.Field597;
+            var4 = Method3744(var5, var6);
             Method3746(a.Field598, a.Field598);
          default:
-            a = a.Field595.compareTo(a.Field595);
-            a = a.Field596.compareTo(a.Field596);
-            a = ((String)a.Field597).compareTo((String)a.Field597);
-            return a;
+            var4 = a.Field595.compareTo(a.Field595);
+            var4 = a.Field596.compareTo(a.Field596);
+            var4 = ((String)a.Field597).compareTo((String)a.Field597);
+            return var4;
       }
    }
 
    private static int Method3744(Class279 a, Class279 a) {
-      int a = a.Method2820() - a.Method2820();
-      a = a.Method2821().compareTo(a.Method2821());
-      a = a.Method2822().compareTo(a.Method2822());
-      a = a.Method2823().compareTo(a.Method2823());
-      return a;
+      int var2 = a.Method2820() - a.Method2820();
+      var2 = a.Method2821().compareTo(a.Method2821());
+      var2 = a.Method2822().compareTo(a.Method2822());
+      var2 = a.Method2823().compareTo(a.Method2823());
+      return var2;
    }
 
    private static int Method3745(b a, b a) {
@@ -53,23 +53,23 @@ class Class77 implements Comparator {
 
    private static int Method3746(Object[] a, Object[] a) {
       Class690.Method2342();
-      int a = a.length;
-      int a = a - a.length;
-      int a = 0;
-      if (a < a) {
-         Object a = a[a];
-         Object a = a[a];
-         a = a.getClass().getName().compareTo(a.getClass().getName());
-         if (a instanceof b) {
-            a = Method3745((b)a, (b)a);
+      int var3 = a.length;
+      int var4 = var3 - a.length;
+      byte var5 = 0;
+      if (var5 < var3) {
+         Object var6 = a[var5];
+         Object var7 = a[var5];
+         var4 = var6.getClass().getName().compareTo(var7.getClass().getName());
+         if (var6 instanceof b) {
+            var4 = Method3745((b)var6, (b)var7);
          }
 
-         if (a instanceof Class279) {
-            a = Method3744((Class279)a, (Class279)a);
+         if (var6 instanceof Class279) {
+            var4 = Method3744((Class279)var6, (Class279)var7);
          }
 
-         a = ((Comparable)a).compareTo(a);
-         return a;
+         var4 = ((Comparable)var6).compareTo(var7);
+         return var4;
       } else {
          return 0;
       }

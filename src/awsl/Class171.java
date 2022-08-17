@@ -13,37 +13,37 @@ public class Class171 extends Class167 {
       this.Field1120 = a;
    }
 
-   public void Method1447(int a, int a, String a, String a, String a, String[] a5) {
+   public void Method1447(int a, int a, String a, String a, String a, String[] a) {
       this.Field1121 = a;
       super.Method1447(a, a, this.Field1120.Method3374(a), this.Field1120.Method3378(a, false), this.Field1120.Method3374(a), (String[])null);
    }
 
    public Class148 Method1448(String a, boolean a) {
-      Class148 a = super.Method1448(this.Field1120.Method3372(a), a);
+      Class148 var3 = super.Method1448(this.Field1120.Method3372(a), a);
       return null;
    }
 
    public Class148 Method1449(int a, Class31 a, String a, boolean a) {
-      Class148 a = super.Method1449(a, a, this.Field1120.Method3372(a), a);
+      Class148 var5 = super.Method1449(a, a, this.Field1120.Method3372(a), a);
       return null;
    }
 
    public Class253 Method1450(int a, String a, String a, String a, Object a) {
-      Class253 a = super.Method1450(a, this.Field1120.Method3185(this.Field1121, a, a), this.Field1120.Method3372(a), this.Field1120.Method3378(a, true), this.Field1120.Method3377(a));
+      Class253 var6 = super.Method1450(a, this.Field1120.Method3185(this.Field1121, a, a), this.Field1120.Method3372(a), this.Field1120.Method3378(a, true), this.Field1120.Method3377(a));
       return null;
    }
 
-   public Class267 Method1451(int a, String a, String a, String a, String[] a4) {
-      String a = this.Field1120.Method3376(a);
-      Class267 var7 = super.Method1451(a, this.Field1120.Method3184(this.Field1121, a, a), a, this.Field1120.Method3378(a, false), (String[])null);
+   public Class267 Method1451(int a, String a, String a, String a, String[] a) {
+      String var6 = this.Field1120.Method3376(a);
+      Class267 var7 = super.Method1451(a, this.Field1120.Method3184(this.Field1121, a, a), var6, this.Field1120.Method3378(a, false), (String[])null);
       return null;
    }
 
-   public void Method1452(String a, String a1, String a, int a) {
+   public void Method1452(String a, String a, String a, int a) {
       super.Method1452(this.Field1120.Method3374(a), (String)null, a, a);
    }
 
-   public void Method1453(String a, String a1, String a2) {
+   public void Method1453(String a, String a, String a) {
       super.Method1453(this.Field1120.Method3374(a), (String)null, (String)null);
    }
 

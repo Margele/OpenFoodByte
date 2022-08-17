@@ -30,12 +30,12 @@ public class Class28 extends Class119 {
 
    public void Method60(float a) {
       this.Field241 = a;
-      float a = (float)Math.cos((double)a);
-      float a = (float)Math.sin((double)a);
-      this.Field245 = a;
-      this.Field246 = a;
-      this.Field247 = -a;
-      this.Field248 = a;
+      float var2 = (float)Math.cos((double)a);
+      float var3 = (float)Math.sin((double)a);
+      this.Field245 = var2;
+      this.Field246 = var3;
+      this.Field247 = -var3;
+      this.Field248 = var2;
    }
 
    public float Method61() {
@@ -67,44 +67,44 @@ public class Class28 extends Class119 {
    }
 
    public int Method3(int a, int a, int a) {
-      float a = this.Field245 * (float)a + this.Field246 * (float)a;
-      float a = this.Field247 * (float)a + this.Field248 * (float)a;
-      a /= this.Field239 * this.Field240;
-      a /= this.Field239;
-      int a = a & -16777216;
-      float a;
-      float a;
-      float a;
+      float var4 = this.Field245 * (float)a + this.Field246 * (float)a;
+      float var5 = this.Field247 * (float)a + this.Field248 * (float)a;
+      var4 /= this.Field239 * this.Field240;
+      var5 /= this.Field239;
+      int var6 = a & -16777216;
+      float var7;
+      float var8;
+      float var9;
       if (this.Field244 != null) {
-         a = this.Field243 * Class598.Method153(a, a, this.Field242);
-         a = 3.0F * this.Field243 * a + a;
-         a = (float)Math.sin((double)a * Math.PI);
-         a = (float)Math.sin(40.0 * (double)a);
-         a = (float)((double)a + 0.2 * (double)a);
-         return this.Field244.Method283(a);
+         var7 = this.Field243 * Class598.Method153(var4, var5, this.Field242);
+         var8 = 3.0F * this.Field243 * var7 + var5;
+         var8 = (float)Math.sin((double)var8 * Math.PI);
+         var9 = (float)Math.sin(40.0 * (double)var7);
+         var8 = (float)((double)var8 + 0.2 * (double)var9);
+         return this.Field244.Method283(var8);
       } else {
-         float a = this.Field243 * Class598.Method153(a, a, this.Field242);
-         float a = (float)Math.sin(Math.sin(8.0 * (double)a + (double)(7.0F * a) + 3.0 * (double)a));
-         float a;
-         float a = a = Math.abs(a);
-         float a = (float)Math.sin(40.0 * (double)a);
-         a = Math.abs(a);
-         float a = 0.6F * a + 0.3F;
-         float a = 0.2F * a + 0.8F;
-         float a = 0.15F * a + 0.85F;
-         a = 0.5F * (float)Math.pow((double)Math.abs(a), 0.3);
-         a = (float)Math.pow(0.5 * ((double)a + 1.0), 0.6) * a;
-         a = (float)Math.pow(0.5 * ((double)a + 1.0), 0.6) * a;
-         a = (0.5F * a + 0.35F * a) * 2.0F * a;
-         a = (0.25F * a + 0.35F * a) * 2.0F * a;
-         a *= Math.max(a, a) * a;
-         int a = a >> 16 & 255;
-         int a = a >> 8 & 255;
-         int a = a & 255;
-         a = Class767.Method1687((int)((float)a * a));
-         a = Class767.Method1687((int)((float)a * a));
-         a = Class767.Method1687((int)((float)a * a));
-         return a & -16777216 | a << 16 | a << 8 | a;
+         float var10 = this.Field243 * Class598.Method153(var4, var5, this.Field242);
+         float var17 = (float)Math.sin(Math.sin(8.0 * (double)var10 + (double)(7.0F * var4) + 3.0 * (double)var5));
+         float var11;
+         float var12 = var11 = Math.abs(var17);
+         float var13 = (float)Math.sin(40.0 * (double)var10);
+         var13 = Math.abs(var13);
+         float var14 = 0.6F * var13 + 0.3F;
+         float var15 = 0.2F * var13 + 0.8F;
+         float var16 = 0.15F * var13 + 0.85F;
+         var8 = 0.5F * (float)Math.pow((double)Math.abs(var11), 0.3);
+         var11 = (float)Math.pow(0.5 * ((double)var11 + 1.0), 0.6) * var14;
+         var12 = (float)Math.pow(0.5 * ((double)var12 + 1.0), 0.6) * var15;
+         var7 = (0.5F * var11 + 0.35F * var12) * 2.0F * var8;
+         var9 = (0.25F * var11 + 0.35F * var12) * 2.0F * var8;
+         var8 *= Math.max(var11, var12) * var16;
+         int var18 = a >> 16 & 255;
+         int var19 = a >> 8 & 255;
+         int var20 = a & 255;
+         var18 = Class767.Method1687((int)((float)var18 * var7));
+         var19 = Class767.Method1687((int)((float)var19 * var8));
+         var20 = Class767.Method1687((int)((float)var20 * var9));
+         return a & -16777216 | var18 << 16 | var19 << 8 | var20;
       }
    }
 

@@ -19,32 +19,32 @@ public class Class373 extends Class379 {
    public void Method63() {
       int var10000 = Class776.Method1730();
       super.Method63();
-      int a = (int)this.Field1806;
-      int a = (int)this.Field1807 + (int)this.Field1812;
+      int var2 = (int)this.Field1806;
+      int var3 = (int)this.Field1807 + (int)this.Field1812;
       this.Field1815 = 56.0F;
-      int a = var10000;
+      int var1 = var10000;
       this.Field1814 = 164.0F;
       RenderHelper.enableGUIStandardItemLighting();
-      boolean a = false;
-      int a = 9;
-      if (a < this.Field1808.thePlayer.inventoryContainer.inventorySlots.Method1799() - 9) {
-         Slot a = (Slot)this.Field1808.thePlayer.inventoryContainer.inventorySlots.get(a);
-         if (a.getHasStack()) {
-            a = true;
+      boolean var4 = false;
+      int var5 = 9;
+      if (var5 < this.Field1808.thePlayer.inventoryContainer.inventorySlots.Method1799() - 9) {
+         Slot var6 = (Slot)this.Field1808.thePlayer.inventoryContainer.inventorySlots.get(var5);
+         if (var6.getHasStack()) {
+            var4 = true;
          }
 
-         int a = a.xDisplayPosition;
-         int a = a.yDisplayPosition;
-         this.Field1808.getRenderItem().renderItemAndEffectIntoGUI(a.getStack(), a + a - 6, a + a - 82);
-         this.Field1808.getRenderItem().renderItemOverlays(this.Field1808.fontRendererObj, a.getStack(), a + a - 6, a + a - 82);
-         ++a;
+         int var7 = var6.xDisplayPosition;
+         int var8 = var6.yDisplayPosition;
+         this.Field1808.getRenderItem().renderItemAndEffectIntoGUI(var6.getStack(), var2 + var7 - 6, var3 + var8 - 82);
+         this.Field1808.getRenderItem().renderItemOverlays(this.Field1808.fontRendererObj, var6.getStack(), var2 + var7 - 6, var3 + var8 - 82);
+         ++var5;
       }
 
       RenderHelper.disableStandardItemLighting();
-      this.Field1808.fontRendererObj.drawStringWithShadow("Inventory §7Empty", (float)(a - this.Field1808.fontRendererObj.getStringWidth("Inventory Empty") / 2) + this.Field1814 / 2.0F, (float)(a - this.Field1808.fontRendererObj.FONT_HEIGHT / 2) + this.Field1815 / 2.0F, -1);
+      this.Field1808.fontRendererObj.drawStringWithShadow("Inventory §7Empty", (float)(var2 - this.Field1808.fontRendererObj.getStringWidth("Inventory Empty") / 2) + this.Field1814 / 2.0F, (float)(var3 - this.Field1808.fontRendererObj.FONT_HEIGHT / 2) + this.Field1815 / 2.0F, -1);
       if (a.trash() == null) {
-         ++a;
-         Class776.Method1729(a);
+         ++var1;
+         Class776.Method1729(var1);
       }
 
    }

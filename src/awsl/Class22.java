@@ -21,7 +21,7 @@ public class Class22 extends Class119 {
       return this.Field233;
    }
 
-   public int Method3(int a, int a1, int a) {
+   public int Method3(int a, int a, int a) {
       return (a & -16777216) != 0 ? a & 16777215 | this.Field234 : a;
    }
 

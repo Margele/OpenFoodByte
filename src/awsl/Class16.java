@@ -46,32 +46,32 @@ public class Class16 extends Class119 {
    private int Method1612(int a) {
       boolean var2 = Class193.Method1270();
       a += (int)((this.Field220 == 0 ? this.Field223.nextGaussian() : (double)(2.0F * this.Field223.nextFloat() - 1.0F)) * (double)this.Field219);
-      int a = 0;
-      if (a > 255) {
-         a = 255;
+      short var3 = 0;
+      if (var3 > 255) {
+         var3 = 255;
       }
 
-      return a;
+      return var3;
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = Class193.Method1270();
+   public int Method3(int a, int a, int a) {
+      boolean var4 = Class193.Method1270();
       if (this.Field223.nextFloat() <= this.Field222) {
-         int a = a & -16777216;
-         int a = a >> 16 & 255;
-         int a = a >> 8 & 255;
-         int a = a & 255;
+         int var5 = a & -16777216;
+         int var6 = a >> 16 & 255;
+         int var7 = a >> 8 & 255;
+         int var8 = a & 255;
          if (this.Field221) {
-            int a = (int)((this.Field220 == 0 ? this.Field223.nextGaussian() : (double)(2.0F * this.Field223.nextFloat() - 1.0F)) * (double)this.Field219);
-            a = Class767.Method1687(a + a);
-            a = Class767.Method1687(a + a);
-            a = Class767.Method1687(a + a);
+            int var9 = (int)((this.Field220 == 0 ? this.Field223.nextGaussian() : (double)(2.0F * this.Field223.nextFloat() - 1.0F)) * (double)this.Field219);
+            var6 = Class767.Method1687(var6 + var9);
+            var7 = Class767.Method1687(var7 + var9);
+            var8 = Class767.Method1687(var8 + var9);
          }
 
-         a = this.Method1612(a);
-         a = this.Method1612(a);
-         a = this.Method1612(a);
-         return a | a << 16 | a << 8 | a;
+         var6 = this.Method1612(var6);
+         var7 = this.Method1612(var7);
+         var8 = this.Method1612(var8);
+         return var5 | var6 << 16 | var7 << 8 | var8;
       } else {
          return a;
       }

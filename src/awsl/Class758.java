@@ -43,12 +43,12 @@ public class Class758 extends Class759 implements Cloneable {
    }
 
    public Object Method878() {
-      Class758 a = (Class758)super.Method878();
-      a.Field3332 = (int[])((int[])this.Field3332.clone());
-      a.Field3329 = (int[])((int[])this.Field3329.clone());
-      a.Field3330 = (int[])((int[])this.Field3330.clone());
-      a.Field3331 = (byte[])((byte[])this.Field3331.clone());
-      return a;
+      Class758 var1 = (Class758)super.Method878();
+      var1.Field3332 = (int[])((int[])this.Field3332.clone());
+      var1.Field3329 = (int[])((int[])this.Field3329.clone());
+      var1.Field3330 = (int[])((int[])this.Field3330.clone());
+      var1.Field3331 = (byte[])((byte[])this.Field3331.clone());
+      return var1;
    }
 
    public void Method1748(Class758 a) {
@@ -60,17 +60,17 @@ public class Class758 extends Class759 implements Cloneable {
    }
 
    public void Method17(int a, int a) {
-      int a = this.Field3332[0];
-      int a = this.Field3332[255];
+      int var3 = this.Field3332[0];
+      int var4 = this.Field3332[255];
 
-      int a;
-      for(a = 0; a < a; ++a) {
-         this.Field3332[a] = Class776.Method1719((float)a / (float)a, a, a);
+      int var5;
+      for(var5 = 0; var5 < a; ++var5) {
+         this.Field3332[var5] = Class776.Method1719((float)var5 / (float)a, var3, a);
       }
 
       if (a < 255) {
-         for(a = a; a < 256; ++a) {
-            this.Field3332[a] = Class776.Method1719((float)(a - a) / (float)(256 - a), a, a);
+         for(var5 = a; var5 < 256; ++var5) {
+            this.Field3332[var5] = Class776.Method1719((float)(var5 - a) / (float)(256 - a), a, var4);
          }
       }
 
@@ -108,15 +108,15 @@ public class Class758 extends Class759 implements Cloneable {
    }
 
    public void Method1750(int a, int a, int a) {
-      int[] a = new int[this.Field3328 + 1];
-      int[] a = new int[this.Field3328 + 1];
-      byte[] a = new byte[this.Field3328 + 1];
-      System.arraycopy(this.Field3329, 0, a, 0, this.Field3328);
-      System.arraycopy(this.Field3330, 0, a, 0, this.Field3328);
-      System.arraycopy(this.Field3331, 0, a, 0, this.Field3328);
-      this.Field3329 = a;
-      this.Field3330 = a;
-      this.Field3331 = a;
+      int[] var4 = new int[this.Field3328 + 1];
+      int[] var5 = new int[this.Field3328 + 1];
+      byte[] var6 = new byte[this.Field3328 + 1];
+      System.arraycopy(this.Field3329, 0, var4, 0, this.Field3328);
+      System.arraycopy(this.Field3330, 0, var5, 0, this.Field3328);
+      System.arraycopy(this.Field3331, 0, var6, 0, this.Field3328);
+      this.Field3329 = var4;
+      this.Field3330 = var5;
+      this.Field3331 = var6;
       this.Field3329[this.Field3328] = this.Field3329[this.Field3328 - 1];
       this.Field3330[this.Field3328] = this.Field3330[this.Field3328 - 1];
       this.Field3331[this.Field3328] = this.Field3331[this.Field3328 - 1];
@@ -170,8 +170,8 @@ public class Class758 extends Class759 implements Cloneable {
    }
 
    public void Method11(int a) {
-      int a = (this.Field3329[a] + this.Field3329[a + 1]) / 2;
-      this.Method1750(a, this.Method283((float)a / 256.0F), this.Field3331[a]);
+      int var2 = (this.Field3329[a] + this.Field3329[a + 1]) / 2;
+      this.Method1750(var2, this.Method283((float)var2 / 256.0F), this.Field3331[a]);
       this.Method89();
    }
 
@@ -186,9 +186,9 @@ public class Class758 extends Class759 implements Cloneable {
    }
 
    public int Method1755(int a) {
-      for(int a = 1; a < this.Field3328 - 1; ++a) {
-         if (this.Field3329[a + 1] > a) {
-            return a;
+      for(int var2 = 1; var2 < this.Field3328 - 1; ++var2) {
+         if (this.Field3329[var2 + 1] > a) {
+            return var2;
          }
       }
 
@@ -201,86 +201,86 @@ public class Class758 extends Class759 implements Cloneable {
       this.Field3329[this.Field3328 - 1] = 256;
       this.Field3330[0] = this.Field3330[1];
       this.Field3330[this.Field3328 - 1] = this.Field3330[this.Field3328 - 2];
-      int a = false;
-      int a = 1;
-      if (a < this.Field3328 - 1) {
-         float a = (float)(this.Field3329[a + 1] - this.Field3329[a]);
-         int a = this.Field3329[a + 1];
-         if (a == this.Field3328 - 2) {
-            ++a;
+      boolean var2 = false;
+      int var3 = 1;
+      if (var3 < this.Field3328 - 1) {
+         float var4 = (float)(this.Field3329[var3 + 1] - this.Field3329[var3]);
+         int var5 = this.Field3329[var3 + 1];
+         if (var3 == this.Field3328 - 2) {
+            ++var5;
          }
 
-         int a = this.Field3329[a];
-         if (a < a) {
-            int a = this.Field3330[a];
-            int a = this.Field3330[a + 1];
-            float[] a = Color.RGBtoHSB(a >> 16 & 255, a >> 8 & 255, a & 255, (float[])null);
-            float[] a = Color.RGBtoHSB(a >> 16 & 255, a >> 8 & 255, a & 255, (float[])null);
-            float a = (float)(a - this.Field3329[a]) / a;
-            int a = this.Method1613(a);
-            int a = this.Method1749(a);
-            if (a <= 255) {
-               switch (a) {
+         int var6 = this.Field3329[var3];
+         if (var6 < var5) {
+            int var7 = this.Field3330[var3];
+            int var8 = this.Field3330[var3 + 1];
+            float[] var9 = Color.RGBtoHSB(var7 >> 16 & 255, var7 >> 8 & 255, var7 & 255, (float[])null);
+            float[] var10 = Color.RGBtoHSB(var8 >> 16 & 255, var8 >> 8 & 255, var8 & 255, (float[])null);
+            float var11 = (float)(var6 - this.Field3329[var3]) / var4;
+            int var12 = this.Method1613(var3);
+            byte var13 = this.Method1749(var3);
+            if (var6 <= 255) {
+               switch (var13) {
                   case 80:
-                     a = 0.0F;
+                     var11 = 0.0F;
                   case 16:
                   case 32:
-                     a = Class776.Method1708(0.15F, 0.85F, a);
+                     var11 = Class776.Method1708(0.15F, 0.85F, var11);
                   case 48:
-                     --a;
-                     a = (float)Math.sqrt((double)(1.0F - a * a));
+                     --var11;
+                     var11 = (float)Math.sqrt((double)(1.0F - var11 * var11));
                   case 64:
-                     a = 1.0F - (float)Math.sqrt((double)(1.0F - a * a));
+                     var11 = 1.0F - (float)Math.sqrt((double)(1.0F - var11 * var11));
                }
 
-               switch (a) {
+               switch (var12) {
                   case 0:
-                     this.Field3332[a] = Class776.Method1719(a, a, a);
+                     this.Field3332[var6] = Class776.Method1719(var11, var7, var8);
                   case 1:
                   case 2:
                      label37: {
                         int var10002;
-                        if (a == 1) {
-                           if (!(a[0] <= a[0])) {
+                        if (var12 == 1) {
+                           if (!(var10[0] <= var9[0])) {
                               break label37;
                            }
 
-                           var10002 = a[0]++;
+                           var10002 = var10[0]++;
                         }
 
-                        if (a[0] <= a[1]) {
-                           var10002 = a[0]++;
+                        if (var9[0] <= var10[1]) {
+                           var10002 = var9[0]++;
                         }
                      }
 
-                     float a = Class776.Method1717(a, a[0], a[0]) % 6.2831855F;
-                     float a = Class776.Method1717(a, a[1], a[1]);
-                     float a = Class776.Method1717(a, a[2], a[2]);
-                     this.Field3332[a] = -16777216 | Color.HSBtoRGB(a, a, a);
+                     float var14 = Class776.Method1717(var11, var9[0], var10[0]) % 6.2831855F;
+                     float var15 = Class776.Method1717(var11, var9[1], var10[1]);
+                     float var16 = Class776.Method1717(var11, var9[2], var10[2]);
+                     this.Field3332[var6] = -16777216 | Color.HSBtoRGB(var14, var15, var16);
                }
             }
 
-            ++a;
+            ++var6;
          }
 
-         ++a;
+         ++var3;
       }
 
    }
 
    private void Method1622() {
-      for(int a = 1; a < this.Field3328 - 1; ++a) {
-         for(int a = 1; a < a; ++a) {
-            if (this.Field3329[a] < this.Field3329[a]) {
-               int a = this.Field3329[a];
-               this.Field3329[a] = this.Field3329[a];
-               this.Field3329[a] = a;
-               a = this.Field3330[a];
-               this.Field3330[a] = this.Field3330[a];
-               this.Field3330[a] = a;
-               byte a = this.Field3331[a];
-               this.Field3331[a] = this.Field3331[a];
-               this.Field3331[a] = a;
+      for(int var1 = 1; var1 < this.Field3328 - 1; ++var1) {
+         for(int var2 = 1; var2 < var1; ++var2) {
+            if (this.Field3329[var1] < this.Field3329[var2]) {
+               int var3 = this.Field3329[var1];
+               this.Field3329[var1] = this.Field3329[var2];
+               this.Field3329[var2] = var3;
+               var3 = this.Field3330[var1];
+               this.Field3330[var1] = this.Field3330[var2];
+               this.Field3330[var2] = var3;
+               byte var4 = this.Field3331[var1];
+               this.Field3331[var1] = this.Field3331[var2];
+               this.Field3331[var2] = var4;
             }
          }
       }
@@ -298,10 +298,10 @@ public class Class758 extends Class759 implements Cloneable {
       this.Field3330 = new int[this.Field3328];
       this.Field3331 = new byte[this.Field3328];
 
-      for(int a = 0; a < this.Field3328; ++a) {
-         this.Field3329[a] = (int)(255.0 * Math.random());
-         this.Field3330[a] = -16777216 | (int)(255.0 * Math.random()) << 16 | (int)(255.0 * Math.random()) << 8 | (int)(255.0 * Math.random());
-         this.Field3331[a] = 32;
+      for(int var1 = 0; var1 < this.Field3328; ++var1) {
+         this.Field3329[var1] = (int)(255.0 * Math.random());
+         this.Field3330[var1] = -16777216 | (int)(255.0 * Math.random()) << 16 | (int)(255.0 * Math.random()) << 8 | (int)(255.0 * Math.random());
+         this.Field3331[var1] = 32;
       }
 
       this.Field3329[0] = -1;
@@ -313,16 +313,16 @@ public class Class758 extends Class759 implements Cloneable {
    }
 
    public void Method56(float a) {
-      for(int a = 0; a < this.Field3328; ++a) {
-         int a = this.Field3330[a];
-         int a = a >> 16 & 255;
-         int a = a >> 8 & 255;
-         int a = a & 255;
-         a = Class767.Method1687((int)((double)a + (double)(a * 255.0F) * (Math.random() - 0.5)));
-         a = Class767.Method1687((int)((double)a + (double)(a * 255.0F) * (Math.random() - 0.5)));
-         a = Class767.Method1687((int)((double)a + (double)(a * 255.0F) * (Math.random() - 0.5)));
-         this.Field3330[a] = -16777216 | a << 16 | a << 8 | a;
-         this.Field3331[a] = 32;
+      for(int var2 = 0; var2 < this.Field3328; ++var2) {
+         int var3 = this.Field3330[var2];
+         int var4 = var3 >> 16 & 255;
+         int var5 = var3 >> 8 & 255;
+         int var6 = var3 & 255;
+         var4 = Class767.Method1687((int)((double)var4 + (double)(a * 255.0F) * (Math.random() - 0.5)));
+         var5 = Class767.Method1687((int)((double)var5 + (double)(a * 255.0F) * (Math.random() - 0.5)));
+         var6 = Class767.Method1687((int)((double)var6 + (double)(a * 255.0F) * (Math.random() - 0.5)));
+         this.Field3330[var2] = -16777216 | var4 << 16 | var5 << 8 | var6;
+         this.Field3331[var2] = 32;
       }
 
       this.Method1622();
@@ -330,8 +330,8 @@ public class Class758 extends Class759 implements Cloneable {
    }
 
    public static Class758 Method1758() {
-      Class758 a = new Class758();
-      a.Method1757();
-      return a;
+      Class758 var0 = new Class758();
+      var0.Method1757();
+      return var0;
    }
 }

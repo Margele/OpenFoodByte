@@ -28,8 +28,8 @@ public class Class368 {
    }
 
    Class368 Method661() {
-      double a = Math.sqrt(this.Field1733 * this.Field1733 + this.Field1734 * this.Field1734 + this.Field1735 * this.Field1735);
-      return new Class368(this.Field1733 / a, this.Field1734 / a, this.Field1735 / a);
+      double var1 = Math.sqrt(this.Field1733 * this.Field1733 + this.Field1734 * this.Field1734 + this.Field1735 * this.Field1735);
+      return new Class368(this.Field1733 / var1, this.Field1734 / var1, this.Field1735 / var1);
    }
 
    double Method662(Class368 a) {
@@ -80,10 +80,10 @@ public class Class368 {
    }
 
    Class368 Method671() {
-      double a = Math.sqrt(this.Field1733 * this.Field1733 + this.Field1734 * this.Field1734 + this.Field1735 * this.Field1735);
-      this.Field1733 /= a;
-      this.Field1734 /= a;
-      this.Field1735 /= a;
+      double var1 = Math.sqrt(this.Field1733 * this.Field1733 + this.Field1734 * this.Field1734 + this.Field1735 * this.Field1735);
+      this.Field1733 /= var1;
+      this.Field1734 /= var1;
+      this.Field1735 /= var1;
       return this;
    }
 

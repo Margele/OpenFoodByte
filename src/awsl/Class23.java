@@ -10,32 +10,32 @@ public class Class23 extends Class7 implements Class45 {
       this.Field235 = a;
    }
 
-   public void Method1979(String a, int a1) {
+   public void Method1979(String a, int a) {
    }
 
    public Class148 Method1968() {
       return null;
    }
 
-   public Class148 Method1969(String a, boolean a1) {
+   public Class148 Method1969(String a, boolean a) {
       return null;
    }
 
-   public Class148 Method1970(int a, Class31 a1, String a2, boolean a3) {
+   public Class148 Method1970(int a, Class31 a, String a, boolean a) {
       return null;
    }
 
-   public Class148 Method1971(int a, String a1, boolean a2) {
+   public Class148 Method1971(int a, String a, boolean a) {
       return null;
    }
 
-   public void Method1843(String a, String a1, String a2, Class264 a3, Class264 a4, int a5) {
+   public void Method1843(String a, String a, String a, Class264 a, Class264 a, int a) {
    }
 
-   public void Method1981(int a, Class264 a1) {
+   public void Method1981(int a, Class264 a) {
    }
 
-   public void Method1845(int a, int a1, Object[] a2, int a3, Object[] a4) {
+   public void Method1845(int a, int a, Object[] a, int a, Object[] a) {
    }
 
    public void Method1980(Class136 a) {
@@ -45,16 +45,16 @@ public class Class23 extends Class7 implements Class45 {
       if (!(a instanceof b)) {
          super.Method1950(a);
       } else {
-         String a = ((b)a).Method3221();
-         String a = "class$" + a.replace('/', '$');
-         if (!this.Field235.Field1126.contains(a)) {
-            this.Field235.Field1126.Method2530(a);
-            Class253 a = this.Field235.Method1457(4104, a, "Ljava/lang/Class;");
-            a.Method2121();
+         String var2 = ((b)a).Method3221();
+         String var3 = "class$" + var2.replace('/', '$');
+         if (!this.Field235.Field1126.contains(var2)) {
+            this.Field235.Field1126.Method2530(var2);
+            Class253 var4 = this.Field235.Method1457(4104, var3, "Ljava/lang/Class;");
+            var4.Method2121();
          }
 
-         String a = this.Field235.Field1123;
-         this.Field1460.Method1949(178, a, a, "Ljava/lang/Class;");
+         String var5 = this.Field235.Field1123;
+         this.Field1460.Method1949(178, var5, var3, "Ljava/lang/Class;");
       }
    }
 }

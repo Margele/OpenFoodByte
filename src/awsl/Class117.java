@@ -70,12 +70,12 @@ public class Class117 extends Class119 implements Cloneable {
 
    public void Method164(float a) {
       this.Field924 = a;
-      float a = (float)Math.cos((double)this.Field924);
-      float a = (float)Math.sin((double)this.Field924);
-      this.Field932 = a;
-      this.Field933 = a;
-      this.Field934 = -a;
-      this.Field935 = a;
+      float var2 = (float)Math.cos((double)this.Field924);
+      float var3 = (float)Math.sin((double)this.Field924);
+      this.Field932 = var2;
+      this.Field933 = var3;
+      this.Field934 = -var3;
+      this.Field935 = var2;
    }
 
    public float Method165() {
@@ -161,11 +161,11 @@ public class Class117 extends Class119 implements Cloneable {
    }
 
    protected Class591 Method178(float a, float a, float a) {
-      Class591 a = new Class591(a, a, a, this.Field943);
-      float[] a = Class598.Method163(a, (float[])null);
-      this.Field936 = a[0];
-      this.Field937 = a[1];
-      return a;
+      Class591 var4 = new Class591(a, a, a, this.Field943);
+      float[] var5 = Class598.Method163(var4, (float[])null);
+      this.Field936 = var5[0];
+      this.Field937 = var5[1];
+      return var4;
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
@@ -174,30 +174,30 @@ public class Class117 extends Class119 implements Cloneable {
    }
 
    public int Method3(int a, int a, int a) {
-      float a = this.Field932 * (float)a + this.Field933 * (float)a;
-      float a = this.Field934 * (float)a + this.Field935 * (float)a;
-      a /= this.Field922;
+      float var5 = this.Field932 * (float)a + this.Field933 * (float)a;
+      float var6 = this.Field934 * (float)a + this.Field935 * (float)a;
+      var5 /= this.Field922;
       Class193.Method1270();
-      a /= this.Field922 * this.Field923;
-      float a = this.Field940.Method20(a, a);
-      a = (a - this.Field936) / (this.Field937 - this.Field936);
-      a = Class776.Method1704(a, this.Field929);
-      a = Class776.Method1703(a, this.Field930);
-      a *= this.Field925;
-      int a = a & -16777216;
+      var6 /= this.Field922 * this.Field923;
+      float var7 = this.Field940.Method20(var5, var6);
+      var7 = (var7 - this.Field936) / (this.Field937 - this.Field936);
+      var7 = Class776.Method1704(var7, this.Field929);
+      var7 = Class776.Method1703(var7, this.Field930);
+      var7 *= this.Field925;
+      int var8 = a & -16777216;
       if (this.Field938 != null) {
-         this.Field938.Method283(a);
+         this.Field938.Method283(var7);
       }
 
-      int a = Class767.Method1687((int)(a * 255.0F));
-      int a = a << 16;
-      int a = a << 8;
-      a |= a | a | a;
+      int var9 = Class767.Method1687((int)(var7 * 255.0F));
+      int var10 = var9 << 16;
+      int var11 = var9 << 8;
+      var9 |= var8 | var10 | var11;
       if (this.Field931 != 0) {
-         a = Class767.Method1691(a, a, this.Field931);
+         var9 = Class767.Method1691(a, var9, this.Field931);
       }
 
-      return a;
+      return var9;
    }
 
    public String toString() {

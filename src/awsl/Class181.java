@@ -56,13 +56,13 @@ public class Class181 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
-      int a = a.getHeight();
-      ColorModel a = a.getColorModel();
-      a = new BufferedImage(a, a.createCompatibleWritableRaster(this.Field1132, this.Field1133), a.isAlphaPremultiplied(), (Hashtable)null);
-      Graphics2D a = a.createGraphics();
-      a.drawRenderedImage(a, AffineTransform.getTranslateInstance((double)(-this.Field1130), (double)(-this.Field1131)));
-      a.dispose();
+      int var3 = a.getWidth();
+      int var4 = a.getHeight();
+      ColorModel var5 = a.getColorModel();
+      a = new BufferedImage(var5, var5.createCompatibleWritableRaster(this.Field1132, this.Field1133), var5.isAlphaPremultiplied(), (Hashtable)null);
+      Graphics2D var6 = a.createGraphics();
+      var6.drawRenderedImage(a, AffineTransform.getTranslateInstance((double)(-this.Field1130), (double)(-this.Field1131)));
+      var6.dispose();
       return a;
    }
 

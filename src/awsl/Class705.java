@@ -23,87 +23,87 @@ public class Class705 extends GuiScreen {
    public Class705() {
       Class415.Method2360();
       Field3044 = new ArrayList();
-      double a = 80.0;
-      double a = 12.0;
-      double a = 10.0;
-      double a = 10.0;
-      double a = a + 10.0;
-      double a = a + 10.0;
-      Category[] a;
-      int a = (a = Category.Method2760()).length;
+      double var1 = 80.0;
+      double var3 = 12.0;
+      double var5 = 10.0;
+      double var7 = 10.0;
+      double var9 = var3 + 10.0;
+      double var11 = var1 + 10.0;
+      Category[] var13;
+      int var14 = (var13 = Category.Method2760()).length;
 
-      for(int a = 0; a < a; ++a) {
-         Category a = a[a];
-         String a = a.name();
-         Field3044.Method2530(new Class420(this, a, a, a, a, a, true, this, a));
-         a += a;
+      for(int var15 = 0; var15 < var14; ++var15) {
+         Category var16 = var13[var15];
+         String var17 = var16.name();
+         Field3044.Method2530(new Class420(this, var17, var5, var7, var1, var3, true, this, var16));
+         var5 += var11;
       }
 
-      Field3044.Method2530(new Class419(this, "Global", a, a, a, a, true, this));
+      Field3044.Method2530(new Class419(this, "Global", var5, var7, var1, var3, true, this));
       Field3045 = new ArrayList();
       Field3045.addAll(Field3044);
       Collections.reverse(Field3045);
    }
 
    public void Method1803(int a, int a, float a) {
-      String[] a = Class421.Method2390();
+      String[] var4 = Class421.Method2390();
       if (OpenGlHelper.shadersSupported && this.mc.getRenderViewEntity() instanceof EntityPlayer && GlobalModule.Field3161.getFloatValue() != 0.0F) {
          Class351.Method28(GlobalModule.Field3161.getFloatValue());
       }
 
       Iterator var5 = Field3044.Method1383();
       if (var5.Method932()) {
-         Class421 a = (Class421)var5.Method933();
-         a.Method2385(a, a, a);
+         Class421 var6 = (Class421)var5.Method933();
+         var6.Method2385(a, a, a);
          a.trash(new String[3]);
       }
 
-      ScaledResolution a = new ScaledResolution(this.mc);
+      ScaledResolution var16 = new ScaledResolution(this.mc);
       GL11.glPushMatrix();
-      GL11.glTranslated((double)a.getScaledWidth(), (double)a.getScaledHeight(), 0.0);
+      GL11.glTranslated((double)var16.getScaledWidth(), (double)var16.getScaledHeight(), 0.0);
       GL11.glScaled(0.5, 0.5, 0.5);
       GL11.glPopMatrix();
       this.Field3046 = null;
       Iterator var17 = Field3044.Method1383();
-      Class421 a;
+      Class421 var7;
       Iterator var8;
-      Class414 a;
+      Class414 var9;
       if (var17.Method932()) {
-         a = (Class421)var17.Method933();
-         if (a.Field2036 && a.Field2035 && a.Field2037 != null && a.Field2037.Method1799() > 0) {
-            var8 = a.Field2037.Method1383();
+         var7 = (Class421)var17.Method933();
+         if (var7.Field2036 && var7.Field2035 && var7.Field2037 != null && var7.Field2037.Method1799() > 0) {
+            var8 = var7.Field2037.Method1383();
             if (var8.Method932()) {
-               a = (Class414)var8.Method933();
-               if (a.Field2009) {
-                  this.Field3046 = a;
+               var9 = (Class414)var8.Method933();
+               if (var9.Field2009) {
+                  this.Field3046 = var9;
                }
             }
          }
       }
 
       var17 = Field3044.Method1383();
-      double a;
-      Color a;
-      int a;
+      double var10;
+      Color var12;
+      int var13;
       Iterator var14;
       double var10000;
       if (var17.Method932()) {
-         a = (Class421)var17.Method933();
-         if (a.Field2035 && a.Field2036 && a.Field2037 != null) {
-            var8 = a.Field2037.Method1383();
+         var7 = (Class421)var17.Method933();
+         if (var7.Field2035 && var7.Field2036 && var7.Field2037 != null) {
+            var8 = var7.Field2037.Method1383();
             if (var8.Method932()) {
-               a = (Class414)var8.Method933();
-               if (a.Field2008 && a.Field2002 != null && !a.Field2002.isEmpty()) {
-                  a = 0.0;
-                  a = Class416.Method2352().darker();
-                  a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 170)).getRGB();
-                  var14 = a.Field2002.Method1383();
+               var9 = (Class414)var8.Method933();
+               if (var9.Field2008 && var9.Field2002 != null && !var9.Field2002.isEmpty()) {
+                  var10 = 0.0;
+                  var12 = Class416.Method2352().darker();
+                  var13 = (new Color(var12.getRed(), var12.getGreen(), var12.getBlue(), 170)).getRGB();
+                  var14 = var9.Field2002.Method1383();
                   if (var14.Method932()) {
-                     Class426 a = (Class426)var14.Method933();
-                     a.Field2049 = a;
-                     a.Method2309();
-                     a.Method2310(a, a, a);
-                     var10000 = a + a.Field2053;
+                     Class426 var15 = (Class426)var14.Method933();
+                     var15.Field2049 = var10;
+                     var15.Method2309();
+                     var15.Method2310(a, a, a);
+                     var10000 = var10 + var15.Field2053;
                   }
                }
             }
@@ -112,22 +112,22 @@ public class Class705 extends GuiScreen {
 
       var17 = Field3044.Method1383();
       if (var17.Method932()) {
-         a = (Class421)var17.Method933();
-         if (a.Field2035 && a.Field2036 && a.Field2038 != null) {
-            var8 = a.Field2038.Method1383();
+         var7 = (Class421)var17.Method933();
+         if (var7.Field2035 && var7.Field2036 && var7.Field2038 != null) {
+            var8 = var7.Field2038.Method1383();
             if (var8.Method932()) {
-               Class417 a = (Class417)var8.Method933();
-               if (a.Field2019 && a.Field2013 != null && !a.Field2013.isEmpty()) {
-                  a = 0.0;
-                  a = Class416.Method2352().darker();
-                  a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 170)).getRGB();
-                  var14 = a.Field2013.Method1383();
+               Class417 var18 = (Class417)var8.Method933();
+               if (var18.Field2019 && var18.Field2013 != null && !var18.Field2013.isEmpty()) {
+                  var10 = 0.0;
+                  var12 = Class416.Method2352().darker();
+                  var13 = (new Color(var12.getRed(), var12.getGreen(), var12.getBlue(), 170)).getRGB();
+                  var14 = var18.Field2013.Method1383();
                   if (var14.Method932()) {
-                     Class413 a = (Class413)var14.Method933();
-                     a.Field1993 = a;
-                     a.Method3577();
-                     a.Method2369(a, a, a);
-                     var10000 = a + a.Field1997;
+                     Class413 var19 = (Class413)var14.Method933();
+                     var19.Field1993 = var10;
+                     var19.Method3577();
+                     var19.Method2369(a, a, a);
+                     var10000 = var10 + var19.Field1997;
                   }
                }
             }
@@ -137,7 +137,7 @@ public class Class705 extends GuiScreen {
       if (this.Field3046 != null) {
          drawRect(0, 0, this.width, this.height, -2012213232);
          GL11.glPushMatrix();
-         GL11.glTranslatef((float)(a.getScaledWidth() / 2), (float)(a.getScaledHeight() / 2), 0.0F);
+         GL11.glTranslatef((float)(var16.getScaledWidth() / 2), (float)(var16.getScaledHeight() / 2), 0.0F);
          GL11.glScalef(4.0F, 4.0F, 0.0F);
          Class415.Method2368("Listening...", 0.0, -10.0, -1);
          GL11.glScalef(0.5F, 0.5F, 0.0F);
@@ -154,7 +154,7 @@ public class Class705 extends GuiScreen {
 
          label128:
          while(true) {
-            Class421 a;
+            Class421 var5;
             Iterator var6;
             Iterator var8;
             do {
@@ -182,34 +182,34 @@ public class Class705 extends GuiScreen {
                                              return;
                                           }
 
-                                          a = (Class421)var4.Method933();
-                                       } while(!a.Method2386(a, a, a));
+                                          var5 = (Class421)var4.Method933();
+                                       } while(!var5.Method2386(a, a, a));
 
                                        return;
                                     }
 
-                                    a = (Class421)var4.Method933();
-                                 } while(!a.Field2035);
-                              } while(!a.Field2036);
-                           } while(a.Field2038 == null);
+                                    var5 = (Class421)var4.Method933();
+                                 } while(!var5.Field2035);
+                              } while(!var5.Field2036);
+                           } while(var5.Field2038 == null);
 
-                           var6 = a.Field2038.Method1383();
+                           var6 = var5.Field2038.Method1383();
 
                            while(true) {
-                              Class417 a;
+                              Class417 var11;
                               do {
                                  if (!var6.Method932()) {
                                     continue label98;
                                  }
 
-                                 a = (Class417)var6.Method933();
-                              } while(!a.Field2019);
+                                 var11 = (Class417)var6.Method933();
+                              } while(!var11.Field2019);
 
-                              var8 = a.Field2013.Method1383();
+                              var8 = var11.Field2013.Method1383();
 
                               while(var8.Method932()) {
-                                 Class413 a = (Class413)var8.Method933();
-                                 if (a.Method2370(a, a, a)) {
+                                 Class413 var12 = (Class413)var8.Method933();
+                                 if (var12.Method2370(a, a, a)) {
                                     return;
                                  }
                               }
@@ -217,28 +217,28 @@ public class Class705 extends GuiScreen {
                         }
                      }
 
-                     a = (Class421)var4.Method933();
-                  } while(!a.Field2035);
-               } while(!a.Field2036);
-            } while(a.Field2037 == null);
+                     var5 = (Class421)var4.Method933();
+                  } while(!var5.Field2035);
+               } while(!var5.Field2036);
+            } while(var5.Field2037 == null);
 
-            var6 = a.Field2037.Method1383();
+            var6 = var5.Field2037.Method1383();
 
             while(true) {
-               Class414 a;
+               Class414 var7;
                do {
                   if (!var6.Method932()) {
                      continue label128;
                   }
 
-                  a = (Class414)var6.Method933();
-               } while(!a.Field2008);
+                  var7 = (Class414)var6.Method933();
+               } while(!var7.Field2008);
 
-               var8 = a.Field2002.Method1383();
+               var8 = var7.Field2002.Method1383();
 
                while(var8.Method932()) {
-                  Class426 a = (Class426)var8.Method933();
-                  if (a.Method2311(a, a, a)) {
+                  Class426 var9 = (Class426)var8.Method933();
+                  if (var9.Method2311(a, a, a)) {
                      return;
                   }
                }
@@ -253,7 +253,7 @@ public class Class705 extends GuiScreen {
 
          label102:
          while(true) {
-            Class421 a;
+            Class421 var5;
             Iterator var6;
             Iterator var8;
             do {
@@ -271,63 +271,63 @@ public class Class705 extends GuiScreen {
                                        var4 = Field3045.Method1383();
 
                                        while(var4.Method932()) {
-                                          a = (Class421)var4.Method933();
-                                          a.Method2387(a, a, a);
+                                          var5 = (Class421)var4.Method933();
+                                          var5.Method2387(a, a, a);
                                        }
 
                                        super.Method1811(a, a, a);
                                        return;
                                     }
 
-                                    a = (Class421)var4.Method933();
-                                 } while(!a.Field2035);
-                              } while(!a.Field2036);
-                           } while(a.Field2038 == null);
+                                    var5 = (Class421)var4.Method933();
+                                 } while(!var5.Field2035);
+                              } while(!var5.Field2036);
+                           } while(var5.Field2038 == null);
 
-                           var6 = a.Field2038.Method1383();
+                           var6 = var5.Field2038.Method1383();
 
                            while(true) {
-                              Class417 a;
+                              Class417 var10;
                               do {
                                  if (!var6.Method932()) {
                                     continue label72;
                                  }
 
-                                 a = (Class417)var6.Method933();
-                              } while(!a.Field2019);
+                                 var10 = (Class417)var6.Method933();
+                              } while(!var10.Field2019);
 
-                              var8 = a.Field2013.Method1383();
+                              var8 = var10.Field2013.Method1383();
 
                               while(var8.Method932()) {
-                                 Class413 a = (Class413)var8.Method933();
-                                 a.Method2371(a, a, a);
+                                 Class413 var11 = (Class413)var8.Method933();
+                                 var11.Method2371(a, a, a);
                               }
                            }
                         }
                      }
 
-                     a = (Class421)var4.Method933();
-                  } while(!a.Field2035);
-               } while(!a.Field2036);
-            } while(a.Field2037 == null);
+                     var5 = (Class421)var4.Method933();
+                  } while(!var5.Field2035);
+               } while(!var5.Field2036);
+            } while(var5.Field2037 == null);
 
-            var6 = a.Field2037.Method1383();
+            var6 = var5.Field2037.Method1383();
 
             while(true) {
-               Class414 a;
+               Class414 var7;
                do {
                   if (!var6.Method932()) {
                      continue label102;
                   }
 
-                  a = (Class414)var6.Method933();
-               } while(!a.Field2008);
+                  var7 = (Class414)var6.Method933();
+               } while(!var7.Field2008);
 
-               var8 = a.Field2002.Method1383();
+               var8 = var7.Field2002.Method1383();
 
                while(var8.Method932()) {
-                  Class426 a = (Class426)var8.Method933();
-                  a.Method2312(a, a, a);
+                  Class426 var9 = (Class426)var8.Method933();
+                  var9.Method2312(a, a, a);
                }
             }
          }
@@ -338,7 +338,7 @@ public class Class705 extends GuiScreen {
       Iterator var3 = Field3045.Method1383();
 
       while(true) {
-         Class421 a;
+         Class421 var4;
          do {
             do {
                do {
@@ -353,19 +353,19 @@ public class Class705 extends GuiScreen {
                         return;
                      }
 
-                     a = (Class421)var3.Method933();
-                  } while(!a.Field2036);
-               } while(!a.Field2035);
-            } while(a.Field2037 == null);
-         } while(a.Field2037.Method1799() <= 0);
+                     var4 = (Class421)var3.Method933();
+                  } while(!var4.Field2036);
+               } while(!var4.Field2035);
+            } while(var4.Field2037 == null);
+         } while(var4.Field2037.Method1799() <= 0);
 
-         Iterator var5 = a.Field2037.Method1383();
+         Iterator var5 = var4.Field2037.Method1383();
 
          while(var5.Method932()) {
-            Class414 a = (Class414)var5.Method933();
+            Class414 var6 = (Class414)var5.Method933();
 
             try {
-               if (a.Method3570(a, a)) {
+               if (var6.Method3570(a, a)) {
                   return;
                }
             } catch (IOException var9) {
@@ -380,7 +380,7 @@ public class Class705 extends GuiScreen {
 
       label95:
       while(true) {
-         Class421 a;
+         Class421 var2;
          Iterator var3;
          Iterator var5;
          do {
@@ -399,58 +399,58 @@ public class Class705 extends GuiScreen {
                                     return;
                                  }
 
-                                 a = (Class421)var1.Method933();
-                              } while(!a.Field2035);
-                           } while(!a.Field2036);
-                        } while(a.Field2038 == null);
+                                 var2 = (Class421)var1.Method933();
+                              } while(!var2.Field2035);
+                           } while(!var2.Field2036);
+                        } while(var2.Field2038 == null);
 
-                        var3 = a.Field2038.Method1383();
+                        var3 = var2.Field2038.Method1383();
 
                         while(true) {
-                           Class417 a;
+                           Class417 var7;
                            do {
                               if (!var3.Method932()) {
                                  continue label65;
                               }
 
-                              a = (Class417)var3.Method933();
-                           } while(!a.Field2019);
+                              var7 = (Class417)var3.Method933();
+                           } while(!var7.Field2019);
 
-                           var5 = a.Field2013.Method1383();
+                           var5 = var7.Field2013.Method1383();
 
                            while(var5.Method932()) {
-                              Class413 a = (Class413)var5.Method933();
-                              if (a instanceof Class418) {
-                                 ((Class418)a).Field2021 = false;
+                              Class413 var8 = (Class413)var5.Method933();
+                              if (var8 instanceof Class418) {
+                                 ((Class418)var8).Field2021 = false;
                               }
                            }
                         }
                      }
                   }
 
-                  a = (Class421)var1.Method933();
-               } while(!a.Field2035);
-            } while(!a.Field2036);
-         } while(a.Field2037 == null);
+                  var2 = (Class421)var1.Method933();
+               } while(!var2.Field2035);
+            } while(!var2.Field2036);
+         } while(var2.Field2037 == null);
 
-         var3 = a.Field2037.Method1383();
+         var3 = var2.Field2037.Method1383();
 
          while(true) {
-            Class414 a;
+            Class414 var4;
             do {
                if (!var3.Method932()) {
                   continue label95;
                }
 
-               a = (Class414)var3.Method933();
-            } while(!a.Field2008);
+               var4 = (Class414)var3.Method933();
+            } while(!var4.Field2008);
 
-            var5 = a.Field2002.Method1383();
+            var5 = var4.Field2002.Method1383();
 
             while(var5.Method932()) {
-               Class426 a = (Class426)var5.Method933();
-               if (a instanceof Class423) {
-                  ((Class423)a).Field2041 = false;
+               Class426 var6 = (Class426)var5.Method933();
+               if (var6 instanceof Class423) {
+                  ((Class423)var6).Field2041 = false;
                }
             }
          }
@@ -465,7 +465,7 @@ public class Class705 extends GuiScreen {
       Iterator var2 = Field3045.Method1383();
 
       while(true) {
-         Class421 a;
+         Class421 var3;
          do {
             do {
                do {
@@ -474,18 +474,18 @@ public class Class705 extends GuiScreen {
                         return;
                      }
 
-                     a = (Class421)var2.Method933();
-                  } while(!a.Field2036);
-               } while(!a.Field2035);
-            } while(a.Field2037 == null);
-         } while(a.Field2037.Method1799() <= 0);
+                     var3 = (Class421)var2.Method933();
+                  } while(!var3.Field2036);
+               } while(!var3.Field2035);
+            } while(var3.Field2037 == null);
+         } while(var3.Field2037.Method1799() <= 0);
 
-         Iterator var4 = a.Field2037.Method1383();
+         Iterator var4 = var3.Field2037.Method1383();
 
          while(var4.Method932()) {
-            Class414 a = (Class414)var4.Method933();
-            if (a == a.Field2001.Method1024()) {
-               a.Field2008 = false;
+            Class414 var5 = (Class414)var4.Method933();
+            if (a == var5.Field2001.Method1024()) {
+               var5.Field2008 = false;
             }
          }
       }
@@ -495,7 +495,7 @@ public class Class705 extends GuiScreen {
       Iterator var1 = Field3045.Method1383();
 
       while(true) {
-         Class421 a;
+         Class421 var2;
          do {
             do {
                do {
@@ -504,15 +504,15 @@ public class Class705 extends GuiScreen {
                         return;
                      }
 
-                     a = (Class421)var1.Method933();
-                  } while(!a.Field2036);
-               } while(!a.Field2035);
-            } while(a.Field2037 == null);
-         } while(a.Field2037.Method1799() <= 0);
+                     var2 = (Class421)var1.Method933();
+                  } while(!var2.Field2036);
+               } while(!var2.Field2035);
+            } while(var2.Field2037 == null);
+         } while(var2.Field2037.Method1799() <= 0);
 
-         Class414 a;
-         for(Iterator var3 = a.Field2037.Method1383(); var3.Method932(); a.Field2008 = false) {
-            a = (Class414)var3.Method933();
+         Class414 var4;
+         for(Iterator var3 = var2.Field2037.Method1383(); var3.Method932(); var4.Field2008 = false) {
+            var4 = (Class414)var3.Method933();
          }
       }
    }

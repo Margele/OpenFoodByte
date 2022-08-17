@@ -80,13 +80,13 @@ class Class52 {
       this.Field596 = a;
       this.Field597 = a;
       this.Field598 = a;
-      int a = 121 + a.hashCode() * a.hashCode() * a.Method2825();
+      int var5 = 121 + a.hashCode() * a.hashCode() * a.Method2825();
 
-      for(int a = 0; a < a.length; ++a) {
-         a *= a[a].Method3430();
+      for(int var6 = 0; var6 < a.length; ++var6) {
+         var5 *= a[var6].Method3430();
       }
 
-      this.Field599 = Integer.MAX_VALUE & a;
+      this.Field599 = Integer.MAX_VALUE & var5;
    }
 
    void Method3192(Class169 a) {
@@ -169,8 +169,8 @@ class Class52 {
       if (!(a instanceof Class52)) {
          return false;
       } else {
-         Class52 a = (Class52)a;
-         if (a.Field590 != this.Field590) {
+         Class52 var2 = (Class52)a;
+         if (var2.Field590 != this.Field590) {
             return false;
          } else {
             switch (this.Field590) {
@@ -178,21 +178,21 @@ class Class52 {
                case 'S':
                case 's':
                case 't':
-                  return a.Field595.equals(this.Field595);
+                  return var2.Field595.equals(this.Field595);
                case 'D':
-                  return Double.compare(a.Field594, this.Field594) == 0;
+                  return Double.compare(var2.Field594, this.Field594) == 0;
                case 'F':
-                  return Float.compare(a.Field593, this.Field593) == 0;
+                  return Float.compare(var2.Field593, this.Field593) == 0;
                case 'I':
-                  return a.Field591 == this.Field591;
+                  return var2.Field591 == this.Field591;
                case 'J':
-                  return a.Field592 == this.Field592;
+                  return var2.Field592 == this.Field592;
                case 'T':
-                  return a.Field595.equals(this.Field595) && a.Field596.equals(this.Field596);
+                  return var2.Field595.equals(this.Field595) && var2.Field596.equals(this.Field596);
                case 'y':
-                  return a.Field595.equals(this.Field595) && a.Field596.equals(this.Field596) && a.Field597.Method3429(this.Field597) && Arrays.equals(a.Field598, this.Field598);
+                  return var2.Field595.equals(this.Field595) && var2.Field596.equals(this.Field596) && var2.Field597.Method3429(this.Field597) && Arrays.equals(var2.Field598, this.Field598);
                default:
-                  return a.Field595.equals(this.Field595) && a.Field596.equals(this.Field596) && a.Field597.Method3429(this.Field597);
+                  return var2.Field595.equals(this.Field595) && var2.Field596.equals(this.Field596) && var2.Field597.Method3429(this.Field597);
             }
          }
       }

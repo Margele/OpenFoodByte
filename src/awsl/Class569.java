@@ -4,37 +4,37 @@ import java.util.Iterator;
 
 public class Class569 {
    public static Class298 Method1007(String a) throws Class666 {
-      Class298 a = new Class298();
+      Class298 var2 = new Class298();
       Class666.Method3438();
-      Class290 a = new Class290(a);
-      if (a.Method2884()) {
-         String a = Class568.Method1252(a.Method2891('='));
-         a.Method2887('=');
-         a.Method3009(a, Class568.Method1252(a.Method2891(';')));
-         a.Method2885();
+      Class290 var3 = new Class290(a);
+      if (var3.Method2884()) {
+         String var4 = Class568.Method1252(var3.Method2891('='));
+         var3.Method2887('=');
+         var2.Method3009(var4, Class568.Method1252(var3.Method2891(';')));
+         var3.Method2885();
       }
 
-      return a;
+      return var2;
    }
 
    public static String Method1008(Class298 a) throws Class666 {
       Class666.Method3438();
-      boolean a = false;
-      StringBuilder a = new StringBuilder();
+      boolean var2 = false;
+      StringBuilder var3 = new StringBuilder();
       Iterator var4 = a.Method2968().Method1383();
       if (var4.Method932()) {
-         String a = (String)var4.Method933();
-         Object a = a.Method2974(a);
-         if (!Class298.Field1580.Method3429(a)) {
-            a.append(';');
-            a.append(Class568.Method1249(a));
-            a.append("=");
-            a.append(Class568.Method1249(a.Method3780()));
-            a = true;
+         String var5 = (String)var4.Method933();
+         Object var6 = a.Method2974(var5);
+         if (!Class298.Field1580.Method3429(var6)) {
+            var3.append(';');
+            var3.append(Class568.Method1249(var5));
+            var3.append("=");
+            var3.append(Class568.Method1249(var6.Method3780()));
+            var2 = true;
          }
       }
 
-      return a.toString();
+      return var3.toString();
    }
 
    private static Class666 Method1009(Class666 class666) {

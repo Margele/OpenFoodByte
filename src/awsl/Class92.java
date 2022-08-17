@@ -18,64 +18,64 @@ public class Class92 extends Class193 {
    }
 
    public BufferedImage Method62(BufferedImage a, BufferedImage a) {
-      int a = a.getWidth();
+      int var4 = a.getWidth();
       Class193.Method1269();
-      int a = a.getHeight();
+      int var5 = a.getHeight();
       a = this.Method1263(a, (ColorModel)null);
-      int[] a = null;
-      int a;
-      int[] a;
+      Object var6 = null;
+      int var7;
+      int[] var20;
       if (this.Field806 == 0) {
-         a = 0;
-         if (a < a - 1) {
-            a = this.Method104(a, 0, a, a, 1, (int[])a);
+         var7 = 0;
+         if (var7 < var5 - 1) {
+            var20 = this.Method104(a, 0, var7, var4, 1, (int[])var6);
             if (a != a) {
-               this.Method1267(a, 0, a, a, 1, a);
+               this.Method1267(a, 0, var7, var4, 1, var20);
             }
 
-            this.Method1267(a, 0, a + 1, a, 1, a);
-            a += 2;
+            this.Method1267(a, 0, var7 + 1, var4, 1, var20);
+            var7 += 2;
          }
       } else if (this.Field806 == 1) {
-         int a = 1;
-         if (a < a) {
-            a = this.Method104(a, 0, a, a, 1, (int[])a);
+         byte var21 = 1;
+         if (var21 < var5) {
+            var20 = this.Method104(a, 0, var21, var4, 1, (int[])var6);
             if (a != a) {
-               this.Method1267(a, 0, a, a, 1, a);
+               this.Method1267(a, 0, var21, var4, 1, var20);
             }
 
-            this.Method1267(a, 0, a - 1, a, 1, a);
-            a = a + 2;
+            this.Method1267(a, 0, var21 - 1, var4, 1, var20);
+            var7 = var21 + 2;
          }
       } else if (this.Field806 == 2) {
-         int[] a = null;
-         int a = 0;
-         if (a < a - 1) {
-            a = this.Method104(a, 0, a, a, 1, (int[])a);
-            int[] a = this.Method104(a, 0, a + 1, a, 1, (int[])a);
-            int a = 0;
-            if (a < a) {
-               int a = a[a];
-               int a = a[a];
-               int a = a >> 24 & 255;
-               int a = a >> 16 & 255;
-               int a = a >> 8 & 255;
-               int a = a & 255;
-               int a = a >> 24 & 255;
-               int a = a >> 16 & 255;
-               int a = a >> 8 & 255;
-               int a = a & 255;
-               a = (a + a) / 2;
-               a = (a + a) / 2;
-               a = (a + a) / 2;
-               a = (a + a) / 2;
-               a[a] = a << 24 | a << 16 | a << 8 | a;
-               ++a;
+         Object var22 = null;
+         int var8 = 0;
+         if (var8 < var5 - 1) {
+            var20 = this.Method104(a, 0, var8, var4, 1, (int[])var6);
+            int[] var23 = this.Method104(a, 0, var8 + 1, var4, 1, (int[])var22);
+            int var9 = 0;
+            if (var9 < var4) {
+               int var10 = var20[var9];
+               int var11 = var23[var9];
+               int var12 = var10 >> 24 & 255;
+               int var13 = var10 >> 16 & 255;
+               int var14 = var10 >> 8 & 255;
+               int var15 = var10 & 255;
+               int var16 = var11 >> 24 & 255;
+               int var17 = var11 >> 16 & 255;
+               int var18 = var11 >> 8 & 255;
+               int var19 = var11 & 255;
+               var12 = (var12 + var16) / 2;
+               var13 = (var13 + var17) / 2;
+               var14 = (var14 + var18) / 2;
+               var15 = (var15 + var19) / 2;
+               var20[var9] = var12 << 24 | var13 << 16 | var14 << 8 | var15;
+               ++var9;
             }
 
-            this.Method1267(a, 0, a, a, 1, a);
-            this.Method1267(a, 0, a + 1, a, 1, a);
-            a += 2;
+            this.Method1267(a, 0, var8, var4, 1, var20);
+            this.Method1267(a, 0, var8 + 1, var4, 1, var20);
+            var8 += 2;
          }
       }
 

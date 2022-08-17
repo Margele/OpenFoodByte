@@ -55,49 +55,49 @@ public class Class113 extends Class119 {
       Class193.Method1269();
       this.Field889 = this.Field890 = (int)Math.sqrt((double)this.Field888.length);
       this.Field894 = new int[this.Field891];
-      int a = 0;
-      int a;
-      if (a < this.Field891) {
-         a = 255 * a / (this.Field891 - 1);
-         this.Field894[a] = a;
-         ++a;
+      int var2 = 0;
+      int var3;
+      if (var2 < this.Field891) {
+         var3 = 255 * var2 / (this.Field891 - 1);
+         this.Field894[var2] = var3;
+         ++var2;
       }
 
       this.Field893 = new int[256];
       this.Field892 = new int[256];
-      a = this.Field889 * this.Field890 + 1;
-      int a = 0;
-      if (a < 256) {
-         this.Field893[a] = (this.Field891 - 1) * a / 256;
-         this.Field892[a] = a * a / 256;
-         a = a + 1;
+      var2 = this.Field889 * this.Field890 + 1;
+      byte var4 = 0;
+      if (var4 < 256) {
+         this.Field893[var4] = (this.Field891 - 1) * var4 / 256;
+         this.Field892[var4] = var4 * var2 / 256;
+         var3 = var4 + 1;
       }
 
    }
 
    public int Method3(int a, int a, int a) {
-      int a = Class193.Method1270();
+      boolean var4 = Class193.Method1270();
       if (!this.Field896) {
          this.Field896 = true;
          this.Method89();
       }
 
-      int a = a & -16777216;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      int a = a % this.Field890;
-      int a = a % this.Field889;
-      int a = this.Field888[a * this.Field890 + a];
+      int var5 = a & -16777216;
+      int var6 = a >> 16 & 255;
+      int var7 = a >> 8 & 255;
+      int var8 = a & 255;
+      int var9 = a % this.Field890;
+      int var10 = a % this.Field889;
+      int var11 = this.Field888[var10 * this.Field890 + var9];
       if (this.Field895) {
-         a = this.Field894[this.Field892[a] > a ? this.Field893[a] + 1 : this.Field893[a]];
-         a = this.Field894[this.Field892[a] > a ? this.Field893[a] + 1 : this.Field893[a]];
-         a = this.Field894[this.Field892[a] > a ? this.Field893[a] + 1 : this.Field893[a]];
+         var6 = this.Field894[this.Field892[var6] > var11 ? this.Field893[var6] + 1 : this.Field893[var6]];
+         var7 = this.Field894[this.Field892[var7] > var11 ? this.Field893[var7] + 1 : this.Field893[var7]];
+         var8 = this.Field894[this.Field892[var8] > var11 ? this.Field893[var8] + 1 : this.Field893[var8]];
       }
 
-      int a = (a + a + a) / 3;
-      a = a = a = this.Field894[this.Field892[a] > a ? this.Field893[a] + 1 : this.Field893[a]];
-      return a | a << 16 | a << 8 | a;
+      int var12 = (var6 + var7 + var8) / 3;
+      var6 = var7 = var8 = this.Field894[this.Field892[var12] > var11 ? this.Field893[var12] + 1 : this.Field893[var12]];
+      return var5 | var6 << 16 | var7 << 8 | var8;
    }
 
    public String toString() {

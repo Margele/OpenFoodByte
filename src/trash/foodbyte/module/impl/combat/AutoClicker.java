@@ -57,7 +57,7 @@ public class AutoClicker extends Module {
 
    @EventTarget
    private void onMotion(EventMotion e) {
-      a[] a = b.trash();
+      a[] var2 = b.trash();
       if (e.isPre()) {
          boolean var10000;
          if (mc.objectMouseOver.typeOfHit == MovingObjectType.BLOCK && mc.theWorld.getBlockState(mc.objectMouseOver.getBlockPos()).getBlock() != Blocks.air && mc.objectMouseOver.typeOfHit != MovingObjectType.ENTITY) {
@@ -87,22 +87,22 @@ public class AutoClicker extends Module {
          }
 
          if (this.jitter.getFloatValue() > 0.0F) {
-            float a = (float)((double)this.jitter.getFloatValue() * 0.5);
+            float var4 = (float)((double)this.jitter.getFloatValue() * 0.5);
             EntityPlayerSP var5;
             if (this.random.nextBoolean()) {
                var5 = mc.thePlayer;
-               var5.rotationYaw += this.random.nextFloat() * a;
+               var5.rotationYaw += this.random.nextFloat() * var4;
             }
 
             var5 = mc.thePlayer;
-            var5.rotationYaw -= this.random.nextFloat() * a;
+            var5.rotationYaw -= this.random.nextFloat() * var4;
             if (this.random.nextBoolean()) {
                var5 = mc.thePlayer;
-               var5.rotationPitch += (float)((double)this.random.nextFloat() * (double)a * 0.75);
+               var5.rotationPitch += (float)((double)this.random.nextFloat() * (double)var4 * 0.75);
             }
 
             var5 = mc.thePlayer;
-            var5.rotationPitch -= (float)((double)this.random.nextFloat() * (double)a * 0.75);
+            var5.rotationPitch -= (float)((double)this.random.nextFloat() * (double)var4 * 0.75);
          }
       }
 
@@ -142,8 +142,8 @@ public class AutoClicker extends Module {
    }
 
    private void resetDelay() {
-      int a = this.maxCps.getFloatValue().intValue();
-      int a = this.minCps.getFloatValue().intValue();
-      this.delay = (double)MathUtils.getRandomDouble(a, a);
+      int var1 = this.maxCps.getFloatValue().intValue();
+      int var2 = this.minCps.getFloatValue().intValue();
+      this.delay = (double)MathUtils.getRandomDouble(var2, var1);
    }
 }

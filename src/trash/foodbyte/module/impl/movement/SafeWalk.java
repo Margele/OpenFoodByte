@@ -61,12 +61,12 @@ public class SafeWalk extends Module {
             this.Method1028();
          }
 
-         double a = mc.thePlayer.posX;
-         double a = mc.thePlayer.posY - 1.0;
-         double a = mc.thePlayer.posZ;
-         BlockPos a = new BlockPos(MathHelper.floor_double(a), MathHelper.floor_double(a), MathHelper.floor_double(a));
-         if (this.Field2442 == null || !this.Method1679(a, this.Field2442)) {
-            this.Field2442 = a;
+         double var2 = mc.thePlayer.posX;
+         double var4 = mc.thePlayer.posY - 1.0;
+         double var6 = mc.thePlayer.posZ;
+         BlockPos var8 = new BlockPos(MathHelper.floor_double(var2), MathHelper.floor_double(var4), MathHelper.floor_double(var6));
+         if (this.Field2442 == null || !this.Method1679(var8, this.Field2442)) {
+            this.Field2442 = var8;
          }
 
          this.Method1677(mc.theWorld.isAirBlock(this.Field2442) || mc.theWorld.getBlockState(this.Field2442).getBlock() instanceof BlockTallGrass);
@@ -145,158 +145,158 @@ public class SafeWalk extends Module {
 
    @EventTarget
    public void Method274(EventMove a) {
-      int a = Class167.Method1500();
+      boolean var2 = Class167.Method1500();
       if (a.getEntity().equals(mc.thePlayer)) {
-         double a;
-         double a;
-         double a;
-         double a;
+         double var3;
+         double var5;
+         double var7;
+         double var9;
          if (this.Field2449.isCurrentMode("Vanilla")) {
-            a = a.getX();
-            a = a.getY();
-            a = a.getZ();
+            var3 = a.getX();
+            var5 = a.getY();
+            var7 = a.getZ();
             if (mc.thePlayer.onGround) {
-               a = 0.05;
-               if (a != 0.0) {
-                  if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(a, -1.0, 0.0)).isEmpty()) {
+               var9 = 0.05;
+               if (var3 != 0.0) {
+                  if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(var3, -1.0, 0.0)).isEmpty()) {
                      ;
                   }
 
-                  if (a < a && a >= -a) {
-                     a = 0.0;
+                  if (var3 < var9 && var3 >= -var9) {
+                     var3 = 0.0;
                   }
 
-                  if (a > 0.0) {
-                     a -= a;
+                  if (var3 > 0.0) {
+                     var3 -= var9;
                   }
 
-                  a += a;
+                  var3 += var9;
                }
 
-               if (a != 0.0) {
-                  if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(0.0, -1.0, a)).isEmpty()) {
+               if (var7 != 0.0) {
+                  if (!mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(0.0, -1.0, var7)).isEmpty()) {
                      ;
                   }
 
-                  if (a < a && a >= -a) {
-                     a = 0.0;
+                  if (var7 < var9 && var7 >= -var9) {
+                     var7 = 0.0;
                   }
 
-                  if (a > 0.0) {
-                     a -= a;
+                  if (var7 > 0.0) {
+                     var7 -= var9;
                   }
 
-                  a += a;
+                  var7 += var9;
                }
 
-               if (a != 0.0 && a != 0.0 && mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(a, -1.0, a)).isEmpty()) {
-                  if (a < a && a >= -a) {
-                     a = 0.0;
+               if (var3 != 0.0 && var7 != 0.0 && mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(var3, -1.0, var7)).isEmpty()) {
+                  if (var3 < var9 && var3 >= -var9) {
+                     var3 = 0.0;
                   }
 
-                  if (a > 0.0) {
-                     a -= a;
+                  if (var3 > 0.0) {
+                     var3 -= var9;
                   }
 
-                  a += a;
-                  if (a < a && a >= -a) {
-                     a = 0.0;
+                  var3 += var9;
+                  if (var7 < var9 && var7 >= -var9) {
+                     var7 = 0.0;
                   }
 
-                  if (a > 0.0) {
-                     a -= a;
+                  if (var7 > 0.0) {
+                     var7 -= var9;
                   }
 
-                  a += a;
+                  var7 += var9;
                }
             }
 
-            a.setX(a);
-            a.setZ(a);
+            a.setX(var3);
+            a.setZ(var7);
          }
 
          if (this.Field2449.isCurrentMode("Insane")) {
-            a = a.getX();
-            a = 1.0;
-            a = a.getZ();
-            a = 0.05;
-            if (a != 0.0) {
-               if (this.Method1682(a, -a, 0.0)) {
+            var3 = a.getX();
+            var5 = 1.0;
+            var7 = a.getZ();
+            var9 = 0.05;
+            if (var3 != 0.0) {
+               if (this.Method1682(var3, -var5, 0.0)) {
                   ;
                }
 
-               if (a < a && a >= -a) {
-                  a = 0.0;
+               if (var3 < var9 && var3 >= -var9) {
+                  var3 = 0.0;
                }
 
-               if (a > 0.0) {
-                  a -= a;
+               if (var3 > 0.0) {
+                  var3 -= var9;
                }
 
-               a += a;
+               var3 += var9;
             }
 
-            if (a != 0.0) {
-               if (this.Method1682(0.0, -a, a)) {
+            if (var7 != 0.0) {
+               if (this.Method1682(0.0, -var5, var7)) {
                   ;
                }
 
-               if (a < a && a >= -a) {
-                  a = 0.0;
+               if (var7 < var9 && var7 >= -var9) {
+                  var7 = 0.0;
                }
 
-               if (a > 0.0) {
-                  a -= a;
+               if (var7 > 0.0) {
+                  var7 -= var9;
                }
 
-               a += a;
+               var7 += var9;
             }
 
-            if (a != 0.0 && a != 0.0 && !this.Method1682(a, -1.0, a)) {
-               if (a < a && a >= -a) {
-                  a = 0.0;
+            if (var3 != 0.0 && var7 != 0.0 && !this.Method1682(var3, -1.0, var7)) {
+               if (var3 < var9 && var3 >= -var9) {
+                  var3 = 0.0;
                }
 
-               if (a > 0.0) {
-                  a -= a;
+               if (var3 > 0.0) {
+                  var3 -= var9;
                }
 
-               a += a;
-               if (a < a && a >= -a) {
-                  a = 0.0;
+               var3 += var9;
+               if (var7 < var9 && var7 >= -var9) {
+                  var7 = 0.0;
                }
 
-               if (a > 0.0) {
-                  a -= a;
+               if (var7 > 0.0) {
+                  var7 -= var9;
                }
 
-               a += a;
+               var7 += var9;
             }
 
-            a.setX(a);
-            a.setZ(a);
+            a.setX(var3);
+            a.setZ(var7);
          }
 
       }
    }
 
-   public boolean Method1682(double a, double a1, double a) {
-      for(int a = this.Field2450.getFloatValue().intValue(); mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(a, (double)(-a), a)).isEmpty(); --a) {
+   public boolean Method1682(double a, double a, double a) {
+      for(int var7 = this.Field2450.getFloatValue().intValue(); mc.theWorld.getCollidingBoundingBoxes(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().offset(a, (double)(-var7), a)).isEmpty(); --var7) {
       }
 
       return true;
    }
 
    private boolean Method805() {
-      int a = (int)mc.thePlayer.posY;
+      int var1 = (int)mc.thePlayer.posY;
 
       while(true) {
-         BlockPos a = new BlockPos(mc.thePlayer.posX, (double)a, mc.thePlayer.posZ);
-         if (!(mc.theWorld.getBlockState(a).getBlock() instanceof BlockAir)) {
+         BlockPos var2 = new BlockPos(mc.thePlayer.posX, (double)var1, mc.thePlayer.posZ);
+         if (!(mc.theWorld.getBlockState(var2).getBlock() instanceof BlockAir)) {
             return true;
          }
 
-         --a;
+         --var1;
       }
    }
 

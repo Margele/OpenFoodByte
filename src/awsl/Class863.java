@@ -11,8 +11,8 @@ final class Class863 extends Class831 {
    }
 
    public final void Method3501(String a, Attributes a) {
-      int a = Integer.parseInt(a.getValue("line"));
-      Class264 a = this.Method3654(a.getValue("start"));
-      this.Method3655().Method1981(a, a);
+      int var3 = Integer.parseInt(a.getValue("line"));
+      Class264 var4 = this.Method3654(a.getValue("start"));
+      this.Method3655().Method1981(var3, var4);
    }
 }

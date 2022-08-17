@@ -20,35 +20,35 @@ public class Class814 extends Class786 implements Class45 {
    }
 
    public Class816 Method3664(a a) {
-      int[] a = Class786.Method917();
+      int[] var2 = Class786.Method917();
       switch (a.Method3640()) {
          case 9:
          case 10:
          case 14:
          case 15:
-            int a = true;
+            boolean var3 = true;
          case 18:
-            Object a = ((Class106)a).Field850;
+            Object var4 = ((Class106)a).Field850;
             boolean var10000;
-            if (!(a instanceof Long) && !(a instanceof Double)) {
+            if (!(var4 instanceof Long) && !(var4 instanceof Double)) {
                var10000 = true;
             } else {
                var10000 = true;
             }
          case 178:
-            int a = b.Method3204(((Class93)a).Field809).Method3233();
+            int var5 = b.Method3204(((Class93)a).Field809).Method3233();
       }
 
-      int a = 1;
-      return new Class816(a, a);
+      byte var6 = 1;
+      return new Class816(var6, a);
    }
 
    public Class816 Method3665(a a, Class816 a) {
       return new Class816(a.Method806(), a);
    }
 
-   public Class816 Method3666(a a, Class816 a1) {
-      int a;
+   public Class816 Method3666(a a, Class816 a) {
+      int var3;
       switch (a.Method3640()) {
          case 117:
          case 119:
@@ -58,20 +58,20 @@ public class Class814 extends Class786 implements Class45 {
          case 140:
          case 141:
          case 143:
-            a = 2;
+            var3 = 2;
             break;
          case 180:
-            a = b.Method3204(((Class93)a).Field809).Method3233();
+            var3 = b.Method3204(((Class93)a).Field809).Method3233();
             break;
          default:
-            a = 1;
+            var3 = 1;
       }
 
-      return new Class816(a, a);
+      return new Class816(var3, a);
    }
 
-   public Class816 Method3667(a a, Class816 a1, Class816 a2) {
-      int[] a = Class786.Method917();
+   public Class816 Method3667(a a, Class816 a, Class816 a) {
+      int[] var4 = Class786.Method917();
       switch (a.Method3640()) {
          case 47:
          case 49:
@@ -91,44 +91,44 @@ public class Class814 extends Class786 implements Class45 {
          case 127:
          case 129:
          case 131:
-            int a = true;
+            boolean var5 = true;
          default:
-            int a = 1;
-            return new Class816(a, a);
+            byte var6 = 1;
+            return new Class816(var6, a);
       }
    }
 
-   public Class816 Method3668(a a, Class816 a1, Class816 a2, Class816 a3) {
+   public Class816 Method3668(a a, Class816 a, Class816 a, Class816 a) {
       return new Class816(1, a);
    }
 
-   public Class816 Method3669(a a, List a1) {
-      int a = a.Method3640();
-      int a;
-      if (a == 197) {
-         a = 1;
+   public Class816 Method3669(a a, List a) {
+      int var4 = a.Method3640();
+      int var3;
+      if (var4 == 197) {
+         var3 = 1;
       } else {
-         String a = a == 186 ? ((Class88)a).Field760 : ((Class98)a).Field826;
-         a = b.Method3213(a).Method3233();
+         String var5 = var4 == 186 ? ((Class88)a).Field760 : ((Class98)a).Field826;
+         var3 = b.Method3213(var5).Method3233();
       }
 
-      return new Class816(a, a);
+      return new Class816(var3, a);
    }
 
-   public void Method3670(a a, Class816 a1, Class816 a2) {
+   public void Method3670(a a, Class816 a, Class816 a) {
    }
 
    public Class816 Method3671(Class816 a, Class816 a) {
       if (a.Field3653 instanceof Class701 && a.Field3653 instanceof Class701) {
-         Set a = ((Class701)a.Field3653).Method1800((Class701)a.Field3653);
-         return a == a.Field3653 && a.Field3652 == a.Field3652 ? a : new Class816(Math.min(a.Field3652, a.Field3652), a);
+         Set var4 = ((Class701)a.Field3653).Method1800((Class701)a.Field3653);
+         return var4 == a.Field3653 && a.Field3652 == a.Field3652 ? a : new Class816(Math.min(a.Field3652, a.Field3652), var4);
       } else if (a.Field3652 == a.Field3652 && a.Field3653.containsAll(a.Field3653)) {
          return a;
       } else {
-         HashSet a = new HashSet();
-         a.addAll(a.Field3653);
-         a.addAll(a.Field3653);
-         return new Class816(Math.min(a.Field3652, a.Field3652), a);
+         HashSet var3 = new HashSet();
+         var3.addAll(a.Field3653);
+         var3.addAll(a.Field3653);
+         return new Class816(Math.min(a.Field3652, a.Field3652), var3);
       }
    }
 

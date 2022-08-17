@@ -36,40 +36,40 @@ public class Class563 {
       this.Field2626 = new Class573(this.Method1216(a, a, a), true, a, a, a);
       this.Field2628 = 0.0F;
 
-      for(int a = 0; a < 32; ++a) {
-         int a = (a >> 3 & 1) * 85;
-         int a = (a >> 2 & 1) * 170 + a;
-         int a = (a >> 1 & 1) * 170 + a;
-         int a = (a & 1) * 170 + a;
-         if (a == 6) {
-            a += 85;
+      for(int var7 = 0; var7 < 32; ++var7) {
+         int var8 = (var7 >> 3 & 1) * 85;
+         int var9 = (var7 >> 2 & 1) * 170 + var8;
+         int var10 = (var7 >> 1 & 1) * 170 + var8;
+         int var11 = (var7 & 1) * 170 + var8;
+         if (var7 == 6) {
+            var9 += 85;
          }
 
-         if (a >= 16) {
-            a /= 4;
-            a /= 4;
-            a /= 4;
+         if (var7 >= 16) {
+            var9 /= 4;
+            var10 /= 4;
+            var11 /= 4;
          }
 
-         this.Field2627[a] = (a & 255) << 16 | (a & 255) << 8 | a & 255;
+         this.Field2627[var7] = (var9 & 255) << 16 | (var10 & 255) << 8 | var11 & 255;
       }
 
       this.Field2625 = this.Method1227("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
    }
 
    private Font Method1216(String a, int a, int a) {
-      Font a = null;
+      Font var4 = null;
 
       try {
-         InputStream a = Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("minecraft:FoodByte/font/" + a)).getInputStream();
-         a = Font.createFont(0, a);
-         a = a.deriveFont(a, (float)a);
+         InputStream var5 = Minecraft.getMinecraft().getResourceManager().getResource(new ResourceLocation("minecraft:FoodByte/font/" + a)).getInputStream();
+         var4 = Font.createFont(0, var5);
+         var4 = var4.deriveFont(a, (float)a);
       } catch (Exception var6) {
          var6.printStackTrace();
          System.err.println("Failed to load custom font");
       }
 
-      return a;
+      return var4;
    }
 
    public int Method1217(String a, float a, float a, int a) {
@@ -83,53 +83,53 @@ public class Class563 {
       a *= 2.0F;
       GL11.glPushMatrix();
       GL11.glScaled(0.5, 0.5, 0.5);
-      boolean a = GL11.glGetBoolean(3042);
+      boolean var8 = GL11.glGetBoolean(3042);
       GlStateManager.enableAlpha();
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3553);
-      char[] a = a.toCharArray();
-      int a = 0;
-      int a = a.length;
-      int a = 0;
-      if (a < a) {
-         char a = a[a];
-         if (a == '\r') {
+      char[] var10 = a.toCharArray();
+      int var11 = 0;
+      int var13 = var10.length;
+      int var14 = 0;
+      if (var14 < var13) {
+         char var15 = var10[var14];
+         if (var15 == '\r') {
             a = a;
          }
 
-         if (a == '\n') {
-            a += this.Method1227(Character.toString(a)) * 2.0F;
+         if (var15 == '\n') {
+            a += this.Method1227(Character.toString(var15)) * 2.0F;
          }
 
-         if (a != 167 && (a == a.length - 1 || a[a - 1] != 167)) {
-            if (a >= 1 && a[a - 1] == 167) {
+         if (var15 != 167 && (var11 == var10.length - 1 || var10[var11 - 1] != 167)) {
+            if (var11 >= 1 && var10[var11 - 1] == 167) {
                a.trash(new String[1]);
             }
 
             GL11.glPushMatrix();
-            this.Field2626.Method1048(Character.toString(a), (double)a, (double)a, Method1232(a, a), false);
+            this.Field2626.Method1048(Character.toString(var15), (double)a, (double)a, Method1232(a, a), false);
             GL11.glPopMatrix();
-            a += this.Method1225(Character.toString(a)) * 2.0F;
+            a += this.Method1225(Character.toString(var15)) * 2.0F;
          }
 
-         if (a == ' ') {
+         if (var15 == ' ') {
             a += (float)this.Field2626.Method1053(" ");
          }
 
-         if (a == 167 && a != a.length - 1) {
-            int a = "0123456789abcdefklmnor".indexOf(a.charAt(a + 1));
-            if (a < 16) {
-               int var10000 = this.Field2627[a];
+         if (var15 == 167 && var11 != var10.length - 1) {
+            int var16 = "0123456789abcdefklmnor".indexOf(a.charAt(var11 + 1));
+            if (var16 < 16) {
+               int var10000 = this.Field2627[var16];
             }
 
-            if (a == 21) {
-               int a = Color.WHITE.getRGB();
+            if (var16 == 21) {
+               int var9 = Color.WHITE.getRGB();
             }
          }
 
-         ++a;
-         ++a;
+         ++var11;
+         ++var14;
       }
 
       GL11.glDisable(3042);
@@ -139,18 +139,18 @@ public class Class563 {
    }
 
    private String Method1219(String a) {
-      String a = "";
-      char[] a;
-      int a = (a = a.toCharArray()).length;
+      String var2 = "";
+      char[] var3;
+      int var4 = (var3 = a.toCharArray()).length;
 
-      for(int a = 0; a < a; ++a) {
-         char a = a[a];
-         if ((a < '썐' || a > '\uea60') && a != 9917) {
-            a = a + a;
+      for(int var5 = 0; var5 < var4; ++var5) {
+         char var6 = var3[var5];
+         if ((var6 < '썐' || var6 > '\uea60') && var6 != 9917) {
+            var2 = var2 + var6;
          }
       }
 
-      a = a.replace("§r", "").replace('▬', '=').replace('❤', '♥').replace('⋆', '☆').replace('☠', '☆').replace('✰', '☆').replace("✫", "☆").replace("✙", "+").replace("\uf8ff", "").replace("⬛", "■■");
+      a = var2.replace("§r", "").replace('▬', '=').replace('❤', '♥').replace('⋆', '☆').replace('☠', '☆').replace('✰', '☆').replace("✫", "☆").replace("✙", "+").replace("\uf8ff", "").replace("⬛", "■■");
       a = a.replace('⬅', '←').replace('⬆', '↑').replace('⬇', '↓').replace('➡', '→').replace('⬈', '↗').replace('⬋', '↙').replace('⬉', '↖').replace('⬊', '↘');
       return a;
    }
@@ -182,18 +182,18 @@ public class Class563 {
       if (this.Field2629.containsKey(a)) {
          return (Float)this.Field2629.Method2665(a);
       } else {
-         float a = 0.0F;
-         String a = StringUtils.stripControlCodes(a);
-         char[] a;
-         int a = (a = a.toCharArray()).length;
+         float var2 = 0.0F;
+         String var3 = StringUtils.stripControlCodes(a);
+         char[] var4;
+         int var5 = (var4 = var3.toCharArray()).length;
 
-         for(int a = 0; a < a; ++a) {
-            char a = a[a];
-            a += (float)this.Field2626.Method1053(Character.toString(a)) + this.Field2628;
+         for(int var6 = 0; var6 < var5; ++var6) {
+            char var7 = var4[var6];
+            var2 += (float)this.Field2626.Method1053(Character.toString(var7)) + this.Field2628;
          }
 
-         this.Field2629.put(a, a / 2.0F);
-         return a / 2.0F;
+         this.Field2629.put(a, var2 / 2.0F);
+         return var2 / 2.0F;
       }
    }
 
@@ -205,9 +205,9 @@ public class Class563 {
       if (this.Field2630.containsKey(a)) {
          return (Float)this.Field2630.Method2665(a);
       } else {
-         float a = (float)this.Field2626.Method1051(a) / 2.0F;
-         this.Field2630.put(a, a);
-         return a;
+         float var2 = (float)this.Field2626.Method1051(a) / 2.0F;
+         this.Field2630.put(a, var2);
+         return var2;
       }
    }
 
@@ -223,43 +223,43 @@ public class Class563 {
       return this.Method1231(a, a, false);
    }
 
-   public String Method1231(String a, int a, boolean a2) {
+   public String Method1231(String a, int a, boolean a) {
       a = this.Method1219(a);
-      StringBuilder a = new StringBuilder();
-      float a = 0.0F;
-      int a = a.length() - 1;
-      byte a = -1;
-      boolean a = false;
-      boolean a = false;
+      StringBuilder var4 = new StringBuilder();
+      float var5 = 0.0F;
+      int var6 = a.length() - 1;
+      byte var7 = -1;
+      boolean var8 = false;
+      boolean var9 = false;
 
-      for(int a = a; a < a.length() && a < (float)a; a += a) {
-         char a = a.charAt(a);
-         this.Method1226(a);
-         a = false;
-         if (a != 'l' && a != 'L') {
-            if (a == 'r' || a == 'R') {
-               a = false;
+      for(int var10 = var6; var10 < a.length() && var5 < (float)a; var10 += var7) {
+         char var11 = a.charAt(var10);
+         this.Method1226(var11);
+         var8 = false;
+         if (var11 != 'l' && var11 != 'L') {
+            if (var11 == 'r' || var11 == 'R') {
+               var9 = false;
             }
          } else {
-            a = true;
+            var9 = true;
          }
 
-         if (a > (float)a) {
+         if (var5 > (float)a) {
             break;
          }
 
-         a.insert(0, a);
+         var4.insert(0, var11);
       }
 
-      return a.toString();
+      return var4.toString();
    }
 
    public static int Method1232(int a, float a) {
-      Color a = new Color(a);
-      float a = 0.003921569F * (float)a.getRed();
-      float a = 0.003921569F * (float)a.getGreen();
-      float a = 0.003921569F * (float)a.getBlue();
-      return (new Color(a, a, a, a)).getRGB();
+      Color var2 = new Color(a);
+      float var3 = 0.003921569F * (float)var2.getRed();
+      float var4 = 0.003921569F * (float)var2.getGreen();
+      float var5 = 0.003921569F * (float)var2.getBlue();
+      return (new Color(var3, var4, var5, a)).getRGB();
    }
 
    public static void Method1233(a[] arr) {

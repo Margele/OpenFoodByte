@@ -32,14 +32,14 @@ public class Class269 {
    }
 
    public void Method2865() {
-      int a = Class259.Method2273();
+      int var1 = Class259.Method2273();
 
       try {
-         FileReader a = new FileReader(Field1464);
+         FileReader var2 = new FileReader(Field1464);
          Throwable var3 = null;
 
          try {
-            GlobalModule.INSTANCE.Method2009().Method2264((ArrayList)Field1465.fromJson(a, (new Class629(this)).getType()));
+            GlobalModule.INSTANCE.Method2009().Method2264((ArrayList)Field1465.fromJson(var2, (new Class629(this)).getType()));
             if (GlobalModule.INSTANCE.Method2009().Method2265() == null) {
                GlobalModule.INSTANCE.Method2009().Method2264(new ArrayList());
             }
@@ -48,10 +48,10 @@ public class Class269 {
             throw var13;
          } finally {
             try {
-               a.close();
+               var2.close();
             } catch (Throwable var12) {
                var3.addSuppressed(var12);
-               a.close();
+               var2.close();
             }
 
          }
@@ -61,23 +61,23 @@ public class Class269 {
    }
 
    public void Method2866() {
-      int a = Class259.Method2273();
+      int var1 = Class259.Method2273();
       if (Field1464.exists()) {
          try {
-            PrintWriter a = new PrintWriter(Field1464);
+            PrintWriter var2 = new PrintWriter(Field1464);
             Throwable var3 = null;
 
             try {
-               a.print(Field1465.toJson(GlobalModule.INSTANCE.Method2009().Method2265()));
+               var2.print(Field1465.toJson(GlobalModule.INSTANCE.Method2009().Method2265()));
             } catch (Throwable var13) {
                var3 = var13;
                throw var13;
             } finally {
                try {
-                  a.close();
+                  var2.close();
                } catch (Throwable var12) {
                   var3.addSuppressed(var12);
-                  a.close();
+                  var2.close();
                }
 
             }

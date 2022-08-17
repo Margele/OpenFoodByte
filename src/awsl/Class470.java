@@ -824,7 +824,7 @@ public class Class470 implements Class422, Class45 {
       return new String[]{Class673.ActiveRenderInfo.Method2340()};
    }
 
-   public void Method1361(Class224 a, String a1) {
+   public void Method1361(Class224 a, String a) {
    }
 
    // $FF: synthetic method

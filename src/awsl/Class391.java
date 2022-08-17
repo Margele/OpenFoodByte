@@ -57,17 +57,17 @@ public class Class391 {
       } else if (!(a instanceof Class391)) {
          return false;
       } else {
-         Class391 a = (Class391)a;
-         if (!a.Method1304(this)) {
+         Class391 var2 = (Class391)a;
+         if (!var2.Method1304(this)) {
             return false;
-         } else if (Float.compare(this.Method1295(), a.Method1295()) != 0) {
+         } else if (Float.compare(this.Method1295(), var2.Method1295()) != 0) {
             return false;
-         } else if (Float.compare(this.Method1296(), a.Method1296()) != 0) {
+         } else if (Float.compare(this.Method1296(), var2.Method1296()) != 0) {
             return false;
-         } else if (Float.compare(this.Method1297(), a.Method1297()) != 0) {
+         } else if (Float.compare(this.Method1297(), var2.Method1297()) != 0) {
             return false;
          } else {
-            return Float.compare(this.Method1298(), a.Method1298()) == 0;
+            return Float.compare(this.Method1298(), var2.Method1298()) == 0;
          }
       }
    }
@@ -77,15 +77,15 @@ public class Class391 {
    }
 
    public int Method1305() {
-      int a = true;
-      int a = 1;
-      a = a * 59 + Float.floatToIntBits(this.Method1295());
-      a = a * 59 + Float.floatToIntBits(this.Method1296());
+      boolean var2 = true;
+      int var3 = 1;
+      var3 = var3 * 59 + Float.floatToIntBits(this.Method1295());
+      var3 = var3 * 59 + Float.floatToIntBits(this.Method1296());
       Method1308();
-      a = a * 59 + Float.floatToIntBits(this.Method1297());
-      a = a * 59 + Float.floatToIntBits(this.Method1298());
+      var3 = var3 * 59 + Float.floatToIntBits(this.Method1297());
+      var3 = var3 * 59 + Float.floatToIntBits(this.Method1298());
       a.trash(new String[2]);
-      return a;
+      return var3;
    }
 
    public String Method1306() {

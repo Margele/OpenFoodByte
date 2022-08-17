@@ -27,14 +27,14 @@ public class Class122 extends a {
 
    public void Method1(Class267 a) {
       Class15.Method3445();
-      Class264[] a = new Class264[this.Field962.Method1799()];
-      int a = 0;
-      if (a < a.length) {
-         a[a] = ((Class104)this.Field962.get(a)).Method303();
-         ++a;
+      Class264[] var3 = new Class264[this.Field962.Method1799()];
+      int var4 = 0;
+      if (var4 < var3.length) {
+         var3[var4] = ((Class104)this.Field962.get(var4)).Method303();
+         ++var4;
       }
 
-      a.Method1959(this.Field959, this.Field960, this.Field961.Method303(), a);
+      a.Method1959(this.Field959, this.Field960, this.Field961.Method303(), var3);
       this.Method3643(a);
    }
 

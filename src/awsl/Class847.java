@@ -11,8 +11,8 @@ final class Class847 extends Class831 {
    }
 
    public final void Method3501(String a, Attributes a) {
-      int a = Integer.parseInt(a.getValue("maxStack"));
-      int a = Integer.parseInt(a.getValue("maxLocals"));
-      this.Method3655().Method1842(a, a);
+      int var3 = Integer.parseInt(a.getValue("maxStack"));
+      int var4 = Integer.parseInt(a.getValue("maxLocals"));
+      this.Method3655().Method1842(var3, var4);
    }
 }

@@ -42,25 +42,25 @@ public class Class14 extends Class119 {
 
    public int[] Method86() {
       Class193.Method1269();
-      int[] a = new int[256];
-      int a = 0;
-      if (a < 256) {
-         a[a] = this.Method3(0, 0, a << 24 | a << 16 | a << 8 | a);
-         ++a;
+      int[] var2 = new int[256];
+      int var3 = 0;
+      if (var3 < 256) {
+         var2[var3] = this.Method3(0, 0, var3 << 24 | var3 << 16 | var3 << 8 | var3);
+         ++var3;
       }
 
-      return a;
+      return var2;
    }
 
-   public int Method3(int a, int a1, int a) {
-      int a = a & -16777216;
-      int a = a >> 16 & 255;
-      int a = a >> 8 & 255;
-      int a = a & 255;
-      a = Class767.Method1687((int)((float)a * this.Field191));
-      a = Class767.Method1687((int)((float)a * this.Field192));
-      a = Class767.Method1687((int)((float)a * this.Field193));
-      return a | a << 16 | a << 8 | a;
+   public int Method3(int a, int a, int a) {
+      int var4 = a & -16777216;
+      int var5 = a >> 16 & 255;
+      int var6 = a >> 8 & 255;
+      int var7 = a & 255;
+      var5 = Class767.Method1687((int)((float)var5 * this.Field191));
+      var6 = Class767.Method1687((int)((float)var6 * this.Field192));
+      var7 = Class767.Method1687((int)((float)var7 * this.Field193));
+      return var4 | var5 << 16 | var6 << 8 | var7;
    }
 
    public String toString() {

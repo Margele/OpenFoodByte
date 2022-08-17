@@ -78,74 +78,74 @@ public class Class32 extends Class119 {
       return this.Field268;
    }
 
-   public int Method3(int a, int a, int a2) {
+   public int Method3(int a, int a, int a) {
       Class193.Method1269();
       a = (int)((float)a + this.Field258 + this.Field260 / 2.0F);
       a = (int)((float)a + this.Field259 + this.Field261 / 2.0F);
-      float a = Class776.Method1714((float)a, this.Field258 + this.Field260);
-      float a = Class776.Method1714((float)a, this.Field259 + this.Field261);
-      int a = (int)((float)a / (this.Field258 + this.Field260));
-      int a = (int)((float)a / (this.Field259 + this.Field261));
-      boolean a = a < this.Field258;
-      boolean a = a < this.Field259;
-      float a;
-      float a;
+      float var5 = Class776.Method1714((float)a, this.Field258 + this.Field260);
+      float var6 = Class776.Method1714((float)a, this.Field259 + this.Field261);
+      int var7 = (int)((float)a / (this.Field258 + this.Field260));
+      int var8 = (int)((float)a / (this.Field259 + this.Field261));
+      boolean var9 = var5 < this.Field258;
+      boolean var10 = var6 < this.Field259;
+      float var11;
+      float var12;
       if (this.Field267) {
-         a = Math.abs(this.Field258 / 2.0F - a) / this.Field258 / 2.0F;
-         a = Math.abs(this.Field259 / 2.0F - a) / this.Field259 / 2.0F;
+         var11 = Math.abs(this.Field258 / 2.0F - var5) / this.Field258 / 2.0F;
+         var12 = Math.abs(this.Field259 / 2.0F - var6) / this.Field259 / 2.0F;
       }
 
-      a = 0.0F;
-      a = 0.0F;
-      float a;
-      float a;
+      var12 = 0.0F;
+      var11 = 0.0F;
+      float var13;
+      float var14;
       if (this.Field268) {
-         a = Class776.Method1708(this.Field258 / 2.0F, this.Field258 / 2.0F + this.Field260, Math.abs(this.Field258 / 2.0F - a));
-         a = Class776.Method1708(this.Field259 / 2.0F, this.Field259 / 2.0F + this.Field261, Math.abs(this.Field259 / 2.0F - a));
+         var13 = Class776.Method1708(this.Field258 / 2.0F, this.Field258 / 2.0F + this.Field260, Math.abs(this.Field258 / 2.0F - var5));
+         var14 = Class776.Method1708(this.Field259 / 2.0F, this.Field259 / 2.0F + this.Field261, Math.abs(this.Field259 / 2.0F - var6));
       }
 
-      a = 0.0F;
-      a = 0.0F;
+      var14 = 0.0F;
+      var13 = 0.0F;
       if (this.Field266) {
          ;
       }
 
-      int a = this.Field264;
-      int a = this.Field265;
-      int a = a % this.Field263;
-      int a = a % this.Field262;
-      int a = this.Field269[a][a];
-      int a = a == 1 ? a : a;
-      a = Class776.Method1719(2.0F * (a == 1 ? a : a), a, -16777216);
+      int var15 = this.Field264;
+      int var16 = this.Field265;
+      int var18 = var7 % this.Field263;
+      int var19 = var8 % this.Field262;
+      int var20 = this.Field269[var19][var18];
+      int var17 = var20 == 1 ? var15 : var16;
+      var17 = Class776.Method1719(2.0F * (var20 == 1 ? var11 : var12), var17, -16777216);
       if (this.Field268) {
-         if (a != this.Field269[(a + 1) % this.Field262][a]) {
-            a = 1.0F - a;
-            a *= 0.5F;
-            a = Class776.Method1719(a, a, -16777216);
+         if (var20 != this.Field269[(var8 + 1) % this.Field262][var18]) {
+            var14 = 1.0F - var14;
+            var14 *= 0.5F;
+            var15 = Class776.Method1719(var14, var15, -16777216);
          }
 
-         a = Class776.Method1719(0.5F, a, -16777216);
+         var15 = Class776.Method1719(0.5F, var15, -16777216);
       }
 
-      a = Class776.Method1719(2.0F * a, a, -16777216);
+      var17 = Class776.Method1719(2.0F * var11, var15, -16777216);
       if (this.Field268) {
-         if (a != this.Field269[a][(a + 1) % this.Field263]) {
-            if (a == 1) {
-               a = 1.0F - a;
+         if (var20 != this.Field269[var19][(var7 + 1) % this.Field263]) {
+            if (var20 == 1) {
+               var13 = 1.0F - var13;
             }
 
-            a *= 0.5F;
-            a = Class776.Method1719(a, a, -16777216);
+            var13 *= 0.5F;
+            var16 = Class776.Method1719(var13, var16, -16777216);
          }
 
-         if (a == 1) {
-            a = Class776.Method1719(0.5F, a, -16777216);
+         if (var20 == 1) {
+            var16 = Class776.Method1719(0.5F, var16, -16777216);
          }
       }
 
-      a = Class776.Method1719(2.0F * a, a, -16777216);
-      int a = 0;
-      return a;
+      var17 = Class776.Method1719(2.0F * var12, var16, -16777216);
+      byte var21 = 0;
+      return var21;
    }
 
    public String toString() {

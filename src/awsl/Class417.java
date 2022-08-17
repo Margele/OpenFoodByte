@@ -28,11 +28,11 @@ public class Class417 {
       this.Field2014 = a;
       this.Field2013 = new ArrayList();
       Iterator var4 = Class446.Method2766(a).Method1383();
-      Class447 a;
+      Class447 var5;
       if (var4.Method932()) {
-         a = (Class447)var4.Method933();
-         if (a instanceof ModeValue) {
-            this.Field2013.Method2530(new Class411(this, (ModeValue)a));
+         var5 = (Class447)var4.Method933();
+         if (var5 instanceof ModeValue) {
+            this.Field2013.Method2530(new Class411(this, (ModeValue)var5));
          }
 
          a.trash(new String[3]);
@@ -40,26 +40,26 @@ public class Class417 {
 
       var4 = Class446.Method2766(a).Method1383();
       if (var4.Method932()) {
-         a = (Class447)var4.Method933();
-         if (a instanceof FloatValue) {
-            this.Field2013.Method2530(new Class418(this, (FloatValue)a));
+         var5 = (Class447)var4.Method933();
+         if (var5 instanceof FloatValue) {
+            this.Field2013.Method2530(new Class418(this, (FloatValue)var5));
          }
       }
 
       var4 = Class446.Method2766(a).Method1383();
       if (var4.Method932()) {
-         a = (Class447)var4.Method933();
-         if (a instanceof BooleanValue) {
-            this.Field2013.Method2530(new Class412(this, (BooleanValue)a));
+         var5 = (Class447)var4.Method933();
+         if (var5 instanceof BooleanValue) {
+            this.Field2013.Method2530(new Class412(this, (BooleanValue)var5));
          }
       }
 
    }
 
-   public void Method2376(int a, int a1, float a2) {
+   public void Method2376(int a, int a, float a) {
    }
 
-   public boolean Method2377(int a, int a, int a2) {
+   public boolean Method2377(int a, int a, int a) {
       return this.Method2378(a, a);
    }
 
