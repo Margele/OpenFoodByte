@@ -1,44 +1,10 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.awt.Color
- *  java.io.IOException
- *  java.lang.Object
- *  java.lang.String
- *  java.util.ArrayList
- *  java.util.Collection
- *  java.util.Collections
- *  java.util.Iterator
- *  java.util.List
- *  net.minecraft.client.gui.GuiScreen
- *  net.minecraft.client.gui.ScaledResolution
- *  net.minecraft.client.renderer.OpenGlHelper
- *  net.minecraft.entity.player.EntityPlayer
- *  org.lwjgl.input.Keyboard
- *  org.lwjgl.opengl.GL11
- */
 package awsl;
 
-import awsl.Class351;
-import awsl.Class413;
-import awsl.Class414;
-import awsl.Class415;
-import awsl.Class416;
-import awsl.Class417;
-import awsl.Class418;
-import awsl.Class419;
-import awsl.Class420;
-import awsl.Class421;
-import awsl.Class423;
-import awsl.Class426;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -49,318 +15,509 @@ import org.lwjgl.opengl.GL11;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.GlobalModule;
 
-public class Class705
-extends GuiScreen {
-    public static ArrayList Field3044;
-    public static ArrayList Field3045;
-    private Class414 Field3046 = null;
+public class Class705 extends GuiScreen {
+   public static ArrayList Field3044;
+   public static ArrayList Field3045;
+   private Class414 Field3046 = null;
 
-    public Class705() {
-        Class415.Method2360();
-        Field3044 = new ArrayList();
-        double a = 80.0;
-        double a2 = 12.0;
-        double a3 = 10.0;
-        double a4 = 10.0;
-        double a5 = a2 + 10.0;
-        double a6 = a + 10.0;
-        for (Category a7 : Category.Method2760()) {
-            String a8 = a7.name();
-            Field3044.Method2530((Object)new Class420(this, a8, a3, a4, a, a2, true, this, a7));
-            a3 += a6;
-        }
-        Field3044.Method2530((Object)new Class419(this, "Global", a3, a4, a, a2, true, this));
-        Field3045 = new ArrayList();
-        Field3045.addAll((Collection)Field3044);
-        Collections.reverse((List)Field3045);
-    }
+   public Class705() {
+      Class415.Method2360();
+      Field3044 = new ArrayList();
+      double a = 80.0;
+      double a = 12.0;
+      double a = 10.0;
+      double a = 10.0;
+      double a = a + 10.0;
+      double a = a + 10.0;
+      Category[] a;
+      int a = (a = Category.Method2760()).length;
 
-    public void Method1803(int a2, int a3, float a4) {
-        Object a5;
-        Iterator iterator;
-        int a6;
-        Color a7;
-        double a8;
-        Object a9;
-        Iterator iterator2;
-        Class421 a10;
-        Iterator iterator3;
-        String[] a11 = Class421.Method2390();
-        if (OpenGlHelper.shadersSupported && this.mc.getRenderViewEntity() instanceof EntityPlayer && GlobalModule.Field3161.getFloatValue().floatValue() != 0.0f) {
-            Class351.Method28(GlobalModule.Field3161.getFloatValue().floatValue());
-        }
-        if ((iterator3 = Field3044.Method1383()).Method932()) {
-            Class421 a12 = (Class421)iterator3.Method933();
-            a12.Method2385(a2, a3, a4);
-            a.trash(new String[3]);
-        }
-        ScaledResolution a13 = new ScaledResolution(this.mc);
-        GL11.glPushMatrix();
-        GL11.glTranslated((double)a13.getScaledWidth(), (double)a13.getScaledHeight(), (double)0.0);
-        GL11.glScaled((double)0.5, (double)0.5, (double)0.5);
-        GL11.glPopMatrix();
-        this.Field3046 = null;
-        Iterator iterator4 = Field3044.Method1383();
-        if (iterator4.Method932()) {
-            a10 = (Class421)iterator4.Method933();
-            if (a10.Field2036 && a10.Field2035 && a10.Field2037 != null && a10.Field2037.Method1799() > 0 && (iterator2 = a10.Field2037.Method1383()).Method932()) {
-                a9 = (Class414)iterator2.Method933();
-                if (((Class414)a9).Field2009) {
-                    this.Field3046 = a9;
-                }
-            }
-        }
-        if ((iterator4 = Field3044.Method1383()).Method932()) {
-            a10 = (Class421)iterator4.Method933();
-            if (a10.Field2035 && a10.Field2036 && a10.Field2037 != null && (iterator2 = a10.Field2037.Method1383()).Method932()) {
-                a9 = (Class414)iterator2.Method933();
-                if (((Class414)a9).Field2008 && ((Class414)a9).Field2002 != null && !((Class414)a9).Field2002.isEmpty()) {
-                    a8 = 0.0;
-                    a7 = Class416.Method2352().darker();
-                    a6 = new Color(a7.getRed(), a7.getGreen(), a7.getBlue(), 170).getRGB();
-                    iterator = ((Class414)a9).Field2002.Method1383();
-                    if (iterator.Method932()) {
-                        a5 = (Class426)iterator.Method933();
-                        ((Class426)a5).Field2049 = a8;
-                        ((Class426)a5).Method2309();
-                        ((Class426)a5).Method2310(a2, a3, a4);
-                        a8 += ((Class426)a5).Field2053;
-                    }
-                }
-            }
-        }
-        if ((iterator4 = Field3044.Method1383()).Method932()) {
-            a10 = (Class421)iterator4.Method933();
-            if (a10.Field2035 && a10.Field2036 && a10.Field2038 != null && (iterator2 = a10.Field2038.Method1383()).Method932()) {
-                a9 = (Class417)iterator2.Method933();
-                if (((Class417)a9).Field2019 && ((Class417)a9).Field2013 != null && !((Class417)a9).Field2013.isEmpty()) {
-                    a8 = 0.0;
-                    a7 = Class416.Method2352().darker();
-                    a6 = new Color(a7.getRed(), a7.getGreen(), a7.getBlue(), 170).getRGB();
-                    iterator = ((Class417)a9).Field2013.Method1383();
-                    if (iterator.Method932()) {
-                        a5 = (Class413)iterator.Method933();
-                        ((Class413)a5).Field1993 = a8;
-                        ((Class413)a5).Method3577();
-                        ((Class413)a5).Method2369(a2, a3, a4);
-                        a8 += ((Class413)a5).Field1997;
-                    }
-                }
-            }
-        }
-        if (this.Field3046 != null) {
-            Class705.drawRect((int)0, (int)0, (int)this.width, (int)this.height, (int)-2012213232);
-            GL11.glPushMatrix();
-            GL11.glTranslatef((float)(a13.getScaledWidth() / 2), (float)(a13.getScaledHeight() / 2), (float)0.0f);
-            GL11.glScalef((float)4.0f, (float)4.0f, (float)0.0f);
-            Class415.Method2368("Listening...", 0.0, -10.0, -1);
-            GL11.glScalef((float)0.5f, (float)0.5f, (float)0.0f);
-            Class415.Method2368("Press 'ESCAPE' to unbind " + this.Field3046.Field2001.getName() + (this.Field3046.Field2001.Method1020() > -1 ? " (" + Keyboard.getKeyName((int)this.Field3046.Field2001.Method1020()) + ")" : ""), 0.0, 0.0, -1);
-            GL11.glPopMatrix();
-        }
-        super.Method1803(a2, a3, a4);
-    }
+      for(int a = 0; a < a; ++a) {
+         Category a = a[a];
+         String a = a.name();
+         Field3044.Method2530(new Class420(this, a, a, a, a, a, true, this, a));
+         a += a;
+      }
 
-    public void Method1805(int a2, int a3, int a4) {
-        Object a5;
-        Iterator iterator;
-        Object a6;
-        Iterator iterator2;
-        Class421 a7;
-        if (this.Field3046 != null) {
-            return;
-        }
-        Iterator iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a7 = (Class421)iterator3.Method933();
-            if (!a7.Field2035 || !a7.Field2036 || a7.Field2037 == null) continue;
-            iterator2 = a7.Field2037.Method1383();
-            while (iterator2.Method932()) {
-                a6 = (Class414)iterator2.Method933();
-                if (!((Class414)a6).Field2008) continue;
-                iterator = ((Class414)a6).Field2002.Method1383();
-                while (iterator.Method932()) {
-                    a5 = (Class426)iterator.Method933();
-                    if (!((Class426)a5).Method2311(a2, a3, a4)) continue;
-                    return;
-                }
-            }
-        }
-        iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a7 = (Class421)iterator3.Method933();
-            if (!a7.Field2035 || !a7.Field2036 || a7.Field2038 == null) continue;
-            iterator2 = a7.Field2038.Method1383();
-            while (iterator2.Method932()) {
-                a6 = (Class417)iterator2.Method933();
-                if (!((Class417)a6).Field2019) continue;
-                iterator = ((Class417)a6).Field2013.Method1383();
-                while (iterator.Method932()) {
-                    a5 = (Class413)iterator.Method933();
-                    if (!((Class413)a5).Method2370(a2, a3, a4)) continue;
-                    return;
-                }
-            }
-        }
-        iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a7 = (Class421)iterator3.Method933();
-            if (!a7.Method2386(a2, a3, a4)) continue;
-            return;
-        }
-        try {
-            super.Method1805(a2, a3, a4);
-        }
-        catch (IOException a8) {
-            a8.printStackTrace();
-        }
-    }
+      Field3044.Method2530(new Class419(this, "Global", a, a, a, a, true, this));
+      Field3045 = new ArrayList();
+      Field3045.addAll(Field3044);
+      Collections.reverse(Field3045);
+   }
 
-    public void Method1811(int a2, int a3, int a4) {
-        Object a5;
-        Iterator iterator;
-        Object a6;
-        Iterator iterator2;
-        Class421 a7;
-        if (this.Field3046 != null) {
-            return;
-        }
-        Iterator iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a7 = (Class421)iterator3.Method933();
-            if (!a7.Field2035 || !a7.Field2036 || a7.Field2037 == null) continue;
-            iterator2 = a7.Field2037.Method1383();
-            while (iterator2.Method932()) {
-                a6 = (Class414)iterator2.Method933();
-                if (!((Class414)a6).Field2008) continue;
-                iterator = ((Class414)a6).Field2002.Method1383();
-                while (iterator.Method932()) {
-                    a5 = (Class426)iterator.Method933();
-                    ((Class426)a5).Method2312(a2, a3, a4);
-                }
-            }
-        }
-        iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a7 = (Class421)iterator3.Method933();
-            if (!a7.Field2035 || !a7.Field2036 || a7.Field2038 == null) continue;
-            iterator2 = a7.Field2038.Method1383();
-            while (iterator2.Method932()) {
-                a6 = (Class417)iterator2.Method933();
-                if (!((Class417)a6).Field2019) continue;
-                iterator = ((Class417)a6).Field2013.Method1383();
-                while (iterator.Method932()) {
-                    a5 = (Class413)iterator.Method933();
-                    ((Class413)a5).Method2371(a2, a3, a4);
-                }
-            }
-        }
-        iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a7 = (Class421)iterator3.Method933();
-            a7.Method2387(a2, a3, a4);
-        }
-        super.Method1811(a2, a3, a4);
-    }
+   public void Method1803(int a, int a, float a) {
+      String[] a = Class421.Method2390();
+      if (OpenGlHelper.shadersSupported && this.mc.getRenderViewEntity() instanceof EntityPlayer && GlobalModule.Field3161.getFloatValue() != 0.0F) {
+         Class351.Method28(GlobalModule.Field3161.getFloatValue());
+      }
 
-    protected void Method1804(char a2, int a3) {
-        Iterator iterator = Field3045.Method1383();
-        while (iterator.Method932()) {
-            Class421 a4 = (Class421)iterator.Method933();
-            if (!a4.Field2036 || !a4.Field2035 || a4.Field2037 == null || a4.Field2037.Method1799() <= 0) continue;
-            Iterator iterator2 = a4.Field2037.Method1383();
-            while (iterator2.Method932()) {
-                Class414 a5 = (Class414)iterator2.Method933();
-                try {
-                    if (!a5.Method3570(a2, a3)) continue;
-                    return;
-                }
-                catch (IOException a6) {
-                    a6.printStackTrace();
-                }
-            }
-        }
-        try {
-            super.Method1804(a2, a3);
-        }
-        catch (IOException a7) {
-            a7.printStackTrace();
-        }
-    }
+      Iterator var5 = Field3044.Method1383();
+      if (var5.Method932()) {
+         Class421 a = (Class421)var5.Method933();
+         a.Method2385(a, a, a);
+         a.trash(new String[3]);
+      }
 
-    public void Method1806() {
-        Object a2;
-        Iterator iterator;
-        Object a3;
-        Iterator iterator2;
-        Class421 a4;
-        Iterator iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a4 = (Class421)iterator3.Method933();
-            if (!a4.Field2035 || !a4.Field2036 || a4.Field2037 == null) continue;
-            iterator2 = a4.Field2037.Method1383();
-            while (iterator2.Method932()) {
-                a3 = (Class414)iterator2.Method933();
-                if (!((Class414)a3).Field2008) continue;
-                iterator = ((Class414)a3).Field2002.Method1383();
-                while (iterator.Method932()) {
-                    a2 = (Class426)iterator.Method933();
-                    if (!(a2 instanceof Class423)) continue;
-                    ((Class423)a2).Field2041 = false;
-                }
+      ScaledResolution a = new ScaledResolution(this.mc);
+      GL11.glPushMatrix();
+      GL11.glTranslated((double)a.getScaledWidth(), (double)a.getScaledHeight(), 0.0);
+      GL11.glScaled(0.5, 0.5, 0.5);
+      GL11.glPopMatrix();
+      this.Field3046 = null;
+      Iterator var17 = Field3044.Method1383();
+      Class421 a;
+      Iterator var8;
+      Class414 a;
+      if (var17.Method932()) {
+         a = (Class421)var17.Method933();
+         if (a.Field2036 && a.Field2035 && a.Field2037 != null && a.Field2037.Method1799() > 0) {
+            var8 = a.Field2037.Method1383();
+            if (var8.Method932()) {
+               a = (Class414)var8.Method933();
+               if (a.Field2009) {
+                  this.Field3046 = a;
+               }
             }
-        }
-        iterator3 = Field3045.Method1383();
-        while (iterator3.Method932()) {
-            a4 = (Class421)iterator3.Method933();
-            if (!a4.Field2035 || !a4.Field2036 || a4.Field2038 == null) continue;
-            iterator2 = a4.Field2038.Method1383();
-            while (iterator2.Method932()) {
-                a3 = (Class417)iterator2.Method933();
-                if (!((Class417)a3).Field2019) continue;
-                iterator = ((Class417)a3).Field2013.Method1383();
-                while (iterator.Method932()) {
-                    a2 = (Class413)iterator.Method933();
-                    if (!(a2 instanceof Class418)) continue;
-                    ((Class418)a2).Field2021 = false;
-                }
+         }
+      }
+
+      var17 = Field3044.Method1383();
+      double a;
+      Color a;
+      int a;
+      Iterator var14;
+      double var10000;
+      if (var17.Method932()) {
+         a = (Class421)var17.Method933();
+         if (a.Field2035 && a.Field2036 && a.Field2037 != null) {
+            var8 = a.Field2037.Method1383();
+            if (var8.Method932()) {
+               a = (Class414)var8.Method933();
+               if (a.Field2008 && a.Field2002 != null && !a.Field2002.isEmpty()) {
+                  a = 0.0;
+                  a = Class416.Method2352().darker();
+                  a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 170)).getRGB();
+                  var14 = a.Field2002.Method1383();
+                  if (var14.Method932()) {
+                     Class426 a = (Class426)var14.Method933();
+                     a.Field2049 = a;
+                     a.Method2309();
+                     a.Method2310(a, a, a);
+                     var10000 = a + a.Field2053;
+                  }
+               }
             }
-        }
-        GlobalModule.INSTANCE.fileManager.saveClickGuiPos();
-    }
+         }
+      }
 
-    public boolean Method1812() {
-        return false;
-    }
-
-    public void Method1813(Category a2) {
-        Iterator iterator = Field3045.Method1383();
-        while (iterator.Method932()) {
-            Class421 a3 = (Class421)iterator.Method933();
-            if (!a3.Field2036 || !a3.Field2035 || a3.Field2037 == null || a3.Field2037.Method1799() <= 0) continue;
-            Iterator iterator2 = a3.Field2037.Method1383();
-            while (iterator2.Method932()) {
-                Class414 a4 = (Class414)iterator2.Method933();
-                if (a2 != a4.Field2001.Method1024()) continue;
-                a4.Field2008 = false;
+      var17 = Field3044.Method1383();
+      if (var17.Method932()) {
+         a = (Class421)var17.Method933();
+         if (a.Field2035 && a.Field2036 && a.Field2038 != null) {
+            var8 = a.Field2038.Method1383();
+            if (var8.Method932()) {
+               Class417 a = (Class417)var8.Method933();
+               if (a.Field2019 && a.Field2013 != null && !a.Field2013.isEmpty()) {
+                  a = 0.0;
+                  a = Class416.Method2352().darker();
+                  a = (new Color(a.getRed(), a.getGreen(), a.getBlue(), 170)).getRGB();
+                  var14 = a.Field2013.Method1383();
+                  if (var14.Method932()) {
+                     Class413 a = (Class413)var14.Method933();
+                     a.Field1993 = a;
+                     a.Method3577();
+                     a.Method2369(a, a, a);
+                     var10000 = a + a.Field1997;
+                  }
+               }
             }
-        }
-    }
+         }
+      }
 
-    public void Method1814() {
-        Iterator iterator = Field3045.Method1383();
-        while (iterator.Method932()) {
-            Class421 a2 = (Class421)iterator.Method933();
-            if (!a2.Field2036 || !a2.Field2035 || a2.Field2037 == null || a2.Field2037.Method1799() <= 0) continue;
-            Iterator iterator2 = a2.Field2037.Method1383();
-            while (iterator2.Method932()) {
-                Class414 a3 = (Class414)iterator2.Method933();
-                a3.Field2008 = false;
+      if (this.Field3046 != null) {
+         drawRect(0, 0, this.width, this.height, -2012213232);
+         GL11.glPushMatrix();
+         GL11.glTranslatef((float)(a.getScaledWidth() / 2), (float)(a.getScaledHeight() / 2), 0.0F);
+         GL11.glScalef(4.0F, 4.0F, 0.0F);
+         Class415.Method2368("Listening...", 0.0, -10.0, -1);
+         GL11.glScalef(0.5F, 0.5F, 0.0F);
+         Class415.Method2368("Press 'ESCAPE' to unbind " + this.Field3046.Field2001.getName() + (this.Field3046.Field2001.Method1020() > -1 ? " (" + Keyboard.getKeyName(this.Field3046.Field2001.Method1020()) + ")" : ""), 0.0, 0.0, -1);
+         GL11.glPopMatrix();
+      }
+
+      super.Method1803(a, a, a);
+   }
+
+   public void Method1805(int a, int a, int a) {
+      if (this.Field3046 == null) {
+         Iterator var4 = Field3045.Method1383();
+
+         label128:
+         while(true) {
+            Class421 a;
+            Iterator var6;
+            Iterator var8;
+            do {
+               do {
+                  do {
+                     if (!var4.Method932()) {
+                        var4 = Field3045.Method1383();
+
+                        label98:
+                        while(true) {
+                           do {
+                              do {
+                                 do {
+                                    if (!var4.Method932()) {
+                                       var4 = Field3045.Method1383();
+
+                                       do {
+                                          if (!var4.Method932()) {
+                                             try {
+                                                super.Method1805(a, a, a);
+                                             } catch (IOException var10) {
+                                                var10.printStackTrace();
+                                             }
+
+                                             return;
+                                          }
+
+                                          a = (Class421)var4.Method933();
+                                       } while(!a.Method2386(a, a, a));
+
+                                       return;
+                                    }
+
+                                    a = (Class421)var4.Method933();
+                                 } while(!a.Field2035);
+                              } while(!a.Field2036);
+                           } while(a.Field2038 == null);
+
+                           var6 = a.Field2038.Method1383();
+
+                           while(true) {
+                              Class417 a;
+                              do {
+                                 if (!var6.Method932()) {
+                                    continue label98;
+                                 }
+
+                                 a = (Class417)var6.Method933();
+                              } while(!a.Field2019);
+
+                              var8 = a.Field2013.Method1383();
+
+                              while(var8.Method932()) {
+                                 Class413 a = (Class413)var8.Method933();
+                                 if (a.Method2370(a, a, a)) {
+                                    return;
+                                 }
+                              }
+                           }
+                        }
+                     }
+
+                     a = (Class421)var4.Method933();
+                  } while(!a.Field2035);
+               } while(!a.Field2036);
+            } while(a.Field2037 == null);
+
+            var6 = a.Field2037.Method1383();
+
+            while(true) {
+               Class414 a;
+               do {
+                  if (!var6.Method932()) {
+                     continue label128;
+                  }
+
+                  a = (Class414)var6.Method933();
+               } while(!a.Field2008);
+
+               var8 = a.Field2002.Method1383();
+
+               while(var8.Method932()) {
+                  Class426 a = (Class426)var8.Method933();
+                  if (a.Method2311(a, a, a)) {
+                     return;
+                  }
+               }
             }
-        }
-    }
+         }
+      }
+   }
 
-    private static IOException Method1815(IOException iOException) {
-        return iOException;
-    }
+   public void Method1811(int a, int a, int a) {
+      if (this.Field3046 == null) {
+         Iterator var4 = Field3045.Method1383();
+
+         label102:
+         while(true) {
+            Class421 a;
+            Iterator var6;
+            Iterator var8;
+            do {
+               do {
+                  do {
+                     if (!var4.Method932()) {
+                        var4 = Field3045.Method1383();
+
+                        label72:
+                        while(true) {
+                           do {
+                              do {
+                                 do {
+                                    if (!var4.Method932()) {
+                                       var4 = Field3045.Method1383();
+
+                                       while(var4.Method932()) {
+                                          a = (Class421)var4.Method933();
+                                          a.Method2387(a, a, a);
+                                       }
+
+                                       super.Method1811(a, a, a);
+                                       return;
+                                    }
+
+                                    a = (Class421)var4.Method933();
+                                 } while(!a.Field2035);
+                              } while(!a.Field2036);
+                           } while(a.Field2038 == null);
+
+                           var6 = a.Field2038.Method1383();
+
+                           while(true) {
+                              Class417 a;
+                              do {
+                                 if (!var6.Method932()) {
+                                    continue label72;
+                                 }
+
+                                 a = (Class417)var6.Method933();
+                              } while(!a.Field2019);
+
+                              var8 = a.Field2013.Method1383();
+
+                              while(var8.Method932()) {
+                                 Class413 a = (Class413)var8.Method933();
+                                 a.Method2371(a, a, a);
+                              }
+                           }
+                        }
+                     }
+
+                     a = (Class421)var4.Method933();
+                  } while(!a.Field2035);
+               } while(!a.Field2036);
+            } while(a.Field2037 == null);
+
+            var6 = a.Field2037.Method1383();
+
+            while(true) {
+               Class414 a;
+               do {
+                  if (!var6.Method932()) {
+                     continue label102;
+                  }
+
+                  a = (Class414)var6.Method933();
+               } while(!a.Field2008);
+
+               var8 = a.Field2002.Method1383();
+
+               while(var8.Method932()) {
+                  Class426 a = (Class426)var8.Method933();
+                  a.Method2312(a, a, a);
+               }
+            }
+         }
+      }
+   }
+
+   protected void Method1804(char a, int a) {
+      Iterator var3 = Field3045.Method1383();
+
+      while(true) {
+         Class421 a;
+         do {
+            do {
+               do {
+                  do {
+                     if (!var3.Method932()) {
+                        try {
+                           super.Method1804(a, a);
+                        } catch (IOException var8) {
+                           var8.printStackTrace();
+                        }
+
+                        return;
+                     }
+
+                     a = (Class421)var3.Method933();
+                  } while(!a.Field2036);
+               } while(!a.Field2035);
+            } while(a.Field2037 == null);
+         } while(a.Field2037.Method1799() <= 0);
+
+         Iterator var5 = a.Field2037.Method1383();
+
+         while(var5.Method932()) {
+            Class414 a = (Class414)var5.Method933();
+
+            try {
+               if (a.Method3570(a, a)) {
+                  return;
+               }
+            } catch (IOException var9) {
+               var9.printStackTrace();
+            }
+         }
+      }
+   }
+
+   public void Method1806() {
+      Iterator var1 = Field3045.Method1383();
+
+      label95:
+      while(true) {
+         Class421 a;
+         Iterator var3;
+         Iterator var5;
+         do {
+            do {
+               do {
+                  if (!var1.Method932()) {
+                     var1 = Field3045.Method1383();
+
+                     label65:
+                     while(true) {
+                        do {
+                           do {
+                              do {
+                                 if (!var1.Method932()) {
+                                    GlobalModule.INSTANCE.fileManager.saveClickGuiPos();
+                                    return;
+                                 }
+
+                                 a = (Class421)var1.Method933();
+                              } while(!a.Field2035);
+                           } while(!a.Field2036);
+                        } while(a.Field2038 == null);
+
+                        var3 = a.Field2038.Method1383();
+
+                        while(true) {
+                           Class417 a;
+                           do {
+                              if (!var3.Method932()) {
+                                 continue label65;
+                              }
+
+                              a = (Class417)var3.Method933();
+                           } while(!a.Field2019);
+
+                           var5 = a.Field2013.Method1383();
+
+                           while(var5.Method932()) {
+                              Class413 a = (Class413)var5.Method933();
+                              if (a instanceof Class418) {
+                                 ((Class418)a).Field2021 = false;
+                              }
+                           }
+                        }
+                     }
+                  }
+
+                  a = (Class421)var1.Method933();
+               } while(!a.Field2035);
+            } while(!a.Field2036);
+         } while(a.Field2037 == null);
+
+         var3 = a.Field2037.Method1383();
+
+         while(true) {
+            Class414 a;
+            do {
+               if (!var3.Method932()) {
+                  continue label95;
+               }
+
+               a = (Class414)var3.Method933();
+            } while(!a.Field2008);
+
+            var5 = a.Field2002.Method1383();
+
+            while(var5.Method932()) {
+               Class426 a = (Class426)var5.Method933();
+               if (a instanceof Class423) {
+                  ((Class423)a).Field2041 = false;
+               }
+            }
+         }
+      }
+   }
+
+   public boolean Method1812() {
+      return false;
+   }
+
+   public void Method1813(Category a) {
+      Iterator var2 = Field3045.Method1383();
+
+      while(true) {
+         Class421 a;
+         do {
+            do {
+               do {
+                  do {
+                     if (!var2.Method932()) {
+                        return;
+                     }
+
+                     a = (Class421)var2.Method933();
+                  } while(!a.Field2036);
+               } while(!a.Field2035);
+            } while(a.Field2037 == null);
+         } while(a.Field2037.Method1799() <= 0);
+
+         Iterator var4 = a.Field2037.Method1383();
+
+         while(var4.Method932()) {
+            Class414 a = (Class414)var4.Method933();
+            if (a == a.Field2001.Method1024()) {
+               a.Field2008 = false;
+            }
+         }
+      }
+   }
+
+   public void Method1814() {
+      Iterator var1 = Field3045.Method1383();
+
+      while(true) {
+         Class421 a;
+         do {
+            do {
+               do {
+                  do {
+                     if (!var1.Method932()) {
+                        return;
+                     }
+
+                     a = (Class421)var1.Method933();
+                  } while(!a.Field2036);
+               } while(!a.Field2035);
+            } while(a.Field2037 == null);
+         } while(a.Field2037.Method1799() <= 0);
+
+         Class414 a;
+         for(Iterator var3 = a.Field2037.Method1383(); var3.Method932(); a.Field2008 = false) {
+            a = (Class414)var3.Method933();
+         }
+      }
+   }
+
+   private static IOException Method1815(IOException iOException) {
+      return iOException;
+   }
 }

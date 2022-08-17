@@ -1,22 +1,9 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Class
- *  java.lang.Object
- *  java.lang.String
- *  java.util.ArrayList
- *  java.util.Comparator
- *  java.util.Iterator
- */
 package trash.foodbyte.module;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import obfuscate.a;
-import trash.foodbyte.module.Category;
-import trash.foodbyte.module.Module;
 import trash.foodbyte.module.impl.combat.AimAssist;
 import trash.foodbyte.module.impl.combat.AntiBot;
 import trash.foodbyte.module.impl.combat.AntiKB;
@@ -104,178 +91,193 @@ import trash.foodbyte.module.impl.world.Waypoints;
 import trash.foodbyte.module.impl.world.XRay;
 
 public class ModuleManager {
-    public static ArrayList modules = new ArrayList();
+   public static ArrayList modules = new ArrayList();
 
-    public ModuleManager() {
-        this.addModule(new WTap());
-        this.addModule(new AntiBot());
-        this.addModule(new AntiKB());
-        this.addModule(new AutoSword());
-        this.addModule(new AutoHeal());
-        this.addModule(new Reach());
-        this.addModule(new HitBox());
-        this.addModule(new AutoClicker());
-        this.addModule(new AimAssist());
-        this.addModule(new KillAura());
-        this.addModule(new Velocity());
-        this.addModule(new KeepSprint());
-        this.addModule(new ClickGui());
-        this.addModule(new Hud());
-        this.addModule(new ESP());
-        this.addModule(new ItemESP());
-        this.addModule(new ChinaHat());
-        this.addModule(new ItemTag());
-        this.addModule(new BedESP());
-        this.addModule(new ItemRender());
-        this.addModule(new Chams());
-        this.addModule(new Arrow());
-        this.addModule(new Radar());
-        this.addModule(new Inventory());
-        this.addModule(new StorageESP());
-        int[] nArray = Module.Method1041();
-        this.addModule(new Perspective());
-        this.addModule(new NameTag());
-        this.addModule(new Tracers());
-        this.addModule(new Trajectories());
-        this.addModule(new ShowEntity());
-        this.addModule(new NoFov());
-        this.addModule(new BlockOverlay());
-        this.addModule(new NoHurtcam());
-        this.addModule(new ArmorHud());
-        this.addModule(new FullBright());
-        this.addModule(new ViewClip());
-        this.addModule(new Particles());
-        this.addModule(new Zoot());
-        this.addModule(new InvWalk());
-        this.addModule(new Freecam());
-        this.addModule(new AutoArmor());
-        this.addModule(new AutoTool());
-        this.addModule(new AutoFish());
-        this.addModule(new RodAimbot());
-        this.addModule(new FastPlace());
-        this.addModule(new SuperPlace());
-        this.addModule(new WaterBucket());
-        this.addModule(new InvCleaner());
-        this.addModule(new NameProtect());
-        int[] nArray2 = nArray;
-        this.addModule(new ChestStealer());
-        this.addModule(new AntiObbyTrap());
-        this.addModule(new Fly());
-        this.addModule(new Speed());
-        this.addModule(new LegitSpeed());
-        this.addModule(new Sprint());
-        this.addModule(new NoFall());
-        this.addModule(new Packour());
-        this.addModule(new SafeWalk());
-        this.addModule(new NoJumpDelay());
-        this.addModule(new NoSlowDown());
-        this.addModule(new XRay());
-        this.addModule(new MCF());
-        this.addModule(new Panic());
-        this.addModule(new Timer());
-        this.addModule(new AutoGG());
-        this.addModule(new Crasher());
-        this.addModule(new UHCFind());
-        this.addModule(new PenShen());
-        this.addModule(new Disabler());
-        this.addModule(new LobbyGift());
-        this.addModule(new FastBreak());
-        this.addModule(new Waypoints());
-        this.addModule(new ChatFilter());
-        this.addModule(new CopsCrims());
-        this.addModule(new UHCFastCraft());
-        this.addModule(new ChatTranslator());
-        this.addModule(new MurderMystery());
-        this.addModule(new LightningTrack());
-        this.addModule(new StackNBT());
-        this.addModule(new GhostBlocks());
-        this.addModule(new SecretAura());
-        this.addModule(new SlayerHelper());
-        this.addModule(new AutoMelody());
-        this.addModule(new DungeonHelper());
-        this.addModule(new Experimentation());
-        modules.sort(Comparator.comparing(Module::getName));
-        a.trash(new String[2]);
-    }
+   public ModuleManager() {
+      this.addModule(new WTap());
+      this.addModule(new AntiBot());
+      this.addModule(new AntiKB());
+      this.addModule(new AutoSword());
+      this.addModule(new AutoHeal());
+      this.addModule(new Reach());
+      this.addModule(new HitBox());
+      this.addModule(new AutoClicker());
+      this.addModule(new AimAssist());
+      this.addModule(new KillAura());
+      this.addModule(new Velocity());
+      this.addModule(new KeepSprint());
+      this.addModule(new ClickGui());
+      this.addModule(new Hud());
+      this.addModule(new ESP());
+      this.addModule(new ItemESP());
+      this.addModule(new ChinaHat());
+      this.addModule(new ItemTag());
+      this.addModule(new BedESP());
+      this.addModule(new ItemRender());
+      this.addModule(new Chams());
+      this.addModule(new Arrow());
+      this.addModule(new Radar());
+      this.addModule(new Inventory());
+      this.addModule(new StorageESP());
+      Module.Method1041();
+      this.addModule(new Perspective());
+      this.addModule(new NameTag());
+      this.addModule(new Tracers());
+      this.addModule(new Trajectories());
+      this.addModule(new ShowEntity());
+      this.addModule(new NoFov());
+      this.addModule(new BlockOverlay());
+      this.addModule(new NoHurtcam());
+      this.addModule(new ArmorHud());
+      this.addModule(new FullBright());
+      this.addModule(new ViewClip());
+      this.addModule(new Particles());
+      this.addModule(new Zoot());
+      this.addModule(new InvWalk());
+      this.addModule(new Freecam());
+      this.addModule(new AutoArmor());
+      this.addModule(new AutoTool());
+      this.addModule(new AutoFish());
+      this.addModule(new RodAimbot());
+      this.addModule(new FastPlace());
+      this.addModule(new SuperPlace());
+      this.addModule(new WaterBucket());
+      this.addModule(new InvCleaner());
+      this.addModule(new NameProtect());
+      this.addModule(new ChestStealer());
+      this.addModule(new AntiObbyTrap());
+      this.addModule(new Fly());
+      this.addModule(new Speed());
+      this.addModule(new LegitSpeed());
+      this.addModule(new Sprint());
+      this.addModule(new NoFall());
+      this.addModule(new Packour());
+      this.addModule(new SafeWalk());
+      this.addModule(new NoJumpDelay());
+      this.addModule(new NoSlowDown());
+      this.addModule(new XRay());
+      this.addModule(new MCF());
+      this.addModule(new Panic());
+      this.addModule(new Timer());
+      this.addModule(new AutoGG());
+      this.addModule(new Crasher());
+      this.addModule(new UHCFind());
+      this.addModule(new PenShen());
+      this.addModule(new Disabler());
+      this.addModule(new LobbyGift());
+      this.addModule(new FastBreak());
+      this.addModule(new Waypoints());
+      this.addModule(new ChatFilter());
+      this.addModule(new CopsCrims());
+      this.addModule(new UHCFastCraft());
+      this.addModule(new ChatTranslator());
+      this.addModule(new MurderMystery());
+      this.addModule(new LightningTrack());
+      this.addModule(new StackNBT());
+      this.addModule(new GhostBlocks());
+      this.addModule(new SecretAura());
+      this.addModule(new SlayerHelper());
+      this.addModule(new AutoMelody());
+      this.addModule(new DungeonHelper());
+      this.addModule(new Experimentation());
+      modules.sort(Comparator.comparing(Module::getName));
+      a.trash(new String[2]);
+   }
 
-    public void addModule(Module a2) {
-        modules.Method2530((Object)a2);
-    }
+   public void addModule(Module a) {
+      modules.Method2530(a);
+   }
 
-    public static ArrayList getModules() {
-        ArrayList a2 = new ArrayList();
-        Iterator iterator = modules.Method1383();
-        int[] a3 = Module.Method1041();
-        while (iterator.Method932()) {
-            Module a4 = (Module)iterator.Method933();
-            if (!a4.getState()) continue;
-            a2.Method2530((Object)a4);
+   public static ArrayList getModules() {
+      Module.Method1041();
+      ArrayList a = new ArrayList();
+      Iterator var2 = modules.Method1383();
+
+      while(var2.Method932()) {
+         Module a = (Module)var2.Method933();
+         if (a.getState()) {
+            a.Method2530(a);
             break;
-        }
-        return a2;
-    }
+         }
+      }
 
-    public static Module getModule(String a2) {
-        Iterator iterator = modules.Method1383();
-        while (iterator.Method932()) {
-            Module a3 = (Module)iterator.Method933();
-            if (!a3.getName().equalsIgnoreCase(a2)) continue;
-            return a3;
-        }
-        return null;
-    }
+      return a;
+   }
 
-    public static ArrayList getAllModules() {
-        return modules;
-    }
+   public static Module getModule(String a) {
+      Iterator var1 = modules.Method1383();
 
-    public static Module getModule(Class a2) {
-        Iterator iterator = modules.Method1383();
-        while (iterator.Method932()) {
-            Module a3 = (Module)iterator.Method933();
-            if (a3.getClass() != a2) continue;
-            return a3;
-        }
-        return null;
-    }
+      Module a;
+      do {
+         if (!var1.Method932()) {
+            return null;
+         }
 
-    public static Module getModule2(Class a2) {
-        Iterator iterator = modules.Method1383();
-        while (iterator.Method932()) {
-            Module a3 = (Module)iterator.Method933();
-            if (a3.getClass() != a2) continue;
-            return a3;
-        }
-        return null;
-    }
+         a = (Module)var1.Method933();
+      } while(!a.getName().equalsIgnoreCase(a));
 
-    public static ArrayList getModulesNotRender() {
-        ArrayList a2 = new ArrayList();
-        Iterator iterator = modules.Method1383();
-        int[] a3 = Module.Method1041();
-        if (iterator.Method932()) {
-            Module a4 = (Module)iterator.Method933();
-            if (a4.getState() && a4.Method1024() != Category.RENDER) {
-                a2.Method2530((Object)a4);
-            }
-        }
-        return a2;
-    }
+      return a;
+   }
 
-    /*
-     * WARNING - void declaration
-     */
-    public static int Method2299(Category a2) {
-        void a3;
-        boolean bl = false;
-        Iterator iterator = modules.Method1383();
-        int[] a4 = Module.Method1041();
-        if (iterator.Method932()) {
-            Module a5 = (Module)iterator.Method933();
-            if (a5.Method1024() == a2) {
-                ++a3;
-            }
-        }
-        return (int)a3;
-    }
+   public static ArrayList getAllModules() {
+      return modules;
+   }
+
+   public static Module getModule(Class a) {
+      Iterator var1 = modules.Method1383();
+
+      Module a;
+      do {
+         if (!var1.Method932()) {
+            return null;
+         }
+
+         a = (Module)var1.Method933();
+      } while(a.getClass() != a);
+
+      return a;
+   }
+
+   public static Module getModule2(Class a) {
+      Iterator var1 = modules.Method1383();
+
+      Module a;
+      do {
+         if (!var1.Method932()) {
+            return null;
+         }
+
+         a = (Module)var1.Method933();
+      } while(a.getClass() != a);
+
+      return a;
+   }
+
+   public static ArrayList getModulesNotRender() {
+      Module.Method1041();
+      ArrayList a = new ArrayList();
+      Iterator var2 = modules.Method1383();
+      if (var2.Method932()) {
+         Module a = (Module)var2.Method933();
+         if (a.getState() && a.Method1024() != Category.RENDER) {
+            a.Method2530(a);
+         }
+      }
+
+      return a;
+   }
+
+   public static int Method2299(Category a) {
+      int a = 0;
+      Module.Method1041();
+      Iterator var3 = modules.Method1383();
+      if (var3.Method932()) {
+         Module a = (Module)var3.Method933();
+         if (a.Method1024() == a) {
+            ++a;
+         }
+      }
+
+      return a;
+   }
 }

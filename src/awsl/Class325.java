@@ -1,66 +1,49 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Object
- *  java.lang.String
- */
 package awsl;
 
-import awsl.Class326;
-import awsl.Class330;
 import obfuscate.a;
 
-public class Class325
-extends Class326 {
-    public static double Method1010(double a, double a2, double a3, double a4) {
-        double a5 = 1.70158f;
-        return a3 * (a /= a4) * a * ((double)2.70158f * a - (double)1.70158f) + a2;
-    }
+public class Class325 extends Class326 {
+   public static double Method1010(double a, double a, double a, double a) {
+      double a = 1.7015800476074219;
+      return a * (a /= a) * a * (2.701580047607422 * a - 1.7015800476074219) + a;
+   }
 
-    public static final double Method1254(double a, double a2, double a3, double a4, double a5) {
-        return a3 * (a /= a4) * a * ((a5 + 1.0) * a - a5) + a2;
-    }
+   public static final double Method1254(double a, double a, double a, double a, double a) {
+      return a * (a /= a) * a * ((a + 1.0) * a - a) + a;
+   }
 
-    public static final double Method1012(double a, double a2, double a3, double a4) {
-        double a5 = 1.70158f;
-        a = a / a4 - 1.0;
-        return a3 * (a * a * ((a5 + 1.0) * a + a5) + 1.0) + a2;
-    }
+   public static final double Method1012(double a, double a, double a, double a) {
+      double a = 1.7015800476074219;
+      return a * ((a = a / a - 1.0) * a * ((a + 1.0) * a + a) + 1.0) + a;
+   }
 
-    public static final double Method1255(double a, double a2, double a3, double a4, double a5) {
-        a = a / a4 - 1.0;
-        return a3 * (a * a * ((a5 + 1.0) * a + a5) + 1.0) + a2;
-    }
+   public static final double Method1255(double a, double a, double a, double a, double a) {
+      return a * ((a = a / a - 1.0) * a * ((a + 1.0) * a + a) + 1.0) + a;
+   }
 
-    /*
-     * WARNING - void declaration
-     */
-    public static final double Method1014(double a2, double a3, double a4, double a5) {
-        void a6;
-        double d;
-        double d2 = 1.70158f;
-        boolean a7 = Class330.Method1059();
-        a2 /= a5 / 2.0;
-        if (d < 1.0) {
-            return a4 / 2.0 * (a2 * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 - a6)) + a3;
-        }
-        double d3 = a4 / 2.0 * ((a2 -= 2.0) * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 + a6) + 2.0) + a3;
-        a.trash(new String[1]);
-        return d3;
-    }
+   public static final double Method1014(double a, double a, double a, double a) {
+      Class330.Method1059();
+      double a = 1.7015800476074219;
+      if ((a /= a / 2.0) < 1.0) {
+         return a / 2.0 * a * a * (((a *= 1.524999976158142) + 1.0) * a - a) + a;
+      } else {
+         double var10000 = a / 2.0 * ((a -= 2.0) * a * (((a *= 1.524999976158142) + 1.0) * a + a) + 2.0) + a;
+         a.trash(new String[1]);
+         return var10000;
+      }
+   }
 
-    public static final double Method1256(double a2, double a3, double a4, double a5, double a6) {
-        double d;
-        boolean bl = Class330.Method1059();
-        a2 /= a5 / 2.0;
-        if (d < 1.0) {
-            return a4 / 2.0 * (a2 * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 - a6)) + a3;
-        }
-        double d2 = a4 / 2.0 * ((a2 -= 2.0) * a2 * (((a6 *= (double)1.525f) + 1.0) * a2 + a6) + 2.0) + a3;
-        if (a.trash() == null) {
+   public static final double Method1256(double a, double a, double a, double a, double a) {
+      boolean var10 = Class330.Method1059();
+      if ((a /= a / 2.0) < 1.0) {
+         return a / 2.0 * a * a * (((a *= 1.524999976158142) + 1.0) * a - a) + a;
+      } else {
+         double var10000 = a / 2.0 * ((a -= 2.0) * a * (((a *= 1.524999976158142) + 1.0) * a + a) + 2.0) + a;
+         if (a.trash() == null) {
             Class330.Method1058(false);
-        }
-        return d2;
-    }
+         }
+
+         return var10000;
+      }
+   }
 }

@@ -1,78 +1,68 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.awt.image.BufferedImage
- *  java.awt.image.WritableRaster
- *  java.lang.Object
- *  java.lang.String
- */
 package awsl;
 
-import awsl.Class193;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
 
-public abstract class Class119
-extends Class193 {
-    protected boolean Field950 = false;
-    private static String Field951;
+public abstract class Class119 extends Class193 {
+   protected boolean Field950 = false;
+   private static String Field951;
 
-    /*
-     * WARNING - void declaration
-     */
-    public BufferedImage Method62(BufferedImage a, BufferedImage a2) {
-        int a3 = a.getWidth();
-        int a4 = a.getHeight();
-        int n = a.getType();
-        WritableRaster writableRaster = a.getRaster();
-        boolean a5 = Class193.Method1270();
-        a2 = this.Method1263(a, null);
-        WritableRaster a6 = a2.getRaster();
-        this.Method17(a3, a4);
-        int[] a7 = new int[a3];
-        int a8 = 0;
-        if (a8 < a4) {
-            int a9;
-            void a10;
-            if (a10 == 2) {
-                void a11;
-                a11.getDataElements(0, a8, a3, 1, (Object)a7);
-                a9 = 0;
-                if (a9 < a3) {
-                    a7[a9] = this.Method3(a9, a8, a7[a9]);
-                    ++a9;
-                }
-                a6.setDataElements(0, a8, a3, 1, (Object)a7);
+   public BufferedImage Method62(BufferedImage a, BufferedImage a) {
+      int a = a.getWidth();
+      int a = a.getHeight();
+      int a = a.getType();
+      Class193.Method1270();
+      WritableRaster a = a.getRaster();
+      a = this.Method1263(a, (ColorModel)null);
+      WritableRaster a = a.getRaster();
+      this.Method17(a, a);
+      int[] a = new int[a];
+      int a = 0;
+      if (a < a) {
+         int a;
+         if (a == 2) {
+            a.getDataElements(0, a, a, 1, a);
+            a = 0;
+            if (a < a) {
+               a[a] = this.Method3(a, a, a[a]);
+               ++a;
             }
-            a.getRGB(0, a8, a3, 1, a7, 0, a3);
-            a9 = 0;
-            if (a9 < a3) {
-                a7[a9] = this.Method3(a9, a8, a7[a9]);
-                ++a9;
-            }
-            a2.setRGB(0, a8, a3, 1, a7, 0, a3);
-            ++a8;
-        }
-        return a2;
-    }
 
-    public void Method17(int a, int a2) {
-    }
+            a.setDataElements(0, a, a, 1, a);
+         }
 
-    public abstract int Method3(int var1, int var2, int var3);
+         a.getRGB(0, a, a, 1, a, 0, a);
+         int a = 0;
+         if (a < a) {
+            a[a] = this.Method3(a, a, a[a]);
+            a = a + 1;
+         }
 
-    public static void Method496(String string) {
-        Field951 = string;
-    }
+         a.setRGB(0, a, a, 1, a, 0, a);
+         ++a;
+      }
 
-    public static String Method497() {
-        return Field951;
-    }
+      return a;
+   }
 
-    static {
-        if (Class119.Method497() != null) {
-            Class119.Method496("TZ1Do");
-        }
-    }
+   public void Method17(int a, int a1) {
+   }
+
+   public abstract int Method3(int integer1, int integer2, int integer3);
+
+   public static void Method496(String string) {
+      Field951 = string;
+   }
+
+   public static String Method497() {
+      return Field951;
+   }
+
+   static {
+      if (Method497() != null) {
+         Method496("TZ1Do");
+      }
+
+   }
 }

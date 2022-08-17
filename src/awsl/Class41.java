@@ -1,239 +1,192 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Deprecated
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- */
 package awsl;
 
-import awsl.Class132;
-import awsl.Class136;
-import awsl.Class148;
-import awsl.Class264;
-import awsl.Class267;
-import awsl.Class279;
-import awsl.Class31;
-import awsl.Class801;
+public final class Class41 extends Class267 {
+   public final Class801 Field331;
 
-public final class Class41
-extends Class267 {
-    public final Class801 Field331;
+   public Class41(Class801 a) {
+      this((Class267)null, a);
+   }
 
-    public Class41(Class801 a) {
-        this(null, a);
-    }
+   public Class41(Class267 a, Class801 a) {
+      super(327680, a);
+      this.Field331 = a;
+   }
 
-    public Class41(Class267 a, Class801 a2) {
-        super(327680, a);
-        this.Field331 = a2;
-    }
+   public void Method1979(String a, int a) {
+      this.Field331.Method3264(a, a);
+      super.Method1979(a, a);
+   }
 
-    @Override
-    public void Method1979(String a2, int a3) {
-        this.Field331.Method3264(a2, a3);
-        super.Method1979(a2, a3);
-    }
+   public Class148 Method1969(String a, boolean a) {
+      Class801 a = this.Field331.Method3266(a, a);
+      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1969(a, a);
+      return new Class132(a, a);
+   }
 
-    @Override
-    public Class148 Method1969(String a2, boolean a3) {
-        Class801 a4 = this.Field331.Method3266(a2, a3);
-        Class148 a5 = this.Field1460 == null ? null : this.Field1460.Method1969(a2, a3);
-        return new Class132(a5, a4);
-    }
+   public Class148 Method1970(int a, Class31 a, String a, boolean a) {
+      Class801 a = this.Field331.Method3267(a, a, a, a);
+      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1970(a, a, a, a);
+      return new Class132(a, a);
+   }
 
-    @Override
-    public Class148 Method1970(int a2, Class31 a3, String a4, boolean a5) {
-        Class801 a6 = this.Field331.Method3267(a2, a3, a4, a5);
-        Class148 a7 = this.Field1460 == null ? null : this.Field1460.Method1970(a2, a3, a4, a5);
-        return new Class132(a7, a6);
-    }
+   public void Method1980(Class136 a) {
+      this.Field331.Method3269(a);
+      super.Method1980(a);
+   }
 
-    @Override
-    public void Method1980(Class136 a2) {
-        this.Field331.Method3269(a2);
-        super.Method1980(a2);
-    }
+   public Class148 Method1968() {
+      Class801 a = this.Field331.Method3265();
+      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1968();
+      return new Class132(a, a);
+   }
 
-    @Override
-    public Class148 Method1968() {
-        Class801 a2 = this.Field331.Method3265();
-        Class148 a3 = this.Field1460 == null ? null : this.Field1460.Method1968();
-        return new Class132(a3, a2);
-    }
+   public Class148 Method1971(int a, String a, boolean a) {
+      Class801 a = this.Field331.Method3268(a, a, a);
+      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1971(a, a, a);
+      return new Class132(a, a);
+   }
 
-    @Override
-    public Class148 Method1971(int a2, String a3, boolean a4) {
-        Class801 a5 = this.Field331.Method3268(a2, a3, a4);
-        Class148 a6 = this.Field1460 == null ? null : this.Field1460.Method1971(a2, a3, a4);
-        return new Class132(a6, a5);
-    }
+   public void Method1652() {
+      this.Field331.Method3270();
+      super.Method1652();
+   }
 
-    @Override
-    public void Method1652() {
-        this.Field331.Method3270();
-        super.Method1652();
-    }
+   public void Method1845(int a, int a, Object[] a, int a, Object[] a) {
+      this.Field331.Method3271(a, a, a, a, a);
+      super.Method1845(a, a, a, a, a);
+   }
 
-    @Override
-    public void Method1845(int a2, int a3, Object[] a4, int a5, Object[] a6) {
-        this.Field331.Method3271(a2, a3, a4, a5, a6);
-        super.Method1845(a2, a3, a4, a5, a6);
-    }
+   public void Method1948(int a) {
+      this.Field331.Method3272(a);
+      super.Method1948(a);
+   }
 
-    @Override
-    public void Method1948(int a2) {
-        this.Field331.Method3272(a2);
-        super.Method1948(a2);
-    }
+   public void Method854(int a, int a) {
+      this.Field331.Method3273(a, a);
+      super.Method854(a, a);
+   }
 
-    @Override
-    public void Method854(int a2, int a3) {
-        this.Field331.Method3273(a2, a3);
-        super.Method854(a2, a3);
-    }
+   public void Method1840(int a, int a) {
+      this.Field331.Method3274(a, a);
+      super.Method1840(a, a);
+   }
 
-    @Override
-    public void Method1840(int a2, int a3) {
-        this.Field331.Method3274(a2, a3);
-        super.Method1840(a2, a3);
-    }
+   public void Method1952(int a, String a) {
+      this.Field331.Method3275(a, a);
+      super.Method1952(a, a);
+   }
 
-    @Override
-    public void Method1952(int a2, String a3) {
-        this.Field331.Method3275(a2, a3);
-        super.Method1952(a2, a3);
-    }
+   public void Method1949(int a, String a, String a, String a) {
+      this.Field331.Method3276(a, a, a, a);
+      super.Method1949(a, a, a, a);
+   }
 
-    @Override
-    public void Method1949(int a2, String a3, String a4, String a5) {
-        this.Field331.Method3276(a2, a3, a4, a5);
-        super.Method1949(a2, a3, a4, a5);
-    }
+   /** @deprecated */
+   @Deprecated
+   public void Method1953(int a, String a, String a, String a) {
+      if (this.Field1459 >= 327680) {
+         super.Method1953(a, a, a, a);
+      } else {
+         this.Field331.Method3277(a, a, a, a);
+         if (this.Field1460 != null) {
+            this.Field1460.Method1953(a, a, a, a);
+         }
 
-    @Override
-    @Deprecated
-    public void Method1953(int a2, String a3, String a4, String a5) {
-        if (this.Field1459 >= 327680) {
-            super.Method1953(a2, a3, a4, a5);
-            return;
-        }
-        this.Field331.Method3277(a2, a3, a4, a5);
-        if (this.Field1460 != null) {
-            this.Field1460.Method1953(a2, a3, a4, a5);
-        }
-    }
+      }
+   }
 
-    @Override
-    public void Method1954(int a2, String a3, String a4, String a5, boolean a6) {
-        if (this.Field1459 < 327680) {
-            super.Method1954(a2, a3, a4, a5, a6);
-            return;
-        }
-        this.Field331.Method3278(a2, a3, a4, a5, a6);
-        if (this.Field1460 != null) {
-            this.Field1460.Method1954(a2, a3, a4, a5, a6);
-        }
-    }
+   public void Method1954(int a, String a, String a, String a, boolean a) {
+      if (this.Field1459 < 327680) {
+         super.Method1954(a, a, a, a, a);
+      } else {
+         this.Field331.Method3278(a, a, a, a, a);
+         if (this.Field1460 != null) {
+            this.Field1460.Method1954(a, a, a, a, a);
+         }
 
-    @Override
-    public void Method1956(String a2, String a3, Class279 a4, Object[] a5) {
-        this.Field331.Method3279(a2, a3, a4, a5);
-        super.Method1956(a2, a3, a4, a5);
-    }
+      }
+   }
 
-    @Override
-    public void Method1957(int a2, Class264 a3) {
-        this.Field331.Method3280(a2, a3);
-        super.Method1957(a2, a3);
-    }
+   public void Method1956(String a, String a, Class279 a, Object[] a) {
+      this.Field331.Method3279(a, a, a, a);
+      super.Method1956(a, a, a, a);
+   }
 
-    @Override
-    public void Method1947(Class264 a2) {
-        this.Field331.Method3281(a2);
-        super.Method1947(a2);
-    }
+   public void Method1957(int a, Class264 a) {
+      this.Field331.Method3280(a, a);
+      super.Method1957(a, a);
+   }
 
-    @Override
-    public void Method1950(Object a2) {
-        this.Field331.Method3282(a2);
-        super.Method1950(a2);
-    }
+   public void Method1947(Class264 a) {
+      this.Field331.Method3281(a);
+      super.Method1947(a);
+   }
 
-    @Override
-    public void Method1841(int a2, int a3) {
-        this.Field331.Method3283(a2, a3);
-        super.Method1841(a2, a3);
-    }
+   public void Method1950(Object a) {
+      this.Field331.Method3282(a);
+      super.Method1950(a);
+   }
 
-    @Override
-    public void Method1959(int a2, int a3, Class264 a4, Class264[] a5) {
-        this.Field331.Method3284(a2, a3, a4, a5);
-        super.Method1959(a2, a3, a4, a5);
-    }
+   public void Method1841(int a, int a) {
+      this.Field331.Method3283(a, a);
+      super.Method1841(a, a);
+   }
 
-    @Override
-    public void Method1958(Class264 a2, int[] a3, Class264[] a4) {
-        this.Field331.Method3285(a2, a3, a4);
-        super.Method1958(a2, a3, a4);
-    }
+   public void Method1959(int a, int a, Class264 a, Class264[] a) {
+      this.Field331.Method3284(a, a, a, a);
+      super.Method1959(a, a, a, a);
+   }
 
-    @Override
-    public void Method1951(String a2, int a3) {
-        this.Field331.Method3286(a2, a3);
-        super.Method1951(a2, a3);
-    }
+   public void Method1958(Class264 a, int[] a, Class264[] a) {
+      this.Field331.Method3285(a, a, a);
+      super.Method1958(a, a, a);
+   }
 
-    @Override
-    public Class148 Method1973(int a2, Class31 a3, String a4, boolean a5) {
-        Class801 a6 = this.Field331.Method3287(a2, a3, a4, a5);
-        Class148 a7 = this.Field1460 == null ? null : this.Field1460.Method1973(a2, a3, a4, a5);
-        return new Class132(a7, a6);
-    }
+   public void Method1951(String a, int a) {
+      this.Field331.Method3286(a, a);
+      super.Method1951(a, a);
+   }
 
-    @Override
-    public void Method1960(Class264 a2, Class264 a3, Class264 a4, String a5) {
-        this.Field331.Method3288(a2, a3, a4, a5);
-        super.Method1960(a2, a3, a4, a5);
-    }
+   public Class148 Method1973(int a, Class31 a, String a, boolean a) {
+      Class801 a = this.Field331.Method3287(a, a, a, a);
+      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1973(a, a, a, a);
+      return new Class132(a, a);
+   }
 
-    @Override
-    public Class148 Method1974(int a2, Class31 a3, String a4, boolean a5) {
-        Class801 a6 = this.Field331.Method3289(a2, a3, a4, a5);
-        Class148 a7 = this.Field1460 == null ? null : this.Field1460.Method1974(a2, a3, a4, a5);
-        return new Class132(a7, a6);
-    }
+   public void Method1960(Class264 a, Class264 a, Class264 a, String a) {
+      this.Field331.Method3288(a, a, a, a);
+      super.Method1960(a, a, a, a);
+   }
 
-    @Override
-    public void Method1843(String a2, String a3, String a4, Class264 a5, Class264 a6, int a7) {
-        this.Field331.Method3290(a2, a3, a4, a5, a6, a7);
-        super.Method1843(a2, a3, a4, a5, a6, a7);
-    }
+   public Class148 Method1974(int a, Class31 a, String a, boolean a) {
+      Class801 a = this.Field331.Method3289(a, a, a, a);
+      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1974(a, a, a, a);
+      return new Class132(a, a);
+   }
 
-    @Override
-    public Class148 Method1844(int a2, Class31 a3, Class264[] a4, Class264[] a5, int[] a6, String a7, boolean a8) {
-        Class801 a9 = this.Field331.Method3291(a2, a3, a4, a5, a6, a7, a8);
-        Class148 a10 = this.Field1460 == null ? null : this.Field1460.Method1844(a2, a3, a4, a5, a6, a7, a8);
-        return new Class132(a10, a9);
-    }
+   public void Method1843(String a, String a, String a, Class264 a, Class264 a, int a) {
+      this.Field331.Method3290(a, a, a, a, a, a);
+      super.Method1843(a, a, a, a, a, a);
+   }
 
-    @Override
-    public void Method1981(int a2, Class264 a3) {
-        this.Field331.Method3292(a2, a3);
-        super.Method1981(a2, a3);
-    }
+   public Class148 Method1844(int a, Class31 a, Class264[] a, Class264[] a, int[] a, String a, boolean a) {
+      Class801 a = this.Field331.Method3291(a, a, a, a, a, a, a);
+      Class148 a = this.Field1460 == null ? null : this.Field1460.Method1844(a, a, a, a, a, a, a);
+      return new Class132(a, a);
+   }
 
-    @Override
-    public void Method1842(int a2, int a3) {
-        this.Field331.Method3293(a2, a3);
-        super.Method1842(a2, a3);
-    }
+   public void Method1981(int a, Class264 a) {
+      this.Field331.Method3292(a, a);
+      super.Method1981(a, a);
+   }
 
-    @Override
-    public void Method1653() {
-        this.Field331.Method3294();
-        super.Method1653();
-    }
+   public void Method1842(int a, int a) {
+      this.Field331.Method3293(a, a);
+      super.Method1842(a, a);
+   }
+
+   public void Method1653() {
+      this.Field331.Method3294();
+      super.Method1653();
+   }
 }

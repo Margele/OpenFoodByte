@@ -1,35 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.awt.Color
- *  java.lang.Boolean
- *  java.lang.Math
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- *  java.util.ArrayList
- *  java.util.Arrays
- *  java.util.Iterator
- *  java.util.List
- *  javax.vecmath.Vector3d
- *  javax.vecmath.Vector4d
- *  net.minecraft.client.Minecraft
- *  net.minecraft.client.gui.FontRenderer
- *  net.minecraft.client.renderer.GlStateManager
- *  net.minecraft.client.renderer.RenderHelper
- *  net.minecraft.entity.Entity
- *  net.minecraft.event.ClickEvent
- *  net.minecraft.event.ClickEvent$Action
- *  net.minecraft.network.play.server.S07PacketRespawn
- *  net.minecraft.network.play.server.S29PacketSoundEffect
- *  net.minecraft.network.play.server.S2CPacketSpawnGlobalEntity
- *  net.minecraft.util.AxisAlignedBB
- *  net.minecraft.util.MathHelper
- *  net.minecraft.util.Vec3
- *  org.lwjgl.opengl.Display
- *  org.lwjgl.opengl.GL11
- */
 package trash.foodbyte.module.impl.world;
 
 import awsl.Class260;
@@ -51,6 +19,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.event.ClickEvent;
+import net.minecraft.event.ClickEvent.Action;
 import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.network.play.server.S29PacketSoundEffect;
 import net.minecraft.network.play.server.S2CPacketSpawnGlobalEntity;
@@ -74,1259 +43,1010 @@ import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 import trash.foodbyte.value.ModeValue;
 
-public class LightningTrack
-extends Module {
-    private static final String[] Field2292;
-    public ModeValue Field2293 = new ModeValue(LightningTrack.Method754(-22728, 11272), LightningTrack.Method754(-22731, 11313), LightningTrack.Method754(-22733, 9221), new String[]{LightningTrack.Method754(-22783, -13597), LightningTrack.Method754(-22747, 1290)}, LightningTrack.Method754(-22748, -5228));
-    public FloatValue Field2294;
-    private static final String[] Field2295;
-    public BooleanValue Field2296 = new BooleanValue(LightningTrack.Method754(-22728, 11272), LightningTrack.Method754(-22771, -32735), (Boolean)true, LightningTrack.Method754(-22721, 22726));
-    public BooleanValue Field2297 = new BooleanValue(LightningTrack.Method754(-22728, 11272), LightningTrack.Method754(-22746, -28306), (Boolean)true, LightningTrack.Method754(-22737, 10951));
-    public int Field2298;
-    private ArrayList Field2299;
+public class LightningTrack extends Module {
+   private static final String[] Field2292;
+   public ModeValue Field2293 = new ModeValue(Method754(-22728, 11272), Method754(-22731, 11313), Method754(-22733, 9221), new String[]{Method754(-22783, -13597), Method754(-22747, 1290)}, Method754(-22748, -5228));
+   public FloatValue Field2294 = new FloatValue(Method754(-22728, 11272), Method754(-22781, 2410), 3.0, 1.0, 10.0, 1.0, Method754(-22734, 4946));
+   private static final String[] Field2295;
+   public BooleanValue Field2296 = new BooleanValue(Method754(-22728, 11272), Method754(-22771, -32735), true, Method754(-22721, 22726));
+   public BooleanValue Field2297 = new BooleanValue(Method754(-22728, 11272), Method754(-22746, -28306), true, Method754(-22737, 10951));
+   public int Field2298;
+   private ArrayList Field2299 = new ArrayList();
 
-    @Override
-    public void onDisable() {
-        this.Field2299.clear();
-        this.Field2298 = 0;
-    }
+   public void onDisable() {
+      this.Field2299.clear();
+      this.Field2298 = 0;
+   }
 
-    @Class628
-    public static native void Method2253(String var0, String var1, String var2, ClickEvent var3);
+   @Class628
+   public static native void Method2253(String string1, String string2, String string3, ClickEvent clickEvent);
 
-    static {
-        Class614.Method2232(10, LightningTrack.class);
-        LightningTrack.Method1658();
-    }
+   static {
+      Class614.Method2232(10, LightningTrack.class);
+      Method1658();
+   }
 
-    protected void Method2248(Class260 a, double a2, double a3, double a4, double a5, Entity a6) {
-        float a7;
-        float a8;
-        float a9 = (float)(a.Method2837() - (double)((float)a3) + 0.5);
-        double a10 = Math.sqrt((double)(a9 * a9 + (a8 = (float)(a.Method2838() - (double)((float)a4) + 1.0)) * a8 + (a7 = (float)(a.Method2839() - (double)((float)a5) + 0.5)) * a7));
-        if (a10 <= 20.0) {
-            this.Field2299.remove((Object)a);
-        }
-        FontRenderer a11 = LightningTrack.mc.fontRendererObj;
-    }
+   protected void Method2248(Class260 a, double a1, double a, double a, double a, Entity a5) {
+      float a = (float)(a.Method2837() - (double)((float)a) + 0.5);
+      float a = (float)(a.Method2838() - (double)((float)a) + 1.0);
+      float a = (float)(a.Method2839() - (double)((float)a) + 0.5);
+      double a = Math.sqrt((double)(a * a + a * a + a * a));
+      if (a <= 20.0) {
+         this.Field2299.remove(a);
+      }
 
-    public LightningTrack() {
-        super(LightningTrack.Method754(-22751, 27787), LightningTrack.Method754(-22738, 7342), Category.WORLD);
-        this.Field2294 = new FloatValue(LightningTrack.Method754(-22728, 11272), LightningTrack.Method754(-22781, 2410), 3.0, 1.0, 10.0, 1.0, LightningTrack.Method754(-22734, 4946));
-        this.Field2299 = new ArrayList();
-    }
+      FontRenderer a = mc.fontRendererObj;
+   }
 
-    /*
-     * Enabled force condition propagation
-     * Lifted jumps to return sites
-     */
-    private boolean Method1734(Vec3 a) {
-        if (!(a.xCoord > -1.0)) return false;
-        if (!(a.zCoord < 1.0)) return false;
-        double d = a.xCoord;
-        int n = LightningTrack.mc.gameSettings.guiScale == 0 ? 1 : LightningTrack.mc.gameSettings.guiScale;
-        if (!(d / (double)n >= 0.0)) return false;
-        double d2 = a.xCoord;
-        int n2 = LightningTrack.mc.gameSettings.guiScale == 0 ? 1 : LightningTrack.mc.gameSettings.guiScale;
-        if (!(d2 / (double)n2 <= (double)Display.getWidth())) return false;
-        double d3 = a.yCoord;
-        int n3 = LightningTrack.mc.gameSettings.guiScale == 0 ? 1 : LightningTrack.mc.gameSettings.guiScale;
-        if (!(d3 / (double)n3 >= 0.0)) return false;
-        double d4 = a.yCoord;
-        int n4 = LightningTrack.mc.gameSettings.guiScale == 0 ? 1 : LightningTrack.mc.gameSettings.guiScale;
-        if (!(d4 / (double)n4 <= (double)Display.getHeight())) return false;
-        return true;
-    }
+   public LightningTrack() {
+      super(Method754(-22751, 27787), Method754(-22738, 7342), Category.WORLD);
+   }
 
-    @EventTarget
-    public void Method802(EventRender3D a) {
-        if (this.Field2299 != null && this.Field2296.getValue()) {
-            this.Field2299.forEach(arg_0 -> this.Method2250(a, arg_0));
-        }
-    }
+   private boolean Method1734(Vec3 a) {
+      if (a.xCoord > -1.0 && a.zCoord < 1.0) {
+         return a.xCoord / (double)(mc.gameSettings.guiScale == 0 ? 1 : mc.gameSettings.guiScale) >= 0.0 && a.xCoord / (double)(mc.gameSettings.guiScale == 0 ? 1 : mc.gameSettings.guiScale) <= (double)Display.getWidth() && a.yCoord / (double)(mc.gameSettings.guiScale == 0 ? 1 : mc.gameSettings.guiScale) >= 0.0 && a.yCoord / (double)(mc.gameSettings.guiScale == 0 ? 1 : mc.gameSettings.guiScale) <= (double)Display.getHeight();
+      } else {
+         return false;
+      }
+   }
 
-    public static String Method2254(String a, String a2, String a3) {
-        int a4;
-        String a5 = "";
-        a4 = a2.isEmpty() ? 0 : ((a4 = a.indexOf(a2)) > -1 ? (a4 += a2.length()) : 0);
-        int a6 = a.indexOf(a3, a4);
-        if (a3.isEmpty()) {
-            a6 = a.length();
-        }
-        a5 = a.substring(a4, a6);
-        return a5;
-    }
+   @EventTarget
+   public void Method802(EventRender3D a) {
+      if (this.Field2299 != null && this.Field2296.getValue()) {
+         this.Field2299.forEach(this::Method2250);
+      }
 
-    @EventTarget
-    public void Method273(EventPacket a2) {
-        float a3;
-        float a4;
-        float a5;
-        float a6;
-        float a7;
-        float a8;
-        float a9;
-        S2CPacketSpawnGlobalEntity a10;
-        a[] a11 = Class448.Method2461();
-        if (a2.isSend()) {
-            return;
-        }
-        if (this.Field2293.isCurrentMode(LightningTrack.Method754(-22783, -13597)) && a2.packet instanceof S2CPacketSpawnGlobalEntity && (a10 = (S2CPacketSpawnGlobalEntity)a2.packet).func_149053_g() == 1) {
-            a9 = (float)((double)a10.func_149051_d() / 32.0);
-            a8 = (float)((double)a10.func_149050_e() / 32.0);
-            a7 = (float)((double)a10.func_149049_f() / 32.0);
-            a6 = (float)(LightningTrack.mc.thePlayer.posX - (double)a9);
-            a5 = (float)(LightningTrack.mc.thePlayer.posY - (double)a8);
-            a4 = (float)(LightningTrack.mc.thePlayer.posZ - (double)a7);
-            a3 = MathHelper.sqrt_float((float)(a6 * a6 + a5 * a5 + a4 * a4));
-            ++this.Field2298;
-            if (GlobalModule.INSTANCE.Field3186 != null && PermissionManager.canUseModule(LightningTrack.Method754(-22745, 6737))) {
-                LightningTrack.Method2253(LightningTrack.Method754(-22776, 5493) + this.Field2298 + LightningTrack.Method754(-22727, 29040) + (int)a3 + LightningTrack.Method754(-22773, 13712) + (int)a9 + LightningTrack.Method754(-22782, -17792) + (int)a8 + LightningTrack.Method754(-22774, -11077) + (int)a7, LightningTrack.Method754(-22778, -19916), LightningTrack.Method754(-22752, -27254), new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, LightningTrack.Method754(-22750, 13738) + a9 + " " + GlobalModule.Field3162.getFloatValue() + " " + a7));
+   }
+
+   public static String Method2254(String a, String a, String a) {
+      String a = "";
+      int a;
+      if (a.isEmpty()) {
+         a = 0;
+      } else {
+         a = a.indexOf(a);
+         if (a > -1) {
+            a += a.length();
+         } else {
+            a = 0;
+         }
+      }
+
+      int a = a.indexOf(a, a);
+      if (a.isEmpty()) {
+         a = a.length();
+      }
+
+      a = a.substring(a, a);
+      return a;
+   }
+
+   @EventTarget
+   public void Method273(EventPacket a) {
+      a[] a = Class448.trash();
+      if (!a.isSend()) {
+         float a;
+         float a;
+         float a;
+         float a;
+         float a;
+         float a;
+         float a;
+         if (this.Field2293.isCurrentMode(Method754(-22783, -13597)) && a.packet instanceof S2CPacketSpawnGlobalEntity) {
+            S2CPacketSpawnGlobalEntity a = (S2CPacketSpawnGlobalEntity)a.packet;
+            if (a.func_149053_g() == 1) {
+               a = (float)((double)a.func_149051_d() / 32.0);
+               a = (float)((double)a.func_149050_e() / 32.0);
+               a = (float)((double)a.func_149049_f() / 32.0);
+               a = (float)(mc.thePlayer.posX - (double)a);
+               a = (float)(mc.thePlayer.posY - (double)a);
+               a = (float)(mc.thePlayer.posZ - (double)a);
+               a = MathHelper.sqrt_float(a * a + a * a + a * a);
+               ++this.Field2298;
+               if (GlobalModule.INSTANCE.balant != null && PermissionManager.canUseModule(Method754(-22745, 6737))) {
+                  Method2253(Method754(-22776, 5493) + this.Field2298 + Method754(-22727, 29040) + (int)a + Method754(-22773, 13712) + (int)a + Method754(-22782, -17792) + (int)a + Method754(-22774, -11077) + (int)a, Method754(-22778, -19916), Method754(-22752, -27254), new ClickEvent(Action.SUGGEST_COMMAND, Method754(-22750, 13738) + a + " " + GlobalModule.Field3162.getFloatValue() + " " + a));
+               }
+
+               ChatUtils.addChatMessage(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)a + Method754(-22732, -12008) + (int)a + Method754(-22749, 1978) + (int)a + Method754(-22770, -1221) + (int)a);
+               this.Field2299.Method2530(new Class260(Method754(-22784, 16527) + this.Field2298 + Method754(-22769, -7971), (double)a, (double)a, (double)a, Method754(-22777, 8564), 0));
+               if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
+                  this.Field2299.remove(0);
+               }
             }
-            ChatUtils.addChatMessage(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a3 + LightningTrack.Method754(-22732, -12008) + (int)a9 + LightningTrack.Method754(-22749, 1978) + (int)a8 + LightningTrack.Method754(-22770, -1221) + (int)a7);
-            this.Field2299.Method2530((Object)new Class260(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22769, -7971), a9, a8, a7, LightningTrack.Method754(-22777, 8564), 0));
-            if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
-                this.Field2299.remove(0);
+         }
+
+         if (this.Field2293.isCurrentMode(Method754(-22725, -23162)) && a.getPacket() instanceof S29PacketSoundEffect) {
+            S29PacketSoundEffect a = (S29PacketSoundEffect)a.getPacket();
+            if (a.getSoundName().equals(Method754(-22726, -11947))) {
+               a = (float)a.getX();
+               a = (float)a.getY();
+               a = (float)a.getZ();
+               a = (float)(mc.thePlayer.posX - (double)a);
+               a = (float)(mc.thePlayer.posY - (double)a);
+               a = (float)(mc.thePlayer.posZ - (double)a);
+               a = MathHelper.sqrt_float(a * a + a * a + a * a);
+               ++this.Field2298;
+               if (GlobalModule.INSTANCE.balant != null && PermissionManager.canUseModule(Method754(-22740, 31221))) {
+                  Method2253(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)a + Method754(-22732, -12008) + (int)a + Method754(-22749, 1978) + (int)a + Method754(-22770, -1221) + (int)a, Method754(-22735, -29438), Method754(-22772, -20661), new ClickEvent(Action.SUGGEST_COMMAND, Method754(-22739, 20426) + a + " " + GlobalModule.Field3162.getFloatValue() + " " + a));
+               }
+
+               ChatUtils.addChatMessage(Method754(-22784, 16527) + this.Field2298 + Method754(-22729, -16477) + (int)a + Method754(-22732, -12008) + (int)a + Method754(-22749, 1978) + (int)a + Method754(-22770, -1221) + (int)a);
+               this.Field2299.Method2530(new Class260(Method754(-22784, 16527) + this.Field2298 + Method754(-22724, -32110), (double)a, (double)a, (double)a, Method754(-22736, 24329), 0));
+               if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
+                  this.Field2299.remove(0);
+               }
             }
-        }
-        if (this.Field2293.isCurrentMode(LightningTrack.Method754(-22725, -23162)) && a2.getPacket() instanceof S29PacketSoundEffect && (a10 = (S29PacketSoundEffect)a2.getPacket()).getSoundName().equals((Object)LightningTrack.Method754(-22726, -11947))) {
-            a9 = (float)a10.getX();
-            a8 = (float)a10.getY();
-            a7 = (float)a10.getZ();
-            a6 = (float)(LightningTrack.mc.thePlayer.posX - (double)a9);
-            a5 = (float)(LightningTrack.mc.thePlayer.posY - (double)a8);
-            a4 = (float)(LightningTrack.mc.thePlayer.posZ - (double)a7);
-            a3 = MathHelper.sqrt_float((float)(a6 * a6 + a5 * a5 + a4 * a4));
-            ++this.Field2298;
-            if (GlobalModule.INSTANCE.Field3186 != null && PermissionManager.canUseModule(LightningTrack.Method754(-22740, 31221))) {
-                LightningTrack.Method2253(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a3 + LightningTrack.Method754(-22732, -12008) + (int)a9 + LightningTrack.Method754(-22749, 1978) + (int)a8 + LightningTrack.Method754(-22770, -1221) + (int)a7, LightningTrack.Method754(-22735, -29438), LightningTrack.Method754(-22772, -20661), new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, LightningTrack.Method754(-22739, 20426) + a9 + " " + GlobalModule.Field3162.getFloatValue() + " " + a7));
-            }
-            ChatUtils.addChatMessage(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22729, -16477) + (int)a3 + LightningTrack.Method754(-22732, -12008) + (int)a9 + LightningTrack.Method754(-22749, 1978) + (int)a8 + LightningTrack.Method754(-22770, -1221) + (int)a7);
-            this.Field2299.Method2530((Object)new Class260(LightningTrack.Method754(-22784, 16527) + this.Field2298 + LightningTrack.Method754(-22724, -32110), a9, a8, a7, LightningTrack.Method754(-22736, 24329), 0));
-            if (this.Field2299.Method1799() > this.Field2294.getFloatValue().intValue()) {
-                this.Field2299.remove(0);
-            }
-        }
-        if (a2.getPacket() instanceof S07PacketRespawn) {
+         }
+
+         if (a.getPacket() instanceof S07PacketRespawn) {
             this.Field2299.clear();
             this.Field2298 = 0;
-        }
-    }
+         }
 
-    @Override
-    public void onEnable() {
-        this.Field2299.clear();
-        this.Field2298 = 0;
-    }
+      }
+   }
 
-    private void Method2250(EventRender3D a2, Class260 a3) {
-        Entity a4 = Minecraft.getMinecraft().getRenderViewEntity();
-        float a5 = a2.Method3523();
-        double a6 = a4.lastTickPosX + (a4.posX - a4.lastTickPosX) * (double)a5;
-        double a7 = a4.lastTickPosY + (a4.posY - a4.lastTickPosY) * (double)a5;
-        double a8 = a4.lastTickPosZ + (a4.posZ - a4.lastTickPosZ) * (double)a5;
-        this.Method2248(a3, 12.0, a6, a7, a8, a4);
-        RenderHelper.disableStandardItemLighting();
-        GlStateManager.enableDepth();
-        GlStateManager.depthMask((boolean)true);
-    }
+   public void onEnable() {
+      this.Field2299.clear();
+      this.Field2298 = 0;
+   }
 
-    private void Method2249(EventRender2D a2, Class260 a3) {
-        a[] a4 = Class448.Method2461();
-        if (!this.Method1734(new Vec3(a3.Method2837(), a3.Method2838(), a3.Method2839()))) {
-            double a5 = a3.Method2837();
-            double a6 = a3.Method2838();
-            double a7 = a3.Method2839();
-            AxisAlignedBB a8 = new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94).offset(a5 - ReflectionUtils.getRenderPosX(), a6 - ReflectionUtils.getRenderPosY(), a7 - ReflectionUtils.getRenderPosZ());
-            List a9 = Arrays.asList((Object[])new Vector3d[]{new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6, a7 + a8.maxZ - a8.minZ - 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6, a7 + a8.maxZ - a8.minZ - 0.5), new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6 + a8.maxY - a8.minY, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6 + a8.maxY - a8.minY, a7 + a8.minZ - a8.maxZ + 0.5), new Vector3d(a5 + a8.minX - a8.maxX + 0.5, a6 + a8.maxY - a8.minY, a7 + a8.maxZ - a8.minZ - 0.5), new Vector3d(a5 + a8.maxX - a8.minX - 0.5, a6 + a8.maxY - a8.minY, a7 + a8.maxZ - a8.minZ - 0.5)});
-            ReflectionUtils.setupCameraTransform(a2.Field2923, 0);
-            Vector4d a10 = null;
-            Iterator iterator = a9.Method1383();
-            if (iterator.Method932()) {
-                Vector3d a11 = (Vector3d)iterator.Method933();
-                a11 = RenderUtils.Method1136(a11.x - LightningTrack.mc.getRenderManager().viewerPosX, a11.y - LightningTrack.mc.getRenderManager().viewerPosY, a11.z - LightningTrack.mc.getRenderManager().viewerPosZ);
-                if (a11.z >= 0.0 && a11.z < 1.0) {
-                    a10 = new Vector4d(a11.x, a11.y, a11.z, 0.0);
-                    a10.x = Math.min((double)a11.x, (double)a10.x);
-                    a10.y = Math.min((double)a11.y, (double)a10.y);
-                    a10.z = Math.max((double)a11.x, (double)a10.z);
-                    a10.w = Math.max((double)a11.y, (double)a10.w);
-                }
+   private void Method2250(EventRender3D a, Class260 a) {
+      Entity a = Minecraft.getMinecraft().getRenderViewEntity();
+      float a = a.Method3523();
+      double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * (double)a;
+      double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * (double)a;
+      double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * (double)a;
+      this.Method2248(a, 12.0, a, a, a, a);
+      RenderHelper.disableStandardItemLighting();
+      GlStateManager.enableDepth();
+      GlStateManager.depthMask(true);
+   }
+
+   private void Method2249(EventRender2D a, Class260 a) {
+      a[] a = Class448.trash();
+      if (!this.Method1734(new Vec3(a.Method2837(), a.Method2838(), a.Method2839()))) {
+         double a = a.Method2837();
+         double a = a.Method2838();
+         double a = a.Method2839();
+         AxisAlignedBB a = (new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.94, 0.875, 0.94)).offset(a - ReflectionUtils.getRenderPosX(), a - ReflectionUtils.getRenderPosY(), a - ReflectionUtils.getRenderPosZ());
+         List a = Arrays.asList(new Vector3d(a + a.minX - a.maxX + 0.5, a, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a + a.maxY - a.minY, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a + a.maxY - a.minY, a + a.minZ - a.maxZ + 0.5), new Vector3d(a + a.minX - a.maxX + 0.5, a + a.maxY - a.minY, a + a.maxZ - a.minZ - 0.5), new Vector3d(a + a.maxX - a.minX - 0.5, a + a.maxY - a.minY, a + a.maxZ - a.minZ - 0.5));
+         ReflectionUtils.setupCameraTransform(a.Field2923, 0);
+         Vector4d a = null;
+         Iterator var13 = a.Method1383();
+         if (var13.Method932()) {
+            Vector3d a = (Vector3d)var13.Method933();
+            a = RenderUtils.Method1136(a.x - mc.getRenderManager().viewerPosX, a.y - mc.getRenderManager().viewerPosY, a.z - mc.getRenderManager().viewerPosZ);
+            if (a.z >= 0.0 && a.z < 1.0) {
+               a = new Vector4d(a.x, a.y, a.z, 0.0);
+               a.x = Math.min(a.x, a.x);
+               a.y = Math.min(a.y, a.y);
+               a.z = Math.max(a.x, a.z);
+               a.w = Math.max(a.y, a.w);
             }
-            LightningTrack.mc.entityRenderer.setupOverlayRendering();
-            GL11.glPushMatrix();
-            float a12 = (float)a10.x;
-            float a13 = (float)a10.z;
-            float a14 = (float)a10.y;
-            String a15 = "[" + Math.round((double)LightningTrack.mc.thePlayer.getDistance(a3.Method2837(), a3.Method2838(), a3.Method2839())) + LightningTrack.Method754(-22723, 27692) + a3.Method2835() + LightningTrack.Method754(-22722, -24056) + (int)a3.Method2837() + "," + (int)a3.Method2838() + "," + (int)a3.Method2839() + "]";
-            RenderUtils.Method1103(a12 + (a13 - a12) / 2.0f - Class565.Field2637.Method1225(a15) / 2.0f - 1.0f, a14 - (float)LightningTrack.mc.fontRendererObj.FONT_HEIGHT + 8.0f, Class565.Field2637.Method1225(a15) + 2.0f, LightningTrack.mc.fontRendererObj.FONT_HEIGHT, new Color(0, 0, 0, 120).getRGB());
-            Class565.Field2637.Method1217(a15, a12 + (a13 - a12) / 2.0f - Class565.Field2637.Method1225(a15) / 2.0f, a14 - (float)(LightningTrack.mc.fontRendererObj.FONT_HEIGHT / 2), -1);
-            GL11.glPopMatrix();
-        }
-    }
+         }
 
-    private static String Method754(int n, int n2) {
-        int n3 = (n ^ 0xFFFFA726) & 0xFFFF;
-        if (Field2292[n3] == null) {
-            int n4;
-            char[] cArray = Field2295[n3].toCharArray();
-            switch (cArray[0] & 0xFF) {
-                case 0: {
-                    n4 = 197;
-                    break;
-                }
-                case 1: {
-                    n4 = 111;
-                    break;
-                }
-                case 2: {
-                    n4 = 80;
-                    break;
-                }
-                case 3: {
-                    n4 = 85;
-                    break;
-                }
-                case 4: {
-                    n4 = 93;
-                    break;
-                }
-                case 5: {
-                    n4 = 156;
-                    break;
-                }
-                case 6: {
-                    n4 = 239;
-                    break;
-                }
-                case 7: {
-                    n4 = 49;
-                    break;
-                }
-                case 8: {
-                    n4 = 212;
-                    break;
-                }
-                case 9: {
-                    n4 = 126;
-                    break;
-                }
-                case 10: {
-                    n4 = 88;
-                    break;
-                }
-                case 11: {
-                    n4 = 133;
-                    break;
-                }
-                case 12: {
-                    n4 = 167;
-                    break;
-                }
-                case 13: {
-                    n4 = 38;
-                    break;
-                }
-                case 14: {
-                    n4 = 246;
-                    break;
-                }
-                case 15: {
-                    n4 = 158;
-                    break;
-                }
-                case 16: {
-                    n4 = 134;
-                    break;
-                }
-                case 17: {
-                    n4 = 79;
-                    break;
-                }
-                case 18: {
-                    n4 = 120;
-                    break;
-                }
-                case 19: {
-                    n4 = 217;
-                    break;
-                }
-                case 20: {
-                    n4 = 98;
-                    break;
-                }
-                case 21: {
-                    n4 = 46;
-                    break;
-                }
-                case 22: {
-                    n4 = 178;
-                    break;
-                }
-                case 23: {
-                    n4 = 102;
-                    break;
-                }
-                case 24: {
-                    n4 = 68;
-                    break;
-                }
-                case 25: {
-                    n4 = 89;
-                    break;
-                }
-                case 26: {
-                    n4 = 210;
-                    break;
-                }
-                case 27: {
-                    n4 = 169;
-                    break;
-                }
-                case 28: {
-                    n4 = 187;
-                    break;
-                }
-                case 29: {
-                    n4 = 125;
-                    break;
-                }
-                case 30: {
-                    n4 = 103;
-                    break;
-                }
-                case 31: {
-                    n4 = 81;
-                    break;
-                }
-                case 32: {
-                    n4 = 252;
-                    break;
-                }
-                case 33: {
-                    n4 = 207;
-                    break;
-                }
-                case 34: {
-                    n4 = 235;
-                    break;
-                }
-                case 35: {
-                    n4 = 96;
-                    break;
-                }
-                case 36: {
-                    n4 = 2;
-                    break;
-                }
-                case 37: {
-                    n4 = 52;
-                    break;
-                }
-                case 38: {
-                    n4 = 180;
-                    break;
-                }
-                case 39: {
-                    n4 = 183;
-                    break;
-                }
-                case 40: {
-                    n4 = 191;
-                    break;
-                }
-                case 41: {
-                    n4 = 45;
-                    break;
-                }
-                case 42: {
-                    n4 = 157;
-                    break;
-                }
-                case 43: {
-                    n4 = 28;
-                    break;
-                }
-                case 44: {
-                    n4 = 166;
-                    break;
-                }
-                case 45: {
-                    n4 = 149;
-                    break;
-                }
-                case 46: {
-                    n4 = 194;
-                    break;
-                }
-                case 47: {
-                    n4 = 172;
-                    break;
-                }
-                case 48: {
-                    n4 = 70;
-                    break;
-                }
-                case 49: {
-                    n4 = 144;
-                    break;
-                }
-                case 50: {
-                    n4 = 50;
-                    break;
-                }
-                case 51: {
-                    n4 = 182;
-                    break;
-                }
-                case 52: {
-                    n4 = 30;
-                    break;
-                }
-                case 53: {
-                    n4 = 74;
-                    break;
-                }
-                case 54: {
-                    n4 = 23;
-                    break;
-                }
-                case 55: {
-                    n4 = 22;
-                    break;
-                }
-                case 56: {
-                    n4 = 76;
-                    break;
-                }
-                case 57: {
-                    n4 = 124;
-                    break;
-                }
-                case 58: {
-                    n4 = 129;
-                    break;
-                }
-                case 59: {
-                    n4 = 29;
-                    break;
-                }
-                case 60: {
-                    n4 = 117;
-                    break;
-                }
-                case 61: {
-                    n4 = 118;
-                    break;
-                }
-                case 62: {
-                    n4 = 204;
-                    break;
-                }
-                case 63: {
-                    n4 = 141;
-                    break;
-                }
-                case 64: {
-                    n4 = 174;
-                    break;
-                }
-                case 65: {
-                    n4 = 21;
-                    break;
-                }
-                case 66: {
-                    n4 = 0;
-                    break;
-                }
-                case 67: {
-                    n4 = 247;
-                    break;
-                }
-                case 68: {
-                    n4 = 140;
-                    break;
-                }
-                case 69: {
-                    n4 = 250;
-                    break;
-                }
-                case 70: {
-                    n4 = 159;
-                    break;
-                }
-                case 71: {
-                    n4 = 116;
-                    break;
-                }
-                case 72: {
-                    n4 = 97;
-                    break;
-                }
-                case 73: {
-                    n4 = 215;
-                    break;
-                }
-                case 74: {
-                    n4 = 106;
-                    break;
-                }
-                case 75: {
-                    n4 = 37;
-                    break;
-                }
-                case 76: {
-                    n4 = 4;
-                    break;
-                }
-                case 77: {
-                    n4 = 35;
-                    break;
-                }
-                case 78: {
-                    n4 = 223;
-                    break;
-                }
-                case 79: {
-                    n4 = 108;
-                    break;
-                }
-                case 80: {
-                    n4 = 179;
-                    break;
-                }
-                case 81: {
-                    n4 = 78;
-                    break;
-                }
-                case 82: {
-                    n4 = 128;
-                    break;
-                }
-                case 83: {
-                    n4 = 255;
-                    break;
-                }
-                case 84: {
-                    n4 = 237;
-                    break;
-                }
-                case 85: {
-                    n4 = 248;
-                    break;
-                }
-                case 86: {
-                    n4 = 8;
-                    break;
-                }
-                case 87: {
-                    n4 = 200;
-                    break;
-                }
-                case 88: {
-                    n4 = 162;
-                    break;
-                }
-                case 89: {
-                    n4 = 42;
-                    break;
-                }
-                case 90: {
-                    n4 = 105;
-                    break;
-                }
-                case 91: {
-                    n4 = 165;
-                    break;
-                }
-                case 92: {
-                    n4 = 214;
-                    break;
-                }
-                case 93: {
-                    n4 = 14;
-                    break;
-                }
-                case 94: {
-                    n4 = 218;
-                    break;
-                }
-                case 95: {
-                    n4 = 242;
-                    break;
-                }
-                case 96: {
-                    n4 = 109;
-                    break;
-                }
-                case 97: {
-                    n4 = 62;
-                    break;
-                }
-                case 98: {
-                    n4 = 54;
-                    break;
-                }
-                case 99: {
-                    n4 = 92;
-                    break;
-                }
-                case 100: {
-                    n4 = 203;
-                    break;
-                }
-                case 101: {
-                    n4 = 249;
-                    break;
-                }
-                case 102: {
-                    n4 = 155;
-                    break;
-                }
-                case 103: {
-                    n4 = 195;
-                    break;
-                }
-                case 104: {
-                    n4 = 34;
-                    break;
-                }
-                case 105: {
-                    n4 = 112;
-                    break;
-                }
-                case 106: {
-                    n4 = 64;
-                    break;
-                }
-                case 107: {
-                    n4 = 196;
-                    break;
-                }
-                case 108: {
-                    n4 = 11;
-                    break;
-                }
-                case 109: {
-                    n4 = 26;
-                    break;
-                }
-                case 110: {
-                    n4 = 254;
-                    break;
-                }
-                case 111: {
-                    n4 = 10;
-                    break;
-                }
-                case 112: {
-                    n4 = 245;
-                    break;
-                }
-                case 113: {
-                    n4 = 171;
-                    break;
-                }
-                case 114: {
-                    n4 = 65;
-                    break;
-                }
-                case 115: {
-                    n4 = 6;
-                    break;
-                }
-                case 116: {
-                    n4 = 1;
-                    break;
-                }
-                case 117: {
-                    n4 = 17;
-                    break;
-                }
-                case 118: {
-                    n4 = 25;
-                    break;
-                }
-                case 119: {
-                    n4 = 131;
-                    break;
-                }
-                case 120: {
-                    n4 = 168;
-                    break;
-                }
-                case 121: {
-                    n4 = 75;
-                    break;
-                }
-                case 122: {
-                    n4 = 101;
-                    break;
-                }
-                case 123: {
-                    n4 = 225;
-                    break;
-                }
-                case 124: {
-                    n4 = 107;
-                    break;
-                }
-                case 125: {
-                    n4 = 163;
-                    break;
-                }
-                case 126: {
-                    n4 = 198;
-                    break;
-                }
-                case 127: {
-                    n4 = 15;
-                    break;
-                }
-                case 128: {
-                    n4 = 24;
-                    break;
-                }
-                case 129: {
-                    n4 = 82;
-                    break;
-                }
-                case 130: {
-                    n4 = 33;
-                    break;
-                }
-                case 131: {
-                    n4 = 51;
-                    break;
-                }
-                case 132: {
-                    n4 = 220;
-                    break;
-                }
-                case 133: {
-                    n4 = 205;
-                    break;
-                }
-                case 134: {
-                    n4 = 95;
-                    break;
-                }
-                case 135: {
-                    n4 = 228;
-                    break;
-                }
-                case 136: {
-                    n4 = 221;
-                    break;
-                }
-                case 137: {
-                    n4 = 7;
-                    break;
-                }
-                case 138: {
-                    n4 = 100;
-                    break;
-                }
-                case 139: {
-                    n4 = 130;
-                    break;
-                }
-                case 140: {
-                    n4 = 40;
-                    break;
-                }
-                case 141: {
-                    n4 = 71;
-                    break;
-                }
-                case 142: {
-                    n4 = 136;
-                    break;
-                }
-                case 143: {
-                    n4 = 69;
-                    break;
-                }
-                case 144: {
-                    n4 = 139;
-                    break;
-                }
-                case 145: {
-                    n4 = 209;
-                    break;
-                }
-                case 146: {
-                    n4 = 73;
-                    break;
-                }
-                case 147: {
-                    n4 = 181;
-                    break;
-                }
-                case 148: {
-                    n4 = 211;
-                    break;
-                }
-                case 149: {
-                    n4 = 58;
-                    break;
-                }
-                case 150: {
-                    n4 = 19;
-                    break;
-                }
-                case 151: {
-                    n4 = 173;
-                    break;
-                }
-                case 152: {
-                    n4 = 193;
-                    break;
-                }
-                case 153: {
-                    n4 = 13;
-                    break;
-                }
-                case 154: {
-                    n4 = 94;
-                    break;
-                }
-                case 155: {
-                    n4 = 230;
-                    break;
-                }
-                case 156: {
-                    n4 = 219;
-                    break;
-                }
-                case 157: {
-                    n4 = 232;
-                    break;
-                }
-                case 158: {
-                    n4 = 99;
-                    break;
-                }
-                case 159: {
-                    n4 = 227;
-                    break;
-                }
-                case 160: {
-                    n4 = 152;
-                    break;
-                }
-                case 161: {
-                    n4 = 226;
-                    break;
-                }
-                case 162: {
-                    n4 = 138;
-                    break;
-                }
-                case 163: {
-                    n4 = 175;
-                    break;
-                }
-                case 164: {
-                    n4 = 143;
-                    break;
-                }
-                case 165: {
-                    n4 = 9;
-                    break;
-                }
-                case 166: {
-                    n4 = 48;
-                    break;
-                }
-                case 167: {
-                    n4 = 253;
-                    break;
-                }
-                case 168: {
-                    n4 = 121;
-                    break;
-                }
-                case 169: {
-                    n4 = 77;
-                    break;
-                }
-                case 170: {
-                    n4 = 53;
-                    break;
-                }
-                case 171: {
-                    n4 = 241;
-                    break;
-                }
-                case 172: {
-                    n4 = 27;
-                    break;
-                }
-                case 173: {
-                    n4 = 192;
-                    break;
-                }
-                case 174: {
-                    n4 = 55;
-                    break;
-                }
-                case 175: {
-                    n4 = 234;
-                    break;
-                }
-                case 176: {
-                    n4 = 5;
-                    break;
-                }
-                case 177: {
-                    n4 = 150;
-                    break;
-                }
-                case 178: {
-                    n4 = 83;
-                    break;
-                }
-                case 179: {
-                    n4 = 32;
-                    break;
-                }
-                case 180: {
-                    n4 = 240;
-                    break;
-                }
-                case 181: {
-                    n4 = 104;
-                    break;
-                }
-                case 182: {
-                    n4 = 147;
-                    break;
-                }
-                case 183: {
-                    n4 = 16;
-                    break;
-                }
-                case 184: {
-                    n4 = 135;
-                    break;
-                }
-                case 185: {
-                    n4 = 36;
-                    break;
-                }
-                case 186: {
-                    n4 = 184;
-                    break;
-                }
-                case 187: {
-                    n4 = 123;
-                    break;
-                }
-                case 188: {
-                    n4 = 202;
-                    break;
-                }
-                case 189: {
-                    n4 = 91;
-                    break;
-                }
-                case 190: {
-                    n4 = 20;
-                    break;
-                }
-                case 191: {
-                    n4 = 148;
-                    break;
-                }
-                case 192: {
-                    n4 = 114;
-                    break;
-                }
-                case 193: {
-                    n4 = 142;
-                    break;
-                }
-                case 194: {
-                    n4 = 113;
-                    break;
-                }
-                case 195: {
-                    n4 = 67;
-                    break;
-                }
-                case 196: {
-                    n4 = 206;
-                    break;
-                }
-                case 197: {
-                    n4 = 60;
-                    break;
-                }
-                case 198: {
-                    n4 = 231;
-                    break;
-                }
-                case 199: {
-                    n4 = 146;
-                    break;
-                }
-                case 200: {
-                    n4 = 86;
-                    break;
-                }
-                case 201: {
-                    n4 = 199;
-                    break;
-                }
-                case 202: {
-                    n4 = 224;
-                    break;
-                }
-                case 203: {
-                    n4 = 41;
-                    break;
-                }
-                case 204: {
-                    n4 = 233;
-                    break;
-                }
-                case 205: {
-                    n4 = 186;
-                    break;
-                }
-                case 206: {
-                    n4 = 43;
-                    break;
-                }
-                case 207: {
-                    n4 = 201;
-                    break;
-                }
-                case 208: {
-                    n4 = 90;
-                    break;
-                }
-                case 209: {
-                    n4 = 39;
-                    break;
-                }
-                case 210: {
-                    n4 = 110;
-                    break;
-                }
-                case 211: {
-                    n4 = 208;
-                    break;
-                }
-                case 212: {
-                    n4 = 216;
-                    break;
-                }
-                case 213: {
-                    n4 = 63;
-                    break;
-                }
-                case 214: {
-                    n4 = 176;
-                    break;
-                }
-                case 215: {
-                    n4 = 153;
-                    break;
-                }
-                case 216: {
-                    n4 = 151;
-                    break;
-                }
-                case 217: {
-                    n4 = 72;
-                    break;
-                }
-                case 218: {
-                    n4 = 170;
-                    break;
-                }
-                case 219: {
-                    n4 = 244;
-                    break;
-                }
-                case 220: {
-                    n4 = 213;
-                    break;
-                }
-                case 221: {
-                    n4 = 177;
-                    break;
-                }
-                case 222: {
-                    n4 = 160;
-                    break;
-                }
-                case 223: {
-                    n4 = 236;
-                    break;
-                }
-                case 224: {
-                    n4 = 222;
-                    break;
-                }
-                case 225: {
-                    n4 = 137;
-                    break;
-                }
-                case 226: {
-                    n4 = 154;
-                    break;
-                }
-                case 227: {
-                    n4 = 164;
-                    break;
-                }
-                case 228: {
-                    n4 = 66;
-                    break;
-                }
-                case 229: {
-                    n4 = 238;
-                    break;
-                }
-                case 230: {
-                    n4 = 122;
-                    break;
-                }
-                case 231: {
-                    n4 = 119;
-                    break;
-                }
-                case 232: {
-                    n4 = 84;
-                    break;
-                }
-                case 233: {
-                    n4 = 31;
-                    break;
-                }
-                case 234: {
-                    n4 = 127;
-                    break;
-                }
-                case 235: {
-                    n4 = 229;
-                    break;
-                }
-                case 236: {
-                    n4 = 3;
-                    break;
-                }
-                case 237: {
-                    n4 = 44;
-                    break;
-                }
-                case 238: {
-                    n4 = 189;
-                    break;
-                }
-                case 239: {
-                    n4 = 18;
-                    break;
-                }
-                case 240: {
-                    n4 = 185;
-                    break;
-                }
-                case 241: {
-                    n4 = 61;
-                    break;
-                }
-                case 242: {
-                    n4 = 145;
-                    break;
-                }
-                case 243: {
-                    n4 = 12;
-                    break;
-                }
-                case 244: {
-                    n4 = 59;
-                    break;
-                }
-                case 245: {
-                    n4 = 243;
-                    break;
-                }
-                case 246: {
-                    n4 = 190;
-                    break;
-                }
-                case 247: {
-                    n4 = 161;
-                    break;
-                }
-                case 248: {
-                    n4 = 188;
-                    break;
-                }
-                case 249: {
-                    n4 = 57;
-                    break;
-                }
-                case 250: {
-                    n4 = 132;
-                    break;
-                }
-                case 251: {
-                    n4 = 47;
-                    break;
-                }
-                case 252: {
-                    n4 = 56;
-                    break;
-                }
-                case 253: {
-                    n4 = 87;
-                    break;
-                }
-                case 254: {
-                    n4 = 251;
-                    break;
-                }
-                default: {
-                    n4 = 115;
-                }
-            }
-            int n5 = n4;
-            int n6 = (n2 & 0xFF) - n5;
-            n6 += 256;
-            int n7 = ((n2 & 0xFFFF) >>> 8) - n5;
-            n7 += 256;
-            int n8 = 0;
-            while (n8 < cArray.length) {
-                int n9 = n8 % 2;
-                int n10 = n8;
-                cArray[n10] = (char)(cArray[n10] ^ n6);
-                n6 = ((n6 >>> 3 | n6 << 5) ^ cArray[n8]) & 0xFF;
-                ++n8;
-            }
-            LightningTrack.Field2292[n3] = new String(cArray).intern();
-        }
-        return Field2292[n3];
-    }
+         mc.entityRenderer.setupOverlayRendering();
+         GL11.glPushMatrix();
+         float a = (float)a.x;
+         float a = (float)a.z;
+         float a = (float)a.y;
+         String a = "[" + Math.round(mc.thePlayer.getDistance(a.Method2837(), a.Method2838(), a.Method2839())) + Method754(-22723, 27692) + a.Method2835() + Method754(-22722, -24056) + (int)a.Method2837() + "," + (int)a.Method2838() + "," + (int)a.Method2839() + "]";
+         RenderUtils.Method1103(a + (a - a) / 2.0F - Class565.Field2637.Method1225(a) / 2.0F - 1.0F, a - (float)mc.fontRendererObj.FONT_HEIGHT + 8.0F, Class565.Field2637.Method1225(a) + 2.0F, (float)mc.fontRendererObj.FONT_HEIGHT, (new Color(0, 0, 0, 120)).getRGB());
+         Class565.Field2637.Method1217(a, a + (a - a) / 2.0F - Class565.Field2637.Method1225(a) / 2.0F, a - (float)(mc.fontRendererObj.FONT_HEIGHT / 2), -1);
+         GL11.glPopMatrix();
+      }
 
-    public void Method810(EventRender2D a2) {
-        if (!mc.isSingleplayer() && mc.getCurrentServerData() != null && this.Field2296.getValue()) {
-            this.Field2299.forEach(arg_0 -> this.Method2249(a2, arg_0));
-        }
-    }
+   }
 
-    @Override
-    public String getDescription() {
-        return LightningTrack.Method754(-22730, 31268);
-    }
+   private static String Method754(int integer1, int integer2) {
+      int var2 = (integer1 ^ -22746) & '\uffff';
+      if (Field2292[var2] == null) {
+         char[] var3 = Field2295[var2].toCharArray();
+         short var10000;
+         switch (var3[0] & 255) {
+            case 0:
+               var10000 = 197;
+               break;
+            case 1:
+               var10000 = 111;
+               break;
+            case 2:
+               var10000 = 80;
+               break;
+            case 3:
+               var10000 = 85;
+               break;
+            case 4:
+               var10000 = 93;
+               break;
+            case 5:
+               var10000 = 156;
+               break;
+            case 6:
+               var10000 = 239;
+               break;
+            case 7:
+               var10000 = 49;
+               break;
+            case 8:
+               var10000 = 212;
+               break;
+            case 9:
+               var10000 = 126;
+               break;
+            case 10:
+               var10000 = 88;
+               break;
+            case 11:
+               var10000 = 133;
+               break;
+            case 12:
+               var10000 = 167;
+               break;
+            case 13:
+               var10000 = 38;
+               break;
+            case 14:
+               var10000 = 246;
+               break;
+            case 15:
+               var10000 = 158;
+               break;
+            case 16:
+               var10000 = 134;
+               break;
+            case 17:
+               var10000 = 79;
+               break;
+            case 18:
+               var10000 = 120;
+               break;
+            case 19:
+               var10000 = 217;
+               break;
+            case 20:
+               var10000 = 98;
+               break;
+            case 21:
+               var10000 = 46;
+               break;
+            case 22:
+               var10000 = 178;
+               break;
+            case 23:
+               var10000 = 102;
+               break;
+            case 24:
+               var10000 = 68;
+               break;
+            case 25:
+               var10000 = 89;
+               break;
+            case 26:
+               var10000 = 210;
+               break;
+            case 27:
+               var10000 = 169;
+               break;
+            case 28:
+               var10000 = 187;
+               break;
+            case 29:
+               var10000 = 125;
+               break;
+            case 30:
+               var10000 = 103;
+               break;
+            case 31:
+               var10000 = 81;
+               break;
+            case 32:
+               var10000 = 252;
+               break;
+            case 33:
+               var10000 = 207;
+               break;
+            case 34:
+               var10000 = 235;
+               break;
+            case 35:
+               var10000 = 96;
+               break;
+            case 36:
+               var10000 = 2;
+               break;
+            case 37:
+               var10000 = 52;
+               break;
+            case 38:
+               var10000 = 180;
+               break;
+            case 39:
+               var10000 = 183;
+               break;
+            case 40:
+               var10000 = 191;
+               break;
+            case 41:
+               var10000 = 45;
+               break;
+            case 42:
+               var10000 = 157;
+               break;
+            case 43:
+               var10000 = 28;
+               break;
+            case 44:
+               var10000 = 166;
+               break;
+            case 45:
+               var10000 = 149;
+               break;
+            case 46:
+               var10000 = 194;
+               break;
+            case 47:
+               var10000 = 172;
+               break;
+            case 48:
+               var10000 = 70;
+               break;
+            case 49:
+               var10000 = 144;
+               break;
+            case 50:
+               var10000 = 50;
+               break;
+            case 51:
+               var10000 = 182;
+               break;
+            case 52:
+               var10000 = 30;
+               break;
+            case 53:
+               var10000 = 74;
+               break;
+            case 54:
+               var10000 = 23;
+               break;
+            case 55:
+               var10000 = 22;
+               break;
+            case 56:
+               var10000 = 76;
+               break;
+            case 57:
+               var10000 = 124;
+               break;
+            case 58:
+               var10000 = 129;
+               break;
+            case 59:
+               var10000 = 29;
+               break;
+            case 60:
+               var10000 = 117;
+               break;
+            case 61:
+               var10000 = 118;
+               break;
+            case 62:
+               var10000 = 204;
+               break;
+            case 63:
+               var10000 = 141;
+               break;
+            case 64:
+               var10000 = 174;
+               break;
+            case 65:
+               var10000 = 21;
+               break;
+            case 66:
+               var10000 = 0;
+               break;
+            case 67:
+               var10000 = 247;
+               break;
+            case 68:
+               var10000 = 140;
+               break;
+            case 69:
+               var10000 = 250;
+               break;
+            case 70:
+               var10000 = 159;
+               break;
+            case 71:
+               var10000 = 116;
+               break;
+            case 72:
+               var10000 = 97;
+               break;
+            case 73:
+               var10000 = 215;
+               break;
+            case 74:
+               var10000 = 106;
+               break;
+            case 75:
+               var10000 = 37;
+               break;
+            case 76:
+               var10000 = 4;
+               break;
+            case 77:
+               var10000 = 35;
+               break;
+            case 78:
+               var10000 = 223;
+               break;
+            case 79:
+               var10000 = 108;
+               break;
+            case 80:
+               var10000 = 179;
+               break;
+            case 81:
+               var10000 = 78;
+               break;
+            case 82:
+               var10000 = 128;
+               break;
+            case 83:
+               var10000 = 255;
+               break;
+            case 84:
+               var10000 = 237;
+               break;
+            case 85:
+               var10000 = 248;
+               break;
+            case 86:
+               var10000 = 8;
+               break;
+            case 87:
+               var10000 = 200;
+               break;
+            case 88:
+               var10000 = 162;
+               break;
+            case 89:
+               var10000 = 42;
+               break;
+            case 90:
+               var10000 = 105;
+               break;
+            case 91:
+               var10000 = 165;
+               break;
+            case 92:
+               var10000 = 214;
+               break;
+            case 93:
+               var10000 = 14;
+               break;
+            case 94:
+               var10000 = 218;
+               break;
+            case 95:
+               var10000 = 242;
+               break;
+            case 96:
+               var10000 = 109;
+               break;
+            case 97:
+               var10000 = 62;
+               break;
+            case 98:
+               var10000 = 54;
+               break;
+            case 99:
+               var10000 = 92;
+               break;
+            case 100:
+               var10000 = 203;
+               break;
+            case 101:
+               var10000 = 249;
+               break;
+            case 102:
+               var10000 = 155;
+               break;
+            case 103:
+               var10000 = 195;
+               break;
+            case 104:
+               var10000 = 34;
+               break;
+            case 105:
+               var10000 = 112;
+               break;
+            case 106:
+               var10000 = 64;
+               break;
+            case 107:
+               var10000 = 196;
+               break;
+            case 108:
+               var10000 = 11;
+               break;
+            case 109:
+               var10000 = 26;
+               break;
+            case 110:
+               var10000 = 254;
+               break;
+            case 111:
+               var10000 = 10;
+               break;
+            case 112:
+               var10000 = 245;
+               break;
+            case 113:
+               var10000 = 171;
+               break;
+            case 114:
+               var10000 = 65;
+               break;
+            case 115:
+               var10000 = 6;
+               break;
+            case 116:
+               var10000 = 1;
+               break;
+            case 117:
+               var10000 = 17;
+               break;
+            case 118:
+               var10000 = 25;
+               break;
+            case 119:
+               var10000 = 131;
+               break;
+            case 120:
+               var10000 = 168;
+               break;
+            case 121:
+               var10000 = 75;
+               break;
+            case 122:
+               var10000 = 101;
+               break;
+            case 123:
+               var10000 = 225;
+               break;
+            case 124:
+               var10000 = 107;
+               break;
+            case 125:
+               var10000 = 163;
+               break;
+            case 126:
+               var10000 = 198;
+               break;
+            case 127:
+               var10000 = 15;
+               break;
+            case 128:
+               var10000 = 24;
+               break;
+            case 129:
+               var10000 = 82;
+               break;
+            case 130:
+               var10000 = 33;
+               break;
+            case 131:
+               var10000 = 51;
+               break;
+            case 132:
+               var10000 = 220;
+               break;
+            case 133:
+               var10000 = 205;
+               break;
+            case 134:
+               var10000 = 95;
+               break;
+            case 135:
+               var10000 = 228;
+               break;
+            case 136:
+               var10000 = 221;
+               break;
+            case 137:
+               var10000 = 7;
+               break;
+            case 138:
+               var10000 = 100;
+               break;
+            case 139:
+               var10000 = 130;
+               break;
+            case 140:
+               var10000 = 40;
+               break;
+            case 141:
+               var10000 = 71;
+               break;
+            case 142:
+               var10000 = 136;
+               break;
+            case 143:
+               var10000 = 69;
+               break;
+            case 144:
+               var10000 = 139;
+               break;
+            case 145:
+               var10000 = 209;
+               break;
+            case 146:
+               var10000 = 73;
+               break;
+            case 147:
+               var10000 = 181;
+               break;
+            case 148:
+               var10000 = 211;
+               break;
+            case 149:
+               var10000 = 58;
+               break;
+            case 150:
+               var10000 = 19;
+               break;
+            case 151:
+               var10000 = 173;
+               break;
+            case 152:
+               var10000 = 193;
+               break;
+            case 153:
+               var10000 = 13;
+               break;
+            case 154:
+               var10000 = 94;
+               break;
+            case 155:
+               var10000 = 230;
+               break;
+            case 156:
+               var10000 = 219;
+               break;
+            case 157:
+               var10000 = 232;
+               break;
+            case 158:
+               var10000 = 99;
+               break;
+            case 159:
+               var10000 = 227;
+               break;
+            case 160:
+               var10000 = 152;
+               break;
+            case 161:
+               var10000 = 226;
+               break;
+            case 162:
+               var10000 = 138;
+               break;
+            case 163:
+               var10000 = 175;
+               break;
+            case 164:
+               var10000 = 143;
+               break;
+            case 165:
+               var10000 = 9;
+               break;
+            case 166:
+               var10000 = 48;
+               break;
+            case 167:
+               var10000 = 253;
+               break;
+            case 168:
+               var10000 = 121;
+               break;
+            case 169:
+               var10000 = 77;
+               break;
+            case 170:
+               var10000 = 53;
+               break;
+            case 171:
+               var10000 = 241;
+               break;
+            case 172:
+               var10000 = 27;
+               break;
+            case 173:
+               var10000 = 192;
+               break;
+            case 174:
+               var10000 = 55;
+               break;
+            case 175:
+               var10000 = 234;
+               break;
+            case 176:
+               var10000 = 5;
+               break;
+            case 177:
+               var10000 = 150;
+               break;
+            case 178:
+               var10000 = 83;
+               break;
+            case 179:
+               var10000 = 32;
+               break;
+            case 180:
+               var10000 = 240;
+               break;
+            case 181:
+               var10000 = 104;
+               break;
+            case 182:
+               var10000 = 147;
+               break;
+            case 183:
+               var10000 = 16;
+               break;
+            case 184:
+               var10000 = 135;
+               break;
+            case 185:
+               var10000 = 36;
+               break;
+            case 186:
+               var10000 = 184;
+               break;
+            case 187:
+               var10000 = 123;
+               break;
+            case 188:
+               var10000 = 202;
+               break;
+            case 189:
+               var10000 = 91;
+               break;
+            case 190:
+               var10000 = 20;
+               break;
+            case 191:
+               var10000 = 148;
+               break;
+            case 192:
+               var10000 = 114;
+               break;
+            case 193:
+               var10000 = 142;
+               break;
+            case 194:
+               var10000 = 113;
+               break;
+            case 195:
+               var10000 = 67;
+               break;
+            case 196:
+               var10000 = 206;
+               break;
+            case 197:
+               var10000 = 60;
+               break;
+            case 198:
+               var10000 = 231;
+               break;
+            case 199:
+               var10000 = 146;
+               break;
+            case 200:
+               var10000 = 86;
+               break;
+            case 201:
+               var10000 = 199;
+               break;
+            case 202:
+               var10000 = 224;
+               break;
+            case 203:
+               var10000 = 41;
+               break;
+            case 204:
+               var10000 = 233;
+               break;
+            case 205:
+               var10000 = 186;
+               break;
+            case 206:
+               var10000 = 43;
+               break;
+            case 207:
+               var10000 = 201;
+               break;
+            case 208:
+               var10000 = 90;
+               break;
+            case 209:
+               var10000 = 39;
+               break;
+            case 210:
+               var10000 = 110;
+               break;
+            case 211:
+               var10000 = 208;
+               break;
+            case 212:
+               var10000 = 216;
+               break;
+            case 213:
+               var10000 = 63;
+               break;
+            case 214:
+               var10000 = 176;
+               break;
+            case 215:
+               var10000 = 153;
+               break;
+            case 216:
+               var10000 = 151;
+               break;
+            case 217:
+               var10000 = 72;
+               break;
+            case 218:
+               var10000 = 170;
+               break;
+            case 219:
+               var10000 = 244;
+               break;
+            case 220:
+               var10000 = 213;
+               break;
+            case 221:
+               var10000 = 177;
+               break;
+            case 222:
+               var10000 = 160;
+               break;
+            case 223:
+               var10000 = 236;
+               break;
+            case 224:
+               var10000 = 222;
+               break;
+            case 225:
+               var10000 = 137;
+               break;
+            case 226:
+               var10000 = 154;
+               break;
+            case 227:
+               var10000 = 164;
+               break;
+            case 228:
+               var10000 = 66;
+               break;
+            case 229:
+               var10000 = 238;
+               break;
+            case 230:
+               var10000 = 122;
+               break;
+            case 231:
+               var10000 = 119;
+               break;
+            case 232:
+               var10000 = 84;
+               break;
+            case 233:
+               var10000 = 31;
+               break;
+            case 234:
+               var10000 = 127;
+               break;
+            case 235:
+               var10000 = 229;
+               break;
+            case 236:
+               var10000 = 3;
+               break;
+            case 237:
+               var10000 = 44;
+               break;
+            case 238:
+               var10000 = 189;
+               break;
+            case 239:
+               var10000 = 18;
+               break;
+            case 240:
+               var10000 = 185;
+               break;
+            case 241:
+               var10000 = 61;
+               break;
+            case 242:
+               var10000 = 145;
+               break;
+            case 243:
+               var10000 = 12;
+               break;
+            case 244:
+               var10000 = 59;
+               break;
+            case 245:
+               var10000 = 243;
+               break;
+            case 246:
+               var10000 = 190;
+               break;
+            case 247:
+               var10000 = 161;
+               break;
+            case 248:
+               var10000 = 188;
+               break;
+            case 249:
+               var10000 = 57;
+               break;
+            case 250:
+               var10000 = 132;
+               break;
+            case 251:
+               var10000 = 47;
+               break;
+            case 252:
+               var10000 = 56;
+               break;
+            case 253:
+               var10000 = 87;
+               break;
+            case 254:
+               var10000 = 251;
+               break;
+            default:
+               var10000 = 115;
+         }
 
-    public static String Method2255(String a2) {
-        return a2.replaceAll("&", "\u00a7");
-    }
+         short var4 = var10000;
+         int var5 = (integer2 & 255) - var4;
+         var5 += 256;
+         int var6 = ((integer2 & '\uffff') >>> 8) - var4;
+         var6 += 256;
 
-    private static native /* synthetic */ void Method1658();
+         for(int var7 = 0; var7 < var3.length; ++var7) {
+            int var8 = var7 % 2;
+            var3[var7] = (char)(var3[var7] ^ var5);
+            var5 = ((var5 >>> 3 | var5 << 5) ^ var3[var7]) & 255;
+         }
+
+         Field2292[var2] = (new String(var3)).intern();
+      }
+
+      return Field2292[var2];
+   }
+
+   public void Method810(EventRender2D a) {
+      if (!mc.isSingleplayer() && mc.getCurrentServerData() != null && this.Field2296.getValue()) {
+         this.Field2299.forEach(this::Method2249);
+      }
+
+   }
+
+   public String getDescription() {
+      return Method754(-22730, 31268);
+   }
+
+   public static String Method2255(String a) {
+      return a.replaceAll("&", "§");
+   }
+
+   // $FF: synthetic method
+   private static native void Method1658();
 }

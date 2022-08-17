@@ -1,142 +1,147 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Boolean
- *  java.lang.Character
- *  java.lang.Object
- *  java.lang.String
- *  java.lang.StringBuilder
- *  java.util.Iterator
- *  java.util.Locale
- */
 package awsl;
 
-import awsl.Class290;
-import awsl.Class298;
-import awsl.Class666;
 import java.util.Iterator;
 import java.util.Locale;
 import obfuscate.a;
 
 public class Class568 {
-    public static String Method1249(String a) {
-        String a2 = a.trim();
-        int a3 = a2.length();
-        StringBuilder a4 = new StringBuilder(a3);
-        for (int a5 = 0; a5 < a3; ++a5) {
-            char a6 = a2.charAt(a5);
-            if (a6 < ' ' || a6 == '+' || a6 == '%' || a6 == '=' || a6 == ';') {
-                a4.append('%');
-                a4.append(Character.forDigit((int)((char)(a6 >>> 4 & 0xF)), (int)16));
-                a4.append(Character.forDigit((int)((char)(a6 & 0xF)), (int)16));
-                continue;
-            }
-            a4.append(a6);
-        }
-        return a4.toString();
-    }
+   public static String Method1249(String a) {
+      String a = a.trim();
+      int a = a.length();
+      StringBuilder a = new StringBuilder(a);
 
-    public static Class298 Method1250(String a) {
-        Class298 a2 = new Class298();
-        Class290 a3 = new Class290(a);
-        String a4 = Class568.Method1252(a3.Method2891('=').trim());
-        if ("".equals((Object)a4)) {
-            throw new Class666("Cookies must have a 'name'");
-        }
-        a2.Method3009("name", a4);
-        a3.Method2887('=');
-        a2.Method3009("value", Class568.Method1252(a3.Method2891(';')).trim());
-        a3.Method2885();
-        while (a3.Method2884()) {
-            Object a5;
-            a4 = Class568.Method1252(a3.Method2892("=;")).trim().toLowerCase(Locale.ROOT);
-            if ("name".equalsIgnoreCase(a4)) {
-                throw new Class666("Illegal attribute name: 'name'");
+      for(int a = 0; a < a; ++a) {
+         char a = a.charAt(a);
+         if (a >= ' ' && a != '+' && a != '%' && a != '=' && a != ';') {
+            a.append(a);
+         } else {
+            a.append('%');
+            a.append(Character.forDigit((char)(a >>> 4 & 15), 16));
+            a.append(Character.forDigit((char)(a & 15), 16));
+         }
+      }
+
+      return a.toString();
+   }
+
+   public static Class298 Method1250(String a) {
+      Class298 a = new Class298();
+      Class290 a = new Class290(a);
+      String a = Method1252(a.Method2891('=').trim());
+      if ("".equals(a)) {
+         throw new Class666("Cookies must have a 'name'");
+      } else {
+         a.Method3009("name", a);
+         a.Method2887('=');
+         a.Method3009("value", Method1252(a.Method2891(';')).trim());
+         a.Method2885();
+
+         while(a.Method2884()) {
+            a = Method1252(a.Method2892("=;")).trim().toLowerCase(Locale.ROOT);
+            if ("name".equalsIgnoreCase(a)) {
+               throw new Class666("Illegal attribute name: 'name'");
             }
-            if ("value".equalsIgnoreCase(a4)) {
-                throw new Class666("Illegal attribute name: 'value'");
+
+            if ("value".equalsIgnoreCase(a)) {
+               throw new Class666("Illegal attribute name: 'value'");
             }
-            if (a3.Method2885() != '=') {
-                a5 = Boolean.TRUE;
+
+            Object a;
+            if (a.Method2885() != '=') {
+               a = Boolean.TRUE;
             } else {
-                a5 = Class568.Method1252(a3.Method2891(';')).trim();
-                a3.Method2885();
+               a = Method1252(a.Method2891(';')).trim();
+               a.Method2885();
             }
-            if ("".equals((Object)a4) || "".equals(a5)) continue;
-            a2.Method3009(a4, a5);
-        }
-        return a2;
-    }
 
-    /*
-     * WARNING - void declaration
-     */
-    public static String Method1251(Class298 a2) throws Class666 {
-        String string;
-        block7: {
-            void a3;
-            String a4;
-            StringBuilder stringBuilder = new StringBuilder();
-            String a5 = null;
-            int[] a6 = Class666.Method3438();
-            Object a7 = null;
-            Iterator iterator = a2.Method2968().Method1383();
-            if (iterator.Method932()) {
-                a4 = (String)iterator.Method933();
-                if ("name".equalsIgnoreCase(a4)) {
-                    a5 = a2.Method2963(a4).trim();
-                }
-                if ("value".equalsIgnoreCase(a4)) {
-                    a7 = a2.Method2963(a4).trim();
-                }
+            if (!"".equals(a) && !"".equals(a)) {
+               a.Method3009(a, a);
             }
-            if ("".equals((Object)a5.trim())) {
-                throw new Class666("Cookie does not have a name");
+         }
+
+         return a;
+      }
+   }
+
+   public static String Method1251(Class298 a) throws Class666 {
+      StringBuilder a = new StringBuilder();
+      Class666.Method3438();
+      String a = null;
+      Object a = null;
+      Iterator var5 = a.Method2968().Method1383();
+      String a;
+      if (var5.Method932()) {
+         a = (String)var5.Method933();
+         if ("name".equalsIgnoreCase(a)) {
+            a = a.Method2963(a).trim();
+         }
+
+         if ("value".equalsIgnoreCase(a)) {
+            a = a.Method2963(a).trim();
+         }
+      }
+
+      if ("".equals(a.trim())) {
+         throw new Class666("Cookie does not have a name");
+      } else {
+         a = "";
+         a.append(Method1249(a));
+         a.append("=");
+         a.append(Method1249((String)a));
+         var5 = a.Method2968().Method1383();
+
+         while(var5.Method932()) {
+            a = (String)var5.Method933();
+            if (!"name".equalsIgnoreCase(a)) {
+               if ("value".equalsIgnoreCase(a)) {
+                  ;
+               }
+
+               Object a = a.Method2974(a);
+               if (a instanceof Boolean) {
+                  if (!Boolean.TRUE.equals(a)) {
+                     break;
+                  }
+
+                  a.append(';').append(Method1249(a));
+               }
+
+               a.append(';').append(Method1249(a)).append('=').append(Method1249(a.Method3780()));
+               break;
             }
-            a7 = "";
-            a3.append(Class568.Method1249(a5));
-            a3.append("=");
-            a3.append(Class568.Method1249((String)a7));
-            iterator = a2.Method2968().Method1383();
-            while (iterator.Method932()) {
-                a4 = (String)iterator.Method933();
-                if ("name".equalsIgnoreCase(a4)) continue;
-                if ("value".equalsIgnoreCase(a4)) {
-                }
-                if ((a7 = a2.Method2974(a4)) instanceof Boolean) {
-                    if (!Boolean.TRUE.equals(a7)) break;
-                    a3.append(';').append(Class568.Method1249(a4));
-                }
-                a3.append(';').append(Class568.Method1249(a4)).append('=').append(Class568.Method1249(a7.Method3780()));
-                break;
-            }
-            string = a3.toString();
-            if (a.trash() != null) break block7;
+         }
+
+         String var10000 = a.toString();
+         if (a.trash() == null) {
             Class666.Method85(new int[2]);
-        }
-        return string;
-    }
+         }
 
-    public static String Method1252(String a2) {
-        int a3 = a2.length();
-        StringBuilder a4 = new StringBuilder(a3);
-        for (int a5 = 0; a5 < a3; ++a5) {
-            char a6 = a2.charAt(a5);
-            if (a6 == '+') {
-                a6 = ' ';
-            } else if (a6 == '%' && a5 + 2 < a3) {
-                int a7 = Class290.Method2882(a2.charAt(a5 + 1));
-                int a8 = Class290.Method2882(a2.charAt(a5 + 2));
-                a6 = (char)(a7 * 16 + a8);
-                a5 += 2;
-            }
-            a4.append(a6);
-        }
-        return a4.toString();
-    }
+         return var10000;
+      }
+   }
 
-    private static Class666 Method1253(Class666 class666) {
-        return class666;
-    }
+   public static String Method1252(String a) {
+      int a = a.length();
+      StringBuilder a = new StringBuilder(a);
+
+      for(int a = 0; a < a; ++a) {
+         char a = a.charAt(a);
+         if (a == '+') {
+            a = ' ';
+         } else if (a == '%' && a + 2 < a) {
+            int a = Class290.Method2882(a.charAt(a + 1));
+            int a = Class290.Method2882(a.charAt(a + 2));
+            a = (char)(a * 16 + a);
+            a += 2;
+         }
+
+         a.append(a);
+      }
+
+      return a.toString();
+   }
+
+   private static Class666 Method1253(Class666 class666) {
+      return class666;
+   }
 }

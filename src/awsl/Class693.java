@@ -1,62 +1,45 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  io.netty.buffer.ByteBuf
- *  io.netty.channel.ChannelHandlerContext
- *  io.netty.handler.codec.MessageToByteEncoder
- *  java.lang.Exception
- *  java.lang.IllegalArgumentException
- *  java.lang.Object
- *  java.lang.String
- */
 package awsl;
 
-import awsl.Class234;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 import obfuscate.a;
 
-public class Class693
-extends MessageToByteEncoder {
-    private static String Field2988;
+public class Class693 extends MessageToByteEncoder {
+   private static String Field2988;
 
-    /*
-     * WARNING - void declaration
-     */
-    protected void Method2534(ChannelHandlerContext a2, ByteBuf a3, ByteBuf a4) {
-        void a5;
-        int a6 = a3.readableBytes();
-        int n = Class234.Method1612(a6);
-        String a7 = Class693.Method2536();
-        if (a5 > 3) {
-            throw new IllegalArgumentException("unable to fit " + a6 + " into " + 3);
-        }
-        Class234 a8 = new Class234(a4);
-        a8.ensureWritable((int)(a5 + a6));
-        a8.Method9(a6);
-        a8.writeBytes(a3, a3.readerIndex(), a6);
-        a.trash(new String[1]);
-    }
+   protected void Method2534(ChannelHandlerContext a, ByteBuf a, ByteBuf a) {
+      Method2536();
+      int a = a.readableBytes();
+      int a = Class234.Method1612(a);
+      if (a > 3) {
+         throw new IllegalArgumentException("unable to fit " + a + " into " + 3);
+      } else {
+         Class234 a = new Class234(a);
+         a.ensureWritable(a + a);
+         a.Method9(a);
+         a.writeBytes(a, a.readerIndex(), a);
+         a.trash(new String[1]);
+      }
+   }
 
-    protected void encode(ChannelHandlerContext channelHandlerContext, Object object, ByteBuf byteBuf) throws Exception {
-        this.Method2534(channelHandlerContext, (ByteBuf)object, byteBuf);
-    }
+   protected void encode(ChannelHandlerContext channelHandlerContext, Object object, ByteBuf byteBuf) throws Exception {
+      this.Method2534(channelHandlerContext, (ByteBuf)object, byteBuf);
+   }
 
-    public static void Method2535(String string) {
-        Field2988 = string;
-    }
+   public static void Method2535(String string) {
+      Field2988 = string;
+   }
 
-    public static String Method2536() {
-        return Field2988;
-    }
+   public static String Method2536() {
+      return Field2988;
+   }
 
-    private static IllegalArgumentException Method2537(IllegalArgumentException illegalArgumentException) {
-        return illegalArgumentException;
-    }
+   private static IllegalArgumentException Method2537(IllegalArgumentException illegalArgumentException) {
+      return illegalArgumentException;
+   }
 
-    static {
-        Class693.Method2535(null);
-    }
+   static {
+      Method2535((String)null);
+   }
 }

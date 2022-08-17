@@ -1,319 +1,351 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Exception
- *  java.lang.IllegalArgumentException
- *  java.lang.Math
- *  java.lang.Object
- */
 package awsl;
 
-import awsl.Class193;
-import awsl.Class776;
-
 public class Class702 {
-    public float[] Field3028 = null;
-    public float[] Field3029 = null;
-    public int Field3030;
-    public int Field3031;
-    private static final float Field3032 = -0.5f;
-    private static final float Field3033 = 1.5f;
-    private static final float Field3034 = -1.5f;
-    private static final float Field3035 = 0.5f;
-    private static final float Field3036 = 1.0f;
-    private static final float Field3037 = -2.5f;
-    private static final float Field3038 = 2.0f;
-    private static final float Field3039 = -0.5f;
-    private static final float Field3040 = -0.5f;
-    private static final float Field3041 = 0.5f;
-    private static final float Field3042 = 1.0f;
+   public float[] Field3028 = null;
+   public float[] Field3029 = null;
+   public int Field3030;
+   public int Field3031;
+   private static final float Field3032 = -0.5F;
+   private static final float Field3033 = 1.5F;
+   private static final float Field3034 = -1.5F;
+   private static final float Field3035 = 0.5F;
+   private static final float Field3036 = 1.0F;
+   private static final float Field3037 = -2.5F;
+   private static final float Field3038 = 2.0F;
+   private static final float Field3039 = -0.5F;
+   private static final float Field3040 = -0.5F;
+   private static final float Field3041 = 0.5F;
+   private static final float Field3042 = 1.0F;
 
-    public Class702(int a, int a2, int a3, int a4) {
-        this.Field3030 = a;
-        this.Field3031 = a2;
-        this.Field3028 = new float[a * a2];
-        this.Field3029 = new float[a * a2];
-        int a5 = 0;
-        for (int a6 = 0; a6 < a; ++a6) {
-            for (int a7 = 0; a7 < a2; ++a7) {
-                this.Field3028[a5] = (float)a7 * (float)(a3 - 1) / (float)(a2 - 1);
-                this.Field3029[a5] = (float)a6 * (float)(a4 - 1) / (float)(a - 1);
-                ++a5;
-            }
-        }
-    }
+   public Class702(int a, int a, int a, int a) {
+      this.Field3030 = a;
+      this.Field3031 = a;
+      this.Field3028 = new float[a * a];
+      this.Field3029 = new float[a * a];
+      int a = 0;
 
-    public void Method1789(int a) {
-        int a2 = (this.Field3030 + 1) * this.Field3031;
-        float[] a3 = new float[a2];
-        float[] a4 = new float[a2];
-        ++this.Field3030;
-        int a5 = 0;
-        int a6 = 0;
-        for (int a7 = 0; a7 < this.Field3030; ++a7) {
-            for (int a8 = 0; a8 < this.Field3031; ++a8) {
-                int a9 = a6 + a8;
-                int a10 = a5 + a8;
-                if (a7 == a) {
-                    a3[a9] = (this.Field3028[a10] + this.Field3028[a9]) / 2.0f;
-                    a4[a9] = (this.Field3029[a10] + this.Field3029[a9]) / 2.0f;
-                    continue;
-                }
-                a3[a9] = this.Field3028[a10];
-                a4[a9] = this.Field3029[a10];
-            }
-            if (a7 != a - 1) {
-                a5 += this.Field3031;
-            }
-            a6 += this.Field3031;
-        }
-        this.Field3028 = a3;
-        this.Field3029 = a4;
-    }
+      for(int a = 0; a < a; ++a) {
+         for(int a = 0; a < a; ++a) {
+            this.Field3028[a] = (float)a * (float)(a - 1) / (float)(a - 1);
+            this.Field3029[a] = (float)a * (float)(a - 1) / (float)(a - 1);
+            ++a;
+         }
+      }
 
-    public void Method1790(int a) {
-        int a2 = this.Field3030 * (this.Field3031 + 1);
-        float[] a3 = new float[a2];
-        float[] a4 = new float[a2];
-        ++this.Field3031;
-        int a5 = 0;
-        int a6 = 0;
-        for (int a7 = 0; a7 < this.Field3030; ++a7) {
-            for (int a8 = 0; a8 < this.Field3031; ++a8) {
-                if (a8 == a) {
-                    a3[a6] = (this.Field3028[a5] + this.Field3028[a5 - 1]) / 2.0f;
-                    a4[a6] = (this.Field3029[a5] + this.Field3029[a5 - 1]) / 2.0f;
-                } else {
-                    a3[a6] = this.Field3028[a5];
-                    a4[a6] = this.Field3029[a5];
-                    ++a5;
-                }
-                ++a6;
-            }
-        }
-        this.Field3028 = a3;
-        this.Field3029 = a4;
-    }
+   }
 
-    public void Method1791(int a) {
-        int a2 = (this.Field3030 - 1) * this.Field3031;
-        float[] a3 = new float[a2];
-        float[] a4 = new float[a2];
-        --this.Field3030;
-        int a5 = 0;
-        int a6 = 0;
-        for (int a7 = 0; a7 < this.Field3030; ++a7) {
-            for (int a8 = 0; a8 < this.Field3031; ++a8) {
-                int a9 = a6 + a8;
-                int a10 = a5 + a8;
-                a3[a9] = this.Field3028[a10];
-                a4[a9] = this.Field3029[a10];
-            }
-            if (a7 == a - 1) {
-                a5 += this.Field3031;
-            }
-            a5 += this.Field3031;
-            a6 += this.Field3031;
-        }
-        this.Field3028 = a3;
-        this.Field3029 = a4;
-    }
+   public void Method1789(int a) {
+      int a = (this.Field3030 + 1) * this.Field3031;
+      float[] a = new float[a];
+      float[] a = new float[a];
+      ++this.Field3030;
+      int a = 0;
+      int a = 0;
 
-    public void Method1792(int a) {
-        int a2 = this.Field3030 * (this.Field3031 + 1);
-        float[] a3 = new float[a2];
-        float[] a4 = new float[a2];
-        --this.Field3031;
-        for (int a5 = 0; a5 < this.Field3030; ++a5) {
-            int a6 = a5 * (this.Field3031 + 1);
-            int a7 = a5 * this.Field3031;
-            for (int a8 = 0; a8 < this.Field3031; ++a8) {
-                a3[a7] = this.Field3028[a6];
-                a4[a7] = this.Field3029[a6];
-                if (a8 == a - 1) {
-                    ++a6;
-                }
-                ++a6;
-                ++a7;
+      for(int a = 0; a < this.Field3030; ++a) {
+         for(int a = 0; a < this.Field3031; ++a) {
+            int a = a + a;
+            int a = a + a;
+            if (a == a) {
+               a[a] = (this.Field3028[a] + this.Field3028[a]) / 2.0F;
+               a[a] = (this.Field3029[a] + this.Field3029[a]) / 2.0F;
+            } else {
+               a[a] = this.Field3028[a];
+               a[a] = this.Field3029[a];
             }
-        }
-        this.Field3028 = a3;
-        this.Field3029 = a4;
-    }
+         }
 
-    public void Method1793(float a, Class702 a2, Class702 a3) {
-        if (this.Field3030 != a2.Field3030 || this.Field3031 != a2.Field3031) {
-            throw new IllegalArgumentException("source and destination are different sizes");
-        }
-        if (this.Field3030 != a3.Field3030 || this.Field3031 != a3.Field3031) {
+         if (a != a - 1) {
+            a += this.Field3031;
+         }
+
+         a += this.Field3031;
+      }
+
+      this.Field3028 = a;
+      this.Field3029 = a;
+   }
+
+   public void Method1790(int a) {
+      int a = this.Field3030 * (this.Field3031 + 1);
+      float[] a = new float[a];
+      float[] a = new float[a];
+      ++this.Field3031;
+      int a = 0;
+      int a = 0;
+
+      for(int a = 0; a < this.Field3030; ++a) {
+         for(int a = 0; a < this.Field3031; ++a) {
+            if (a == a) {
+               a[a] = (this.Field3028[a] + this.Field3028[a - 1]) / 2.0F;
+               a[a] = (this.Field3029[a] + this.Field3029[a - 1]) / 2.0F;
+            } else {
+               a[a] = this.Field3028[a];
+               a[a] = this.Field3029[a];
+               ++a;
+            }
+
+            ++a;
+         }
+      }
+
+      this.Field3028 = a;
+      this.Field3029 = a;
+   }
+
+   public void Method1791(int a) {
+      int a = (this.Field3030 - 1) * this.Field3031;
+      float[] a = new float[a];
+      float[] a = new float[a];
+      --this.Field3030;
+      int a = 0;
+      int a = 0;
+
+      for(int a = 0; a < this.Field3030; ++a) {
+         for(int a = 0; a < this.Field3031; ++a) {
+            int a = a + a;
+            int a = a + a;
+            a[a] = this.Field3028[a];
+            a[a] = this.Field3029[a];
+         }
+
+         if (a == a - 1) {
+            a += this.Field3031;
+         }
+
+         a += this.Field3031;
+         a += this.Field3031;
+      }
+
+      this.Field3028 = a;
+      this.Field3029 = a;
+   }
+
+   public void Method1792(int a) {
+      int a = this.Field3030 * (this.Field3031 + 1);
+      float[] a = new float[a];
+      float[] a = new float[a];
+      --this.Field3031;
+
+      for(int a = 0; a < this.Field3030; ++a) {
+         int a = a * (this.Field3031 + 1);
+         int a = a * this.Field3031;
+
+         for(int a = 0; a < this.Field3031; ++a) {
+            a[a] = this.Field3028[a];
+            a[a] = this.Field3029[a];
+            if (a == a - 1) {
+               ++a;
+            }
+
+            ++a;
+            ++a;
+         }
+      }
+
+      this.Field3028 = a;
+      this.Field3029 = a;
+   }
+
+   public void Method1793(float a, Class702 a, Class702 a) {
+      if (this.Field3030 == a.Field3030 && this.Field3031 == a.Field3031) {
+         if (this.Field3030 == a.Field3030 && this.Field3031 == a.Field3031) {
+            int a = 0;
+
+            for(int a = 0; a < this.Field3030; ++a) {
+               for(int a = 0; a < this.Field3031; ++a) {
+                  a.Field3028[a] = Class776.Method1717(a, this.Field3028[a], a.Field3028[a]);
+                  a.Field3029[a] = Class776.Method1717(a, this.Field3029[a], a.Field3029[a]);
+                  ++a;
+               }
+            }
+
+         } else {
             throw new IllegalArgumentException("source and intermediate are different sizes");
-        }
-        int a4 = 0;
-        for (int a5 = 0; a5 < this.Field3030; ++a5) {
-            for (int a6 = 0; a6 < this.Field3031; ++a6) {
-                a3.Field3028[a4] = Class776.Method1717(a, this.Field3028[a4], a2.Field3028[a4]);
-                a3.Field3029[a4] = Class776.Method1717(a, this.Field3029[a4], a2.Field3029[a4]);
-                ++a4;
-            }
-        }
-    }
+         }
+      } else {
+         throw new IllegalArgumentException("source and destination are different sizes");
+      }
+   }
 
-    public void Method1794(int[] a, int a2, int a3, Class702 a4, Class702 a5, int[] a6) {
-        block15: {
-            boolean a7 = Class193.Method1269();
-            if (a4.Field3030 == a5.Field3030 && a4.Field3031 == a5.Field3031) break block15;
+   public void Method1794(int[] a, int a, int a, Class702 a, Class702 a, int[] a) {
+      int a = Class193.Method1269();
+
+      try {
+         if (a.Field3030 != a.Field3030 || a.Field3031 != a.Field3031) {
             throw new IllegalArgumentException("source and destination grids are different sizes");
-        }
-        try {
-            int a8;
-            int a9;
-            int a10;
-            int a11;
-            int a12 = Math.max((int)a2, (int)a3);
-            float[] a13 = new float[a12];
-            float[] a14 = new float[a12];
-            float[] a15 = new float[a12 + 1];
-            float[] a16 = new float[a12 + 1];
-            int a17 = a4.Field3031;
-            int a18 = a4.Field3030;
-            Class702 a19 = new Class702(a3, a17, 1, 1);
-            int a20 = 0;
-            if (a20 < a17) {
-                a11 = a20;
-                a10 = 0;
-                if (a10 < a18) {
-                    a13[a10] = a4.Field3028[a11];
-                    a14[a10] = a4.Field3029[a11];
-                    a11 += a17;
-                    ++a10;
-                }
-                this.Method1795(a14, a13, 0, a18, a16, 0, a3);
-                a11 = a20;
-                a9 = 0;
-                if (a9 < a3) {
-                    a19.Field3028[a11] = a16[a9];
-                    a11 += a17;
-                    ++a9;
-                }
-                ++a20;
-            }
-            if ((a20 = 0) < a17) {
-                a11 = a20;
-                a10 = 0;
-                if (a10 < a18) {
-                    a13[a10] = a5.Field3028[a11];
-                    a14[a10] = a5.Field3029[a11];
-                    a11 += a17;
-                    ++a10;
-                }
-                this.Method1795(a14, a13, 0, a18, a16, 0, a3);
-                a11 = a20;
-                a9 = 0;
-                if (a9 < a3) {
-                    a19.Field3029[a11] = a16[a9];
-                    a11 += a17;
-                    ++a9;
-                }
-                ++a20;
-            }
-            int[] a21 = new int[a3 * a2];
-            a11 = 0;
-            a9 = 0;
-            if (a9 < a3) {
-                this.Method1795(a19.Field3028, a19.Field3029, a11, a17, a15, 0, a2);
-                a15[a2] = a2;
-                Class776.Method1726(a, a21, a2, a9 * a2, 1, a15);
-                a11 += a17;
-                ++a9;
-            }
-            a19 = new Class702(a18, a2, 1, 1);
-            a11 = 0;
-            int a22 = 0;
-            a10 = 0;
-            if (a10 < a18) {
-                this.Method1795(a4.Field3028, a4.Field3029, a11, a17, a19.Field3028, a22, a2);
-                a11 += a17;
-                a22 += a2;
-                ++a10;
-            }
-            a11 = 0;
-            a22 = 0;
-            a10 = 0;
-            if (a10 < a18) {
-                this.Method1795(a5.Field3028, a5.Field3029, a11, a17, a19.Field3029, a22, a2);
-                a11 += a17;
-                a22 += a2;
-                ++a10;
-            }
-            if ((a8 = 0) < a2) {
-                int a23 = a8;
-                a10 = 0;
-                if (a10 < a18) {
-                    a13[a10] = a19.Field3028[a23];
-                    a14[a10] = a19.Field3029[a23];
-                    a23 += a2;
-                    ++a10;
-                }
-                this.Method1795(a13, a14, 0, a18, a15, 0, a3);
-                a15[a3] = a3;
-                Class776.Method1726(a21, a6, a3, a8, a2, a15);
-                ++a8;
-            }
-        }
-        catch (Exception a24) {
-            a24.printStackTrace();
-        }
-    }
+         }
 
-    protected void Method1795(float[] a, float[] a2, int a3, int a4, float[] a5, int a6, int a7) {
-        float a8;
-        int a9 = a3;
-        int a10 = a3 + a4 - 1;
-        float a11 = a[a9];
-        float a12 = a8 = a2[a9];
-        float a13 = a8;
-        float a14 = a[a9 + 1];
-        float a15 = a2[a9 + 1];
-        for (int a16 = 0; a16 < a7; ++a16) {
-            if (a9 <= a10 && (float)a16 > a[a9]) {
-                a13 = a12;
-                a12 = a8;
-                a8 = a15;
-                a11 = a[a9];
-                if (++a9 <= a10) {
-                    a14 = a[a9];
-                }
-                a15 = a9 < a10 ? a2[a9 + 1] : a8;
+         int a = Math.max(a, a);
+         float[] a = new float[a];
+         float[] a = new float[a];
+         float[] a = new float[a + 1];
+         float[] a = new float[a + 1];
+         int a = a.Field3031;
+         int a = a.Field3030;
+         Class702 a = new Class702(a, a, 1, 1);
+         int a = 0;
+         int a;
+         int a;
+         int a;
+         if (a < a) {
+            a = 0;
+            if (a < a) {
+               a[a] = a.Field3028[a];
+               a[a] = a.Field3029[a];
+               a = a + a;
+               ++a;
             }
-            float a17 = ((float)a16 - a11) / (a14 - a11);
-            float a18 = -0.5f * a13 + 1.5f * a12 + -1.5f * a8 + 0.5f * a15;
-            float a19 = 1.0f * a13 + -2.5f * a12 + 2.0f * a8 + -0.5f * a15;
-            float a20 = -0.5f * a13 + 0.5f * a8;
-            float a21 = 1.0f * a12;
-            a5[a6 + a16] = ((a18 * a17 + a19) * a17 + a20) * a17 + a21;
-        }
-    }
 
-    protected void Method1796(float[] a, float[] a2, int a3, float[] a4, int a5, int a6) {
-        int a7 = a3;
-        float a8 = a[a7];
-        float a9 = a2[a7];
-        float a10 = a[a7 + 1];
-        float a11 = a2[a7 + 1];
-        for (int a12 = 0; a12 < a6; ++a12) {
-            if ((float)a12 > a[a7]) {
-                a8 = a[a7];
-                a9 = a2[a7];
-                a10 = a[++a7];
-                a11 = a2[a7];
+            this.Method1795(a, a, 0, a, a, 0, a);
+            a = 0;
+            if (a < a) {
+               a.Field3028[a] = a[a];
+               a = a + a;
+               ++a;
             }
-            float a13 = ((float)a12 - a8) / (a10 - a8);
-            a4[a5 + a12] = a9 + a13 * (a11 - a9);
-        }
-    }
 
-    private static Exception Method1797(Exception exception) {
-        return exception;
-    }
+            ++a;
+         }
+
+         int a = 0;
+         byte a;
+         byte a;
+         if (a < a) {
+            a = 0;
+            if (a < a) {
+               a[a] = a.Field3028[a];
+               a[a] = a.Field3029[a];
+               a = a + a;
+               a = a + 1;
+            }
+
+            this.Method1795(a, a, 0, a, a, 0, a);
+            a = 0;
+            if (a < a) {
+               a.Field3029[a] = a[a];
+               a = a + a;
+               a = a + 1;
+            }
+
+            a = a + 1;
+         }
+
+         int[] a = new int[a * a];
+         int a = 0;
+         a = 0;
+         int var10000;
+         if (a < a) {
+            this.Method1795(a.Field3028, a.Field3029, a, a, a, 0, a);
+            a[a] = (float)a;
+            Class776.Method1726(a, a, a, a * a, 1, a);
+            var10000 = a + a;
+            a = a + 1;
+         }
+
+         a = new Class702(a, a, 1, 1);
+         a = 0;
+         int a = 0;
+         a = 0;
+         if (a < a) {
+            this.Method1795(a.Field3028, a.Field3029, a, a, a.Field3028, a, a);
+            var10000 = a + a;
+            var10000 = a + a;
+            a = a + 1;
+         }
+
+         a = 0;
+         a = 0;
+         a = 0;
+         if (a < a) {
+            this.Method1795(a.Field3028, a.Field3029, a, a, a.Field3029, a, a);
+            var10000 = a + a;
+            var10000 = a + a;
+            a = a + 1;
+         }
+
+         int a = 0;
+         if (a < a) {
+            a = 0;
+            if (a < a) {
+               a[a] = a.Field3028[a];
+               a[a] = a.Field3029[a];
+               int a = a + a;
+               a = a + 1;
+            }
+
+            this.Method1795(a, a, 0, a, a, 0, a);
+            a[a] = (float)a;
+            Class776.Method1726(a, a, a, a, a, a);
+            ++a;
+         }
+      } catch (Exception var24) {
+         var24.printStackTrace();
+      }
+
+   }
+
+   protected void Method1795(float[] a, float[] a, int a, int a, float[] a, int a, int a) {
+      int a = a;
+      int a = a + a - 1;
+      float a = a[a];
+      float a;
+      float a;
+      float a = a = a = a[a];
+      float a = a[a + 1];
+      float a = a[a + 1];
+
+      for(int a = 0; a < a; ++a) {
+         if (a <= a && (float)a > a[a]) {
+            a = a;
+            a = a;
+            a = a;
+            a = a[a];
+            ++a;
+            if (a <= a) {
+               a = a[a];
+            }
+
+            if (a < a) {
+               a = a[a + 1];
+            } else {
+               a = a;
+            }
+         }
+
+         float a = ((float)a - a) / (a - a);
+         float a = -0.5F * a + 1.5F * a + -1.5F * a + 0.5F * a;
+         float a = 1.0F * a + -2.5F * a + 2.0F * a + -0.5F * a;
+         float a = -0.5F * a + 0.5F * a;
+         float a = 1.0F * a;
+         a[a + a] = ((a * a + a) * a + a) * a + a;
+      }
+
+   }
+
+   protected void Method1796(float[] a, float[] a, int a, float[] a, int a, int a) {
+      int a = a;
+      float a = a[a];
+      float a = a[a];
+      float a = a[a + 1];
+      float a = a[a + 1];
+
+      for(int a = 0; a < a; ++a) {
+         if ((float)a > a[a]) {
+            a = a[a];
+            a = a[a];
+            ++a;
+            a = a[a];
+            a = a[a];
+         }
+
+         float a = ((float)a - a) / (a - a);
+         a[a + a] = a + a * (a - a);
+      }
+
+   }
+
+   private static Exception Method1797(Exception exception) {
+      return exception;
+   }
 }

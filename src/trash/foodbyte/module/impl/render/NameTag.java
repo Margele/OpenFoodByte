@@ -1,49 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.awt.Color
- *  java.lang.Boolean
- *  java.lang.CharSequence
- *  java.lang.Object
- *  java.lang.String
- *  java.math.BigDecimal
- *  java.math.RoundingMode
- *  java.util.Collection
- *  java.util.Collections
- *  java.util.Comparator
- *  java.util.Iterator
- *  java.util.List
- *  java.util.Objects
- *  net.minecraft.client.entity.EntityPlayerSP
- *  net.minecraft.client.gui.FontRenderer
- *  net.minecraft.client.gui.ScaledResolution
- *  net.minecraft.client.renderer.GlStateManager
- *  net.minecraft.client.renderer.RenderHelper
- *  net.minecraft.enchantment.Enchantment
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.boss.EntityDragon
- *  net.minecraft.entity.monster.EntityGhast
- *  net.minecraft.entity.monster.EntityIronGolem
- *  net.minecraft.entity.monster.EntityMob
- *  net.minecraft.entity.monster.EntitySlime
- *  net.minecraft.entity.monster.EntitySnowman
- *  net.minecraft.entity.passive.EntityAnimal
- *  net.minecraft.entity.passive.EntityBat
- *  net.minecraft.entity.passive.EntitySquid
- *  net.minecraft.entity.passive.EntityVillager
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.init.Items
- *  net.minecraft.item.ItemArmor
- *  net.minecraft.item.ItemStack
- *  net.minecraft.item.ItemTool
- *  net.minecraft.nbt.NBTTagList
- *  net.minecraft.potion.Potion
- *  net.minecraft.potion.PotionEffect
- *  net.minecraft.util.EnumChatFormatting
- *  org.lwjgl.opengl.GL11
- */
 package trash.foodbyte.module.impl.render;
 
 import awsl.Class305;
@@ -95,391 +49,437 @@ import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.module.Module;
 import trash.foodbyte.module.ModuleManager;
 import trash.foodbyte.module.impl.combat.AntiBot;
-import trash.foodbyte.module.impl.render.Perspective;
 import trash.foodbyte.module.impl.world.MurderMystery;
 import trash.foodbyte.reflections.ReflectionUtils;
 import trash.foodbyte.utils.RenderUtils;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 
-public class NameTag
-extends Module {
-    public BooleanValue Field2223 = new BooleanValue("NameTag", "RemoveTag", (Boolean)true, "\u5220\u9664mc\u81ea\u5e26\u7684Tag");
-    public BooleanValue Field2224 = new BooleanValue("NameTag", "Health", (Boolean)true, "\u8840\u91cf");
-    public BooleanValue Field2225 = new BooleanValue("NameTag", "Dis", (Boolean)false, "\u8ddd\u79bb");
-    public BooleanValue Field2226 = new BooleanValue("NameTag", "Armor", (Boolean)true, "\u88c5\u5907");
-    public BooleanValue Field2227 = new BooleanValue("NameTag", "Effect", (Boolean)false, "\u836f\u6c34\u6548\u679c");
-    public BooleanValue Field2228 = new BooleanValue("Nametag", "Player", (Boolean)true, "\u73a9\u5bb6");
-    public BooleanValue Field2229 = new BooleanValue("Nametag", "Animals", (Boolean)false, "\u52a8\u7269");
-    public BooleanValue Field2230 = new BooleanValue("Nametag", "Mobs", (Boolean)false, "\u602a\u7269");
-    public BooleanValue Field2231 = new BooleanValue("Nametag", "Invisibles", (Boolean)true, "\u9690\u8eab");
-    public BooleanValue Field2232 = new BooleanValue("NameTag", "Antibot", (Boolean)false, "\u673a\u5668\u4eba");
-    public FloatValue Field2233 = new FloatValue("NameTag", "Size", 1.0, 1.0, 5.0, 0.1, "\u6807\u7b7e\u5927\u5c0f");
+public class NameTag extends Module {
+   public BooleanValue Field2223 = new BooleanValue("NameTag", "RemoveTag", true, "删除mc自带的Tag");
+   public BooleanValue Field2224 = new BooleanValue("NameTag", "Health", true, "血量");
+   public BooleanValue Field2225 = new BooleanValue("NameTag", "Dis", false, "距离");
+   public BooleanValue Field2226 = new BooleanValue("NameTag", "Armor", true, "装备");
+   public BooleanValue Field2227 = new BooleanValue("NameTag", "Effect", false, "药水效果");
+   public BooleanValue Field2228 = new BooleanValue("Nametag", "Player", true, "玩家");
+   public BooleanValue Field2229 = new BooleanValue("Nametag", "Animals", false, "动物");
+   public BooleanValue Field2230 = new BooleanValue("Nametag", "Mobs", false, "怪物");
+   public BooleanValue Field2231 = new BooleanValue("Nametag", "Invisibles", true, "隐身");
+   public BooleanValue Field2232 = new BooleanValue("NameTag", "Antibot", false, "机器人");
+   public FloatValue Field2233 = new FloatValue("NameTag", "Size", 1.0, 1.0, 5.0, 0.1, "标签大小");
 
-    public NameTag() {
-        super("NameTag", "Name Tag", Category.RENDER);
-        this.setDescription("\u73a9\u5bb6\u6807\u7b7e\u900f\u89c6");
-    }
+   public NameTag() {
+      super("NameTag", "Name Tag", Category.RENDER);
+      this.setDescription("玩家标签透视");
+   }
 
-    @EventTarget(value=3)
-    public void Method802(EventRender3D a2) {
-        List a3 = NameTag.mc.theWorld.getLoadedEntityList();
-        a3.sort(Comparator.comparingDouble(NameTag::Method2246));
-        Collections.reverse((List)a3);
-        Iterator iterator = a3.Method1383();
-        while (iterator.Method932()) {
-            Entity a4 = (Entity)iterator.Method933();
-            if (!(a4 instanceof EntityLivingBase) || a4 instanceof EntityPlayerSP) continue;
-            EntityLivingBase a5 = (EntityLivingBase)a4;
-            if (AntiBot.botList.contains((Object)a4) && !Class305.Method697((Entity)a5) && !this.Field2232.getValue() || !this.Method965(a5)) continue;
-            double a6 = ReflectionUtils.getRenderPartialTicks();
-            double a7 = a5.lastTickPosX + (a5.posX - a5.lastTickPosX) * a6 - ReflectionUtils.getRenderPosX();
-            double a8 = a5.lastTickPosY + (a5.posY - a5.lastTickPosY) * a6 - ReflectionUtils.getRenderPosY();
-            double a9 = a5.lastTickPosZ + (a5.posZ - a5.lastTickPosZ) * a6 - ReflectionUtils.getRenderPosZ();
-            this.Method2282(a5, a5.getName(), a7, a8, a9);
-        }
-    }
+   @EventTarget(3)
+   public void Method802(EventRender3D a) {
+      List a = mc.theWorld.getLoadedEntityList();
+      a.sort(Comparator.comparingDouble(NameTag::Method2246));
+      Collections.reverse(a);
+      Iterator var3 = a.Method1383();
 
-    /*
-     * WARNING - void declaration
-     */
-    private void Method2282(EntityLivingBase a2, String a3, double a4, double a5, double a6) {
-        Collection a7;
-        Iterator a8;
-        Iterator iterator;
-        int a92;
-        void a10;
-        String a11;
-        Iterator iterator2;
-        float a12;
-        ScaledResolution a13 = new ScaledResolution(mc);
-        FontRenderer fontRenderer = NameTag.mc.fontRendererObj;
-        float f = NameTag.mc.thePlayer.getDistanceToEntity((Entity)a2) / 6.0f;
-        String a14 = Class492.Method2239();
-        if (a12 < 1.0f) {
-            a12 = 1.0f;
-        }
-        a5 += a2.isSneaking() ? 0.5 : 0.7;
-        float a15 = a12 * this.Field2233.getFloatValueCast();
-        a15 /= 100.0f;
-        String a16 = a3 = a2.getDisplayName().getFormattedText();
-        String a17 = "";
-        if (AntiBot.botList.contains((Object)a2)) {
-            a17 = "\u00a78[BOT] ";
-        }
-        a17 = "";
-        String a18 = "";
-        if (Class305.Method704((Entity)a2)) {
-            a18 = "\u00a7a[T] ";
-        }
-        a18 = "";
-        String a19 = "";
-        if (Class305.Method697((Entity)a2)) {
-            a19 = "\u00a7b[F] ";
-        }
-        String a20 = "";
-        if (MurderMystery.Field2300.contains((Object)a2)) {
-            a20 = EnumChatFormatting.RED + "[Murder] ";
-        }
-        if (MurderMystery.Field2301.contains((Object)a2)) {
-            a20 = EnumChatFormatting.BLUE + "[Good] ";
-        }
-        String a21 = "";
-        if (Class305.Method700((Entity)a2)) {
-            a21 = EnumChatFormatting.RED + "[Target] ";
-        }
-        String a22 = "";
-        if (mc.getNetHandler().getPlayerInfo(a2.getUniqueID()) != null) {
-            a22 = " Ping-" + mc.getNetHandler().getPlayerInfo(a2.getUniqueID()).getResponseTime();
-        }
-        String a23 = "";
-        if (!GlobalModule.INSTANCE.Field3186.Field2823.isEmpty() && PermissionManager.canUseFeature("nametag") && (iterator2 = GlobalModule.INSTANCE.Field3186.Field2823.Method1383()).Method932()) {
-            Class606 a24 = (Class606)iterator2.Method933();
-            if (a2.getName().equals((Object)a24.Field2841)) {
-                if (a24.Field2838.equalsIgnoreCase("FoodByte")) {
-                    a23 = "\u00a77(\u00a7d" + a24.Field2840 + "\u00a77)\u00a7r";
-                }
-                if (a24.Field2838.equalsIgnoreCase("PowerX")) {
-                    a23 = "\u00a77(\u00a7b" + a24.Field2840 + "\u00a77)\u00a7r";
-                }
-                a23 = "\u00a77(\u00a72" + a24.Field2840 + "\u00a77)\u00a7r";
-                if (a24.Field2847) {
-                    if (GlobalModule.INSTANCE.Field3186.Field2827.Method3740() >= 5) {
-                        if (a24.Field2838.equalsIgnoreCase("FoodByte")) {
-                            a23 = ("\u00a77[\u00a7d" + a24.Field2840 + "\u00a77]\u00a7r").replace((CharSequence)a24.Field2840, (CharSequence)("\u00a7o" + a24.Field2840));
-                        }
-                        if (a24.Field2838.equalsIgnoreCase("PowerX")) {
-                            a23 = ("\u00a77[\u00a7b" + a24.Field2840 + "\u00a77]\u00a7r").replace((CharSequence)a24.Field2840, (CharSequence)("\u00a7o" + a24.Field2840));
-                        }
-                        a23 = ("\u00a77[\u00a72" + a24.Field2840 + "\u00a77]\u00a7r").replace((CharSequence)a24.Field2840, (CharSequence)("\u00a7o" + a24.Field2840));
-                    }
-                    a23 = "";
-                }
+      while(true) {
+         Entity a;
+         EntityLivingBase a;
+         do {
+            do {
+               do {
+                  if (!var3.Method932()) {
+                     return;
+                  }
+
+                  a = (Entity)var3.Method933();
+               } while(!(a instanceof EntityLivingBase));
+            } while(a instanceof EntityPlayerSP);
+
+            a = (EntityLivingBase)a;
+         } while(AntiBot.botList.contains(a) && !Class305.Method697(a) && !this.Field2232.getValue());
+
+         if (this.Method965(a)) {
+            double a = (double)ReflectionUtils.getRenderPartialTicks();
+            double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
+            double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
+            double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
+            this.Method2282(a, a.getName(), a, a, a);
+         }
+      }
+   }
+
+   private void Method2282(EntityLivingBase a, String a, double a, double a, double a) {
+      ScaledResolution a = new ScaledResolution(mc);
+      FontRenderer a = mc.fontRendererObj;
+      Class492.Method2239();
+      float a = mc.thePlayer.getDistanceToEntity(a) / 6.0F;
+      if (a < 1.0F) {
+         a = 1.0F;
+      }
+
+      a += a.isSneaking() ? 0.5 : 0.7;
+      float a = a * this.Field2233.getFloatValueCast();
+      a /= 100.0F;
+      a = a.getDisplayName().getFormattedText();
+      String a = "";
+      if (AntiBot.botList.contains(a)) {
+         a = "§8[BOT] ";
+      }
+
+      a = "";
+      String a = "";
+      if (Class305.Method704(a)) {
+         a = "§a[T] ";
+      }
+
+      a = "";
+      String a = "";
+      if (Class305.Method697(a)) {
+         a = "§b[F] ";
+      }
+
+      String a = "";
+      if (MurderMystery.Field2300.contains(a)) {
+         a = EnumChatFormatting.RED + "[Murder] ";
+      }
+
+      if (MurderMystery.Field2301.contains(a)) {
+         a = EnumChatFormatting.BLUE + "[Good] ";
+      }
+
+      String a = "";
+      if (Class305.Method700(a)) {
+         a = EnumChatFormatting.RED + "[Target] ";
+      }
+
+      String a = "";
+      if (mc.getNetHandler().getPlayerInfo(a.getUniqueID()) != null) {
+         a = " Ping-" + mc.getNetHandler().getPlayerInfo(a.getUniqueID()).getResponseTime();
+      }
+
+      String a = "";
+      if (!GlobalModule.INSTANCE.balant.Field2823.isEmpty() && PermissionManager.canUseFeature("nametag")) {
+         Iterator var22 = GlobalModule.INSTANCE.balant.Field2823.Method1383();
+         if (var22.Method932()) {
+            Class606 a = (Class606)var22.Method933();
+            if (a.getName().equals(a.Field2841)) {
+               if (a.Field2838.equalsIgnoreCase("FoodByte")) {
+                  a = "§7(§d" + a.Field2840 + "§7)§r";
+               }
+
+               if (a.Field2838.equalsIgnoreCase("PowerX")) {
+                  a = "§7(§b" + a.Field2840 + "§7)§r";
+               }
+
+               a = "§7(§2" + a.Field2840 + "§7)§r";
+               if (a.Field2847) {
+                  if (GlobalModule.INSTANCE.balant.Field2827.Method3740() >= 5) {
+                     if (a.Field2838.equalsIgnoreCase("FoodByte")) {
+                        a = ("§7[§d" + a.Field2840 + "§7]§r").replace(a.Field2840, "§o" + a.Field2840);
+                     }
+
+                     if (a.Field2838.equalsIgnoreCase("PowerX")) {
+                        a = ("§7[§b" + a.Field2840 + "§7]§r").replace(a.Field2840, "§o" + a.Field2840);
+                     }
+
+                     a = ("§7[§2" + a.Field2840 + "§7]§r").replace(a.Field2840, "§o" + a.Field2840);
+                  }
+
+                  a = "";
+               }
             }
-        }
-        String a25 = a17 + a20 + a21 + (Class305.Method697((Entity)a2) ? a16 : a3) + a23;
-        double a26 = a2.getHealth();
-        BigDecimal a27 = BigDecimal.valueOf((double)a2.getHealth());
-        a27 = a27.setScale(1, RoundingMode.HALF_UP);
-        double a28 = a27.doubleValue();
-        double a29 = BigDecimal.valueOf((double)a2.getAbsorptionAmount()).setScale(1, RoundingMode.HALF_UP).doubleValue();
-        if (a28 > 20.0) {
-            a11 = " \u00a7b";
-        }
-        if (a28 >= 10.0) {
-            a11 = " \u00a7a";
-        }
-        if (a28 >= 3.0) {
-            a11 = " \u00a7e";
-        }
-        a11 = " \u00a74";
-        String a30 = "";
-        if (this.Field2224.getValue()) {
-            a30 = a11 + String.valueOf((double)a28) + (a29 > 0.0 ? " \u00a76" + a29 : "");
-        }
-        a30 = "";
-        String a31 = "";
-        if (this.Field2225.getValue()) {
-            a31 = "\u00a7a[\u00a76" + (int)a2.getDistanceToEntity((Entity)NameTag.mc.thePlayer) + "\u00a7a]\u00a7r ";
-        }
-        a31 = "";
-        GL11.glPushMatrix();
-        GL11.glTranslatef((float)((float)a4), (float)((float)a5 + a2.height / 1.25f), (float)((float)a6));
-        GL11.glNormal3f((float)0.0f, (float)1.0f, (float)0.0f);
-        if (ModuleManager.getModule(Perspective.class).getState()) {
-            GL11.glRotatef((float)(-Perspective.Field2200), (float)0.0f, (float)1.0f, (float)0.0f);
-            GL11.glRotatef((float)Perspective.Field2201, (float)1.0f, (float)0.0f, (float)0.0f);
-        }
-        GL11.glRotatef((float)(-NameTag.mc.getRenderManager().playerViewY), (float)0.0f, (float)1.0f, (float)0.0f);
-        GL11.glRotatef((float)(NameTag.mc.gameSettings.thirdPersonView == 2 ? -NameTag.mc.getRenderManager().playerViewX : NameTag.mc.getRenderManager().playerViewX), (float)1.0f, (float)0.0f, (float)0.0f);
-        GL11.glScalef((float)(-a15), (float)(-a15), (float)a15);
-        GL11.glDisable((int)2929);
-        int a32 = a13.getScaledHeight() / 2;
-        int a33 = a13.getScaledHeight() / 2;
-        GL11.glBlendFunc((int)770, (int)771);
-        String a34 = a31 + a25 + a30;
-        int a35 = (int)((float)a10.getStringWidth(a34) / 2.0f);
-        int a36 = new Color(0, 0, 0, 0).getRGB();
-        if (Class305.Method700((Entity)a2)) {
-            a36 = new Color(255, 0, 0, 150).getRGB();
-        }
-        if (Class305.Method697((Entity)a2)) {
-            a36 = new Color(0, 190, 255, 120).getRGB();
-        }
-        if (Class305.Method704((Entity)a2)) {
-            a36 = new Color(0, 255, 0, 120).getRGB();
-        }
-        RenderUtils.Method1108((double)(-a35) - 2.0, -15.0, a35 + 1, -4.0, 0.5, new Color(0, 0, 0, 80).getRGB(), a36);
-        GL11.glDepthMask((boolean)false);
-        a10.drawString(a34, (int)((float)(-a10.getStringWidth(a34)) / 2.0f), a10.FONT_HEIGHT - 22, 0xFFFFFF);
-        GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
-        GL11.glDepthMask((boolean)true);
-        GL11.glScaled((double)0.6f, (double)0.6f, (double)0.6f);
-        GL11.glScaled((double)1.0, (double)1.0, (double)1.0);
-        int a37 = new Color(188, 0, 0).getRGB();
-        if (a2.getHealth() > 20.0f) {
-            a37 = -65292;
-        }
-        GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
-        GL11.glScaled((double)1.5, (double)1.5, (double)1.5);
-        int a38 = 0;
-        if (this.Field2226.getBooleanValue().booleanValue() && a2 instanceof EntityPlayer) {
-            int a39 = 0;
-            int n = 0;
-            ItemStack[] itemStackArray = ((EntityPlayer)a2).inventory.armorInventory;
-            int n2 = itemStackArray.length;
-            if (n < n2) {
-                ItemStack a92 = itemStackArray[n];
-                a39 -= 10;
-                ++n;
-            }
-            if (a2.getHeldItem() != null) {
-                a39 -= 8;
-                ItemStack a40 = a2.getHeldItem().copy();
-                if (a40.hasEffect() && (a40.getItem() instanceof ItemTool || a40.getItem() instanceof ItemArmor)) {
-                    a40.stackSize = 1;
-                }
-                this.Method2283(a40, a39, -36);
-                a39 += 20;
-            }
-            if ((a92 = 0) < (n = ((ItemStack[])(iterator = ((EntityPlayer)a2).inventory.armorInventory)).length)) {
-                a8 = iterator[a92];
-                ItemStack a41 = a8.copy();
-                if (a41.hasEffect() && (a41.getItem() instanceof ItemTool || a41.getItem() instanceof ItemArmor)) {
-                    a41.stackSize = 1;
-                }
-                this.Method2283(a41, a39, -36);
-                a39 += 20;
-                ++a92;
-            }
-            a38 = 35;
-        }
-        if (!this.Field2226.getBooleanValue().booleanValue() && a2 instanceof EntityPlayer) {
-            a38 = 35;
-        }
-        if (this.Field2227.getBooleanValue().booleanValue() && a2 instanceof EntityPlayer && !(a7 = a2.getActivePotionEffects()).isEmpty()) {
-            GL11.glScaled((double)0.5, (double)0.5, (double)0.5);
-            GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)0.9f);
-            int a42 = 0;
-            iterator = a2.getActivePotionEffects().Method1383();
-            if (iterator.Method932()) {
-                PotionEffect a43 = (PotionEffect)iterator.Method933();
-                a42 -= 10;
-            }
-            if ((iterator = a2.getActivePotionEffects().Method1383()).Method932()) {
-                PotionEffect a44 = (PotionEffect)iterator.Method933();
-                a92 = a44.getDuration();
-                if (a92 >= 300) {
-                    GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)0.75f);
-                }
-                if (a92 >= 150) {
-                    GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)0.4f);
-                }
-                GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)0.2f);
-                a8 = Potion.potionTypes[a44.getPotionID()];
-                if (a8.hasStatusIcon()) {
-                    int a45 = a8.getStatusIconIndex();
-                    mc.getTextureManager().bindTexture(Class393.Field1947);
-                    RenderUtils.Method1142(a42, -90 + a38, a45 % 8 * 18, 198 + a45 / 8 * 18, 18, 18);
-                }
-                a42 += 20;
-            }
-        }
-        GL11.glEnable((int)2929);
-        GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
-        GL11.glPopMatrix();
-    }
+         }
+      }
 
-    public boolean Method965(EntityLivingBase a2) {
-        block7: {
-            block6: {
-                boolean a3 = this.Field2228.getBooleanValue();
-                boolean a4 = this.Field2231.getBooleanValue();
-                boolean a5 = this.Field2229.getBooleanValue();
-                boolean a6 = this.Field2230.getBooleanValue();
-                if (a2.isInvisible()) {
-                    return false;
-                }
-                if (a2 == NameTag.mc.thePlayer.ridingEntity) {
-                    return false;
-                }
-                if (a2 instanceof EntityPlayer) break block6;
-                if (a2 instanceof EntityMob || a2 instanceof EntityDragon || a2 instanceof EntityGhast || a2 instanceof EntitySlime || a2 instanceof EntityIronGolem || a2 instanceof EntitySnowman) break block6;
-                if (!(a2 instanceof EntityAnimal) && !(a2 instanceof EntitySquid) && !(a2 instanceof EntityVillager) && !(a2 instanceof EntityBat)) break block7;
+      String a = a + a + a + (Class305.Method697(a) ? a : a) + a;
+      double a = (double)a.getHealth();
+      BigDecimal a = BigDecimal.valueOf((double)a.getHealth());
+      a = a.setScale(1, RoundingMode.HALF_UP);
+      double a = a.doubleValue();
+      double a = BigDecimal.valueOf((double)a.getAbsorptionAmount()).setScale(1, RoundingMode.HALF_UP).doubleValue();
+      String a;
+      if (a > 20.0) {
+         a = " §b";
+      }
+
+      if (a >= 10.0) {
+         a = " §a";
+      }
+
+      if (a >= 3.0) {
+         a = " §e";
+      }
+
+      a = " §4";
+      String a = "";
+      if (this.Field2224.getValue()) {
+         a = a + String.valueOf(a) + (a > 0.0 ? " §6" + a : "");
+      }
+
+      a = "";
+      String a = "";
+      if (this.Field2225.getValue()) {
+         a = "§a[§6" + (int)a.getDistanceToEntity(mc.thePlayer) + "§a]§r ";
+      }
+
+      a = "";
+      GL11.glPushMatrix();
+      GL11.glTranslatef((float)a, (float)a + a.height / 1.25F, (float)a);
+      GL11.glNormal3f(0.0F, 1.0F, 0.0F);
+      if (ModuleManager.getModule(Perspective.class).getState()) {
+         GL11.glRotatef(-Perspective.Field2200, 0.0F, 1.0F, 0.0F);
+         GL11.glRotatef(Perspective.Field2201, 1.0F, 0.0F, 0.0F);
+      }
+
+      GL11.glRotatef(-mc.getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
+      GL11.glRotatef(mc.gameSettings.thirdPersonView == 2 ? -mc.getRenderManager().playerViewX : mc.getRenderManager().playerViewX, 1.0F, 0.0F, 0.0F);
+      GL11.glScalef(-a, -a, a);
+      GL11.glDisable(2929);
+      int a = a.getScaledHeight() / 2;
+      int a = a.getScaledHeight() / 2;
+      GL11.glBlendFunc(770, 771);
+      String a = a + a + a;
+      int a = (int)((float)a.getStringWidth(a) / 2.0F);
+      int a = (new Color(0, 0, 0, 0)).getRGB();
+      if (Class305.Method700(a)) {
+         a = (new Color(255, 0, 0, 150)).getRGB();
+      }
+
+      if (Class305.Method697(a)) {
+         a = (new Color(0, 190, 255, 120)).getRGB();
+      }
+
+      if (Class305.Method704(a)) {
+         a = (new Color(0, 255, 0, 120)).getRGB();
+      }
+
+      RenderUtils.Method1108((double)(-a) - 2.0, -15.0, (double)(a + 1), -4.0, 0.5, (new Color(0, 0, 0, 80)).getRGB(), a);
+      GL11.glDepthMask(false);
+      a.drawString(a, (int)((float)(-a.getStringWidth(a)) / 2.0F), a.FONT_HEIGHT - 22, 16777215);
+      GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+      GL11.glDepthMask(true);
+      GL11.glScaled(0.6000000238418579, 0.6000000238418579, 0.6000000238418579);
+      GL11.glScaled(1.0, 1.0, 1.0);
+      int a = (new Color(188, 0, 0)).getRGB();
+      if (a.getHealth() > 20.0F) {
+         a = -65292;
+      }
+
+      GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+      GL11.glScaled(1.5, 1.5, 1.5);
+      int a = 0;
+      int a;
+      if (this.Field2226.getBooleanValue() && a instanceof EntityPlayer) {
+         int a = 0;
+         ItemStack[] var41 = ((EntityPlayer)a).inventory.armorInventory;
+         int var42 = var41.length;
+         int var43 = 0;
+         if (var43 < var42) {
+            ItemStack a = var41[var43];
+            a -= 10;
+            ++var43;
+         }
+
+         if (a.getHeldItem() != null) {
+            a -= 8;
+            ItemStack a = a.getHeldItem().copy();
+            if (a.hasEffect() && (a.getItem() instanceof ItemTool || a.getItem() instanceof ItemArmor)) {
+               a.stackSize = 1;
             }
-            if (a2 instanceof EntityPlayerSP) {
-                return NameTag.mc.gameSettings.thirdPersonView != 0;
+
+            this.Method2283(a, a, -36);
+            a += 20;
+         }
+
+         ItemStack[] var51 = ((EntityPlayer)a).inventory.armorInventory;
+         var43 = var51.length;
+         a = 0;
+         if (a < var43) {
+            ItemStack a = var51[a];
+            ItemStack a = a.copy();
+            if (a.hasEffect() && (a.getItem() instanceof ItemTool || a.getItem() instanceof ItemArmor)) {
+               a.stackSize = 1;
             }
-            return true;
-        }
-        return false;
-    }
 
-    private void Method2283(ItemStack a2, int a3, int a4) {
-        GlStateManager.pushMatrix();
-        GlStateManager.depthMask((boolean)true);
-        GlStateManager.clear((int)256);
-        RenderHelper.enableStandardItemLighting();
-        NameTag.mc.getRenderItem().zLevel = -150.0f;
-        GlStateManager.disableDepth();
-        GlStateManager.disableTexture2D();
-        GlStateManager.enableBlend();
-        GlStateManager.enableAlpha();
-        GlStateManager.enableTexture2D();
-        GlStateManager.enableLighting();
-        GlStateManager.enableDepth();
-        mc.getRenderItem().renderItemAndEffectIntoGUI(a2, a3, a4);
-        mc.getRenderItem().renderItemOverlays(NameTag.mc.fontRendererObj, a2, a3, a4);
-        NameTag.mc.getRenderItem().zLevel = 0.0f;
-        RenderHelper.disableStandardItemLighting();
-        GlStateManager.disableCull();
-        GlStateManager.enableAlpha();
-        GlStateManager.disableBlend();
-        GlStateManager.disableLighting();
-        double a5 = 0.5;
-        GlStateManager.scale((double)0.5, (double)0.5, (double)0.5);
-        GlStateManager.disableDepth();
-        this.Method2285(a2, a3, a4 - 17);
-        GlStateManager.enableDepth();
-        GlStateManager.scale((float)2.0f, (float)2.0f, (float)2.0f);
-        GlStateManager.enableCull();
-        GlStateManager.popMatrix();
-    }
+            this.Method2283(a, a, -36);
+            a += 20;
+            ++a;
+         }
 
-    public static void Method2284(float a2, float a3, float a4, float a5, float a6, int a7, int a8) {
-        NameTag.Method2109(a2, a3, a4, a5, a8);
-        float a9 = (float)(a7 >> 24 & 0xFF) / 255.0f;
-        float a10 = (float)(a7 >> 16 & 0xFF) / 255.0f;
-        float a11 = (float)(a7 >> 8 & 0xFF) / 255.0f;
-        float a12 = (float)(a7 & 0xFF) / 255.0f;
-        GL11.glEnable((int)3042);
-        GL11.glDisable((int)3553);
-        GL11.glBlendFunc((int)770, (int)771);
-        GL11.glEnable((int)2848);
-        GL11.glPushMatrix();
-        GL11.glColor4f((float)a10, (float)a11, (float)a12, (float)a9);
-        GL11.glLineWidth((float)a6);
-        GL11.glBegin((int)1);
-        GL11.glVertex2d((double)a2, (double)a3);
-        GL11.glVertex2d((double)a2, (double)a5);
-        GL11.glVertex2d((double)a4, (double)a5);
-        GL11.glVertex2d((double)a4, (double)a3);
-        GL11.glVertex2d((double)a2, (double)a3);
-        GL11.glVertex2d((double)a4, (double)a3);
-        GL11.glVertex2d((double)a2, (double)a5);
-        GL11.glVertex2d((double)a4, (double)a5);
-        GL11.glEnd();
-        GL11.glPopMatrix();
-        GL11.glEnable((int)3553);
-        GL11.glDisable((int)3042);
-        GL11.glDisable((int)2848);
-    }
+         a = 35;
+      }
 
-    public static void Method2109(float a2, float a3, float a4, float a5, int a6) {
-        float a7 = (float)(a6 >> 24 & 0xFF) / 255.0f;
-        float a8 = (float)(a6 >> 16 & 0xFF) / 255.0f;
-        float a9 = (float)(a6 >> 8 & 0xFF) / 255.0f;
-        float a10 = (float)(a6 & 0xFF) / 255.0f;
-        GL11.glEnable((int)3042);
-        GL11.glDisable((int)3553);
-        GL11.glBlendFunc((int)770, (int)771);
-        GL11.glEnable((int)2848);
-        GL11.glPushMatrix();
-        GL11.glColor4f((float)a8, (float)a9, (float)a10, (float)a7);
-        GL11.glBegin((int)7);
-        GL11.glVertex2d((double)a4, (double)a3);
-        GL11.glVertex2d((double)a2, (double)a3);
-        GL11.glVertex2d((double)a2, (double)a5);
-        GL11.glVertex2d((double)a4, (double)a5);
-        GL11.glEnd();
-        GL11.glPopMatrix();
-        GL11.glEnable((int)3553);
-        GL11.glDisable((int)3042);
-        GL11.glDisable((int)2848);
-    }
+      if (!this.Field2226.getBooleanValue() && a instanceof EntityPlayer) {
+         a = 35;
+      }
 
-    private void Method2285(ItemStack a2, int a3, int a4) {
-        NBTTagList a5 = a2.getEnchantmentTagList();
-        int a6 = a4;
-        if (a5.tagCount() >= 6) {
-            NameTag.mc.fontRendererObj.drawStringWithShadow("god", (float)(a3 * 2), (float)(a6 - 22), 0xFF0000);
-            return;
-        }
-        for (int a7 = 0; a7 < a5.tagCount(); ++a7) {
-            short a8 = a5.getCompoundTagAt(a7).getShort("id");
-            short a9 = a5.getCompoundTagAt(a7).getShort("lvl");
-            Enchantment a10 = Enchantment.getEnchantmentById((int)a8);
-            String a11 = ((Enchantment)Objects.requireNonNull((Object)a10)).getTranslatedName((int)a9).substring(0, 1).toLowerCase();
-            a11 = a11 + a9;
-            NameTag.mc.fontRendererObj.drawStringWithShadow(a11, (float)(a3 * 2), (float)a6, 14537190);
-            a6 -= 10;
-        }
-        if (a2.getItem() == Items.golden_apple && a2.getMetadata() == 1) {
-            NameTag.mc.fontRendererObj.drawStringWithShadow("op", (float)(a3 * 2), (float)(a6 - 22), 0xFF0000);
-        }
-    }
+      if (this.Field2227.getBooleanValue() && a instanceof EntityPlayer) {
+         Collection a = a.getActivePotionEffects();
+         if (!a.isEmpty()) {
+            GL11.glScaled(0.5, 0.5, 0.5);
+            GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.9F);
+            int a = 0;
+            Iterator var53 = a.getActivePotionEffects().Method1383();
+            PotionEffect a;
+            if (var53.Method932()) {
+               a = (PotionEffect)var53.Method933();
+               a -= 10;
+            }
 
-    private static double Method2246(Entity a2) {
-        return NameTag.mc.thePlayer.getDistanceToEntity(a2);
-    }
+            var53 = a.getActivePotionEffects().Method1383();
+            if (var53.Method932()) {
+               a = (PotionEffect)var53.Method933();
+               a = a.getDuration();
+               if (a >= 300) {
+                  GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
+               }
+
+               if (a >= 150) {
+                  GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.4F);
+               }
+
+               GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.2F);
+               Potion a = Potion.potionTypes[a.getPotionID()];
+               if (a.hasStatusIcon()) {
+                  int a = a.getStatusIconIndex();
+                  mc.getTextureManager().bindTexture(Class393.Field1947);
+                  RenderUtils.Method1142(a, -90 + a, a % 8 * 18, 198 + a / 8 * 18, 18, 18);
+               }
+
+               a += 20;
+            }
+         }
+      }
+
+      GL11.glEnable(2929);
+      GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+      GL11.glPopMatrix();
+   }
+
+   public boolean Method965(EntityLivingBase a) {
+      boolean a = this.Field2228.getBooleanValue();
+      boolean a = this.Field2231.getBooleanValue();
+      boolean a = this.Field2229.getBooleanValue();
+      boolean a = this.Field2230.getBooleanValue();
+      if (a.isInvisible()) {
+         return false;
+      } else if (a == mc.thePlayer.ridingEntity) {
+         return false;
+      } else if (!(a instanceof EntityPlayer) && !(a instanceof EntityMob) && !(a instanceof EntityDragon) && !(a instanceof EntityGhast) && !(a instanceof EntitySlime) && !(a instanceof EntityIronGolem) && !(a instanceof EntitySnowman) && !(a instanceof EntityAnimal) && !(a instanceof EntitySquid) && !(a instanceof EntityVillager) && !(a instanceof EntityBat)) {
+         return false;
+      } else if (a instanceof EntityPlayerSP) {
+         return mc.gameSettings.thirdPersonView != 0;
+      } else {
+         return true;
+      }
+   }
+
+   private void Method2283(ItemStack a, int a, int a) {
+      GlStateManager.pushMatrix();
+      GlStateManager.depthMask(true);
+      GlStateManager.clear(256);
+      RenderHelper.enableStandardItemLighting();
+      mc.getRenderItem().zLevel = -150.0F;
+      GlStateManager.disableDepth();
+      GlStateManager.disableTexture2D();
+      GlStateManager.enableBlend();
+      GlStateManager.enableAlpha();
+      GlStateManager.enableTexture2D();
+      GlStateManager.enableLighting();
+      GlStateManager.enableDepth();
+      mc.getRenderItem().renderItemAndEffectIntoGUI(a, a, a);
+      mc.getRenderItem().renderItemOverlays(mc.fontRendererObj, a, a, a);
+      mc.getRenderItem().zLevel = 0.0F;
+      RenderHelper.disableStandardItemLighting();
+      GlStateManager.disableCull();
+      GlStateManager.enableAlpha();
+      GlStateManager.disableBlend();
+      GlStateManager.disableLighting();
+      double a = 0.5;
+      GlStateManager.scale(0.5, 0.5, 0.5);
+      GlStateManager.disableDepth();
+      this.Method2285(a, a, a - 17);
+      GlStateManager.enableDepth();
+      GlStateManager.scale(2.0F, 2.0F, 2.0F);
+      GlStateManager.enableCull();
+      GlStateManager.popMatrix();
+   }
+
+   public static void Method2284(float a, float a, float a, float a, float a, int a, int a) {
+      Method2109(a, a, a, a, a);
+      float a = (float)(a >> 24 & 255) / 255.0F;
+      float a = (float)(a >> 16 & 255) / 255.0F;
+      float a = (float)(a >> 8 & 255) / 255.0F;
+      float a = (float)(a & 255) / 255.0F;
+      GL11.glEnable(3042);
+      GL11.glDisable(3553);
+      GL11.glBlendFunc(770, 771);
+      GL11.glEnable(2848);
+      GL11.glPushMatrix();
+      GL11.glColor4f(a, a, a, a);
+      GL11.glLineWidth(a);
+      GL11.glBegin(1);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glEnd();
+      GL11.glPopMatrix();
+      GL11.glEnable(3553);
+      GL11.glDisable(3042);
+      GL11.glDisable(2848);
+   }
+
+   public static void Method2109(float a, float a, float a, float a, int a) {
+      float a = (float)(a >> 24 & 255) / 255.0F;
+      float a = (float)(a >> 16 & 255) / 255.0F;
+      float a = (float)(a >> 8 & 255) / 255.0F;
+      float a = (float)(a & 255) / 255.0F;
+      GL11.glEnable(3042);
+      GL11.glDisable(3553);
+      GL11.glBlendFunc(770, 771);
+      GL11.glEnable(2848);
+      GL11.glPushMatrix();
+      GL11.glColor4f(a, a, a, a);
+      GL11.glBegin(7);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glVertex2d((double)a, (double)a);
+      GL11.glEnd();
+      GL11.glPopMatrix();
+      GL11.glEnable(3553);
+      GL11.glDisable(3042);
+      GL11.glDisable(2848);
+   }
+
+   private void Method2285(ItemStack a, int a, int a) {
+      NBTTagList a = a.getEnchantmentTagList();
+      int a = a;
+      if (a.tagCount() >= 6) {
+         mc.fontRendererObj.drawStringWithShadow("god", (float)(a * 2), (float)(a - 22), 16711680);
+      } else {
+         for(int a = 0; a < a.tagCount(); ++a) {
+            short a = a.getCompoundTagAt(a).getShort("id");
+            short a = a.getCompoundTagAt(a).getShort("lvl");
+            Enchantment a = Enchantment.getEnchantmentById(a);
+            String a = ((Enchantment)Objects.requireNonNull(a)).getTranslatedName(a).substring(0, 1).toLowerCase();
+            a = a + a;
+            mc.fontRendererObj.drawStringWithShadow(a, (float)(a * 2), (float)a, 14537190);
+            a -= 10;
+         }
+
+         if (a.getItem() == Items.golden_apple && a.getMetadata() == 1) {
+            mc.fontRendererObj.drawStringWithShadow("op", (float)(a * 2), (float)(a - 22), 16711680);
+         }
+
+      }
+   }
+
+   private static double Method2246(Entity a) {
+      return (double)mc.thePlayer.getDistanceToEntity(a);
+   }
 }

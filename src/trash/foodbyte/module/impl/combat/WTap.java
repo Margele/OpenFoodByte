@@ -1,22 +1,9 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Boolean
- *  java.lang.Object
- *  net.minecraft.entity.Entity
- *  net.minecraft.network.Packet
- *  net.minecraft.network.play.client.C02PacketUseEntity
- *  net.minecraft.network.play.client.C0BPacketEntityAction
- *  net.minecraft.network.play.client.C0BPacketEntityAction$Action
- */
 package trash.foodbyte.module.impl.combat;
 
 import eventapi.EventTarget;
-import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.C02PacketUseEntity;
 import net.minecraft.network.play.client.C0BPacketEntityAction;
+import net.minecraft.network.play.client.C0BPacketEntityAction.Action;
 import obfuscate.a;
 import obfuscate.b;
 import trash.foodbyte.event.EventMotion;
@@ -26,42 +13,47 @@ import trash.foodbyte.module.Module;
 import trash.foodbyte.reflections.Wrapper;
 import trash.foodbyte.value.BooleanValue;
 
-public class WTap
-extends Module {
-    public BooleanValue Field1623 = new BooleanValue("WTap", "Packet", (Boolean)false, "\u4f7f\u7528\u53d1\u5305(\u53ef\u80fd\u4f1a\u72d7\u5efa\u5efa\u8bae\u9ed8\u8ba4\u6216\u9ed1\u5361\u6d4b\u8bd5\u540e\u4f7f\u7528)");
-    public int Field1624;
+public class WTap extends Module {
+   public BooleanValue Field1623 = new BooleanValue("WTap", "Packet", false, "使用发包(可能会狗建建议默认或黑卡测试后使用)");
+   public int Field1624;
 
-    public WTap() {
-        super("WTap", Category.COMBAT);
-        this.setDescription("\u6253\u51fa\u66f4\u8fdc\u7684\u51fb\u9000\u6548\u679c");
-    }
+   public WTap() {
+      super("WTap", Category.COMBAT);
+      this.setDescription("打出更远的击退效果");
+   }
 
-    @EventTarget
-    public void Method1186(EventPacket a) {
-        if (a.isSend() && a.getPacket() instanceof C02PacketUseEntity) {
-            this.Field1624 = 0;
-        }
-    }
+   @EventTarget
+   public void Method1186(EventPacket a) {
+      if (a.isSend() && a.getPacket() instanceof C02PacketUseEntity) {
+         this.Field1624 = 0;
+      }
 
-    @EventTarget
-    public void Method752(EventMotion a2) {
-        block5: {
-            block6: {
-                a[] aArray = b.trash();
-                if (!a2.isPre()) break block5;
-                ++this.Field1624;
-                if (!WTap.mc.thePlayer.isSprinting()) break block5;
-                if (this.Field1623.getBooleanValue().booleanValue()) break block6;
-                if (this.Field1624 == 2) {
-                    WTap.mc.thePlayer.setSprinting(false);
-                }
-                if (this.Field1624 != 3) break block5;
-                WTap.mc.thePlayer.setSprinting(true);
+   }
+
+   @EventTarget
+   public void Method752(EventMotion a) {
+      a[] var2 = b.trash();
+      if (a.isPre()) {
+         ++this.Field1624;
+         if (mc.thePlayer.isSprinting()) {
+            if (!this.Field1623.getBooleanValue()) {
+               if (this.Field1624 == 2) {
+                  mc.thePlayer.setSprinting(false);
+               }
+
+               if (this.Field1624 != 3) {
+                  return;
+               }
+
+               mc.thePlayer.setSprinting(true);
             }
+
             if (this.Field1624 < 10) {
-                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C0BPacketEntityAction((Entity)WTap.mc.thePlayer, C0BPacketEntityAction.Action.STOP_SPRINTING));
-                Wrapper.INSTANCE.sendPacketNoEvent((Packet)new C0BPacketEntityAction((Entity)WTap.mc.thePlayer, C0BPacketEntityAction.Action.START_SPRINTING));
+               Wrapper.INSTANCE.sendPacketNoEvent(new C0BPacketEntityAction(mc.thePlayer, Action.STOP_SPRINTING));
+               Wrapper.INSTANCE.sendPacketNoEvent(new C0BPacketEntityAction(mc.thePlayer, Action.START_SPRINTING));
             }
-        }
-    }
+         }
+      }
+
+   }
 }

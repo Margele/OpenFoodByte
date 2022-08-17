@@ -1,12 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Boolean
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- */
 package trash.foodbyte.module.impl.movement;
 
 import awsl.Class363;
@@ -17,38 +8,36 @@ import trash.foodbyte.module.Module;
 import trash.foodbyte.utils.PlayerUtils;
 import trash.foodbyte.value.BooleanValue;
 
-public class Sprint
-extends Module {
-    public static boolean Field2427 = true;
-    public BooleanValue omni = new BooleanValue("Sprint", "Omni", (Boolean)false, "\u5168\u65b9\u4f4d\u75be\u8dd1");
+public class Sprint extends Module {
+   public static boolean Field2427 = true;
+   public BooleanValue omni = new BooleanValue("Sprint", "Omni", false, "全方位疾跑");
 
-    public Sprint() {
-        super("Sprint", Category.MOVEMENT);
-    }
+   public Sprint() {
+      super("Sprint", Category.MOVEMENT);
+   }
 
-    @Override
-    public String getDescription() {
-        return "\u5f3a\u5236\u75be\u8dd1";
-    }
+   public String getDescription() {
+      return "强制疾跑";
+   }
 
-    @EventTarget
-    public void Method810(EventRender2D a) {
-        Field2427 = this.omni.getBooleanValue();
-        if (this.Method713()) {
-            Sprint.mc.thePlayer.setSprinting(true);
-        }
-    }
+   @EventTarget
+   public void Method810(EventRender2D a) {
+      Field2427 = this.omni.getBooleanValue();
+      if (this.Method713()) {
+         mc.thePlayer.setSprinting(true);
+      }
 
-    private boolean Method713() {
-        if (!this.omni.getBooleanValue().booleanValue() && !Sprint.mc.gameSettings.keyBindForward.isKeyDown()) {
-            return false;
-        }
-        if (Sprint.mc.thePlayer.isSneaking()) {
-            return false;
-        }
-        if (!Class363.Method642() && (Sprint.mc.thePlayer.getItemInUseDuration() > 0 || !this.omni.getBooleanValue().booleanValue() && Sprint.mc.thePlayer.isCollidedHorizontally)) {
-            return false;
-        }
-        return PlayerUtils.isMoving() && Sprint.mc.thePlayer.getFoodStats().getFoodLevel() > 6;
-    }
+   }
+
+   private boolean Method713() {
+      if (!this.omni.getBooleanValue() && !mc.gameSettings.keyBindForward.isKeyDown()) {
+         return false;
+      } else if (mc.thePlayer.isSneaking()) {
+         return false;
+      } else if (!Class363.Method642() && (mc.thePlayer.getItemInUseDuration() > 0 || !this.omni.getBooleanValue() && mc.thePlayer.isCollidedHorizontally)) {
+         return false;
+      } else {
+         return PlayerUtils.isMoving() && mc.thePlayer.getFoodStats().getFoodLevel() > 6;
+      }
+   }
 }

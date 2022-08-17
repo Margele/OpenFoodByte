@@ -1,27 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- *  java.util.ArrayList
- *  java.util.Iterator
- *  net.minecraft.block.material.Material
- *  net.minecraft.client.Minecraft
- *  net.minecraft.client.gui.ScaledResolution
- *  net.minecraft.client.renderer.GlStateManager
- *  net.minecraft.client.renderer.RenderHelper
- *  net.minecraft.enchantment.Enchantment
- *  net.minecraft.enchantment.EnchantmentHelper
- *  net.minecraft.item.EnumRarity
- *  net.minecraft.item.ItemArmor
- *  net.minecraft.item.ItemBook
- *  net.minecraft.item.ItemBow
- *  net.minecraft.item.ItemStack
- *  net.minecraft.item.ItemTool
- *  org.lwjgl.opengl.GL11
- */
 package trash.foodbyte.module.impl.render;
 
 import awsl.Class492;
@@ -47,140 +23,167 @@ import trash.foodbyte.event.EventRender2D;
 import trash.foodbyte.module.Category;
 import trash.foodbyte.module.Module;
 
-public class ArmorHud
-extends Module {
-    public ArmorHud() {
-        super("ArmorHud", "Armor Hud", Category.RENDER);
-    }
+public class ArmorHud extends Module {
+   public ArmorHud() {
+      super("ArmorHud", "Armor Hud", Category.RENDER);
+   }
 
-    @Override
-    public String getDescription() {
-        return "\u88c5\u5907\u663e\u793a(\u663e\u793a\u5728\u7269\u54c1\u680f\u4e0a\u65b9)";
-    }
+   public String getDescription() {
+      return "装备显示(显示在物品栏上方)";
+   }
 
-    @EventTarget
-    public void Method810(EventRender2D a) {
-        ScaledResolution a2 = new ScaledResolution(mc);
-        this.Method1558(a2);
-    }
+   @EventTarget
+   public void Method810(EventRender2D a) {
+      ScaledResolution a = new ScaledResolution(mc);
+      this.Method1558(a);
+   }
 
-    private void Method1558(ScaledResolution a) {
-        Iterator iterator;
-        GL11.glPushMatrix();
-        ArrayList a2 = new ArrayList();
-        String a3 = Class492.Method2239();
-        boolean a4 = ArmorHud.mc.thePlayer.isEntityAlive() && ArmorHud.mc.thePlayer.isInsideOfMaterial(Material.water);
-        int a5 = a.getScaledWidth() / 2 - 6;
-        int a6 = a.getScaledHeight();
-        int a7 = 3;
-        ItemStack a8 = ArmorHud.mc.thePlayer.inventory.armorInventory[a7];
-        a2.Method2530((Object)a8);
-        --a7;
-        if (ArmorHud.mc.thePlayer.getCurrentEquippedItem() != null) {
-            a2.Method2530((Object)ArmorHud.mc.thePlayer.getCurrentEquippedItem());
-        }
-        if ((iterator = a2.Method1383()).Method932()) {
-            a8 = (ItemStack)iterator.Method933();
-            if (ArmorHud.mc.theWorld != null) {
-                RenderHelper.enableGUIStandardItemLighting();
-                mc.getRenderItem().renderItemAndEffectIntoGUI(a8, a5 += 16, a6 - 65);
-                mc.getRenderItem().renderItemOverlays(ArmorHud.mc.fontRendererObj, a8, a5, a6 - 65);
-                RenderHelper.disableStandardItemLighting();
-                int a9 = 1;
-                int a10 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.sharpness.effectId, (ItemStack)a8);
-                int a11 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fireAspect.effectId, (ItemStack)a8);
-                int a12 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.knockback.effectId, (ItemStack)a8);
-                ArmorHud.Method1760("Sh" + this.Method1761(a10) + a10, a5, a9 + a6 - 65);
-                ArmorHud.Method1760("Fir" + this.Method1761(a11) + a11, a5, (a9 += 4) + a6 - 65);
-                ArmorHud.Method1760("Kb" + this.Method1761(a12) + a12, a5, (a9 += 4) + a6 - 65);
-                if (!(a8.getItem() instanceof ItemBook)) {
-                    int a13;
-                    int a14;
-                    int a15;
-                    int a16;
-                    if (a8.getItem() instanceof ItemTool) {
-                        a16 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.efficiency.effectId, (ItemStack)a8);
-                        a15 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.fortune.effectId, (ItemStack)a8);
-                        a14 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a8);
-                        a13 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.silkTouch.effectId, (ItemStack)a8);
-                        ArmorHud.Method1760("Ef" + this.Method1761(a16) + a16, a5, a9 + a6 - 65);
-                        ArmorHud.Method1760("For" + this.Method1761(a15) + a15, a5, (a9 += 4) + a6 - 65);
-                        ArmorHud.Method1760("Tou" + this.Method1761(a13) + a13, a5, (a9 += 4) + a6 - 65);
-                        ArmorHud.Method1760("Unb" + this.Method1761(a14) + a14, a5, (a9 += 4) + a6 - 65);
-                    }
-                    if (a8.getItem() instanceof ItemArmor) {
-                        a16 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.protection.effectId, (ItemStack)a8);
-                        a15 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.thorns.effectId, (ItemStack)a8);
-                        a14 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.featherFalling.effectId, (ItemStack)a8);
-                        a13 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.unbreaking.effectId, (ItemStack)a8);
-                        int a17 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.depthStrider.effectId, (ItemStack)a8);
-                        ArmorHud.Method1760("Pr" + this.Method1761(a16) + a16, a5, a9 + a6 - 65);
-                        ArmorHud.Method1760("Th" + this.Method1761(a15) + a15, a5, (a9 += 4) + a6 - 65);
-                        ArmorHud.Method1760("Dep" + this.Method1761(a17) + a17, a5, (a9 += 4) + a6 - 65);
-                        ArmorHud.Method1760("Fea" + this.Method1761(a14) + a14, a5, (a9 += 4) + a6 - 65);
-                        ArmorHud.Method1760("Unb" + this.Method1761(a13) + a13, a5, (a9 += 4) + a6 - 65);
-                    }
-                    if (a8.getItem() instanceof ItemBow) {
-                        a16 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.power.effectId, (ItemStack)a8);
-                        a15 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.punch.effectId, (ItemStack)a8);
-                        a14 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.flame.effectId, (ItemStack)a8);
-                        a13 = EnchantmentHelper.getEnchantmentLevel((int)Enchantment.infinity.effectId, (ItemStack)a8);
-                        ArmorHud.Method1760("Pow" + this.Method1761(a16) + a16, a5, a9 + a6 - 65);
-                        ArmorHud.Method1760("Pun" + this.Method1761(a15) + a15, a5, (a9 += 4) + a6 - 65);
-                        ArmorHud.Method1760("Fla" + this.Method1761(a14) + a14, a5, (a9 += 4) + a6 - 65);
-                        ArmorHud.Method1760("Inf" + this.Method1761(a13) + a13, a5, (a9 += 4) + a6 - 65);
-                    }
-                    if (a8.getRarity() == EnumRarity.EPIC) {
-                        ArmorHud.Method1760("\u00a76\u00a7nGod", a5, a9 + a6 - 65);
-                    }
-                }
+   private void Method1558(ScaledResolution a) {
+      GL11.glPushMatrix();
+      Class492.Method2239();
+      ArrayList a = new ArrayList();
+      boolean a = mc.thePlayer.isEntityAlive() && mc.thePlayer.isInsideOfMaterial(Material.water);
+      int a = a.getScaledWidth() / 2 - 6;
+      int a = a.getScaledHeight();
+      int a = 3;
+      ItemStack a = mc.thePlayer.inventory.armorInventory[a];
+      a.Method2530(a);
+      --a;
+      if (mc.thePlayer.getCurrentEquippedItem() != null) {
+         a.Method2530(mc.thePlayer.getCurrentEquippedItem());
+      }
+
+      Iterator var18 = a.Method1383();
+      if (var18.Method932()) {
+         a = (ItemStack)var18.Method933();
+         if (mc.theWorld != null) {
+            a += 16;
+            RenderHelper.enableGUIStandardItemLighting();
+            mc.getRenderItem().renderItemAndEffectIntoGUI(a, a, a - 65);
+            mc.getRenderItem().renderItemOverlays(mc.fontRendererObj, a, a, a - 65);
+            RenderHelper.disableStandardItemLighting();
+            int a = 1;
+            int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, a);
+            int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.fireAspect.effectId, a);
+            int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.knockback.effectId, a);
+            Method1760("Sh" + this.Method1761(a) + a, a, a + a - 65);
+            a += 4;
+            Method1760("Fir" + this.Method1761(a) + a, a, a + a - 65);
+            a += 4;
+            Method1760("Kb" + this.Method1761(a) + a, a, a + a - 65);
+            if (!(a.getItem() instanceof ItemBook)) {
+               int a;
+               int a;
+               int a;
+               int a;
+               if (a.getItem() instanceof ItemTool) {
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.efficiency.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.silkTouch.effectId, a);
+                  Method1760("Ef" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("For" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Tou" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Unb" + this.Method1761(a) + a, a, a + a - 65);
+               }
+
+               if (a.getItem() instanceof ItemArmor) {
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.protection.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.thorns.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.featherFalling.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, a);
+                  int a = EnchantmentHelper.getEnchantmentLevel(Enchantment.depthStrider.effectId, a);
+                  Method1760("Pr" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Th" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Dep" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Fea" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Unb" + this.Method1761(a) + a, a, a + a - 65);
+               }
+
+               if (a.getItem() instanceof ItemBow) {
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, a);
+                  a = EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, a);
+                  Method1760("Pow" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Pun" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Fla" + this.Method1761(a) + a, a, a + a - 65);
+                  a += 4;
+                  Method1760("Inf" + this.Method1761(a) + a, a, a + a - 65);
+               }
+
+               if (a.getRarity() == EnumRarity.EPIC) {
+                  Method1760("§6§nGod", a, a + a - 65);
+               }
             }
-        }
-        GL11.glPopMatrix();
-    }
+         }
+      }
 
-    private static void Method1759(String a, int a2, int a3) {
-        GlStateManager.pushMatrix();
-        GlStateManager.disableDepth();
-        GL11.glScalef((float)0.5f, (float)0.5f, (float)0.5f);
-        Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow(a, (float)(a2 *= 2), (float)(a3 * 2), Class681.Method1612(255));
-        GlStateManager.enableDepth();
-        GlStateManager.popMatrix();
-    }
+      GL11.glPopMatrix();
+   }
 
-    private static void Method1760(String a, int a2, int a3) {
-        String[] a4;
-        String a5 = a;
-        for (String a6 : a4 = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "m", "o", "r", "g"}) {
-            a = a.replaceAll("\u00a7" + a6, "");
-        }
-        GlStateManager.pushMatrix();
-        GlStateManager.disableDepth();
-        GL11.glScalef((float)0.5f, (float)0.5f, (float)0.5f);
-        Minecraft.getMinecraft().fontRendererObj.drawString(a, (a2 *= 2) + 1, a3 * 2, 0);
-        Minecraft.getMinecraft().fontRendererObj.drawString(a, a2 - 1, a3 * 2, 0);
-        Minecraft.getMinecraft().fontRendererObj.drawString(a, a2, a3 * 2 + 1, 0);
-        Minecraft.getMinecraft().fontRendererObj.drawString(a, a2, a3 * 2 - 1, 0);
-        Minecraft.getMinecraft().fontRendererObj.drawString(a5, a2, a3 * 2, Class681.Method1612(255));
-        GlStateManager.enableDepth();
-        GlStateManager.popMatrix();
-    }
+   private static void Method1759(String a, int a, int a) {
+      GlStateManager.pushMatrix();
+      GlStateManager.disableDepth();
+      a *= 2;
+      GL11.glScalef(0.5F, 0.5F, 0.5F);
+      Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow(a, (float)a, (float)(a * 2), Class681.Method1612(255));
+      GlStateManager.enableDepth();
+      GlStateManager.popMatrix();
+   }
 
-    private String Method1761(int a) {
-        if (a != 1) {
-            if (a == 2) {
-                return "\u00a7a";
-            }
-            if (a == 3) {
-                return "\u00a73";
-            }
-            if (a == 4) {
-                return "\u00a74";
-            }
-            if (a >= 5) {
-                return "\u00a76";
-            }
-        }
-        return "\u00a78";
-    }
+   private static void Method1760(String a, int a, int a) {
+      String a = a;
+      String[] a = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "m", "o", "r", "g"};
+      String[] var5 = a;
+      int var6 = a.length;
+
+      for(int var7 = 0; var7 < var6; ++var7) {
+         String a = var5[var7];
+         a = a.replaceAll("§" + a, "");
+      }
+
+      GlStateManager.pushMatrix();
+      GlStateManager.disableDepth();
+      a *= 2;
+      GL11.glScalef(0.5F, 0.5F, 0.5F);
+      Minecraft.getMinecraft().fontRendererObj.drawString(a, a + 1, a * 2, 0);
+      Minecraft.getMinecraft().fontRendererObj.drawString(a, a - 1, a * 2, 0);
+      Minecraft.getMinecraft().fontRendererObj.drawString(a, a, a * 2 + 1, 0);
+      Minecraft.getMinecraft().fontRendererObj.drawString(a, a, a * 2 - 1, 0);
+      Minecraft.getMinecraft().fontRendererObj.drawString(a, a, a * 2, Class681.Method1612(255));
+      GlStateManager.enableDepth();
+      GlStateManager.popMatrix();
+   }
+
+   private String Method1761(int a) {
+      if (a != 1) {
+         if (a == 2) {
+            return "§a";
+         }
+
+         if (a == 3) {
+            return "§3";
+         }
+
+         if (a == 4) {
+            return "§4";
+         }
+
+         if (a >= 5) {
+            return "§6";
+         }
+      }
+
+      return "§8";
+   }
 }

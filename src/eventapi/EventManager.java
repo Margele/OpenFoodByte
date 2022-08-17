@@ -1,26 +1,5 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Class
- *  java.lang.Exception
- *  java.lang.Object
- *  java.lang.reflect.Method
- *  java.util.HashMap
- *  java.util.Iterator
- *  java.util.List
- *  java.util.Map
- *  java.util.Map$Entry
- *  java.util.concurrent.CopyOnWriteArrayList
- */
 package eventapi;
 
-import eventapi.Event;
-import eventapi.EventTarget;
-import eventapi.MethodData;
-import eventapi.PackedMethodData;
-import eventapi.Priority;
-import eventapi.StoppableEvent;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,166 +8,200 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public final class EventManager {
-    private static final Map REGISTRY_MAP = new HashMap();
-    private static boolean trash;
+   private static final Map REGISTRY_MAP = new HashMap();
+   private static boolean trash;
 
-    private EventManager() {
-    }
+   private EventManager() {
+   }
 
-    public static void register(Object o) {
-        for (Method a : o.getClass().getDeclaredMethods()) {
-            if (EventManager.isMethodBad(a)) continue;
-            EventManager.register(a, o);
-        }
-    }
+   public static void register(Object o) {
+      Method[] var1 = o.getClass().getDeclaredMethods();
+      int var2 = var1.length;
 
-    public static void register(Object o, Class clazz) {
-        for (Method a : o.getClass().getDeclaredMethods()) {
-            if (EventManager.isMethodBad(a, clazz)) continue;
-            EventManager.register(a, o);
-        }
-    }
+      for(int var3 = 0; var3 < var2; ++var3) {
+         Method a = var1[var3];
+         if (!isMethodBad(a)) {
+            register(a, o);
+         }
+      }
 
-    public static void unregister(Object o) {
-        Iterator iterator = REGISTRY_MAP.values().Method1383();
-        while (iterator.Method932()) {
-            List a = (List)iterator.Method933();
-            a.removeIf(arg_0 -> EventManager.trash2(o, arg_0));
-        }
-        EventManager.cleanMap(true);
-    }
+   }
 
-    public static void unregister(Object a, Class a2) {
-        if (REGISTRY_MAP.containsKey((Object)a2)) {
-            ((List)REGISTRY_MAP.Method2665((Object)a2)).removeIf(arg_0 -> EventManager.trash(a, arg_0));
-            EventManager.cleanMap(true);
-        }
-    }
+   public static void register(Object o, Class clazz) {
+      Method[] var2 = o.getClass().getDeclaredMethods();
+      int var3 = var2.length;
 
-    public static boolean Method2679(Object a) {
-        Iterator iterator = REGISTRY_MAP.values().Method1383();
-        while (iterator.Method932()) {
-            List a2 = (List)iterator.Method933();
-            Iterator iterator2 = a2.Method1383();
-            while (iterator2.Method932()) {
-                MethodData a3 = (MethodData)iterator2.Method933();
-                if (!a3.getSource().getClass().Method3429(a)) continue;
-                return true;
+      for(int var4 = 0; var4 < var3; ++var4) {
+         Method a = var2[var4];
+         if (!isMethodBad(a, clazz)) {
+            register(a, o);
+         }
+      }
+
+   }
+
+   public static void unregister(Object o) {
+      Iterator var1 = REGISTRY_MAP.values().Method1383();
+
+      while(var1.Method932()) {
+         List a = (List)var1.Method933();
+         a.removeIf(EventManager::trash2);
+      }
+
+      cleanMap(true);
+   }
+
+   public static void unregister(Object a, Class a) {
+      if (REGISTRY_MAP.containsKey(a)) {
+         ((List)REGISTRY_MAP.Method2665(a)).removeIf(EventManager::trash);
+         cleanMap(true);
+      }
+
+   }
+
+   public static boolean Method2679(Object a) {
+      Iterator var1 = REGISTRY_MAP.values().Method1383();
+
+      while(var1.Method932()) {
+         List a = (List)var1.Method933();
+         Iterator var3 = a.Method1383();
+
+         while(var3.Method932()) {
+            MethodData a = (MethodData)var3.Method933();
+            if (a.getSource().getClass().Method3429(a)) {
+               return true;
             }
-        }
-        return false;
-    }
+         }
+      }
 
-    private static void register(Method method, Object object) {
-        block5: {
-            MethodData a;
-            Class a2;
-            block4: {
-                a2 = method.getParameterTypes()[0];
-                boolean a3 = EventManager.trash2();
-                a = new MethodData(object, method, ((EventTarget)method.getAnnotation(EventTarget.class)).value());
-                if (!a.getTarget().isAccessible()) {
-                    a.getTarget().setAccessible(true);
-                }
-                if (!REGISTRY_MAP.containsKey((Object)a2)) break block4;
-                if (((List)REGISTRY_MAP.Method2665((Object)a2)).contains((Object)a)) break block5;
-                ((List)REGISTRY_MAP.Method2665((Object)a2)).Method2530((Object)a);
-                EventManager.sortListValue(a2);
-            }
-            REGISTRY_MAP.put((Object)a2, (Object)new PackedMethodData(a));
-        }
-    }
+      return false;
+   }
 
-    public static void removeEntry(Class clazz) {
-        Iterator a = REGISTRY_MAP.Method2663().Method1383();
-        while (a.Method932()) {
-            if (!((Class)((Map.Entry)a.Method933()).getKey()).Method3429((Object)clazz)) continue;
+   private static void register(Method method, Object object) {
+      trash2();
+      Class a = method.getParameterTypes()[0];
+      MethodData a = new MethodData(object, method, ((EventTarget)method.getAnnotation(EventTarget.class)).value());
+      if (!a.getTarget().isAccessible()) {
+         a.getTarget().setAccessible(true);
+      }
+
+      if (REGISTRY_MAP.containsKey(a)) {
+         if (((List)REGISTRY_MAP.Method2665(a)).contains(a)) {
+            return;
+         }
+
+         ((List)REGISTRY_MAP.Method2665(a)).Method2530(a);
+         sortListValue(a);
+      }
+
+      REGISTRY_MAP.put(a, new PackedMethodData(a));
+   }
+
+   public static void removeEntry(Class clazz) {
+      Iterator a = REGISTRY_MAP.Method2663().Method1383();
+
+      while(a.Method932()) {
+         if (((Class)((Map.Entry)a.Method933()).getKey()).Method3429(clazz)) {
             a.Method934();
             break;
-        }
-    }
+         }
+      }
 
-    public static void cleanMap(boolean clazz) {
-        Iterator a = REGISTRY_MAP.Method2663().Method1383();
-        while (a.Method932()) {
-            if (!((List)((Map.Entry)a.Method933()).getValue()).isEmpty()) continue;
+   }
+
+   public static void cleanMap(boolean clazz) {
+      Iterator a = REGISTRY_MAP.Method2663().Method1383();
+
+      while(a.Method932()) {
+         if (((List)((Map.Entry)a.Method933()).getValue()).isEmpty()) {
             a.Method934();
-        }
-    }
+         }
+      }
 
-    private static void sortListValue(Class indexClass) {
-        CopyOnWriteArrayList a = new CopyOnWriteArrayList();
-        for (byte a2 : Priority.VALUE_ARRAY) {
-            Iterator iterator = ((List)REGISTRY_MAP.Method2665((Object)indexClass)).Method1383();
-            while (iterator.Method932()) {
-                MethodData a3 = (MethodData)iterator.Method933();
-                if (a3.getPriority() != a2) continue;
-                a.Method2530((Object)a3);
+   }
+
+   private static void sortListValue(Class indexClass) {
+      List a = new CopyOnWriteArrayList();
+      byte[] var2 = Priority.VALUE_ARRAY;
+      int var3 = var2.length;
+
+      for(int var4 = 0; var4 < var3; ++var4) {
+         byte a = var2[var4];
+         Iterator var6 = ((List)REGISTRY_MAP.Method2665(indexClass)).Method1383();
+
+         while(var6.Method932()) {
+            MethodData a = (MethodData)var6.Method933();
+            if (a.getPriority() == a) {
+               a.Method2530(a);
             }
-        }
-        REGISTRY_MAP.put((Object)indexClass, (Object)a);
-    }
+         }
+      }
 
-    private static boolean isMethodBad(Method m) {
-        return m.getParameterTypes().length != 1 || !m.isAnnotationPresent(EventTarget.class);
-    }
+      REGISTRY_MAP.put(indexClass, a);
+   }
 
-    private static boolean isMethodBad(Method m, Class clazz) {
-        return EventManager.isMethodBad(m) || !m.getParameterTypes()[0].Method3429((Object)clazz);
-    }
+   private static boolean isMethodBad(Method m) {
+      return m.getParameterTypes().length != 1 || !m.isAnnotationPresent(EventTarget.class);
+   }
 
-    public static Event call(Event e) {
-        Iterator iterator;
-        List a = (List)REGISTRY_MAP.Method2665((Object)e.getClass());
-        boolean a2 = EventManager.trash2();
-        if (e instanceof StoppableEvent) {
-            StoppableEvent a3 = (StoppableEvent)e;
-            Iterator iterator2 = a.Method1383();
-            if (iterator2.Method932()) {
-                MethodData a4 = (MethodData)iterator2.Method933();
-                EventManager.invoke(a4, e);
-                if (a3.isStopped()) {
-                }
+   private static boolean isMethodBad(Method m, Class clazz) {
+      return isMethodBad(m) || !m.getParameterTypes()[0].Method3429(clazz);
+   }
+
+   public static Event call(Event e) {
+      trash2();
+      List a = (List)REGISTRY_MAP.Method2665(e.getClass());
+      if (e instanceof StoppableEvent) {
+         StoppableEvent a = (StoppableEvent)e;
+         Iterator var4 = a.Method1383();
+         if (var4.Method932()) {
+            MethodData a = (MethodData)var4.Method933();
+            invoke(a, e);
+            if (a.isStopped()) {
+               ;
             }
-        }
-        if ((iterator = a.Method1383()).Method932()) {
-            MethodData a5 = (MethodData)iterator.Method933();
-            EventManager.invoke(a5, e);
-        }
-        return e;
-    }
+         }
+      }
 
-    private static void invoke(MethodData data, Event event) {
-        try {
-            data.getTarget().invoke(data.getSource(), new Object[]{event});
-        }
-        catch (Exception exception) {
-            // empty catch block
-        }
-    }
+      Iterator var6 = a.Method1383();
+      if (var6.Method932()) {
+         MethodData a = (MethodData)var6.Method933();
+         invoke(a, e);
+      }
 
-    private static boolean trash(Object a, MethodData a2) {
-        return a2.getSource().Method3429(a);
-    }
+      return e;
+   }
 
-    private static boolean trash2(Object a, MethodData a2) {
-        return a2.getSource().Method3429(a);
-    }
+   private static void invoke(MethodData data, Event event) {
+      try {
+         data.getTarget().invoke(data.getSource(), event);
+      } catch (Exception var3) {
+      }
 
-    static {
-        EventManager.trash(true);
-    }
+   }
 
-    public static void trash(boolean bl) {
-        trash = bl;
-    }
+   private static boolean trash(Object a, MethodData a) {
+      return a.getSource().Method3429(a);
+   }
 
-    public static boolean trash() {
-        return trash;
-    }
+   private static boolean trash2(Object a, MethodData a) {
+      return a.getSource().Method3429(a);
+   }
 
-    public static boolean trash2() {
-        boolean bl = EventManager.trash();
-        return true;
-    }
+   static {
+      trash(true);
+   }
+
+   public static void trash(boolean boolean1) {
+      trash = boolean1;
+   }
+
+   public static boolean trash() {
+      return trash;
+   }
+
+   public static boolean trash2() {
+      boolean var0 = trash();
+      return true;
+   }
 }

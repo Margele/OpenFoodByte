@@ -1,37 +1,22 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- *  org.xml.sax.Attributes
- */
 package awsl;
 
-import awsl.Class148;
-import awsl.Class730;
-import awsl.Class831;
 import org.xml.sax.Attributes;
 
-final class Class837
-extends Class831 {
-    final Class730 Field3725;
+final class Class837 extends Class831 {
+   final Class730 Field3725;
 
-    Class837(Class730 a) {
-        this.Field3725 = a;
-        super(a);
-    }
+   Class837(Class730 a) {
+      super(a);
+      this.Field3725 = a;
+   }
 
-    @Override
-    public void Method3501(String a, Attributes a2) {
-        Class148 a3 = (Class148)this.Field3725.Method1963();
-        this.Field3725.Method1950(null);
-    }
+   public void Method3501(String a, Attributes a1) {
+      Class148 a = (Class148)this.Field3725.Method1963();
+      this.Field3725.Method1950((Object)null);
+   }
 
-    @Override
-    public void Method3514(String a) {
-        Class148 a2 = (Class148)this.Field3725.Method1964();
-        a2.Method401();
-    }
+   public void Method3514(String a) {
+      Class148 a = (Class148)this.Field3725.Method1964();
+      a.Method401();
+   }
 }

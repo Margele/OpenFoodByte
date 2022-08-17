@@ -1,37 +1,9 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Boolean
- *  java.lang.Double
- *  java.lang.Math
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- *  java.util.ArrayList
- *  java.util.Collection
- *  java.util.HashMap
- *  java.util.Iterator
- *  java.util.List
- *  java.util.Map
- *  net.minecraft.client.entity.EntityOtherPlayerMP
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.network.Packet
- *  net.minecraft.network.play.client.C08PacketPlayerBlockPlacement
- *  net.minecraft.network.play.client.C0BPacketEntityAction
- *  net.minecraft.network.play.client.C0BPacketEntityAction$Action
- *  net.minecraft.util.Vec3
- *  net.minecraft.world.World
- */
 package trash.foodbyte.module.impl.world;
 
 import awsl.Class305;
 import awsl.Class448;
 import eventapi.EventTarget;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -40,11 +12,10 @@ import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.C08PacketPlayerBlockPlacement;
 import net.minecraft.network.play.client.C0BPacketEntityAction;
+import net.minecraft.network.play.client.C0BPacketEntityAction.Action;
 import net.minecraft.util.Vec3;
-import net.minecraft.world.World;
 import obfuscate.a;
 import trash.foodbyte.event.EventMotion;
 import trash.foodbyte.event.EventPacket;
@@ -55,241 +26,282 @@ import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.FloatValue;
 import trash.foodbyte.value.ModeValue;
 
-public class CopsCrims
-extends Module {
-    public ModeValue Field2306 = new ModeValue("CopsCrims", "Aim Mode", "Head", new String[]{"Head", "Neck", "Chest", "Jimmies", "Legs", "Feet"}, "\u7784\u51c6\u90e8\u4f4d{\u5934\u3001\u9888\u3001\u80f8\u3001JJ\u3001\u817f\u3001\u811a}");
-    public FloatValue Field2307 = new FloatValue("CopsCrims", "Delay", 7.0, 0.0, 35.0, 1.0, "\u5ef6\u8fdf");
-    public FloatValue Field2308 = new FloatValue("CopsCrims", "Fov", 360.0, 1.0, 360.0, 1.0, "\u7784\u51c6\u89c6\u89d2");
-    public FloatValue Field2309 = new FloatValue("CopsCrims", "HRecoil", 0.1, 0.1, 2.0, 0.1, "\u63a7\u5236\u540e\u5750\u529b\u6c34\u5e73\u7784\u51c6\u5de6\u53f3\u79fb\u52a8");
-    public FloatValue Field2310 = new FloatValue("CopsCrims", "VRecoil", 0.5, 0.1, 2.0, 0.1, "\u63a7\u5236\u540e\u5750\u529b\u6c34\u5e73\u7784\u51c6\u4e0a\u4e0b\u79fb\u52a8");
-    public BooleanValue Field2311 = new BooleanValue("CopsCrims", "No Spread", (Boolean)true, "\u4e0d\u6269\u6563");
-    public BooleanValue Field2312 = new BooleanValue("CopsCrims", "Rcs", (Boolean)false, "\u540e\u5750\u529b\u63a7\u5236\u7cfb\u7edf");
-    public BooleanValue Field2313 = new BooleanValue("CopsCrims", "Silent", (Boolean)true, "");
-    public BooleanValue Field2314 = new BooleanValue("CopsCrims", "Auto Shoot", (Boolean)true, "\u81ea\u52a8\u5c04\u51fb");
-    private float Field2315;
-    private float Field2316;
-    public int Field2317;
-    public int Field2318;
-    private EntityPlayer Field2319;
-    public int Field2320 = 10;
-    private Map Field2321 = new HashMap();
+public class CopsCrims extends Module {
+   public ModeValue Field2306 = new ModeValue("CopsCrims", "Aim Mode", "Head", new String[]{"Head", "Neck", "Chest", "Jimmies", "Legs", "Feet"}, "瞄准部位{头、颈、胸、JJ、腿、脚}");
+   public FloatValue Field2307 = new FloatValue("CopsCrims", "Delay", 7.0, 0.0, 35.0, 1.0, "延迟");
+   public FloatValue Field2308 = new FloatValue("CopsCrims", "Fov", 360.0, 1.0, 360.0, 1.0, "瞄准视角");
+   public FloatValue Field2309 = new FloatValue("CopsCrims", "HRecoil", 0.1, 0.1, 2.0, 0.1, "控制后坐力水平瞄准左右移动");
+   public FloatValue Field2310 = new FloatValue("CopsCrims", "VRecoil", 0.5, 0.1, 2.0, 0.1, "控制后坐力水平瞄准上下移动");
+   public BooleanValue Field2311 = new BooleanValue("CopsCrims", "No Spread", true, "不扩散");
+   public BooleanValue Field2312 = new BooleanValue("CopsCrims", "Rcs", false, "后坐力控制系统");
+   public BooleanValue Field2313 = new BooleanValue("CopsCrims", "Silent", true, "");
+   public BooleanValue Field2314 = new BooleanValue("CopsCrims", "Auto Shoot", true, "自动射击");
+   private float Field2315;
+   private float Field2316;
+   public int Field2317;
+   public int Field2318;
+   private EntityPlayer Field2319;
+   public int Field2320 = 10;
+   private Map Field2321 = new HashMap();
 
-    public CopsCrims() {
-        super("CopsCrims", "Cops Crims", Category.WORLD);
-    }
+   public CopsCrims() {
+      super("CopsCrims", "Cops Crims", Category.WORLD);
+   }
 
-    @Override
-    public String getDescription() {
-        return "\u8b66\u5bdf\u4e0e\u52ab\u532a\u5c0f\u6e38\u620f\u81ea\u7784";
-    }
+   public String getDescription() {
+      return "警察与劫匪小游戏自瞄";
+   }
 
-    @EventTarget
-    public void Method273(EventPacket a) {
-        if (a.isRecieve() && this.Field2312.getBooleanValue().booleanValue() && a.getPacket() instanceof C08PacketPlayerBlockPlacement) {
-            ++this.Field2317;
-        }
-    }
+   @EventTarget
+   public void Method273(EventPacket a) {
+      if (a.isRecieve() && this.Field2312.getBooleanValue() && a.getPacket() instanceof C08PacketPlayerBlockPlacement) {
+         ++this.Field2317;
+      }
 
-    @EventTarget
-    private void Method712(EventMotion a2) {
-        block28: {
-            block29: {
-                block31: {
-                    Object a3;
-                    block30: {
-                        Object a4;
-                        a[] a5 = Class448.Method2461();
-                        if (!a2.isPre()) break block28;
-                        if (this.Field2313.getBooleanValue().booleanValue()) {
-                            this.Field2315 = CopsCrims.mc.thePlayer.rotationPitch;
-                            this.Field2316 = CopsCrims.mc.thePlayer.rotationYaw;
-                        }
-                        double a6 = Double.NEGATIVE_INFINITY;
-                        this.Field2319 = null;
-                        Iterator iterator = CopsCrims.mc.theWorld.playerEntities.Method1383();
-                        if (iterator.Method932()) {
-                            a4 = iterator.Method933();
-                            a3 = (EntityPlayer)a4;
-                            if (!a3.equals((Object)CopsCrims.mc.thePlayer) && !Class305.Method698(a3.getName()) && a3.ticksExisted >= 40 && !a3.isInvisible() && CopsCrims.mc.thePlayer.canEntityBeSeen((Entity)a3) && !Class305.Method704((Entity)a3) && this.Method817((EntityLivingBase)a3, this.Field2308.getFloatValue().floatValue())) {
-                                if (this.Field2319 == null) {
-                                    this.Field2319 = a3;
-                                    a6 = this.Method1667((EntityPlayer)a3);
-                                }
-                                if (this.Method1667((EntityPlayer)a3) <= a6) {
-                                }
-                                this.Field2319 = a3;
-                                a6 = this.Method1667((EntityPlayer)a3);
-                            }
-                        }
-                        if ((iterator = this.Field2321.keySet().Method1383()).Method932()) {
-                            a4 = (EntityPlayer)iterator.Method933();
-                            if (!CopsCrims.mc.theWorld.playerEntities.contains(a4)) {
-                                this.Field2321.remove(a4);
-                            }
-                        }
-                        if ((iterator = CopsCrims.mc.theWorld.playerEntities.Method1383()).Method932()) {
-                            a4 = iterator.Method933();
-                            a3 = (EntityPlayer)a4;
-                            this.Field2321.putIfAbsent(a3, (Object)new ArrayList());
-                            List a7 = (List)this.Field2321.Method2665(a3);
-                            a7.Method2530((Object)new Vec3(a3.posX, a3.posY, a3.posZ));
-                            if (a7.Method1799() > this.Field2320) {
-                                int a8 = 0;
-                                Iterator iterator2 = new ArrayList((Collection)a7).Method1383();
-                                if (iterator2.Method932()) {
-                                    Vec3 a9 = (Vec3)iterator2.Method933();
-                                    if (a8 < a7.Method1799() - this.Field2320) {
-                                        a7.remove(a7.get(a8));
-                                    }
-                                    ++a8;
-                                }
-                            }
-                        }
-                        if (this.Field2319 == null) break block29;
-                        if (this.Field2312.getBooleanValue().booleanValue() && this.Field2317 >= 30) {
-                            this.Field2317 = 0;
-                        }
-                        ++this.Field2318;
-                        Entity a10 = this.Method1668(this.Field2319);
-                        float a11 = 0.0f;
-                        if (this.Field2306.isCurrentMode("Head")) {
-                            a11 = -0.2f;
-                        }
-                        if (this.Field2306.isCurrentMode("Neck")) {
-                            a11 = 0.1f;
-                        }
-                        if (this.Field2306.isCurrentMode("Chest")) {
-                            a11 = 0.4f;
-                        }
-                        if (this.Field2306.isCurrentMode("Jimmies")) {
-                            a11 = 0.85f;
-                        }
-                        if (this.Field2306.isCurrentMode("Legs")) {
-                            a11 = 1.0f;
-                        }
-                        if (this.Field2306.isCurrentMode("Feet")) {
-                            a11 = 1.5f;
-                        }
-                        a3 = this.Method1670((Entity)CopsCrims.mc.thePlayer, a10.posX, a10.posY + (double)this.Field2319.getEyeHeight() - (double)a11, a10.posZ);
-                        if (!this.Field2312.getBooleanValue().booleanValue()) break block30;
-                        CopsCrims.mc.thePlayer.rotationYaw = (float)a3[0];
-                        CopsCrims.mc.thePlayer.rotationPitch = (float)(a3[1] + this.Field2310.getFloatValue().floatValue() * (float)this.Field2317);
-                        if (this.Field2317 >= 10) {
-                            CopsCrims.mc.thePlayer.rotationYaw = (float)(a3[0] - this.Field2309.getFloatValue().floatValue() * (float)this.Field2317);
-                        }
-                        if (this.Field2317 < 20) break block31;
-                        CopsCrims.mc.thePlayer.rotationYaw = (float)(a3[0] + this.Field2309.getFloatValue().floatValue() * (float)this.Field2317);
-                    }
-                    CopsCrims.mc.thePlayer.rotationYaw = (float)a3[0];
-                    CopsCrims.mc.thePlayer.rotationPitch = (float)a3[1];
-                }
-                if ((float)this.Field2318 >= this.Field2307.getFloatValue().floatValue()) {
-                    if (this.Field2311.getBooleanValue().booleanValue()) {
-                        Wrapper.INSTANCE.sendPacket((Packet)new C0BPacketEntityAction((Entity)CopsCrims.mc.thePlayer, C0BPacketEntityAction.Action.STOP_SNEAKING));
-                    }
-                    if (this.Field2314.getBooleanValue().booleanValue() && CopsCrims.mc.thePlayer.inventory.getCurrentItem() != null) {
-                        CopsCrims.mc.playerController.sendUseItem((EntityPlayer)CopsCrims.mc.thePlayer, (World)CopsCrims.mc.theWorld, CopsCrims.mc.thePlayer.inventory.getCurrentItem());
-                    }
-                    if (this.Field2311.getBooleanValue().booleanValue()) {
-                        Wrapper.INSTANCE.sendPacket((Packet)new C0BPacketEntityAction((Entity)CopsCrims.mc.thePlayer, C0BPacketEntityAction.Action.START_SNEAKING));
-                    }
-                    this.Field2318 = 0;
-                }
-                break block28;
+   }
+
+   @EventTarget
+   private void Method712(EventMotion a) {
+      a[] a = Class448.trash();
+      if (a.isPre()) {
+         if (this.Field2313.getBooleanValue()) {
+            this.Field2315 = mc.thePlayer.rotationPitch;
+            this.Field2316 = mc.thePlayer.rotationYaw;
+         }
+
+         double a = Double.NEGATIVE_INFINITY;
+         this.Field2319 = null;
+         Iterator var5 = mc.theWorld.playerEntities.Method1383();
+         Object a;
+         EntityPlayer a;
+         if (var5.Method932()) {
+            a = var5.Method933();
+            a = (EntityPlayer)a;
+            if (!a.equals(mc.thePlayer) && !Class305.Method698(a.getName()) && a.ticksExisted >= 40 && !a.isInvisible() && mc.thePlayer.canEntityBeSeen(a) && !Class305.Method704(a) && this.Method817(a, this.Field2308.getFloatValue())) {
+               if (this.Field2319 == null) {
+                  this.Field2319 = a;
+                  a = this.Method1667(a);
+               }
+
+               if (this.Method1667(a) <= a) {
+                  ;
+               }
+
+               this.Field2319 = a;
+               this.Method1667(a);
             }
+         }
+
+         var5 = this.Field2321.keySet().Method1383();
+         if (var5.Method932()) {
+            EntityPlayer a = (EntityPlayer)var5.Method933();
+            if (!mc.theWorld.playerEntities.contains(a)) {
+               this.Field2321.remove(a);
+            }
+         }
+
+         var5 = mc.theWorld.playerEntities.Method1383();
+         if (var5.Method932()) {
+            a = var5.Method933();
+            a = (EntityPlayer)a;
+            this.Field2321.putIfAbsent(a, new ArrayList());
+            List a = (List)this.Field2321.Method2665(a);
+            a.Method2530(new Vec3(a.posX, a.posY, a.posZ));
+            if (a.Method1799() > this.Field2320) {
+               int a = 0;
+               Iterator var10 = (new ArrayList(a)).Method1383();
+               if (var10.Method932()) {
+                  Vec3 a = (Vec3)var10.Method933();
+                  if (a < a.Method1799() - this.Field2320) {
+                     a.remove(a.get(a));
+                  }
+
+                  ++a;
+               }
+            }
+         }
+
+         if (this.Field2319 != null) {
+            if (this.Field2312.getBooleanValue() && this.Field2317 >= 30) {
+               this.Field2317 = 0;
+            }
+
+            ++this.Field2318;
+            Entity a = this.Method1668(this.Field2319);
+            float a = 0.0F;
+            if (this.Field2306.isCurrentMode("Head")) {
+               a = -0.2F;
+            }
+
+            if (this.Field2306.isCurrentMode("Neck")) {
+               a = 0.1F;
+            }
+
+            if (this.Field2306.isCurrentMode("Chest")) {
+               a = 0.4F;
+            }
+
+            if (this.Field2306.isCurrentMode("Jimmies")) {
+               a = 0.85F;
+            }
+
+            if (this.Field2306.isCurrentMode("Legs")) {
+               a = 1.0F;
+            }
+
+            if (this.Field2306.isCurrentMode("Feet")) {
+               a = 1.5F;
+            }
+
+            label110: {
+               float[] a = this.Method1670(mc.thePlayer, a.posX, a.posY + (double)this.Field2319.getEyeHeight() - (double)a, a.posZ);
+               if (this.Field2312.getBooleanValue()) {
+                  mc.thePlayer.rotationYaw = a[0];
+                  mc.thePlayer.rotationPitch = a[1] + this.Field2310.getFloatValue() * (float)this.Field2317;
+                  if (this.Field2317 >= 10) {
+                     mc.thePlayer.rotationYaw = a[0] - this.Field2309.getFloatValue() * (float)this.Field2317;
+                  }
+
+                  if (this.Field2317 < 20) {
+                     break label110;
+                  }
+
+                  mc.thePlayer.rotationYaw = a[0] + this.Field2309.getFloatValue() * (float)this.Field2317;
+               }
+
+               mc.thePlayer.rotationYaw = a[0];
+               mc.thePlayer.rotationPitch = a[1];
+            }
+
+            if ((float)this.Field2318 >= this.Field2307.getFloatValue()) {
+               if (this.Field2311.getBooleanValue()) {
+                  Wrapper.INSTANCE.sendPacket(new C0BPacketEntityAction(mc.thePlayer, Action.STOP_SNEAKING));
+               }
+
+               if (this.Field2314.getBooleanValue() && mc.thePlayer.inventory.getCurrentItem() != null) {
+                  mc.playerController.sendUseItem(mc.thePlayer, mc.theWorld, mc.thePlayer.inventory.getCurrentItem());
+               }
+
+               if (this.Field2311.getBooleanValue()) {
+                  Wrapper.INSTANCE.sendPacket(new C0BPacketEntityAction(mc.thePlayer, Action.START_SNEAKING));
+               }
+
+               this.Field2318 = 0;
+            }
+         } else {
             --this.Field2317;
             if (this.Field2317 <= 0) {
-                this.Field2317 = 0;
+               this.Field2317 = 0;
             }
-        }
-        CopsCrims.mc.thePlayer.rotationPitch = this.Field2315;
-        CopsCrims.mc.thePlayer.rotationYaw = this.Field2316;
-    }
+         }
+      }
 
-    public double Method1667(EntityPlayer a2) {
-        double a3 = -CopsCrims.mc.thePlayer.getDistanceToEntity((Entity)a2);
-        if (a2.lastTickPosX == a2.posX && a2.lastTickPosY == a2.posY && a2.lastTickPosZ == a2.posZ) {
-            a3 += 200.0;
-        }
-        return a3 -= (double)(a2.getDistanceToEntity((Entity)CopsCrims.mc.thePlayer) / 5.0f);
-    }
+      mc.thePlayer.rotationPitch = this.Field2315;
+      mc.thePlayer.rotationYaw = this.Field2316;
+   }
 
-    private Entity Method1668(EntityPlayer a2) {
-        int a3 = (int)Math.ceil((double)((double)mc.getNetHandler().getPlayerInfo(CopsCrims.mc.thePlayer.getUniqueID()).getResponseTime() / 50.0));
-        return this.Method1669(a2, a3);
-    }
+   public double Method1667(EntityPlayer a) {
+      double a = (double)(-mc.thePlayer.getDistanceToEntity(a));
+      if (a.lastTickPosX == a.posX && a.lastTickPosY == a.posY && a.lastTickPosZ == a.posZ) {
+         a += 200.0;
+      }
 
-    public Entity Method1669(EntityPlayer a2, int a3) {
-        List a4;
-        if (this.Field2321.containsKey((Object)a2) && (a4 = (List)this.Field2321.Method2665((Object)a2)).Method1799() > 1) {
-            Vec3 a5 = (Vec3)a4.get(0);
-            ArrayList a6 = new ArrayList();
-            Vec3 a7 = a5;
-            Iterator iterator = a4.Method1383();
-            while (iterator.Method932()) {
-                Vec3 a8 = (Vec3)iterator.Method933();
-                a6.Method2530((Object)new Vec3(a8.xCoord - a7.xCoord, a8.yCoord - a7.yCoord, a8.zCoord - a7.zCoord));
-                a7 = a8;
+      a -= (double)(a.getDistanceToEntity(mc.thePlayer) / 5.0F);
+      return a;
+   }
+
+   private Entity Method1668(EntityPlayer a) {
+      int a = (int)Math.ceil((double)mc.getNetHandler().getPlayerInfo(mc.thePlayer.getUniqueID()).getResponseTime() / 50.0);
+      return this.Method1669(a, a);
+   }
+
+   public Entity Method1669(EntityPlayer a, int a) {
+      if (this.Field2321.containsKey(a)) {
+         List a = (List)this.Field2321.Method2665(a);
+         if (a.Method1799() > 1) {
+            Vec3 a = (Vec3)a.get(0);
+            List a = new ArrayList();
+            Vec3 a = a;
+
+            Vec3 a;
+            for(Iterator var7 = a.Method1383(); var7.Method932(); a = a) {
+               a = (Vec3)var7.Method933();
+               a.Method2530(new Vec3(a.xCoord - a.xCoord, a.yCoord - a.yCoord, a.zCoord - a.zCoord));
             }
-            double a9 = 0.0;
-            double a10 = 0.0;
-            double a11 = 0.0;
-            Iterator iterator2 = a6.Method1383();
-            while (iterator2.Method932()) {
-                Vec3 a12 = (Vec3)iterator2.Method933();
-                a9 += a12.xCoord;
-                a10 += a12.yCoord;
-                a11 += a12.zCoord;
+
+            double a = 0.0;
+            double a = 0.0;
+            double a = 0.0;
+
+            Vec3 a;
+            for(Iterator var13 = a.Method1383(); var13.Method932(); a += a.zCoord) {
+               a = (Vec3)var13.Method933();
+               a += a.xCoord;
+               a += a.yCoord;
             }
-            a9 /= (double)a6.Method1799();
-            a10 /= (double)a6.Method1799();
-            a11 /= (double)a6.Method1799();
-            EntityOtherPlayerMP a13 = new EntityOtherPlayerMP((World)CopsCrims.mc.theWorld, a2.getGameProfile());
-            a13.noClip = false;
-            a13.setPosition(a2.posX, a2.posY, a2.posZ);
-            for (int a14 = 0; a14 < a3; ++a14) {
-                a13.moveEntity(a9, a10, a11);
+
+            a /= (double)a.Method1799();
+            a /= (double)a.Method1799();
+            a /= (double)a.Method1799();
+            EntityPlayer a = new EntityOtherPlayerMP(mc.theWorld, a.getGameProfile());
+            a.noClip = false;
+            a.setPosition(a.posX, a.posY, a.posZ);
+
+            for(int a = 0; a < a; ++a) {
+               a.moveEntity(a, a, a);
             }
-            return a13;
-        }
-        return a2;
-    }
 
-    private final float[] Method1670(Entity a2, double a3, double a4, double a5) {
-        double a6 = a3 - a2.posX;
-        double a7 = a4 - a2.posY - (double)a2.getEyeHeight() - 0.1;
-        double a8 = a5 - a2.posZ;
-        double a9 = a8 < 0.0 && a6 < 0.0 ? 90.0 + Math.toDegrees((double)Math.atan((double)(a8 / a6))) : (a8 < 0.0 && a6 > 0.0 ? -90.0 + Math.toDegrees((double)Math.atan((double)(a8 / a6))) : Math.toDegrees((double)(-Math.atan((double)(a6 / a8)))));
-        double a10 = Math.sqrt((double)(a6 * a6 + a8 * a8));
-        double a11 = -Math.toDegrees((double)Math.atan((double)(a7 / a10)));
-        a9 = CopsCrims.Method1671((float)a9);
-        a11 = CopsCrims.Method1671((float)a11);
-        return new float[]{(float)a9, (float)a11};
-    }
+            return a;
+         }
+      }
 
-    private static float Method1671(float a2) {
-        a2 %= 360.0f;
-        while (a2 >= 180.0f) {
-            a2 -= 360.0f;
-        }
-        while (a2 < -180.0f) {
-            a2 += 360.0f;
-        }
-        return a2;
-    }
+      return a;
+   }
 
-    public boolean Method817(EntityLivingBase a2, float a3) {
-        a3 = (float)((double)a3 * 0.5);
-        double a4 = (((double)CopsCrims.mc.thePlayer.rotationYaw - this.Method818(a2)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
-        return a4 > 0.0 && a4 < (double)a3 || (double)(-a3) < a4 && a4 < 0.0;
-    }
+   private final float[] Method1670(Entity a, double a, double a, double a) {
+      double a = a - a.posX;
+      double a = a - a.posY - (double)a.getEyeHeight() - 0.1;
+      double a = a - a.posZ;
+      double a;
+      if (a < 0.0 && a < 0.0) {
+         a = 90.0 + Math.toDegrees(Math.atan(a / a));
+      } else if (a < 0.0 && a > 0.0) {
+         a = -90.0 + Math.toDegrees(Math.atan(a / a));
+      } else {
+         a = Math.toDegrees(-Math.atan(a / a));
+      }
 
-    public double[] Method818(EntityLivingBase a2) {
-        double a3 = a2.posX - CopsCrims.mc.thePlayer.posX;
-        double a4 = a2.posY - CopsCrims.mc.thePlayer.posY;
-        double a5 = a2.posZ - CopsCrims.mc.thePlayer.posZ;
-        double a6 = -(Math.atan2((double)a3, (double)a5) * 57.29577951308232);
-        double a7 = -(Math.asin((double)(a4 /= (double)CopsCrims.mc.thePlayer.getDistanceToEntity((Entity)a2))) * 57.29577951308232);
-        return new double[]{a6, a7};
-    }
+      double a = Math.sqrt(a * a + a * a);
+      double a = -Math.toDegrees(Math.atan(a / a));
+      a = (double)Method1671((float)a);
+      a = (double)Method1671((float)a);
+      return new float[]{(float)a, (float)a};
+   }
+
+   private static float Method1671(float a) {
+      for(a %= 360.0F; a >= 180.0F; a -= 360.0F) {
+      }
+
+      while(a < -180.0F) {
+         a += 360.0F;
+      }
+
+      return a;
+   }
+
+   public boolean Method817(EntityLivingBase a, float a) {
+      a = (float)((double)a * 0.5);
+      double a = (((double)mc.thePlayer.rotationYaw - this.Method818(a)[0]) % 360.0 + 540.0) % 360.0 - 180.0;
+      return a > 0.0 && a < (double)a || (double)(-a) < a && a < 0.0;
+   }
+
+   public double[] Method818(EntityLivingBase a) {
+      double a = a.posX - mc.thePlayer.posX;
+      double a = a.posY - mc.thePlayer.posY;
+      double a = a.posZ - mc.thePlayer.posZ;
+      a /= (double)mc.thePlayer.getDistanceToEntity(a);
+      double a = -(Math.atan2(a, a) * 57.29577951308232);
+      double a = -(Math.asin(a) * 57.29577951308232);
+      return new double[]{a, a};
+   }
 }

@@ -1,48 +1,34 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- *  java.util.Map
- */
 package awsl;
 
-import awsl.Class267;
 import java.util.Map;
 import obfuscate.a;
 
-public class Class93
-extends a {
-    public String Field807;
-    public String Field808;
-    public String Field809;
+public class Class93 extends a {
+   public String Field807;
+   public String Field808;
+   public String Field809;
 
-    public Class93(int a2, String a3, String a4, String a5) {
-        super(a2);
-        this.Field807 = a3;
-        this.Field808 = a4;
-        this.Field809 = a5;
-    }
+   public Class93(int a, String a, String a, String a) {
+      super(a);
+      this.Field807 = a;
+      this.Field808 = a;
+      this.Field809 = a;
+   }
 
-    public void Method68(int a2) {
-        this.Field796 = a2;
-    }
+   public void Method68(int a) {
+      this.Field796 = a;
+   }
 
-    @Override
-    public int Method0() {
-        return 4;
-    }
+   public int Method0() {
+      return 4;
+   }
 
-    @Override
-    public void Method1(Class267 a2) {
-        a2.Method1949(this.Field796, this.Field807, this.Field808, this.Field809);
-        this.Method3643(a2);
-    }
+   public void Method1(Class267 a) {
+      a.Method1949(this.Field796, this.Field807, this.Field808, this.Field809);
+      this.Method3643(a);
+   }
 
-    @Override
-    public a Method2(Map a2) {
-        return new Class93(this.Field796, this.Field807, this.Field808, this.Field809).Method3646(this);
-    }
+   public a Method2(Map a) {
+      return (new Class93(this.Field796, this.Field807, this.Field808, this.Field809)).Method3646(this);
+   }
 }

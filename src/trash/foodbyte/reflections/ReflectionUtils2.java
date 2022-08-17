@@ -1,50 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  com.google.common.collect.Ordering
- *  java.lang.AssertionError
- *  java.lang.Boolean
- *  java.lang.CharSequence
- *  java.lang.Class
- *  java.lang.ClassNotFoundException
- *  java.lang.Double
- *  java.lang.Exception
- *  java.lang.Float
- *  java.lang.IllegalAccessException
- *  java.lang.InstantiationException
- *  java.lang.Integer
- *  java.lang.NoSuchFieldException
- *  java.lang.NoSuchMethodException
- *  java.lang.Object
- *  java.lang.ReflectiveOperationException
- *  java.lang.RuntimeException
- *  java.lang.String
- *  java.lang.Throwable
- *  java.lang.reflect.Constructor
- *  java.lang.reflect.Field
- *  java.lang.reflect.InvocationTargetException
- *  java.lang.reflect.Method
- *  java.nio.ByteBuffer
- *  java.util.HashMap
- *  java.util.Map
- *  java.util.Objects
- *  net.minecraft.client.Minecraft
- *  net.minecraft.client.gui.GuiPlayerTabOverlay
- *  net.minecraft.client.gui.GuiScreen
- *  net.minecraft.client.multiplayer.PlayerControllerMP
- *  net.minecraft.client.renderer.entity.RenderManager
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.util.AxisAlignedBB
- *  net.minecraft.util.Timer
- *  net.minecraft.util.Vec3
- *  net.minecraftforge.client.event.MouseEvent
- *  net.minecraftforge.common.MinecraftForge
- *  net.minecraftforge.fml.common.eventhandler.Event
- *  net.minecraftforge.fml.common.gameevent.InputEvent$MouseInputEvent
- *  org.lwjgl.input.Mouse
- */
 package trash.foodbyte.reflections;
 
 import com.google.common.collect.Ordering;
@@ -69,607 +22,582 @@ import net.minecraft.util.Timer;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.client.event.MouseEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import org.lwjgl.input.Mouse;
 import trash.foodbyte.gui.AltLogin;
-import trash.foodbyte.reflections.ObfuscatedField;
-import trash.foodbyte.reflections.ObfuscatedMethods;
 import trash.foodbyte.utils.RenderUtils;
 
 public class ReflectionUtils2 {
-    private static Map cache2;
-    private static Map cache;
-    private static final Minecraft mc;
-    static final boolean trash;
+   private static Map cache2 = new HashMap();
+   private static Map cache = new HashMap();
+   private static final Minecraft mc = Minecraft.getMinecraft();
+   static final boolean trash = !ReflectionUtils2.class.desiredAssertionStatus();
 
-    public static Object newInstance(Class clazz, String name, boolean cache, Object[] args) {
-        try {
-            return ((Method)Objects.requireNonNull((Object)ReflectionUtils2.getMethod(clazz, name, cache))).invoke(clazz.newInstance(), args);
-        }
-        catch (IllegalAccessException | InstantiationException | InvocationTargetException a) {
-            a.printStackTrace();
-            return null;
-        }
-    }
+   public static Object newInstance(Class clazz, String name, boolean cache, Object[] args) {
+      try {
+         return ((Method)Objects.requireNonNull(getMethod(clazz, name, cache))).invoke(clazz.newInstance(), args);
+      } catch (InvocationTargetException | InstantiationException | IllegalAccessException var5) {
+         var5.printStackTrace();
+         return null;
+      }
+   }
 
-    public static Object invokeMethod(Class clazz, Object object, String methodName, Object[] args) {
-        try {
-            return ((Method)Objects.requireNonNull((Object)ReflectionUtils2.getMethod(clazz, methodName, true))).invoke(object, args);
-        }
-        catch (IllegalAccessException | InvocationTargetException a) {
-            a.printStackTrace();
-            return null;
-        }
-    }
+   public static Object invokeMethod(Class clazz, Object object, String methodName, Object[] args) {
+      try {
+         return ((Method)Objects.requireNonNull(getMethod(clazz, methodName, true))).invoke(object, args);
+      } catch (InvocationTargetException | IllegalAccessException var5) {
+         var5.printStackTrace();
+         return null;
+      }
+   }
 
-    public static boolean isHittingBlock() {
-        try {
-            Field a = ReflectionUtils2.mc.playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
-            a.setAccessible(true);
-            return a.getBoolean((Object)ReflectionUtils2.mc.playerController);
-        }
-        catch (Exception exception) {
-            return false;
-        }
-    }
+   public static boolean isHittingBlock() {
+      try {
+         Field a = mc.playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
+         a.setAccessible(true);
+         return a.getBoolean(mc.playerController);
+      } catch (Exception var1) {
+         return false;
+      }
+   }
 
-    public static void setField(Field field, Object object, Object newField) {
-        try {
-            field.setAccessible(true);
-            field.set(object, newField);
-        }
-        catch (IllegalAccessException a) {
-            a.printStackTrace();
-        }
-    }
+   public static void setField(Field field, Object object, Object newField) {
+      try {
+         field.setAccessible(true);
+         field.set(object, newField);
+      } catch (IllegalAccessException var4) {
+         var4.printStackTrace();
+      }
 
-    public static float getTimerSpeed() {
-        Field a = null;
-        try {
-            a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
-            a.setAccessible(true);
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        Field a2 = null;
-        try {
-            a2 = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        try {
-            a2.setAccessible(true);
-            return a.getFloat((Object)mc);
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            return 1.0f;
-        }
-    }
+   }
 
-    public static void setTimerSpeed(float timerSpeed) {
-        Field a = null;
-        try {
-            a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
-            a.setAccessible(true);
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        Field a2 = null;
-        try {
-            a2 = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        try {
-            a2.setAccessible(true);
-            a2.set(a.get((Object)mc), (Object)Float.valueOf((float)timerSpeed));
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            // empty catch block
-        }
-    }
+   public static float getTimerSpeed() {
+      Field a = null;
 
-    public static float getRenderPartialTicks() {
-        Field a = null;
-        try {
-            a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
-            a.setAccessible(true);
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        Field a2 = null;
-        try {
-            a2 = Timer.class.getDeclaredField(ObfuscatedField.renderPartialTicks.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        float a3 = 0.0f;
-        try {
-            a2.setAccessible(true);
-            a3 = ((Float)a2.get(a.get((Object)mc))).floatValue();
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            // empty catch block
-        }
-        return a3;
-    }
+      try {
+         a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
+         a.setAccessible(true);
+      } catch (NoSuchFieldException var5) {
+      }
 
-    public static double getRenderPosX() {
-        Field a = null;
-        try {
-            a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosX.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        a.setAccessible(true);
-        try {
-            return a.getDouble((Object)mc.getRenderManager());
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            return 0.0;
-        }
-    }
+      Field a = null;
 
-    public static double getRenderPosY() {
-        Field a = null;
-        try {
-            a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosY.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        a.setAccessible(true);
-        try {
-            return a.getDouble((Object)mc.getRenderManager());
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            return 0.0;
-        }
-    }
+      try {
+         a = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
+      } catch (NoSuchFieldException var4) {
+      }
 
-    public static double getRenderPosZ() {
-        Field a = null;
-        try {
-            a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosZ.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        a.setAccessible(true);
-        try {
-            return a.getDouble((Object)mc.getRenderManager());
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            return 0.0;
-        }
-    }
+      try {
+         a.setAccessible(true);
+         return a.getFloat(mc);
+      } catch (IllegalAccessException var3) {
+         return 1.0F;
+      }
+   }
 
-    public static Object invokeMethod(Class clazz, Object object, String methodName, boolean cache, Object[] args) {
-        try {
-            return ((Method)Objects.requireNonNull((Object)ReflectionUtils2.getMethod(clazz, methodName, cache))).invoke(object, args);
-        }
-        catch (IllegalAccessException | InvocationTargetException a) {
-            a.printStackTrace();
-            return null;
-        }
-    }
+   public static void setTimerSpeed(float timerSpeed) {
+      Field a = null;
 
-    public static Method getMethod(Class clazz, String methodName, boolean cache) {
-        int[] a = RenderUtils.trash();
-        if (ReflectionUtils2.cache.containsKey((Object)ReflectionUtils2.format(clazz, methodName))) {
-            return (Method)ReflectionUtils2.cache.Method2665((Object)ReflectionUtils2.format(clazz, methodName));
-        }
-        int n = 0;
-        Method[] methodArray = clazz.getDeclaredMethods();
-        int n2 = methodArray.length;
-        if (n < n2) {
-            Method a2 = methodArray[n];
-            if (a2.getName().equals((Object)methodName)) {
-                if (!a2.isAccessible()) {
-                    a2.setAccessible(true);
-                }
-                ReflectionUtils2.cache.put((Object)ReflectionUtils2.format(clazz, methodName), (Object)a2);
-                return a2;
+      try {
+         a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
+         a.setAccessible(true);
+      } catch (NoSuchFieldException var6) {
+      }
+
+      Field a = null;
+
+      try {
+         a = Timer.class.getDeclaredField(ObfuscatedField.timerSpeed.getObfuscatedName());
+      } catch (NoSuchFieldException var5) {
+      }
+
+      try {
+         a.setAccessible(true);
+         a.set(a.get(mc), timerSpeed);
+      } catch (IllegalAccessException var4) {
+      }
+
+   }
+
+   public static float getRenderPartialTicks() {
+      Field a = null;
+
+      try {
+         a = mc.getClass().getDeclaredField(ObfuscatedField.timer.getObfuscatedName());
+         a.setAccessible(true);
+      } catch (NoSuchFieldException var6) {
+      }
+
+      Field a = null;
+
+      try {
+         a = Timer.class.getDeclaredField(ObfuscatedField.renderPartialTicks.getObfuscatedName());
+      } catch (NoSuchFieldException var5) {
+      }
+
+      float a = 0.0F;
+
+      try {
+         a.setAccessible(true);
+         a = (Float)a.get(a.get(mc));
+      } catch (IllegalAccessException var4) {
+      }
+
+      return a;
+   }
+
+   public static double getRenderPosX() {
+      Field a = null;
+
+      try {
+         a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosX.getObfuscatedName());
+      } catch (NoSuchFieldException var3) {
+      }
+
+      a.setAccessible(true);
+
+      try {
+         return a.getDouble(mc.getRenderManager());
+      } catch (IllegalAccessException var2) {
+         return 0.0;
+      }
+   }
+
+   public static double getRenderPosY() {
+      Field a = null;
+
+      try {
+         a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosY.getObfuscatedName());
+      } catch (NoSuchFieldException var3) {
+      }
+
+      a.setAccessible(true);
+
+      try {
+         return a.getDouble(mc.getRenderManager());
+      } catch (IllegalAccessException var2) {
+         return 0.0;
+      }
+   }
+
+   public static double getRenderPosZ() {
+      Field a = null;
+
+      try {
+         a = RenderManager.class.getDeclaredField(ObfuscatedField.renderPosZ.getObfuscatedName());
+      } catch (NoSuchFieldException var3) {
+      }
+
+      a.setAccessible(true);
+
+      try {
+         return a.getDouble(mc.getRenderManager());
+      } catch (IllegalAccessException var2) {
+         return 0.0;
+      }
+   }
+
+   public static Object invokeMethod(Class clazz, Object object, String methodName, boolean cache, Object[] args) {
+      try {
+         return ((Method)Objects.requireNonNull(getMethod(clazz, methodName, cache))).invoke(object, args);
+      } catch (InvocationTargetException | IllegalAccessException var6) {
+         var6.printStackTrace();
+         return null;
+      }
+   }
+
+   public static Method getMethod(Class clazz, String methodName, boolean cache) {
+      int[] a = RenderUtils.trash();
+      if (ReflectionUtils2.cache.containsKey(format(clazz, methodName))) {
+         return (Method)ReflectionUtils2.cache.Method2665(format(clazz, methodName));
+      } else {
+         Method[] var4 = clazz.getDeclaredMethods();
+         int var5 = var4.length;
+         int var6 = 0;
+         if (var6 < var5) {
+            Method a = var4[var6];
+            if (a.getName().equals(methodName)) {
+               if (!a.isAccessible()) {
+                  a.setAccessible(true);
+               }
+
+               ReflectionUtils2.cache.put(format(clazz, methodName), a);
+               return a;
             }
-            ++n;
-        }
-        return null;
-    }
 
-    public static boolean getBoolean(Class clazz, Object object, String name) {
-        try {
-            return ((Field)Objects.requireNonNull((Object)ReflectionUtils2.set(clazz, name, true))).getBoolean(object);
-        }
-        catch (IllegalAccessException a) {
-            a.printStackTrace();
-            return false;
-        }
-    }
+            ++var6;
+         }
 
-    public static boolean getBoolean(Class clazz, Object object, String name, boolean cache) {
-        try {
-            return ((Field)Objects.requireNonNull((Object)ReflectionUtils2.set(clazz, name, cache))).getBoolean(object);
-        }
-        catch (IllegalAccessException a) {
-            a.printStackTrace();
-            return false;
-        }
-    }
+         return null;
+      }
+   }
 
-    public static Object getObject(Class clazz, Object object, String name) {
-        try {
-            return ((Field)Objects.requireNonNull((Object)ReflectionUtils2.set(clazz, name, true))).get(object);
-        }
-        catch (IllegalAccessException a) {
-            a.printStackTrace();
-            return false;
-        }
-    }
+   public static boolean getBoolean(Class clazz, Object object, String name) {
+      try {
+         return ((Field)Objects.requireNonNull(set(clazz, name, true))).getBoolean(object);
+      } catch (IllegalAccessException var4) {
+         var4.printStackTrace();
+         return false;
+      }
+   }
 
-    public static Object getObject(Class clazz, Object object, String name, boolean cache) {
-        try {
-            return ((Field)Objects.requireNonNull((Object)ReflectionUtils2.set(clazz, name, cache))).get(object);
-        }
-        catch (IllegalAccessException a) {
-            a.printStackTrace();
-            return false;
-        }
-    }
+   public static boolean getBoolean(Class clazz, Object object, String name, boolean cache) {
+      try {
+         return ((Field)Objects.requireNonNull(set(clazz, name, cache))).getBoolean(object);
+      } catch (IllegalAccessException var5) {
+         var5.printStackTrace();
+         return false;
+      }
+   }
 
-    public static void set(Class clazz, Object object, String name, Object newObject) {
-        try {
-            ((Field)Objects.requireNonNull((Object)ReflectionUtils2.set(clazz, name, true))).set(object, newObject);
-        }
-        catch (IllegalAccessException a) {
-            a.printStackTrace();
-        }
-    }
+   public static Object getObject(Class clazz, Object object, String name) {
+      try {
+         return ((Field)Objects.requireNonNull(set(clazz, name, true))).get(object);
+      } catch (IllegalAccessException var4) {
+         var4.printStackTrace();
+         return false;
+      }
+   }
 
-    public static Field set(Class clazz, String name, boolean cache) {
-        int[] a = RenderUtils.trash();
-        if (cache2.containsKey((Object)ReflectionUtils2.format(clazz, name))) {
-            return (Field)cache2.Method2665((Object)ReflectionUtils2.format(clazz, name));
-        }
-        int n = 0;
-        Field[] fieldArray = clazz.getDeclaredFields();
-        int n2 = fieldArray.length;
-        if (n < n2) {
-            Field a2 = fieldArray[n];
-            if (a2.getName().equals((Object)name)) {
-                if (!a2.isAccessible()) {
-                    a2.setAccessible(true);
-                }
-                cache2.put((Object)ReflectionUtils2.format(clazz, name), (Object)a2);
-                return a2;
+   public static Object getObject(Class clazz, Object object, String name, boolean cache) {
+      try {
+         return ((Field)Objects.requireNonNull(set(clazz, name, cache))).get(object);
+      } catch (IllegalAccessException var5) {
+         var5.printStackTrace();
+         return false;
+      }
+   }
+
+   public static void set(Class clazz, Object object, String name, Object newObject) {
+      try {
+         ((Field)Objects.requireNonNull(set(clazz, name, true))).set(object, newObject);
+      } catch (IllegalAccessException var5) {
+         var5.printStackTrace();
+      }
+
+   }
+
+   public static Field set(Class clazz, String name, boolean cache) {
+      int[] a = RenderUtils.trash();
+      if (cache2.containsKey(format(clazz, name))) {
+         return (Field)cache2.Method2665(format(clazz, name));
+      } else {
+         Field[] var4 = clazz.getDeclaredFields();
+         int var5 = var4.length;
+         int var6 = 0;
+         if (var6 < var5) {
+            Field a = var4[var6];
+            if (a.getName().equals(name)) {
+               if (!a.isAccessible()) {
+                  a.setAccessible(true);
+               }
+
+               cache2.put(format(clazz, name), a);
+               return a;
             }
-            ++n;
-        }
-        return null;
-    }
 
-    private static String format(Class clazz, String method) {
-        return clazz.getName().replace((CharSequence)".", (CharSequence)"/") + "-" + method;
-    }
+            ++var6;
+         }
 
-    public static void clear() {
-        cache.clear();
-        cache2.clear();
-    }
+         return null;
+      }
+   }
 
-    public static Ordering getOrdering() {
-        try {
-            Field a = GuiPlayerTabOverlay.class.getField(ObfuscatedField.field_175252_a.getObfuscatedName());
-            a.setAccessible(true);
-            return (Ordering)a.get((Object)new GuiPlayerTabOverlay(mc, ReflectionUtils2.mc.ingameGUI));
-        }
-        catch (Exception a) {
-            a.printStackTrace();
-            return null;
-        }
-    }
+   private static String format(Class clazz, String method) {
+      return clazz.getName().replace(".", "/") + "-" + method;
+   }
 
-    public static void setupCameraTransform(float a, int b) {
-        try {
-            Method a2 = ReflectionUtils2.mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.setupCameraTransform.getObfuscatedName(), new Class[]{Float.TYPE, Integer.TYPE});
-            a2.setAccessible(true);
-            a2.invoke((Object)ReflectionUtils2.mc.entityRenderer, new Object[]{Float.valueOf((float)a), b});
-        }
-        catch (Exception a3) {
-            a3.printStackTrace();
-        }
-    }
+   public static void clear() {
+      cache.clear();
+      cache2.clear();
+   }
 
-    public static void orientCamera(float a) {
-        try {
-            Method a2 = ReflectionUtils2.mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.orientCamera.getObfuscatedName(), new Class[]{Float.TYPE});
-            a2.setAccessible(true);
-            a2.invoke((Object)ReflectionUtils2.mc.entityRenderer, new Object[]{Float.valueOf((float)a)});
-        }
-        catch (Exception a3) {
-            a3.printStackTrace();
-        }
-    }
+   public static Ordering getOrdering() {
+      try {
+         Field a = GuiPlayerTabOverlay.class.getField(ObfuscatedField.field_175252_a.getObfuscatedName());
+         a.setAccessible(true);
+         return (Ordering)a.get(new GuiPlayerTabOverlay(mc, mc.ingameGUI));
+      } catch (Exception var1) {
+         var1.printStackTrace();
+         return null;
+      }
+   }
 
-    public static AxisAlignedBB craeteAxisAlignedBB(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
-        Class a = null;
-        try {
-            a = Class.forName((String)"net.minecraft.util.AxisAlignedBB");
-        }
-        catch (ClassNotFoundException classNotFoundException) {
-            // empty catch block
-        }
-        Constructor a2 = null;
-        try {
-            a2 = a.getDeclaredConstructor(new Class[]{Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE});
-        }
-        catch (NoSuchMethodException noSuchMethodException) {
-            // empty catch block
-        }
-        a2.setAccessible(true);
-        try {
-            return (AxisAlignedBB)a2.newInstance(new Object[]{minX, minY, minZ, maxX, maxY, maxZ});
-        }
-        catch (IllegalAccessException | InstantiationException | InvocationTargetException a3) {
-            a3.printStackTrace();
-            return null;
-        }
-    }
+   public static void setupCameraTransform(float a, int b) {
+      try {
+         Method a = mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.setupCameraTransform.getObfuscatedName(), Float.TYPE, Integer.TYPE);
+         a.setAccessible(true);
+         a.invoke(mc.entityRenderer, a, b);
+      } catch (Exception var3) {
+         var3.printStackTrace();
+      }
 
-    public static Vec3 createVec3(double x, double y, double z) {
-        Class a = null;
-        try {
-            a = Class.forName((String)"net.minecraft.util.Vec3");
-        }
-        catch (ClassNotFoundException classNotFoundException) {
-            // empty catch block
-        }
-        Constructor a2 = null;
-        try {
-            a2 = a.getDeclaredConstructor(new Class[]{Double.TYPE, Double.TYPE, Double.TYPE});
-        }
-        catch (NoSuchMethodException noSuchMethodException) {
-            // empty catch block
-        }
-        a2.setAccessible(true);
-        try {
-            return (Vec3)a2.newInstance(new Object[]{x, y, z});
-        }
-        catch (InstantiationException a3) {
-            a3.printStackTrace();
-        }
-        catch (IllegalAccessException a4) {
-            a4.printStackTrace();
-        }
-        catch (InvocationTargetException a5) {
-            a5.printStackTrace();
-        }
-        return null;
-    }
+   }
 
-    public static void setRightClickDelayTimer(int rightClickDelayTimer) {
-        try {
-            Field a = mc.getClass().getDeclaredField(ObfuscatedField.rightClickDelayTimer.getObfuscatedName());
-            a.setAccessible(true);
-            a.setInt((Object)mc, rightClickDelayTimer);
-        }
-        catch (ReflectiveOperationException a) {
-            throw new RuntimeException((Throwable)a);
-        }
-    }
+   public static void orientCamera(float a) {
+      try {
+         Method a = mc.entityRenderer.getClass().getDeclaredMethod(ObfuscatedMethods.orientCamera.getObfuscatedName(), Float.TYPE);
+         a.setAccessible(true);
+         a.invoke(mc.entityRenderer, a);
+      } catch (Exception var2) {
+         var2.printStackTrace();
+      }
 
-    public static void setLeftClickCounter(int leftClickCounter) {
-        try {
-            Field a = mc.getClass().getDeclaredField(ObfuscatedField.leftClickCounter.getObfuscatedName());
-            a.setAccessible(true);
-            a.setInt((Object)mc, leftClickCounter);
-        }
-        catch (ReflectiveOperationException a) {
-            throw new RuntimeException((Throwable)a);
-        }
-    }
+   }
 
-    public static void clickMouse() {
-        try {
-            Method a = mc.getClass().getDeclaredMethod(ObfuscatedMethods.clickMouse.getObfuscatedName(), new Class[0]);
-            a.setAccessible(true);
-            a.invoke((Object)mc, new Object[0]);
-        }
-        catch (Exception a) {
-            a.printStackTrace();
-        }
-    }
+   public static AxisAlignedBB craeteAxisAlignedBB(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
+      Class a = null;
 
-    public static void setJumpTicks(int jumpTicks) {
-        try {
-            Field a = EntityLivingBase.class.getDeclaredField(ObfuscatedField.jumpTicks.getObfuscatedName());
-            a.setAccessible(true);
-            a.setInt((Object)ReflectionUtils2.mc.thePlayer, jumpTicks);
-        }
-        catch (ReflectiveOperationException a) {
-            throw new RuntimeException((Throwable)a);
-        }
-    }
+      try {
+         a = Class.forName("net.minecraft.util.AxisAlignedBB");
+      } catch (ClassNotFoundException var17) {
+      }
 
-    public static AxisAlignedBB createAxisAlignedBB(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
-        Constructor a;
-        Class a2;
-        block10: {
-            a2 = null;
-            try {
-                a2 = Class.forName((String)"net.minecraft.util.AxisAlignedBB");
-            }
-            catch (ClassNotFoundException classNotFoundException) {
-                // empty catch block
-            }
-            a = null;
-            if (trash) break block10;
+      Constructor a = null;
+
+      try {
+         a = a.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE);
+      } catch (NoSuchMethodException var16) {
+      }
+
+      a.setAccessible(true);
+
+      try {
+         return (AxisAlignedBB)a.newInstance(minX, minY, minZ, maxX, maxY, maxZ);
+      } catch (IllegalAccessException | InvocationTargetException | InstantiationException var15) {
+         var15.printStackTrace();
+         return null;
+      }
+   }
+
+   public static Vec3 createVec3(double x, double y, double z) {
+      Class a = null;
+
+      try {
+         a = Class.forName("net.minecraft.util.Vec3");
+      } catch (ClassNotFoundException var13) {
+      }
+
+      Constructor a = null;
+
+      try {
+         a = a.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE);
+      } catch (NoSuchMethodException var12) {
+      }
+
+      a.setAccessible(true);
+
+      try {
+         return (Vec3)a.newInstance(x, y, z);
+      } catch (InstantiationException var9) {
+         var9.printStackTrace();
+      } catch (IllegalAccessException var10) {
+         var10.printStackTrace();
+      } catch (InvocationTargetException var11) {
+         var11.printStackTrace();
+      }
+
+      return null;
+   }
+
+   public static void setRightClickDelayTimer(int rightClickDelayTimer) {
+      try {
+         Field a = mc.getClass().getDeclaredField(ObfuscatedField.rightClickDelayTimer.getObfuscatedName());
+         a.setAccessible(true);
+         a.setInt(mc, rightClickDelayTimer);
+      } catch (ReflectiveOperationException var2) {
+         throw new RuntimeException(var2);
+      }
+   }
+
+   public static void setLeftClickCounter(int leftClickCounter) {
+      try {
+         Field a = mc.getClass().getDeclaredField(ObfuscatedField.leftClickCounter.getObfuscatedName());
+         a.setAccessible(true);
+         a.setInt(mc, leftClickCounter);
+      } catch (ReflectiveOperationException var2) {
+         throw new RuntimeException(var2);
+      }
+   }
+
+   public static void clickMouse() {
+      try {
+         Method a = mc.getClass().getDeclaredMethod(ObfuscatedMethods.clickMouse.getObfuscatedName());
+         a.setAccessible(true);
+         a.invoke(mc);
+      } catch (Exception var1) {
+         var1.printStackTrace();
+      }
+
+   }
+
+   public static void setJumpTicks(int jumpTicks) {
+      try {
+         Field a = EntityLivingBase.class.getDeclaredField(ObfuscatedField.jumpTicks.getObfuscatedName());
+         a.setAccessible(true);
+         a.setInt(mc.thePlayer, jumpTicks);
+      } catch (ReflectiveOperationException var2) {
+         throw new RuntimeException(var2);
+      }
+   }
+
+   public static AxisAlignedBB createAxisAlignedBB(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
+      Class a = null;
+
+      try {
+         a = Class.forName("net.minecraft.util.AxisAlignedBB");
+      } catch (ClassNotFoundException var19) {
+      }
+
+      Constructor a = null;
+
+      try {
+         if (!trash) {
             throw new AssertionError();
-        }
-        try {
-            a = a2.getDeclaredConstructor(new Class[]{Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE});
-        }
-        catch (NoSuchMethodException noSuchMethodException) {
-            // empty catch block
-        }
-        try {
-            return (AxisAlignedBB)a.newInstance(new Object[]{minX, minY, minZ, maxX, maxY, maxZ});
-        }
-        catch (InstantiationException instantiationException) {
-        }
-        catch (IllegalAccessException illegalAccessException) {
-        }
-        catch (InvocationTargetException invocationTargetException) {
-            // empty catch block
-        }
-        return null;
-    }
+         }
 
-    public static Class[] getInterfaces(Object object) {
-        Class a = object.getClass();
-        Class[] a2 = a.getInterfaces();
-        return a2;
-    }
+         a = a.getDeclaredConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE);
+      } catch (NoSuchMethodException var18) {
+      }
 
-    public static boolean isMinecraftNull() {
-        try {
-            return ReflectionUtils2.set(Minecraft.class, "theMinecraft", true) == null;
-        }
-        catch (Exception a) {
-            return true;
-        }
-    }
+      try {
+         return (AxisAlignedBB)a.newInstance(minX, minY, minZ, maxX, maxY, maxZ);
+      } catch (InstantiationException var15) {
+      } catch (IllegalAccessException var16) {
+      } catch (InvocationTargetException var17) {
+      }
 
-    public static boolean isProning(EntityPlayer player) {
-        try {
-            Class a = Class.forName((String)"com.vicmatskiv.weaponlib.ClientEventHandler");
-            Method a2 = a.getDeclaredMethod("isProning", new Class[0]);
-            return (Boolean)a2.invoke((Object)a, new Object[]{player});
-        }
-        catch (Exception exception) {
-            return false;
-        }
-    }
+      return null;
+   }
 
-    public static void setCurBlockDamageMP(int curBlockDamageMP) {
-        Field a = null;
-        try {
-            a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        a.setAccessible(true);
-        try {
-            a.setInt((Object)ReflectionUtils2.mc.playerController, curBlockDamageMP);
-        }
-        catch (IllegalAccessException a2) {
-            a2.printStackTrace();
-        }
-    }
+   public static Class[] getInterfaces(Object object) {
+      Class a = object.getClass();
+      Class[] a = a.getInterfaces();
+      return a;
+   }
 
-    public static boolean isHittingBlock2() {
-        Field a = null;
-        try {
-            a = Minecraft.getMinecraft().playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
-            a.setAccessible(true);
-            return a.getBoolean((Object)Minecraft.getMinecraft().playerController.getClass());
-        }
-        catch (Exception exception) {
-            return false;
-        }
-    }
+   public static boolean isMinecraftNull() {
+      try {
+         return set(Minecraft.class, "theMinecraft", true) == null;
+      } catch (Exception var1) {
+         return true;
+      }
+   }
 
-    public static void setBlockHitDelay(int blockHitDelay) {
-        Field a = null;
-        try {
-            a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.blockHitDelay.getObfuscatedName());
-        }
-        catch (NoSuchFieldException a2) {
-            a2.printStackTrace();
-        }
-        a.setAccessible(true);
-        try {
-            a.setInt((Object)ReflectionUtils2.mc.playerController, blockHitDelay);
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            // empty catch block
-        }
-    }
+   public static boolean isProning(EntityPlayer player) {
+      try {
+         Class a = Class.forName("com.vicmatskiv.weaponlib.ClientEventHandler");
+         Method a = a.getDeclaredMethod("isProning");
+         return (Boolean)a.invoke(a, player);
+      } catch (Exception var3) {
+         return false;
+      }
+   }
 
-    public static float getCurBlockDamageMP() {
-        Field a = null;
-        try {
-            a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
-        }
-        catch (NoSuchFieldException noSuchFieldException) {
-            // empty catch block
-        }
-        a.setAccessible(true);
-        try {
-            return a.getFloat((Object)ReflectionUtils2.mc.playerController);
-        }
-        catch (IllegalAccessException illegalAccessException) {
-            return 0.0f;
-        }
-    }
+   public static void setCurBlockDamageMP(int curBlockDamageMP) {
+      Field a = null;
 
-    public static void displayGuiAltLogin(Object curScreen) {
-        Minecraft.getMinecraft().displayGuiScreen((GuiScreen)new AltLogin((GuiScreen)curScreen));
-    }
+      try {
+         a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
+      } catch (NoSuchFieldException var4) {
+      }
 
-    public static void displayGuiScreen(Object screen) {
-        Minecraft.getMinecraft().displayGuiScreen((GuiScreen)screen);
-    }
+      a.setAccessible(true);
 
-    public static void pollMouseInputEvent(int a, boolean b) {
-        Field a2 = MouseEvent.class.getDeclaredField("button");
-        Field a3 = MouseEvent.class.getDeclaredField("buttonstate");
-        Field a4 = Mouse.class.getDeclaredField("buttons");
-        Field a5 = Mouse.class.getDeclaredField("eventButton");
-        Field a6 = Mouse.class.getDeclaredField("eventState");
-        MouseEvent a7 = new MouseEvent();
-        trash.foodbyte.event.MouseEvent a8 = new trash.foodbyte.event.MouseEvent();
-        a2.setAccessible(true);
-        a2.set((Object)a7, (Object)a);
-        a3.setAccessible(true);
-        a3.set((Object)a7, (Object)b);
-        a5.setAccessible(true);
-        a5.set(null, (Object)a);
-        a6.setAccessible(true);
-        a6.set(null, (Object)b);
-        MinecraftForge.EVENT_BUS.post((Event)new InputEvent.MouseInputEvent());
-        MinecraftForge.EVENT_BUS.post((Event)a7);
-        EventManager.call(a8);
-        a4.setAccessible(true);
-        ByteBuffer a9 = (ByteBuffer)a4.get(null);
-        a4.setAccessible(false);
-        ByteBuffer byteBuffer = a9;
-        int n = a;
-        boolean bl = true;
-        try {
-            byteBuffer.put(n, (byte)(bl ? 1 : 0));
-        }
-        catch (Exception a22) {
-            a22.printStackTrace();
-        }
-    }
+      try {
+         a.setInt(mc.playerController, curBlockDamageMP);
+      } catch (IllegalAccessException var3) {
+         var3.printStackTrace();
+      }
 
-    static {
-        trash = !ReflectionUtils2.class.desiredAssertionStatus();
-        mc = Minecraft.getMinecraft();
-        cache2 = new HashMap();
-        cache = new HashMap();
-    }
+   }
 
-    private static Exception trash(Exception exception) {
-        return exception;
-    }
+   public static boolean isHittingBlock2() {
+      Field a = null;
+
+      try {
+         a = Minecraft.getMinecraft().playerController.getClass().getDeclaredField(ObfuscatedField.isHittingBlock.getObfuscatedName());
+         a.setAccessible(true);
+         return a.getBoolean(Minecraft.getMinecraft().playerController.getClass());
+      } catch (Exception var2) {
+         return false;
+      }
+   }
+
+   public static void setBlockHitDelay(int blockHitDelay) {
+      Field a = null;
+
+      try {
+         a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.blockHitDelay.getObfuscatedName());
+      } catch (NoSuchFieldException var4) {
+         var4.printStackTrace();
+      }
+
+      a.setAccessible(true);
+
+      try {
+         a.setInt(mc.playerController, blockHitDelay);
+      } catch (IllegalAccessException var3) {
+      }
+
+   }
+
+   public static float getCurBlockDamageMP() {
+      Field a = null;
+
+      try {
+         a = PlayerControllerMP.class.getDeclaredField(ObfuscatedField.curBlockDamageMP.getObfuscatedName());
+      } catch (NoSuchFieldException var3) {
+      }
+
+      a.setAccessible(true);
+
+      try {
+         return a.getFloat(mc.playerController);
+      } catch (IllegalAccessException var2) {
+         return 0.0F;
+      }
+   }
+
+   public static void displayGuiAltLogin(Object curScreen) {
+      Minecraft.getMinecraft().displayGuiScreen(new AltLogin((GuiScreen)curScreen));
+   }
+
+   public static void displayGuiScreen(Object screen) {
+      Minecraft.getMinecraft().displayGuiScreen((GuiScreen)screen);
+   }
+
+   public static void pollMouseInputEvent(int a, boolean b) {
+      try {
+         Field a = MouseEvent.class.getDeclaredField("button");
+         Field a = MouseEvent.class.getDeclaredField("buttonstate");
+         Field a = Mouse.class.getDeclaredField("buttons");
+         Field a = Mouse.class.getDeclaredField("eventButton");
+         Field a = Mouse.class.getDeclaredField("eventState");
+         MouseEvent a = new MouseEvent();
+         trash.foodbyte.event.MouseEvent a = new trash.foodbyte.event.MouseEvent();
+         a.setAccessible(true);
+         a.set(a, a);
+         a.setAccessible(true);
+         a.set(a, b);
+         a.setAccessible(true);
+         a.set((Object)null, a);
+         a.setAccessible(true);
+         a.set((Object)null, b);
+         MinecraftForge.EVENT_BUS.post(new InputEvent.MouseInputEvent());
+         MinecraftForge.EVENT_BUS.post(a);
+         EventManager.call(a);
+         a.setAccessible(true);
+         ByteBuffer a = (ByteBuffer)a.get((Object)null);
+         a.setAccessible(false);
+         a.put(a, (byte)1);
+      } catch (Exception var10) {
+         var10.printStackTrace();
+      }
+
+   }
+
+   private static Exception trash(Exception trash) {
+      return trash;
+   }
 }

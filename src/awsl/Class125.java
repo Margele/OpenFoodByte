@@ -1,53 +1,36 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.awt.image.ColorModel
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- */
 package awsl;
 
-import awsl.Class143;
-import awsl.Class236;
 import java.awt.image.ColorModel;
 
-class Class125
-extends Class143 {
-    public Class125(float a, ColorModel a2, ColorModel a3) {
-        super(a, a2, a3);
-    }
+class Class125 extends Class143 {
+   public Class125(float a, ColorModel a, ColorModel a) {
+      super(a, a, a);
+   }
 
-    /*
-     * WARNING - void declaration
-     */
-    @Override
-    public void Method380(int[] a, int[] a2, float a3) {
-        void a4;
-        void a5;
-        int n = a.length;
-        boolean bl = false;
-        String[] a6 = Class236.Method2106();
-        if (a5 < a4) {
-            int a7 = a[a5];
-            int a8 = a2[a5];
-            int a9 = a[a5 + true];
-            int a10 = a2[a5 + true];
-            int a11 = a[a5 + 2];
-            int a12 = a2[a5 + 2];
-            int a13 = a[a5 + 3];
-            int a14 = a2[a5 + 3];
-            int a15 = Class125.Method1436((a7 << 8) / (256 - a8));
-            int a16 = Class125.Method1436((a9 << 8) / (256 - a10));
-            int a17 = Class125.Method1436((a11 << 8) / (256 - a12));
-            float a18 = a3 * (float)a13 / 255.0f;
-            float a19 = 1.0f - a18;
-            a2[a5] = (int)(a18 * (float)a15 + a19 * (float)a8);
-            a2[a5 + true] = (int)(a18 * (float)a16 + a19 * (float)a10);
-            a2[a5 + 2] = (int)(a18 * (float)a17 + a19 * (float)a12);
-            a2[a5 + 3] = (int)((float)a13 * a3 + (float)a14 * a19);
-            a5 += 4;
-        }
-    }
+   public void Method380(int[] a, int[] a, float a) {
+      int a = a.length;
+      Class236.Method2106();
+      int a = 0;
+      if (a < a) {
+         int a = a[a];
+         int a = a[a];
+         int a = a[a + 1];
+         int a = a[a + 1];
+         int a = a[a + 2];
+         int a = a[a + 2];
+         int a = a[a + 3];
+         int a = a[a + 3];
+         int a = Method1436((a << 8) / (256 - a));
+         int a = Method1436((a << 8) / (256 - a));
+         int a = Method1436((a << 8) / (256 - a));
+         float a = a * (float)a / 255.0F;
+         float a = 1.0F - a;
+         a[a] = (int)(a * (float)a + a * (float)a);
+         a[a + 1] = (int)(a * (float)a + a * (float)a);
+         a[a + 2] = (int)(a * (float)a + a * (float)a);
+         a[a + 3] = (int)((float)a * a + (float)a * a);
+         a += 4;
+      }
+
+   }
 }

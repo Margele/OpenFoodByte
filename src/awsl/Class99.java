@@ -1,32 +1,20 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Object
- *  java.lang.Override
- *  java.lang.String
- */
 package awsl;
 
-import awsl.Class119;
+public class Class99 extends Class119 {
+   public Class99() {
+      this.Field950 = true;
+   }
 
-public class Class99
-extends Class119 {
-    public Class99() {
-        this.Field950 = true;
-    }
+   public int Method3(int a, int a1, int a) {
+      int a = a & -16777216;
+      int a = a >> 16 & 255;
+      int a = a >> 8 & 255;
+      int a = a & 255;
+      a = a * 77 + a * 151 + a * 28 >> 8;
+      return a | a << 16 | a << 8 | a;
+   }
 
-    @Override
-    public int Method3(int a, int a2, int a3) {
-        int a4 = a3 & 0xFF000000;
-        int a5 = a3 >> 16 & 0xFF;
-        int a6 = a3 >> 8 & 0xFF;
-        int a7 = a3 & 0xFF;
-        a3 = a5 * 77 + a6 * 151 + a7 * 28 >> 8;
-        return a4 | a3 << 16 | a3 << 8 | a3;
-    }
-
-    public String toString() {
-        return "Colors/Grayscale";
-    }
+   public String toString() {
+      return "Colors/Grayscale";
+   }
 }

@@ -1,15 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.Exception
- *  java.lang.Object
- *  java.lang.String
- *  java.util.Iterator
- *  java.util.Objects
- *  net.minecraft.client.Minecraft
- *  net.minecraft.util.EnumChatFormatting
- */
 package trash.foodbyte.module;
 
 import awsl.Class322;
@@ -21,260 +9,256 @@ import java.util.Objects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumChatFormatting;
 import obfuscate.a;
-import trash.foodbyte.module.Category;
-import trash.foodbyte.module.GlobalModule;
 import trash.foodbyte.notification.Notification;
 import trash.foodbyte.notification.Types;
 import trash.foodbyte.reflections.Wrapper;
 
 public class Module {
-    public static Minecraft mc;
-    public boolean Field2646;
-    public boolean hide;
-    public boolean isHideModule;
-    public boolean use;
-    private Category Field2650;
-    private String name;
-    private String displayName;
-    private int Field2653;
-    public String Field2654;
-    public String description;
-    private boolean state;
-    private double Field2657;
-    private double Field2658;
-    private Class322 Field2659;
-    private Class322 Field2660;
-    private static int[] Field2661;
+   public static Minecraft mc;
+   public boolean Field2646;
+   public boolean hide;
+   public boolean isHideModule;
+   public boolean use;
+   private Category Field2650;
+   private String name;
+   private String displayName;
+   private int Field2653;
+   public String Field2654;
+   public String description;
+   private boolean state;
+   private double Field2657;
+   private double Field2658;
+   private Class322 Field2659;
+   private Class322 Field2660;
+   private static int[] Field2661;
 
-    public Module(String name, String displayName, Category category) {
-        this.Field2654 = "";
-        this.description = "unknown";
-        mc = Minecraft.getMinecraft();
-        this.name = name;
-        this.displayName = displayName;
-        this.Field2653 = 0;
-        this.Field2650 = category;
-        this.Field2659 = new Class322();
-        this.Field2660 = new Class322();
-    }
+   public Module(String name, String displayName, Category category) {
+      this.Field2654 = "";
+      this.description = "unknown";
+      mc = Minecraft.getMinecraft();
+      this.name = name;
+      this.displayName = displayName;
+      this.Field2653 = 0;
+      this.Field2650 = category;
+      this.Field2659 = new Class322();
+      this.Field2660 = new Class322();
+   }
 
-    public Module(String a2, Category category) {
-        int[] nArray = Module.Method1041();
-        int[] nArray2 = nArray;
-        this.Field2654 = "";
-        this.description = "unknown";
-        mc = Minecraft.getMinecraft();
-        this.name = a2;
-        this.displayName = a2;
-        this.Field2653 = 0;
-        this.Field2650 = category;
-        this.Field2659 = new Class322();
-        this.Field2660 = new Class322();
-        if (a.trash() == null) {
-            Module.Method1040(new int[4]);
-        }
-    }
+   public Module(String a, Category category) {
+      Method1041();
+      super();
+      this.Field2654 = "";
+      this.description = "unknown";
+      mc = Minecraft.getMinecraft();
+      this.name = a;
+      this.displayName = a;
+      this.Field2653 = 0;
+      this.Field2650 = category;
+      this.Field2659 = new Class322();
+      this.Field2660 = new Class322();
+      if (a.trash() == null) {
+         Method1040(new int[4]);
+      }
 
-    public String Method1016() {
-        return this.Field2654;
-    }
+   }
 
-    public void setDisplayTag(String a2) {
-        String a3 = a2;
-        int[] a4 = Module.Method1041();
-        if (a3.isEmpty()) {
-            this.Field2654 = a3;
-        }
-        this.Field2654 = String.format((String)" %s", (Object[])new Object[]{EnumChatFormatting.GRAY + a2});
-    }
+   public String Method1016() {
+      return this.Field2654;
+   }
 
-    public String getDescription() {
-        return this.description;
-    }
+   public void setDisplayTag(String a) {
+      int[] a = Method1041();
+      if (a.isEmpty()) {
+         this.Field2654 = a;
+      }
 
-    public boolean canUse() {
-        return this.use;
-    }
+      this.Field2654 = String.format(" %s", EnumChatFormatting.GRAY + a);
+   }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+   public String getDescription() {
+      return this.description;
+   }
 
-    public String getName() {
-        return this.name;
-    }
+   public boolean canUse() {
+      return this.use;
+   }
 
-    public int Method1020() {
-        return this.Field2653;
-    }
+   public void setDescription(String description) {
+      this.description = description;
+   }
 
-    public void Method1021(int a2) {
-        this.Field2653 = a2;
-    }
+   public String getName() {
+      return this.name;
+   }
 
-    public void setHideModule(boolean isHide) {
-        this.isHideModule = isHide;
-    }
+   public int Method1020() {
+      return this.Field2653;
+   }
 
-    public String Method1023() {
-        return this.displayName;
-    }
+   public void Method1021(int a) {
+      this.Field2653 = a;
+   }
 
-    public Category Method1024() {
-        return this.Field2650;
-    }
+   public void setHideModule(boolean isHide) {
+      this.isHideModule = isHide;
+   }
 
-    public boolean getState() {
-        return this.state;
-    }
+   public String Method1023() {
+      return this.displayName;
+   }
 
-    public boolean Method1026() {
-        return Wrapper.INSTANCE.isVaildWorldAndPlayer();
-    }
+   public Category Method1024() {
+      return this.Field2650;
+   }
 
-    public void idk() {
-    }
+   public boolean getState() {
+      return this.state;
+   }
 
-    public void onEnable() {
-    }
+   public boolean Method1026() {
+      return Wrapper.INSTANCE.isVaildWorldAndPlayer();
+   }
 
-    public void onDisable() {
-    }
+   public void idk() {
+   }
 
-    public void toggle() {
-        block6: {
-            block7: {
-                int[] nArray = Module.Method1041();
-                if (!Objects.nonNull((Object)Module.mc.theWorld) || this.Field2646) break block6;
-                if (!this.state) break block7;
-                if (GlobalModule.toggleSound.getValue()) {
-                    Module.mc.thePlayer.playSound("mod.on", 1.0f, 1.0f);
-                }
-                if (!GlobalModule.toggleNotification.getValue()) break block6;
-                GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("\u00a73Module", this.name + " \u00a7aEnabled", Types.SUCCESS));
-            }
+   public void onEnable() {
+   }
+
+   public void onDisable() {
+   }
+
+   public void toggle() {
+      int[] var1 = Method1041();
+      if (Objects.nonNull(mc.theWorld) && !this.Field2646) {
+         if (this.state) {
             if (GlobalModule.toggleSound.getValue()) {
-                Module.mc.thePlayer.playSound("mod.off", 1.0f, 1.0f);
+               mc.thePlayer.playSound("mod.on", 1.0F, 1.0F);
             }
-            if (GlobalModule.toggleNotification.getValue()) {
-                GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("\u00a73Module", this.name + " \u00a7cDisable", Types.ERROR));
+
+            if (!GlobalModule.toggleNotification.getValue()) {
+               return;
             }
-        }
-    }
 
-    /*
-     * WARNING - Removed back jump from a try to a catch block - possible behaviour change.
-     * Enabled aggressive block sorting
-     * Enabled unnecessary exception pruning
-     * Enabled aggressive exception aggregation
-     */
-    public void Method1028() {
-        boolean bl;
-        Module module;
-        try {
-            module = this;
-            bl = !this.getState();
-        }
-        catch (Exception a2) {
-            a2.printStackTrace();
-            return;
-        }
-        {
-            module.setState(bl);
-            return;
-        }
-    }
+            GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("§3Module", this.name + " §aEnabled", Types.SUCCESS));
+         }
 
-    public void setState(boolean state) {
-        this.setState(state, false);
-        if (Objects.nonNull((Object)GlobalModule.INSTANCE.fileManager)) {
-            GlobalModule.INSTANCE.fileManager.saveMods();
-        }
-    }
+         if (GlobalModule.toggleSound.getValue()) {
+            mc.thePlayer.playSound("mod.off", 1.0F, 1.0F);
+         }
 
-    public void setState(boolean a2, boolean a3) {
-        int[] a4 = Module.Method1041();
-        if (this.canUse()) {
-            return;
-        }
-        this.state = a2;
-        this.toggle();
-        this.Field2659.Method1192(0.0);
-        this.Field2660.Method1192(0.0);
-        EventManager.register(this);
-        try {
+         if (GlobalModule.toggleNotification.getValue()) {
+            GlobalModule.INSTANCE.getNotificationManager().addNotification(new Notification("§3Module", this.name + " §cDisable", Types.ERROR));
+         }
+      }
+
+   }
+
+   public void Method1028() {
+      try {
+         this.setState(!this.getState());
+      } catch (Exception var2) {
+         var2.printStackTrace();
+      }
+
+   }
+
+   public void setState(boolean state) {
+      this.setState(state, false);
+      if (Objects.nonNull(GlobalModule.INSTANCE.fileManager)) {
+         GlobalModule.INSTANCE.fileManager.saveMods();
+      }
+
+   }
+
+   public void setState(boolean a, boolean a1) {
+      int[] a = Method1041();
+      if (!this.canUse()) {
+         this.state = a;
+         this.toggle();
+         this.Field2659.Method1192(0.0);
+         this.Field2660.Method1192(0.0);
+         EventManager.register(this);
+
+         try {
             this.onEnable();
-        }
-        catch (Exception a5) {
-            a5.printStackTrace();
+         } catch (Exception var6) {
+            var6.printStackTrace();
             EventManager.unregister(this);
+
             try {
-                this.onDisable();
+               this.onDisable();
+            } catch (Exception var5) {
+               var5.printStackTrace();
             }
-            catch (Exception a6) {
-                a6.printStackTrace();
-            }
-        }
-        GlobalModule.INSTANCE.fileManager.saveMods();
-    }
+         }
 
-    public boolean Method1031() {
-        Iterator iterator = Class446.Method2764().Method1383();
-        while (iterator.Method932()) {
-            Class447 a2 = (Class447)iterator.Method933();
-            String a3 = a2.Method2755();
-            if (!a3.equalsIgnoreCase(this.getName())) continue;
-            return true;
-        }
-        return false;
-    }
+         GlobalModule.INSTANCE.fileManager.saveMods();
+      }
+   }
 
-    public boolean Method1032() {
-        return this.hide;
-    }
+   public boolean Method1031() {
+      Iterator var1 = Class446.Method2764().Method1383();
 
-    public void Method1033(boolean a2) {
-        this.hide = a2;
-    }
+      String a;
+      do {
+         if (!var1.Method932()) {
+            return false;
+         }
 
-    public void Method1034(double a2) {
-        this.Field2657 = a2;
-    }
+         Class447 a = (Class447)var1.Method933();
+         a = a.Method2755();
+      } while(!a.equalsIgnoreCase(this.getName()));
 
-    public void Method1035(double a2) {
-        this.Field2658 = a2;
-    }
+      return true;
+   }
 
-    public double Method1036() {
-        return this.Field2657;
-    }
+   public boolean Method1032() {
+      return this.hide;
+   }
 
-    public double Method1037() {
-        return this.Field2658;
-    }
+   public void Method1033(boolean a) {
+      this.hide = a;
+   }
 
-    public Class322 Method1038() {
-        return this.Field2659;
-    }
+   public void Method1034(double a) {
+      this.Field2657 = a;
+   }
 
-    public Class322 Method1039() {
-        return this.Field2660;
-    }
+   public void Method1035(double a) {
+      this.Field2658 = a;
+   }
 
-    static {
-        Module.Method1040(new int[4]);
-        mc = Wrapper.INSTANCE.getMinecraft();
-    }
+   public double Method1036() {
+      return this.Field2657;
+   }
 
-    public static void Method1040(int[] nArray) {
-        Field2661 = nArray;
-    }
+   public double Method1037() {
+      return this.Field2658;
+   }
 
-    public static int[] Method1041() {
-        return Field2661;
-    }
+   public Class322 Method1038() {
+      return this.Field2659;
+   }
 
-    private static Exception Method1042(Exception exception) {
-        return exception;
-    }
+   public Class322 Method1039() {
+      return this.Field2660;
+   }
+
+   static {
+      Method1040(new int[4]);
+      mc = Wrapper.INSTANCE.getMinecraft();
+   }
+
+   public static void Method1040(int[] arr) {
+      Field2661 = arr;
+   }
+
+   public static int[] Method1041() {
+      return Field2661;
+   }
+
+   private static Exception Method1042(Exception exception) {
+      return exception;
+   }
 }

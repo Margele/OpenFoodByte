@@ -1,27 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.awt.Color
- *  java.lang.Boolean
- *  java.lang.Object
- *  java.lang.String
- *  java.util.Iterator
- *  net.minecraft.client.entity.EntityPlayerSP
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.boss.EntityDragon
- *  net.minecraft.entity.monster.EntityGhast
- *  net.minecraft.entity.monster.EntityIronGolem
- *  net.minecraft.entity.monster.EntityMob
- *  net.minecraft.entity.monster.EntitySlime
- *  net.minecraft.entity.monster.EntitySnowman
- *  net.minecraft.entity.passive.EntityAnimal
- *  net.minecraft.entity.passive.EntityBat
- *  net.minecraft.entity.passive.EntitySquid
- *  net.minecraft.entity.passive.EntityVillager
- *  net.minecraft.entity.player.EntityPlayer
- */
 package trash.foodbyte.module.impl.render;
 
 import awsl.Class305;
@@ -29,8 +5,8 @@ import awsl.Class492;
 import eventapi.EventTarget;
 import java.awt.Color;
 import java.util.Iterator;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityGhast;
@@ -52,66 +28,69 @@ import trash.foodbyte.utils.RenderUtils;
 import trash.foodbyte.value.BooleanValue;
 import trash.foodbyte.value.ColorValue;
 
-public class ESP
-extends Module {
-    public ColorValue Field2378 = new ColorValue("ESP", "Color", new Color(0, 153, 255), "\u900f\u89c6\u7ed8\u5236\u989c\u8272");
-    public BooleanValue Field2379 = new BooleanValue("ESP", "Player", (Boolean)true, "\u73a9\u5bb6");
-    public BooleanValue Field2380 = new BooleanValue("ESP", "Animals", (Boolean)false, "\u751f\u7269");
-    public BooleanValue Field2381 = new BooleanValue("ESP", "Mobs", (Boolean)false, "\u602a\u7269");
-    public BooleanValue Field2382 = new BooleanValue("ESP", "Invisibles", (Boolean)true, "\u9690\u8eab");
+public class ESP extends Module {
+   public ColorValue Field2378 = new ColorValue("ESP", "Color", new Color(0, 153, 255), "透视绘制颜色");
+   public BooleanValue Field2379 = new BooleanValue("ESP", "Player", true, "玩家");
+   public BooleanValue Field2380 = new BooleanValue("ESP", "Animals", false, "生物");
+   public BooleanValue Field2381 = new BooleanValue("ESP", "Mobs", false, "怪物");
+   public BooleanValue Field2382 = new BooleanValue("ESP", "Invisibles", true, "隐身");
 
-    public ESP() {
-        super("ESP", Category.RENDER);
-        this.setDescription("\u7ed8\u5236\u5b9e\u4f53\u900f\u89c6");
-    }
+   public ESP() {
+      super("ESP", Category.RENDER);
+      this.setDescription("绘制实体透视");
+   }
 
-    @EventTarget
-    public void Method802(EventRender3D a2) {
-        Iterator iterator = ESP.mc.theWorld.loadedEntityList.Method1383();
-        String a3 = Class492.Method2239();
-        while (iterator.Method932()) {
-            EntityLivingBase a4;
-            Object a5 = iterator.Method933();
-            if (!(a5 instanceof EntityLivingBase)) continue;
-            if (a5 == ESP.mc.getMinecraft().thePlayer || AntiBot.botList.contains(a5) || !this.Method965(a4 = (EntityLivingBase)a5)) continue;
-            double a6 = ReflectionUtils.getRenderPartialTicks();
-            double a7 = a4.lastTickPosX + (a4.posX - a4.lastTickPosX) * a6 - ReflectionUtils.getRenderPosX();
-            double a8 = a4.lastTickPosY + (a4.posY - a4.lastTickPosY) * a6 - ReflectionUtils.getRenderPosY();
-            double a9 = a4.lastTickPosZ + (a4.posZ - a4.lastTickPosZ) * a6 - ReflectionUtils.getRenderPosZ();
-            Color a10 = this.Field2378.Method2444();
-            if (Class305.Method704((Entity)a4)) {
-                a10 = new Color(0, 255, 0);
-            }
-            if (a4.hurtTime > 0) {
-                a10 = new Color(255, 0, 0);
-            }
-            if (a4.isInvisible()) {
-                a10 = new Color(255, 255, 0);
-            }
-            RenderUtils.Method1121(a7, a8, a9, (double)a4.width / 1.5, (double)a4.height + 0.2, (float)a10.getRed() / 255.0f, (float)a10.getGreen() / 255.0f, (float)a10.getBlue() / 255.0f, (float)a10.getAlpha() / 255.0f);
-            break;
-        }
-    }
+   @EventTarget
+   public void Method802(EventRender3D a) {
+      Class492.Method2239();
+      Iterator var3 = mc.theWorld.loadedEntityList.Method1383();
 
-    public boolean Method965(EntityLivingBase a2) {
-        block6: {
-            block5: {
-                boolean a3 = this.Field2379.getBooleanValue();
-                boolean a4 = this.Field2382.getBooleanValue();
-                boolean a5 = this.Field2380.getBooleanValue();
-                boolean a6 = this.Field2381.getBooleanValue();
-                if (a2.isInvisible()) {
-                    return false;
-                }
-                if (a2 instanceof EntityPlayer) break block5;
-                if (a2 instanceof EntityMob || a2 instanceof EntityDragon || a2 instanceof EntityGhast || a2 instanceof EntitySlime || a2 instanceof EntityIronGolem || a2 instanceof EntitySnowman) break block5;
-                if (!(a2 instanceof EntityAnimal) && !(a2 instanceof EntitySquid) && !(a2 instanceof EntityVillager) && !(a2 instanceof EntityBat)) break block6;
+      while(var3.Method932()) {
+         Object a = var3.Method933();
+         if (a instanceof EntityLivingBase) {
+            Minecraft var10001 = mc;
+            if (a != Minecraft.getMinecraft().thePlayer && !AntiBot.botList.contains(a)) {
+               EntityLivingBase a = (EntityLivingBase)a;
+               if (this.Method965(a)) {
+                  double a = (double)ReflectionUtils.getRenderPartialTicks();
+                  double a = a.lastTickPosX + (a.posX - a.lastTickPosX) * a - ReflectionUtils.getRenderPosX();
+                  double a = a.lastTickPosY + (a.posY - a.lastTickPosY) * a - ReflectionUtils.getRenderPosY();
+                  double a = a.lastTickPosZ + (a.posZ - a.lastTickPosZ) * a - ReflectionUtils.getRenderPosZ();
+                  Color a = this.Field2378.Method2444();
+                  if (Class305.Method704(a)) {
+                     a = new Color(0, 255, 0);
+                  }
+
+                  if (a.hurtTime > 0) {
+                     a = new Color(255, 0, 0);
+                  }
+
+                  if (a.isInvisible()) {
+                     a = new Color(255, 255, 0);
+                  }
+
+                  RenderUtils.Method1121(a, a, a, (double)a.width / 1.5, (double)a.height + 0.2, (float)a.getRed() / 255.0F, (float)a.getGreen() / 255.0F, (float)a.getBlue() / 255.0F, (float)a.getAlpha() / 255.0F);
+                  break;
+               }
             }
-            if (a2 instanceof EntityPlayerSP) {
-                return ESP.mc.gameSettings.thirdPersonView != 0;
-            }
-            return true;
-        }
-        return false;
-    }
+         }
+      }
+
+   }
+
+   public boolean Method965(EntityLivingBase a) {
+      boolean a = this.Field2379.getBooleanValue();
+      boolean a = this.Field2382.getBooleanValue();
+      boolean a = this.Field2380.getBooleanValue();
+      boolean a = this.Field2381.getBooleanValue();
+      if (a.isInvisible()) {
+         return false;
+      } else if (!(a instanceof EntityPlayer) && !(a instanceof EntityMob) && !(a instanceof EntityDragon) && !(a instanceof EntityGhast) && !(a instanceof EntitySlime) && !(a instanceof EntityIronGolem) && !(a instanceof EntitySnowman) && !(a instanceof EntityAnimal) && !(a instanceof EntitySquid) && !(a instanceof EntityVillager) && !(a instanceof EntityBat)) {
+         return false;
+      } else if (a instanceof EntityPlayerSP) {
+         return mc.gameSettings.thirdPersonView != 0;
+      } else {
+         return true;
+      }
+   }
 }

@@ -1,16 +1,3 @@
-/*
- * Decompiled with CFR 0.1.0 (FabricMC a830a72d).
- * 
- * Could not load the following classes:
- *  java.lang.IllegalArgumentException
- *  java.lang.Object
- *  java.lang.String
- *  java.lang.StringBuilder
- *  java.lang.reflect.Constructor
- *  java.lang.reflect.Method
- *  java.util.HashMap
- *  java.util.Map
- */
 package awsl;
 
 import java.lang.reflect.Constructor;
@@ -20,118 +7,127 @@ import java.util.Map;
 import obfuscate.b;
 
 public class Class36 {
-    private final String Field298;
-    private final String Field299;
-    private static final Map Field300 = new HashMap();
+   private final String Field298;
+   private final String Field299;
+   private static final Map Field300 = new HashMap();
 
-    public Class36(String a, String a2) {
-        this.Field298 = a;
-        this.Field299 = a2;
-    }
+   public Class36(String a, String a) {
+      this.Field298 = a;
+      this.Field299 = a;
+   }
 
-    public Class36(String a2, b a3, b[] a4) {
-        this(a2, b.Method3226(a3, a4));
-    }
+   public Class36(String a, b a, b[] a) {
+      this(a, b.Method3226(a, a));
+   }
 
-    public static Class36 Method3419(Method a2) {
-        return new Class36(a2.getName(), b.Method3231(a2));
-    }
+   public static Class36 Method3419(Method a) {
+      return new Class36(a.getName(), b.Method3231(a));
+   }
 
-    public static Class36 Method3420(Constructor a2) {
-        return new Class36("<init>", b.Method3230(a2));
-    }
+   public static Class36 Method3420(Constructor a) {
+      return new Class36("<init>", b.Method3230(a));
+   }
 
-    public static Class36 Method3421(String a2) throws IllegalArgumentException {
-        return Class36.Method3422(a2, false);
-    }
+   public static Class36 Method3421(String a) throws IllegalArgumentException {
+      return Method3422(a, false);
+   }
 
-    public static Class36 Method3422(String a2, boolean a3) throws IllegalArgumentException {
-        int a4;
-        int a5 = a2.indexOf(32);
-        int a6 = a2.indexOf(40, a5) + 1;
-        int a7 = a2.indexOf(41, a6);
-        if (a5 == -1 || a6 == -1 || a7 == -1) {
-            throw new IllegalArgumentException();
-        }
-        String a8 = a2.substring(0, a5);
-        String a9 = a2.substring(a5 + 1, a6 - 1).trim();
-        StringBuilder a10 = new StringBuilder();
-        a10.append('(');
-        do {
-            String a11;
-            if ((a4 = a2.indexOf(44, a6)) == -1) {
-                a11 = Class36.Method3423(a2.substring(a6, a7).trim(), a3);
+   public static Class36 Method3422(String a, boolean a) throws IllegalArgumentException {
+      int a = a.indexOf(32);
+      int a = a.indexOf(40, a) + 1;
+      int a = a.indexOf(41, a);
+      if (a != -1 && a != -1 && a != -1) {
+         String a = a.substring(0, a);
+         String a = a.substring(a + 1, a - 1).trim();
+         StringBuilder a = new StringBuilder();
+         a.append('(');
+
+         int a;
+         do {
+            a = a.indexOf(44, a);
+            String a;
+            if (a == -1) {
+               a = Method3423(a.substring(a, a).trim(), a);
             } else {
-                a11 = Class36.Method3423(a2.substring(a6, a4).trim(), a3);
-                a6 = a4 + 1;
+               a = Method3423(a.substring(a, a).trim(), a);
+               a = a + 1;
             }
-            a10.append(a11);
-        } while (a4 != -1);
-        a10.append(')');
-        a10.append(Class36.Method3423(a8, a3));
-        return new Class36(a9, a10.toString());
-    }
 
-    private static String Method3423(String a2, boolean a3) {
-        if ("".equals((Object)a2)) {
-            return a2;
-        }
-        StringBuilder a4 = new StringBuilder();
-        int a5 = 0;
-        while ((a5 = a2.indexOf("[]", a5) + 1) > 0) {
-            a4.append('[');
-        }
-        String a6 = a2.substring(0, a2.length() - a4.length() * 2);
-        String a7 = (String)Field300.Method2665((Object)a6);
-        a4.append(a7);
-        return a4.toString();
-    }
+            a.append(a);
+         } while(a != -1);
 
-    public String Method3424() {
-        return this.Field298;
-    }
+         a.append(')');
+         a.append(Method3423(a, a));
+         return new Class36(a, a.toString());
+      } else {
+         throw new IllegalArgumentException();
+      }
+   }
 
-    public String Method3425() {
-        return this.Field299;
-    }
+   private static String Method3423(String a, boolean a1) {
+      if ("".equals(a)) {
+         return a;
+      } else {
+         StringBuilder a = new StringBuilder();
+         int a = 0;
 
-    public b Method3426() {
-        return b.Method3213(this.Field299);
-    }
+         while((a = a.indexOf("[]", a) + 1) > 0) {
+            a.append('[');
+         }
 
-    public b[] Method3427() {
-        return b.Method3211(this.Field299);
-    }
+         String a = a.substring(0, a.length() - a.length() * 2);
+         String a = (String)Field300.Method2665(a);
+         a.append(a);
+         return a.toString();
+      }
+   }
 
-    public String Method3428() {
-        return this.Field298 + this.Field299;
-    }
+   public String Method3424() {
+      return this.Field298;
+   }
 
-    public boolean Method3429(Object a2) {
-        if (!(a2 instanceof Class36)) {
-            return false;
-        }
-        Class36 a3 = (Class36)a2;
-        return this.Field298.equals((Object)a3.Field298) && this.Field299.equals((Object)a3.Field299);
-    }
+   public String Method3425() {
+      return this.Field299;
+   }
 
-    public int Method3430() {
-        return this.Field298.hashCode() ^ this.Field299.hashCode();
-    }
+   public b Method3426() {
+      return b.Method3213(this.Field299);
+   }
 
-    static {
-        Field300.put((Object)"void", (Object)"V");
-        Field300.put((Object)"byte", (Object)"B");
-        Field300.put((Object)"char", (Object)"C");
-        Field300.put((Object)"double", (Object)"D");
-        Field300.put((Object)"float", (Object)"F");
-        Field300.put((Object)"int", (Object)"I");
-        Field300.put((Object)"long", (Object)"J");
-        Field300.put((Object)"short", (Object)"S");
-        Field300.put((Object)"boolean", (Object)"Z");
-    }
+   public b[] Method3427() {
+      return b.Method3211(this.Field299);
+   }
 
-    private static IllegalArgumentException Method3431(IllegalArgumentException illegalArgumentException) {
-        return illegalArgumentException;
-    }
+   public String Method3428() {
+      return this.Field298 + this.Field299;
+   }
+
+   public boolean Method3429(Object a) {
+      if (!(a instanceof Class36)) {
+         return false;
+      } else {
+         Class36 a = (Class36)a;
+         return this.Field298.equals(a.Field298) && this.Field299.equals(a.Field299);
+      }
+   }
+
+   public int Method3430() {
+      return this.Field298.hashCode() ^ this.Field299.hashCode();
+   }
+
+   static {
+      Field300.put("void", "V");
+      Field300.put("byte", "B");
+      Field300.put("char", "C");
+      Field300.put("double", "D");
+      Field300.put("float", "F");
+      Field300.put("int", "I");
+      Field300.put("long", "J");
+      Field300.put("short", "S");
+      Field300.put("boolean", "Z");
+   }
+
+   private static IllegalArgumentException Method3431(IllegalArgumentException illegalArgumentException) {
+      return illegalArgumentException;
+   }
 }
